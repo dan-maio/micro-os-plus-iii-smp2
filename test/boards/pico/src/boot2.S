@@ -9,7 +9,7 @@
 // SDK's boot_stage2/boot2_w25q080.S (BSD-3-Clause). The image does not build
 // or link against the SDK.
 //
-// Padded and checksummed version of: /home/ilg/pico/pico-examples/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
+// Padded and checksummed version of: <pico-examples>/build/pico-sdk/src/rp2_common/boot_stage2/bs2_default.bin
 
 .cpu cortex-m0plus
 .thumb

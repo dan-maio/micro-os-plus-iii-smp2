@@ -34,11 +34,11 @@ Like `cmsis-os-validator-ram`, this test is linked to execute **entirely from in
 
 ### Via CTest (Micro-OS+ SMP Test Framework)
 ```bash
-cd ~/Work2/micro-os-plus/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+cd <workspace>/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
 ctest -V -R cortexm-pico-mutex-stress-ram-hwd
 ```
 
 ### Via Standalone Script
 ```bash
-BUILD=$PWD/platform-bin/port-tests ~/Work2/micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico/hw.sh mutex-stress-ram
+BUILD=$PWD/platform-bin/port-tests <workspace>/micro-os-plus-iii-cortexm/test/boards/pico/hw.sh mutex-stress-ram
 ```

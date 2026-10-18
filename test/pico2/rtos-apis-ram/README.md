@@ -34,11 +34,11 @@ Like `cmsis-os-validator-ram`, this test is linked to execute **entirely from in
 
 ### Via CTest (Micro-OS+ SMP Test Framework)
 ```bash
-cd /home/dan/Work2/micro-os-plus/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-release
+cd <workspace>/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-release
 ctest -V -R cortexm-pico2-rtos-apis-ram-hwd
 ```
 
 ### Via Standalone Script
 ```bash
-/home/dan/Work/micro-os-plus-iii-cortexm/test/boards/pico2/hw.sh rtos-apis-ram
+<workspace>/micro-os-plus-iii-cortexm/test/boards/pico2/hw.sh rtos-apis-ram
 ```

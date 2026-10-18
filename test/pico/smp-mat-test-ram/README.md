@@ -36,11 +36,11 @@ The test runs **entirely from internal SRAM** (`0x20000000`, 264 KB) without wri
 
 ### Via CTest (Micro-OS+ SMP Test Framework)
 ```bash
-cd ~/Work2/micro-os-plus/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+cd <workspace>/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
 ctest -V -R cortexm-pico-smp-mat-test-ram-hwd
 ```
 
 ### Via Standalone Script
 ```bash
-BUILD=$PWD/platform-bin/port-tests ~/Work2/micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico/hw.sh smp-mat-test-ram
+BUILD=$PWD/platform-bin/port-tests <workspace>/micro-os-plus-iii-cortexm/test/boards/pico/hw.sh smp-mat-test-ram
 ```

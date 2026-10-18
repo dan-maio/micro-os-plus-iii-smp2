@@ -69,11 +69,11 @@ Unlike the standard flash-based tests, `cmsis-os-validator-ram` is linked to exe
 
 ### Via CTest (Micro-OS+ SMP Test Framework)
 ```bash
-cd ~/Work2/micro-os-plus/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+cd <workspace>/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
 ctest -V -R cortexm-pico-cmsis-os-validator-ram-hwd
 ```
 
 ### Via Standalone Script
 ```bash
-BUILD=$PWD/platform-bin/port-tests ~/Work2/micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico/hw.sh cmsis-os-validator-ram
+BUILD=$PWD/platform-bin/port-tests <workspace>/micro-os-plus-iii-cortexm/test/boards/pico/hw.sh cmsis-os-validator-ram
 ```
