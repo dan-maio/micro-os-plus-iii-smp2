@@ -366,7 +366,7 @@ measurement.
 
 ### On the board
 
-From `micro-os-plus-iii-smp.git/tests`, with the board on its DAPLink probe:
+From `micro-os-plus-iii/tests`, with the board on its DAPLink probe:
 
 ```sh
 xpm run test-spi-pipeline-hwd --config cortexm-weactf411-cmake-gcc-debug

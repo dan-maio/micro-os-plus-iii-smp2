@@ -112,7 +112,7 @@ device never enumerates.
 ## Run
 
 Both tests run on the board only (`-hwd`), through the harness, from
-`micro-os-plus-iii-smp.git/tests`:
+`micro-os-plus-iii/tests`:
 
 ```sh
 xpm run test-smp-test-usb-cdc-acm-hwd --config cortexm-pico2-cmake-gcc-debug

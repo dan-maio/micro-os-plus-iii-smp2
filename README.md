@@ -47,7 +47,7 @@ Clone the two siblings beside this one, then:
 
 ```sh
 cmake -S . -B test/build -G Ninja -DBOARD=nucleof411 \
-      -DCMAKE_TOOLCHAIN_FILE=../micro-os-plus-iii-smp.git/cmake/toolchains/arm-none-eabi.cmake
+      -DCMAKE_TOOLCHAIN_FILE=../micro-os-plus-iii/cmake/toolchains/arm-none-eabi.cmake
 cmake --build test/build -j
 ```
 
