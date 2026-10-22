@@ -36,7 +36,7 @@ Seven boards, three Cortex-M profiles, one and two CPUs:
 | `nucleof411` | STM32F411RE, Cortex-M4F | 1 | `mos-test1`, `cmsis-os-validator`, `mutex-stress`, `rtos-apis` |
 | `weactf411` | STM32F411CE, Cortex-M4F | 1 | `mos-test1`, `spi-pipeline`, `cmsis-os-validator`, `mutex-stress`, `rtos-apis` |
 | `weactf412` | STM32F412RE, Cortex-M4F | 1 | `mos-test1`, `uart-test1`, `cmsis-os-validator`, `mutex-stress`, `rtos-apis` |
-| `pico2` | RP2350, 2× Cortex-M33 | **2** | `smp-test0`…`smp-test5`, `smp-mat-test`, `sc-test-ko`, `fp-switch`, `exc-test`, the USB tests, `cmsis-os-validator`, `mutex-stress`, `rtos-apis`, `cmsis-os-validator-ram`, `mutex-stress-ram`, `rtos-apis-ram`, `smp-mat-test-ram` |
+| `pico2` | RP2350, 2× Cortex-M33 | **2** | `smp-test0`…`smp-test5`, `clock-test`, `smp-mat-test`, `sc-test-ko`, `fp-switch`, `exc-test`, the USB tests, `cmsis-os-validator`, `mutex-stress`, `rtos-apis`, `cmsis-os-validator-ram`, `mutex-stress-ram`, `rtos-apis-ram`, `smp-mat-test-ram` |
 | `pico2-pizero` | RP2350B, 2× Cortex-M33 | **2** | the `pico2` hardware set (no PSRAM) |
 | `pico2-rp2350b-psram` | RP2350B + 8 MB PSRAM, 2× Cortex-M33 | **2** | the `pico2` set plus the PSRAM tests |
 | `pico` | RP2040, 2× Cortex-M0+ | **2** | the `pico2` set, adapted (`smp-mat-test` at N=80 to fit 264 KB; `fp-switch` has no FPU to test) |

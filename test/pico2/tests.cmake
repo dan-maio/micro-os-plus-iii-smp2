@@ -51,7 +51,8 @@ set (BOARD_TEST_HWD_ONLY
      smp-test5
      smp-test-ko
      smp-test-usb-cdc-acm
-     smp-test-usb-hid)
+     smp-test-usb-hid
+     clock-test)
 
 function (board_test_ncpu _app _out)
   # The harness suites are single-core here too. On the RP2350, launching core

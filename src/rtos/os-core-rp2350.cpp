@@ -174,6 +174,11 @@ namespace os
       void
       clock_systick::start (void)
       {
+#if defined(OS_USE_SMP_SCHEDULER)
+        // hrclock's provisional origin, for any read before the first tick;
+        // SysTick_Handler() sets the real one at that tick.
+        port::hr_base_us = port::timer0_us ();
+#endif
 #if defined(NDEBUG)
         SysTick_Config (SystemCoreClock / rtos::clock_systick::frequency_hz);
 #else
@@ -766,7 +771,42 @@ SysTick_Handler (void)
   if (port_cpu_id () == 0)
     {
       g_boot_mark (8);
-      os_systick_handler ();
+      // The kernel's ticks follow TIMER0, not the SysTick interrupts.
+      // SysTick latches one pending interrupt only: every period that
+      // passes while interrupts are masked (the start-up, core 1's launch)
+      // was a tick lost for good, the kernel's clocks falling behind real
+      // time and hrclock.now() (TIMER0) running ahead of its steady count
+      // (3-10 ms, measured). Here each interrupt runs the ticks TIMER0 says
+      // are due since the origin: usually one, several after a masked
+      // stretch, none when SysTick runs a little fast (10 ppm, measured).
+      // Tick k is then always at origin + k ms, and hrclock.now() is within
+      // a tick of its steady count.
+      using os::rtos::port::hr_base_us;
+      using os::rtos::port::timer0_us;
+      constexpr std::uint64_t tick_us = 1000000U / os::rtos::clock_systick::frequency_hz;
+      static bool first_tick = true;
+      static std::uint64_t ticks_done = 0;
+      const std::uint64_t now_us = timer0_us ();
+      if (first_tick)
+        {
+          // The origin: this first tick closes the first period.
+          first_tick = false;
+          hr_base_us = now_us - tick_us;
+        }
+      std::uint64_t due = (now_us - hr_base_us) / tick_us;
+      if (due > ticks_done + 1000U)
+        {
+          // Far behind (a core halted by the debugger): resynchronise rather
+          // than replay thousands of ticks; the origin moves with the skip,
+          // so hrclock stays consistent with the steady count.
+          hr_base_us += (due - ticks_done - 1U) * tick_us;
+          due = ticks_done + 1U;
+        }
+      while (ticks_done < due)
+        {
+          ++ticks_done;
+          os_systick_handler ();
+        }
     }
   else
     {

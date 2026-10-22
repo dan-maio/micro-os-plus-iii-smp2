@@ -466,14 +466,40 @@ namespace os
 #endif
       }
 
+#if defined(OS_USE_SMP_SCHEDULER)
+      // TIMER0's 64-bit microsecond count, read through the raw registers
+      // (TIMERAWH 0x24, TIMERAWL 0x28) with a hi-lo-hi retry: lock-free and
+      // safe from both cores. (TIMEHR/TIMELR share one latch, which reading
+      // TIMELR sets: read in the other order, or from two cores at once,
+      // they pair a high word with the wrong low word.)
+      inline uint64_t __attribute__ ((always_inline))
+      timer0_us (void) noexcept
+      {
+        constexpr std::uint32_t timer0_base = 0x400B0000U;
+        std::uint32_t hi = rp2350::reg (timer0_base + 0x24U);
+        for (;;)
+          {
+            const std::uint32_t lo = rp2350::reg (timer0_base + 0x28U);
+            const std::uint32_t hi2 = rp2350::reg (timer0_base + 0x24U);
+            if (hi2 == hi)
+              {
+                return (static_cast<uint64_t> (hi) << 32) | lo;
+              }
+            hi = hi2;
+          }
+      }
+
+      // TIMER0's count when core 0 started SysTick (clock_systick::start()):
+      // the origin of hrclock, so hrclock.now() and the clock's tick-driven
+      // count (ticks * cycles_per_tick, in microseconds) agree at every tick.
+      inline volatile uint64_t hr_base_us = 0;
+#endif
+
       inline uint64_t __attribute__ ((always_inline))
       clock_highres::hardware_counter (void) noexcept
       {
 #if defined(OS_USE_SMP_SCHEDULER)
-        constexpr std::uint32_t timer0_base = 0x400B0000U;
-        uint32_t hi = rp2350::reg (timer0_base + 0x08U);
-        uint32_t lo = rp2350::reg (timer0_base + 0x0CU);
-        return (static_cast<uint64_t> (hi) << 32) | lo;
+        return timer0_us () - hr_base_us;
 #else
         return 0;
 #endif
@@ -495,7 +521,15 @@ namespace os
       inline uint32_t __attribute__ ((always_inline))
       clock_highres::cycles_per_tick (void)
       {
+#if defined(OS_USE_SMP_SCHEDULER)
+        // In hrclock's unit, TIMER0 microseconds (input_clock_frequency_hz):
+        // the steady count its sleeps are measured against advances by this
+        // at every tick. (It was SysTick->LOAD + 1, CPU cycles: ~150 times
+        // too much for a clock read in microseconds.)
+        return 1000000U / rtos::clock_systick::frequency_hz;
+#else
         return SysTick->LOAD + 1;
+#endif
       }
 
       inline uint32_t __attribute__ ((always_inline))
