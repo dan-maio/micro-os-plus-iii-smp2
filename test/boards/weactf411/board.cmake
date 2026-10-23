@@ -23,8 +23,7 @@ set (UOS_BOARD_LINKER_HW "${UOS_BOARD_SRC_DIR}/linker.ld")
 set (UOS_BOARD_LIBS  micro-os-plus::soc-stm32f411xe
                      # Upstream's generic startup -- these boards use it;
                      # the RP2350 has its own boot.S and does not.
-                     micro-os-plus::iii-startup
-                     micro-os-plus::iii-trace-semihosting)
+                     micro-os-plus::iii-startup)
 
 set (UOS_BOARD_DEFINES
      STM32F411xE

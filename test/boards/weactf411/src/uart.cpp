@@ -9,6 +9,9 @@
 #include <uart.hpp>
 #include <board.hpp>
 
+#include <cmsis-plus/diag/trace.h>
+#include <cstdio>
+
 #include "stm32f4xx.h"
 
 namespace
@@ -94,3 +97,46 @@ namespace uart
       }
   }
 }
+
+namespace os
+{
+  namespace trace
+  {
+    void
+    initialize (void)
+    {
+      uart::init (board::UART_BAUD);
+    }
+
+    ssize_t
+    write (const void* buf, std::size_t nbyte)
+    {
+      uart::write (static_cast<const char*> (buf), nbyte);
+      return static_cast<ssize_t> (nbyte);
+    }
+  }
+}
+
+extern "C" void
+os_board_console_mirror (int fildes, const void* buf, std::size_t nbyte);
+
+extern "C" void
+os_board_console_mirror (int /* fildes */, const void* buf, std::size_t nbyte)
+{
+  uart::write (static_cast<const char*> (buf), nbyte);
+}
+
+namespace
+{
+  struct StdioLineBuffered
+  {
+    StdioLineBuffered ()
+    {
+      uart::init (board::UART_BAUD);
+      std::setvbuf (stdout, nullptr, _IOLBF, 0);
+      std::setvbuf (stderr, nullptr, _IOLBF, 0);
+    }
+  };
+
+  StdioLineBuffered stdio_line_buffered;
+} // namespace
