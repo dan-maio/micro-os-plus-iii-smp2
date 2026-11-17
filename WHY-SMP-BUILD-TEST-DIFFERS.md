@@ -590,7 +590,9 @@ has its file list and check in §15. All work is local (D5).
 | D5 | Where the work happens | **Everything local**: local branches, commits and tags in this workspace; new packages are new local repositories here. No push, no new GitHub repositories, no tag on any remote, until the user asks. |
 | D4 | Shared test code (`hw_result.hpp`, folder-scan helper, OpenOCD Tcl runner) | **Its own xPack, `micro-os-plus-iii-test-support`.** Reason, from upstream: shared CMake helpers are their own xPack (`@micro-os-plus/build-helper`), and the kernel's `.npmignore` excludes `test*/`, so `tests/` and `test_smpl/` are never part of a released kernel; other packages' tests could only reach them through a linked working copy. |
 
-**State of the xpm register today** (checked 2026-11-16): `~/.local/xPacks/@micro-os-plus/<name>/.link` exists for all five packages, and none of them points to this workspace. Step 2 re-registers all five here with `xpm link` (D1).
+**State of the xpm register:** on 2026-11-16 none of the five `~/.local/xPacks/@micro-os-plus/<name>/.link` entries pointed to this workspace; since step 2 (2026-11-17) all five do (D1).
+
+**Local backup (2026-11-17, asked by the user):** every repository here, and the workspace itself (this document, the baseline, the step checks), is pushed to a local bare repository under `~/Downloads/GIT/micro-os-plu-iii-smp-pr-local/`, branch `align/smp-upstream`, remote name `local`. It is a local folder, not a remote service, so D5 still holds.
 
 ## 15. Implementation checklist
 
@@ -632,6 +634,12 @@ Files:
 Check: `xpm run prepare` + `build` of every configuration; `xpm run test-all`;
 the same pass list as before the step.
 
+**Done 2026-11-17** (branch `align/step1-leaf-ports`; kernel `b8e05d0d`,
+ports `5a61279` / `93637dd` / `8eba5a4` / `a86e854`). Check in `step1-check/`:
+40/40 configurations built, the same pass list as the baseline
+(`baseline-2026-11-17/`) except two existing flaky tests; for the Pi 4 B
+release build all 2648 compile commands and the link are identical to `smp`.
+
 ### Step 2 — dependencies as xpm packages, `xpm link` (§7)
 
 1. In each of the five repositories here, bump `package.json` `version`
@@ -669,6 +677,37 @@ the same pass list as before the step.
 Check: `rm build/<C>/CMakeCache.txt`; `xpm run install` + `link-deps` +
 `prepare`; the log shows the port under `build/<C>/xpacks/@micro-os-plus/`;
 same pass list.
+
+**Done 2026-11-17**, with one change agreed during the step:
+**"link only, declare at publish".** During the local phase the ports are
+*not* declared in `tests/package.json` (item 2 is postponed to publishing):
+a declared `specifier` makes `xpm install` fetch a manifest for it, and the
+`github:dan-maio/…#v…-pre.1` tags do not exist remotely (D5). The released
+upstream declarations (`-cortexm` v1.1.0, `posix-arch` v1.0.1) are removed,
+so nothing downloads a released port any more; `link-deps` alone puts the
+working copy into `build/<C>/xpacks/@micro-os-plus/`.
+
+- Kernel `84661c9f`: `tests/package.json` (`link-deps` links only the port;
+  the aarch `install` is `xpm install` only), `tests-main.cmake` (no
+  fallback; it stops with "Run: xpm run link-deps --config <configuration>"
+  when the port is not linked, and sets `UOS_<PORT>_DIR` to the real folder
+  behind the link until step 4).
+- Kernel `d26b3455`: item 5, `UOS_SMP_DIR=${CMAKE_SOURCE_DIR}/..` on the
+  hwd cases of the six AArch platforms (the Cortex-M board scripts do not
+  look for the kernel).
+- Item 1: `package.json` versions and local tags `v7.2.0-pre.1` (kernel),
+  `v2.0.0-pre.1` (`-cortexm`, `-posix-arch`), `v0.1.0-pre.1` (`-aarch32`,
+  `-aarch64`). Note: in semver `0.1.0-pre.1` sorts *before* `0.1.0`.
+- Item 4 by hand: `xpm link` in the five repositories, and
+  `xpm run link-deps --config <C>` for all 40 configurations.
+
+Check in `step2-check/`: 40/40 built, 280 passed, 4 failed. Each failure
+was measured against `smp` built from git worktrees (`wt-smp/`), 12 runs
+each, with the compile commands compared (`step2-check/prove/`): all
+identical, and the failures happen on `smp` too: `2xcortex-m33`
+mutex-stress (an SMP race in the kernel, 1 in 12 on `smp`) and the
+CMSIS-RTOS validator on the AArch boards. Both are listed as flaky in
+`baseline-2026-11-17/BASELINE.md`.
 
 ### Step 3 — QEMU and host tests run by CTest (§11, first half)
 

@@ -67,24 +67,54 @@ hr { border:none; border-top:1px solid var(--line); margin:32px 0; }
 <nav class="toc" aria-label="Contents"><p class="eyebrow">Contents</p><ol><li class="l2"><a href="#about-this-document">0. About this document</a></li><li class="l1"><a href="#part-a-the-principles-and-where-smp-differs">Part A: The principles, and where smp differs</a></li><li class="l2"><a href="#the-upstream-xpack-principles">1. The upstream / xPack principles</a></li><li class="l2"><a href="#what-is-the-same-and-what-differs">2. What is the same, and what differs</a></li><li class="l2"><a href="#each-difference-the-reason-given-at-the-time-and-the-verdict">3. Each difference, the reason given at the time, and the verdict</a></li><li class="l1"><a href="#part-b-how-to-bring-it-back">Part B: How to bring it back</a></li><li class="l2"><a href="#the-target-in-one-picture">4. The target, in one picture</a></li><li class="l2"><a href="#the-rules-and-where-smp-stands">5. The rules, and where smp stands</a></li><li class="l2"><a href="#step-1-the-port-is-a-leaf-the-tests-add-the-kernel-r1-r2-r5">6. Step 1: the port is a leaf; the tests add the kernel (R1, R2, R5)</a></li><li class="l2"><a href="#step-2-dependencies-as-xpm-packages-working-copies-via-xpm-link-r3-r4-r5">7. Step 2: dependencies as xpm packages, working copies via xpm link (R3, R4, R5)</a></li><li class="l2"><a href="#step-3-device-packages-r6">8. Step 3: device packages (R6)</a></li><li class="l2"><a href="#step-4-one-place-per-board-r6">9. Step 4: one place per board (R6)</a></li><li class="l2"><a href="#step-5-each-package-tests-itself-r7-r8">10. Step 5: each package tests itself (R7, R8)</a></li><li class="l2"><a href="#step-6-portable-running-r9">11. Step 6: portable running (R9)</a></li><li class="l2"><a href="#order-effort-risk">12. Order, effort, risk</a></li><li class="l2"><a href="#the-end-state-file-by-file">13. The end state, file by file</a></li><li class="l2"><a href="#decisions-agreed-2026-11-16">14. Decisions (agreed 2026-11-16)</a></li><li class="l2"><a href="#implementation-checklist">15. Implementation checklist</a></li><li class="l2"><a href="#open-questions-not-answered-by-the-documentation">16. Open questions (not answered by the documentation)</a></li><li class="l2"><a href="#where-to-read-more">17. Where to read more</a></li></ol></nav>
 <main>
 <h2 id="about-this-document">0. About this document</h2>
-<p>This document compares the build and test system of the <code>smp</code> branch (this workspace: <code>micro-os-plus-iii</code> and the ports <code>-aarch32</code>, <code>-aarch64</code>, <code>-cortexm</code>, <code>-posix-arch</code>) with the upstream single-core project <a target="_blank" rel="noopener" href="https://github.com/micro-os-plus/micro-os-plus-iii.git" class="uri">https://github.com/micro-os-plus/micro-os-plus-iii.git</a>, branch <code>xpack-development</code>, and with the xPack way that upstream follows.</p>
+<p>This document compares the build and test system of the
+<code>smp</code> branch (this workspace: <code>micro-os-plus-iii</code>
+and the ports <code>-aarch32</code>, <code>-aarch64</code>,
+<code>-cortexm</code>, <code>-posix-arch</code>) with the upstream
+single-core project <a
+href="https://github.com/micro-os-plus/micro-os-plus-iii.git"
+class="uri">https://github.com/micro-os-plus/micro-os-plus-iii.git</a>,
+branch <code>xpack-development</code>, and with the xPack way that
+upstream follows.</p>
 <ul>
-<li><strong>Part A</strong> states the upstream / xPack principles (from their own documentation), shows what <code>smp</code> does differently, and judges each difference against those principles.</li>
-<li><strong>Part B</strong> is a plan to bring <code>smp</code> back to the upstream way, step by step.</li>
+<li><strong>Part A</strong> states the upstream / xPack principles (from
+their own documentation), shows what <code>smp</code> does differently,
+and judges each difference against those principles.</li>
+<li><strong>Part B</strong> is a plan to bring <code>smp</code> back to
+the upstream way, step by step.</li>
 </ul>
-<p><strong>Sources.</strong> Every principle is taken from a document, with its location:</p>
+<p><strong>Sources.</strong> Every principle is taken from a document,
+with its location:</p>
 <ul>
-<li>upstream <code>xpack-development</code>: <code>README-DEVELOPER.md</code>, <code>README-MAINTAINER.md</code>, <code>tests/README.md</code>, and the code;</li>
-<li>the xpm documentation, <a target="_blank" rel="noopener" href="https://xpack.github.io/xpm/" class="uri">https://xpack.github.io/xpm/</a> (CLI pages for <code>link</code>, <code>install</code>, <code>run</code>, <code>uninstall</code>; metadata pages; the CMake integration guide; the folders page);</li>
-<li>the xPack site, <a target="_blank" rel="noopener" href="https://xpack.github.io/" class="uri">https://xpack.github.io/</a>;</li>
-<li>the µOS++ site, <a target="_blank" rel="noopener" href="https://micro-os-plus.github.io/" class="uri">https://micro-os-plus.github.io/</a> (the v7.0.0 release post, the “modular projects” page);</li>
-<li>for the <code>smp</code> side: the commit messages of the harness commits, <code>docs/smp-integration/xpack-dev-smp.md</code>, and the code.</li>
+<li>upstream <code>xpack-development</code>:
+<code>README-DEVELOPER.md</code>, <code>README-MAINTAINER.md</code>,
+<code>tests/README.md</code>, and the code;</li>
+<li>the xpm documentation, <a target="_blank" rel="noopener" href="https://xpack.github.io/xpm/"
+class="uri">https://xpack.github.io/xpm/</a> (CLI pages for
+<code>link</code>, <code>install</code>, <code>run</code>,
+<code>uninstall</code>; metadata pages; the CMake integration guide; the
+folders page);</li>
+<li>the xPack site, <a target="_blank" rel="noopener" href="https://xpack.github.io/"
+class="uri">https://xpack.github.io/</a>;</li>
+<li>the µOS++ site, <a target="_blank" rel="noopener" href="https://micro-os-plus.github.io/"
+class="uri">https://micro-os-plus.github.io/</a> (the v7.0.0 release
+post, the “modular projects” page);</li>
+<li>for the <code>smp</code> side: the commit messages of the harness
+commits, <code>docs/smp-integration/xpack-dev-smp.md</code>, and the
+code.</li>
 </ul>
-<p><strong>Correction of the first version of this document.</strong> The first version explained the <code>smp</code> deviations mostly in their own terms and presented them as sound choices. Several of them contradict the upstream / xPack principles. This version judges each one against those principles. Where a question is not answered by any document, it says so.</p>
+<p><strong>Correction of the first version of this document.</strong>
+The first version explained the <code>smp</code> deviations mostly in
+their own terms and presented them as sound choices. Several of them
+contradict the upstream / xPack principles. This version judges each one
+against those principles. Where a question is not answered by any
+document, it says so.</p>
 <hr />
-<h1 id="part-a-the-principles-and-where-smp-differs">Part A: The principles, and where <code>smp</code> differs</h1>
-<h2 id="the-upstream-xpack-principles">1. The upstream / xPack principles</h2>
-<div class="tw"><table>
+<h1 id="part-a-the-principles-and-where-smp-differs">Part A: The
+principles, and where <code>smp</code> differs</h1>
+<h2 id="the-upstream-xpack-principles">1. The upstream / xPack
+principles</h2>
+<table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -100,81 +130,225 @@ hr { border:none; border-top:1px solid var(--line); margin:32px 0; }
 <tbody>
 <tr>
 <td>P1</td>
-<td><strong>Every component is a separate package with its own version.</strong> Consumers install released, read-only copies.</td>
-<td>xpm metadata pages; µOS++ “modular projects”: components are “stored as one or more files in separate packages”, each with “metadata, to define its own identity and a list of dependencies”</td>
+<td><strong>Every component is a separate package with its own
+version.</strong> Consumers install released, read-only copies.</td>
+<td>xpm metadata pages; µOS++ “modular projects”: components are “stored
+as one or more files in separate packages”, each with “metadata, to
+define its own identity and a list of dependencies”</td>
 </tr>
 <tr>
 <td>P2</td>
-<td><strong>Writable working copies are used through <code>xpm link</code></strong>, in two steps: <code>xpm link</code> in the working copy (creates <code>.link</code> in the global store), then <code>xpm link &lt;package&gt;</code> in the project. <code>-c/--config</code> links <em>“into an existing configuration build folder”</em>. This is the tool for developing several packages at the same time.</td>
-<td><a target="_blank" rel="noopener" href="https://xpack.github.io/xpm/docs/cli/xpm/link/" class="uri">https://xpack.github.io/xpm/docs/cli/xpm/link/</a>; upstream <code>README-DEVELOPER.md</code> (“Use development writable packages”)</td>
+<td><strong>Writable working copies are used through
+<code>xpm link</code></strong>, in two steps: <code>xpm link</code> in
+the working copy (creates <code>.link</code> in the global store), then
+<code>xpm link &lt;package&gt;</code> in the project.
+<code>-c/--config</code> links <em>“into an existing configuration build
+folder”</em>. This is the tool for developing several packages at the
+same time.</td>
+<td><a target="_blank" rel="noopener" href="https://xpack.github.io/xpm/docs/cli/xpm/link/"
+class="uri">https://xpack.github.io/xpm/docs/cli/xpm/link/</a>; upstream
+<code>README-DEVELOPER.md</code> (“Use development writable
+packages”)</td>
 </tr>
 <tr>
 <td>P3</td>
-<td><strong>Tools are binary xPacks, installed once per version in a shared store</strong> and linked into each project / build configuration (<code>xpacks/.bin</code>, <code>build/&lt;config&gt;/xpacks/.bin</code>). Several versions can coexist; each configuration pins its versions.</td>
-<td>xpm folders page: <em>“installing a single read-only instance in a central folder and creating links from the project to that folder”</em>; <code>install --config</code>, <code>run --config</code> pages</td>
+<td><strong>Tools are binary xPacks, installed once per version in a
+shared store</strong> and linked into each project / build configuration
+(<code>xpacks/.bin</code>,
+<code>build/&lt;config&gt;/xpacks/.bin</code>). Several versions can
+coexist; each configuration pins its versions.</td>
+<td>xpm folders page: <em>“installing a single read-only instance in a
+central folder and creating links from the project to that folder”</em>;
+<code>install --config</code>, <code>run --config</code> pages</td>
 </tr>
 <tr>
 <td>P4</td>
-<td><strong>One build configuration per platform / toolchain / build type</strong>, each with its own build folder (<code>buildFolderRelativePath</code>, default <code>build/&lt;config&gt;</code>) and its own dependencies.</td>
-<td>xpm <code>buildConfigurations</code> and <code>properties</code> pages</td>
+<td><strong>One build configuration per platform / toolchain / build
+type</strong>, each with its own build folder
+(<code>buildFolderRelativePath</code>, default
+<code>build/&lt;config&gt;</code>) and its own dependencies.</td>
+<td>xpm <code>buildConfigurations</code> and <code>properties</code>
+pages</td>
 </tr>
 <tr>
 <td>P5</td>
-<td><strong>The library is added by its tests with <code>add_subdirectory(".." "top-bin")</code>; other packages come from <code>xpacks/…</code>.</strong> Plain CMake, INTERFACE targets.</td>
-<td>xpm CMake integration guide; upstream <code>tests/cmake/tests-main.cmake</code></td>
+<td><strong>The library is added by its tests with
+<code>add_subdirectory(".." "top-bin")</code>; other packages come from
+<code>xpacks/…</code>.</strong> Plain CMake, INTERFACE targets.</td>
+<td>xpm CMake integration guide; upstream
+<code>tests/cmake/tests-main.cmake</code></td>
 </tr>
 <tr>
 <td>P6</td>
-<td><strong>Each package tests itself, in its own <code>tests/</code> folder</strong>, a separate xpm project with its own <code>package.json</code>.</td>
-<td>xpm user guide: <em>“move all test-related metadata to a separate tests folder, with its own package.json”</em></td>
+<td><strong>Each package tests itself, in its own <code>tests/</code>
+folder</strong>, a separate xpm project with its own
+<code>package.json</code>.</td>
+<td>xpm user guide: <em>“move all test-related metadata to a separate
+tests folder, with its own package.json”</em></td>
 </tr>
 <tr>
 <td>P7</td>
-<td><strong>The same test sources run unchanged on all platforms, with many toolchains.</strong></td>
-<td>upstream <code>tests/README.md</code>: <em>“Exactly the same source files are used on all platforms, without changes”</em>; <em>“compile the sources with as many toolchains as possible, and run them on as many platforms as possible”</em></td>
+<td><strong>The same test sources run unchanged on all platforms, with
+many toolchains.</strong></td>
+<td>upstream <code>tests/README.md</code>: <em>“Exactly the same source
+files are used on all platforms, without changes”</em>; <em>“compile the
+sources with as many toolchains as possible, and run them on as many
+platforms as possible”</em></td>
 </tr>
 <tr>
 <td>P8</td>
-<td><strong>Portability: Windows, macOS, GNU/Linux.</strong> Actions are shell commands, but must be portable.</td>
-<td>xPack home: <em>“across multiple platforms (Windows, macOS, GNU/Linux)”</em>; upstream <code>tests/README.md</code>: <em>“The tests are performed on GNU/Linux, macOS and Windows”</em>; xpm actions page: <em>“many Unix shell commands do not have direct equivalents on Windows”</em> → use portable tools</td>
+<td><strong>Portability: Windows, macOS, GNU/Linux.</strong> Actions are
+shell commands, but must be portable.</td>
+<td>xPack home: <em>“across multiple platforms (Windows, macOS,
+GNU/Linux)”</em>; upstream <code>tests/README.md</code>: <em>“The tests
+are performed on GNU/Linux, macOS and Windows”</em>; xpm actions page:
+<em>“many Unix shell commands do not have direct equivalents on
+Windows”</em> → use portable tools</td>
 </tr>
 <tr>
 <td>P9</td>
-<td><strong>Board support is layered: architecture, device, board.</strong></td>
-<td>µOS++ “modular projects”: <em>“not monolithic, but modular, with three explicit layers”</em>: board, device, architecture. Upstream IIIe: the port (<code>-cortexm</code>) is architecture only; chip files are in the test platform’s <code>device/</code> folder or in third-party xPacks (<code>arm-cmsis</code>, <code>raspberrypi-pico-sdk-xpack</code>)</td>
+<td><strong>Board support is layered: architecture, device,
+board.</strong></td>
+<td>µOS++ “modular projects”: <em>“not monolithic, but modular, with
+three explicit layers”</em>: board, device, architecture. Upstream IIIe:
+the port (<code>-cortexm</code>) is architecture only; chip files are in
+the test platform’s <code>device/</code> folder or in third-party xPacks
+(<code>arm-cmsis</code>, <code>raspberrypi-pico-sdk-xpack</code>)</td>
 </tr>
 </tbody>
-</table></div>
-<p>Note on IIIe vs IVe: the µOS++ v7.0.0 post says v7.0.0 <em>“will hopefully be the final release of µOS++ in the current monolithic structure (IIIe)”</em>; IVe moves to <em>“a modular structure, based on xPacks”</em>. So in IIIe the kernel is one package, but the ports, the tools and third-party code are already separate xPacks, and P1–P9 apply to them.</p>
-<h3 id="upstream-as-it-is-today-reviewed-2026-11-17">1.1 Upstream as it is today (reviewed 2026-11-17)</h3>
-<p>Checked directly against GitHub <code>micro-os-plus/&lt;repo&gt;</code>, branch <code>xpack-development</code>, fetched into the repositories here without adding a remote: kernel <code>43ef532f</code> (2026-10-08), <code>-cortexm</code> <code>687e975</code>, <code>-posix-arch</code> <code>49282e6</code>.</p>
+</table>
+<p>Note on IIIe vs IVe: the µOS++ v7.0.0 post says v7.0.0 <em>“will
+hopefully be the final release of µOS++ in the current monolithic
+structure (IIIe)”</em>; IVe moves to <em>“a modular structure, based on
+xPacks”</em>. So in IIIe the kernel is one package, but the ports, the
+tools and third-party code are already separate xPacks, and P1–P9 apply
+to them.</p>
+<h3 id="upstream-as-it-is-today-reviewed-2026-11-17">1.1 Upstream as it
+is today (reviewed 2026-11-17)</h3>
+<p>Checked directly against GitHub
+<code>micro-os-plus/&lt;repo&gt;</code>, branch
+<code>xpack-development</code>, fetched into the repositories here
+without adding a remote: kernel <code>43ef532f</code> (2026-10-08),
+<code>-cortexm</code> <code>687e975</code>, <code>-posix-arch</code>
+<code>49282e6</code>.</p>
 <ul>
-<li><strong>Since the copy this plan was first built on</strong> (<code>7f1ce5ca</code>), upstream took about 30 kernel commits, mostly single-core fixes that came out of the SMP work (rtos, estd, posix-io, semihosting, ARMv8-M exception handlers). In the <strong>build and test system</strong> only three QEMU device files changed (two MPS2 linker-script comments, the FPU enable in <code>system-cortexm.c</code>). Everything below still holds.</li>
-<li><strong><code>tests/package.json</code></strong> (<code>minimumXpmRequired</code> 0.20.8):
+<li><strong>Since the copy this plan was first built on</strong>
+(<code>7f1ce5ca</code>), upstream took about 30 kernel commits, mostly
+single-core fixes that came out of the SMP work (rtos, estd, posix-io,
+semihosting, ARMv8-M exception handlers). In the <strong>build and test
+system</strong> only three QEMU device files changed (two MPS2
+linker-script comments, the FPU enable in
+<code>system-cortexm.c</code>). Everything below still holds.</li>
+<li><strong><code>tests/package.json</code></strong>
+(<code>minimumXpmRequired</code> 0.20.8):
 <ul>
-<li>project-level <code>properties</code> build every command from Liquid pieces: <code>buildFolderRelativePath</code> (<code>build/&lt;config&gt;</code>), <code>commandCMakeReconfigure</code> (<code>cmake -S . -B … -G Ninja -D CMAKE_BUILD_TYPE -D PLATFORM_NAME</code>), <code>commandCMakePrepareWithToolchain</code> (adds <code>-D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/&lt;file&gt;</code>), <code>commandCMakeBuild</code>, <code>commandCMakePerformTests</code> (<code>cd &lt;build&gt; &amp;&amp; ctest -V</code>);</li>
-<li>project-level <code>devDependencies</code>: <code>cmake</code> 3.26.5, <code>ninja-build</code> 1.11.1, <code>build-helper</code> ^2.17.0, <code>arm-cmsis-rtos-validator</code>, <code>chan-fatfs</code> (the last three <code>"local": "link"</code>);</li>
-<li><strong>hidden blocks</strong> that real configurations inherit: <code>cmake-actions</code> (prepare / build / test / clean), <code>native-actions</code> and <code>cortexm-actions</code> (<code>install</code> = <code>xpm install --config</code>, <code>link-deps</code> = <code>xpm link &lt;port&gt; --config</code>), <code>native-dependencies</code>, <code>cortexm-dependencies</code>, <code>arm-cmsis-dependencies</code>, one block per tool version (<code>gcc11</code>–<code>gcc14</code>, <code>clang13</code>–<code>clang19</code>, <code>arm-none-eabi-gcc</code> 14.2.1, <code>qemu-arm</code> 8.2.6, <code>openocd</code> 0.12.0), <code>short-win-paths-properties</code> (short build folder names on Windows);</li>
-<li><strong>a real configuration</strong> only inherits blocks and sets <code>buildType</code>, <code>platformName</code>, <code>toolchainFileName</code>, <code>shortConfigurationName</code>, e.g. <code>qemu-cortex-m7f-cmake-gcc-debug</code>; the <code>-release</code> one inherits the debug one and changes <code>buildType</code> (<code>MinSizeRel</code> on Cortex-M);</li>
-<li><strong>actions</strong>: <code>test-&lt;platform&gt;-cmake</code> = prepare, build, test for debug and release; aggregates <code>test-native-cmake</code>, <code>test-cortex-cmake</code>, <code>test-all</code>; <code>install-ci</code> / <code>test-ci</code> choose by host with <code>{% if os.platform == … %}</code>; <code>deep-clean</code> uses <code>del-cli</code> (portable).</li>
+<li>project-level <code>properties</code> build every command from
+Liquid pieces: <code>buildFolderRelativePath</code>
+(<code>build/&lt;config&gt;</code>),
+<code>commandCMakeReconfigure</code>
+(<code>cmake -S . -B … -G Ninja -D CMAKE_BUILD_TYPE -D PLATFORM_NAME</code>),
+<code>commandCMakePrepareWithToolchain</code> (adds
+<code>-D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/&lt;file&gt;</code>),
+<code>commandCMakeBuild</code>, <code>commandCMakePerformTests</code>
+(<code>cd &lt;build&gt; &amp;&amp; ctest -V</code>);</li>
+<li>project-level <code>devDependencies</code>: <code>cmake</code>
+3.26.5, <code>ninja-build</code> 1.11.1, <code>build-helper</code>
+^2.17.0, <code>arm-cmsis-rtos-validator</code>, <code>chan-fatfs</code>
+(the last three <code>"local": "link"</code>);</li>
+<li><strong>hidden blocks</strong> that real configurations inherit:
+<code>cmake-actions</code> (prepare / build / test / clean),
+<code>native-actions</code> and <code>cortexm-actions</code>
+(<code>install</code> = <code>xpm install --config</code>,
+<code>link-deps</code> = <code>xpm link &lt;port&gt; --config</code>),
+<code>native-dependencies</code>, <code>cortexm-dependencies</code>,
+<code>arm-cmsis-dependencies</code>, one block per tool version
+(<code>gcc11</code>–<code>gcc14</code>,
+<code>clang13</code>–<code>clang19</code>,
+<code>arm-none-eabi-gcc</code> 14.2.1, <code>qemu-arm</code> 8.2.6,
+<code>openocd</code> 0.12.0), <code>short-win-paths-properties</code>
+(short build folder names on Windows);</li>
+<li><strong>a real configuration</strong> only inherits blocks and sets
+<code>buildType</code>, <code>platformName</code>,
+<code>toolchainFileName</code>, <code>shortConfigurationName</code>,
+e.g. <code>qemu-cortex-m7f-cmake-gcc-debug</code>; the
+<code>-release</code> one inherits the debug one and changes
+<code>buildType</code> (<code>MinSizeRel</code> on Cortex-M);</li>
+<li><strong>actions</strong>: <code>test-&lt;platform&gt;-cmake</code> =
+prepare, build, test for debug and release; aggregates
+<code>test-native-cmake</code>, <code>test-cortex-cmake</code>,
+<code>test-all</code>; <code>install-ci</code> / <code>test-ci</code>
+choose by host with <code>{% if os.platform == … %}</code>;
+<code>deep-clean</code> uses <code>del-cli</code> (portable).</li>
 </ul></li>
-<li><strong>CMake chain</strong>: <code>tests/CMakeLists.txt</code> (C11, C++20, <code>enable_testing</code>, no in-source builds, loads <code>build-helper</code>) → <code>cmake/global-definitions.cmake</code> (<code>ENABLE_RTOS_APIS_TEST</code>, <code>ENABLE_MUTEX_STRESS_TEST</code>, <code>ENABLE_CMSIS_OS_VALIDATOR_TEST</code>) → <code>cmake/tests-main.cmake</code>:
+<li><strong>CMake chain</strong>: <code>tests/CMakeLists.txt</code>
+(C11, C++20, <code>enable_testing</code>, no in-source builds, loads
+<code>build-helper</code>) → <code>cmake/global-definitions.cmake</code>
+(<code>ENABLE_RTOS_APIS_TEST</code>,
+<code>ENABLE_MUTEX_STRESS_TEST</code>,
+<code>ENABLE_CMSIS_OS_VALIDATOR_TEST</code>) →
+<code>cmake/tests-main.cmake</code>:
 <ol type="1">
-<li><code>common-options.cmake</code>, then the platform’s <code>definitions.cmake</code> and <code>dependencies-folders.cmake</code>;</li>
-<li><strong><code>xpack_add_dependencies_subdirectories(…)</code> first</strong>: the suites (<code>sources/&lt;suite&gt;</code>), the port and chip packages from <code>build/&lt;config&gt;/xpacks/…</code>, the device folder, and the project-level <code>xpacks/…</code> (validator, FatFs);</li>
-<li><strong>then</strong> <code>add_subdirectory(".." "top-bin")</code>, the kernel;</li>
-<li>then <code>add_subdirectory("platforms/${PLATFORM_NAME}" "platform-bin")</code>. All targets are INTERFACE libraries, so the port can be added before the kernel: links by name are resolved when CMake generates.</li>
+<li><code>common-options.cmake</code>, then the platform’s
+<code>definitions.cmake</code> and
+<code>dependencies-folders.cmake</code>;</li>
+<li><strong><code>xpack_add_dependencies_subdirectories(…)</code>
+first</strong>: the suites (<code>sources/&lt;suite&gt;</code>), the
+port and chip packages from <code>build/&lt;config&gt;/xpacks/…</code>,
+the device folder, and the project-level <code>xpacks/…</code>
+(validator, FatFs);</li>
+<li><strong>then</strong> <code>add_subdirectory(".." "top-bin")</code>,
+the kernel;</li>
+<li>then
+<code>add_subdirectory("platforms/${PLATFORM_NAME}" "platform-bin")</code>.
+All targets are INTERFACE libraries, so the port can be added before the
+kernel: links by name are resolved when CMake generates.</li>
 </ol></li>
-<li><strong>A platform</strong>: <code>definitions.cmake</code> (platform and device compile definitions, linker script name); <code>dependencies-folders.cmake</code>; <code>platform-library.cmake</code> (<code>micro-os-plus::platform</code>: <code>-mcpu</code>, float ABI, <code>-Werror</code>, links <code>micro-os-plus::iii-&lt;port&gt;</code> + <code>micro-os-plus::device</code>); <code>CMakeLists.txt</code> (adds <code>device/</code> if the platform has one, then one <code>add_test_executable</code> + <code>add_test</code> per enabled suite, the <code>add_test</code> calling <code>qemu-system-arm …</code>, <code>openocd … program … reset</code>, or the program).</li>
-<li><strong>Device</strong>: <code>micro-os-plus::device</code> comes from <code>tests/device-qemu-cortexm/</code> for the QEMU machines, from the platform’s own <code>device/</code> for NUCLEO and Pico, plus chip xPacks (<code>arm-cmsis</code>, <code>raspberrypi-pico-sdk</code>, SEGGER). The NUCLEO <code>CMakeLists.txt</code> has <em>“TODO: update to separate device-stm32f4-extras, when ready”</em>: upstream itself plans separate device packages (D3).</li>
-<li><strong>Ports</strong>: <code>CMakeLists.txt</code> is a plain INTERFACE library (<code>micro-os-plus::iii-cortexm</code>, <code>::iii-posix-arch</code>) with <code>include/</code> and <code>src/rtos/os-core.cpp</code>; <code>package.json</code> has no dependencies; <code>test/</code> holds only <code>.gitkeep</code>.</li>
-<li><strong>CI</strong>: three GitHub workflows run <code>npm --prefix tests ci</code>, then <code>xpm run install-ci|install-all -C tests</code> and <code>xpm run test-ci|test-all -C tests</code>, with xpm 0.20.8, on Ubuntu x64 and arm64, macOS Intel and Apple Silicon, and Windows.</li>
-<li><strong>An upstream inconsistency to fix in step 2</strong>: <code>native-dependencies</code> declares <code>@micro-os-plus/posix-arch</code>, but the package’s own name, the <code>native-actions</code> <code>link-deps</code> and the native <code>dependencies-folders.cmake</code> all use <code>@micro-os-plus/micro-os-plus-iii-posix-arch</code>.</li>
+<li><strong>A platform</strong>: <code>definitions.cmake</code>
+(platform and device compile definitions, linker script name);
+<code>dependencies-folders.cmake</code>;
+<code>platform-library.cmake</code>
+(<code>micro-os-plus::platform</code>: <code>-mcpu</code>, float ABI,
+<code>-Werror</code>, links <code>micro-os-plus::iii-&lt;port&gt;</code>
++ <code>micro-os-plus::device</code>); <code>CMakeLists.txt</code> (adds
+<code>device/</code> if the platform has one, then one
+<code>add_test_executable</code> + <code>add_test</code> per enabled
+suite, the <code>add_test</code> calling <code>qemu-system-arm …</code>,
+<code>openocd … program … reset</code>, or the program).</li>
+<li><strong>Device</strong>: <code>micro-os-plus::device</code> comes
+from <code>tests/device-qemu-cortexm/</code> for the QEMU machines, from
+the platform’s own <code>device/</code> for NUCLEO and Pico, plus chip
+xPacks (<code>arm-cmsis</code>, <code>raspberrypi-pico-sdk</code>,
+SEGGER). The NUCLEO <code>CMakeLists.txt</code> has <em>“TODO: update to
+separate device-stm32f4-extras, when ready”</em>: upstream itself plans
+separate device packages (D3).</li>
+<li><strong>Ports</strong>: <code>CMakeLists.txt</code> is a plain
+INTERFACE library (<code>micro-os-plus::iii-cortexm</code>,
+<code>::iii-posix-arch</code>) with <code>include/</code> and
+<code>src/rtos/os-core.cpp</code>; <code>package.json</code> has no
+dependencies; <code>test/</code> holds only <code>.gitkeep</code>.</li>
+<li><strong>CI</strong>: three GitHub workflows run
+<code>npm --prefix tests ci</code>, then
+<code>xpm run install-ci|install-all -C tests</code> and
+<code>xpm run test-ci|test-all -C tests</code>, with xpm 0.20.8, on
+Ubuntu x64 and arm64, macOS Intel and Apple Silicon, and Windows.</li>
+<li><strong>An upstream inconsistency to fix in step 2</strong>:
+<code>native-dependencies</code> declares
+<code>@micro-os-plus/posix-arch</code>, but the package’s own name, the
+<code>native-actions</code> <code>link-deps</code> and the native
+<code>dependencies-folders.cmake</code> all use
+<code>@micro-os-plus/micro-os-plus-iii-posix-arch</code>.</li>
 </ul>
-<h2 id="what-is-the-same-and-what-differs">2. What is the same, and what differs</h2>
-<p><strong>The same.</strong> The outer mechanism: xpm configurations in <code>tests/package.json</code> (P4), tools from the shared store (P3), CMake + Ninja to build, CTest to test, and the same commands (<code>xpm run install --config &lt;C&gt;</code>, <code>xpm run test-&lt;platform&gt;-cmake</code>). The harness folder <code>micro-os-plus-iii/tests/</code> has every upstream file, and all 24 platforms have the same five upstream platform files.</p>
+<h2 id="what-is-the-same-and-what-differs">2. What is the same, and what
+differs</h2>
+<p><strong>The same.</strong> The outer mechanism: xpm configurations in
+<code>tests/package.json</code> (P4), tools from the shared store (P3),
+CMake + Ninja to build, CTest to test, and the same commands
+(<code>xpm run install --config &lt;C&gt;</code>,
+<code>xpm run test-&lt;platform&gt;-cmake</code>). The harness folder
+<code>micro-os-plus-iii/tests/</code> has every upstream file, and all
+24 platforms have the same five upstream platform files.</p>
 <p><strong>What differs</strong>, in short:</p>
-<div class="tw"><table>
+<table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -201,22 +375,29 @@ hr { border:none; border-top:1px solid var(--line); margin:32px 0; }
 <tr>
 <td>Chip and driver code</td>
 <td>platform <code>device/</code> or separate xPacks</td>
-<td>inside the ports (<code>soc/</code>, <code>drivers/</code>); the <code>devices</code> repository was dissolved</td>
+<td>inside the ports (<code>soc/</code>, <code>drivers/</code>); the
+<code>devices</code> repository was dissolved</td>
 </tr>
 <tr>
 <td>Board facts</td>
 <td>the platform folder</td>
-<td>the port’s <code>test/boards/&lt;b&gt;/board.cmake</code> <strong>and</strong> the platform folder; the port library itself reads <code>board.cmake</code></td>
+<td>the port’s <code>test/boards/&lt;b&gt;/board.cmake</code>
+<strong>and</strong> the platform folder; the port library itself reads
+<code>board.cmake</code></td>
 </tr>
 <tr>
 <td>Tests</td>
 <td>portable suites in the kernel’s <code>tests/</code></td>
-<td>the same, <strong>plus</strong> board tests in <code>&lt;port&gt;/test/&lt;board&gt;/&lt;app&gt;/</code>, registered into the kernel’s harness</td>
+<td>the same, <strong>plus</strong> board tests in
+<code>&lt;port&gt;/test/&lt;board&gt;/&lt;app&gt;/</code>, registered
+into the kernel’s harness</td>
 </tr>
 <tr>
 <td>Running a test</td>
-<td>CTest runs <code>qemu</code> / <code>openocd</code> / the program</td>
-<td>the same for upstream suites and Cortex-M QEMU; bash scripts for AArch QEMU, native board tests and hardware</td>
+<td>CTest runs <code>qemu</code> / <code>openocd</code> / the
+program</td>
+<td>the same for upstream suites and Cortex-M QEMU; bash scripts for
+AArch QEMU, native board tests and hardware</td>
 </tr>
 <tr>
 <td>Verdict</td>
@@ -224,11 +405,15 @@ hr { border:none; border-top:1px solid var(--line); margin:32px 0; }
 <td><code>RESULT:</code> line, plus exit code</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <h3 id="where-bash-is-used">2.1 Where bash is used</h3>
-<p>Building uses <strong>no bash</strong>: the build steps run only the compiler, <code>objcopy</code> and <code>cmake -E</code>. The one script in a build is upstream’s own <code>build-helper/dev-scripts/get-libraries-paths.sh</code> (native platform).</p>
+<p>Building uses <strong>no bash</strong>: the build steps run only the
+compiler, <code>objcopy</code> and <code>cmake -E</code>. The one script
+in a build is upstream’s own
+<code>build-helper/dev-scripts/get-libraries-paths.sh</code> (native
+platform).</p>
 <p>Running uses bash for the test kinds upstream does not have:</p>
-<div class="tw"><table>
+<table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -243,7 +428,8 @@ hr { border:none; border-top:1px solid var(--line); margin:32px 0; }
 </thead>
 <tbody>
 <tr>
-<td>Upstream suites on QEMU (<code>qemu-cortex-m*</code>, <code>2xcortex-m33</code>, <code>pico2-1cpu</code>)</td>
+<td>Upstream suites on QEMU (<code>qemu-cortex-m*</code>,
+<code>2xcortex-m33</code>, <code>pico2-1cpu</code>)</td>
 <td><code>qemu-system-arm …</code></td>
 <td>the same</td>
 </tr>
@@ -270,41 +456,120 @@ hr { border:none; border-top:1px solid var(--line); margin:32px 0; }
 <tr>
 <td>Hardware tests</td>
 <td><code>openocd -c "program …" -c reset</code></td>
-<td><code>bash &lt;board&gt;/hw.sh</code> → <code>bash run-hw.sh</code></td>
+<td><code>bash &lt;board&gt;/hw.sh</code> →
+<code>bash run-hw.sh</code></td>
 </tr>
 </tbody>
-</table></div>
-<h2 id="each-difference-the-reason-given-at-the-time-and-the-verdict">3. Each difference, the reason given at the time, and the verdict</h2>
-<p>The reasons are the ones written down when the change was made (commit messages, <code>xpack-dev-smp.md</code>, script headers). The verdict compares them with §1.</p>
-<h3 id="sibling-folders-instead-of-xpm-link-against-p1-p2">3.1 Sibling folders instead of <code>xpm link</code> — <span class="chip bad">against P1, P2</span></h3>
-<p><em>Reason given:</em> the kernel and the ports change together, so a released port never matches the kernel under development; and several copies of the same repositories existed on the machine, while the <code>.link</code> registry holds one path per package.</p>
-<p><em>Verdict:</em> the first reason is exactly the case <code>xpm link</code> exists for: developing several packages at once from writable working copies (P2). The second is not an xPack scenario. The xpm docs show one development copy per package and do not discuss several (not covered). Several copies of the same package is a situation this project created, not a limit of xPack. The reason does not hold.</p>
-<h3 id="the-port-adds-the-kernel-against-p5">3.2 The port adds the kernel — <span class="chip bad">against P5</span></h3>
-<p><em>Reason given (commit K44):</em> “the harness added the kernel one level up and each port as an xpack dependency, so a port could not bring its own kernel, devices or board.”</p>
-<p><em>Verdict:</em> P5 is the documented pattern: the tests add the library, the other packages are dependencies. A port that brings the kernel turns the dependency upside down. The ports only add the kernel <code>if (NOT TARGET …)</code> already, so going back is small (§8). Does not hold.</p>
-<h3 id="chip-and-driver-code-moved-into-the-ports-devices-dissolved-against-p9">3.3 Chip and driver code moved into the ports; <code>devices</code> dissolved — <span class="chip bad">against P9</span></h3>
-<p><em>Reason given (<code>xpack-dev-smp.md</code> §3.1):</em> register definitions for one chip were split between two repositories, and a change needed matching commits in both.</p>
-<p><em>Verdict:</em> P9 asks for separate architecture, device and board layers. The fix for “one chip split over two repositories” is one package <strong>per chip family</strong>, not folding all chips into the architecture port. The two-repository commit is what <code>xpm link</code> handles (P2). Does not hold.</p>
-<h3 id="board-facts-in-the-port-board.cmake-against-p9">3.4 Board facts in the port (<code>board.cmake</code>) — <span class="chip bad">against P9</span></h3>
-<p>The port library reads <code>test/boards/${BOARD}/board.cmake</code> to know its SoC and CPU count, and the platform folder reads it again. Example, the Pi 4 B: SoC, <code>-mcpu</code>, CPU count, linker script, LED pin and SD address are in <code>micro-os-plus-iii-aarch64/test/boards/rpi4b/board.cmake</code>; <code>BOARD=rpi4b</code> is in the platform’s <code>definitions.cmake</code>; <code>platform-library.cmake</code> uses the CPU count and linker script from the port, and sets some defines the port’s test builder sets again. A board is described in three files in two repositories, and the architecture package knows boards. Does not hold.</p>
-<h3 id="board-tests-in-the-ports-registered-into-the-kernels-harness-against-p6-p7">3.5 Board tests in the ports, registered into the kernel’s harness — <span class="chip bad">against P6, P7</span></h3>
-<p><em>Reason given:</em> SMP bugs depend on the chip (secondary core start-up, inter-core interrupts, caches with DMA, PSRAM…), and a test belongs next to the code it tests.</p>
-<p><em>Verdict:</em> the <strong>need</strong> is real: SMP must be tested on real chips. The <strong>place</strong> is wrong. The kernel’s <code>tests/</code> must run the same sources on all platforms (P7), and chip-specific programs break that. Under P6, a test of the architecture port belongs in the port’s own <code>tests/</code> project, a driver test in the device package’s <code>tests/</code>. The kernel’s harness should not register them.</p>
-<h3 id="tests-found-by-folder-instead-of-listed-by-hand-compatible">3.6 Tests found by folder instead of listed by hand — <span class="chip ok">compatible</span></h3>
-<p>The xpm guide says of the tests folder: <em>“The name of the folder and the hierarchy below it are all at author’s discretion.”</em> How CMake registers tests is a CMake detail. With more than 200 programs, a folder scan is reasonable. It stays, but inside each package’s own <code>tests/</code> (§10).</p>
-<h3 id="one-source-built-for-qemu-hardware-and-host-compatible">3.7 One source built for QEMU, hardware and host — <span class="chip ok">compatible</span></h3>
+</table>
+<h2 id="each-difference-the-reason-given-at-the-time-and-the-verdict">3.
+Each difference, the reason given at the time, and the verdict</h2>
+<p>The reasons are the ones written down when the change was made
+(commit messages, <code>xpack-dev-smp.md</code>, script headers). The
+verdict compares them with §1.</p>
+<h3 id="sibling-folders-instead-of-xpm-link-against-p1-p2">3.1 Sibling
+folders instead of <code>xpm link</code> — <strong>against P1,
+P2</strong></h3>
+<p><em>Reason given:</em> the kernel and the ports change together, so a
+released port never matches the kernel under development; and several
+copies of the same repositories existed on the machine, while the
+<code>.link</code> registry holds one path per package.</p>
+<p><em>Verdict:</em> the first reason is exactly the case
+<code>xpm link</code> exists for: developing several packages at once
+from writable working copies (P2). The second is not an xPack scenario.
+The xpm docs show one development copy per package and do not discuss
+several (not covered). Several copies of the same package is a situation
+this project created, not a limit of xPack. The reason does not
+hold.</p>
+<h3 id="the-port-adds-the-kernel-against-p5">3.2 The port adds the
+kernel — <strong>against P5</strong></h3>
+<p><em>Reason given (commit K44):</em> “the harness added the kernel one
+level up and each port as an xpack dependency, so a port could not bring
+its own kernel, devices or board.”</p>
+<p><em>Verdict:</em> P5 is the documented pattern: the tests add the
+library, the other packages are dependencies. A port that brings the
+kernel turns the dependency upside down. The ports only add the kernel
+<code>if (NOT TARGET …)</code> already, so going back is small (§8).
+Does not hold.</p>
+<h3
+id="chip-and-driver-code-moved-into-the-ports-devices-dissolved-against-p9">3.3
+Chip and driver code moved into the ports; <code>devices</code>
+dissolved — <strong>against P9</strong></h3>
+<p><em>Reason given (<code>xpack-dev-smp.md</code> §3.1):</em> register
+definitions for one chip were split between two repositories, and a
+change needed matching commits in both.</p>
+<p><em>Verdict:</em> P9 asks for separate architecture, device and board
+layers. The fix for “one chip split over two repositories” is one
+package <strong>per chip family</strong>, not folding all chips into the
+architecture port. The two-repository commit is what
+<code>xpm link</code> handles (P2). Does not hold.</p>
+<h3 id="board-facts-in-the-port-board.cmake-against-p9">3.4 Board facts
+in the port (<code>board.cmake</code>) — <strong>against
+P9</strong></h3>
+<p>The port library reads <code>test/boards/${BOARD}/board.cmake</code>
+to know its SoC and CPU count, and the platform folder reads it again.
+Example, the Pi 4 B: SoC, <code>-mcpu</code>, CPU count, linker script,
+LED pin and SD address are in
+<code>micro-os-plus-iii-aarch64/test/boards/rpi4b/board.cmake</code>;
+<code>BOARD=rpi4b</code> is in the platform’s
+<code>definitions.cmake</code>; <code>platform-library.cmake</code> uses
+the CPU count and linker script from the port, and sets some defines the
+port’s test builder sets again. A board is described in three files in
+two repositories, and the architecture package knows boards. Does not
+hold.</p>
+<h3
+id="board-tests-in-the-ports-registered-into-the-kernels-harness-against-p6-p7">3.5
+Board tests in the ports, registered into the kernel’s harness —
+<strong>against P6, P7</strong></h3>
+<p><em>Reason given:</em> SMP bugs depend on the chip (secondary core
+start-up, inter-core interrupts, caches with DMA, PSRAM…), and a test
+belongs next to the code it tests.</p>
+<p><em>Verdict:</em> the <strong>need</strong> is real: SMP must be
+tested on real chips. The <strong>place</strong> is wrong. The kernel’s
+<code>tests/</code> must run the same sources on all platforms (P7), and
+chip-specific programs break that. Under P6, a test of the architecture
+port belongs in the port’s own <code>tests/</code> project, a driver
+test in the device package’s <code>tests/</code>. The kernel’s harness
+should not register them.</p>
+<h3 id="tests-found-by-folder-instead-of-listed-by-hand-compatible">3.6
+Tests found by folder instead of listed by hand —
+<strong>compatible</strong></h3>
+<p>The xpm guide says of the tests folder: <em>“The name of the folder
+and the hierarchy below it are all at author’s discretion.”</em> How
+CMake registers tests is a CMake detail. With more than 200 programs, a
+folder scan is reasonable. It stays, but inside each package’s own
+<code>tests/</code> (§10).</p>
+<h3 id="one-source-built-for-qemu-hardware-and-host-compatible">3.7 One
+source built for QEMU, hardware and host —
+<strong>compatible</strong></h3>
 <p>Running the same sources on many platforms is P7 itself.</p>
-<h3 id="bash-runner-scripts-against-p8">3.8 Bash runner scripts — <span class="chip bad">against P8</span></h3>
-<p><em>Reason given:</em> QEMU boot shim, SD card image, timeouts; on hardware: halt all cores, load, start core 0, resume parked cores, separate reset sessions. <code>run-hw.sh</code> replaced 48 nearly identical copies.</p>
-<p><em>Verdict:</em> the multi-core steps are needed, but bash scripts do not run on Windows (P8). xpm allows shell commands in actions if they are portable; these scripts are not. They can be replaced by CTest settings and OpenOCD Tcl (§11).</p>
-<h3 id="the-result-line-compatible">3.9 The <code>RESULT:</code> line — <span class="chip ok">compatible</span></h3>
-<p>An extra, human-readable verdict; CTest can read it itself (<code>PASS_REGULAR_EXPRESSION</code>…). The exit code stays. Note: the comment in <code>hw_result.hpp</code> saying QEMU builds have no <code>SEMIHOST</code> is out of date; the AArch builds define it and QEMU runs with semihosting on.</p>
-<h3 id="hardware-tests-opt-in-hwd-label-compatible">3.10 Hardware tests opt-in (<code>hwd</code> label) — <span class="chip ok">compatible</span></h3>
+<h3 id="bash-runner-scripts-against-p8">3.8 Bash runner scripts —
+<strong>against P8</strong></h3>
+<p><em>Reason given:</em> QEMU boot shim, SD card image, timeouts; on
+hardware: halt all cores, load, start core 0, resume parked cores,
+separate reset sessions. <code>run-hw.sh</code> replaced 48 nearly
+identical copies.</p>
+<p><em>Verdict:</em> the multi-core steps are needed, but bash scripts
+do not run on Windows (P8). xpm allows shell commands in actions if they
+are portable; these scripts are not. They can be replaced by CTest
+settings and OpenOCD Tcl (§11).</p>
+<h3 id="the-result-line-compatible">3.9 The <code>RESULT:</code> line —
+<strong>compatible</strong></h3>
+<p>An extra, human-readable verdict; CTest can read it itself
+(<code>PASS_REGULAR_EXPRESSION</code>…). The exit code stays. Note: the
+comment in <code>hw_result.hpp</code> saying QEMU builds have no
+<code>SEMIHOST</code> is out of date; the AArch builds define it and
+QEMU runs with semihosting on.</p>
+<h3 id="hardware-tests-opt-in-hwd-label-compatible">3.10 Hardware tests
+opt-in (<code>hwd</code> label) — <strong>compatible</strong></h3>
 <p><code>xpm run test-all</code> must work with no board connected.</p>
-<h3 id="upstream-platforms-kept-more-configurations-compatible">3.11 Upstream platforms kept; more configurations — <span class="chip ok">compatible</span></h3>
-<p>The upstream platforms still run the upstream suites (single-core regression), and the new platforms are configurations of the same kind (P4). There are 90 non-hidden configurations (upstream: 44).</p>
+<h3 id="upstream-platforms-kept-more-configurations-compatible">3.11
+Upstream platforms kept; more configurations —
+<strong>compatible</strong></h3>
+<p>The upstream platforms still run the upstream suites (single-core
+regression), and the new platforms are configurations of the same kind
+(P4). There are 90 non-hidden configurations (upstream: 44).</p>
 <h3 id="summary">3.12 Summary</h3>
-<div class="tw"><table>
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -318,37 +583,40 @@ hr { border:none; border-top:1px solid var(--line); margin:32px 0; }
 <tbody>
 <tr>
 <td>Sibling folders instead of <code>xpm link</code></td>
-<td><span class="chip bad">against P1, P2</span></td>
+<td>against P1, P2</td>
 </tr>
 <tr>
 <td>Port adds the kernel</td>
-<td><span class="chip bad">against P5</span></td>
+<td>against P5</td>
 </tr>
 <tr>
-<td>Chip/driver code in the ports (and FatFs copies instead of the <code>chan-fatfs</code> xPack)</td>
-<td><span class="chip bad">against P9, P1</span></td>
+<td>Chip/driver code in the ports (and FatFs copies instead of the
+<code>chan-fatfs</code> xPack)</td>
+<td>against P9, P1</td>
 </tr>
 <tr>
 <td>Board facts in the port</td>
-<td><span class="chip bad">against P9</span></td>
+<td>against P9</td>
 </tr>
 <tr>
 <td>Board tests registered into the kernel harness</td>
-<td><span class="chip bad">against P6, P7</span></td>
+<td>against P6, P7</td>
 </tr>
 <tr>
 <td>Bash runners</td>
-<td><span class="chip bad">against P8</span></td>
+<td>against P8</td>
 </tr>
 <tr>
-<td>Folder scan, QEMU/HW/host variants, <code>RESULT:</code> line, <code>hwd</code> label, more configurations</td>
-<td><span class="chip ok">compatible</span></td>
+<td>Folder scan, QEMU/HW/host variants, <code>RESULT:</code> line,
+<code>hwd</code> label, more configurations</td>
+<td>compatible</td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <hr />
 <h1 id="part-b-how-to-bring-it-back">Part B: How to bring it back</h1>
-<p>Nothing below has been applied. Each step is one or a few commits, and keeps the tests green.</p>
+<p>Nothing below has been applied. Each step is one or a few commits,
+and keeps the tests green.</p>
 <h2 id="the-target-in-one-picture">4. The target, in one picture</h2>
 <pre><code>micro-os-plus-iii                 kernel (IIIe: one package)
   tests/                          portable suites only, same sources on all platforms (P6, P7)
@@ -363,9 +631,13 @@ micro-os-plus-iii-&lt;arch&gt;          architecture port only (P9): context swi
 
 test support package              hw_result.hpp, the folder-scan CMake helper, OpenOCD Tcl
                                   runner; a dependency of every tests/ project</code></pre>
-<p>All of them are xpm dependencies of each other with released versions; working copies are plugged in with <code>xpm link</code> (P1, P2). Tools come from the shared store (P3). Everything runs on Windows, macOS and Linux (P8).</p>
-<h2 id="the-rules-and-where-smp-stands">5. The rules, and where <code>smp</code> stands</h2>
-<div class="tw"><table>
+<p>All of them are xpm dependencies of each other with released
+versions; working copies are plugged in with <code>xpm link</code> (P1,
+P2). Tools come from the shared store (P3). Everything runs on Windows,
+macOS and Linux (P8).</p>
+<h2 id="the-rules-and-where-smp-stands">5. The rules, and where
+<code>smp</code> stands</h2>
+<table>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -436,25 +708,53 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <td>§11</td>
 </tr>
 </tbody>
-</table></div>
-<h2 id="step-1-the-port-is-a-leaf-the-tests-add-the-kernel-r1-r2-r5">6. Step 1: the port is a leaf; the tests add the kernel (R1, R2, R5)</h2>
-<p><code>tests/cmake/tests-main.cmake</code>, exactly in upstream’s order (§1.1): dependencies first, then the kernel, then the platform.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">include</span> (<span class="st">&quot;cmake/common-options.cmake&quot;</span>)</span>
+</table>
+<h2 id="step-1-the-port-is-a-leaf-the-tests-add-the-kernel-r1-r2-r5">6.
+Step 1: the port is a leaf; the tests add the kernel (R1, R2, R5)</h2>
+<p><code>tests/cmake/tests-main.cmake</code>, exactly in upstream’s
+order (§1.1): dependencies first, then the kernel, then the
+platform.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">include</span> (<span class="st">&quot;cmake/common-options.cmake&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">include</span> (<span class="st">&quot;platforms/</span><span class="dv">${PLATFORM_NAME}</span><span class="st">/cmake/definitions.cmake&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">include</span> (<span class="st">&quot;platforms/</span><span class="dv">${PLATFORM_NAME}</span><span class="st">/cmake/dependencies-folders.cmake&quot;</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">xpack_add_dependencies_subdirectories </span>(                 <span class="co"># suites, the port, chip</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;</span><span class="dv">${xpack_dependencies_folders}</span><span class="st">&quot;</span> <span class="st">&quot;xpacks-bin&quot;</span>)         <span class="co"># packages: build/&lt;config&gt;/xpacks/</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">add_subdirectory</span> (<span class="st">&quot;..&quot;</span> <span class="st">&quot;top-bin&quot;</span>)                       <span class="co"># the kernel</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">add_subdirectory</span> (<span class="st">&quot;platforms/</span><span class="dv">${PLATFORM_NAME}</span><span class="st">&quot;</span> <span class="st">&quot;platform-bin&quot;</span>)</span></code></pre></div>
-<p>(<code>xpack_add_dependencies_subdirectories</code> comes from upstream’s <code>@micro-os-plus/build-helper</code>, not from xpm; xpm itself uses plain <code>add_subdirectory</code>.)</p>
-<p>Each port platform’s <code>dependencies-folders.cmake</code> lists the port, as upstream does for <code>micro-os-plus-iii-cortexm</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>&quot;${<span class="fu">CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64&quot;</span></span></code></pre></div>
-<p>Each port’s <code>CMakeLists.txt</code> loses its “find the kernel next to me” block and becomes a plain INTERFACE library like upstream’s <code>-cortexm</code>. It must <strong>not</strong> test whether the kernel target exists (<code>if (NOT TARGET …)</code>), because the port is added before the kernel; it links kernel targets by name, which CMake resolves when it generates. The aarch ports’ current <code>if (NOT TARGET micro-os-plus::iii-core)</code> guards go for the same reason.</p>
-<p><em>Check:</em> <code>prepare</code> + <code>build</code> of all platforms, then <code>xpm run test-all</code>.</p>
-<h2 id="step-2-dependencies-as-xpm-packages-working-copies-via-xpm-link-r3-r4-r5">7. Step 2: dependencies as xpm packages, working copies via <code>xpm link</code> (R3, R4, R5)</h2>
-<p><strong>Versions.</strong> Tag each package with a pre-release version, as <code>README-MAINTAINER.md</code> describes for the kernel (<code>7.1.0-pre.1</code> style). For example <code>micro-os-plus-iii-cortexm</code> <code>v2.0.0-pre.1</code> (a major bump: the CMake shape and the kernel it needs changed), <code>-aarch32</code> / <code>-aarch64</code> <code>v0.1.0-pre.1</code>.</p>
-<p><strong>Declaration</strong>, in <code>tests/package.json</code>, the same shape as upstream’s <code>cortexm-dependencies</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;aarch64-dependencies&quot;</span><span class="er">:</span> <span class="fu">{</span></span>
+<p>(<code>xpack_add_dependencies_subdirectories</code> comes from
+upstream’s <code>@micro-os-plus/build-helper</code>, not from xpm; xpm
+itself uses plain <code>add_subdirectory</code>.)</p>
+<p>Each port platform’s <code>dependencies-folders.cmake</code> lists
+the port, as upstream does for
+<code>micro-os-plus-iii-cortexm</code>:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>&quot;${<span class="fu">CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64&quot;</span></span></code></pre></div>
+<p>Each port’s <code>CMakeLists.txt</code> loses its “find the kernel
+next to me” block and becomes a plain INTERFACE library like upstream’s
+<code>-cortexm</code>. It must <strong>not</strong> test whether the
+kernel target exists (<code>if (NOT TARGET …)</code>), because the port
+is added before the kernel; it links kernel targets by name, which CMake
+resolves when it generates. The aarch ports’ current
+<code>if (NOT TARGET micro-os-plus::iii-core)</code> guards go for the
+same reason.</p>
+<p><em>Check:</em> <code>prepare</code> + <code>build</code> of all
+platforms, then <code>xpm run test-all</code>.</p>
+<h2
+id="step-2-dependencies-as-xpm-packages-working-copies-via-xpm-link-r3-r4-r5">7.
+Step 2: dependencies as xpm packages, working copies via
+<code>xpm link</code> (R3, R4, R5)</h2>
+<p><strong>Versions.</strong> Tag each package with a pre-release
+version, as <code>README-MAINTAINER.md</code> describes for the kernel
+(<code>7.1.0-pre.1</code> style). For example
+<code>micro-os-plus-iii-cortexm</code> <code>v2.0.0-pre.1</code> (a
+major bump: the CMake shape and the kernel it needs changed),
+<code>-aarch32</code> / <code>-aarch64</code>
+<code>v0.1.0-pre.1</code>.</p>
+<p><strong>Declaration</strong>, in <code>tests/package.json</code>, the
+same shape as upstream’s <code>cortexm-dependencies</code>:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;aarch64-dependencies&quot;</span><span class="er">:</span> <span class="fu">{</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;hidden&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;devDependencies&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;@micro-os-plus/micro-os-plus-iii-aarch64&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
@@ -464,14 +764,34 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
-<p>The POSIX port uses glibc’s ucontext by choice, so upstream’s <code>@xpack-3rd-party/libucontext</code> dependency does not come back.</p>
-<p><strong>Working copies, exactly as upstream.</strong> Once per machine, in each working copy: <code>xpm link</code> (step 1). Per configuration, in the tests: <code>xpm link @micro-os-plus/micro-os-plus-iii-aarch64 --config &lt;C&gt;</code> (step 2, upstream’s <code>link-deps</code> action). Upstream’s layout is one clone per package, side by side in one folder, each linked once.</p>
-<p><strong>One working copy per package, all in this workspace (D1).</strong> The store holds one <code>.link</code> per package name. Every <code>.link</code> of these packages points into <code>/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/</code>, and to no other folder.</p>
-<p><strong>Hardware scripts</strong>, while they still exist: reached through <code>build/&lt;config&gt;/xpacks/…</code>, <code>hw.sh</code> cannot find the kernel from its own path; CTest passes <code>UOS_SMP_DIR=${CMAKE_SOURCE_DIR}/..</code> in the test’s <code>ENVIRONMENT</code>. This goes away with §11.</p>
-<p><em>Check:</em> the <code>prepare</code> log shows the port under <code>build/&lt;config&gt;/xpacks/@micro-os-plus/…</code>; the same tests pass.</p>
+<p>The POSIX port uses glibc’s ucontext by choice, so upstream’s
+<code>@xpack-3rd-party/libucontext</code> dependency does not come
+back.</p>
+<p><strong>Working copies, exactly as upstream.</strong> Once per
+machine, in each working copy: <code>xpm link</code> (step 1). Per
+configuration, in the tests:
+<code>xpm link @micro-os-plus/micro-os-plus-iii-aarch64 --config &lt;C&gt;</code>
+(step 2, upstream’s <code>link-deps</code> action). Upstream’s layout is
+one clone per package, side by side in one folder, each linked once.</p>
+<p><strong>One working copy per package, all in this workspace
+(D1).</strong> The store holds one <code>.link</code> per package name.
+Every <code>.link</code> of these packages points into
+<code>/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/</code>, and to
+no other folder.</p>
+<p><strong>Hardware scripts</strong>, while they still exist: reached
+through <code>build/&lt;config&gt;/xpacks/…</code>, <code>hw.sh</code>
+cannot find the kernel from its own path; CTest passes
+<code>UOS_SMP_DIR=${CMAKE_SOURCE_DIR}/..</code> in the test’s
+<code>ENVIRONMENT</code>. This goes away with §11.</p>
+<p><em>Check:</em> the <code>prepare</code> log shows the port under
+<code>build/&lt;config&gt;/xpacks/@micro-os-plus/…</code>; the same
+tests pass.</p>
 <h2 id="step-3-device-packages-r6">8. Step 3: device packages (R6)</h2>
-<p>Move each chip family’s code out of the ports into its own xPack, following P9 and upstream’s use of chip xPacks (<code>arm-cmsis</code>, <code>raspberrypi-pico-sdk-xpack</code>). The names below are examples:</p>
-<div class="tw"><table>
+<p>Move each chip family’s code out of the ports into its own xPack,
+following P9 and upstream’s use of chip xPacks (<code>arm-cmsis</code>,
+<code>raspberrypi-pico-sdk-xpack</code>). The names below are
+examples:</p>
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -484,7 +804,9 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </thead>
 <tbody>
 <tr>
-<td><code>-aarch32/soc/bcm2837</code>, <code>-aarch64/soc/bcm2837</code>, <code>soc/bcm2711</code>, their <code>drivers/</code></td>
+<td><code>-aarch32/soc/bcm2837</code>,
+<code>-aarch64/soc/bcm2837</code>, <code>soc/bcm2711</code>, their
+<code>drivers/</code></td>
 <td><code>micro-os-plus-iii-devices-bcm283x</code></td>
 </tr>
 <tr>
@@ -501,20 +823,38 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </tr>
 <tr>
 <td><code>-posix-arch/soc/native</code>, host file block device</td>
-<td>stays in <code>-posix-arch</code> (it is the host “device”) or a small host package</td>
+<td>stays in <code>-posix-arch</code> (it is the host “device”) or a
+small host package</td>
 </tr>
 <tr>
-<td><code>drivers/fatfs/</code> in <code>-aarch32</code>, <code>-aarch64</code>, <code>-posix-arch</code> (a copy of ChaN FatFs: <code>ff.c</code>, <code>ff.h</code>, <code>ffconf.h</code>, plus a <code>diskio</code> glue)</td>
-<td>the FatFs sources come from upstream’s <code>@xpacks/chan-fatfs</code> dependency (P1); only the <code>diskio</code> glue stays with the device package</td>
+<td><code>drivers/fatfs/</code> in <code>-aarch32</code>,
+<code>-aarch64</code>, <code>-posix-arch</code> (a copy of ChaN FatFs:
+<code>ff.c</code>, <code>ff.h</code>, <code>ffconf.h</code>, plus a
+<code>diskio</code> glue)</td>
+<td>the FatFs sources come from upstream’s
+<code>@xpacks/chan-fatfs</code> dependency (P1); only the
+<code>diskio</code> glue stays with the device package</td>
 </tr>
 </tbody>
-</table></div>
-<p>Each one exports its <code>micro-os-plus::soc-&lt;chip&gt;</code> targets, unchanged, so consumers do not change. Use <code>git subtree split</code> / <code>filter-repo</code> to keep the history, as the dissolution did in the other direction. The ports keep the architecture only.</p>
-<p>The duplicate BCM2837 code in <code>-aarch32</code> and <code>-aarch64</code> (32- and 64-bit builds of the same chip) is a point to settle when moving: one package with both, or the shared parts only.</p>
-<p><em>Check:</em> the compile and link commands (<code>compile_commands.json</code>) of every configuration are identical before and after; the same tests pass.</p>
-<h2 id="step-4-one-place-per-board-r6">9. Step 4: one place per board (R6)</h2>
-<p>Board facts move from <code>&lt;port&gt;/test/boards/&lt;b&gt;/board.cmake</code> into the platform folder, where upstream keeps them:</p>
-<div class="tw"><table>
+</table>
+<p>Each one exports its <code>micro-os-plus::soc-&lt;chip&gt;</code>
+targets, unchanged, so consumers do not change. Use
+<code>git subtree split</code> / <code>filter-repo</code> to keep the
+history, as the dissolution did in the other direction. The ports keep
+the architecture only.</p>
+<p>The duplicate BCM2837 code in <code>-aarch32</code> and
+<code>-aarch64</code> (32- and 64-bit builds of the same chip) is a
+point to settle when moving: one package with both, or the shared parts
+only.</p>
+<p><em>Check:</em> the compile and link commands
+(<code>compile_commands.json</code>) of every configuration are
+identical before and after; the same tests pass.</p>
+<h2 id="step-4-one-place-per-board-r6">9. Step 4: one place per board
+(R6)</h2>
+<p>Board facts move from
+<code>&lt;port&gt;/test/boards/&lt;b&gt;/board.cmake</code> into the
+platform folder, where upstream keeps them:</p>
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -532,22 +872,30 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </tr>
 <tr>
 <td>Linker scripts</td>
-<td><code>tests/platforms/&lt;P&gt;/device/linker-scripts/</code> (as upstream NUCLEO and Pico)</td>
+<td><code>tests/platforms/&lt;P&gt;/device/linker-scripts/</code> (as
+upstream NUCLEO and Pico)</td>
 </tr>
 <tr>
 <td>Which chip</td>
-<td><code>target_link_libraries(… micro-os-plus::soc-&lt;chip&gt;)</code> in <code>platform-library.cmake</code></td>
+<td><code>target_link_libraries(… micro-os-plus::soc-&lt;chip&gt;)</code>
+in <code>platform-library.cmake</code></td>
 </tr>
 <tr>
 <td>OpenOCD configs, reset and run Tcl</td>
 <td><code>tests/platforms/&lt;P&gt;/openocd/</code></td>
 </tr>
 </tbody>
-</table></div>
-<p>The port library stops reading <code>board.cmake</code>, and <code>BOARD</code> disappears from the port. Each package’s <code>tests/</code> (§10) has its own <code>platforms/&lt;P&gt;/</code> for the boards it runs on, in the same shape.</p>
-<p><em>Check, per board:</em> identical <code>compile_commands.json</code> and <code>ctest -N</code> list before and after.</p>
-<h2 id="step-5-each-package-tests-itself-r7-r8">10. Step 5: each package tests itself (R7, R8)</h2>
-<div class="tw"><table>
+</table>
+<p>The port library stops reading <code>board.cmake</code>, and
+<code>BOARD</code> disappears from the port. Each package’s
+<code>tests/</code> (§10) has its own <code>platforms/&lt;P&gt;/</code>
+for the boards it runs on, in the same shape.</p>
+<p><em>Check, per board:</em> identical
+<code>compile_commands.json</code> and <code>ctest -N</code> list before
+and after.</p>
+<h2 id="step-5-each-package-tests-itself-r7-r8">10. Step 5: each package
+tests itself (R7, R8)</h2>
+<table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -562,12 +910,19 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </thead>
 <tbody>
 <tr>
-<td><code>rtos-apis</code>, <code>mutex-stress</code>, <code>cmsis-os-validator</code>, <code>fp-switch</code> (portable, same sources)</td>
+<td><code>rtos-apis</code>, <code>mutex-stress</code>,
+<code>cmsis-os-validator</code>, <code>fp-switch</code> (portable, same
+sources)</td>
 <td>kernel <code>tests/</code></td>
-<td>all platforms: native, QEMU Cortex-M, <code>2xcortex-m33</code>, <code>raspi3b</code> AArch32/64, the boards</td>
+<td>all platforms: native, QEMU Cortex-M, <code>2xcortex-m33</code>,
+<code>raspi3b</code> AArch32/64, the boards</td>
 </tr>
 <tr>
-<td>Architecture SMP tests: secondary start-up, spinlocks, inter-core interrupts, per-core ticks, caches (<code>smp_test0</code>–<code>smp_test4</code>, <code>smp-mat-test</code>, <code>smp-num-test</code>, <code>smp-pipeline-test</code>, <code>smp-pro-cons-test</code>)</td>
+<td>Architecture SMP tests: secondary start-up, spinlocks, inter-core
+interrupts, per-core ticks, caches
+(<code>smp_test0</code>–<code>smp_test4</code>,
+<code>smp-mat-test</code>, <code>smp-num-test</code>,
+<code>smp-pipeline-test</code>, <code>smp-pro-cons-test</code>)</td>
 <td>port <code>tests/</code> (new xpm project)</td>
 <td>QEMU machines and boards of that architecture</td>
 </tr>
@@ -577,13 +932,27 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <td>boards with that chip</td>
 </tr>
 </tbody>
-</table></div>
-<p>Each new <code>tests/</code> project has the upstream shape (<code>package.json</code> with its configurations, <code>CMakeLists.txt</code>, <code>cmake/tests-main.cmake</code>, <code>platforms/&lt;P&gt;/</code>), adds its own package with <code>add_subdirectory(".." "top-bin")</code>, and gets the kernel and the other packages as xpm dependencies, linked with <code>xpm link</code> during development.</p>
-<p>The shared pieces (<code>hw_result.hpp</code>, the folder-scan CMake helper, the OpenOCD Tcl runner) become one small <strong>test support xPack</strong>, <code>micro-os-plus-iii-test-support</code> (D4), a dependency of every <code>tests/</code> project, instead of <code>test_smpl/</code> inside the kernel.</p>
-<p>The kernel’s <code>tests/package.json</code> keeps only configurations for the portable suites; the board-test configurations move with the tests.</p>
-<h2 id="step-6-portable-running-r9">11. Step 6: portable running (R9)</h2>
-<p><strong>QEMU and host tests: CTest runs the tool; <code>run-qemu.sh</code> and <code>run-host.sh</code> go.</strong></p>
-<div class="tw"><table>
+</table>
+<p>Each new <code>tests/</code> project has the upstream shape
+(<code>package.json</code> with its configurations,
+<code>CMakeLists.txt</code>, <code>cmake/tests-main.cmake</code>,
+<code>platforms/&lt;P&gt;/</code>), adds its own package with
+<code>add_subdirectory(".." "top-bin")</code>, and gets the kernel and
+the other packages as xpm dependencies, linked with
+<code>xpm link</code> during development.</p>
+<p>The shared pieces (<code>hw_result.hpp</code>, the folder-scan CMake
+helper, the OpenOCD Tcl runner) become one small <strong>test support
+xPack</strong>, <code>micro-os-plus-iii-test-support</code> (D4), a
+dependency of every <code>tests/</code> project, instead of
+<code>test_smpl/</code> inside the kernel.</p>
+<p>The kernel’s <code>tests/package.json</code> keeps only
+configurations for the portable suites; the board-test configurations
+move with the tests.</p>
+<h2 id="step-6-portable-running-r9">11. Step 6: portable running
+(R9)</h2>
+<p><strong>QEMU and host tests: CTest runs the tool;
+<code>run-qemu.sh</code> and <code>run-host.sh</code> go.</strong></p>
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -605,27 +974,34 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </tr>
 <tr>
 <td>Verdict from <code>RESULT:</code></td>
-<td><code>PASS_REGULAR_EXPRESSION</code>, <code>FAIL_REGULAR_EXPRESSION</code>, <code>SKIP_REGULAR_EXPRESSION</code> (CMake ≥ 3.16; with a pass regex set, CTest ignores the exit code)</td>
+<td><code>PASS_REGULAR_EXPRESSION</code>,
+<code>FAIL_REGULAR_EXPRESSION</code>,
+<code>SKIP_REGULAR_EXPRESSION</code> (CMake ≥ 3.16; with a pass regex
+set, CTest ignores the exit code)</td>
 </tr>
 <tr>
 <td>AArch32 shim</td>
-<td>already plain QEMU arguments: <code>-kernel shim8.img -device loader,file=&lt;image&gt;,addr=&lt;address&gt;</code></td>
+<td>already plain QEMU arguments:
+<code>-kernel shim8.img -device loader,file=&lt;image&gt;,addr=&lt;address&gt;</code></td>
 </tr>
 <tr>
 <td>Exit code</td>
-<td>already there: <code>SEMIHOST</code> builds + <code>-semihosting-config enable=on,target=native</code></td>
+<td>already there: <code>SEMIHOST</code> builds +
+<code>-semihosting-config enable=on,target=native</code></td>
 </tr>
 <tr>
 <td>SD card image</td>
-<td>a CTest fixture (<code>FIXTURES_SETUP</code>) running <code>cmake -E</code> and the existing <code>flatfs_tool.py</code></td>
+<td>a CTest fixture (<code>FIXTURES_SETUP</code>) running
+<code>cmake -E</code> and the existing <code>flatfs_tool.py</code></td>
 </tr>
 <tr>
 <td>A log per test</td>
 <td><code>ctest --output-log</code>, <code>--output-junit</code></td>
 </tr>
 </tbody>
-</table></div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">add_test</span> (<span class="ot">NAME</span> <span class="st">&quot;</span><span class="dv">${PLATFORM_NAME}</span><span class="st">-</span><span class="dv">${</span><span class="va">_app</span><span class="dv">}</span><span class="st">-qemu&quot;</span></span>
+</table>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">add_test</span> (<span class="ot">NAME</span> <span class="st">&quot;</span><span class="dv">${PLATFORM_NAME}</span><span class="st">-</span><span class="dv">${</span><span class="va">_app</span><span class="dv">}</span><span class="st">-qemu&quot;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="ot">COMMAND</span> <span class="st">&quot;</span><span class="dv">${</span><span class="va">_qemu</span><span class="dv">}</span><span class="st">&quot;</span> -M raspi3b -smp 4 -nographic -serial none</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>          -semihosting-config enable=<span class="ot">on</span>,target=native</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>          -kernel <span class="st">&quot;</span><span class="dv">${</span><span class="va">_bin</span><span class="dv">}</span><span class="st">/</span><span class="dv">${</span><span class="va">_app</span><span class="dv">}</span><span class="st">-qemu.bin&quot;</span>)</span>
@@ -634,15 +1010,18 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="ot">PASS_REGULAR_EXPRESSION</span> <span class="st">&quot;RESULT: PASS&quot;</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="ot">FAIL_REGULAR_EXPRESSION</span> <span class="st">&quot;RESULT: FAIL&quot;</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="ot">SKIP_REGULAR_EXPRESSION</span> <span class="st">&quot;RESULT: SKIP&quot;</span>)</span></code></pre></div>
-<p><strong>Hardware tests: CTest runs <code>openocd</code> with a Tcl script; <code>hw.sh</code> and <code>run-hw.sh</code> go.</strong> OpenOCD contains a Tcl interpreter and runs on all three systems:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">add_test</span> (<span class="ot">NAME</span> <span class="st">&quot;</span><span class="dv">${PLATFORM_NAME}</span><span class="st">-</span><span class="dv">${</span><span class="va">_app</span><span class="dv">}</span><span class="st">-hwd&quot;</span></span>
+<p><strong>Hardware tests: CTest runs <code>openocd</code> with a Tcl
+script; <code>hw.sh</code> and <code>run-hw.sh</code> go.</strong>
+OpenOCD contains a Tcl interpreter and runs on all three systems:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode cmake"><code class="sourceCode cmake"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">add_test</span> (<span class="ot">NAME</span> <span class="st">&quot;</span><span class="dv">${PLATFORM_NAME}</span><span class="st">-</span><span class="dv">${</span><span class="va">_app</span><span class="dv">}</span><span class="st">-hwd&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="ot">COMMAND</span> openocd -f <span class="st">&quot;</span><span class="dv">${</span><span class="va">_platform_dir</span><span class="dv">}</span><span class="st">/openocd/board.cfg&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                  -f <span class="st">&quot;</span><span class="dv">${</span><span class="va">_support_dir</span><span class="dv">}</span><span class="st">/run-test.tcl&quot;</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                  -c <span class="st">&quot;uos_run_test </span><span class="dv">${</span><span class="va">_bin</span><span class="dv">}</span><span class="st">/</span><span class="dv">${</span><span class="va">_app</span><span class="dv">}</span><span class="st">-hwd.elf&quot;</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">set_tests_properties</span> (<span class="st">&quot;</span><span class="dv">${PLATFORM_NAME}</span><span class="st">-</span><span class="dv">${</span><span class="va">_app</span><span class="dv">}</span><span class="st">-hwd&quot;</span> <span class="ot">PROPERTIES</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="ot">LABELS</span> <span class="st">&quot;hwd&quot;</span> <span class="ot">TIMEOUT</span> 600 <span class="ot">RUN_SERIAL</span> <span class="ot">TRUE</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="ot">PASS_REGULAR_EXPRESSION</span> <span class="st">&quot;RESULT: PASS&quot;</span> <span class="ot">FAIL_REGULAR_EXPRESSION</span> <span class="st">&quot;RESULT: FAIL&quot;</span>)</span></code></pre></div>
-<div class="tw"><table>
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -664,7 +1043,8 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </tr>
 <tr>
 <td>clear the secondary start slots</td>
-<td><code>mww</code> at the <code>__smp_spin</code> address, passed from CMake</td>
+<td><code>mww</code> at the <code>__smp_spin</code> address, passed from
+CMake</td>
 </tr>
 <tr>
 <td>start core 0, resume parked cores</td>
@@ -680,15 +1060,25 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </tr>
 <tr>
 <td>verdict</td>
-<td>semihosting <code>SYS_EXIT</code> ends OpenOCD; CTest reads <code>RESULT:</code></td>
+<td>semihosting <code>SYS_EXIT</code> ends OpenOCD; CTest reads
+<code>RESULT:</code></td>
 </tr>
 </tbody>
-</table></div>
-<p>The UART is never opened, as today. Boards with a reset line (NUCLEO, WeAct) can use upstream’s plain <code>openocd … program … reset</code>.</p>
-<p><strong>Actions</strong> in every <code>package.json</code> stay shell commands, as xpm intends, but portable ones: <code>cmake -E</code>, <code>del-cli</code>, Liquid <code>{{ path.sep }}</code>, no <code>rm</code>, <code>ln</code>, <code>bash</code>.</p>
-<p><em>Confidence:</em> QEMU part high (every piece already exists). Hardware part medium: each board’s sequence, especially resets that drop the debug link, must be checked on the board, one test at a time; each board keeps its <code>hw.sh</code> until its Tcl version passes.</p>
+</table>
+<p>The UART is never opened, as today. Boards with a reset line (NUCLEO,
+WeAct) can use upstream’s plain
+<code>openocd … program … reset</code>.</p>
+<p><strong>Actions</strong> in every <code>package.json</code> stay
+shell commands, as xpm intends, but portable ones:
+<code>cmake -E</code>, <code>del-cli</code>, Liquid
+<code>{{ path.sep }}</code>, no <code>rm</code>, <code>ln</code>,
+<code>bash</code>.</p>
+<p><em>Confidence:</em> QEMU part high (every piece already exists).
+Hardware part medium: each board’s sequence, especially resets that drop
+the debug link, must be checked on the board, one test at a time; each
+board keeps its <code>hw.sh</code> until its Tcl version passes.</p>
 <h2 id="order-effort-risk">12. Order, effort, risk</h2>
-<div class="tw"><table>
+<table>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -714,7 +1104,8 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <td>2 (§7)</td>
 <td>tags, xpm dependencies, <code>xpm link</code></td>
 <td>medium</td>
-<td>medium: decide which tree is the development copy of each package</td>
+<td>medium: decide which tree is the development copy of each
+package</td>
 </tr>
 <tr>
 <td>3 (§11, QEMU/host)</td>
@@ -726,7 +1117,8 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <td>4 (§9)</td>
 <td>one place per board</td>
 <td>14 boards, small each</td>
-<td>low: identical <code>compile_commands.json</code> and <code>ctest -N</code></td>
+<td>low: identical <code>compile_commands.json</code> and
+<code>ctest -N</code></td>
 </tr>
 <tr>
 <td>5 (§8)</td>
@@ -747,10 +1139,13 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <td>medium: hardware, one test at a time</td>
 </tr>
 </tbody>
-</table></div>
-<p>Steps 1–4 are mechanical and can be checked exactly. Steps 5 and 6 change the package structure; the decisions they need are in §14, and every step has its file list and check in §15. All work is local (D5).</p>
+</table>
+<p>Steps 1–4 are mechanical and can be checked exactly. Steps 5 and 6
+change the package structure; the decisions they need are in §14, and
+every step has its file list and check in §15. All work is local
+(D5).</p>
 <h2 id="the-end-state-file-by-file">13. The end state, file by file</h2>
-<div class="tw"><table>
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -763,15 +1158,18 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </thead>
 <tbody>
 <tr>
-<td>kernel <code>tests/package.json</code>, <code>CMakeLists.txt</code>, <code>cmake/tests-main.cmake</code></td>
+<td>kernel <code>tests/package.json</code>, <code>CMakeLists.txt</code>,
+<code>cmake/tests-main.cmake</code></td>
 <td>same files, same role, portable suites only</td>
 </tr>
 <tr>
-<td><code>tests/platforms/&lt;P&gt;/</code> five files + <code>device/</code></td>
+<td><code>tests/platforms/&lt;P&gt;/</code> five files +
+<code>device/</code></td>
 <td>same, holding all board facts</td>
 </tr>
 <tr>
-<td>port: <code>CMakeLists.txt</code> (leaf), <code>include/</code>, <code>src/</code></td>
+<td>port: <code>CMakeLists.txt</code> (leaf), <code>include/</code>,
+<code>src/</code></td>
 <td>same, architecture only</td>
 </tr>
 <tr>
@@ -779,33 +1177,39 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <td>port <code>tests/</code>, an xpm project of the upstream shape</td>
 </tr>
 <tr>
-<td>chip xPacks (<code>arm-cmsis</code>, <code>raspberrypi-pico-sdk-xpack</code>)</td>
+<td>chip xPacks (<code>arm-cmsis</code>,
+<code>raspberrypi-pico-sdk-xpack</code>)</td>
 <td>device xPacks per chip family, each with <code>tests/</code></td>
 </tr>
 <tr>
-<td><code>devDependencies</code> with <code>"local": "link"</code>, <code>xpm link</code></td>
+<td><code>devDependencies</code> with <code>"local": "link"</code>,
+<code>xpm link</code></td>
 <td>same</td>
 </tr>
 <tr>
-<td>tools in the shared store, <code>build/&lt;config&gt;/xpacks/.bin</code></td>
+<td>tools in the shared store,
+<code>build/&lt;config&gt;/xpacks/.bin</code></td>
 <td>same</td>
 </tr>
 <tr>
-<td>CTest runs <code>qemu</code> / <code>openocd</code> / the program</td>
+<td>CTest runs <code>qemu</code> / <code>openocd</code> / the
+program</td>
 <td>same; OpenOCD with a Tcl script on multi-core boards</td>
 </tr>
 <tr>
 <td>(none)</td>
-<td>test support xPack: <code>hw_result.hpp</code>, folder-scan helper, Tcl runner</td>
+<td>test support xPack: <code>hw_result.hpp</code>, folder-scan helper,
+Tcl runner</td>
 </tr>
 <tr>
 <td>(none)</td>
 <td><code>tests/platforms/&lt;P&gt;/openocd/</code></td>
 </tr>
 </tbody>
-</table></div>
-<h2 id="decisions-agreed-2026-11-16">14. Decisions (agreed 2026-11-16)</h2>
-<div class="tw"><table>
+</table>
+<h2 id="decisions-agreed-2026-11-16">14. Decisions (agreed
+2026-11-16)</h2>
+<table>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -822,68 +1226,248 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <tr>
 <td>D1</td>
 <td>Where are the working copies?</td>
-<td><strong>Only in this workspace</strong>, <code>/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/</code>. Every <code>xpm link</code>, every <code>.link</code> and every path in the build points here and to no other folder. New packages (D3, D4) are created here too.</td>
+<td><strong>Only in this workspace</strong>,
+<code>/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/</code>. Every
+<code>xpm link</code>, every <code>.link</code> and every path in the
+build points here and to no other folder. New packages (D3, D4) are
+created here too.</td>
 </tr>
 <tr>
 <td>D2</td>
 <td>Version tags</td>
-<td>Upstream scheme (<code>README-MAINTAINER.md</code>), pre-release field <code>-pre.N</code>: kernel <code>v7.2.0-pre.1</code> (today <code>7.1.0</code>, tagged); <code>-cortexm</code> <code>v2.0.0-pre.1</code> and <code>-posix-arch</code> <code>v2.0.0-pre.1</code> (major bump: CMake shape and required kernel changed); <code>-aarch32</code> and <code>-aarch64</code> <code>v0.1.0-pre.1</code>. Tags are created <strong>locally</strong> during implementation (D5).</td>
+<td>Upstream scheme (<code>README-MAINTAINER.md</code>), pre-release
+field <code>-pre.N</code>: kernel <code>v7.2.0-pre.1</code> (today
+<code>7.1.0</code>, tagged); <code>-cortexm</code>
+<code>v2.0.0-pre.1</code> and <code>-posix-arch</code>
+<code>v2.0.0-pre.1</code> (major bump: CMake shape and required kernel
+changed); <code>-aarch32</code> and <code>-aarch64</code>
+<code>v0.1.0-pre.1</code>. Tags are created <strong>locally</strong>
+during implementation (D5).</td>
 </tr>
 <tr>
 <td>D3</td>
 <td>Device packages</td>
-<td><strong>One xPack per chip family</strong>: <code>micro-os-plus-iii-devices-bcm283x</code> (BCM2837 and BCM2711, 32- and 64-bit together), <code>-devices-rk3506</code>, <code>-devices-rp2xxx</code> (RP2040, RP2350), <code>-devices-stm32f4</code>. FatFs comes from <code>@xpacks/chan-fatfs</code>, as upstream.</td>
+<td><strong>One xPack per chip family</strong>:
+<code>micro-os-plus-iii-devices-bcm283x</code> (BCM2837 and BCM2711, 32-
+and 64-bit together), <code>-devices-rk3506</code>,
+<code>-devices-rp2xxx</code> (RP2040, RP2350),
+<code>-devices-stm32f4</code>. FatFs comes from
+<code>@xpacks/chan-fatfs</code>, as upstream.</td>
 </tr>
 <tr>
 <td>D5</td>
 <td>Where the work happens</td>
-<td><strong>Everything local</strong>: local branches, commits and tags in this workspace; new packages are new local repositories here. No push, no new GitHub repositories, no tag on any remote, until the user asks.</td>
+<td><strong>Everything local</strong>: local branches, commits and tags
+in this workspace; new packages are new local repositories here. No
+push, no new GitHub repositories, no tag on any remote, until the user
+asks.</td>
 </tr>
 <tr>
 <td>D4</td>
-<td>Shared test code (<code>hw_result.hpp</code>, folder-scan helper, OpenOCD Tcl runner)</td>
-<td><strong>Its own xPack, <code>micro-os-plus-iii-test-support</code>.</strong> Reason, from upstream: shared CMake helpers are their own xPack (<code>@micro-os-plus/build-helper</code>), and the kernel’s <code>.npmignore</code> excludes <code>test*/</code>, so <code>tests/</code> and <code>test_smpl/</code> are never part of a released kernel; other packages’ tests could only reach them through a linked working copy.</td>
+<td>Shared test code (<code>hw_result.hpp</code>, folder-scan helper,
+OpenOCD Tcl runner)</td>
+<td><strong>Its own xPack,
+<code>micro-os-plus-iii-test-support</code>.</strong> Reason, from
+upstream: shared CMake helpers are their own xPack
+(<code>@micro-os-plus/build-helper</code>), and the kernel’s
+<code>.npmignore</code> excludes <code>test*/</code>, so
+<code>tests/</code> and <code>test_smpl/</code> are never part of a
+released kernel; other packages’ tests could only reach them through a
+linked working copy.</td>
 </tr>
 </tbody>
-</table></div>
-<p><strong>State of the xpm register today</strong> (checked 2026-11-16): <code>~/.local/xPacks/@micro-os-plus/&lt;name&gt;/.link</code> exists for all five packages, and none of them points to this workspace. Step 2 re-registers all five here with <code>xpm link</code> (D1).</p>
+</table>
+<p><strong>State of the xpm register:</strong> on 2026-11-16 none of the
+five <code>~/.local/xPacks/@micro-os-plus/&lt;name&gt;/.link</code>
+entries pointed to this workspace; since step 2 (2026-11-17) all five do
+(D1).</p>
+<p><strong>Local backup (2026-11-17, asked by the user):</strong> every
+repository here, and the workspace itself (this document, the baseline,
+the step checks), is pushed to a local bare repository under
+<code>~/Downloads/GIT/micro-os-plu-iii-smp-pr-local/</code>, branch
+<code>align/smp-upstream</code>, remote name <code>local</code>. It is a
+local folder, not a remote service, so D5 still holds.</p>
 <h2 id="implementation-checklist">15. Implementation checklist</h2>
-<p><strong>All work is local (D5).</strong> No <code>git push</code>, no remote tags, no GitHub repositories, until the user asks.</p>
-<p>Each step: one local branch from <code>smp</code>, one or a few commits, each commit with the problem / change / scope message style already used, then the check. Do not start the next step until the check passes. Hardware: one test at a time.</p>
-<h3 id="step-1-the-port-is-a-leaf-the-tests-add-the-kernel-6">Step 1 — the port is a leaf; the tests add the kernel (§6)</h3>
+<p><strong>All work is local (D5).</strong> No <code>git push</code>, no
+remote tags, no GitHub repositories, until the user asks.</p>
+<p>Each step: one local branch from <code>smp</code>, one or a few
+commits, each commit with the problem / change / scope message style
+already used, then the check. Do not start the next step until the check
+passes. Hardware: one test at a time.</p>
+<h3 id="step-1-the-port-is-a-leaf-the-tests-add-the-kernel-6">Step 1 —
+the port is a leaf; the tests add the kernel (§6)</h3>
 <p>Files:</p>
 <ul>
-<li><code>micro-os-plus-iii/tests/cmake/tests-main.cmake</code>: remove the sibling search (<code>_uos_siblings</code>, <code>UOS_*_DIR</code>, the <code>if (PLATFORM_NAME MATCHES …)</code> chain); restore upstream’s order: <code>xpack_add_dependencies_subdirectories(...)</code> first, then <code>add_subdirectory(".." "top-bin")</code>, then the platform (§1.1). During steps 1–2 keep a temporary fallback to the sibling folder when <code>build/&lt;C&gt;/xpacks/@micro-os-plus/&lt;port&gt;</code> does not exist; remove it at the end of step 2.</li>
-<li>Port <code>CMakeLists.txt</code>: remove the kernel search, the <code>add_subdirectory</code> of the kernel and every <code>if (NOT TARGET &lt;kernel target&gt;)</code> guard; no check for the kernel (it is added after the port):
+<li><code>micro-os-plus-iii/tests/cmake/tests-main.cmake</code>: remove
+the sibling search (<code>_uos_siblings</code>, <code>UOS_*_DIR</code>,
+the <code>if (PLATFORM_NAME MATCHES …)</code> chain); restore upstream’s
+order: <code>xpack_add_dependencies_subdirectories(...)</code> first,
+then <code>add_subdirectory(".." "top-bin")</code>, then the platform
+(§1.1). During steps 1–2 keep a temporary fallback to the sibling folder
+when <code>build/&lt;C&gt;/xpacks/@micro-os-plus/&lt;port&gt;</code>
+does not exist; remove it at the end of step 2.</li>
+<li>Port <code>CMakeLists.txt</code>: remove the kernel search, the
+<code>add_subdirectory</code> of the kernel and every
+<code>if (NOT TARGET &lt;kernel target&gt;)</code> guard; no check for
+the kernel (it is added after the port):
 <ul>
-<li><code>micro-os-plus-iii-aarch32/CMakeLists.txt</code> (block from line 14)</li>
-<li><code>micro-os-plus-iii-aarch64/CMakeLists.txt</code> (block from line 14)</li>
-<li><code>micro-os-plus-iii-cortexm/CMakeLists.txt</code> (block from line 53)</li>
-<li><code>micro-os-plus-iii-posix-arch/CMakeLists.txt</code> (block from line 35)</li>
+<li><code>micro-os-plus-iii-aarch32/CMakeLists.txt</code> (block from
+line 14)</li>
+<li><code>micro-os-plus-iii-aarch64/CMakeLists.txt</code> (block from
+line 14)</li>
+<li><code>micro-os-plus-iii-cortexm/CMakeLists.txt</code> (block from
+line 53)</li>
+<li><code>micro-os-plus-iii-posix-arch/CMakeLists.txt</code> (block from
+line 35)</li>
 </ul></li>
-<li><code>dependencies-folders.cmake</code> of the 16 port platforms: add <code>"${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/micro-os-plus-iii-&lt;port&gt;"</code>, as the upstream platforms <code>nucleo-f411re</code>, <code>nucleo-f767zi</code>, <code>nucleo-h743zi</code>, <code>raspberrypi-pico</code> already do: <code>aarch32-luckfox-lyra</code>, <code>aarch32-rpi3b</code>, <code>aarch32-rpi-zero-2w</code>, <code>aarch64-rpi3b</code>, <code>aarch64-rpi4b</code>, <code>aarch64-rpi-zero-2w</code>, <code>cortexm-nucleof411</code>, <code>cortexm-pico</code>, <code>cortexm-pico2</code>, <code>cortexm-pico2-pizero</code>, <code>cortexm-pico2-rp2350b-psram</code>, <code>cortexm-weactf411</code>, <code>cortexm-weactf412</code>, <code>native</code>, <code>2xcortex-m33</code>, <code>pico2-1cpu</code> (and <code>qemu-cortex-m0/m3/m4f/m7f</code>, which use the Cortex-M port).</li>
+<li><code>dependencies-folders.cmake</code> of the 16 port platforms:
+add
+<code>"${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/micro-os-plus-iii-&lt;port&gt;"</code>,
+as the upstream platforms <code>nucleo-f411re</code>,
+<code>nucleo-f767zi</code>, <code>nucleo-h743zi</code>,
+<code>raspberrypi-pico</code> already do:
+<code>aarch32-luckfox-lyra</code>, <code>aarch32-rpi3b</code>,
+<code>aarch32-rpi-zero-2w</code>, <code>aarch64-rpi3b</code>,
+<code>aarch64-rpi4b</code>, <code>aarch64-rpi-zero-2w</code>,
+<code>cortexm-nucleof411</code>, <code>cortexm-pico</code>,
+<code>cortexm-pico2</code>, <code>cortexm-pico2-pizero</code>,
+<code>cortexm-pico2-rp2350b-psram</code>,
+<code>cortexm-weactf411</code>, <code>cortexm-weactf412</code>,
+<code>native</code>, <code>2xcortex-m33</code>, <code>pico2-1cpu</code>
+(and <code>qemu-cortex-m0/m3/m4f/m7f</code>, which use the Cortex-M
+port).</li>
 </ul>
-<p>Check: <code>xpm run prepare</code> + <code>build</code> of every configuration; <code>xpm run test-all</code>; the same pass list as before the step.</p>
-<h3 id="step-2-dependencies-as-xpm-packages-xpm-link-7">Step 2 — dependencies as xpm packages, <code>xpm link</code> (§7)</h3>
+<p>Check: <code>xpm run prepare</code> + <code>build</code> of every
+configuration; <code>xpm run test-all</code>; the same pass list as
+before the step.</p>
+<p><strong>Done 2026-11-17</strong> (branch
+<code>align/step1-leaf-ports</code>; kernel <code>b8e05d0d</code>, ports
+<code>5a61279</code> / <code>93637dd</code> / <code>8eba5a4</code> /
+<code>a86e854</code>). Check in <code>step1-check/</code>: 40/40
+configurations built, the same pass list as the baseline
+(<code>baseline-2026-11-17/</code>) except two existing flaky tests; for
+the Pi 4 B release build all 2648 compile commands and the link are
+identical to <code>smp</code>.</p>
+<h3 id="step-2-dependencies-as-xpm-packages-xpm-link-7">Step 2 —
+dependencies as xpm packages, <code>xpm link</code> (§7)</h3>
 <ol type="1">
-<li>In each of the five repositories here, bump <code>package.json</code> <code>version</code> to the D2 value, commit, tag <strong>locally</strong> (no push, D5). The <code>specifier</code> names the future GitHub tag (<code>github:dan-maio/&lt;name&gt;#v…</code>), which does not exist remotely yet. With <code>"local": "link"</code> and the <code>.link</code> in place, the working copy is used instead; whether <code>xpm install</code> still tries to fetch the specifier is not documented (§16), so check it first. If it does, use a local specifier for the local phase, e.g. <code>file:../../micro-os-plus-iii-aarch64</code>, and switch to <code>github:…</code> when publishing.</li>
-<li><code>tests/package.json</code>: add the ports to <code>aarch32-dependencies</code>, <code>aarch64-dependencies</code>, <code>cortexm-dependencies</code> (already there for <code>@micro-os-plus/micro-os-plus-iii-cortexm</code>, update the <code>specifier</code>), <code>native-dependencies</code>, each <code>"local": "link"</code>. In <code>native-dependencies</code> use the package’s real name, <code>@micro-os-plus/micro-os-plus-iii-posix-arch</code> (upstream declares <code>@micro-os-plus/posix-arch</code> there but links and reads the real name, §1.1). The POSIX port uses glibc ucontext, so <code>@xpack-3rd-party/libucontext</code> is not added (and not linked or listed in the native platform files).</li>
-<li><code>tests/package.json</code> actions: <code>link-deps</code> in upstream’s shape (the hidden <code>*-actions</code> blocks). Upstream’s <code>git-clone-deps</code>, <code>git-status-deps</code> and <code>git-pull-deps</code> clone into <code>${HOME}/Work/…</code>; here they are not used (D1, D5: the clones already exist in this workspace, and nothing is cloned from a remote). <code>link-deps</code> per configuration: <code>xpm link @micro-os-plus/micro-os-plus-iii-&lt;port&gt; --config {{ configuration.name }}</code>. Remove the leftover <code>xpm link</code> in the aarch32/aarch64 <code>install</code> actions (it moves to <code>link-deps</code>).</li>
-<li>Once, by hand, in each of the five repositories here: <code>xpm link</code> (replaces the <code>.link</code> entries listed in §14).</li>
-<li>Each board’s CTest <code>hwd</code> case gets <code>UOS_SMP_DIR=${CMAKE_SOURCE_DIR}/..</code> in <code>ENVIRONMENT</code> (until step 7 removes the scripts).</li>
+<li>In each of the five repositories here, bump
+<code>package.json</code> <code>version</code> to the D2 value, commit,
+tag <strong>locally</strong> (no push, D5). The <code>specifier</code>
+names the future GitHub tag
+(<code>github:dan-maio/&lt;name&gt;#v…</code>), which does not exist
+remotely yet. With <code>"local": "link"</code> and the
+<code>.link</code> in place, the working copy is used instead; whether
+<code>xpm install</code> still tries to fetch the specifier is not
+documented (§16), so check it first. If it does, use a local specifier
+for the local phase,
+e.g. <code>file:../../micro-os-plus-iii-aarch64</code>, and switch to
+<code>github:…</code> when publishing.</li>
+<li><code>tests/package.json</code>: add the ports to
+<code>aarch32-dependencies</code>, <code>aarch64-dependencies</code>,
+<code>cortexm-dependencies</code> (already there for
+<code>@micro-os-plus/micro-os-plus-iii-cortexm</code>, update the
+<code>specifier</code>), <code>native-dependencies</code>, each
+<code>"local": "link"</code>. In <code>native-dependencies</code> use
+the package’s real name,
+<code>@micro-os-plus/micro-os-plus-iii-posix-arch</code> (upstream
+declares <code>@micro-os-plus/posix-arch</code> there but links and
+reads the real name, §1.1). The POSIX port uses glibc ucontext, so
+<code>@xpack-3rd-party/libucontext</code> is not added (and not linked
+or listed in the native platform files).</li>
+<li><code>tests/package.json</code> actions: <code>link-deps</code> in
+upstream’s shape (the hidden <code>*-actions</code> blocks). Upstream’s
+<code>git-clone-deps</code>, <code>git-status-deps</code> and
+<code>git-pull-deps</code> clone into <code>${HOME}/Work/…</code>; here
+they are not used (D1, D5: the clones already exist in this workspace,
+and nothing is cloned from a remote). <code>link-deps</code> per
+configuration:
+<code>xpm link @micro-os-plus/micro-os-plus-iii-&lt;port&gt; --config {{ configuration.name }}</code>.
+Remove the leftover <code>xpm link</code> in the aarch32/aarch64
+<code>install</code> actions (it moves to <code>link-deps</code>).</li>
+<li>Once, by hand, in each of the five repositories here:
+<code>xpm link</code> (replaces the <code>.link</code> entries listed in
+§14).</li>
+<li>Each board’s CTest <code>hwd</code> case gets
+<code>UOS_SMP_DIR=${CMAKE_SOURCE_DIR}/..</code> in
+<code>ENVIRONMENT</code> (until step 7 removes the scripts).</li>
 <li>Remove the sibling fallback from <code>tests-main.cmake</code>.</li>
 </ol>
-<p>Check: <code>rm build/&lt;C&gt;/CMakeCache.txt</code>; <code>xpm run install</code> + <code>link-deps</code> + <code>prepare</code>; the log shows the port under <code>build/&lt;C&gt;/xpacks/@micro-os-plus/</code>; same pass list.</p>
-<h3 id="step-3-qemu-and-host-tests-run-by-ctest-11-first-half">Step 3 — QEMU and host tests run by CTest (§11, first half)</h3>
+<p>Check: <code>rm build/&lt;C&gt;/CMakeCache.txt</code>;
+<code>xpm run install</code> + <code>link-deps</code> +
+<code>prepare</code>; the log shows the port under
+<code>build/&lt;C&gt;/xpacks/@micro-os-plus/</code>; same pass list.</p>
+<p><strong>Done 2026-11-17</strong>, with one change agreed during the
+step: <strong>“link only, declare at publish”.</strong> During the local
+phase the ports are <em>not</em> declared in
+<code>tests/package.json</code> (item 2 is postponed to publishing): a
+declared <code>specifier</code> makes <code>xpm install</code> fetch a
+manifest for it, and the <code>github:dan-maio/…#v…-pre.1</code> tags do
+not exist remotely (D5). The released upstream declarations
+(<code>-cortexm</code> v1.1.0, <code>posix-arch</code> v1.0.1) are
+removed, so nothing downloads a released port any more;
+<code>link-deps</code> alone puts the working copy into
+<code>build/&lt;C&gt;/xpacks/@micro-os-plus/</code>.</p>
 <ul>
-<li>Platforms whose <code>add_test</code> calls a script today: <code>aarch32-rpi3b</code>, <code>aarch32-rpi-zero-2w</code>, <code>aarch32-luckfox-lyra</code>, <code>aarch64-rpi3b</code>, <code>aarch64-rpi4b</code>, <code>aarch64-rpi-zero-2w</code> (<code>run-qemu.sh</code>), <code>native</code> (<code>run-host.sh</code>). Replace with direct <code>add_test</code> + the CTest properties of §11; per-test timeouts from <code>run-qemu.sh</code>’s <code>timeout_for</code> table move into each board’s test list.</li>
-<li>SD tests: a CTest fixture replaces the SD image code in <code>run-qemu.sh</code> and the three <code>sd_test/verify.sh</code> (aarch32: <code>luckfox-lyra</code>, <code>rpi3b</code>, <code>rpi-zero-2w</code>; aarch64: <code>rpi3b</code>, <code>rpi4b</code>, <code>rpi-zero-2w</code>).</li>
-<li>Delete: <code>micro-os-plus-iii/test_smpl/run-qemu.sh</code>, <code>run-host.sh</code>; <code>-aarch32/test/qemu.sh</code>, <code>test/boards/*/qemu.sh</code>; <code>-aarch64/test/qemu.sh</code>, <code>test/boards/*/qemu.sh</code>; <code>-cortexm/test/qemu.sh</code>; <code>-posix-arch/test/run.sh</code>, <code>test/boards/native/run.sh</code>.</li>
+<li>Kernel <code>84661c9f</code>: <code>tests/package.json</code>
+(<code>link-deps</code> links only the port; the aarch
+<code>install</code> is <code>xpm install</code> only),
+<code>tests-main.cmake</code> (no fallback; it stops with “Run: xpm run
+link-deps –config <configuration>” when the port is not linked, and sets
+<code>UOS_&lt;PORT&gt;_DIR</code> to the real folder behind the link
+until step 4).</li>
+<li>Kernel <code>d26b3455</code>: item 5,
+<code>UOS_SMP_DIR=${CMAKE_SOURCE_DIR}/..</code> on the hwd cases of the
+six AArch platforms (the Cortex-M board scripts do not look for the
+kernel).</li>
+<li>Item 1: <code>package.json</code> versions and local tags
+<code>v7.2.0-pre.1</code> (kernel), <code>v2.0.0-pre.1</code>
+(<code>-cortexm</code>, <code>-posix-arch</code>),
+<code>v0.1.0-pre.1</code> (<code>-aarch32</code>,
+<code>-aarch64</code>). Note: in semver <code>0.1.0-pre.1</code> sorts
+<em>before</em> <code>0.1.0</code>.</li>
+<li>Item 4 by hand: <code>xpm link</code> in the five repositories, and
+<code>xpm run link-deps --config &lt;C&gt;</code> for all 40
+configurations.</li>
 </ul>
-<p>Check: <code>ctest -N</code> lists the same tests; the same pass list as with the scripts.</p>
-<h3 id="step-4-one-place-per-board-9">Step 4 — one place per board (§9)</h3>
+<p>Check in <code>step2-check/</code>: 40/40 built, 280 passed, 4
+failed. Each failure was measured against <code>smp</code> built from
+git worktrees (<code>wt-smp/</code>), 12 runs each, with the compile
+commands compared (<code>step2-check/prove/</code>): all identical, and
+the failures happen on <code>smp</code> too: <code>2xcortex-m33</code>
+mutex-stress (an SMP race in the kernel, 1 in 12 on <code>smp</code>)
+and the CMSIS-RTOS validator on the AArch boards. Both are listed as
+flaky in <code>baseline-2026-11-17/BASELINE.md</code>.</p>
+<h3 id="step-3-qemu-and-host-tests-run-by-ctest-11-first-half">Step 3 —
+QEMU and host tests run by CTest (§11, first half)</h3>
+<ul>
+<li>Platforms whose <code>add_test</code> calls a script today:
+<code>aarch32-rpi3b</code>, <code>aarch32-rpi-zero-2w</code>,
+<code>aarch32-luckfox-lyra</code>, <code>aarch64-rpi3b</code>,
+<code>aarch64-rpi4b</code>, <code>aarch64-rpi-zero-2w</code>
+(<code>run-qemu.sh</code>), <code>native</code>
+(<code>run-host.sh</code>). Replace with direct <code>add_test</code> +
+the CTest properties of §11; per-test timeouts from
+<code>run-qemu.sh</code>’s <code>timeout_for</code> table move into each
+board’s test list.</li>
+<li>SD tests: a CTest fixture replaces the SD image code in
+<code>run-qemu.sh</code> and the three <code>sd_test/verify.sh</code>
+(aarch32: <code>luckfox-lyra</code>, <code>rpi3b</code>,
+<code>rpi-zero-2w</code>; aarch64: <code>rpi3b</code>,
+<code>rpi4b</code>, <code>rpi-zero-2w</code>).</li>
+<li>Delete: <code>micro-os-plus-iii/test_smpl/run-qemu.sh</code>,
+<code>run-host.sh</code>; <code>-aarch32/test/qemu.sh</code>,
+<code>test/boards/*/qemu.sh</code>; <code>-aarch64/test/qemu.sh</code>,
+<code>test/boards/*/qemu.sh</code>; <code>-cortexm/test/qemu.sh</code>;
+<code>-posix-arch/test/run.sh</code>,
+<code>test/boards/native/run.sh</code>.</li>
+</ul>
+<p>Check: <code>ctest -N</code> lists the same tests; the same pass list
+as with the scripts.</p>
+<h3 id="step-4-one-place-per-board-9">Step 4 — one place per board
+(§9)</h3>
 <p>The 14 <code>board.cmake</code> files and where each one goes:</p>
-<div class="tw"><table>
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -921,11 +1505,15 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 </tr>
 <tr>
 <td><code>-cortexm/test/boards/nucleof411/</code></td>
-<td><code>cortexm-nucleof411</code>; also read today by <code>qemu-cortex-m0/m3/m4f/m7f</code> (they set <code>BOARD=nucleof411</code> only because the port reads <code>board.cmake</code>)</td>
+<td><code>cortexm-nucleof411</code>; also read today by
+<code>qemu-cortex-m0/m3/m4f/m7f</code> (they set
+<code>BOARD=nucleof411</code> only because the port reads
+<code>board.cmake</code>)</td>
 </tr>
 <tr>
 <td><code>-cortexm/test/boards/pico2/</code></td>
-<td><code>cortexm-pico2</code>; also read today by <code>2xcortex-m33</code>, <code>pico2-1cpu</code> (same reason)</td>
+<td><code>cortexm-pico2</code>; also read today by
+<code>2xcortex-m33</code>, <code>pico2-1cpu</code> (same reason)</td>
 </tr>
 <tr>
 <td><code>-cortexm/test/boards/pico2-pizero/</code></td>
@@ -952,12 +1540,28 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <td><code>native</code></td>
 </tr>
 </tbody>
-</table></div>
-<p>For each: its values into <code>tests/platforms/&lt;P&gt;/cmake/platform-library.cmake</code>, its linker scripts into <code>tests/platforms/&lt;P&gt;/device/linker-scripts/</code>, its OpenOCD files into <code>tests/platforms/&lt;P&gt;/openocd/</code>. Remove <code>BOARD</code> from the <code>definitions.cmake</code> of the six upstream-style platforms above. Remove the <code>board.cmake</code> reading from the four port <code>CMakeLists.txt</code> (aarch32 and aarch64 lines 27–40, cortexm lines 167–186, posix-arch lines 135–154); the port defines all its SoC targets instead (until step 5 moves them out).</p>
-<p>Check, per board: <code>compile_commands.json</code> identical before and after; <code>ctest -N</code> identical.</p>
+</table>
+<p>For each: its values into
+<code>tests/platforms/&lt;P&gt;/cmake/platform-library.cmake</code>, its
+linker scripts into
+<code>tests/platforms/&lt;P&gt;/device/linker-scripts/</code>, its
+OpenOCD files into <code>tests/platforms/&lt;P&gt;/openocd/</code>.
+Remove <code>BOARD</code> from the <code>definitions.cmake</code> of the
+six upstream-style platforms above. Remove the <code>board.cmake</code>
+reading from the four port <code>CMakeLists.txt</code> (aarch32 and
+aarch64 lines 27–40, cortexm lines 167–186, posix-arch lines 135–154);
+the port defines all its SoC targets instead (until step 5 moves them
+out).</p>
+<p>Check, per board: <code>compile_commands.json</code> identical before
+and after; <code>ctest -N</code> identical.</p>
 <h3 id="step-5-device-xpacks-8-d3">Step 5 — device xPacks (§8, D3)</h3>
-<p>New <strong>local</strong> repositories in this workspace (D5), each an xPack (<code>package.json</code> with <code>xpack</code>, <code>CMakeLists.txt</code> with INTERFACE targets, <code>include/</code>, <code>src/</code>, <code>tests/</code>), history kept with <code>git subtree split</code> / <code>git filter-repo</code>:</p>
-<div class="tw"><table>
+<p>New <strong>local</strong> repositories in this workspace (D5), each
+an xPack (<code>package.json</code> with <code>xpack</code>,
+<code>CMakeLists.txt</code> with INTERFACE targets,
+<code>include/</code>, <code>src/</code>, <code>tests/</code>), history
+kept with <code>git subtree split</code> /
+<code>git filter-repo</code>:</p>
+<table>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -971,11 +1575,14 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <tbody>
 <tr>
 <td><code>micro-os-plus-iii-devices-bcm283x</code></td>
-<td><code>-aarch32/soc/bcm2837</code>, <code>-aarch64/soc/bcm2837</code>, <code>-aarch64/soc/bcm2711</code>, their parts of <code>drivers/</code></td>
+<td><code>-aarch32/soc/bcm2837</code>,
+<code>-aarch64/soc/bcm2837</code>, <code>-aarch64/soc/bcm2711</code>,
+their parts of <code>drivers/</code></td>
 </tr>
 <tr>
 <td><code>micro-os-plus-iii-devices-rk3506</code></td>
-<td><code>-aarch32/soc/rk3506</code>, Lyra parts of <code>drivers/</code></td>
+<td><code>-aarch32/soc/rk3506</code>, Lyra parts of
+<code>drivers/</code></td>
 </tr>
 <tr>
 <td><code>micro-os-plus-iii-devices-rp2xxx</code></td>
@@ -986,54 +1593,126 @@ test support package              hw_result.hpp, the folder-scan CMake helper, O
 <td><code>-cortexm/soc/stm32f4xx</code></td>
 </tr>
 </tbody>
-</table></div>
+</table>
 <ul>
-<li><code>drivers/fatfs/ff.c</code>, <code>ff.h</code>, <code>ffconf.h</code> in <code>-aarch32</code>, <code>-aarch64</code>, <code>-posix-arch</code>: deleted; <code>@xpacks/chan-fatfs</code> as a dependency; the <code>diskio</code> glue stays with the device package (or <code>-posix-arch</code> for the host).</li>
-<li><code>-posix-arch/soc/native</code> stays in <code>-posix-arch</code>.</li>
-<li>The targets keep their names (<code>micro-os-plus::soc-bcm2711</code>, …), so the platforms only gain a dependency in <code>dependencies-folders.cmake</code> and <code>tests/package.json</code>.</li>
+<li><code>drivers/fatfs/ff.c</code>, <code>ff.h</code>,
+<code>ffconf.h</code> in <code>-aarch32</code>, <code>-aarch64</code>,
+<code>-posix-arch</code>: deleted; <code>@xpacks/chan-fatfs</code> as a
+dependency; the <code>diskio</code> glue stays with the device package
+(or <code>-posix-arch</code> for the host).</li>
+<li><code>-posix-arch/soc/native</code> stays in
+<code>-posix-arch</code>.</li>
+<li>The targets keep their names
+(<code>micro-os-plus::soc-bcm2711</code>, …), so the platforms only gain
+a dependency in <code>dependencies-folders.cmake</code> and
+<code>tests/package.json</code>.</li>
 </ul>
-<p>Check: <code>compile_commands.json</code> of every configuration identical except paths; the same pass list.</p>
-<h3 id="step-6-each-package-tests-itself-10-d4">Step 6 — each package tests itself (§10, D4)</h3>
+<p>Check: <code>compile_commands.json</code> of every configuration
+identical except paths; the same pass list.</p>
+<h3 id="step-6-each-package-tests-itself-10-d4">Step 6 — each package
+tests itself (§10, D4)</h3>
 <ol type="1">
-<li>New local repository <code>micro-os-plus-iii-test-support</code> (D5): <code>hw_result.hpp</code>, <code>board-contract.cpp</code>, the folder-scan CMake helper (today the core of each port’s <code>test/CMakeLists.txt</code>), the OpenOCD Tcl runner (step 7). <code>micro-os-plus-iii/test_smpl/</code> is deleted.</li>
-<li>Each port gets <code>tests/</code> in the kernel’s <code>tests/</code> shape (<code>package.json</code>, <code>CMakeLists.txt</code>, <code>cmake/tests-main.cmake</code>, <code>platforms/&lt;P&gt;/</code>): the architecture tests move there from <code>test/&lt;board&gt;/</code> (<code>smp_test0</code>–<code>smp_test4</code>, <code>smp-mat-test</code>, <code>smp-num-test</code>, <code>smp-pipeline-test</code>, <code>smp-pro-cons-test</code>, <code>clock-test</code>, …). <code>test/</code> (singular) is removed.</li>
-<li>Each device package gets <code>tests/</code> the same way: <code>sd_test</code>, <code>usb_test</code>, Ethernet, Wi-Fi, PSRAM, LED/GPIO tests.</li>
-<li>The board-specific copies of the portable suites (<code>rtos-apis</code>, <code>mutex-stress</code>, <code>cmsis-os-validator</code> folders under <code>test/&lt;board&gt;/</code>, and the <code>-ram</code> variants on pico/pico2 with their <code>hw.sh</code> + <code>load-ram.cfg</code>) are removed: the kernel’s <code>tests/</code> runs the portable suites on those platforms directly.</li>
-<li>The kernel’s <code>tests/package.json</code> keeps the configurations for the portable suites; board-test configurations move with the tests.</li>
+<li>New local repository <code>micro-os-plus-iii-test-support</code>
+(D5): <code>hw_result.hpp</code>, <code>board-contract.cpp</code>, the
+folder-scan CMake helper (today the core of each port’s
+<code>test/CMakeLists.txt</code>), the OpenOCD Tcl runner (step 7).
+<code>micro-os-plus-iii/test_smpl/</code> is deleted.</li>
+<li>Each port gets <code>tests/</code> in the kernel’s
+<code>tests/</code> shape (<code>package.json</code>,
+<code>CMakeLists.txt</code>, <code>cmake/tests-main.cmake</code>,
+<code>platforms/&lt;P&gt;/</code>): the architecture tests move there
+from <code>test/&lt;board&gt;/</code>
+(<code>smp_test0</code>–<code>smp_test4</code>,
+<code>smp-mat-test</code>, <code>smp-num-test</code>,
+<code>smp-pipeline-test</code>, <code>smp-pro-cons-test</code>,
+<code>clock-test</code>, …). <code>test/</code> (singular) is
+removed.</li>
+<li>Each device package gets <code>tests/</code> the same way:
+<code>sd_test</code>, <code>usb_test</code>, Ethernet, Wi-Fi, PSRAM,
+LED/GPIO tests.</li>
+<li>The board-specific copies of the portable suites
+(<code>rtos-apis</code>, <code>mutex-stress</code>,
+<code>cmsis-os-validator</code> folders under
+<code>test/&lt;board&gt;/</code>, and the <code>-ram</code> variants on
+pico/pico2 with their <code>hw.sh</code> + <code>load-ram.cfg</code>)
+are removed: the kernel’s <code>tests/</code> runs the portable suites
+on those platforms directly.</li>
+<li>The kernel’s <code>tests/package.json</code> keeps the
+configurations for the portable suites; board-test configurations move
+with the tests.</li>
 </ol>
-<p>Check: every test that ran before runs in exactly one <code>tests/</code> project; the union of the pass lists equals the old pass list.</p>
-<h3 id="step-7-hardware-through-openocd-tcl-11-second-half">Step 7 — hardware through OpenOCD Tcl (§11, second half)</h3>
-<p>Per board, in this order, one test at a time, waiting for the user’s acknowledgement between tests:</p>
+<p>Check: every test that ran before runs in exactly one
+<code>tests/</code> project; the union of the pass lists equals the old
+pass list.</p>
+<h3 id="step-7-hardware-through-openocd-tcl-11-second-half">Step 7 —
+hardware through OpenOCD Tcl (§11, second half)</h3>
+<p>Per board, in this order, one test at a time, waiting for the user’s
+acknowledgement between tests:</p>
 <ol type="1">
-<li>write <code>tests/platforms/&lt;P&gt;/openocd/</code> (<code>board.cfg</code>, <code>reset.tcl</code> where needed) using <code>run-test.tcl</code> from <code>micro-os-plus-iii-test-support</code>;</li>
-<li>change the board’s <code>hwd</code> <code>add_test</code> to <code>openocd -f … -f run-test.tcl</code>;</li>
-<li>run one test; compare with the same test through the old <code>hw.sh</code>;</li>
-<li>when all the board’s tests pass, delete that board’s <code>hw.sh</code>.</li>
+<li>write <code>tests/platforms/&lt;P&gt;/openocd/</code>
+(<code>board.cfg</code>, <code>reset.tcl</code> where needed) using
+<code>run-test.tcl</code> from
+<code>micro-os-plus-iii-test-support</code>;</li>
+<li>change the board’s <code>hwd</code> <code>add_test</code> to
+<code>openocd -f … -f run-test.tcl</code>;</li>
+<li>run one test; compare with the same test through the old
+<code>hw.sh</code>;</li>
+<li>when all the board’s tests pass, delete that board’s
+<code>hw.sh</code>.</li>
 </ol>
-<p>At the end delete: <code>test_smpl/run-hw.sh</code>, <code>run-hw.sh.bak</code>, <code>no-power-cycle/run-hw-simple.sh</code> (already gone with step 6), <code>-aarch32/test/hw.sh</code>, <code>-aarch64/test/hw.sh</code>, <code>-cortexm/test/hw.sh</code>, <code>-cortexm/test/weactf411/spi-pipeline/check.sh</code> (its check becomes a CTest regex or a fixture).</p>
-<p>Check: no <code>.sh</code> file is called by any <code>add_test</code> or <code>package.json</code> action (<code>grep</code>), and each board’s pass list equals the old one.</p>
+<p>At the end delete: <code>test_smpl/run-hw.sh</code>,
+<code>run-hw.sh.bak</code>, <code>no-power-cycle/run-hw-simple.sh</code>
+(already gone with step 6), <code>-aarch32/test/hw.sh</code>,
+<code>-aarch64/test/hw.sh</code>, <code>-cortexm/test/hw.sh</code>,
+<code>-cortexm/test/weactf411/spi-pipeline/check.sh</code> (its check
+becomes a CTest regex or a fixture).</p>
+<p>Check: no <code>.sh</code> file is called by any
+<code>add_test</code> or <code>package.json</code> action
+(<code>grep</code>), and each board’s pass list equals the old one.</p>
 <h3 id="housekeeping">Housekeeping</h3>
 <ul>
-<li><code>micro-os-plus-iii-cortexm/test/build-pico2/</code>: a stray build folder, not tracked by git; delete.</li>
-<li><code>hw_result.hpp</code> comment about QEMU builds without <code>SEMIHOST</code>: correct it when the file moves (step 6).</li>
+<li><code>micro-os-plus-iii-cortexm/test/build-pico2/</code>: a stray
+build folder, not tracked by git; delete.</li>
+<li><code>hw_result.hpp</code> comment about QEMU builds without
+<code>SEMIHOST</code>: correct it when the file moves (step 6).</li>
 </ul>
-<h2 id="open-questions-not-answered-by-the-documentation">16. Open questions (not answered by the documentation)</h2>
+<h2 id="open-questions-not-answered-by-the-documentation">16. Open
+questions (not answered by the documentation)</h2>
 <ul>
-<li>Whether <code>xpm install</code> fetches a <code>github:</code> specifier that does not exist remotely yet when a <code>.link</code> is present (matters for the local phase, D5).</li>
-<li>What <code>xpm install</code> does when a <code>.link</code> already exists, and whether <code>xpm uninstall</code> removes a <code>.link</code>.</li>
-<li>Several development copies of one package on one machine (§7 gives a practical rule, not a documented one).</li>
-<li>Exactly what an IIIe port may contain: the µOS++ site has no page defining a port; “architecture only” comes from the upstream port repositories and the three-layer page.</li>
+<li>Whether <code>xpm install</code> fetches a <code>github:</code>
+specifier that does not exist remotely yet when a <code>.link</code> is
+present (matters for the local phase, D5).</li>
+<li>What <code>xpm install</code> does when a <code>.link</code> already
+exists, and whether <code>xpm uninstall</code> removes a
+<code>.link</code>.</li>
+<li>Several development copies of one package on one machine (§7 gives a
+practical rule, not a documented one).</li>
+<li>Exactly what an IIIe port may contain: the µOS++ site has no page
+defining a port; “architecture only” comes from the upstream port
+repositories and the three-layer page.</li>
 <li><code>link-and-hide</code>: not documented.</li>
 </ul>
 <h2 id="where-to-read-more">17. Where to read more</h2>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://xpack.github.io/xpm/" class="uri">https://xpack.github.io/xpm/</a> — CLI (<code>link</code>, <code>install</code>, <code>run</code>, <code>uninstall</code>), metadata, CMake integration, folders.</li>
-<li><a target="_blank" rel="noopener" href="https://micro-os-plus.github.io/develop/modular-projects/" class="uri">https://micro-os-plus.github.io/develop/modular-projects/</a> — the layered board support.</li>
-<li><a target="_blank" rel="noopener" href="https://micro-os-plus.github.io/blog/2023/07/19/micro-os-plus-v7-0-0-released/" class="uri">https://micro-os-plus.github.io/blog/2023/07/19/micro-os-plus-v7-0-0-released/</a> — IIIe vs IVe.</li>
-<li>upstream <code>README-DEVELOPER.md</code>, <code>README-MAINTAINER.md</code>, <code>tests/README.md</code> (branch <code>xpack-development</code>).</li>
-<li><code>BUILD-TEST-CTEST-SYSTEM.md</code> (next to this file) — how the current <code>smp</code> system works, with commands.</li>
-<li><code>micro-os-plus-iii/docs/smp-integration/xpack-dev-smp.md</code> — how <code>smp</code> was built from <code>xpack-development</code>.</li>
+<li><a target="_blank" rel="noopener" href="https://xpack.github.io/xpm/"
+class="uri">https://xpack.github.io/xpm/</a> — CLI (<code>link</code>,
+<code>install</code>, <code>run</code>, <code>uninstall</code>),
+metadata, CMake integration, folders.</li>
+<li><a target="_blank" rel="noopener" href="https://micro-os-plus.github.io/develop/modular-projects/"
+class="uri">https://micro-os-plus.github.io/develop/modular-projects/</a>
+— the layered board support.</li>
+<li><a
+href="https://micro-os-plus.github.io/blog/2023/07/19/micro-os-plus-v7-0-0-released/"
+class="uri">https://micro-os-plus.github.io/blog/2023/07/19/micro-os-plus-v7-0-0-released/</a>
+— IIIe vs IVe.</li>
+<li>upstream <code>README-DEVELOPER.md</code>,
+<code>README-MAINTAINER.md</code>, <code>tests/README.md</code> (branch
+<code>xpack-development</code>).</li>
+<li><code>BUILD-TEST-CTEST-SYSTEM.md</code> (next to this file) — how
+the current <code>smp</code> system works, with commands.</li>
+<li><code>micro-os-plus-iii/docs/smp-integration/xpack-dev-smp.md</code>
+— how <code>smp</code> was built from
+<code>xpack-development</code>.</li>
 </ul>
-
 </main>
 </div>
