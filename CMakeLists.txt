@@ -38,8 +38,7 @@
 # `micro-os-plus::board` target and link it after one of the port cores below.
 #
 # Exports: micro-os-plus::cortexm, ::cortexm-rp2350, ::cortexm-rp2040 (the
-# port cores), ::cortexm-qemu-<isa> (the generic QEMU cores) and the SoC
-# targets above.
+# port cores) and ::cortexm-qemu-<isa> (the generic QEMU cores).
 # -----------------------------------------------------------------------------
 cmake_minimum_required (VERSION 3.20)
 
@@ -54,79 +53,9 @@ set (UOS_CORTEXM_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" CACHE INTERNAL "")
 # resolves when it generates, so the kernel may be added after the port.
 
 # -----------------------------------------------------------------------------
-# Dissolved SoC targets: STM32F4xx, RP2350 and RP2040
-# The devices repository was dissolved into the architecture ports.
-if (NOT TARGET micro-os-plus::soc-stm32f411xe)
-  add_library (micro-os-plus-iii-soc-stm32f4xx-common-interface INTERFACE)
-  target_include_directories (
-    micro-os-plus-iii-soc-stm32f4xx-common-interface
-    INTERFACE
-      "${CMAKE_CURRENT_SOURCE_DIR}/soc/stm32f4xx/include"
-      "${CMAKE_CURRENT_SOURCE_DIR}/soc/stm32f4xx/include/cmsis"
-  )
-  target_sources (
-    micro-os-plus-iii-soc-stm32f4xx-common-interface
-    INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/soc/stm32f4xx/src/system_stm32f4xx.c"
-  )
-
-  add_library (micro-os-plus-iii-soc-stm32f411xe-interface INTERFACE)
-  target_link_libraries (
-    micro-os-plus-iii-soc-stm32f411xe-interface
-    INTERFACE micro-os-plus-iii-soc-stm32f4xx-common-interface
-  )
-  target_sources (
-    micro-os-plus-iii-soc-stm32f411xe-interface
-    INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/soc/stm32f4xx/src/vectors_stm32f411xe.c"
-  )
-  add_library (micro-os-plus::soc-stm32f411xe
-               ALIAS micro-os-plus-iii-soc-stm32f411xe-interface)
-
-  add_library (micro-os-plus-iii-soc-stm32f412rx-interface INTERFACE)
-  target_link_libraries (
-    micro-os-plus-iii-soc-stm32f412rx-interface
-    INTERFACE micro-os-plus-iii-soc-stm32f4xx-common-interface
-  )
-  target_sources (
-    micro-os-plus-iii-soc-stm32f412rx-interface
-    INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/soc/stm32f4xx/src/vectors_stm32f412rx.c"
-  )
-  add_library (micro-os-plus::soc-stm32f412rx
-               ALIAS micro-os-plus-iii-soc-stm32f412rx-interface)
-endif ()
-
-if (NOT TARGET micro-os-plus::soc-rp2350)
-  add_library (micro-os-plus-iii-soc-rp2350-interface INTERFACE)
-  target_include_directories (
-    micro-os-plus-iii-soc-rp2350-interface
-    INTERFACE
-      "${CMAKE_CURRENT_SOURCE_DIR}/soc/rp2350/include"
-      "${CMAKE_CURRENT_SOURCE_DIR}/soc/rp2350/include/cmsis"
-  )
-  target_sources (
-    micro-os-plus-iii-soc-rp2350-interface
-    INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/soc/rp2350/src/system_rp2350.c"
-  )
-  add_library (micro-os-plus::soc-rp2350
-               ALIAS micro-os-plus-iii-soc-rp2350-interface)
-endif ()
-
-# The RP2040 (Raspberry Pi Pico): the CMSIS device header and SystemCoreClock,
-# written from the datasheet as the RP2350's are; no Pico SDK.
-if (NOT TARGET micro-os-plus::soc-rp2040)
-  add_library (micro-os-plus-iii-soc-rp2040-interface INTERFACE)
-  target_include_directories (
-    micro-os-plus-iii-soc-rp2040-interface
-    INTERFACE
-      "${CMAKE_CURRENT_SOURCE_DIR}/soc/rp2040/include"
-      "${CMAKE_CURRENT_SOURCE_DIR}/soc/rp2040/include/cmsis"
-  )
-  target_sources (
-    micro-os-plus-iii-soc-rp2040-interface
-    INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/soc/rp2040/src/system_rp2040.c"
-  )
-  add_library (micro-os-plus::soc-rp2040
-               ALIAS micro-os-plus-iii-soc-rp2040-interface)
-endif ()
+# The SoC targets (micro-os-plus::soc-stm32f411xe, ::soc-stm32f412rx,
+# ::soc-rp2350, ::soc-rp2040) are the device packages',
+# micro-os-plus-iii-devices-stm32f4 and -rp2xxx.
 
 # -----------------------------------------------------------------------------
 # The port cores.
