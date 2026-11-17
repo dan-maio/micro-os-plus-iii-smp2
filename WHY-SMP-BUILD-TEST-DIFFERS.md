@@ -728,6 +728,25 @@ CMSIS-RTOS validator on the AArch boards. Both are listed as flaky in
 Check: `ctest -N` lists the same tests; the same pass list as with the
 scripts.
 
+**Done 2026-11-17** (kernel `3e7903ac`; aarch32 `5b184d1`, aarch64
+`4596049`, cortexm `2201ccb`, posix-arch `768e5ee`). The CTest properties
+live in one helper, `tests/cmake/uos-tests-run.cmake`
+(`uos_tests_add_qemu()`, `uos_tests_add_host()`, the timeout table), used
+by the six AArch platforms and `native`; the timeout table stays in that
+one file rather than in each board's list, since it is the same table for
+every board. QEMU runs with `-monitor none`. The SD image is a fixture:
+`<test>-sd-make` (Python 3: `flatfs_tool.py make-seed` for `sd_test`, a
+sparse 4 GiB file for the others) and `<test>-sd-remove`
+(`cmake -E rm`).
+
+Check in `step3-check/`: `ctest -N` lists the same tests, plus the 8
+fixture tests per AArch configuration (`step3-check/ctest-N/`); 40/40
+built; the same 284 tests: 262 passed, **22 skipped**, 0 failed. The 22
+are the tests that print `RESULT: SKIP` under QEMU (`usb_test`,
+`usb_big_test`, the Wi-Fi and Ethernet tests): the scripts counted them
+as passed, CTest reports them as skipped. The 4 step 2 failures (flaky)
+passed this time.
+
 ### Step 4 — one place per board (§9)
 
 The 14 `board.cmake` files and where each one goes:
@@ -836,6 +855,21 @@ Check: no `.sh` file is called by any `add_test` or `package.json` action
   tracked by git; delete.
 - `hw_result.hpp` comment about QEMU builds without `SEMIHOST`: correct
   it when the file moves (step 6).
+- The usage guides that still name the removed scripts (`run-qemu.sh`,
+  `run-host.sh`, the ports' `qemu.sh` / `run.sh`, `sd_test/verify.sh`):
+  rewrite once, after step 7, when the run commands are final. In the
+  kernel's `docs/`: `tests/TESTS-DEVELOPER-GUIDE.md`,
+  `tests-in-aarch32-aarch64.md`, `posix-arch-port.md`, `test-smpl.md`,
+  `tests/AARCH32-RPI-ZERO-2W-TESTS.md`, `STATUS.md`,
+  `tests/AARCH32-AARCH64-TEST-COMMANDS.md`, `aarch32-second-board.md`,
+  `tests/STEPS.md`, `tests/TESTS-CATALOG.md`, `tests/COMMANDS.md`,
+  `building-aarch32-aarch64.md`, `cortexm-port.md`; and
+  `micro-os-plus-iii-cortexm/README.md`. The history notes
+  (`docs/smp-integration/`, `docs/specs/`) stay as they are. The SD
+  read-back check `sd_test/verify.sh` did is
+  `python3 sd_test/flatfs_tool.py verify <image>`.
+- At publishing: `include/cmsis-plus/os-versions.h` still says 7.0.1
+  (upstream left it so at v7.1.0 too); set it with the release version.
 
 ## 16. Open questions (not answered by the documentation)
 

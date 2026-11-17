@@ -1464,6 +1464,28 @@ board’s test list.</li>
 </ul>
 <p>Check: <code>ctest -N</code> lists the same tests; the same pass list
 as with the scripts.</p>
+<p><strong>Done 2026-11-17</strong> (kernel <code>3e7903ac</code>;
+aarch32 <code>5b184d1</code>, aarch64 <code>4596049</code>, cortexm
+<code>2201ccb</code>, posix-arch <code>768e5ee</code>). The CTest
+properties live in one helper,
+<code>tests/cmake/uos-tests-run.cmake</code>
+(<code>uos_tests_add_qemu()</code>, <code>uos_tests_add_host()</code>,
+the timeout table), used by the six AArch platforms and
+<code>native</code>; the timeout table stays in that one file rather
+than in each board’s list, since it is the same table for every board.
+QEMU runs with <code>-monitor none</code>. The SD image is a fixture:
+<code>&lt;test&gt;-sd-make</code> (Python 3:
+<code>flatfs_tool.py make-seed</code> for <code>sd_test</code>, a sparse
+4 GiB file for the others) and <code>&lt;test&gt;-sd-remove</code>
+(<code>cmake -E rm</code>).</p>
+<p>Check in <code>step3-check/</code>: <code>ctest -N</code> lists the
+same tests, plus the 8 fixture tests per AArch configuration
+(<code>step3-check/ctest-N/</code>); 40/40 built; the same 284 tests:
+262 passed, <strong>22 skipped</strong>, 0 failed. The 22 are the tests
+that print <code>RESULT: SKIP</code> under QEMU (<code>usb_test</code>,
+<code>usb_big_test</code>, the Wi-Fi and Ethernet tests): the scripts
+counted them as passed, CTest reports them as skipped. The 4 step 2
+failures (flaky) passed this time.</p>
 <h3 id="step-4-one-place-per-board-9">Step 4 — one place per board
 (§9)</h3>
 <p>The 14 <code>board.cmake</code> files and where each one goes:</p>
@@ -1675,6 +1697,26 @@ becomes a CTest regex or a fixture).</p>
 build folder, not tracked by git; delete.</li>
 <li><code>hw_result.hpp</code> comment about QEMU builds without
 <code>SEMIHOST</code>: correct it when the file moves (step 6).</li>
+<li>The usage guides that still name the removed scripts
+(<code>run-qemu.sh</code>, <code>run-host.sh</code>, the ports’
+<code>qemu.sh</code> / <code>run.sh</code>,
+<code>sd_test/verify.sh</code>): rewrite once, after step 7, when the
+run commands are final. In the kernel’s <code>docs/</code>:
+<code>tests/TESTS-DEVELOPER-GUIDE.md</code>,
+<code>tests-in-aarch32-aarch64.md</code>,
+<code>posix-arch-port.md</code>, <code>test-smpl.md</code>,
+<code>tests/AARCH32-RPI-ZERO-2W-TESTS.md</code>, <code>STATUS.md</code>,
+<code>tests/AARCH32-AARCH64-TEST-COMMANDS.md</code>,
+<code>aarch32-second-board.md</code>, <code>tests/STEPS.md</code>,
+<code>tests/TESTS-CATALOG.md</code>, <code>tests/COMMANDS.md</code>,
+<code>building-aarch32-aarch64.md</code>, <code>cortexm-port.md</code>;
+and <code>micro-os-plus-iii-cortexm/README.md</code>. The history notes
+(<code>docs/smp-integration/</code>, <code>docs/specs/</code>) stay as
+they are. The SD read-back check <code>sd_test/verify.sh</code> did is
+<code>python3 sd_test/flatfs_tool.py verify &lt;image&gt;</code>.</li>
+<li>At publishing: <code>include/cmsis-plus/os-versions.h</code> still
+says 7.0.1 (upstream left it so at v7.1.0 too); set it with the release
+version.</li>
 </ul>
 <h2 id="open-questions-not-answered-by-the-documentation">16. Open
 questions (not answered by the documentation)</h2>
