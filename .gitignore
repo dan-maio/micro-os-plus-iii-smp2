@@ -25,3 +25,5 @@
 /step6-check/before-rename/
 /step6-check/*.ninja-cmds.after
 /step6-check/*.ninja-cmds.after-rename
+/step6-check/before-rename2/
+/step6-check/*.ninja-cmds.after-rename2

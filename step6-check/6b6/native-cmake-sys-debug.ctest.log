@@ -1,0 +1,14 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-debug
+    Start 14: native-smp-num-test-host
+1/3 Test #14: native-smp-num-test-host .........   Passed   60.40 sec
+    Start 15: native-smp-pipeline-test-host
+2/3 Test #15: native-smp-pipeline-test-host ....   Passed   30.41 sec
+    Start 16: native-smp-pro-cons-test-host
+3/3 Test #16: native-smp-pro-cons-test-host ....   Passed    4.41 sec
+
+100% tests passed out of 3
+
+Label Time Summary:
+host    =  95.22 sec*proc (3 tests)
+
+Total Test time (real) =  95.22 sec

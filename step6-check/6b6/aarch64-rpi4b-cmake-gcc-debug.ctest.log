@@ -1,0 +1,22 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+    Start 43: aarch64-rpi4b-smp-num-test-qemu-sd-make
+1/7 Test #43: aarch64-rpi4b-smp-num-test-qemu-sd-make ..........   Passed    0.02 sec
+    Start 45: aarch64-rpi4b-smp-num-test-qemu
+2/7 Test #45: aarch64-rpi4b-smp-num-test-qemu ..................   Passed   60.75 sec
+    Start 44: aarch64-rpi4b-smp-num-test-qemu-sd-remove
+3/7 Test #44: aarch64-rpi4b-smp-num-test-qemu-sd-remove ........   Passed    0.00 sec
+    Start 47: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make
+4/7 Test #47: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make .....   Passed    0.01 sec
+    Start 49: aarch64-rpi4b-smp-pipeline-test-qemu
+5/7 Test #49: aarch64-rpi4b-smp-pipeline-test-qemu .............   Passed   30.69 sec
+    Start 48: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove
+6/7 Test #48: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove ...   Passed    0.01 sec
+    Start 51: aarch64-rpi4b-smp-pro-cons-test-qemu
+7/7 Test #51: aarch64-rpi4b-smp-pro-cons-test-qemu .............   Passed    4.50 sec
+
+100% tests passed out of 7
+
+Label Time Summary:
+qemu    =  95.99 sec*proc (7 tests)
+
+Total Test time (real) =  95.99 sec

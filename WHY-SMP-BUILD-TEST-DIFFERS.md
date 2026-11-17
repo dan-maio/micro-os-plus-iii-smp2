@@ -902,14 +902,15 @@ the step:
 - **BCM283x:** `soc/bcm2837` and `soc/bcm2711` once;
   `drivers/aarch32/` and `drivers/aarch64/` kept as the two ports' sets
   (four files differ), to be reconciled later with a hardware proof.
-- **Workspace layout per architecture:** `micro-os-plus-iii-aarch32/` (port,
-  `-devices-rk3506`), `micro-os-plus-iii-aarch64/` (port),
-  `micro-os-plus-iii-cortexm/` (port, `-devices-rp2xxx`, `-devices-stm32f4`),
-  `micro-os-plus-iii-posix-arch/` (port), `common/` (`-devices-bcm283x`,
-  `-devices-storage`); the kernel stays at the top. Each package is still
-  its own repository and xPack. (The architecture folders were first named
-  `aarch32/` and so on; renamed with the `micro-os-plus-iii-` prefix in step 6;
-  all 40 configurations configure to the same commands after both moves.)
+- **Workspace layout per architecture:** `aarch32/` (`micro-os-plus-iii-aarch32`,
+  `micro-os-plus-iii-devices-rk3506`), `aarch64/` (`micro-os-plus-iii-aarch64`),
+  `cortexm/` (`micro-os-plus-iii-cortexm`, `-devices-rp2xxx`,
+  `-devices-stm32f4`), `posix-arch/` (`micro-os-plus-iii-posix-arch`),
+  `common/` (`-devices-bcm283x`, `-devices-storage`); the kernel stays at the
+  top. Each package is still its own repository and xPack. (A rename of the
+  group folders to `micro-os-plus-iii-aarch32/` and so on was tried in step 6
+  and reverted: it repeated the package name. All 40 configurations
+  configure to the same commands after every move.)
 - **FatFs:** `@xpacks/chan-fatfs` is 0.13.1 and is µOS++'s whole FatFs
   integration (its own disk layer over a POSIX I/O block device, its own
   `ffconf.h` with long names, exFAT and formatting enabled), so it cannot
