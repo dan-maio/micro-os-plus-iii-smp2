@@ -196,9 +196,4 @@ message (
   "> micro-os-plus::cortexm-qemu-m33 -> micro-os-plus-iii-cortexm-qemu-m33-interface"
 )
 
-# -----------------------------------------------------------------------------
-if (PROJECT_IS_TOP_LEVEL AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/test/CMakeLists.txt")
-  add_subdirectory (test)
-endif ()
-
 message (STATUS "µOS++ III Cortex-M port: micro-os-plus::cortexm (+ -rp2350, -rp2040)")
