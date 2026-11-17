@@ -1676,6 +1676,56 @@ a dependency in <code>dependencies-folders.cmake</code> and
 </ul>
 <p>Check: <code>compile_commands.json</code> of every configuration
 identical except paths; the same pass list.</p>
+<p><strong>Done 2026-11-17 (5a, 5b); FatFs (5c) postponed.</strong>
+Decisions agreed during the step:</p>
+<ul>
+<li><strong>A fifth package,
+<code>micro-os-plus-iii-devices-storage</code></strong>, for the
+chip-independent code that was identical in the three ports: flatfs, the
+FatFs disk glue (<code>diskio_sd.cpp</code>, <code>fatfs_hw.cpp</code>),
+<code>sd.hpp</code>. <code>devices-bcm283x</code> and
+<code>devices-rk3506</code> link it.</li>
+<li><strong>BCM283x:</strong> <code>soc/bcm2837</code> and
+<code>soc/bcm2711</code> once; <code>drivers/aarch32/</code> and
+<code>drivers/aarch64/</code> kept as the two ports’ sets (four files
+differ), to be reconciled later with a hardware proof.</li>
+<li><strong>Workspace layout per architecture:</strong>
+<code>aarch32/</code> (port, <code>-devices-rk3506</code>),
+<code>aarch64/</code> (port), <code>cortexm/</code> (port,
+<code>-devices-rp2xxx</code>, <code>-devices-stm32f4</code>),
+<code>posix-arch/</code> (port), <code>common/</code>
+(<code>-devices-bcm283x</code>, <code>-devices-storage</code>); the
+kernel stays at the top. Each package is still its own repository and
+xPack.</li>
+<li><strong>FatFs:</strong> <code>@xpacks/chan-fatfs</code> is 0.13.1
+and is µOS++’s whole FatFs integration (its own disk layer over a POSIX
+I/O block device, its own <code>ffconf.h</code> with long names, exFAT
+and formatting enabled), so it cannot replace our R0.15a and glue file
+for file. The choice (adopt the upstream model, with the SD driver as a
+block device, or use the FatFs core only) is made after re-reviewing
+upstream on GitHub.</li>
+</ul>
+<p>5a (kernel <code>b1dbee69</code>; cortexm <code>eba3dc7</code>,
+aarch32 <code>5cc87de</code>, aarch64 <code>77eb15b</code>; the five
+packages at <code>v0.1.0-pre.1</code>, history kept with
+<code>git subtree split</code>): the code moved, the targets kept their
+names, the platforms gained the packages in
+<code>dependencies-folders.cmake</code> and the <code>link-deps</code>
+actions. Check in <code>step5-check/</code>: every compile and link
+command identical to step 4 except paths; the ports’
+<code>drivers/include</code> became two include folders (no header name
+in both); six objects with no static constructors changed link position.
+Full build and test: 40/40 built, the same 364 tests, 6 known flaky
+failures, two of them new observations recorded in
+<code>BASELINE.md</code> (<code>smp-shapes</code> on the Pi 4 B release
+build too; one segmentation fault in the POSIX port’s context switch in
+<code>native</code> <code>smp-pipeline-test</code>, 0 in 12 repeats).
+After the move to the per-architecture folders: all 40 configurations
+configure to the same commands, with only the folder names changed.</p>
+<p>5b (kernel <code>93ac3181</code>): the Lyra no longer compiles the
+BCM2837 SoC folder (see step 4). Its images, disassembled, are identical
+except the order of three interworking stubs in the linker’s stub
+block.</p>
 <h3 id="step-6-each-package-tests-itself-10-d4">Step 6 — each package
 tests itself (§10, D4)</h3>
 <ol type="1">
@@ -1759,6 +1809,11 @@ and <code>micro-os-plus-iii-cortexm/README.md</code>. The history notes
 (<code>docs/smp-integration/</code>, <code>docs/specs/</code>) stay as
 they are. The SD read-back check <code>sd_test/verify.sh</code> did is
 <code>python3 sd_test/flatfs_tool.py verify &lt;image&gt;</code>.</li>
+<li>The ports’ board scripts (<code>hw.sh</code>) look for the kernel
+next to the port when <code>UOS_SMP_DIR</code> is not set; with the
+per-architecture folders that guess no longer finds it. CTest sets
+<code>UOS_SMP_DIR</code> (step 2); a manual run needs it set. Goes away
+with the scripts (step 7).</li>
 <li>The ports’ <code>test/hw.sh</code> header comments still describe a
 board folder as “board.cmake, src/, include/ and test/”; correct with
 step 7.</li>

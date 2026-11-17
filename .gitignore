@@ -16,3 +16,7 @@
 !/step5-check/
 /step5-check/before/
 /step5-check/*.ninja-cmds.after
+/step5-check/before-move/
+/step5-check/*.ninja-cmds.after-move
+/step5-check/5b/elf-*/
+/step5-check/5b/keep/

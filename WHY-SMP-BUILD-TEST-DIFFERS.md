@@ -842,6 +842,47 @@ New **local** repositories in this workspace (D5), each an xPack (`package.json`
 Check: `compile_commands.json` of every configuration identical except
 paths; the same pass list.
 
+**Done 2026-11-17 (5a, 5b); FatFs (5c) postponed.** Decisions agreed during
+the step:
+
+- **A fifth package, `micro-os-plus-iii-devices-storage`**, for the
+  chip-independent code that was identical in the three ports: flatfs,
+  the FatFs disk glue (`diskio_sd.cpp`, `fatfs_hw.cpp`), `sd.hpp`.
+  `devices-bcm283x` and `devices-rk3506` link it.
+- **BCM283x:** `soc/bcm2837` and `soc/bcm2711` once;
+  `drivers/aarch32/` and `drivers/aarch64/` kept as the two ports' sets
+  (four files differ), to be reconciled later with a hardware proof.
+- **Workspace layout per architecture:** `aarch32/` (port, `-devices-rk3506`),
+  `aarch64/` (port), `cortexm/` (port, `-devices-rp2xxx`,
+  `-devices-stm32f4`), `posix-arch/` (port), `common/`
+  (`-devices-bcm283x`, `-devices-storage`); the kernel stays at the top.
+  Each package is still its own repository and xPack.
+- **FatFs:** `@xpacks/chan-fatfs` is 0.13.1 and is µOS++'s whole FatFs
+  integration (its own disk layer over a POSIX I/O block device, its own
+  `ffconf.h` with long names, exFAT and formatting enabled), so it cannot
+  replace our R0.15a and glue file for file. The choice (adopt the
+  upstream model, with the SD driver as a block device, or use the FatFs
+  core only) is made after re-reviewing upstream on GitHub.
+
+5a (kernel `b1dbee69`; cortexm `eba3dc7`, aarch32 `5cc87de`, aarch64
+`77eb15b`; the five packages at `v0.1.0-pre.1`, history kept with
+`git subtree split`): the code moved, the targets kept their names, the
+platforms gained the packages in `dependencies-folders.cmake` and the
+`link-deps` actions. Check in `step5-check/`: every compile and link
+command identical to step 4 except paths; the ports' `drivers/include`
+became two include folders (no header name in both); six objects with no
+static constructors changed link position. Full build and test: 40/40
+built, the same 364 tests, 6 known flaky failures, two of them new
+observations recorded in `BASELINE.md` (`smp-shapes` on the Pi 4 B
+release build too; one segmentation fault in the POSIX port's context
+switch in `native` `smp-pipeline-test`, 0 in 12 repeats). After the move to
+the per-architecture folders: all 40 configurations configure to the same
+commands, with only the folder names changed.
+
+5b (kernel `93ac3181`): the Lyra no longer compiles the BCM2837 SoC folder
+(see step 4). Its images, disassembled, are identical except the order of
+three interworking stubs in the linker's stub block.
+
 ### Step 6 — each package tests itself (§10, D4)
 
 1. New local repository `micro-os-plus-iii-test-support` (D5): `hw_result.hpp`,
@@ -906,6 +947,10 @@ Check: no `.sh` file is called by any `add_test` or `package.json` action
   (`docs/smp-integration/`, `docs/specs/`) stay as they are. The SD
   read-back check `sd_test/verify.sh` did is
   `python3 sd_test/flatfs_tool.py verify <image>`.
+- The ports' board scripts (`hw.sh`) look for the kernel next to the port
+  when `UOS_SMP_DIR` is not set; with the per-architecture folders that
+  guess no longer finds it. CTest sets `UOS_SMP_DIR` (step 2); a manual run
+  needs it set. Goes away with the scripts (step 7).
 - The ports' `test/hw.sh` header comments still describe a board folder
   as "board.cmake, src/, include/ and test/"; correct with step 7.
 - At publishing: `include/cmsis-plus/os-versions.h` still says 7.0.1
