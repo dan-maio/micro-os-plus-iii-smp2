@@ -1805,13 +1805,17 @@ FatFs disk glue (<code>diskio_sd.cpp</code>, <code>fatfs_hw.cpp</code>),
 <code>drivers/aarch64/</code> kept as the two ports’ sets (four files
 differ), to be reconciled later with a hardware proof.</li>
 <li><strong>Workspace layout per architecture:</strong>
-<code>aarch32/</code> (port, <code>-devices-rk3506</code>),
-<code>aarch64/</code> (port), <code>cortexm/</code> (port,
+<code>micro-os-plus-iii-aarch32/</code> (port,
+<code>-devices-rk3506</code>), <code>micro-os-plus-iii-aarch64/</code>
+(port), <code>micro-os-plus-iii-cortexm/</code> (port,
 <code>-devices-rp2xxx</code>, <code>-devices-stm32f4</code>),
-<code>posix-arch/</code> (port), <code>common/</code>
+<code>micro-os-plus-iii-posix-arch/</code> (port), <code>common/</code>
 (<code>-devices-bcm283x</code>, <code>-devices-storage</code>); the
 kernel stays at the top. Each package is still its own repository and
-xPack.</li>
+xPack. (The architecture folders were first named <code>aarch32/</code>
+and so on; renamed with the <code>micro-os-plus-iii-</code> prefix in
+step 6; all 40 configurations configure to the same commands after both
+moves.)</li>
 <li><strong>FatFs:</strong> <code>@xpacks/chan-fatfs</code> is 0.13.1
 and is µOS++’s whole FatFs integration (its own disk layer over a POSIX
 I/O block device, its own <code>ffconf.h</code> with long names, exFAT

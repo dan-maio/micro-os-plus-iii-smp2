@@ -20,3 +20,8 @@
 /step5-check/*.ninja-cmds.after-move
 /step5-check/5b/elf-*/
 /step5-check/5b/keep/
+!/step6-check/
+/step6-check/before/
+/step6-check/before-rename/
+/step6-check/*.ninja-cmds.after
+/step6-check/*.ninja-cmds.after-rename

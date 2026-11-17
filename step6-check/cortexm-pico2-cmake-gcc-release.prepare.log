@@ -1,0 +1,195 @@
+> cmake -S . -B build/cortexm-pico2-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=cortexm-pico2 --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.2.0-pre.1
+-- Platform name: cortexm-pico2
+-- Build type: MinSizeRel
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-release
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/cortexm-pico2/cmake/definitions.cmake...
+-- Including tests/platforms/cortexm-pico2/cmake/dependencies-folders.cmake...
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/cortexm/micro-os-plus-iii-cortexm
+-- µOS++ III micro-os-plus-iii-devices-rp2xxx: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/cortexm/micro-os-plus-iii-devices-rp2xxx
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding 'sources/fp-switch'...
+-- > test-fp-switch-interface
+-- + -I include
+-- + src/main.cpp
+-- > test::fp-switch -> test-fp-switch-interface
+-- Adding 'build/cortexm-pico2-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm'...
+-- > micro-os-plus::cortexm-qemu-m0 -> micro-os-plus-iii-cortexm-qemu-m0-interface
+-- > micro-os-plus::cortexm-qemu-m3 -> micro-os-plus-iii-cortexm-qemu-m3-interface
+-- > micro-os-plus::cortexm-qemu-m4f -> micro-os-plus-iii-cortexm-qemu-m4f-interface
+-- > micro-os-plus::cortexm-qemu-m7 -> micro-os-plus-iii-cortexm-qemu-m7-interface
+-- > micro-os-plus::cortexm-qemu-m33 -> micro-os-plus-iii-cortexm-qemu-m33-interface
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm (+ -rp2350, -rp2040)
+-- Adding 'build/cortexm-pico2-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-devices-rp2xxx'...
+-- Adding 'device-qemu-cortexm'...
+-- Processing 'tests/device-qemu-cortexm'...
+-- > device-qemu-cortexm-interface
+-- + -I include
+-- + src/system-cortexm.c
+-- + src/initialize-hardware.c
+-- + src/vectors-cortexm.c
+-- + src/exception-handlers.cpp
+-- + -D MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M7
+-- + xpacks::arm-cmsis
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/mem-mps2-an500.ld
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/sections-flash.ld
+-- > micro-os-plus::device -> device-qemu-cortexm-interface
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Adding 'build/cortexm-pico2-cmake-gcc-release/xpacks/@xpacks/arm-cmsis'...
+-- Processing xPack @xpacks/arm-cmsis@4.5.0-7...
+-- > xpacks-arm-cmsis-interface
+-- + -I CMSIS/Include
+-- + -I CMSIS/Driver/Include
+-- > xpacks::arm-cmsis -> xpacks-arm-cmsis-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/cortexm-pico2'...
+-- Including tests/platforms/cortexm-pico2/cmake/platform-library.cmake...
+-- > micro-os-plus::platform -> platform-cortexm-pico2-interface
+-- µOS++ III cortexm board tests: 42 targets, board=pico2, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/cortexm/micro-os-plus-iii-cortexm/test/pico2
+-- Cortex-M pico2: port tests registered (cortexm-pico2)
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-release
