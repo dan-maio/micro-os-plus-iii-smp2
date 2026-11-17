@@ -1,0 +1,2952 @@
+> cmake -S . -B build/aarch32-rpi-zero-2w-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch32-rpi-zero-2w --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.1.0
+-- Platform name: aarch32-rpi-zero-2w
+-- Build type: Debug
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/aarch32-rpi-zero-2w/cmake/definitions.cmake...
+-- Including tests/platforms/aarch32-rpi-zero-2w/cmake/dependencies-folders.cmake...
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Selecting the library under test for aarch32-rpi-zero-2w...
+-- Adding the AArch32 port (brings iii + devices)...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32 (BOARD=rpi-zero-2w)
+-- Processing 'tests/platforms/aarch32-rpi-zero-2w'...
+-- Including tests/platforms/aarch32-rpi-zero-2w/cmake/platform-library.cmake...
+-- > micro-os-plus::platform -> platform-aarch32-rpi-zero-2w-interface
+-- > micro-os-plus::platform-support -> platform-aarch32-rpi-zero-2w-support-interface
+-- µOS++ III AArch32 tests: 36 targets, board=rpi-zero-2w, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+-- AArch32 rpi-zero-2w: port tests + harness suites registered (aarch32-rpi-zero-2w)
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_TOOLCHAIN_FILE
+
+
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+> cmake -S . -B build/aarch32-rpi-zero-2w-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch32-rpi-zero-2w
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32 (BOARD=rpi-zero-2w)
+-- µOS++ III AArch32 tests: 36 targets, board=rpi-zero-2w, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+-- AArch32 rpi-zero-2w: port tests + harness suites registered (aarch32-rpi-zero-2w)
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+> cmake --build build/aarch32-rpi-zero-2w-cmake-gcc-debug
+[0/2] Re-checking globbed directories...
+[1/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[2/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[3/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[4/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[5/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[6/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[7/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[8/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[9/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[10/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[11/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/rpi-zero-2w/src/test-smp-boot.cpp.obj
+[12/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[13/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[14/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[15/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[16/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[17/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[18/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[19/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[20/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[21/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[22/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj
+[23/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/rpi-zero-2w/wifi-net/main.cpp.obj
+[24/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/handlers.cpp.obj
+[25/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj
+[26/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/smp_secondary.cpp.obj
+[27/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[28/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[29/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/src/mmu.cpp.obj
+[30/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/src/port_sys.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp:23:35: warning: '__smp_spin' initialized and declared 'extern'
+   23 | extern "C" volatile std::uint32_t __smp_spin[OS_NCPU] = {0, 0, 0, 0};
+      |                                   ^~~~~~~~~~
+[31/376] Building ASM object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/src/startup.S.obj
+[32/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/soc/bcm2837/src/mailbox.cpp.obj
+[33/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/src/smp.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp:67:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   67 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[34/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/src/timer_arm.cpp.obj
+[35/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[36/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[37/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[38/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[39/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[40/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/altcp.c.obj
+[41/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/altcp_alloc.c.obj
+[42/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[43/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/altcp_tcp.c.obj
+[44/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[45/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/wifi/src/sdio.cpp.obj
+[46/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[47/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[48/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[49/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/acd.c.obj
+[50/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ip.c.obj
+[51/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/autoip.c.obj
+[52/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[53/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/def.c.obj
+[54/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[55/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/init.c.obj
+[56/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/igmp.c.obj
+[57/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/inet_chksum.c.obj
+[58/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/icmp.c.obj
+[59/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[60/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/wifi/src/net.cpp.obj
+[61/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/ip4_addr.c.obj
+[62/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/ip4.c.obj
+[63/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/stats.c.obj
+[64/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/mem.c.obj
+[65/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/memp.c.obj
+[66/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/dns.c.obj
+[67/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/sys.c.obj
+[68/376] Building ASM object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/wifi/src/fw.S.obj
+[69/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj
+[70/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[71/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/netif.c.obj
+[72/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/etharp.c.obj
+[73/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj
+[74/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/raw.c.obj
+[75/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/ip4_frag.c.obj
+[76/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/timeouts.c.obj
+[77/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/netif/ethernet.c.obj
+[78/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[79/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/diskio_sd.cpp.obj
+[80/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[81/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj
+[82/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/udp.c.obj
+[83/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[84/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/wifi/src/platform.cpp.obj
+[85/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/pbuf.c.obj
+[86/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/fatfs_hw.cpp.obj
+[87/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[88/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[89/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/wifi/src/wlan.cpp.obj
+[90/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[91/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/ipv4/dhcp.c.obj
+[92/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[93/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[94/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/src/sd_sdhost.cpp.obj
+[95/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/boards/rpi-zero-2w/wifi/src/wifi_app.cpp.obj
+[96/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/tcp_out.c.obj
+[97/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/tcp.c.obj
+[98/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[99/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/third_party/lwip/src/core/tcp_in.c.obj
+[100/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[101/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/rpi-zero-2w/src/test-smp-boot.cpp.obj
+[102/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[103/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/rpi-zero-2w/wifi-net/main.cpp.obj
+[104/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/ff.c.obj
+[105/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[106/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[107/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[108/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[109/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[110/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[111/376] Linking CXX executable platform-bin/port-tests/test/wifi-net-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/wifi-net-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  86916	   1220	69933200	70021336	42c70d8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-net-qemu.elf
+[112/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[113/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[114/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[115/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[116/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[117/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[118/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj
+[119/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj
+[120/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/handlers.cpp.obj
+[121/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/smp_secondary.cpp.obj
+[122/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/src/mmu.cpp.obj
+[123/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/soc/bcm2837/src/mailbox.cpp.obj
+[124/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[125/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/src/port_sys.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp:23:35: warning: '__smp_spin' initialized and declared 'extern'
+   23 | extern "C" volatile std::uint32_t __smp_spin[OS_NCPU] = {0, 0, 0, 0};
+      |                                   ^~~~~~~~~~
+[126/376] Building ASM object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/src/startup.S.obj
+[127/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/src/smp.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp:67:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   67 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[128/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[129/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/src/timer_arm.cpp.obj
+[130/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[131/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[132/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[133/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/altcp.c.obj
+[134/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[135/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[136/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/altcp_alloc.c.obj
+[137/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[138/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[139/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/altcp_tcp.c.obj
+[140/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[141/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[142/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ip.c.obj
+[143/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/init.c.obj
+[144/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/wifi/src/sdio.cpp.obj
+[145/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/autoip.c.obj
+[146/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/acd.c.obj
+[147/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/def.c.obj
+[148/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/inet_chksum.c.obj
+[149/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/igmp.c.obj
+[150/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/icmp.c.obj
+[151/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[152/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/ip4_addr.c.obj
+[153/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/ip4.c.obj
+[154/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/memp.c.obj
+[155/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/sys.c.obj
+[156/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/dns.c.obj
+[157/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/stats.c.obj
+[158/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/wifi/src/net.cpp.obj
+[159/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/mem.c.obj
+[160/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[161/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[162/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/ip4_frag.c.obj
+[163/376] Building ASM object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/wifi/src/fw.S.obj
+[164/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/etharp.c.obj
+[165/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/netif/ethernet.c.obj
+[166/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/raw.c.obj
+[167/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj
+[168/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/timeouts.c.obj
+[169/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/netif.c.obj
+[170/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[171/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/diskio_sd.cpp.obj
+[172/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[173/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/udp.c.obj
+[174/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[175/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/fatfs_hw.cpp.obj
+[176/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/pbuf.c.obj
+[177/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[178/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/wifi/src/wlan.cpp.obj
+[179/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj
+[180/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/wifi/src/platform.cpp.obj
+[181/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[182/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[183/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/ipv4/dhcp.c.obj
+[184/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[185/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/boards/rpi-zero-2w/wifi/src/wifi_app.cpp.obj
+[186/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/src/sd_sdhost.cpp.obj
+[187/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[188/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[189/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/tcp_out.c.obj
+[190/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/tcp_in.c.obj
+[191/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/third_party/lwip/src/core/tcp.c.obj
+[192/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[193/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj
+[194/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[195/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/rpi-zero-2w/src/test-smp-boot.cpp.obj
+[196/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/ff.c.obj
+[197/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[198/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[199/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/rpi-zero-2w/wifi-tcp-server/main.cpp.obj
+[200/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[201/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[202/376] Linking CXX executable platform-bin/port-tests/test/wifi-net-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/wifi-net-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+1083708	   1436	71124464	72209608	44dd4c8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-net-hwd.elf
+[203/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[204/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[205/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[206/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[207/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[208/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[209/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[210/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj
+[211/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj
+[212/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/handlers.cpp.obj
+[213/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/smp_secondary.cpp.obj
+[214/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[215/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[216/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[217/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/src/mmu.cpp.obj
+[218/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[219/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/soc/bcm2837/src/mailbox.cpp.obj
+[220/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[221/376] Building ASM object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/src/startup.S.obj
+[222/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/src/port_sys.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp:23:35: warning: '__smp_spin' initialized and declared 'extern'
+   23 | extern "C" volatile std::uint32_t __smp_spin[OS_NCPU] = {0, 0, 0, 0};
+      |                                   ^~~~~~~~~~
+[223/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[224/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[225/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[226/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/src/timer_arm.cpp.obj
+[227/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/src/smp.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp:67:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   67 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[228/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[229/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/altcp.c.obj
+[230/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/altcp_tcp.c.obj
+[231/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/altcp_alloc.c.obj
+[232/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[233/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[234/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[235/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/wifi/src/sdio.cpp.obj
+[236/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ip.c.obj
+[237/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/acd.c.obj
+[238/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/inet_chksum.c.obj
+[239/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/autoip.c.obj
+[240/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/init.c.obj
+[241/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/def.c.obj
+[242/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[243/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/igmp.c.obj
+[244/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[245/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[246/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[247/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/icmp.c.obj
+[248/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/ip4.c.obj
+[249/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/ip4_addr.c.obj
+[250/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/memp.c.obj
+[251/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/dns.c.obj
+[252/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/stats.c.obj
+[253/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/sys.c.obj
+[254/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/wifi/src/net.cpp.obj
+[255/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/etharp.c.obj
+[256/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/ip4_frag.c.obj
+[257/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/mem.c.obj
+[258/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/raw.c.obj
+[259/376] Building ASM object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/wifi/src/fw.S.obj
+[260/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/netif.c.obj
+[261/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/netif/ethernet.c.obj
+[262/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/timeouts.c.obj
+[263/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[264/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/diskio_sd.cpp.obj
+[265/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj
+[266/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/udp.c.obj
+[267/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj
+[268/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/wifi/src/platform.cpp.obj
+[269/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[270/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/ipv4/dhcp.c.obj
+[271/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/fatfs_hw.cpp.obj
+[272/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[273/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[274/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/pbuf.c.obj
+[275/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/wifi/src/wlan.cpp.obj
+[276/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj
+[277/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[278/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/src/sd_sdhost.cpp.obj
+[279/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/boards/rpi-zero-2w/wifi/src/wifi_app.cpp.obj
+[280/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[281/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[282/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[283/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/tcp_out.c.obj
+[284/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[285/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/tcp.c.obj
+[286/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/third_party/lwip/src/core/tcp_in.c.obj
+[287/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[288/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/rpi-zero-2w/wifi-tcp-server/main.cpp.obj
+[289/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/ff.c.obj
+[290/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[291/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[292/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/rpi-zero-2w/src/test-smp-boot.cpp.obj
+[293/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[294/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[295/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[296/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[297/376] Linking CXX executable platform-bin/port-tests/test/wifi-tcp-server-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/wifi-tcp-server-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  86948	   1220	69933200	70021368	42c70f8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-tcp-server-qemu.elf
+[298/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[299/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[300/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[301/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[302/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[303/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[304/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj
+[305/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/handlers.cpp.obj
+[306/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj
+[307/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[308/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/smp_secondary.cpp.obj
+[309/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[310/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/src/mmu.cpp.obj
+[311/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/soc/bcm2837/src/mailbox.cpp.obj
+[312/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[313/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/src/smp.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp:67:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   67 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[314/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/src/port_sys.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp:23:35: warning: '__smp_spin' initialized and declared 'extern'
+   23 | extern "C" volatile std::uint32_t __smp_spin[OS_NCPU] = {0, 0, 0, 0};
+      |                                   ^~~~~~~~~~
+[315/376] Building ASM object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/src/startup.S.obj
+[316/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[317/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[318/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[319/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[320/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/src/timer_arm.cpp.obj
+[321/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[322/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/altcp.c.obj
+[323/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[324/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/altcp_alloc.c.obj
+[325/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/altcp_tcp.c.obj
+[326/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[327/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[328/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/wifi/src/sdio.cpp.obj
+[329/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/def.c.obj
+[330/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ip.c.obj
+[331/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/init.c.obj
+[332/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[333/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/acd.c.obj
+[334/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/inet_chksum.c.obj
+[335/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/autoip.c.obj
+[336/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/igmp.c.obj
+[337/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[338/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[339/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/icmp.c.obj
+[340/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[341/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/dns.c.obj
+[342/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/ip4.c.obj
+[343/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/mem.c.obj
+[344/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/stats.c.obj
+[345/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/sys.c.obj
+[346/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[347/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/ip4_addr.c.obj
+[348/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/memp.c.obj
+[349/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/etharp.c.obj
+[350/376] Building ASM object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/wifi/src/fw.S.obj
+[351/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/ip4_frag.c.obj
+[352/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/netif/ethernet.c.obj
+[353/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/wifi/src/net.cpp.obj
+[354/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[355/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/timeouts.c.obj
+[356/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/raw.c.obj
+[357/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/netif.c.obj
+[358/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/diskio_sd.cpp.obj
+[359/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/udp.c.obj
+[360/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[361/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[362/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/fatfs_hw.cpp.obj
+[363/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/wifi/src/platform.cpp.obj
+[364/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/ipv4/dhcp.c.obj
+[365/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/src/sd_sdhost.cpp.obj
+[366/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/pbuf.c.obj
+[367/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/wifi/src/wlan.cpp.obj
+[368/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/tcp_out.c.obj
+[369/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj
+[370/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj
+[371/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/boards/rpi-zero-2w/wifi/src/wifi_app.cpp.obj
+[372/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/tcp.c.obj
+[373/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/third_party/lwip/src/core/tcp_in.c.obj
+[374/376] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj
+[375/376] Building C object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/drivers/fatfs/ff.c.obj
+[376/376] Linking CXX executable platform-bin/port-tests/test/wifi-tcp-server-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/wifi-tcp-server-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+1078268	   1284	79513008	80592560	4cdbeb0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-tcp-server-hwd.elf
+> cd build/aarch32-rpi-zero-2w-cmake-gcc-debug && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: aarch32-rpi-zero-2w-clock-test-qemu
+
+1: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+1: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+1: Environment variables: 
+1:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+1:  UOS_QEMU_LOAD_ADDR=0x10000
+1:  UOS_QEMU_ONLY=clock-test
+1:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+1: Test timeout computed to be: 2400
+1: clock-test               
+1: QEMU 9.2.4 monitor - type 'help' for more information
+1: (qemu) 
+1: +== RPi Zero 2W µOS++ CLOCK TEST ==+
+1: os_startup_initialize_free_store(0x2b8000,67108864)
+1: first_fit_top(0x2b8000,67108864) @0x304f8 app-heap
+1: out_of_memory_handler(0x16420) @0x304f8 app-heap
+1: estd::pmr::set_default_resource(0x304f8) 
+1: rtos::memory::set_default_resource(0x304f8) 
+1: rtos::memory::init_once_default_resource() 
+1: malloc_memory_resource() @0x304c8 malloc
+1: scheduler::start() 
+1: cntfreq 62483502 Hz, cycles_per_tick 62483
+1: 5000 ticks: sysclock +5000, System Timer 4998439 us, hrclock 4999830 us
+1:   [ok] the tick keeps the System Timer's time
+1:   [ok] hrclock keeps the System Timer's time
+1: core 0: hrclock.sleep_until(now + 100 ms) 101424 us, now - steady_now 38148 cycles
+1:   [ok] hrclock sleep 100 ms (core 0)
+1:   [ok] woken promptly after the tick (core 0)
+1: core 1: hrclock.sleep_until(now + 100 ms) 100941 us, now - steady_now 10309 cycles
+1:   [ok] hrclock sleep 100 ms (core 1)
+1:   [ok] woken promptly after core 0's tick (core 1)
+1: RESULT: PASS (clock-test: tick, hrclock and cross-core wake)
+1: PASS
+1: 
+1: qemu suite: 1 passed, 0 skipped, 0 failed
+ 1/18 Test  #1: aarch32-rpi-zero-2w-clock-test-qemu ............   Passed    5.37 sec
+test 3
+      Start  3: aarch32-rpi-zero-2w-cmsis-os-validator-qemu
+
+3: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+3: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+3: Environment variables: 
+3:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+3:  UOS_QEMU_LOAD_ADDR=0x10000
+3:  UOS_QEMU_ONLY=cmsis-os-validator
+3:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+3: Test timeout computed to be: 2400
+3: cmsis-os-validator       
+3: QEMU 9.2.4 monitor - type 'help' for more information
+3: (qemu) os_startup_initialize_free_store(0x2d0000,67108864)
+3: first_fit_top(0x2d0000,67108864) @0x3b188 app-heap
+3: out_of_memory_handler(0x1baa4) @0x3b188 app-heap
+3: estd::pmr::set_default_resource(0x3b188) 
+3: rtos::memory::set_default_resource(0x3b188) 
+3: rtos::memory::init_once_default_resource() 
+3: malloc_memory_resource() @0x3b158 malloc
+3: scheduler::start() 
+3: CMSIS-RTOS Test Suite   Oct 18 2026   11:17:22 
+3: 
+3: TEST 01: TC_ThreadCreate                  PASSED
+3: TEST 02: TC_ThreadMultiInstance           PASSED
+3: TEST 03: TC_ThreadTerminate               PASSED
+3: TEST 04: TC_ThreadRestart                 PASSED
+3: TEST 05: TC_ThreadGetId                   PASSED
+3: TEST 06: TC_ThreadPriority                PASSED
+3: TEST 07: TC_ThreadPriorityExec            PASSED
+3: TEST 08: TC_ThreadChainedCreate           PASSED
+3: TEST 09: TC_ThreadYield                   PASSED
+3: TEST 10: TC_ThreadParam                   PASSED
+3: TEST 11: TC_ThreadInterrupts              PASSED
+3: TEST 12: TC_GenWaitBasic                  PASSED
+3: TEST 13: TC_GenWaitInterrupts             PASSED
+3: TEST 14: TC_TimerOneShot                  PASSED
+3: TEST 15: TC_TimerPeriodic                 PASSED
+3: TEST 16: TC_TimerParam                    PASSED
+3: TEST 17: TC_TimerInterrupts               PASSED
+3: TEST 18: TC_SignalMainThread              PASSED
+3: TEST 19: TC_SignalChildThread             PASSED
+3: TEST 20: TC_SignalChildToParent           PASSED
+3: TEST 21: TC_SignalChildToChild            PASSED
+3: TEST 22: TC_SignalWaitTimeout             PASSED
+3: TEST 23: TC_SignalParam                   PASSED
+3: TEST 24: TC_SignalInterrupts              PASSED
+3: TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+3: TEST 26: TC_SemaphoreObtainCounting       PASSED
+3: TEST 27: TC_SemaphoreObtainBinary         PASSED
+3: TEST 28: TC_SemaphoreWaitForBinary        PASSED
+3: TEST 29: TC_SemaphoreWaitForCounting      PASSED
+3: TEST 30: TC_SemaphoreZeroCount            PASSED
+3: TEST 31: TC_SemaphoreWaitTimeout          PASSED
+3: TEST 32: TC_SemParam                      PASSED
+3: TEST 33: TC_SemInterrupts                 PASSED
+3: TEST 34: TC_MutexBasic                    PASSED
+3: TEST 35: TC_MutexTimeout                  PASSED
+3: TEST 36: TC_MutexNestedAcquire            PASSED
+3: TEST 37: TC_MutexPriorityInversion        PASSED
+3: TEST 38: TC_MutexOwnership                PASSED
+3: TEST 39: TC_MutexParam                    PASSED
+3: TEST 40: TC_MutexInterrupts               PASSED
+3: TEST 41: TC_MemPoolAllocAndFree           PASSED
+3: TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+3: TEST 43: TC_MemPoolZeroInit               PASSED
+3: TEST 44: TC_MemPoolParam                  PASSED
+3: TEST 45: TC_MemPoolInterrupts             PASSED
+3: TEST 46: TC_MsgQBasic                     PASSED
+3: TEST 47: TC_MsgQWait                      PASSED
+3: TEST 48: TC_MsgQParam                     PASSED
+3: TEST 49: TC_MsgQInterrupts                PASSED
+3: TEST 50: TC_MsgFromThreadToISR            PASSED
+3: TEST 51: TC_MsgFromISRToThread            PASSED
+3: TEST 52: TC_MailAlloc                     PASSED
+3: TEST 53: TC_MailCAlloc                    PASSED
+3: TEST 54: TC_MailToThread                  PASSED
+3: TEST 55: TC_MailFromThread                PASSED
+3: TEST 56: TC_MailTimeout                   PASSED
+3: TEST 57: TC_MailParam                     PASSED
+3: TEST 58: TC_MailInterrupts                PASSED
+3: TEST 59: TC_MailFromThreadToISR           PASSED
+3: TEST 60: TC_MailFromISRToThread           PASSED
+3: 
+3: Test Summary: 60 Tests, 60 Executed, 60 Passed, 0 Failed, 0 Warnings.
+3: Test Result: PASSED
+3: 
+3: RESULT: PASS
+3: PASS
+3: 
+3: qemu suite: 1 passed, 0 skipped, 0 failed
+ 2/18 Test  #3: aarch32-rpi-zero-2w-cmsis-os-validator-qemu ....   Passed   11.65 sec
+test 5
+      Start  5: aarch32-rpi-zero-2w-mutex-stress-qemu
+
+5: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+5: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+5: Environment variables: 
+5:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+5:  UOS_QEMU_LOAD_ADDR=0x10000
+5:  UOS_QEMU_ONLY=mutex-stress
+5:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+5: Test timeout computed to be: 2400
+5: mutex-stress             
+5: QEMU 9.2.4 monitor - type 'help' for more information
+5: (qemu) os_startup_initialize_free_store(0x2bc000,67108864)
+5: first_fit_top(0x2bc000,67108864) @0x2c2a8 app-heap
+5: out_of_memory_handler(0x15c38) @0x2c2a8 app-heap
+5: estd::pmr::set_default_resource(0x2c2a8) 
+5: rtos::memory::set_default_resource(0x2c2a8) 
+5: rtos::memory::init_once_default_resource() 
+5: malloc_memory_resource() @0x2c278 malloc
+5: scheduler::start() 
+5: 
+5: Mutex stress & uniformity test
+5: Built with GCC 15.2.1 20251203
+5: Seed 1953482116
+5: mutex_test @0x34038 t0
+5: mutex_test @0x340d0 t1
+5: mutex_test @0x34168 t2
+5: mutex_test @0x34200 t3
+5: mutex_test @0x34298 t4
+5: mutex_test @0x34330 t5
+5: mutex_test @0x343c8 t6
+5: mutex_test @0x34460 t7
+5: mutex_test @0x344f8 t8
+5: mutex_test @0x34590 t9
+5: periodic @0x33fb8
+5: [  5s] t0:36   t1:43   t2:39   t3:41   t4:39   t5:41   t6:44   t7:43   t8:40   t9:40   sum=406, avg=41, sigma=2, delta in [-5,3] [-11%,7%]
+5: [ 10s] t0:76   t1:82   t2:75   t3:79   t4:81   t5:78   t6:80   t7:86   t8:77   t9:80   sum=794, avg=79, sigma=3, delta in [-4,7] [-4%,9%]
+5: [ 15s] t0:118  t1:120  t2:115  t3:117  t4:120  t5:116  t6:116  t7:125  t8:113  t9:118  sum=1178, avg=118, sigma=3, delta in [-5,7] [-3%,6%]
+5: [ 20s] t0:160  t1:157  t2:155  t3:155  t4:156  t5:159  t6:158  t7:163  t8:152  t9:161  sum=1576, avg=158, sigma=3, delta in [-6,5] [-3%,3%]
+5: [ 25s] t0:196  t1:198  t2:199  t3:200  t4:194  t5:202  t6:198  t7:206  t8:191  t9:200  sum=1984, avg=198, sigma=3, delta in [-7,8] [-3%,4%]
+5: [ 30s] t0:233  t1:235  t2:245  t3:235  t4:236  t5:244  t6:232  t7:245  t8:229  t9:242  sum=2376, avg=238, sigma=5, delta in [-9,7] [-3%,3%]
+5: [ 35s] t0:275  t1:278  t2:280  t3:274  t4:276  t5:286  t6:273  t7:288  t8:272  t9:282  sum=2784, avg=278, sigma=5, delta in [-6,10] [-1%,4%]
+5: Done.
+5: 
+5: RESULT: PASS
+5: PASS
+5: 
+5: qemu suite: 1 passed, 0 skipped, 0 failed
+ 3/18 Test  #5: aarch32-rpi-zero-2w-mutex-stress-qemu ..........   Passed   35.32 sec
+test 7
+      Start  7: aarch32-rpi-zero-2w-rtos-apis-qemu
+
+7: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+7: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+7: Environment variables: 
+7:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+7:  UOS_QEMU_LOAD_ADDR=0x10000
+7:  UOS_QEMU_ONLY=rtos-apis
+7:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+7: Test timeout computed to be: 2400
+7: rtos-apis                
+7: QEMU 9.2.4 monitor - type 'help' for more information
+7: (qemu) os_startup_initialize_free_store(0x2f4000,67108864)
+7: first_fit_top(0x2f4000,67108864) @0x520a8 app-heap
+7: out_of_memory_handler(0x1fadc) @0x520a8 app-heap
+7: estd::pmr::set_default_resource(0x520a8) 
+7: rtos::memory::init_once_default_resource() 
+7: malloc_memory_resource() @0x52078 malloc
+7: first_fit_top(0x4274000,524288) @0x4273fc0 sys-heap
+7: lifo(0x4274000,524288) @0x4273fc0 sys-heap
+7: out_of_memory_handler(0x1fae4) @0x4273fc0 sys-heap
+7: rtos::memory::set_default_resource(0x4273fc0) 
+7: block_pool_typed_inclusive() @0x4273dc8 threads-pool
+7: out_of_memory_handler(0x1fae4) @0x4273dc8 threads-pool
+7: rtos::memory::set_resource_typed<os::rtos::thread>(0x4273dc8) 
+7: block_pool_typed_inclusive() @0x4273d50 condvars-pool
+7: out_of_memory_handler(0x1fae4) @0x4273d50 condvars-pool
+7: rtos::memory::set_resource_typed<os::rtos::condition_variable>(0x4273d50) 
+7: block_pool_typed_inclusive() @0x4273cd0 evflags-pool
+7: out_of_memory_handler(0x1fae4) @0x4273cd0 evflags-pool
+7: rtos::memory::set_resource_typed<os::rtos::event_flags>(0x4273cd0) 
+7: block_pool_typed_inclusive() @0x4273be8 mempools-pool
+7: out_of_memory_handler(0x1fae4) @0x4273be8 mempools-pool
+7: rtos::memory::set_resource_typed<os::rtos::memory_pool>(0x4273be8) 
+7: block_pool_typed_inclusive() @0x4273ac8 mqueues-pool
+7: out_of_memory_handler(0x1fae4) @0x4273ac8 mqueues-pool
+7: rtos::memory::set_resource_typed<os::rtos::message_queue>(0x4273ac8) 
+7: block_pool_typed_inclusive() @0x4273a00 mutexes-pool
+7: out_of_memory_handler(0x1fae4) @0x4273a00 mutexes-pool
+7: rtos::memory::set_resource_typed<os::rtos::mutex>(0x4273a00) 
+7: block_pool_typed_inclusive() @0x4273970 semaphores-pool
+7: out_of_memory_handler(0x1fae4) @0x4273970 semaphores-pool
+7: rtos::memory::set_resource_typed<os::rtos::semaphore>(0x4273970) 
+7: block_pool_typed_inclusive() @0x4273880 timers-pool
+7: out_of_memory_handler(0x1fae4) @0x4273880 timers-pool
+7: rtos::memory::set_resource_typed<os::rtos::timer>(0x4273880) 
+7: Device '/dev/mc' linked
+7: my_char_impl()=@0x62eb4 1
+7: Device '/dev/mc2' linked
+7: my_char_impl()=@0x62e8c 2
+7: Device '/dev/mb' linked
+7: my_block_impl::my_block_impl()=@0x62e24
+7: Device '/dev/mb-p1' linked
+7: Device '/dev/mb-p2' linked
+7: file_descriptors_manager::file_descriptors_manager(5)=0x62d5c
+7: scheduler::start() 
+7: 
+7: µOS++ RTOS simple APIs test
+7: Built with GCC 15.2.1 20251203
+7: 
+7: Test C++ API - started
+7: 
+7: Threads:
+7: main, 3% (1028/32764), run, 10, 378541 
+7: idle1, 3% (532/16380), run, 20, 563566 
+7: idle2, 3% (532/16380), run, 18, 500019 
+7: idle3, 3% (532/16380), run, 16, 441736 
+7: idle, 3% (556/16380), rdy, 11, 307290 
+7: 
+7: Test C++ API - Memory managers
+7: block_pool(2,8,0x6b228,60) @0x6b2b8 bp1
+7: ~block_pool() @0x6b2b8 bp1
+7: block_pool_typed_inclusive() @0x6b2b8 bp2
+7: ~block_pool_typed_inclusive() @0x6b2b8 bp2
+7: ~block_pool() @0x6b2b8 bp2
+7: block_pool_typed_allocated(2,0x6b228) @0x6b2b8 bp3
+7: ~block_pool_typed_allocated() @0x6b2b8 bp3
+7: ~block_pool() @0x6b2b8 bp3
+7: 
+7: Test C++ API - Threads
+7: > func() on thread -
+7: > func() on thread th2
+7: > func() on thread th3
+7: > func() on thread th4
+7: > func() on thread th5
+7: > func() on thread th6
+7: > func() on thread th7
+7: > func() on thread th8
+7: > func() on thread th9
+7: allocator_stateless_polymorphic_synchronized() @0x6b2b8 0x4273dc8
+7: allocate(1) @0x6b1c8
+7: > func() on thread th10
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273dc8
+7: allocate(1) @0x6b1c8
+7: > func() on thread th11
+7: deallocate(0x4273e98,1) @0x6b220
+7: deallocate(0x4273e08,1) @0x6b2b8
+7: > func() on thread -
+7: > func() on thread ath2
+7: > func() on thread -
+7: > func() on thread sth2
+7: 
+7: Test C++ API - Thread stack
+7: 
+7: Test C++ API - Thread event flags
+7: 
+7: Test C++ API - Message queues
+7: allocator_stateless_polymorphic_synchronized() @0x6b218 0x4273ac8
+7: allocate(1) @0x6b1c0
+7: allocator_stateless_polymorphic_synchronized() @0x6b20c 0x4273ac8
+7: allocate(1) @0x6b1c0
+7: deallocate(0x4273b50,1) @0x6b220
+7: deallocate(0x4273b08,1) @0x6b2b8
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273ac8
+7: allocator_stateless_polymorphic_synchronized() @0x6b20c 0x4273ac8
+7: allocate(1) @0x6b1c8
+7: allocator_stateless_polymorphic_synchronized() @0x6b208 0x4273ac8
+7: allocate(1) @0x6b1c8
+7: deallocate(0x4273b50,1) @0x6b20c
+7: deallocate(0x4273b08,1) @0x6b2b8
+7: 
+7: Test C++ API - Memory pools
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273be8
+7: allocator_stateless_polymorphic_synchronized() @0x6b208 0x4273be8
+7: allocate(1) @0x6b1c0
+7: allocator_stateless_polymorphic_synchronized() @0x6b204 0x4273be8
+7: allocate(1) @0x6b1c0
+7: deallocate(0x4273c5c,1) @0x6b20c
+7: deallocate(0x4273c28,1) @0x6b2b8
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273ac8
+7: allocator_stateless_polymorphic_synchronized() @0x6b20c 0x4273be8
+7: allocate(1) @0x6b1c8
+7: allocator_stateless_polymorphic_synchronized() @0x6b208 0x4273be8
+7: allocate(1) @0x6b1c8
+7: deallocate(0x4273c5c,1) @0x6b20c
+7: deallocate(0x4273c28,1) @0x6b2b8
+7: 
+7: Test C++ API - Condition variables
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273d50
+7: allocator_stateless_polymorphic_synchronized() @0x6b2b8 0x4273d50
+7: allocate(1) @0x6b1cc
+7: allocator_stateless_polymorphic_synchronized() @0x6b20c 0x4273d50
+7: allocate(1) @0x6b1cc
+7: deallocate(0x4273da0,1) @0x6b20c
+7: deallocate(0x4273d90,1) @0x6b2b8
+7: 
+7: Test C++ API - Event flags
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273cd0
+7: allocator_stateless_polymorphic_synchronized() @0x6b2b8 0x4273cd0
+7: allocate(1) @0x6b1cc
+7: allocator_stateless_polymorphic_synchronized() @0x6b20c 0x4273cd0
+7: allocate(1) @0x6b1cc
+7: deallocate(0x4273d24,1) @0x6b20c
+7: deallocate(0x4273d10,1) @0x6b2b8
+7: 
+7: Test C++ API - Mutexes
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273a00
+7: allocator_stateless_polymorphic_synchronized() @0x6b2b8 0x4273a00
+7: allocate(1) @0x6b1cc
+7: allocator_stateless_polymorphic_synchronized() @0x6b20c 0x4273a00
+7: allocate(1) @0x6b1cc
+7: deallocate(0x4273a6c,1) @0x6b20c
+7: deallocate(0x4273a40,1) @0x6b2b8
+7: 0x42e3d50
+7: 0x42e3d50
+7: 0x42e3d50
+7: 0x42e3d50
+7: 0x42e3d50
+7: 0x0
+7: 
+7: Test C++ API - Semaphores
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273970
+7: allocator_stateless_polymorphic_synchronized() @0x6b2b8 0x4273970
+7: allocate(1) @0x6b1cc
+7: allocator_stateless_polymorphic_synchronized() @0x6b20c 0x4273970
+7: allocate(1) @0x6b1cc
+7: deallocate(0x42739c8,1) @0x6b20c
+7: deallocate(0x42739b0,1) @0x6b2b8
+7: 
+7: Test C++ API - Timers
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: allocator_stateless_polymorphic_synchronized() @0x6b220 0x4273880
+7: allocator_stateless_polymorphic_synchronized() @0x6b2b8 0x4273880
+7: allocate(1) @0x6b1cc
+7: >> tmfunc()
+7: allocator_stateless_polymorphic_synchronized() @0x6b20c 0x4273880
+7: allocate(1) @0x6b1cc
+7: >> tmfunc()
+7: deallocate(0x42738f8,1) @0x6b20c
+7: deallocate(0x42738c0,1) @0x6b2b8
+7: 
+7: Test C++ API - done
+7: errno=0
+7: 
+7: Test C API - started
+7: 
+7: Threads:
+7: main, 4% (1372/32764), run, 98, 1355488 
+7: idle1, 3% (532/16380), run, 98, 2982386 
+7: idle2, 3% (532/16380), run, 96, 2940199 
+7: idle3, 3% (532/16380), run, 76, 2261961 
+7: idle, 6% (1056/16380), rdy, 110, 2345505 
+7: 
+7: Test C API - Scheduler
+7: 
+7: Test C API - Clocks
+7: 
+7: Test C API - Threads
+7: > func
+7: > func
+7: > func
+7: > func
+7: 
+7: Test C API - Thread stack
+7: 
+7: Test C API - Thread event flags
+7: 
+7: Test C API - Timers
+7: >> tmfunc
+7: >> tmfunc
+7: >> tmfunc
+7: >> tmfunc
+7: 
+7: Test C API - Mutexes
+7: 
+7: Test C API - Semaphores
+7: 
+7: Test C API - Memory pools
+7: 
+7: Test C API - Message queues
+7: 
+7: Test C API - Event flags
+7: 
+7: Test C API - Condition variables
+7: 
+7: Test C API - done
+7: errno=0
+7: 
+7: Test ISO C++ API - Threads
+7: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(); Args = {}]() @0x6b308
+7: join() @0x6b308
+7: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*())()>]()
+7: task1()
+7: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*())()>]()
+7: join() @0x6b308 joined
+7: ~thread() @0x6b308
+7: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(const void*); Args = {char*}]() @0x6b314
+7: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(const void*)>]()
+7: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(void*); Args = {char*}]() @0x6b320
+7: task2(0x6b307)
+7: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(void*)>]()
+7: task3(0x6b307)
+7: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(int, const char*); Args = {int, const char (&)[4]}]() @0x6b330
+7: join() @0x6b314
+7: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(int, const char*))(int, const char*)>]()
+7: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(const void*)>]()
+7: task4(7,xyz)
+7: join() @0x6b314 joined
+7: join() @0x6b320
+7: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(void*)>]()
+7: join() @0x6b320 joined
+7: join() @0x6b330
+7: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(int, const char*))(int, const char*)>]()
+7: join() @0x6b330 joined
+7: ~thread() @0x6b330
+7: ~thread() @0x6b320
+7: ~thread() @0x6b314
+7: 
+7: Test ISO C++ API - Mutexes
+7: 
+7: Test ISO C++ API - Condition variables
+7: 
+7: Test ISO C++ API - Chrono
+7: Systick_clock::now() = 94 ticks
+7: system_clock::now() = 94000 us
+7: high_resolution_clock::now() = 94543875 ns
+7: sleep_for<chrono::realtime_clock> (1s)
+7: sleep_for<chrono::realtime_clock> (1001ms)
+7: sleep_until (chrono::realtime_clock::now () + 1000ms)
+7: sleep_until (chrono::realtime_clock::now () + 1s)
+7: 
+7: Test ISO C++ API - Done
+7: errno=0
+7: 
+7: Test POSIX I/O - Block device partitions - C++ API
+7: 
+7: Test POSIX I/O - Block device locked - C++ API
+7: 
+7: Test POSIX I/O - Block device unlocked - C++ API
+7: 
+7: Test POSIX I/O - Block device - intermixed opens - C++ API
+7: errno=0
+7: 
+7: Chan FatFS - 512/512 fat12, step 0
+7: Device '/dev/ch-bk-1' linked
+7: my_block_impl::my_block_impl()=@0x4271dcc
+7: 
+7: test_diskio(0x4271db0, 3, 0x4260d98, 4100)
+7: ---- Test cycle 1 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 2 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 3 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file5-with-long-name.extension"
+7: "folder4-with-long-name"
+7: "file6-with-long-name.extension"
+7: my_block_impl::~my_block_impl() @0x4271dcc
+7: 
+7: Chan FatFS - 512/512 fat12, step 1
+7: Device '/dev/ch-bk-1' linked
+7: my_block_impl::my_block_impl()=@0x4271dcc
+7: 
+7: test_diskio(0x4271db0, 3, 0x4260d98, 4100)
+7: ---- Test cycle 1 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 2 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 3 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file5-with-long-name.extension"
+7: "folder4-with-long-name"
+7: "file6-with-long-name.extension"
+7: my_block_impl::~my_block_impl() @0x4271dcc
+7: 
+7: Chan FatFS - 512/512 fat12, step 2
+7: Device '/dev/ch-bk-1' linked
+7: my_block_impl::my_block_impl()=@0x4271dcc
+7: 
+7: test_diskio(0x4271db0, 3, 0x4260d98, 4100)
+7: ---- Test cycle 1 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 2 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 3 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file5-with-long-name.extension"
+7: "folder4-with-long-name"
+7: "file6-with-long-name.extension"
+7: my_block_impl::~my_block_impl() @0x4271dcc
+7: 
+7: Chan FatFS - 512/512 fat12 mutex
+7: Device '/dev/ch-bk-1m' linked
+7: my_block_impl::my_block_impl()=@0x4271dcc
+7: 
+7: test_diskio(0x4271db0, 3, 0x4260d98, 4100)
+7: ---- Test cycle 1 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 2 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 3 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file5-with-long-name.extension"
+7: "folder4-with-long-name"
+7: "file6-with-long-name.extension"
+7: my_block_impl::~my_block_impl() @0x4271dcc
+7: errno=0
+7: done
+7: 
+7: RESULT: PASS
+7: PASS
+7: 
+7: qemu suite: 1 passed, 0 skipped, 0 failed
+ 4/18 Test  #7: aarch32-rpi-zero-2w-rtos-apis-qemu .............   Passed    7.25 sec
+test 9
+      Start  9: aarch32-rpi-zero-2w-sd_test-qemu
+
+9: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+9: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+9: Environment variables: 
+9:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+9:  UOS_QEMU_LOAD_ADDR=0x10000
+9:  UOS_QEMU_ONLY=sd_test
+9:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+9: Test timeout computed to be: 2400
+9: sd_test                  
+9: QEMU 9.2.4 monitor - type 'help' for more information
+9: (qemu) os_startup_initialize_free_store(0x2d0000,67108864)
+9: first_fit_top(0x2d0000,67108864) @0x47ca8 app-heap
+9: out_of_memory_handler(0x15780) @0x47ca8 app-heap
+9: estd::pmr::set_default_resource(0x47ca8) 
+9: rtos::memory::set_default_resource(0x47ca8) 
+9: rtos::memory::init_once_default_resource() 
+9: malloc_memory_resource() @0x47c78 malloc
+9: scheduler::start() 
+9: 
+9: +=================================================+
+9: |  Raspberry Pi Zero 2W - micro-os-plus-iii      |
+9: |  SD card (Arasan EMMC/SDHCI, PIO) + flatfs     |
+9: +=================================================+
+9: Initialising SD card via SDHCI @0x3F300000...
+9:   SD card ready: SDHC/SDXC (block addressing), 8388608 sectors (~4096 MiB)
+9: Phase A: host->device  (mount host-seeded volume, read seed.bin)
+9:   mounted volume.
+9:   seed.bin: 100000 bytes, checksum OK
+9:   [PASS] host-created seed.bin verified on device
+9: 
+9: Phase B: device->device  (format, write, read-back verify)
+9:   [PASS] format
+9:   writing hello.txt (40 B text)...
+9:   writing data1.bin (3000 B pattern)...
+9:   writing data2.bin (70000 B pattern)...
+9:   writing big.bin (307200 B pattern)...
+9: 
+9:   read-back verification:
+9:   [PASS] hello.txt read-back verified (40 B)
+9:   [PASS] data1.bin read-back verified (3000 B)
+9:   [PASS] data2.bin read-back verified (70000 B)
+9:   [PASS] big.bin read-back verified (307200 B)
+9: 
+9: Volume contents:
+9:   card: 8388608 sectors  free: 8385799 sectors  files: 4
+9:     hello.txt             start=    2065  size=      40
+9:     data1.bin             start=    2066  size=    3000
+9:     data2.bin             start=    2072  size=   70000
+9:     big.bin               start=    2209  size=  307200
+9: 
+9: RESULT: PASS (SD + flatfs verified)
+9: -------------------------------------------------
+9: PASS
+9: 
+9: qemu suite: 1 passed, 0 skipped, 0 failed
+ 5/18 Test  #9: aarch32-rpi-zero-2w-sd_test-qemu ...............   Passed    0.71 sec
+test 11
+      Start 11: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu
+
+11: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+11: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+11: Environment variables: 
+11:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+11:  UOS_QEMU_LOAD_ADDR=0x10000
+11:  UOS_QEMU_ONLY=smp-mat-sdcard-test
+11:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+11: Test timeout computed to be: 2400
+11: smp-mat-sdcard-test      
+11: QEMU 9.2.4 monitor - type 'help' for more information
+11: (qemu) os_startup_initialize_free_store(0x36c000,67108864)
+11: first_fit_top(0x36c000,67108864) @0xe5628 app-heap
+11: out_of_memory_handler(0x1819c) @0xe5628 app-heap
+11: estd::pmr::set_default_resource(0xe5628) 
+11: rtos::memory::set_default_resource(0xe5628) 
+11: rtos::memory::init_once_default_resource() 
+11: malloc_memory_resource() @0xe55f8 malloc
+11: scheduler::start() 
+11: 
+11: =============================================
+11:   Raspberry Pi Zero 2W - BCM2837 (4x Cortex-A53, AArch32)
+11:   micro-os-plus-iii  smp-mat-sdcard-test
+11:   parallel block linear solver, matrices on SD
+11:   N = 200, B = 20, cores = 4
+11: =============================================
+11: NOTE: 10 blocks over 4 cores (uneven round-robin split).
+11: Initialising SD card (Arasan EMMC/SDHCI)...
+11:   SD ready: 8388608 sectors (~4096 MiB)
+11:   flatfs volume formatted.
+11: Generating diagonally dominant 200 x 200 matrix...
+11:   matrix generated.
+11: Storing A and b on the SD card (A.mat, b.mat)...
+11:   stored A.mat (160000 bytes)
+11:   stored b.mat (800 bytes)
+11: Loading A_block/b_block from the SD card (solver working set)...
+11:   solver working set loaded from SD.
+11: Loading A/b for the classical solve from the SD card...
+11:   classical working set loaded from SD.
+11: 
+11: core 0: releasing the secondary cores...
+11: core 0: SMP up (c1=3 c2=3 c3=3).
+11: Starting Thread Pool of 10 worker threads...
+11: Submitting 20 tasks to the Thread Pool...
+11: Thread Pool: Worker executed task 0 on CPU 0
+11: Thread Pool: Worker executed task 2 on CPU 0
+11: Thread Pool: Worker executed task 3 on CPU 0
+11: Thread Pool: Worker executed task 1 on CPU 1
+11: Thread Pool: Worker executed task 4 on CPU 1
+11: Thread Pool: Worker executed task 5 on CPU 0
+11: Thread Pool: Worker executed task 11 on CPU 0
+11: Thread Pool: Worker executed task 14 on CPU 0
+11: Thread Pool: Worker executed task 8 on CPU 0
+11: Thread Pool: Worker executed task 15 on CPU 0
+11: Thread Pool: Worker executed task 9 on CPU 2
+11: Thread Pool: Worker executed task 12 on CPU 1
+11: Thread Pool: Worker executed task 13 on CPU 3
+11: Thread Pool: Worker executed task 6 on CPU 2
+11: Thread Pool: Worker executed task 7 on CPU 1
+11: Thread Pool: Worker executed task 16 on CPU 0
+11: Thread Pool: Worker executed task 17 on CPU 0
+11: Thread Pool: Worker executed task 18 on CPU 0
+11: Thread Pool: Worker executed task 10 on CPU 1
+11: Thread Pool: Worker executed task 19 on CPU 1
+11: Thread Pool demo finished. All 20 tasks executed successfully.
+11: 
+11: Starting parallel 4-core block elimination (N=200, B=20)...
+11: Block elimination finished.
+11: Solving full system using classical elimination...
+11: Classical elimination finished.
+11: 
+11: +---------------------------------------------------+
+11: | COMPARING BLOCK ELIMINATION VS CLASSICAL SOLVER  |
+11: +---------------------------------------------------+
+11: x[0] Block = 0.001917 | Classic = 0.001917 | Abs Diff = 0.000000
+11: x[6] Block = 0.001973 | Classic = 0.001973 | Abs Diff = 0.000000
+11: x[12] Block = 0.002067 | Classic = 0.002067 | Abs Diff = 0.000000
+11: x[18] Block = 0.002207 | Classic = 0.002207 | Abs Diff = 0.000000
+11: x[24] Block = 0.002243 | Classic = 0.002243 | Abs Diff = 0.000000
+11: x[30] Block = 0.002120 | Classic = 0.002120 | Abs Diff = 0.000000
+11: x[36] Block = 0.002038 | Classic = 0.002038 | Abs Diff = 0.000000
+11: x[42] Block = 0.002380 | Classic = 0.002380 | Abs Diff = 0.000000
+11: x[48] Block = 0.002022 | Classic = 0.002022 | Abs Diff = 0.000000
+11: x[54] Block = 0.002002 | Classic = 0.002002 | Abs Diff = 0.000000
+11: x[60] Block = 0.001977 | Classic = 0.001977 | Abs Diff = 0.000000
+11: x[66] Block = 0.002080 | Classic = 0.002080 | Abs Diff = 0.000000
+11: x[72] Block = 0.002067 | Classic = 0.002067 | Abs Diff = 0.000000
+11: x[78] Block = 0.001722 | Classic = 0.001722 | Abs Diff = 0.000000
+11: x[84] Block = 0.002120 | Classic = 0.002120 | Abs Diff = 0.000000
+11: x[90] Block = 0.001987 | Classic = 0.001987 | Abs Diff = 0.000000
+11: x[96] Block = 0.002050 | Classic = 0.002050 | Abs Diff = 0.000000
+11: x[102] Block = 0.001663 | Classic = 0.001663 | Abs Diff = 0.000000
+11: x[108] Block = 0.001781 | Classic = 0.001781 | Abs Diff = 0.000000
+11: x[114] Block = 0.002325 | Classic = 0.002325 | Abs Diff = 0.000000
+11: x[120] Block = 0.001839 | Classic = 0.001839 | Abs Diff = 0.000000
+11: x[126] Block = 0.001808 | Classic = 0.001808 | Abs Diff = 0.000000
+11: x[132] Block = 0.001611 | Classic = 0.001611 | Abs Diff = 0.000000
+11: x[138] Block = 0.001816 | Classic = 0.001816 | Abs Diff = 0.000000
+11: x[144] Block = 0.001969 | Classic = 0.001969 | Abs Diff = 0.000000
+11: x[150] Block = 0.001661 | Classic = 0.001661 | Abs Diff = 0.000000
+11: x[156] Block = 0.001942 | Classic = 0.001942 | Abs Diff = 0.000000
+11: x[162] Block = 0.002066 | Classic = 0.002066 | Abs Diff = 0.000000
+11: x[168] Block = 0.001696 | Classic = 0.001696 | Abs Diff = 0.000000
+11: x[174] Block = 0.001770 | Classic = 0.001770 | Abs Diff = 0.000000
+11: x[180] Block = 0.002032 | Classic = 0.002032 | Abs Diff = 0.000000
+11: x[186] Block = 0.001864 | Classic = 0.001864 | Abs Diff = 0.000000
+11: x[192] Block = 0.001807 | Classic = 0.001807 | Abs Diff = 0.000000
+11: x[198] Block = 0.002180 | Classic = 0.002180 | Abs Diff = 0.000000
+11: -----------------------------------------------------
+11: Total Absolute Difference (Sum): 0.000000
+11: Max Absolute Difference:        0.000000
+11: Residual ||A*x_block - b||_inf: 0.000001
+11: Residual ||A*x_classic - b||_inf: 0.000001
+11: -----------------------------------------------------
+11: Performance Metrics:
+11:   Parallel Block Solver: 7552.000 us
+11:   Classical Solver:      32536.000 us
+11:   Speedup Ratio:         4.308x
+11: +---------------------------------------------------+
+11: Storing solutions on the SD card (x_block.mat, xclassic.mat)...
+11:   solution round-trip to/from SD: OK
+11: RESULT: PASS (block == classical within tolerance, SD round-trip OK)
+11: ---------------------------------------------
+11: PASS
+11: 
+11: qemu suite: 1 passed, 0 skipped, 0 failed
+ 6/18 Test #11: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu ...   Passed    0.56 sec
+test 13
+      Start 13: aarch32-rpi-zero-2w-smp-mat-test-qemu
+
+13: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+13: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+13: Environment variables: 
+13:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+13:  UOS_QEMU_LOAD_ADDR=0x10000
+13:  UOS_QEMU_ONLY=smp-mat-test
+13:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+13: Test timeout computed to be: 2400
+13: smp-mat-test             
+13: QEMU 9.2.4 monitor - type 'help' for more information
+13: (qemu) os_startup_initialize_free_store(0x2f8000,67108864)
+13: first_fit_top(0x2f8000,67108864) @0x6ff78 app-heap
+13: out_of_memory_handler(0x17edc) @0x6ff78 app-heap
+13: estd::pmr::set_default_resource(0x6ff78) 
+13: rtos::memory::set_default_resource(0x6ff78) 
+13: rtos::memory::init_once_default_resource() 
+13: malloc_memory_resource() @0x6ff48 malloc
+13: scheduler::start() 
+13: 
+13: =============================================
+13:   Raspberry Pi Zero 2W - BCM2837 (4x Cortex-A53, AArch32)
+13:   micro-os-plus-iii  smp-mat-test (all in RAM)
+13:   parallel block linear solver
+13:   N = 120, B = 20, cores = 4
+13: =============================================
+13: core 0: releasing cores 1..3...
+13: core 0: SMP up (c1=3 c2=3 c3=3, 0 ms).
+13: Starting Thread Pool of 10 worker threads...
+13: Submitting 20 tasks to the Thread Pool...
+13: Thread Pool: Worker executed task 0 on CPU 0
+13: Thread Pool: Worker executed task 1 on CPU 0
+13: Thread Pool: Worker executed task 3 on CPU 0
+13: Thread Pool: Worker executed task 4 on CPU 3
+13: Thread Pool: Worker executed task 7 on CPU 0
+13: Thread Pool: Worker executed task 8 on CPU 3
+13: Thread Pool: Worker executed task 10 on CPU 1
+13: Thread Pool: Worker executed task 11 on CPU 0
+13: Thread Pool: Worker executed task 5 on CPU 1
+13: Thread Pool: Worker executed task 12 on CPU 1
+13: Thread Pool: Worker executed task 2 on CPU 1
+13: Thread Pool: Worker executed task 14 on CPU 0
+13: Thread Pool: Worker executed task 17 on CPU 1
+13: Thread Pool: Worker executed task 6 on CPU 2
+13: Thread Pool: Worker executed task 15 on CPU 0
+13: Thread Pool: Worker executed task 9 on CPU 0
+13: Thread Pool: Worker executed task 16 on CPU 2
+13: Thread Pool: Worker executed task 18 on CPU 3
+13: Thread Pool: Worker executed task 19 on CPU 1
+13: Thread Pool: Worker executed task 13 on CPU 3
+13: Thread Pool demo finished. All 20 tasks executed successfully.
+13: 
+13: NOTE: 6 blocks over 4 cores (uneven round-robin split).
+13: Generating diagonally dominant 120 x 120 matrix...
+13: Starting parallel 4 -core block elimination...
+13: Block elimination finished.
+13: Solving full system using classical elimination...
+13: Classical elimination finished.
+13: 
+13: +---------------------------------------------------+
+13: | COMPARING BLOCK ELIMINATION VS CLASSICAL SOLVER  |
+13: +---------------------------------------------------+
+13: x[0] Block = 0.003343 | Classic = 0.003343 | Abs Diff = 0.000000
+13: x[1] Block = 0.003210 | Classic = 0.003210 | Abs Diff = 0.000000
+13: x[2] Block = 0.003193 | Classic = 0.003193 | Abs Diff = 0.000000
+13: x[3] Block = 0.003209 | Classic = 0.003209 | Abs Diff = 0.000000
+13: x[4] Block = 0.002922 | Classic = 0.002922 | Abs Diff = 0.000000
+13: x[5] Block = 0.003019 | Classic = 0.003019 | Abs Diff = 0.000000
+13: x[6] Block = 0.003283 | Classic = 0.003283 | Abs Diff = 0.000000
+13: x[7] Block = 0.003196 | Classic = 0.003196 | Abs Diff = 0.000000
+13: x[8] Block = 0.003215 | Classic = 0.003215 | Abs Diff = 0.000000
+13: x[9] Block = 0.003282 | Classic = 0.003282 | Abs Diff = 0.000000
+13: x[10] Block = 0.003093 | Classic = 0.003093 | Abs Diff = 0.000000
+13: x[11] Block = 0.003500 | Classic = 0.003500 | Abs Diff = 0.000000
+13: x[12] Block = 0.003521 | Classic = 0.003521 | Abs Diff = 0.000000
+13: x[13] Block = 0.004170 | Classic = 0.004170 | Abs Diff = 0.000000
+13: x[14] Block = 0.003280 | Classic = 0.003280 | Abs Diff = 0.000000
+13: x[15] Block = 0.003685 | Classic = 0.003685 | Abs Diff = 0.000000
+13: x[16] Block = 0.003431 | Classic = 0.003431 | Abs Diff = 0.000000
+13: x[17] Block = 0.003808 | Classic = 0.003808 | Abs Diff = 0.000000
+13: x[18] Block = 0.003569 | Classic = 0.003569 | Abs Diff = 0.000000
+13: x[19] Block = 0.003504 | Classic = 0.003504 | Abs Diff = 0.000000
+13: x[20] Block = 0.003569 | Classic = 0.003569 | Abs Diff = 0.000000
+13: x[21] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+13: x[22] Block = 0.002927 | Classic = 0.002927 | Abs Diff = 0.000000
+13: x[23] Block = 0.003788 | Classic = 0.003788 | Abs Diff = 0.000000
+13: x[24] Block = 0.003486 | Classic = 0.003486 | Abs Diff = 0.000000
+13: x[25] Block = 0.003190 | Classic = 0.003190 | Abs Diff = 0.000000
+13: x[26] Block = 0.003291 | Classic = 0.003291 | Abs Diff = 0.000000
+13: x[27] Block = 0.003152 | Classic = 0.003152 | Abs Diff = 0.000000
+13: x[28] Block = 0.003313 | Classic = 0.003313 | Abs Diff = 0.000000
+13: x[29] Block = 0.003370 | Classic = 0.003370 | Abs Diff = 0.000000
+13: x[30] Block = 0.003147 | Classic = 0.003147 | Abs Diff = 0.000000
+13: x[31] Block = 0.003443 | Classic = 0.003443 | Abs Diff = 0.000000
+13: x[32] Block = 0.003093 | Classic = 0.003093 | Abs Diff = 0.000000
+13: x[33] Block = 0.003355 | Classic = 0.003355 | Abs Diff = 0.000000
+13: x[34] Block = 0.003485 | Classic = 0.003485 | Abs Diff = 0.000000
+13: x[35] Block = 0.002541 | Classic = 0.002541 | Abs Diff = 0.000000
+13: x[36] Block = 0.003829 | Classic = 0.003829 | Abs Diff = 0.000000
+13: x[37] Block = 0.003803 | Classic = 0.003803 | Abs Diff = 0.000000
+13: x[38] Block = 0.003037 | Classic = 0.003037 | Abs Diff = 0.000000
+13: x[39] Block = 0.004004 | Classic = 0.004004 | Abs Diff = 0.000000
+13: x[40] Block = 0.003734 | Classic = 0.003734 | Abs Diff = 0.000000
+13: x[41] Block = 0.003660 | Classic = 0.003660 | Abs Diff = 0.000000
+13: x[42] Block = 0.003792 | Classic = 0.003792 | Abs Diff = 0.000000
+13: x[43] Block = 0.003233 | Classic = 0.003233 | Abs Diff = 0.000000
+13: x[44] Block = 0.003311 | Classic = 0.003311 | Abs Diff = 0.000000
+13: x[45] Block = 0.002977 | Classic = 0.002977 | Abs Diff = 0.000000
+13: x[46] Block = 0.003304 | Classic = 0.003304 | Abs Diff = 0.000000
+13: x[47] Block = 0.003513 | Classic = 0.003513 | Abs Diff = 0.000000
+13: x[48] Block = 0.003623 | Classic = 0.003623 | Abs Diff = 0.000000
+13: x[49] Block = 0.003396 | Classic = 0.003396 | Abs Diff = 0.000000
+13: x[50] Block = 0.003458 | Classic = 0.003458 | Abs Diff = 0.000000
+13: x[51] Block = 0.003371 | Classic = 0.003371 | Abs Diff = 0.000000
+13: x[52] Block = 0.003164 | Classic = 0.003164 | Abs Diff = 0.000000
+13: x[53] Block = 0.003532 | Classic = 0.003532 | Abs Diff = 0.000000
+13: x[54] Block = 0.003636 | Classic = 0.003636 | Abs Diff = 0.000000
+13: x[55] Block = 0.003944 | Classic = 0.003944 | Abs Diff = 0.000000
+13: x[56] Block = 0.003592 | Classic = 0.003592 | Abs Diff = 0.000000
+13: x[57] Block = 0.003169 | Classic = 0.003169 | Abs Diff = 0.000000
+13: x[58] Block = 0.003511 | Classic = 0.003511 | Abs Diff = 0.000000
+13: x[59] Block = 0.003066 | Classic = 0.003066 | Abs Diff = 0.000000
+13: x[60] Block = 0.003175 | Classic = 0.003175 | Abs Diff = 0.000000
+13: x[61] Block = 0.003562 | Classic = 0.003562 | Abs Diff = 0.000000
+13: x[62] Block = 0.002659 | Classic = 0.002659 | Abs Diff = 0.000000
+13: x[63] Block = 0.003602 | Classic = 0.003602 | Abs Diff = 0.000000
+13: x[64] Block = 0.003036 | Classic = 0.003036 | Abs Diff = 0.000000
+13: x[65] Block = 0.003580 | Classic = 0.003580 | Abs Diff = 0.000000
+13: x[66] Block = 0.003361 | Classic = 0.003361 | Abs Diff = 0.000000
+13: x[67] Block = 0.002781 | Classic = 0.002781 | Abs Diff = 0.000000
+13: x[68] Block = 0.003216 | Classic = 0.003216 | Abs Diff = 0.000000
+13: x[69] Block = 0.003187 | Classic = 0.003187 | Abs Diff = 0.000000
+13: x[70] Block = 0.004606 | Classic = 0.004606 | Abs Diff = 0.000000
+13: x[71] Block = 0.003390 | Classic = 0.003390 | Abs Diff = 0.000000
+13: x[72] Block = 0.002917 | Classic = 0.002917 | Abs Diff = 0.000000
+13: x[73] Block = 0.003266 | Classic = 0.003266 | Abs Diff = 0.000000
+13: x[74] Block = 0.003139 | Classic = 0.003139 | Abs Diff = 0.000000
+13: x[75] Block = 0.003189 | Classic = 0.003189 | Abs Diff = 0.000000
+13: x[76] Block = 0.002743 | Classic = 0.002743 | Abs Diff = 0.000000
+13: x[77] Block = 0.003229 | Classic = 0.003229 | Abs Diff = 0.000000
+13: x[78] Block = 0.003516 | Classic = 0.003516 | Abs Diff = 0.000000
+13: x[79] Block = 0.002963 | Classic = 0.002963 | Abs Diff = 0.000000
+13: x[80] Block = 0.003640 | Classic = 0.003640 | Abs Diff = 0.000000
+13: x[81] Block = 0.003361 | Classic = 0.003361 | Abs Diff = 0.000000
+13: x[82] Block = 0.003759 | Classic = 0.003759 | Abs Diff = 0.000000
+13: x[83] Block = 0.003119 | Classic = 0.003119 | Abs Diff = 0.000000
+13: x[84] Block = 0.003322 | Classic = 0.003322 | Abs Diff = 0.000000
+13: x[85] Block = 0.003362 | Classic = 0.003362 | Abs Diff = 0.000000
+13: x[86] Block = 0.003174 | Classic = 0.003174 | Abs Diff = 0.000000
+13: x[87] Block = 0.003374 | Classic = 0.003374 | Abs Diff = 0.000000
+13: x[88] Block = 0.003255 | Classic = 0.003255 | Abs Diff = 0.000000
+13: x[89] Block = 0.003070 | Classic = 0.003070 | Abs Diff = 0.000000
+13: x[90] Block = 0.003496 | Classic = 0.003496 | Abs Diff = 0.000000
+13: x[91] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+13: x[92] Block = 0.003470 | Classic = 0.003470 | Abs Diff = 0.000000
+13: x[93] Block = 0.003455 | Classic = 0.003455 | Abs Diff = 0.000000
+13: x[94] Block = 0.003128 | Classic = 0.003128 | Abs Diff = 0.000000
+13: x[95] Block = 0.003788 | Classic = 0.003788 | Abs Diff = 0.000000
+13: x[96] Block = 0.004060 | Classic = 0.004060 | Abs Diff = 0.000000
+13: x[97] Block = 0.003034 | Classic = 0.003034 | Abs Diff = 0.000000
+13: x[98] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+13: x[99] Block = 0.003647 | Classic = 0.003647 | Abs Diff = 0.000000
+13: x[100] Block = 0.003197 | Classic = 0.003197 | Abs Diff = 0.000000
+13: x[101] Block = 0.002948 | Classic = 0.002948 | Abs Diff = 0.000000
+13: x[102] Block = 0.003072 | Classic = 0.003072 | Abs Diff = 0.000000
+13: x[103] Block = 0.003618 | Classic = 0.003618 | Abs Diff = 0.000000
+13: x[104] Block = 0.003176 | Classic = 0.003176 | Abs Diff = 0.000000
+13: x[105] Block = 0.003416 | Classic = 0.003416 | Abs Diff = 0.000000
+13: x[106] Block = 0.003408 | Classic = 0.003408 | Abs Diff = 0.000000
+13: x[107] Block = 0.003526 | Classic = 0.003526 | Abs Diff = 0.000000
+13: x[108] Block = 0.002748 | Classic = 0.002748 | Abs Diff = 0.000000
+13: x[109] Block = 0.002987 | Classic = 0.002987 | Abs Diff = 0.000000
+13: x[110] Block = 0.003210 | Classic = 0.003210 | Abs Diff = 0.000000
+13: x[111] Block = 0.003457 | Classic = 0.003457 | Abs Diff = 0.000000
+13: x[112] Block = 0.003811 | Classic = 0.003811 | Abs Diff = 0.000000
+13: x[113] Block = 0.002582 | Classic = 0.002582 | Abs Diff = 0.000000
+13: x[114] Block = 0.003437 | Classic = 0.003437 | Abs Diff = 0.000000
+13: x[115] Block = 0.003795 | Classic = 0.003795 | Abs Diff = 0.000000
+13: x[116] Block = 0.003576 | Classic = 0.003576 | Abs Diff = 0.000000
+13: x[117] Block = 0.002935 | Classic = 0.002935 | Abs Diff = 0.000000
+13: x[118] Block = 0.003321 | Classic = 0.003321 | Abs Diff = 0.000000
+13: x[119] Block = 0.002714 | Classic = 0.002714 | Abs Diff = 0.000000
+13: -----------------------------------------------------
+13: Total Absolute Difference (Sum): 0.000000
+13: Max Absolute Difference:        0.000000
+13: -----------------------------------------------------
+13: Performance Metrics:
+13:   Parallel Block Solver: 3429.000 us
+13:   Classical Solver:      20875.000 us
+13:   Speedup Ratio:         6.088x
+13: +---------------------------------------------------+
+13: RESULT: PASS (block == classical within tolerance)
+13: ---------------------------------------------
+13: PASS
+13: 
+13: qemu suite: 1 passed, 0 skipped, 0 failed
+ 7/18 Test #13: aarch32-rpi-zero-2w-smp-mat-test-qemu ..........   Passed    0.31 sec
+test 15
+      Start 15: aarch32-rpi-zero-2w-smp-num-test-qemu
+
+15: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+15: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+15: Environment variables: 
+15:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+15:  UOS_QEMU_LOAD_ADDR=0x10000
+15:  UOS_QEMU_ONLY=smp-num-test
+15:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+15: Test timeout computed to be: 2400
+15: smp-num-test             
+15: QEMU 9.2.4 monitor - type 'help' for more information
+15: (qemu) os_startup_initialize_free_store(0x358000,67108864)
+15: first_fit_top(0x358000,67108864) @0xd0658 app-heap
+15: out_of_memory_handler(0x17238) @0xd0658 app-heap
+15: estd::pmr::set_default_resource(0xd0658) 
+15: rtos::memory::set_default_resource(0xd0658) 
+15: rtos::memory::init_once_default_resource() 
+15: malloc_memory_resource() @0xd0628 malloc
+15: scheduler::start() 
+15: 
+15: +== RPi Zero 2W µOS++ NUM TEST (AArch32) : uart+LED+SD+FPU ==+
+15: 
+15: Initialising SD card via SDHCI @0x3F300000...
+15:   SD card ready: 8388608 sectors (~4096 MiB)
+15:   flatfs volume formatted.
+15:   removed previous num.txt (if any)
+15: join: c1=3 c2=3 c3=3 (0 ms)
+15: [c1] led on
+15: threads started (uart=high, led=above_normal, text=normal, compute=below_normal, reader=low)
+15: running for 60000 ms ...
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0][reader] pass 0: num.txt now 3680 bytes (+3680)
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c2][reader] pass 1: num.txt now 7360 bytes (+3680)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0][reader] pass 2: num.txt now 11040 bytes (+3680)
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0][reader] pass 3: num.txt now 14720 bytes (+3680)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c1][reader] pass 4: num.txt now 18322 bytes (+3602)
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c1][reader] pass 5: num.txt now 22002 bytes (+3680)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c2][reader] pass 6: num.txt now 25604 bytes (+3602)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c3][reader] pass 7: num.txt now 29440 bytes (+3836)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c2][reader] pass 8: num.txt now 33120 bytes (+3680)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c1][reader] pass 9: num.txt now 36800 bytes (+3680)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c3][reader] pass 10: num.txt now 40402 bytes (+3602)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0][reader] pass 11: num.txt now 43926 bytes (+3524)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0][reader] pass 12: num.txt now 47840 bytes (+3914)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c2][reader] pass 13: num.txt now 51286 bytes (+3446)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c1][reader] pass 14: num.txt now 55122 bytes (+3836)
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0][reader] pass 15: num.txt now 58880 bytes (+3758)
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c1][reader] pass 16: num.txt now 62404 bytes (+3524)
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0][reader] pass 17: num.txt now 66162 bytes (+3758)
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c3][reader] pass 18: num.txt now 69686 bytes (+3524)
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0] led off
+15: [c0] led on
+15: [c0][reader] stopped after 19 dumps
+15: [c0] led off
+15: 
+15: ---- num.txt on SD (69920 bytes, final dump) ----
+15: ---- end num.txt ----
+15: num.txt lines by core: c0=212 c1=264 c2=180 c3=104
+15: run 60000 ms, text=380 calc=380
+15: 
+15: RESULT: PASS
+15: PASS
+15: 
+15: qemu suite: 1 passed, 0 skipped, 0 failed
+ 8/18 Test #15: aarch32-rpi-zero-2w-smp-num-test-qemu ..........   Passed   60.83 sec
+test 17
+      Start 17: aarch32-rpi-zero-2w-smp-pipeline-test-qemu
+
+17: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+17: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+17: Environment variables: 
+17:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+17:  UOS_QEMU_LOAD_ADDR=0x10000
+17:  UOS_QEMU_ONLY=smp-pipeline-test
+17:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+17: Test timeout computed to be: 2400
+17: smp-pipeline-test        
+17: QEMU 9.2.4 monitor - type 'help' for more information
+17: (qemu) os_startup_initialize_free_store(0x308000,67108864)
+17: first_fit_top(0x308000,67108864) @0x81e18 app-heap
+17: out_of_memory_handler(0x17820) @0x81e18 app-heap
+17: estd::pmr::set_default_resource(0x81e18) 
+17: rtos::memory::set_default_resource(0x81e18) 
+17: rtos::memory::init_once_default_resource() 
+17: malloc_memory_resource() @0x81de8 malloc
+17: scheduler::start() 
+17: 
+17: +== RPi Zero 2W µOS++ SMP PIPELINE TEST (AArch32) ==+
+17: 13 threads, 4 cores, shared queues, SD-card persistence & yield() stress
+17: 
+17: Initialising SD card via SDHCI @0x3F300000...
+17:   SD card ready: 8388608 sectors (~4096 MiB)
+17:   flatfs volume formatted, pipe.dat ready
+17: join: c1=3 c2=3 c3=3 (0 ms)
+17: 13 pipeline threads successfully started!
+17: running pipeline for 30000 ms ...
+17: [t= 1204 ms] pipe: in_q= 0 sd_q= 0 | prod=111 proc=111 sd=108 aud=106 | yields: P=0 W=6813 C=25 S=58 A=106
+17: [t= 2207 ms] pipe: in_q= 1 sd_q= 0 | prod=221 proc=220 sd=219 aud=215 | yields: P=0 W=13649 C=54 S=115 A=215
+17: [t= 3207 ms] pipe: in_q= 0 sd_q= 0 | prod=328 proc=328 sd=328 aud=325 | yields: P=0 W=20424 C=81 S=172 A=325
+17: [t= 4207 ms] pipe: in_q= 0 sd_q= 2 | prod=438 proc=438 sd=436 aud=436 | yields: P=0 W=27325 C=108 S=229 A=436
+17: [t= 5208 ms] pipe: in_q= 0 sd_q= 2 | prod=548 proc=548 sd=545 aud=545 | yields: P=0 W=34135 C=135 S=287 A=545
+17: [t= 6208 ms] pipe: in_q= 0 sd_q= 1 | prod=657 proc=657 sd=654 aud=652 | yields: P=0 W=41007 C=163 S=350 A=652
+17: [t= 7209 ms] pipe: in_q= 0 sd_q= 3 | prod=767 proc=767 sd=764 aud=764 | yields: P=0 W=47799 C=190 S=408 A=764
+17: [t= 8209 ms] pipe: in_q= 0 sd_q= 1 | prod=875 proc=875 sd=874 aud=872 | yields: P=0 W=54629 C=217 S=465 A=872
+17: [t= 9209 ms] pipe: in_q= 3 sd_q= 0 | prod=986 proc=983 sd=982 aud=981 | yields: P=0 W=61457 C=245 S=522 A=981
+17: [t=10210 ms] pipe: in_q= 0 sd_q= 1 | prod=1094 proc=1094 sd=1093 aud=1089 | yields: P=0 W=68272 C=273 S=580 A=1089
+17: [t=11210 ms] pipe: in_q= 0 sd_q= 2 | prod=1203 proc=1203 sd=1201 aud=1197 | yields: P=0 W=75109 C=298 S=639 A=1197
+17: [t=12210 ms] pipe: in_q= 0 sd_q= 2 | prod=1312 proc=1312 sd=1309 aud=1306 | yields: P=0 W=82062 C=327 S=701 A=1306
+17: [t=13211 ms] pipe: in_q= 0 sd_q= 1 | prod=1421 proc=1421 sd=1419 aud=1418 | yields: P=0 W=88844 C=354 S=759 A=1418
+17: [t=14213 ms] pipe: in_q= 0 sd_q= 0 | prod=1531 proc=1531 sd=1528 aud=1528 | yields: P=0 W=95756 C=381 S=817 A=1528
+17: [t=15214 ms] pipe: in_q= 0 sd_q= 2 | prod=1640 proc=1640 sd=1638 aud=1636 | yields: P=0 W=102661 C=409 S=882 A=1636
+17: [t=16215 ms] pipe: in_q= 0 sd_q= 0 | prod=1749 proc=1749 sd=1746 aud=1744 | yields: P=0 W=109508 C=435 S=942 A=1744
+17: [t=17217 ms] pipe: in_q= 0 sd_q= 1 | prod=1857 proc=1857 sd=1854 aud=1853 | yields: P=0 W=116391 C=463 S=1001 A=1853
+17: [t=18218 ms] pipe: in_q= 0 sd_q= 1 | prod=1968 proc=1968 sd=1967 aud=1963 | yields: P=0 W=123240 C=491 S=1065 A=1963
+17: [t=19218 ms] pipe: in_q= 0 sd_q= 2 | prod=2077 proc=2077 sd=2075 aud=2072 | yields: P=0 W=130009 C=517 S=1123 A=2072
+17: [t=20218 ms] pipe: in_q= 0 sd_q= 1 | prod=2185 proc=2185 sd=2183 aud=2183 | yields: P=0 W=136867 C=544 S=1179 A=2183
+17: [t=21219 ms] pipe: in_q= 0 sd_q= 0 | prod=2295 proc=2295 sd=2292 aud=2292 | yields: P=0 W=143768 C=573 S=1235 A=2292
+17: [t=22220 ms] pipe: in_q= 0 sd_q= 0 | prod=2404 proc=2404 sd=2401 aud=2400 | yields: P=0 W=150654 C=600 S=1292 A=2400
+17: [t=23220 ms] pipe: in_q= 1 sd_q= 0 | prod=2514 proc=2513 sd=2510 aud=2507 | yields: P=0 W=157390 C=626 S=1347 A=2507
+17: [t=24221 ms] pipe: in_q= 0 sd_q= 1 | prod=2623 proc=2623 sd=2622 aud=2620 | yields: P=0 W=164326 C=654 S=1410 A=2620
+17: [t=25221 ms] pipe: in_q= 0 sd_q= 0 | prod=2731 proc=2731 sd=2730 aud=2727 | yields: P=0 W=171253 C=682 S=1467 A=2727
+17: [t=26222 ms] pipe: in_q= 0 sd_q= 3 | prod=2842 proc=2842 sd=2838 aud=2833 | yields: P=0 W=178094 C=708 S=1522 A=2833
+17: [t=27224 ms] pipe: in_q= 0 sd_q= 3 | prod=2950 proc=2950 sd=2947 aud=2946 | yields: P=0 W=184898 C=735 S=1579 A=2946
+17: [t=28225 ms] pipe: in_q= 0 sd_q= 0 | prod=3059 proc=3059 sd=3057 aud=3057 | yields: P=0 W=191742 C=763 S=1637 A=3057
+17: [t=29227 ms] pipe: in_q= 0 sd_q= 1 | prod=3169 proc=3169 sd=3166 aud=3166 | yields: P=0 W=198609 C=791 S=1694 A=3166
+17: 
+17: stopping pipeline threads...
+17: 
+17: ================ Pipeline Test Summary ================
+17: Records Produced:  3275
+17: Records Processed: 3275
+17: Records Written:   3274
+17: Records Audited:   3274
+17: Errors: CRC=0, Sequence=0, Write=0
+17: Yield Calls Breakdown:
+17:   Producer yield backpressure: 0
+17:   Worker queue wait yields:    205331
+17:   Compute chunking yields:     817
+17:   SD writer turn yields:       1753
+17:   Auditor chunk read yields:   3274
+17:   Total yield() calls:         211175
+17: Yields by Core: c0=106239 c1=18983 c2=56972 c3=28981
+17: Produced by Core: c0=2547 c1=230 c2=368 c3=130
+17: Processed by Core: c0=2053 c1=257 c2=722 c3=243
+17: =======================================================
+17: 
+17: RESULT: PASS
+17: PASS
+17: 
+17: qemu suite: 1 passed, 0 skipped, 0 failed
+ 9/18 Test #17: aarch32-rpi-zero-2w-smp-pipeline-test-qemu .....   Passed   30.73 sec
+test 19
+      Start 19: aarch32-rpi-zero-2w-smp-pro-cons-test-qemu
+
+19: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+19: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+19: Environment variables: 
+19:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+19:  UOS_QEMU_LOAD_ADDR=0x10000
+19:  UOS_QEMU_ONLY=smp-pro-cons-test
+19:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+19: Test timeout computed to be: 2400
+19: smp-pro-cons-test        
+19: QEMU 9.2.4 monitor - type 'help' for more information
+19: (qemu) os_startup_initialize_free_store(0x2c8000,67108864)
+19: first_fit_top(0x2c8000,67108864) @0x416f8 app-heap
+19: out_of_memory_handler(0x1a260) @0x416f8 app-heap
+19: estd::pmr::set_default_resource(0x416f8) 
+19: rtos::memory::set_default_resource(0x416f8) 
+19: rtos::memory::init_once_default_resource() 
+19: malloc_memory_resource() @0x416c8 malloc
+19: scheduler::start() 
+19: 
+19: +=============================================================+
+19: |  RPi Zero 2W µOS++ SMP PRODUCER-CONSUMER KERNEL OBJECT TEST |
+19: |  BCM2837 (4x Cortex-A53, AArch32) — ALL Kernel Objects Demo |
+19: +=============================================================+
+19: 
+19: Secondary cores joined: c1=3 c2=3 c3=3 (0 ms)
+19: Starting periodic software timer (200 ms)...
+19: 12 concurrent threads started across 4 cores!
+19: Running pipeline for 4000 ms ...
+19: 
+19: [t= 1006 ms] pipe: prod=319 (+319) cons=319 (+319) | pool=319/319 | yields=638 | ticks=5 | stages=40
+19: [t= 2006 ms] pipe: prod=635 (+316) cons=635 (+316) | pool=635/635 | yields=1270 | ticks=10 | stages=80
+19: [t= 3006 ms] pipe: prod=953 (+318) cons=953 (+318) | pool=953/953 | yields=1906 | ticks=15 | stages=120
+19: [t= 4006 ms] pipe: prod=1270 (+317) cons=1270 (+317) | pool=1270/1270 | yields=2540 | ticks=20 | stages=159
+19: 
+19: Stopping producer-consumer pipeline threads...
+19: 
+19: ================ Producer-Consumer Test Summary ================
+19: Kernel Objects Tested:
+19:   [1] thread              : 12 threads active across 4 cores
+19:   [2] memory_pool         : allocs=1271, frees=1271 (diff=0)
+19:   [3] message_queue       : sent=1271, received=1271
+19:   [4] semaphore_counting  : flow-control tokens acquired & returned
+19:   [5] semaphore_binary    : 159 stage synchronizations verified
+19:   [6] mutex               : protected console, stats, and condition var
+19:   [7] condition_variable  : 79 batches signaled & verified
+19:   [8] event_flags         : multi-bit lifecycle & timer flags handled
+19:   [9] timer               : 22 software timer ticks delivered
+19:   [10] sysclock           : sleep_for() & timestamping verified
+19:   [11] yield/suspend/res  : 2542 yields, 11 suspends, 11 resumes
+19: Errors:
+19:   CRC Errors: 0
+19: SMP Core Distribution:
+19:   Produced by core : c0=400 c1=334 c2=286 c3=251 
+19:   Consumed by core : c0=264 c1=329 c2=338 c3=340 
+19:   Yields by core   : c0=664 c1=663 c2=624 c3=591 
+19: ================================================================
+19: 
+19: RESULT: PASS
+19: PASS
+19: 
+19: qemu suite: 1 passed, 0 skipped, 0 failed
+10/18 Test #19: aarch32-rpi-zero-2w-smp-pro-cons-test-qemu .....   Passed    4.56 sec
+test 21
+      Start 21: aarch32-rpi-zero-2w-smp_test0-qemu
+
+21: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+21: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+21: Environment variables: 
+21:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+21:  UOS_QEMU_LOAD_ADDR=0x10000
+21:  UOS_QEMU_ONLY=smp_test0
+21:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+21: Test timeout computed to be: 2400
+21: smp_test0                
+21: QEMU 9.2.4 monitor - type 'help' for more information
+21: (qemu) 
+21: 
+21: +=============================================+
+21: |  Raspberry Pi Zero 2W  -  µOS++ SMP TEST 0  |
+21: |  Phase 1: UART + MMU + 1ms tick (core 0)    |
+21: +=============================================+
+21: 
+21: os_startup_initialize_free_store(0x2b4000,67108864)
+21: first_fit_top(0x2b4000,67108864) @0x2cf88 app-heap
+21: out_of_memory_handler(0x1541c) @0x2cf88 app-heap
+21: estd::pmr::set_default_resource(0x2cf88) 
+21: rtos::memory::set_default_resource(0x2cf88) 
+21: rtos::memory::init_once_default_resource() 
+21: malloc_memory_resource() @0x2cf58 malloc
+21: scheduler::start() 
+21: Scheduler started on core 0. Heartbeat via sysclock.sleep_for(1000):
+21: [tick] heartbeat 0  os_clock=0 ms
+21: [tick] heartbeat 1  os_clock=1001 ms
+21: [tick] heartbeat 2  os_clock=2001 ms
+21: [tick] heartbeat 3  os_clock=3001 ms
+21: [tick] heartbeat 4  os_clock=4001 ms
+21: [tick] heartbeat 5  os_clock=5001 ms
+21: [tick] heartbeat 6  os_clock=6001 ms
+21: [tick] heartbeat 7  os_clock=7001 ms
+21: [tick] heartbeat 8  os_clock=8001 ms
+21: [tick] heartbeat 9  os_clock=9001 ms
+21: RESULT: PASS (10 heartbeats on core 0)
+21: PASS
+21: 
+21: qemu suite: 1 passed, 0 skipped, 0 failed
+11/18 Test #21: aarch32-rpi-zero-2w-smp_test0-qemu .............   Passed   10.09 sec
+test 23
+      Start 23: aarch32-rpi-zero-2w-smp_test1-qemu
+
+23: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+23: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+23: Environment variables: 
+23:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+23:  UOS_QEMU_LOAD_ADDR=0x10000
+23:  UOS_QEMU_ONLY=smp_test1
+23:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+23: Test timeout computed to be: 2400
+23: smp_test1                
+23: QEMU 9.2.4 monitor - type 'help' for more information
+23: (qemu) 
+23: 
+23: +== RPi Zero 2W µOS++ SMP TEST 1 : semaphore ping-pong + LED ==+
+23: 
+23: os_startup_initialize_free_store(0x2c4000,67108864)
+23: first_fit_top(0x2c4000,67108864) @0x3c698 app-heap
+23: out_of_memory_handler(0x16724) @0x3c698 app-heap
+23: estd::pmr::set_default_resource(0x3c698) 
+23: rtos::memory::set_default_resource(0x3c698) 
+23: rtos::memory::init_once_default_resource() 
+23: malloc_memory_resource() @0x3c668 malloc
+23: scheduler::start() 
+23: join: c1=3 c2=3 c3=3 (0ms)
+23: [c1] rounds=1  ping@c0 pong@c2  t=6ms
+23: [c2] rounds=65782  ping@c0 pong@c1  t=1007ms
+23: [c2] rounds=129188  ping@c0 pong@c1  t=2007ms
+23: [c2] rounds=196697  ping@c0 pong@c1  t=3007ms
+23: [c2] rounds=263861  ping@c0 pong@c1  t=4007ms
+23: [c2] rounds=334232  ping@c0 pong@c1  t=5007ms
+23: [c2] rounds=400376  ping@c0 pong@c1  t=6007ms
+23: [c2] rounds=466018  ping@c0 pong@c1  t=7007ms
+23: [c2] rounds=533917  ping@c0 pong@c1  t=8007ms
+23: [c2] rounds=605590  ping@c0 pong@c1  t=9007ms
+23: 
+23: RESULT: PASS
+23: PASS
+23: 
+23: qemu suite: 1 passed, 0 skipped, 0 failed
+12/18 Test #23: aarch32-rpi-zero-2w-smp_test1-qemu .............   Passed   10.10 sec
+test 25
+      Start 25: aarch32-rpi-zero-2w-smp_test2-qemu
+
+25: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+25: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+25: Environment variables: 
+25:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+25:  UOS_QEMU_LOAD_ADDR=0x10000
+25:  UOS_QEMU_ONLY=smp_test2
+25:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+25: Test timeout computed to be: 2400
+25: smp_test2                
+25: QEMU 9.2.4 monitor - type 'help' for more information
+25: (qemu) 
+25: 
+25: +== RPi Zero 2W µOS++ SMP TEST 2 : 4-core lock coherency ==+
+25: 
+25: os_startup_initialize_free_store(0x2c8000,67108864)
+25: first_fit_top(0x2c8000,67108864) @0x40928 app-heap
+25: out_of_memory_handler(0x169d0) @0x40928 app-heap
+25: estd::pmr::set_default_resource(0x40928) 
+25: rtos::memory::set_default_resource(0x40928) 
+25: rtos::memory::init_once_default_resource() 
+25: malloc_memory_resource() @0x408f8 malloc
+25: scheduler::start() 
+25: os_main on core 0
+25: Releasing cores 1..3...
+25: join: c1=3 c2=3 c3=3 (0ms)
+25: [c2] worker done, counter=7780
+25: [c0] worker done, counter=7854
+25: [c3] worker done, counter=7892
+25: [c1] worker done, counter=8000
+25: progress: w0=1999 w1=1999 w2=1999 w3=1999 done=4 counter=8000
+25: 
+25: ==== RESULT ====
+25: counter = 8000  expected = 8000
+25: PASS: lock coherent across 4 cores
+25: 
+25: RESULT: PASS
+25: PASS
+25: 
+25: qemu suite: 1 passed, 0 skipped, 0 failed
+13/18 Test #25: aarch32-rpi-zero-2w-smp_test2-qemu .............   Passed    0.63 sec
+test 27
+      Start 27: aarch32-rpi-zero-2w-smp_test3-qemu
+
+27: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+27: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+27: Environment variables: 
+27:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+27:  UOS_QEMU_LOAD_ADDR=0x10000
+27:  UOS_QEMU_ONLY=smp_test3
+27:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+27: Test timeout computed to be: 2400
+27: smp_test3                
+27: QEMU 9.2.4 monitor - type 'help' for more information
+27: (qemu) 
+27: 
+27: +== RPi Zero 2W µOS++ SMP TEST 3 : message_queue producer/consumer ==+
+27: 
+27: os_startup_initialize_free_store(0x2c4000,67108864)
+27: first_fit_top(0x2c4000,67108864) @0x3de98 app-heap
+27: out_of_memory_handler(0x17abc) @0x3de98 app-heap
+27: estd::pmr::set_default_resource(0x3de98) 
+27: rtos::memory::set_default_resource(0x3de98) 
+27: rtos::memory::init_once_default_resource() 
+27: malloc_memory_resource() @0x3de68 malloc
+27: scheduler::start() 
+27: join: c1=3 c2=3 c3=3 (0ms)
+27: [c0] produced=1 consumed=1 primes=1 t=6ms
+27: [c1] recv 2 PRIME
+27: [c1] recv 3 PRIME
+27: [c1] recv 4 composite
+27: [c1] recv 5 PRIME
+27: [c1] recv 6 composite
+27: [c1] recv 7 PRIME
+27: [c1] recv 8 composite
+27: [c1] recv 9 composite
+27: [c1] recv 10 composite
+27: [c1] recv 11 PRIME
+27: [c1] recv 12 composite
+27: [c1] recv 13 PRIME
+27: [c1] recv 14 composite
+27: [c1] recv 15 composite
+27: [c1] recv 16 composite
+27: [c1] recv 17 PRIME
+27: [c1] recv 18 composite
+27: [c1] recv 19 PRIME
+27: [c1] recv 20 composite
+27: [c1] recv 21 composite
+27: [c1] recv 22 composite
+27: [c1] recv 23 PRIME
+27: [c1] recv 24 composite
+27: [c1] recv 25 composite
+27: [c1] recv 26 composite
+27: [c1] recv 27 composite
+27: [c1] recv 28 composite
+27: [c1] recv 29 PRIME
+27: [c1] recv 30 composite
+27: [c1] recv 31 PRIME
+27: [c1] recv 32 composite
+27: [c1] recv 33 composite
+27: [c1] recv 34 composite
+27: [c1] recv 35 composite
+27: [c1] recv 36 composite
+27: [c1] recv 37 PRIME
+27: [c1] recv 38 composite
+27: [c1] recv 39 composite
+27: [c1] recv 40 composite
+27: [c1] recv 41 PRIME
+27: [c1] recv 42 composite
+27: [c1] recv 43 PRIME
+27: [c1] recv 44 composite
+27: [c1] recv 45 composite
+27: [c1] recv 46 composite
+27: [c1] recv 47 PRIME
+27: [c1] recv 48 composite
+27: [c1] recv 49 composite
+27: [c1] recv 50 composite
+27: [c1] recv 51 composite
+27: [c1] recv 52 composite
+27: [c2] produced=51 consumed=51 primes=15 t=1008ms
+27: [c1] recv 53 PRIME
+27: [c1] recv 54 composite
+27: [c1] recv 55 composite
+27: [c1] recv 56 composite
+27: [c1] recv 57 composite
+27: [c1] recv 58 composite
+27: [c1] recv 59 PRIME
+27: [c1] recv 60 composite
+27: [c1] recv 61 PRIME
+27: [c1] recv 62 composite
+27: [c1] recv 63 composite
+27: [c1] recv 64 composite
+27: [c1] recv 65 composite
+27: [c1] recv 66 composite
+27: [c1] recv 67 PRIME
+27: [c1] recv 68 composite
+27: [c1] recv 69 composite
+27: [c1] recv 70 composite
+27: [c1] recv 71 PRIME
+27: [c1] recv 72 composite
+27: [c1] recv 73 PRIME
+27: [c1] recv 74 composite
+27: [c1] recv 75 composite
+27: [c1] recv 76 composite
+27: [c1] recv 77 composite
+27: [c1] recv 78 composite
+27: [c1] recv 79 PRIME
+27: [c1] recv 80 composite
+27: [c1] recv 81 composite
+27: [c1] recv 82 composite
+27: [c1] recv 83 PRIME
+27: [c1] recv 84 composite
+27: [c1] recv 85 composite
+27: [c1] recv 86 composite
+27: [c1] recv 87 composite
+27: [c1] recv 88 composite
+27: [c1] recv 89 PRIME
+27: [c1] recv 90 composite
+27: [c1] recv 91 composite
+27: [c1] recv 92 composite
+27: [c1] recv 93 composite
+27: [c1] recv 94 composite
+27: [c1] recv 95 composite
+27: [c1] recv 96 composite
+27: [c1] recv 97 PRIME
+27: [c1] recv 98 composite
+27: [c1] recv 99 composite
+27: [c1] recv 100 composite
+27: [c1] recv 101 PRIME
+27: [c1] recv 102 composite
+27: [c2] produced=101 consumed=101 primes=26 t=2008ms
+27: [c1] recv 103 PRIME
+27: [c1] recv 104 composite
+27: [c1] recv 105 composite
+27: [c1] recv 106 composite
+27: [c1] recv 107 PRIME
+27: [c1] recv 108 composite
+27: [c1] recv 109 PRIME
+27: [c1] recv 110 composite
+27: [c1] recv 111 composite
+27: [c1] recv 112 composite
+27: [c1] recv 113 PRIME
+27: [c1] recv 114 composite
+27: [c1] recv 115 composite
+27: [c1] recv 116 composite
+27: [c1] recv 117 composite
+27: [c1] recv 118 composite
+27: [c1] recv 119 composite
+27: [c1] recv 120 composite
+27: [c1] recv 121 composite
+27: [c1] recv 122 composite
+27: [c1] recv 123 composite
+27: [c1] recv 124 composite
+27: [c1] recv 125 composite
+27: [c1] recv 126 composite
+27: [c1] recv 127 PRIME
+27: [c1] recv 128 composite
+27: [c1] recv 129 composite
+27: [c1] recv 130 composite
+27: [c1] recv 131 PRIME
+27: [c1] recv 132 composite
+27: [c1] recv 133 composite
+27: [c1] recv 134 composite
+27: [c1] recv 135 composite
+27: [c1] recv 136 composite
+27: [c1] recv 137 PRIME
+27: [c1] recv 138 composite
+27: [c1] recv 139 PRIME
+27: [c1] recv 140 composite
+27: [c1] recv 141 composite
+27: [c1] recv 142 composite
+27: [c1] recv 143 composite
+27: [c1] recv 144 composite
+27: [c1] recv 145 composite
+27: [c1] recv 146 composite
+27: [c1] recv 147 composite
+27: [c1] recv 148 composite
+27: [c1] recv 149 PRIME
+27: [c1] recv 150 composite
+27: [c1] recv 151 PRIME
+27: [c1] recv 152 composite
+27: [c2] produced=151 consumed=151 primes=36 t=3008ms
+27: [c1] recv 153 composite
+27: [c1] recv 154 composite
+27: [c1] recv 155 composite
+27: [c1] recv 156 composite
+27: [c1] recv 157 PRIME
+27: [c1] recv 158 composite
+27: [c1] recv 159 composite
+27: [c1] recv 160 composite
+27: [c1] recv 161 composite
+27: [c1] recv 162 composite
+27: [c1] recv 163 PRIME
+27: [c1] recv 164 composite
+27: [c1] recv 165 composite
+27: [c1] recv 166 composite
+27: [c1] recv 167 PRIME
+27: [c1] recv 168 composite
+27: [c1] recv 169 composite
+27: [c1] recv 170 composite
+27: [c1] recv 171 composite
+27: [c1] recv 172 composite
+27: [c1] recv 173 PRIME
+27: [c1] recv 174 composite
+27: [c1] recv 175 composite
+27: [c1] recv 176 composite
+27: [c1] recv 177 composite
+27: [c1] recv 178 composite
+27: [c1] recv 179 PRIME
+27: [c1] recv 180 composite
+27: [c1] recv 181 PRIME
+27: [c1] recv 182 composite
+27: [c1] recv 183 composite
+27: [c1] recv 184 composite
+27: [c1] recv 185 composite
+27: [c1] recv 186 composite
+27: [c1] recv 187 composite
+27: [c1] recv 188 composite
+27: [c1] recv 189 composite
+27: [c1] recv 190 composite
+27: [c1] recv 191 PRIME
+27: [c1] recv 192 composite
+27: [c1] recv 193 PRIME
+27: [c1] recv 194 composite
+27: [c1] recv 195 composite
+27: [c1] recv 196 composite
+27: [c1] recv 197 PRIME
+27: [c1] recv 198 composite
+27: [c1] recv 199 PRIME
+27: [c1] recv 200 composite
+27: [c1] recv 201 composite
+27: [c1] recv 202 composite
+27: [c2] produced=201 consumed=201 primes=46 t=4008ms
+27: [c1] recv 203 composite
+27: [c1] recv 204 composite
+27: [c1] recv 205 composite
+27: [c1] recv 206 composite
+27: [c1] recv 207 composite
+27: [c1] recv 208 composite
+27: [c1] recv 209 composite
+27: [c1] recv 210 composite
+27: [c1] recv 211 PRIME
+27: [c1] recv 212 composite
+27: [c1] recv 213 composite
+27: [c1] recv 214 composite
+27: [c1] recv 215 composite
+27: [c1] recv 216 composite
+27: [c1] recv 217 composite
+27: [c1] recv 218 composite
+27: [c1] recv 219 composite
+27: [c1] recv 220 composite
+27: [c1] recv 221 composite
+27: [c1] recv 222 composite
+27: [c1] recv 223 PRIME
+27: [c1] recv 224 composite
+27: [c1] recv 225 composite
+27: [c1] recv 226 composite
+27: [c1] recv 227 PRIME
+27: [c1] recv 228 composite
+27: [c1] recv 229 PRIME
+27: [c1] recv 230 composite
+27: [c1] recv 231 composite
+27: [c1] recv 232 composite
+27: [c1] recv 233 PRIME
+27: [c1] recv 234 composite
+27: [c1] recv 235 composite
+27: [c1] recv 236 composite
+27: [c1] recv 237 composite
+27: [c1] recv 238 composite
+27: [c1] recv 239 PRIME
+27: [c1] recv 240 composite
+27: [c1] recv 241 PRIME
+27: [c1] recv 242 composite
+27: [c1] recv 243 composite
+27: [c1] recv 244 composite
+27: [c1] recv 245 composite
+27: [c1] recv 246 composite
+27: [c1] recv 247 composite
+27: [c1] recv 248 composite
+27: [c1] recv 249 composite
+27: [c1] recv 250 composite
+27: [c1] recv 251 PRIME
+27: [c1] recv 252 composite
+27: [c2] produced=251 consumed=251 primes=54 t=5008ms
+27: [c1] recv 253 composite
+27: [c1] recv 254 composite
+27: [c1] recv 255 composite
+27: [c1] recv 256 composite
+27: [c1] recv 257 PRIME
+27: [c1] recv 258 composite
+27: [c1] recv 259 composite
+27: [c1] recv 260 composite
+27: [c1] recv 261 composite
+27: [c1] recv 262 composite
+27: [c1] recv 263 PRIME
+27: [c1] recv 264 composite
+27: [c1] recv 265 composite
+27: [c1] recv 266 composite
+27: [c1] recv 267 composite
+27: [c1] recv 268 composite
+27: [c1] recv 269 PRIME
+27: [c1] recv 270 composite
+27: [c1] recv 271 PRIME
+27: [c1] recv 272 composite
+27: [c1] recv 273 composite
+27: [c1] recv 274 composite
+27: [c1] recv 275 composite
+27: [c1] recv 276 composite
+27: [c1] recv 277 PRIME
+27: [c1] recv 278 composite
+27: [c1] recv 279 composite
+27: [c1] recv 280 composite
+27: [c1] recv 281 PRIME
+27: [c1] recv 282 composite
+27: [c1] recv 283 PRIME
+27: [c1] recv 284 composite
+27: [c1] recv 285 composite
+27: [c1] recv 286 composite
+27: [c1] recv 287 composite
+27: [c1] recv 288 composite
+27: [c1] recv 289 composite
+27: [c1] recv 290 composite
+27: [c1] recv 291 composite
+27: [c1] recv 292 composite
+27: [c1] recv 293 PRIME
+27: [c1] recv 294 composite
+27: [c1] recv 295 composite
+27: [c1] recv 296 composite
+27: [c1] recv 297 composite
+27: [c1] recv 298 composite
+27: [c1] recv 299 composite
+27: [c1] recv 300 composite
+27: [c1] recv 301 composite
+27: [c1] recv 302 composite
+27: [c2] produced=301 consumed=301 primes=62 t=6008ms
+27: [c1] recv 303 composite
+27: [c1] recv 304 composite
+27: [c1] recv 305 composite
+27: [c1] recv 306 composite
+27: [c1] recv 307 PRIME
+27: [c1] recv 308 composite
+27: [c1] recv 309 composite
+27: [c1] recv 310 composite
+27: [c1] recv 311 PRIME
+27: [c1] recv 312 composite
+27: [c1] recv 313 PRIME
+27: [c1] recv 314 composite
+27: [c1] recv 315 composite
+27: [c1] recv 316 composite
+27: [c1] recv 317 PRIME
+27: [c1] recv 318 composite
+27: [c1] recv 319 composite
+27: [c1] recv 320 composite
+27: [c1] recv 321 composite
+27: [c1] recv 322 composite
+27: [c1] recv 323 composite
+27: [c1] recv 324 composite
+27: [c1] recv 325 composite
+27: [c1] recv 326 composite
+27: [c1] recv 327 composite
+27: [c1] recv 328 composite
+27: [c1] recv 329 composite
+27: [c1] recv 330 composite
+27: [c1] recv 331 PRIME
+27: [c1] recv 332 composite
+27: [c1] recv 333 composite
+27: [c1] recv 334 composite
+27: [c1] recv 335 composite
+27: [c1] recv 336 composite
+27: [c1] recv 337 PRIME
+27: [c1] recv 338 composite
+27: [c1] recv 339 composite
+27: [c1] recv 340 composite
+27: [c1] recv 341 composite
+27: [c1] recv 342 composite
+27: [c1] recv 343 composite
+27: [c1] recv 344 composite
+27: [c1] recv 345 composite
+27: [c1] recv 346 composite
+27: [c1] recv 347 PRIME
+27: [c1] recv 348 composite
+27: [c1] recv 349 PRIME
+27: [c1] recv 350 composite
+27: [c1] recv 351 composite
+27: [c1] recv 352 composite
+27: [c2] produced=351 consumed=351 primes=70 t=7008ms
+27: [c1] recv 353 PRIME
+27: [c1] recv 354 composite
+27: [c1] recv 355 composite
+27: [c1] recv 356 composite
+27: [c1] recv 357 composite
+27: [c1] recv 358 composite
+27: [c1] recv 359 PRIME
+27: [c1] recv 360 composite
+27: [c1] recv 361 composite
+27: [c1] recv 362 composite
+27: [c1] recv 363 composite
+27: [c1] recv 364 composite
+27: [c1] recv 365 composite
+27: [c1] recv 366 composite
+27: [c1] recv 367 PRIME
+27: [c1] recv 368 composite
+27: [c1] recv 369 composite
+27: [c1] recv 370 composite
+27: [c1] recv 371 composite
+27: [c1] recv 372 composite
+27: [c1] recv 373 PRIME
+27: [c1] recv 374 composite
+27: [c1] recv 375 composite
+27: [c1] recv 376 composite
+27: [c1] recv 377 composite
+27: [c1] recv 378 composite
+27: [c1] recv 379 PRIME
+27: [c1] recv 380 composite
+27: [c1] recv 381 composite
+27: [c1] recv 382 composite
+27: [c1] recv 383 PRIME
+27: [c1] recv 384 composite
+27: [c1] recv 385 composite
+27: [c1] recv 386 composite
+27: [c1] recv 387 composite
+27: [c1] recv 388 composite
+27: [c1] recv 389 PRIME
+27: [c1] recv 390 composite
+27: [c1] recv 391 composite
+27: [c1] recv 392 composite
+27: [c1] recv 393 composite
+27: [c1] recv 394 composite
+27: [c1] recv 395 composite
+27: [c1] recv 396 composite
+27: [c1] recv 397 PRIME
+27: [c1] recv 398 composite
+27: [c1] recv 399 composite
+27: [c1] recv 400 composite
+27: [c1] recv 401 PRIME
+27: [c1] recv 402 composite
+27: [c2] produced=401 consumed=401 primes=79 t=8008ms
+27: [c1] recv 403 composite
+27: [c1] recv 404 composite
+27: [c1] recv 405 composite
+27: [c1] recv 406 composite
+27: [c1] recv 407 composite
+27: [c1] recv 408 composite
+27: [c1] recv 409 PRIME
+27: [c1] recv 410 composite
+27: [c1] recv 411 composite
+27: [c1] recv 412 composite
+27: [c1] recv 413 composite
+27: [c1] recv 414 composite
+27: [c1] recv 415 composite
+27: [c1] recv 416 composite
+27: [c1] recv 417 composite
+27: [c1] recv 418 composite
+27: [c1] recv 419 PRIME
+27: [c1] recv 420 composite
+27: [c1] recv 421 PRIME
+27: [c1] recv 422 composite
+27: [c1] recv 423 composite
+27: [c1] recv 424 composite
+27: [c1] recv 425 composite
+27: [c1] recv 426 composite
+27: [c1] recv 427 composite
+27: [c1] recv 428 composite
+27: [c1] recv 429 composite
+27: [c1] recv 430 composite
+27: [c1] recv 431 PRIME
+27: [c1] recv 432 composite
+27: [c1] recv 433 PRIME
+27: [c1] recv 434 composite
+27: [c1] recv 435 composite
+27: [c1] recv 436 composite
+27: [c1] recv 437 composite
+27: [c1] recv 438 composite
+27: [c1] recv 439 PRIME
+27: [c1] recv 440 composite
+27: [c1] recv 441 composite
+27: [c1] recv 442 composite
+27: [c1] recv 443 PRIME
+27: [c1] recv 444 composite
+27: [c1] recv 445 composite
+27: [c1] recv 446 composite
+27: [c1] recv 447 composite
+27: [c1] recv 448 composite
+27: [c1] recv 449 PRIME
+27: [c1] recv 450 composite
+27: [c1] recv 451 composite
+27: [c1] recv 452 composite
+27: [c2] produced=451 consumed=451 primes=87 t=9008ms
+27: [c1] recv 453 composite
+27: [c1] recv 454 composite
+27: [c1] recv 455 composite
+27: [c1] recv 456 composite
+27: [c1] recv 457 PRIME
+27: [c1] recv 458 composite
+27: [c1] recv 459 composite
+27: [c1] recv 460 composite
+27: [c1] recv 461 PRIME
+27: [c1] recv 462 composite
+27: [c1] recv 463 PRIME
+27: [c1] recv 464 composite
+27: [c1] recv 465 composite
+27: [c1] recv 466 composite
+27: [c1] recv 467 PRIME
+27: [c1] recv 468 composite
+27: [c1] recv 469 composite
+27: [c1] recv 470 composite
+27: [c1] recv 471 composite
+27: [c1] recv 472 composite
+27: [c1] recv 473 composite
+27: [c1] recv 474 composite
+27: [c1] recv 475 composite
+27: [c1] recv 476 composite
+27: [c1] recv 477 composite
+27: [c1] recv 478 composite
+27: [c1] recv 479 PRIME
+27: [c1] recv 480 composite
+27: [c1] recv 481 composite
+27: [c1] recv 482 composite
+27: [c1] recv 483 composite
+27: [c1] recv 484 composite
+27: [c1] recv 485 composite
+27: [c1] recv 486 composite
+27: [c1] recv 487 PRIME
+27: [c1] recv 488 composite
+27: [c1] recv 489 composite
+27: [c1] recv 490 composite
+27: [c1] recv 491 PRIME
+27: [c1] recv 492 composite
+27: [c1] recv 493 composite
+27: [c1] recv 494 composite
+27: [c1] recv 495 composite
+27: [c1] recv 496 composite
+27: [c1] recv 497 composite
+27: [c1] recv 498 composite
+27: [c1] recv 499 PRIME
+27: [c1] recv 500 composite
+27: [c1] recv 501 composite
+27: [c1] recv 502 composite
+27: 
+27: RESULT: PASS
+27: PASS
+27: 
+27: qemu suite: 1 passed, 0 skipped, 0 failed
+14/18 Test #27: aarch32-rpi-zero-2w-smp_test3-qemu .............   Passed   10.19 sec
+test 29
+      Start 29: aarch32-rpi-zero-2w-smp_test4-qemu
+
+29: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+29: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+29: Environment variables: 
+29:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+29:  UOS_QEMU_LOAD_ADDR=0x10000
+29:  UOS_QEMU_ONLY=smp_test4
+29:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+29: Test timeout computed to be: 2400
+29: smp_test4                
+29: QEMU 9.2.4 monitor - type 'help' for more information
+29: (qemu) 
+29: 
+29: +== RPi Zero 2W µOS++ SMP TEST 4 : no-affinity load balancing ==+
+29: 
+29: os_startup_initialize_free_store(0x2dc000,67108864)
+29: first_fit_top(0x2dc000,67108864) @0x54748 app-heap
+29: out_of_memory_handler(0x16790) @0x54748 app-heap
+29: estd::pmr::set_default_resource(0x54748) 
+29: rtos::memory::set_default_resource(0x54748) 
+29: rtos::memory::init_once_default_resource() 
+29: malloc_memory_resource() @0x54718 malloc
+29: scheduler::start() 
+29: join: c1=3 c2=3 c3=3 (0ms)
+29: w0 [ c0=3 c1=0 c2=1 c3=1 ]
+29: w1 [ c0=2 c1=1 c2=1 c3=0 ]
+29: w2 [ c0=3 c1=0 c2=0 c3=1 ]
+29: w3 [ c0=0 c1=2 c2=0 c3=2 ]
+29: w4 [ c0=1 c1=3 c2=0 c3=0 ]
+29: w5 [ c0=0 c1=1 c2=2 c3=1 ]
+29: w6 [ c0=0 c1=0 c2=0 c3=2 ]
+29: w7 [ c0=0 c1=2 c2=1 c3=0 ]
+29: -- reporter on c0 t=8ms --
+29: w0 [ c0=369 c1=332 c2=351 c3=389 ]
+29: w1 [ c0=369 c1=344 c2=391 c3=340 ]
+29: w2 [ c0=332 c1=356 c2=363 c3=374 ]
+29: w3 [ c0=395 c1=403 c2=333 c3=337 ]
+29: w4 [ c0=357 c1=368 c2=399 c3=340 ]
+29: w5 [ c0=373 c1=349 c2=384 c3=350 ]
+29: w6 [ c0=387 c1=331 c2=369 c3=346 ]
+29: w7 [ c0=380 c1=365 c2=379 c3=337 ]
+29: -- reporter on c0 t=1009ms --
+29: w0 [ c0=732 c1=642 c2=750 c3=747 ]
+29: w1 [ c0=760 c1=680 c2=710 c3=700 ]
+29: w2 [ c0=696 c1=729 c2=700 c3=739 ]
+29: w3 [ c0=756 c1=749 c2=724 c3=676 ]
+29: w4 [ c0=714 c1=760 c2=795 c3=669 ]
+29: w5 [ c0=729 c1=728 c2=790 c3=688 ]
+29: w6 [ c0=776 c1=686 c2=720 c3=688 ]
+29: w7 [ c0=756 c1=713 c2=748 c3=662 ]
+29: -- reporter on c0 t=2009ms --
+29: w0 [ c0=1127 c1=1000 c2=1138 c3=1078 ]
+29: w1 [ c0=1102 c1=1034 c2=1114 c3=1044 ]
+29: w2 [ c0=1068 c1=1060 c2=1080 c3=1093 ]
+29: w3 [ c0=1124 c1=1137 c2=1106 c3=992 ]
+29: w4 [ c0=1050 c1=1134 c2=1146 c3=1061 ]
+29: w5 [ c0=1101 c1=1071 c2=1145 c3=1043 ]
+29: w6 [ c0=1136 c1=1040 c2=1061 c3=1060 ]
+29: w7 [ c0=1167 c1=1060 c2=1121 c3=969 ]
+29: -- reporter on c0 t=3009ms --
+29: w0 [ c0=1489 c1=1367 c2=1494 c3=1448 ]
+29: w1 [ c0=1498 c1=1403 c2=1523 c3=1349 ]
+29: w2 [ c0=1452 c1=1400 c2=1436 c3=1446 ]
+29: w3 [ c0=1504 c1=1462 c2=1460 c3=1353 ]
+29: w4 [ c0=1405 c1=1493 c2=1516 c3=1415 ]
+29: w5 [ c0=1424 c1=1391 c2=1544 c3=1414 ]
+29: w6 [ c0=1494 c1=1434 c2=1423 c3=1386 ]
+29: w7 [ c0=1546 c1=1401 c2=1487 c3=1311 ]
+29: -- reporter on c0 t=4009ms --
+29: w0 [ c0=1846 c1=1755 c2=1859 c3=1790 ]
+29: w1 [ c0=1895 c1=1745 c2=1903 c3=1687 ]
+29: w2 [ c0=1829 c1=1761 c2=1785 c3=1808 ]
+29: w3 [ c0=1851 c1=1795 c2=1853 c3=1706 ]
+29: w4 [ c0=1787 c1=1836 c2=1876 c3=1752 ]
+29: w5 [ c0=1792 c1=1741 c2=1916 c3=1758 ]
+29: w6 [ c0=1811 c1=1766 c2=1820 c3=1779 ]
+29: w7 [ c0=1950 c1=1764 c2=1844 c3=1635 ]
+29: -- reporter on c0 t=5009ms --
+29: w0 [ c0=2179 c1=2115 c2=2268 c3=2134 ]
+29: w1 [ c0=2298 c1=2090 c2=2220 c3=2040 ]
+29: w2 [ c0=2180 c1=2119 c2=2178 c3=2157 ]
+29: w3 [ c0=2212 c1=2184 c2=2199 c3=2043 ]
+29: w4 [ c0=2143 c1=2191 c2=2271 c3=2074 ]
+29: w5 [ c0=2169 c1=2108 c2=2313 c3=2066 ]
+29: w6 [ c0=2214 c1=2105 c2=2184 c3=2109 ]
+29: w7 [ c0=2295 c1=2094 c2=2182 c3=2029 ]
+29: -- reporter on c0 t=6009ms --
+29: w0 [ c0=2583 c1=2494 c2=2645 c3=2432 ]
+29: w1 [ c0=2678 c1=2414 c2=2564 c3=2419 ]
+29: w2 [ c0=2523 c1=2457 c2=2563 c3=2514 ]
+29: w3 [ c0=2569 c1=2572 c2=2572 c3=2373 ]
+29: w4 [ c0=2500 c1=2533 c2=2649 c3=2430 ]
+29: w5 [ c0=2543 c1=2462 c2=2669 c3=2417 ]
+29: w6 [ c0=2600 c1=2465 c2=2547 c3=2441 ]
+29: w7 [ c0=2633 c1=2432 c2=2572 c3=2386 ]
+29: -- reporter on c0 t=7009ms --
+29: w0 [ c0=2978 c1=2881 c2=3003 c3=2763 ]
+29: w1 [ c0=3014 c1=2764 c2=2940 c3=2777 ]
+29: w2 [ c0=2915 c1=2807 c2=2945 c3=2836 ]
+29: w3 [ c0=2928 c1=2930 c2=2963 c3=2733 ]
+29: w4 [ c0=2853 c1=2860 c2=3022 c3=2799 ]
+29: w5 [ c0=2922 c1=2794 c2=3045 c3=2768 ]
+29: w6 [ c0=2963 c1=2827 c2=2896 c3=2808 ]
+29: w7 [ c0=3018 c1=2795 c2=2930 c3=2731 ]
+29: -- reporter on c0 t=8009ms --
+29: w0 [ c0=3351 c1=3197 c2=3400 c3=3107 ]
+29: w1 [ c0=3406 c1=3116 c2=3307 c3=3111 ]
+29: w2 [ c0=3312 c1=3164 c2=3314 c3=3157 ]
+29: w3 [ c0=3309 c1=3288 c2=3338 c3=3062 ]
+29: w4 [ c0=3194 c1=3260 c2=3363 c3=3154 ]
+29: w5 [ c0=3270 c1=3137 c2=3431 c3=3120 ]
+29: w6 [ c0=3315 c1=3176 c2=3270 c3=3181 ]
+29: w7 [ c0=3384 c1=3129 c2=3263 c3=3105 ]
+29: -- reporter on c0 t=9009ms --
+29: 
+29: RESULT: PASS
+29: PASS
+29: 
+29: qemu suite: 1 passed, 0 skipped, 0 failed
+15/18 Test #29: aarch32-rpi-zero-2w-smp_test4-qemu .............   Passed   10.16 sec
+test 31
+      Start 31: aarch32-rpi-zero-2w-usb_test-qemu
+
+31: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+31: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+31: Environment variables: 
+31:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+31:  UOS_QEMU_LOAD_ADDR=0x10000
+31:  UOS_QEMU_ONLY=usb_test
+31:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+31: Test timeout computed to be: 2400
+31: usb_test                 
+31: QEMU 9.2.4 monitor - type 'help' for more information
+31: (qemu) os_startup_initialize_free_store(0x3e8000,67108864)
+31: first_fit_top(0x3e8000,67108864) @0x15ed08 app-heap
+31: out_of_memory_handler(0x1825c) @0x15ed08 app-heap
+31: estd::pmr::set_default_resource(0x15ed08) 
+31: rtos::memory::set_default_resource(0x15ed08) 
+31: rtos::memory::init_once_default_resource() 
+31: malloc_memory_resource() @0x15ecd8 malloc
+31: scheduler::start() 
+31: 
+31: === usb_test on Raspberry Pi Zero 2W ===
+31: USB power domain: on (code=0x80000000 state=0x00000001 alias=1)
+31: DWC2 GSNPSID: 0x4f54294a  GHWCFG2: 0x250dc016
+31: DWC2 GHWCFG3: 0x10000044  GHWCFG4: 0x00000000
+31: storage: no SD card detected
+31: storage: RamUartSink
+31: 
+31: RESULT: SKIP (no USB device mode)
+31: SKIP  ((no USB device mode))
+31: 
+31: qemu suite: 0 passed, 1 skipped, 0 failed
+16/18 Test #31: aarch32-rpi-zero-2w-usb_test-qemu ..............   Passed    0.46 sec
+test 33
+      Start 33: aarch32-rpi-zero-2w-wifi-net-qemu
+
+33: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+33: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+33: Environment variables: 
+33:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+33:  UOS_QEMU_LOAD_ADDR=0x10000
+33:  UOS_QEMU_ONLY=wifi-net
+33:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+33: Test timeout computed to be: 2400
+33: wifi-net                 
+33: QEMU 9.2.4 monitor - type 'help' for more information
+33: (qemu) os_startup_initialize_free_store(0x2d8000,67108864)
+33: first_fit_top(0x2d8000,67108864) @0x45a58 app-heap
+33: out_of_memory_handler(0x15a94) @0x45a58 app-heap
+33: estd::pmr::set_default_resource(0x45a58) 
+33: rtos::memory::set_default_resource(0x45a58) 
+33: rtos::memory::init_once_default_resource() 
+33: malloc_memory_resource() @0x45a28 malloc
+33: scheduler::start() 
+33: 
+33: RESULT: SKIP (wifi-net needs the real radio)
+33: SKIP  ((wifi-net needs the real radio))
+33: 
+33: qemu suite: 0 passed, 1 skipped, 0 failed
+17/18 Test #33: aarch32-rpi-zero-2w-wifi-net-qemu ..............   Passed    0.11 sec
+test 35
+      Start 35: aarch32-rpi-zero-2w-wifi-tcp-server-qemu
+
+35: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/../test_smpl/run-qemu.sh" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test" "/home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64" "-M" "raspi3b" "-smp" "4"
+35: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+35: Environment variables: 
+35:  UOS_QEMU_SHIM=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img
+35:  UOS_QEMU_LOAD_ADDR=0x10000
+35:  UOS_QEMU_ONLY=wifi-tcp-server
+35:  UOS_TEST_SRC_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+35: Test timeout computed to be: 2400
+35: wifi-tcp-server          
+35: QEMU 9.2.4 monitor - type 'help' for more information
+35: (qemu) os_startup_initialize_free_store(0x2d8000,67108864)
+35: first_fit_top(0x2d8000,67108864) @0x45a78 app-heap
+35: out_of_memory_handler(0x15a9c) @0x45a78 app-heap
+35: estd::pmr::set_default_resource(0x45a78) 
+35: rtos::memory::set_default_resource(0x45a78) 
+35: rtos::memory::init_once_default_resource() 
+35: malloc_memory_resource() @0x45a48 malloc
+35: scheduler::start() 
+35: 
+35: RESULT: SKIP (wifi-tcp-server needs the real radio and an access point)
+35: SKIP  ((wifi-tcp-server needs the real radio and an access point))
+35: 
+35: qemu suite: 0 passed, 1 skipped, 0 failed
+18/18 Test #35: aarch32-rpi-zero-2w-wifi-tcp-server-qemu .......   Passed    0.10 sec
+
+100% tests passed, 0 tests failed out of 18
+
+Label Time Summary:
+qemu    = 199.14 sec*proc (18 tests)
+
+Total Test time (real) = 199.15 sec

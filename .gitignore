@@ -1,0 +1,8 @@
+# This repository holds only the alignment documents and check results.
+# The five code repositories next to it have their own git repositories.
+/*
+!/.gitignore
+!/WHY-SMP-BUILD-TEST-DIFFERS.*
+!/baseline-2026-11-17/
+!/step1-check/
+!/step2-check/

@@ -1,0 +1,3 @@
+qemu-cortex-m0-rtos-apis-test Passed
+qemu-cortex-m0-mutex-stress-test Passed
+qemu-cortex-m0-cmsis-os-validator-test Passed

@@ -1,0 +1,913 @@
+> cmake -S . -B build/qemu-cortex-m7f-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=qemu-cortex-m7f --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.1.0
+-- Platform name: qemu-cortex-m7f
+-- Build type: Debug
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding '../../micro-os-plus-iii-cortexm'...
+-- > micro-os-plus::cortexm-qemu-m0 -> micro-os-plus-iii-cortexm-qemu-m0-interface
+-- > micro-os-plus::cortexm-qemu-m3 -> micro-os-plus-iii-cortexm-qemu-m3-interface
+-- > micro-os-plus::cortexm-qemu-m4f -> micro-os-plus-iii-cortexm-qemu-m4f-interface
+-- > micro-os-plus::cortexm-qemu-m7 -> micro-os-plus-iii-cortexm-qemu-m7-interface
+-- > micro-os-plus::cortexm-qemu-m33 -> micro-os-plus-iii-cortexm-qemu-m33-interface
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board nucleof411
+-- Adding 'device-qemu-cortexm'...
+-- Processing 'tests/device-qemu-cortexm'...
+-- > device-qemu-cortexm-interface
+-- + -I include
+-- + src/system-cortexm.c
+-- + src/initialize-hardware.c
+-- + src/vectors-cortexm.c
+-- + src/exception-handlers.cpp
+-- + -D MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M7
+-- + xpacks::arm-cmsis
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/mem-mps2-an500.ld
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/sections-flash.ld
+-- > micro-os-plus::device -> device-qemu-cortexm-interface
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Adding 'build/qemu-cortex-m7f-cmake-gcc-debug/xpacks/@xpacks/arm-cmsis'...
+-- Processing xPack @xpacks/arm-cmsis@4.5.0-7...
+-- > xpacks-arm-cmsis-interface
+-- + -I CMSIS/Include
+-- + -I CMSIS/Driver/Include
+-- > xpacks::arm-cmsis -> xpacks-arm-cmsis-interface
+-- Adding 'build/qemu-cortex-m7f-cmake-gcc-debug/xpacks/@xpack-3rd-party/arm-cmsis-core'...
+-- Processing xPack @xpack-3rd-party/arm-cmsis-core@5.4.0-6...
+-- > xpack-3rd-party-arm-cmsis-core-m-interface
+-- + -I CMSIS/Core/Include
+-- + -D __PROGRAM_START
+-- > xpack-3rd-party::arm-cmsis-core-m -> xpack-3rd-party-arm-cmsis-core-m-interface
+-- > xpack-3rd-party-arm-cmsis-core-a-interface
+-- + -I CMSIS/Core_A/Include
+-- + -D __PROGRAM_START
+-- > xpack-3rd-party::arm-cmsis-core-a -> xpack-3rd-party-arm-cmsis-core-a-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/qemu-cortex-m7f'...
+-- Cortex-M qemu-cortex-m7f: harness suites registered (qemu-cortex-m7f)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug
+> cmake -S . -B build/qemu-cortex-m7f-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=qemu-cortex-m7f
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board nucleof411
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Cortex-M qemu-cortex-m7f: harness suites registered (qemu-cortex-m7f)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug
+> cmake --build build/qemu-cortex-m7f-cmake-gcc-debug
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+> cd build/qemu-cortex-m7f-cmake-gcc-debug && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: qemu-cortex-m7f-rtos-apis-test
+
+1: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an500" "--cpu" "cortex-m7" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug/platform-bin/rtos-apis-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+1: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug/platform-bin
+1: Test timeout computed to be: 1200
+1: 
+1: Hardware initialised
+1: Main stack 0x207ff400-0x20800000
+1: os_startup_initialize_free_store(0x200059cc,8362548)
+1: first_fit_top(0x200059cc,8362548) @0x200039ac app-heap
+1: out_of_memory_handler(0x294cd) @0x200039ac app-heap
+1: estd::pmr::set_default_resource(0x200039ac) 
+1: rtos::memory::init_once_default_resource() 
+1: malloc_memory_resource() @0x20003924 malloc
+1: first_fit_top(0x2077f400,524288) @0x2077f3c0 sys-heap
+1: lifo(0x2077f400,524288) @0x2077f3c0 sys-heap
+1: out_of_memory_handler(0x294d5) @0x2077f3c0 sys-heap
+1: rtos::memory::set_default_resource(0x2077f3c0) 
+1: block_pool_typed_inclusive() @0x2077f1e0 threads-pool
+1: out_of_memory_handler(0x294d5) @0x2077f1e0 threads-pool
+1: rtos::memory::set_resource_typed<os::rtos::thread>(0x2077f1e0) 
+1: block_pool_typed_inclusive() @0x2077f168 condvars-pool
+1: out_of_memory_handler(0x294d5) @0x2077f168 condvars-pool
+1: rtos::memory::set_resource_typed<os::rtos::condition_variable>(0x2077f168) 
+1: block_pool_typed_inclusive() @0x2077f0e8 evflags-pool
+1: out_of_memory_handler(0x294d5) @0x2077f0e8 evflags-pool
+1: rtos::memory::set_resource_typed<os::rtos::event_flags>(0x2077f0e8) 
+1: block_pool_typed_inclusive() @0x2077f000 mempools-pool
+1: out_of_memory_handler(0x294d5) @0x2077f000 mempools-pool
+1: rtos::memory::set_resource_typed<os::rtos::memory_pool>(0x2077f000) 
+1: block_pool_typed_inclusive() @0x2077eee0 mqueues-pool
+1: out_of_memory_handler(0x294d5) @0x2077eee0 mqueues-pool
+1: rtos::memory::set_resource_typed<os::rtos::message_queue>(0x2077eee0) 
+1: block_pool_typed_inclusive() @0x2077ee18 mutexes-pool
+1: out_of_memory_handler(0x294d5) @0x2077ee18 mutexes-pool
+1: rtos::memory::set_resource_typed<os::rtos::mutex>(0x2077ee18) 
+1: block_pool_typed_inclusive() @0x2077ed88 semaphores-pool
+1: out_of_memory_handler(0x294d5) @0x2077ed88 semaphores-pool
+1: rtos::memory::set_resource_typed<os::rtos::semaphore>(0x2077ed88) 
+1: block_pool_typed_inclusive() @0x2077ec98 timers-pool
+1: out_of_memory_handler(0x294d5) @0x2077ec98 timers-pool
+1: rtos::memory::set_resource_typed<os::rtos::timer>(0x2077ec98) 
+1: os_run_init_array()
+1: Device '/dev/mc' linked
+1: my_char_impl()=@0x200036e4 1
+1: Device '/dev/mc2' linked
+1: my_char_impl()=@0x2000370c 2
+1: Device '/dev/mb' linked
+1: my_block_impl::my_block_impl()=@0x20003760
+1: Device '/dev/mb-p1' linked
+1: Device '/dev/mb-p2' linked
+1: file_descriptors_manager::file_descriptors_manager(5)=0x20003828
+1: ::malloc(1088)=0x2077de20
+1: Static objects constructed
+1: 
+1: µOS++ IIIe version 7.0.1
+1: Copyright (c) 2007-2023 Liviu Ionescu
+1: Scheduler: µOS++ Cortex-M7 FP, preemptive, BASEPRI(4), WFI
+1: System clock: 16000000 Hz
+1: Scheduler frequency: 1000 ticks/sec
+1: Default stack size: 2048 bytes
+1: Interrupts stack size: 3072 bytes
+1: Built with GCC 15.2.1 20251203, with exceptions
+1: 
+1: scheduler::start() 
+1: 
+1: main(argc=1, argv=[""]);
+1: ::malloc(1024)=0x2077da18
+1: 
+1: µOS++ RTOS simple APIs test
+1: Built with GCC 15.2.1 20251203
+1: 
+1: Test C++ API - started
+1: 
+1: Threads:
+1: main, 46% (1840/3996), run, 8, 97884 
+1: idle, 12% (248/2044), rdy, 11, 100744 
+1: 
+1: Test C++ API - Memory managers
+1: block_pool(2,8,0x207feea0,60) @0x207fef28 bp1
+1: ~block_pool() @0x207fef28 bp1
+1: block_pool_typed_inclusive() @0x207fef28 bp2
+1: ~block_pool_typed_inclusive() @0x207fef28 bp2
+1: ~block_pool() @0x207fef28 bp2
+1: block_pool_typed_allocated(2,0x207ff190) @0x207fef28 bp3
+1: ~block_pool_typed_allocated() @0x207fef28 bp3
+1: ~block_pool() @0x207fef28 bp3
+1: 
+1: Test C++ API - Threads
+1: > func() on thread -
+1: > func() on thread th2
+1: > func() on thread th3
+1: > func() on thread th4
+1: > func() on thread th5
+1: > func() on thread th6
+1: > func() on thread th7
+1: > func() on thread th8
+1: > func() on thread th9
+1: allocator_stateless_polymorphic_synchronized() @0x207ff1bc 0x2077f1e0
+1: allocate(1) @0x207fee68
+1: > func() on thread th10
+1: allocator_stateless_polymorphic_synchronized() @0x207ff1c4 0x2077f1e0
+1: allocate(1) @0x207fee68
+1: > func() on thread th11
+1: deallocate(0x2077f2a8,1) @0x207fee6c
+1: deallocate(0x2077f220,1) @0x207fee6c
+1: > func() on thread -
+1: > func() on thread ath2
+1: > func() on thread -
+1: > func() on thread sth2
+1: 
+1: Test C++ API - Thread stack
+1: 
+1: Test C++ API - Thread event flags
+1: 
+1: Test C++ API - Message queues
+1: allocator_stateless_polymorphic_synchronized() @0x207ff1e8 0x2077eee0
+1: allocate(1) @0x207fee68
+1: allocator_stateless_polymorphic_synchronized() @0x207ff1f4 0x2077eee0
+1: allocate(1) @0x207fee68
+1: deallocate(0x2077ef68,1) @0x207fee6c
+1: deallocate(0x2077ef20,1) @0x207fee6c
+1: allocator_stateless_polymorphic_synchronized() @0x207ff128 0x2077eee0
+1: allocator_stateless_polymorphic_synchronized() @0x207ff210 0x2077eee0
+1: allocate(1) @0x207fee74
+1: allocator_stateless_polymorphic_synchronized() @0x207ff218 0x2077eee0
+1: allocate(1) @0x207fee74
+1: deallocate(0x2077ef68,1) @0x207fee6c
+1: deallocate(0x2077ef20,1) @0x207fee6c
+1: 
+1: Test C++ API - Memory pools
+1: allocator_stateless_polymorphic_synchronized() @0x207ff10c 0x2077f000
+1: allocator_stateless_polymorphic_synchronized() @0x207ff234 0x2077f000
+1: allocate(1) @0x207fee68
+1: allocator_stateless_polymorphic_synchronized() @0x207ff240 0x2077f000
+1: allocate(1) @0x207fee68
+1: deallocate(0x2077f074,1) @0x207fee6c
+1: deallocate(0x2077f040,1) @0x207fee6c
+1: allocator_stateless_polymorphic_synchronized() @0x207ff0f0 0x2077eee0
+1: allocator_stateless_polymorphic_synchronized() @0x207ff25c 0x2077f000
+1: allocate(1) @0x207fee74
+1: allocator_stateless_polymorphic_synchronized() @0x207ff264 0x2077f000
+1: allocate(1) @0x207fee74
+1: deallocate(0x2077f074,1) @0x207fee6c
+1: deallocate(0x2077f040,1) @0x207fee6c
+1: 
+1: Test C++ API - Condition variables
+1: allocator_stateless_polymorphic_synchronized() @0x207ff0b0 0x2077f168
+1: allocator_stateless_polymorphic_synchronized() @0x207ff26c 0x2077f168
+1: allocate(1) @0x207fee78
+1: allocator_stateless_polymorphic_synchronized() @0x207ff270 0x2077f168
+1: allocate(1) @0x207fee78
+1: deallocate(0x2077f1b8,1) @0x207fee6c
+1: deallocate(0x2077f1a8,1) @0x207fee6c
+1: 
+1: Test C++ API - Event flags
+1: allocator_stateless_polymorphic_synchronized() @0x207ff068 0x2077f0e8
+1: allocator_stateless_polymorphic_synchronized() @0x207ff274 0x2077f0e8
+1: allocate(1) @0x207fee78
+1: allocator_stateless_polymorphic_synchronized() @0x207ff278 0x2077f0e8
+1: allocate(1) @0x207fee78
+1: deallocate(0x2077f13c,1) @0x207fee6c
+1: deallocate(0x2077f128,1) @0x207fee6c
+1: 
+1: Test C++ API - Mutexes
+1: allocator_stateless_polymorphic_synchronized() @0x207ff048 0x2077ee18
+1: allocator_stateless_polymorphic_synchronized() @0x207ff27c 0x2077ee18
+1: allocate(1) @0x207fee78
+1: allocator_stateless_polymorphic_synchronized() @0x207ff280 0x2077ee18
+1: allocate(1) @0x207fee78
+1: deallocate(0x2077ee84,1) @0x207fee6c
+1: deallocate(0x2077ee58,1) @0x207fee6c
+1: 0x207fdb00
+1: 0x207fdb00
+1: 0x207fdb00
+1: 0x207fdb00
+1: 0x207fdb00
+1: 0x0
+1: 
+1: Test C++ API - Semaphores
+1: allocator_stateless_polymorphic_synchronized() @0x207fefe0 0x2077ed88
+1: allocator_stateless_polymorphic_synchronized() @0x207ff28c 0x2077ed88
+1: allocate(1) @0x207fee78
+1: allocator_stateless_polymorphic_synchronized() @0x207ff290 0x2077ed88
+1: allocate(1) @0x207fee78
+1: deallocate(0x2077ede0,1) @0x207fee6c
+1: deallocate(0x2077edc8,1) @0x207fee6c
+1: 
+1: Test C++ API - Timers
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: allocator_stateless_polymorphic_synchronized() @0x207fefc0 0x2077ec98
+1: allocator_stateless_polymorphic_synchronized() @0x207ff29c 0x2077ec98
+1: allocate(1) @0x207fee68
+1: >> tmfunc()
+1: allocator_stateless_polymorphic_synchronized() @0x207ff2a4 0x2077ec98
+1: allocate(1) @0x207fee68
+1: >> tmfunc()
+1: deallocate(0x2077ed10,1) @0x207fee6c
+1: deallocate(0x2077ecd8,1) @0x207fee6c
+1: 
+1: Test C++ API - done
+1: errno=0
+1: 
+1: Test C API - started
+1: 
+1: Threads:
+1: main, 55% (2204/3996), run, 123, 750391 
+1: idle, 16% (332/2044), rdy, 90, 474587 
+1: 
+1: Test C API - Scheduler
+1: 
+1: Test C API - Clocks
+1: 
+1: Test C API - Threads
+1: > func
+1: > func
+1: > func
+1: > func
+1: 
+1: Test C API - Thread stack
+1: 
+1: Test C API - Thread event flags
+1: 
+1: Test C API - Timers
+1: >> tmfunc
+1: >> tmfunc
+1: >> tmfunc
+1: >> tmfunc
+1: 
+1: Test C API - Mutexes
+1: 
+1: Test C API - Semaphores
+1: 
+1: Test C API - Memory pools
+1: 
+1: Test C API - Message queues
+1: 
+1: Test C API - Event flags
+1: 
+1: Test C API - Condition variables
+1: 
+1: Test C API - done
+1: errno=0
+1: 
+1: Test ISO C++ API - Threads
+1: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(); Args = {}]() @0x207feeb4
+1: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*())()>]()
+1: task1()
+1: join() @0x207feeb4
+1: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*())()>]()
+1: join() @0x207feeb4 joined
+1: ~thread() @0x207feeb4
+1: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(const void*); Args = {char*}]() @0x207feea4
+1: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(const void*)>]()
+1: task2(0x207feeb3)
+1: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(void*); Args = {char*}]() @0x207fee98
+1: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(void*)>]()
+1: task3(0x207feeb3)
+1: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(int, const char*); Args = {int, const char (&)[4]}]() @0x207fee8c
+1: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(int, const char*))(int, const char*)>]()
+1: join() @0x207feea4
+1: task4(7,xyz)
+1: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(const void*)>]()
+1: join() @0x207feea4 joined
+1: join() @0x207fee98
+1: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(void*)>]()
+1: join() @0x207fee98 joined
+1: join() @0x207fee8c
+1: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(int, const char*))(int, const char*)>]()
+1: join() @0x207fee8c joined
+1: ~thread() @0x207fee8c
+1: ~thread() @0x207fee98
+1: ~thread() @0x207feea4
+1: 
+1: Test ISO C++ API - Mutexes
+1: 
+1: Test ISO C++ API - Condition variables
+1: 
+1: Test ISO C++ API - Chrono
+1: Systick_clock::now() = 117 ticks
+1: system_clock::now() = 117000 us
+1: high_resolution_clock::now() = 117226562 ns
+1: sleep_for<chrono::realtime_clock> (1s)
+1: !sleep_for<chrono::realtime_clock> (1001ms)
+1: !!!!sleep_until (chrono::realtime_clock::now () + 1000ms)
+1: !sleep_until (chrono::realtime_clock::now () + 1s)
+1: !
+1: Test ISO C++ API - Done
+1: errno=0
+1: 
+1: Test POSIX I/O - Block device partitions - C++ API
+1: 
+1: Test POSIX I/O - Block device locked - C++ API
+1: 
+1: Test POSIX I/O - Block device unlocked - C++ API
+1: 
+1: Test POSIX I/O - Block device - intermixed opens - C++ API
+1: errno=0
+1: 
+1: Chan FatFS - 512/512 fat12, step 0
+1: Device '/dev/ch-bk-1' linked
+1: my_block_impl::my_block_impl()=@0x2077d9f4
+1: 
+1: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: my_block_impl::~my_block_impl() @0x2077d9f4
+1: 
+1: Chan FatFS - 512/512 fat12, step 1
+1: Device '/dev/ch-bk-1' linked
+1: my_block_impl::my_block_impl()=@0x2077d9f4
+1: 
+1: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: my_block_impl::~my_block_impl() @0x2077d9f4
+1: 
+1: Chan FatFS - 512/512 fat12, step 2
+1: Device '/dev/ch-bk-1' linked
+1: my_block_impl::my_block_impl()=@0x2077d9f4
+1: 
+1: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: my_block_impl::~my_block_impl() @0x2077d9f4
+1: 
+1: Chan FatFS - 512/512 fat12 mutex
+1: Device '/dev/ch-bk-1m' linked
+1: my_block_impl::my_block_impl()=@0x2077d9f4
+1: 
+1: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: my_block_impl::~my_block_impl() @0x2077d9f4
+1: errno=0
+1: done
+1: _main_trampoline() exit = 0
+1: exit(0)
+1: file_descriptors_manager::~file_descriptors_manager() @0x20003828
+1: my_block_impl::~my_block_impl() @0x20003760
+1: ~my_char_impl() @0x2000370c
+1: ~my_char_impl() @0x200036e4
+1: os_run_fini_array()
+1: _Exit()
+1: 
+1: Memory 'app-heap' @0x200039ac: 
+1: 	total: 8362548 bytes, 
+1: 	allocated: 532936 bytes in 14 chunk(s), 
+1: 	freed: 7829612 bytes in 3 chunk(s), 
+1: 	max: 609484 bytes, 
+1: 	calls: 45 allocs, 31 deallocs
+1: Memory 'sys-heap' @0x2077f3c0: 
+1: 	total: 524288 bytes, 
+1: 	allocated: 4152 bytes in 2 chunk(s), 
+1: 	freed: 520136 bytes in 1 chunk(s), 
+1: 	max: 12952 bytes, 
+1: 	calls: 94 allocs, 92 deallocs
+1: Main thread stack: 2320/3996 bytes used
+1: Interrupts stack: 1048/3072 bytes used
+1: 
+1: Hasta la Vista!
+1/3 Test #1: qemu-cortex-m7f-rtos-apis-test ............   Passed    4.61 sec
+test 2
+    Start 2: qemu-cortex-m7f-mutex-stress-test
+
+2: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an500" "--cpu" "cortex-m7" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug/platform-bin/mutex-stress-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+2: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug/platform-bin
+2: Test timeout computed to be: 1200
+2: 
+2: Hardware initialised
+2: Main stack 0x207ff400-0x20800000
+2: os_startup_initialize_free_store(0x20002b04,8374524)
+2: first_fit_top(0x20002b04,8374524) @0x20000f44 app-heap
+2: out_of_memory_handler(0x13ef5) @0x20000f44 app-heap
+2: estd::pmr::set_default_resource(0x20000f44) 
+2: rtos::memory::set_default_resource(0x20000f44) 
+2: os_run_init_array()
+2: rtos::memory::init_once_default_resource() 
+2: malloc_memory_resource() @0x20000ebc malloc
+2: ::malloc(1088)=0x207fefc0
+2: Static objects constructed
+2: 
+2: µOS++ IIIe version 7.0.1
+2: Copyright (c) 2007-2023 Liviu Ionescu
+2: Scheduler: µOS++ Cortex-M7 FP, preemptive, BASEPRI(4), WFI
+2: System clock: 16000000 Hz
+2: Scheduler frequency: 1000 ticks/sec
+2: Default stack size: 2048 bytes
+2: Interrupts stack size: 3072 bytes
+2: Built with GCC 15.2.1 20251203, with exceptions
+2: 
+2: scheduler::start() 
+2: 
+2: main(argc=1, argv=[""]);
+2: ::malloc(1024)=0x207fd310
+2: 
+2: Mutex stress & uniformity test
+2: Built with GCC 15.2.1 20251203
+2: Seed 4244217855
+2: mutex_test @0x207fee10 t0
+2: mutex_test @0x207fed80 t1
+2: mutex_test @0x207fecf0 t2
+2: mutex_test @0x207fec60 t3
+2: mutex_test @0x207febd0 t4
+2: mutex_test @0x207feb40 t5
+2: mutex_test @0x207feab0 t6
+2: mutex_test @0x207fea20 t7
+2: mutex_test @0x207fe990 t8
+2: mutex_test @0x207fe900 t9
+2: periodic @0x207fe888
+2: !!!!![  5s] t0:38   t1:36   t2:41   t3:38   t4:35   t5:44   t6:42   t7:36   t8:45   t9:35   sum=390, avg=39, sigma=3, delta in [-4,6] [-9%,15%]
+2: !!!!![ 10s] t0:80   t1:71   t2:80   t3:81   t4:73   t5:80   t6:82   t7:75   t8:84   t9:76   sum=782, avg=78, sigma=4, delta in [-7,6] [-8%,8%]
+2: !!!!![ 15s] t0:123  t1:108  t2:124  t3:121  t4:113  t5:120  t6:118  t7:115  t8:120  t9:117  sum=1179, avg=118, sigma=4, delta in [-10,6] [-7%,5%]
+2: !!!!![ 20s] t0:165  t1:151  t2:158  t3:157  t4:154  t5:155  t6:157  t7:152  t8:156  t9:159  sum=1564, avg=156, sigma=3, delta in [-5,9] [-2%,6%]
+2: !!!!![ 25s] t0:207  t1:190  t2:196  t3:198  t4:193  t5:198  t6:196  t7:189  t8:196  t9:196  sum=1959, avg=196, sigma=4, delta in [-7,11] [-3%,6%]
+2: !!!!![ 30s] t0:248  t1:232  t2:232  t3:235  t4:239  t5:236  t6:234  t7:227  t8:234  t9:239  sum=2356, avg=236, sigma=5, delta in [-9,12] [-3%,5%]
+2: !!!!![ 35s] t0:284  t1:271  t2:269  t3:273  t4:283  t5:276  t6:272  t7:268  t8:276  t9:278  sum=2750, avg=275, sigma=5, delta in [-7,9] [-2%,3%]
+2: Done.
+2: _main_trampoline() exit = 0
+2: exit(0)
+2: os_run_fini_array()
+2: _Exit()
+2: 
+2: Memory 'app-heap' @0x20000f44: 
+2: 	total: 8374524 bytes, 
+2: 	allocated: 6260 bytes in 4 chunk(s), 
+2: 	freed: 8368264 bytes in 2 chunk(s), 
+2: 	max: 31056 bytes, 
+2: 	calls: 17 allocs, 13 deallocs
+2: Main thread stack: 2580/3996 bytes used
+2: Interrupts stack: 976/3072 bytes used
+2: 
+2: Hasta la Vista!
+2/3 Test #2: qemu-cortex-m7f-mutex-stress-test .........   Passed   22.57 sec
+test 3
+    Start 3: qemu-cortex-m7f-cmsis-os-validator-test
+
+3: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an500" "--cpu" "cortex-m7" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug/platform-bin/cmsis-os-validator-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+3: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m7f-cmake-gcc-debug/platform-bin
+3: Test timeout computed to be: 1200
+3: 
+3: Hardware initialised
+3: Main stack 0x207ff400-0x20800000
+3: os_startup_initialize_free_store(0x20006964,8358556)
+3: first_fit_top(0x20006964,8358556) @0x2000122c app-heap
+3: out_of_memory_handler(0x13255) @0x2000122c app-heap
+3: estd::pmr::set_default_resource(0x2000122c) 
+3: rtos::memory::set_default_resource(0x2000122c) 
+3: os_run_init_array()
+3: rtos::memory::init_once_default_resource() 
+3: malloc_memory_resource() @0x200011a4 malloc
+3: ::malloc(1088)=0x207fefc0
+3: Static objects constructed
+3: 
+3: µOS++ IIIe version 7.0.1
+3: Copyright (c) 2007-2023 Liviu Ionescu
+3: Scheduler: µOS++ Cortex-M7 FP, preemptive, DI/EI, WFI
+3: System clock: 16000000 Hz
+3: Scheduler frequency: 1000 ticks/sec
+3: Default stack size: 2048 bytes
+3: Interrupts stack size: 3072 bytes
+3: Built with GCC 15.2.1 20251203, with exceptions
+3: 
+3: scheduler::start() 
+3: 
+3: main(argc=1, argv=[""]);
+3: Read of unassigned area of PPB: offset 0x1000
+3: Read of unassigned area of PPB: offset 0x1000
+3: Read of unassigned area of PPB: offset 0x1000
+3: Write of unassigned area of PPB: offset 0x1000
+3: Read of unassigned area of PPB: offset 0x1004
+3: Read of unassigned area of PPB: offset 0x1004
+3: CMSIS-RTOS Test Suite   Oct 18 2026   11:10:24 
+3: 
+3: TEST 01: TC_ThreadCreate                  PASSED
+3: TEST 02: TC_ThreadMultiInstance           PASSED
+3: TEST 03: TC_ThreadTerminate               PASSED
+3: TEST 04: TC_ThreadRestart                 PASSED
+3: TEST 05: TC_ThreadGetId                   PASSED
+3: TEST 06: TC_ThreadPriority                PASSED
+3: TEST 07: TC_ThreadPriorityExec            PASSED
+3: TEST 08: TC_ThreadChainedCreate           PASSED
+3: TEST 09: TC_ThreadYield                   PASSED
+3: TEST 10: TC_ThreadParam                   PASSED
+3: TEST 11: TC_ThreadInterrupts              PASSED
+3: TEST 12: TC_GenWaitBasic                  PASSED
+3: TEST 13: TC_GenWaitInterrupts             PASSED
+3: TEST 14: TC_TimerOneShot                  PASSED
+3: TEST 15: TC_TimerPeriodic                 PASSED
+3: TEST 16: TC_TimerParam                    PASSED
+3: TEST 17: TC_TimerInterrupts               PASSED
+3: TEST 18: TC_SignalMainThread              PASSED
+3: TEST 19: TC_SignalChildThread             PASSED
+3: TEST 20: TC_SignalChildToParent           PASSED
+3: TEST 21: TC_SignalChildToChild            PASSED
+3: TEST 22: TC_SignalWaitTimeout             PASSED
+3: TEST 23: TC_SignalParam                   PASSED
+3: TEST 24: TC_SignalInterrupts              PASSED
+3: TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+3: TEST 26: TC_SemaphoreObtainCounting       PASSED
+3: TEST 27: TC_SemaphoreObtainBinary         !PASSED
+3: TEST 28: TC_SemaphoreWaitForBinary        PASSED
+3: TEST 29: TC_SemaphoreWaitForCounting      PASSED
+3: TEST 30: TC_SemaphoreZeroCount            PASSED
+3: TEST 31: TC_SemaphoreWaitTimeout          PASSED
+3: TEST 32: TC_SemParam                      PASSED
+3: TEST 33: TC_SemInterrupts                 PASSED
+3: TEST 34: TC_MutexBasic                    PASSED
+3: TEST 35: TC_MutexTimeout                  PASSED
+3: TEST 36: TC_MutexNestedAcquire            PASSED
+3: TEST 37: TC_MutexPriorityInversion        PASSED
+3: TEST 38: TC_MutexOwnership                PASSED
+3: TEST 39: TC_MutexParam                    PASSED
+3: TEST 40: TC_MutexInterrupts               PASSED
+3: TEST 41: TC_MemPoolAllocAndFree           PASSED
+3: TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+3: TEST 43: TC_MemPoolZeroInit               PASSED
+3: TEST 44: TC_MemPoolParam                  PASSED
+3: TEST 45: TC_MemPoolInterrupts             PASSED
+3: TEST 46: TC_MsgQBasic                     PASSED
+3: TEST 47: TC_MsgQWait                      PASSED
+3: TEST 48: TC_MsgQParam                     PASSED
+3: TEST 49: TC_MsgQInterrupts                PASSED
+3: TEST 50: TC_MsgFromThreadToISR            PASSED
+3: TEST 51: TC_MsgFromISRToThread            !PASSED
+3: TEST 52: TC_MailAlloc                     PASSED
+3: TEST 53: TC_MailCAlloc                    PASSED
+3: TEST 54: TC_MailToThread                  PASSED
+3: TEST 55: TC_MailFromThread                PASSED
+3: TEST 56: TC_MailTimeout                   PASSED
+3: TEST 57: TC_MailParam                     PASSED
+3: TEST 58: TC_MailInterrupts                PASSED
+3: TEST 59: TC_MailFromThreadToISR           !PASSED
+3: TEST 60: TC_MailFromISRToThread           PASSED
+3: 
+3: Test Summary: 60 Tests, 60 Executed, 60 Passed, 0 Failed, 0 Warnings.
+3: Test Result: PASSED
+3: _main_trampoline() exit = 0
+3: exit(0)
+3: os_run_fini_array()
+3: _Exit()
+3: 
+3: Memory 'app-heap' @0x2000122c: 
+3: 	total: 8358556 bytes, 
+3: 	allocated: 6220 bytes in 8 chunk(s), 
+3: 	freed: 8352336 bytes in 2 chunk(s), 
+3: 	max: 22608 bytes, 
+3: 	calls: 81 allocs, 73 deallocs
+3: Main thread stack: 1144/3996 bytes used
+3: Interrupts stack: 976/3072 bytes used
+3: 
+3: Hasta la Vista!
+3/3 Test #3: qemu-cortex-m7f-cmsis-os-validator-test ...   Passed    2.42 sec
+
+100% tests passed, 0 tests failed out of 3
+
+Label Time Summary:
+qemu    =  29.59 sec*proc (3 tests)
+
+Total Test time (real) =  29.59 sec

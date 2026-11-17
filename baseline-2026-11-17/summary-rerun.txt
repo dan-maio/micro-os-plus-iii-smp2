@@ -1,0 +1,3 @@
+aarch64-rpi4b-cmake-gcc-debug rc=2 95% tests passed, 1 tests failed out of 22
+aarch64-rpi4b-cmake-gcc-release rc=0 100% tests passed, 0 tests failed out of 22
+DONE

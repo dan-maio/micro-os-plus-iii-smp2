@@ -1,0 +1,1332 @@
+> cmake -S . -B build/cortexm-pico2-pizero-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=cortexm-pico2-pizero --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.1.0
+-- Platform name: cortexm-pico2-pizero
+-- Build type: MinSizeRel
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/cortexm-pico2-pizero/cmake/definitions.cmake...
+-- Including tests/platforms/cortexm-pico2-pizero/cmake/dependencies-folders.cmake...
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'build/cortexm-pico2-pizero-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm'...
+-- > micro-os-plus::cortexm-qemu-m0 -> micro-os-plus-iii-cortexm-qemu-m0-interface
+-- > micro-os-plus::cortexm-qemu-m3 -> micro-os-plus-iii-cortexm-qemu-m3-interface
+-- > micro-os-plus::cortexm-qemu-m4f -> micro-os-plus-iii-cortexm-qemu-m4f-interface
+-- > micro-os-plus::cortexm-qemu-m7 -> micro-os-plus-iii-cortexm-qemu-m7-interface
+-- > micro-os-plus::cortexm-qemu-m33 -> micro-os-plus-iii-cortexm-qemu-m33-interface
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board pico2-pizero
+-- Adding 'build/cortexm-pico2-pizero-cmake-gcc-release/xpacks/@xpacks/arm-cmsis'...
+-- Processing xPack @xpacks/arm-cmsis@4.5.0-7...
+-- > xpacks-arm-cmsis-interface
+-- + -I CMSIS/Include
+-- + -I CMSIS/Driver/Include
+-- > xpacks::arm-cmsis -> xpacks-arm-cmsis-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/cortexm-pico2-pizero'...
+-- Including tests/platforms/cortexm-pico2-pizero/cmake/platform-library.cmake...
+-- > micro-os-plus::platform -> platform-cortexm-pico2-pizero-interface
+-- µOS++ III Cortex-M tests: 14 targets, board=pico2-pizero, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero
+-- Cortex-M pico2-pizero: port tests registered (cortexm-pico2-pizero)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release
+> cmake -S . -B build/cortexm-pico2-pizero-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=cortexm-pico2-pizero
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board pico2-pizero
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III Cortex-M tests: 14 targets, board=pico2-pizero, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero
+-- Cortex-M pico2-pizero: port tests registered (cortexm-pico2-pizero)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release
+> cmake --build build/cortexm-pico2-pizero-cmake-gcc-release
+[0/2] Re-checking globbed directories...
+[1/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[2/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/exc-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[3/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/exc-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[4/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[5/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/exc-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[6/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[7/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/exc-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[8/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[9/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[10/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/exc-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[11/619] Building C object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/boards/shared/syscalls.c.obj
+[12/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/pico2-pizero/psram-exec/psram_app_b.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/psram_app_b.cpp:4:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/psram_app.inc: In function 'void app_entry()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/psram_app.inc:153:58: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  153 |       for (volatile std::uint32_t d = 0; d < 6000000U; ++d)
+      |                                                          ^
+[13/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[14/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/boards/pico2/glue/psram.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp: In function 'bool psram::init()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:126:54: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  126 |         for (volatile std::uint32_t j = 0; j < 20; ++j)
+      |                                                      ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:129:20: warning: conversion to void will not access object of type 'volatile uint32_t' {aka 'volatile long unsigned int'}
+  129 |         (void) reg (QMI_DIRECT_RX);
+      |                ~~~~^~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp: In function 'void psram::read_id(uint8_t*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:204:55: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  204 |         for (volatile std::uint32_t j = 0; j < 200; ++j)
+      |                                                       ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:207:20: warning: conversion to void will not access object of type 'volatile uint32_t' {aka 'volatile long unsigned int'}
+  207 |         (void) reg (QMI_DIRECT_RX);
+      |                ~~~~^~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:217:20: warning: conversion to void will not access object of type 'volatile uint32_t' {aka 'volatile long unsigned int'}
+  217 |         (void) reg (QMI_DIRECT_RX);
+      |                ~~~~^~~~~~~~~~~~~~~
+[15/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[16/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/pico2-pizero/psram-exec/psram_app_a.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/psram_app_a.cpp:4:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/psram_app.inc: In function 'void app_entry()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/psram_app.inc:153:58: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  153 |       for (volatile std::uint32_t d = 0; d < 6000000U; ++d)
+      |                                                          ^
+[17/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[18/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/exc-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[19/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[20/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/pico2-pizero/psram-exec/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/main.cpp: In function 'int main()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/main.cpp:215:61: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |           for (volatile std::uint32_t i = 0; i < 400000U; ++i) {}
+      |                                                             ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/psram-exec/main.cpp:217:61: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  217 |           for (volatile std::uint32_t i = 0; i < 400000U; ++i) {}
+      |                                                             ^
+[21/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/exc-test-hwd.dir/pico2-pizero/exc-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/exc-test/main.cpp: In function 'void SysTick_Handler()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/exc-test/main.cpp:96:3: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   96 |   g_systick++;
+      |   ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/exc-test/main.cpp: In function 'void PendSV_Handler()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/exc-test/main.cpp:102:3: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  102 |   g_pendsv++;
+      |   ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/exc-test/main.cpp: In function 'int main()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/exc-test/main.cpp:138:55: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  138 |   for (volatile std::uint32_t n = 0; n < 1000000UL; ++n)
+      |                                                       ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/exc-test/main.cpp:164:59: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  164 |       for (volatile std::uint32_t n = 0; n < 2000000UL; ++n)
+      |                                                           ^
+[22/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-exec-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[23/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/boards/pico2/glue/psram.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp: In function 'bool psram::init()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:126:54: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  126 |         for (volatile std::uint32_t j = 0; j < 20; ++j)
+      |                                                      ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:129:20: warning: conversion to void will not access object of type 'volatile uint32_t' {aka 'volatile long unsigned int'}
+  129 |         (void) reg (QMI_DIRECT_RX);
+      |                ~~~~^~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp: In function 'void psram::read_id(uint8_t*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:204:55: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  204 |         for (volatile std::uint32_t j = 0; j < 200; ++j)
+      |                                                       ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:207:20: warning: conversion to void will not access object of type 'volatile uint32_t' {aka 'volatile long unsigned int'}
+  207 |         (void) reg (QMI_DIRECT_RX);
+      |                ~~~~^~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/psram.cpp:217:20: warning: conversion to void will not access object of type 'volatile uint32_t' {aka 'volatile long unsigned int'}
+  217 |         (void) reg (QMI_DIRECT_RX);
+      |                ~~~~^~~~~~~~~~~~~~~
+[24/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[25/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/exc-test-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[26/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[27/619] Building C object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[28/619] Building C object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[29/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[30/619] Linking CXX executable platform-bin/port-tests/test/psram-exec-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/psram-exec-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+   4984	      0	  49172	  54156	   d38c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/psram-exec-hwd.elf
+[31/619] Building C object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[32/619] Building C object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[33/619] Linking CXX executable platform-bin/port-tests/test/exc-test-hwd.elf
+   text	   data	    bss	    dec	    hex	filename
+   2596	     12	 163860	 166468	  28a44	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/exc-test-hwd.elf
+[34/619] Building C object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[35/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[36/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[37/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[38/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[39/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[40/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[41/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[42/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[43/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[44/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[45/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[46/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[47/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[48/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[49/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[50/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[51/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[52/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[53/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[54/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[55/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[56/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[57/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[58/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[59/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[60/619] Building C object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/boards/shared/syscalls.c.obj
+[61/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[62/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[63/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[64/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[65/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/pico2-pizero/psram-mat-test-250/main.cpp.obj
+[66/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[67/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[68/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[69/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[70/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[71/619] Building C object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[72/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[73/619] Building C object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[74/619] Building C object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[75/619] Building C object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[76/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[77/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[78/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[79/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[80/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[81/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[82/619] Building C object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[83/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/pico2-pizero/sc-test-ko/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp: In function 'void {anonymous}::check(bool, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp:121:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  121 |         ++g_pass;
+      |           ^~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp:129:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  129 |         ++g_fail;
+      |           ^~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp: In function 'void {anonymous}::tmr_cb(os::rtos::timer::func_args_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp:144:7: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  144 |     ++g_timer_fires;
+      |       ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp: In function 'void* {anonymous}::helper(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp:165:19: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  165 |                 ++g_counter;
+      |                   ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp:180:19: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  180 |                 ++g_helper_csem_got;
+      |                   ^~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp: In function 'void* {anonymous}::controller(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/sc-test-ko/main.cpp:251:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  251 |         ++g_counter;
+      |           ^~~~~~~~~
+[84/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[85/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[86/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/psram-mat-test-250-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[87/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[88/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[89/619] Linking CXX executable platform-bin/port-tests/test/psram-mat-test-250-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/psram-mat-test-250-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  34012	    192	1437012	1471216	 1672f0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/psram-mat-test-250-hwd.elf
+[90/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[91/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[92/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[93/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[94/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[95/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[96/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[97/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[98/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[99/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[100/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[101/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[102/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[103/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[104/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[105/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[106/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[107/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[108/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[109/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[110/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[111/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[112/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[113/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/boards/shared/syscalls.c.obj
+[114/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[115/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[116/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[117/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[118/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[119/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[120/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[121/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[122/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[123/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[124/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[125/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[126/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[127/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[128/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[129/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[130/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[131/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[132/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[133/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[134/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[135/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[136/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/sc-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[137/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[138/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[139/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[140/619] Linking CXX executable platform-bin/port-tests/test/sc-test-ko-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sc-test-ko-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  26340	    176	 182100	 208616	  32ee8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/sc-test-ko-hwd.elf
+[141/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[142/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[143/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[144/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[145/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[146/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[147/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[148/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[149/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[150/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[151/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[152/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[153/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[154/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[155/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[156/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/pico2-pizero/smp-mat-test/main.cpp.obj
+[157/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[158/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[159/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[160/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[161/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[162/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[163/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[164/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[165/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[166/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[167/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[168/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/boards/shared/syscalls.c.obj
+[169/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[170/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[171/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[172/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[173/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[174/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[175/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[176/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[177/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[178/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[179/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[180/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[181/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[182/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[183/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[184/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[185/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[186/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[187/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[188/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[189/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[190/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[191/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[192/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[193/619] Linking CXX executable platform-bin/port-tests/test/smp-mat-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  33040	    192	 429972	 463204	  71164	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-mat-test-hwd.elf
+[194/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[195/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/pico2-pizero/smp-test-ko/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp: In function 'void {anonymous}::check(bool, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp:141:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  141 |         ++g_pass;
+      |           ^~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp:149:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  149 |         ++g_fail;
+      |           ^~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp: In function 'void {anonymous}::tmr_cb(os::rtos::timer::func_args_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp:163:7: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  163 |     ++g_timer_fires;
+      |       ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp: In function 'void* {anonymous}::helper(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp:198:19: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  198 |                 ++g_counter;
+      |                   ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp:212:19: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  212 |                 ++g_helper_csem_got;
+      |                   ^~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp: In function 'void* {anonymous}::controller(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-ko/main.cpp:283:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  283 |         ++g_counter;
+      |           ^~~~~~~~~
+[196/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[197/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[198/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[199/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[200/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[201/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[202/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[203/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[204/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[205/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[206/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[207/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[208/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[209/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[210/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[211/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[212/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[213/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[214/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[215/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[216/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/shared/syscalls.c.obj
+[217/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[218/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[219/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[220/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[221/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[222/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[223/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/pico-shim/pico-shim.c.obj
+[224/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/cdc/usb_descriptors.c.obj
+[225/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/tinyusb/tusb.c.obj
+[226/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/tinyusb/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+[227/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[228/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[229/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[230/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[231/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/tinyusb/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+[232/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[233/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[234/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/tinyusb/common/tusb_fifo.c.obj
+[235/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/cdc/usb_cdc.c.obj
+[236/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[237/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[238/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[239/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[240/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/tinyusb/class/cdc/cdc_device.c.obj
+[241/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[242/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[243/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[244/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[245/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[246/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[247/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[248/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/boards/pico2/usb/tinyusb/device/usbd.c.obj
+[249/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-ko-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[250/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/pico2-pizero/smp-test-usb-cdc-acm/main.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal.h:36,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/tusb.h:19,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-usb-cdc-acm/main.cpp:45:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal_none.h: In function 'bool osal_semaphore_post(osal_semaphore_t, bool)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal_none.h:101:12: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  101 |   sem_hdl->count++;
+      |   ~~~~~~~~~^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal_none.h: In function 'bool osal_semaphore_wait(osal_semaphore_t, uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal_none.h:110:12: warning: '--' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  110 |   sem_hdl->count--;
+      |   ~~~~~~~~~^~~~~
+[251/619] Linking CXX executable platform-bin/port-tests/test/smp-test-ko-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test-ko-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  33828	    192	 188556	 222576	  36570	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test-ko-hwd.elf
+[252/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[253/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[254/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[255/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[256/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[257/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[258/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[259/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[260/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[261/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[262/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[263/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[264/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[265/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[266/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[267/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[268/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[269/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[270/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[271/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[272/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[273/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[274/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[275/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[276/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[277/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[278/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[279/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[280/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/shared/syscalls.c.obj
+[281/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[282/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[283/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/pico-shim/pico-shim.c.obj
+[284/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[285/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/tinyusb/portable/raspberrypi/rp2040/rp2040_usb.c.obj
+[286/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[287/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[288/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/hid/usb_hid.c.obj
+[289/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/tinyusb/tusb.c.obj
+[290/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[291/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/hid/usb_descriptors.c.obj
+[292/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[293/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/tinyusb/portable/raspberrypi/rp2040/dcd_rp2040.c.obj
+[294/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/tinyusb/common/tusb_fifo.c.obj
+[295/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[296/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[297/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/tinyusb/class/hid/hid_device.c.obj
+[298/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[299/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[300/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[301/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[302/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[303/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[304/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[305/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[306/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[307/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[308/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/boards/pico2/usb/tinyusb/device/usbd.c.obj
+[309/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[310/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-cdc-acm-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[311/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/pico2-pizero/smp-test-usb-hid/main.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal.h:36,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/tusb.h:19,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test-usb-hid/main.cpp:33:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal_none.h: In function 'bool osal_semaphore_post(osal_semaphore_t, bool)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal_none.h:101:12: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  101 |   sem_hdl->count++;
+      |   ~~~~~~~~~^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal_none.h: In function 'bool osal_semaphore_wait(osal_semaphore_t, uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/usb/tinyusb/osal/osal_none.h:110:12: warning: '--' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  110 |   sem_hdl->count--;
+      |   ~~~~~~~~~^~~~~
+[312/619] Linking CXX executable platform-bin/port-tests/test/smp-test-usb-cdc-acm-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test-usb-cdc-acm-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  36236	    216	 223020	 259472	  3f590	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test-usb-cdc-acm-hwd.elf
+[313/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[314/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[315/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[316/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[317/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[318/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[319/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[320/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[321/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[322/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[323/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[324/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[325/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[326/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[327/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[328/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[329/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[330/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[331/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[332/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[333/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[334/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[335/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[336/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[337/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[338/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[339/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[340/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[341/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[342/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/pico2-pizero/smp-test0/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test0/main.cpp: In function 'void {anonymous}::busy_wait_ms(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test0/main.cpp:91:12: warning: '--' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   91 |     while (n--)
+      |            ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test0/main.cpp: In function 'void {anonymous}::core1_entry()':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test0/main.cpp:116:9: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  116 |         g_core1_loops++;
+      |         ^~~~~~~~~~~~~
+[343/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test0-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[344/619] Linking CXX executable platform-bin/port-tests/test/smp-test0-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test0-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+   2920	     16	 165908	 168844	  2938c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test0-hwd.elf
+[345/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[346/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[347/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/boards/shared/syscalls.c.obj
+[348/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[349/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[350/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[351/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[352/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[353/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[354/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[355/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[356/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[357/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[358/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[359/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[360/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[361/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[362/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[363/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[364/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[365/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[366/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[367/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[368/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[369/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[370/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[371/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test-usb-hid-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[372/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/pico2-pizero/smp-test1/main.cpp.obj
+[373/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[374/619] Linking CXX executable platform-bin/port-tests/test/smp-test-usb-hid-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test-usb-hid-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  32348	    216	 197772	 230336	  383c0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test-usb-hid-hwd.elf
+[375/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[376/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[377/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[378/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[379/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[380/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[381/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[382/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[383/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[384/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[385/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[386/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[387/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[388/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[389/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[390/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[391/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[392/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[393/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[394/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[395/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[396/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[397/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[398/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[399/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/boards/shared/syscalls.c.obj
+[400/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[401/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[402/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[403/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[404/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[405/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[406/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[407/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[408/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[409/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[410/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[411/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[412/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[413/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[414/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[415/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[416/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[417/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[418/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[419/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[420/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[421/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[422/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[423/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/pico2-pizero/smp-test2/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test2/main.cpp: In function 'void* {anonymous}::worker(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-pizero/smp-test2/main.cpp:113:5: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  113 |     g_done++;
+      |     ^~~~~~
+[424/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[425/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[426/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[427/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[428/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[429/619] Linking CXX executable platform-bin/port-tests/test/smp-test1-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test1-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  20308	    176	 177424	 197908	  30514	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test1-hwd.elf
+[430/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[431/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[432/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[433/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[434/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[435/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[436/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[437/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[438/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[439/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[440/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[441/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[442/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[443/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[444/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[445/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[446/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[447/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[448/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[449/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[450/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/boards/shared/syscalls.c.obj
+[451/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[452/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[453/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[454/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[455/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[456/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[457/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[458/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[459/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[460/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[461/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[462/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[463/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[464/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[465/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[466/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[467/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[468/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[469/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[470/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[471/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[472/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[473/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[474/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[475/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[476/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[477/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[478/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[479/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/pico2-pizero/smp-test3/main.cpp.obj
+[480/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[481/619] Linking CXX executable platform-bin/port-tests/test/smp-test2-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test2-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  25864	    192	 183744	 209800	  33388	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test2-hwd.elf
+[482/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[483/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[484/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[485/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[486/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[487/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[488/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[489/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[490/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[491/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[492/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[493/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[494/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[495/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[496/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[497/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[498/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[499/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[500/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/boards/shared/syscalls.c.obj
+[501/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[502/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[503/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[504/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[505/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/boards/pico2/glue/uart.cpp.obj
+[506/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[507/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[508/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[509/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[510/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[511/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[512/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[513/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[514/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[515/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[516/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[517/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[518/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[519/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[520/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[521/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[522/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[523/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[524/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[525/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[526/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[527/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[528/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[529/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[530/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/pico2-pizero/smp-test4/main.cpp.obj
+[531/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[532/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[533/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[534/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[535/619] Linking CXX executable platform-bin/port-tests/test/smp-test3-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test3-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  25544	    192	 179828	 205564	  322fc	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test3-hwd.elf
+[536/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[537/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[538/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[539/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[540/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[541/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[542/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[543/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[544/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[545/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[546/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[547/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[548/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[549/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[550/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[551/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[552/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/boards/pico2/glue/multicore.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp: In function 'void multicore::launch_core1(void (*)(), uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/multicore.cpp:112:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  112 |           if (++guard > 2000000U)
+      |                 ^~~~~
+[553/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/boards/pico2/glue/trace-uart.cpp.obj
+[554/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/boards/shared/syscalls.c.obj
+[555/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[556/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[557/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[558/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/boards/pico2/glue/rtos-glue.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:41:27: warning: 'g_sw_old' initialized and declared 'extern'
+   41 | extern "C" volatile void* g_sw_old = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:42:27: warning: 'g_sw_new' initialized and declared 'extern'
+   42 | extern "C" volatile void* g_sw_new = nullptr;
+      |                           ^~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:43:27: warning: 'g_sw_outsp' initialized and declared 'extern'
+   43 | extern "C" volatile void* g_sw_outsp = nullptr;
+      |                           ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:44:24: warning: 'g_sw_old_name' initialized and declared 'extern'
+   44 | extern "C" const char* g_sw_old_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:45:24: warning: 'g_sw_new_name' initialized and declared 'extern'
+   45 | extern "C" const char* g_sw_new_name = "none";
+      |                        ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:46:35: warning: 'g_sw_count' initialized and declared 'extern'
+   46 | extern "C" volatile unsigned long g_sw_count = 0;
+      |                                   ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:47:24: warning: 'g_sw_hist' initialized and declared 'extern'
+   47 | extern "C" const char* g_sw_hist[8] = { 0 };
+      |                        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:63:30: warning: 'g_boot_stage' initialized and declared 'extern'
+   63 | extern "C" volatile unsigned g_boot_stage = 0;
+      |                              ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp: In function 'void fault_report(long unsigned int*, const char*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:215:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  215 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/boards/pico2/glue/rtos-glue.cpp:218:56: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  218 |                 for (volatile int d = 0; d < 400000; ++d)
+      |                                                        ^
+[559/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[560/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[561/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[562/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[563/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[564/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[565/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[566/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[567/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[568/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[569/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[570/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[571/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[572/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[573/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[574/619] Building C object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[575/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[576/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[577/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[578/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[579/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[580/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[581/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[582/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/pico2-pizero/smp-test5/main.cpp.obj
+[583/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[584/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[585/619] Linking CXX executable platform-bin/port-tests/test/smp-test4-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test4-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  34680	    192	 180144	 215016	  347e8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test4-hwd.elf
+[586/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[587/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[588/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[589/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[590/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[591/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[592/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/boot.S.obj'
+[593/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[594/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[595/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/init-fini-stubs.c.obj'
+[596/619] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/interrupt-vectors.S.obj'
+[597/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/led.cpp.obj'
+[598/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[599/619] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/soc/rp2350/src/system_rp2350.c.obj'
+[600/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[601/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/test/boards/pico2/src/clocks.cpp.obj'
+[602/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[603/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[604/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[605/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[606/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[607/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[608/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[609/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[610/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[611/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[612/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[613/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[614/619] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core-rp2350.cpp.obj'
+[615/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[616/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[617/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[618/619] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[619/619] Linking CXX executable platform-bin/port-tests/test/smp-test5-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-test5-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  25296	    196	 181776	 207268	  329a4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/platform-bin/port-tests/test/smp-test5-hwd.elf
+> cd build/cortexm-pico2-pizero-cmake-gcc-release && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-release
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+No tests were found!!!

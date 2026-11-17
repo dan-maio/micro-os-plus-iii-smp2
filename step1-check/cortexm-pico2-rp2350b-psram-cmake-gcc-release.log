@@ -1,0 +1,330 @@
+> cmake -S . -B build/cortexm-pico2-rp2350b-psram-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=cortexm-pico2-rp2350b-psram --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.1.0
+-- Platform name: cortexm-pico2-rp2350b-psram
+-- Build type: MinSizeRel
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/cortexm-pico2-rp2350b-psram/cmake/definitions.cmake...
+-- Including tests/platforms/cortexm-pico2-rp2350b-psram/cmake/dependencies-folders.cmake...
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/fp-switch'...
+-- > test-fp-switch-interface
+-- + -I include
+-- + src/main.cpp
+-- > test::fp-switch -> test-fp-switch-interface
+-- Adding '../../micro-os-plus-iii-cortexm'...
+-- > micro-os-plus::cortexm-qemu-m0 -> micro-os-plus-iii-cortexm-qemu-m0-interface
+-- > micro-os-plus::cortexm-qemu-m3 -> micro-os-plus-iii-cortexm-qemu-m3-interface
+-- > micro-os-plus::cortexm-qemu-m4f -> micro-os-plus-iii-cortexm-qemu-m4f-interface
+-- > micro-os-plus::cortexm-qemu-m7 -> micro-os-plus-iii-cortexm-qemu-m7-interface
+-- > micro-os-plus::cortexm-qemu-m33 -> micro-os-plus-iii-cortexm-qemu-m33-interface
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board pico2-rp2350b-psram
+-- Adding 'device-qemu-cortexm'...
+-- Processing 'tests/device-qemu-cortexm'...
+-- > device-qemu-cortexm-interface
+-- + -I include
+-- + src/system-cortexm.c
+-- + src/initialize-hardware.c
+-- + src/vectors-cortexm.c
+-- + src/exception-handlers.cpp
+-- + -D MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M7
+-- + xpacks::arm-cmsis
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/mem-mps2-an500.ld
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/sections-flash.ld
+-- > micro-os-plus::device -> device-qemu-cortexm-interface
+-- Adding 'build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/xpacks/@xpacks/arm-cmsis'...
+-- Processing xPack @xpacks/arm-cmsis@4.5.0-7...
+-- > xpacks-arm-cmsis-interface
+-- + -I CMSIS/Include
+-- + -I CMSIS/Driver/Include
+-- > xpacks::arm-cmsis -> xpacks-arm-cmsis-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/cortexm-pico2-rp2350b-psram'...
+-- Including tests/platforms/cortexm-pico2-rp2350b-psram/cmake/platform-library.cmake...
+-- > micro-os-plus::platform -> platform-cortexm-pico2-rp2350b-psram-interface
+-- µOS++ III Cortex-M tests: 30 targets, board=pico2-rp2350b-psram, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-rp2350b-psram
+-- Cortex-M pico2-rp2350b-psram: port tests registered (cortexm-pico2-rp2350b-psram)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release
+> cmake -S . -B build/cortexm-pico2-rp2350b-psram-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=cortexm-pico2-rp2350b-psram
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board pico2-rp2350b-psram
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III Cortex-M tests: 30 targets, board=pico2-rp2350b-psram, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico2-rp2350b-psram
+-- Cortex-M pico2-rp2350b-psram: port tests registered (cortexm-pico2-rp2350b-psram)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release
+> cmake --build build/cortexm-pico2-rp2350b-psram-cmake-gcc-release
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+> cd build/cortexm-pico2-rp2350b-psram-cmake-gcc-release && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 2
+    Start  2: cortexm-pico2-rp2350b-psram-fp-switch-qemu
+
+2: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an500" "-cpu" "cortex-m7" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/platform-bin/port-tests/test/fp-switch-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+2: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/platform-bin
+2: Test timeout computed to be: 300
+2: 
+2: Hardware initialised
+2: Main stack 0x207ff400-0x20800000
+2: os_startup_initialize_free_store(0x20000a88,8382840)
+2: first_fit_top(0x20000a88,8382840) @0x200005e8 app-heap
+2: out_of_memory_handler(0x2341) @0x200005e8 app-heap
+2: estd::pmr::set_default_resource(0x200005e8) 
+2: rtos::memory::set_default_resource(0x200005e8) 
+2: os_run_init_array()
+2: rtos::memory::init_once_default_resource() 
+2: malloc_memory_resource() @0x200005b8 malloc
+2: Static objects constructed
+2: 
+2: µOS++ IIIe version 7.0.1
+2: Copyright (c) 2007-2023 Liviu Ionescu
+2: Scheduler: µOS++ Cortex-M7 FP, preemptive, BASEPRI(4), WFI
+2: System clock: 16000000 Hz
+2: Scheduler frequency: 1000 ticks/sec
+2: Default stack size: 2048 bytes
+2: Interrupts stack size: 3072 bytes
+2: Built with GCC 15.2.1 20251203, no exceptions
+2: 
+2: scheduler::start() 
+2: 
+2: main(argc=1, argv=[""]);
+2: 
+2: FPU context switch test, 6 threads, 3000 ticks
+2: thread 0: 2668 rounds, 0 bad, 0 migrated
+2: thread 1: 8985 rounds, 0 bad, 0 migrated
+2: thread 2: 11992 rounds, 0 bad, 0 migrated
+2: thread 3: 1815 rounds, 0 bad, 0 migrated
+2: thread 4: 8964 rounds, 0 bad, 0 migrated
+2: thread 5: 20979 rounds, 0 bad, 0 migrated
+2: total: 55403 rounds, 0 bad, 0 migrated
+2: 
+2: RESULT: PASS
+2: RESULT: PASS
+2: _main_trampoline() exit = 0
+2: exit(0)
+2: os_run_fini_array()
+1/3 Test  #2: cortexm-pico2-rp2350b-psram-fp-switch-qemu ....   Passed    1.94 sec
+test 4
+    Start  4: cortexm-pico2-rp2350b-psram-sc-test-ko-qemu
+
+4: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an500" "-cpu" "cortex-m7" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/platform-bin/port-tests/test/sc-test-ko-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+4: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/platform-bin
+4: Test timeout computed to be: 300
+4: 
+4: Hardware initialised
+4: Main stack 0x207ff400-0x20800000
+4: os_startup_initialize_free_store(0x20004c44,8366012)
+4: first_fit_top(0x20004c44,8366012) @0x20004908 app-heap
+4: out_of_memory_handler(0x3f1d) @0x20004908 app-heap
+4: estd::pmr::set_default_resource(0x20004908) 
+4: rtos::memory::set_default_resource(0x20004908) 
+4: os_run_init_array()
+4: rtos::memory::init_once_default_resource() 
+4: malloc_memory_resource() @0x200048d8 malloc
+4: Static objects constructed
+4: 
+4: µOS++ IIIe version 7.0.1
+4: Copyright (c) 2007-2023 Liviu Ionescu
+4: Scheduler: µOS++ Cortex-M7 FP, preemptive, DI/EI, WFI
+4: System clock: 16000000 Hz
+4: Scheduler frequency: 1000 ticks/sec
+4: Default stack size: 2048 bytes
+4: Interrupts stack size: 3072 bytes
+4: Built with GCC 15.2.1 20251203, no exceptions
+4: 
+4: scheduler::start() 
+4: 
+4: main(argc=1, argv=[""]);
+4: 
+4: =============================================
+4:   Pico 2 / RP2350B - micro-os-plus-iii
+4:   sc-test-ko : kernel objects, single core
+4: =============================================
+4: [       7 ms] PASS mutex: mutual-exclusion counter
+4: [      93 ms] PASS mutex: try_lock busy when held
+4: [     174 ms] PASS recursive mutex: nested lock + reacquire
+4: [     261 ms] PASS counting semaphore: 3 consumed + empty try_wait
+4: [     346 ms] PASS binary semaphore: post/wait
+4: [     432 ms] PASS event flags: raise/wait mask + try_wait
+4: [     513 ms] PASS message queue: send/receive + payload verify
+4: [     594 ms] PASS memory pool: alloc/exhaust/free/reuse + capacity
+4: [     685 ms] PASS condition variable: predicate wait + signal
+4: [     971 ms] PASS periodic timer: ~20 fires in 205 ms
+4: ---------------------------------------------
+4: 
+4: RESULT: PASS  (10 passed, 0 failed)
+4: RESULT: PASS
+2/3 Test  #4: cortexm-pico2-rp2350b-psram-sc-test-ko-qemu ...   Passed    0.69 sec
+test 13
+    Start 13: cortexm-pico2-rp2350b-psram-smp-test1-qemu
+
+13: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an500" "-cpu" "cortex-m7" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/platform-bin/port-tests/test/smp-test1-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+13: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-release/platform-bin
+13: Test timeout computed to be: 300
+13: 
+13: Hardware initialised
+13: Main stack 0x207ff400-0x20800000
+13: os_startup_initialize_free_store(0x200039fc,8370692)
+13: first_fit_top(0x200039fc,8370692) @0x200036c0 app-heap
+13: out_of_memory_handler(0x2ad5) @0x200036c0 app-heap
+13: estd::pmr::set_default_resource(0x200036c0) 
+13: rtos::memory::set_default_resource(0x200036c0) 
+13: os_run_init_array()
+13: rtos::memory::init_once_default_resource() 
+13: malloc_memory_resource() @0x20003690 malloc
+13: Static objects constructed
+13: 
+13: µOS++ IIIe version 7.0.1
+13: Copyright (c) 2007-2023 Liviu Ionescu
+13: Scheduler: µOS++ Cortex-M7 FP, preemptive, DI/EI, WFI
+13: System clock: 16000000 Hz
+13: Scheduler frequency: 1000 ticks/sec
+13: Default stack size: 2048 bytes
+13: Interrupts stack size: 3072 bytes
+13: Built with GCC 15.2.1 20251203, no exceptions
+13: 
+13: scheduler::start() 
+13: 
+13: main(argc=1, argv=[""]);
+13: 
+13: =============================================
+13:   Pico 2 / RP2350B - micro-os-plus-iii
+13:   smp-test1 : single-core RTOS (core 0)
+13: =============================================
+13: [       2 ms] worker #0  local=1    global=1
+13: [       3 ms] worker #1  local=1    global=2
+13: [     504 ms] worker #1  local=2    global=4
+13: [     503 ms] worker #0  local=2    global=3
+13: [    1005 ms] worker #0  local=3    global=5
+13: [    1006 ms] worker #1  local=3    global=6
+13: [    1505 ms] worker #0  local=4    global=7
+13: [    1506 ms] worker #1  local=4    global=8
+13: [    2005 ms] worker #0  local=5    global=9
+13: [    2006 ms] worker #1  local=5    global=10
+13: [    2505 ms] worker #0  local=6    global=11
+13: [    2506 ms] worker #1  local=6    global=12
+13: [    3005 ms] worker #0  local=7    global=13
+13: [    3006 ms] worker #1  local=7    global=14
+13: [    3505 ms] worker #0  local=8    global=15
+13: [    3506 ms] worker #1  local=8    global=16
+13: [    4005 ms] worker #0  local=9    global=17
+13: [    4006 ms] worker #1  local=9    global=18
+13: [    4505 ms] worker #0  local=10   global=19
+13: [    4506 ms] worker #1  local=10   global=20
+13: 
+13: RESULT: PASS  (global=20, wrk0=10, wrk1=10)
+13: RESULT: PASS
+3/3 Test #13: cortexm-pico2-rp2350b-psram-smp-test1-qemu ....   Passed    3.24 sec
+
+100% tests passed, 0 tests failed out of 3
+
+Label Time Summary:
+qemu    =   5.87 sec*proc (3 tests)
+
+Total Test time (real) =   5.88 sec
