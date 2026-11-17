@@ -1,0 +1,358 @@
+> cmake -S . -B build/aarch32-rpi3b-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch32-rpi3b --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.2.0-pre.1
+-- Platform name: aarch32-rpi3b
+-- Build type: Debug
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/aarch32-rpi3b/cmake/definitions.cmake...
+-- Including tests/platforms/aarch32-rpi3b/cmake/dependencies-folders.cmake...
+-- µOS++ III micro-os-plus-iii-aarch32: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/micro-os-plus-iii-aarch32
+-- µOS++ III micro-os-plus-iii-devices-storage: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-storage
+-- µOS++ III micro-os-plus-iii-devices-bcm283x: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-bcm283x
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding 'build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32'...
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32
+-- Adding 'build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-devices-storage'...
+-- Adding 'build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x'...
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/aarch32-rpi3b'...
+-- Including tests/platforms/aarch32-rpi3b/cmake/platform-library.cmake...
+-- > micro-os-plus::platform -> platform-aarch32-rpi3b-interface
+-- > micro-os-plus::platform-support -> platform-aarch32-rpi3b-support-interface
+-- µOS++ III aarch32 board tests: 32 targets, board=rpi3b, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/micro-os-plus-iii-aarch32/test/rpi3b
+-- AArch32 rpi3b: port tests + harness suites registered (aarch32-rpi3b)
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+> cmake -S . -B build/aarch32-rpi3b-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch32-rpi3b
+-- µOS++ III micro-os-plus-iii-aarch32: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/micro-os-plus-iii-aarch32
+-- µOS++ III micro-os-plus-iii-devices-storage: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-storage
+-- µOS++ III micro-os-plus-iii-devices-bcm283x: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-bcm283x
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III aarch32 board tests: 32 targets, board=rpi3b, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/micro-os-plus-iii-aarch32/test/rpi3b
+-- AArch32 rpi3b: port tests + harness suites registered (aarch32-rpi3b)
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+> cmake --build build/aarch32-rpi3b-cmake-gcc-debug
+[0/2] Re-checking globbed directories...
+[1/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[2/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[3/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[4/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[5/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[6/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[7/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/sources/smp_test0/main.cpp.obj
+[8/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[9/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[10/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[11/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[12/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[13/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[14/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[15/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/portable-test-end.cpp.obj
+[16/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[17/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[18/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[19/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/sources/smp_test0/main.cpp.obj
+[20/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[21/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[22/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[23/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[24/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[25/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/portable-test-end.cpp.obj
+[26/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[27/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[28/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[29/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[30/152] Linking CXX executable platform-bin/port-tests/test/smp_test0-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test0-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  97260	   1240	69793896	69892396	42a792c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-qemu.elf
+[31/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[32/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[33/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[34/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[35/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[36/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[37/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[38/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[39/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[40/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[41/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[42/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[43/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/sources/smp_test1/main.cpp.obj
+[44/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[45/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/portable-test-end.cpp.obj
+[46/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[47/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[48/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[49/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[50/152] Linking CXX executable platform-bin/port-tests/test/smp_test0-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test0-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 104596	   1240	69793896	69899732	42a95d4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-hwd.elf
+[51/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[52/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[53/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[54/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[55/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[56/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[57/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/sources/smp_test1/main.cpp.obj
+[58/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[59/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[60/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[61/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/portable-test-end.cpp.obj
+[62/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[63/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[64/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[65/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[66/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[67/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[68/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[69/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[70/152] Linking CXX executable platform-bin/port-tests/test/smp_test1-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test1-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 104020	   1260	69843528	69948808	42b5588	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test1-qemu.elf
+[71/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[72/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[73/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[74/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[75/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/portable-test-end.cpp.obj
+[76/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[77/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[78/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/sources/smp_test3/main.cpp.obj
+[79/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[80/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[81/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[82/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[83/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[84/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[85/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[86/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[87/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[88/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[89/152] Linking CXX executable platform-bin/port-tests/test/smp_test1-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test1-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 111292	   1260	69843528	69956080	42b71f0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test1-hwd.elf
+[90/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[91/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[92/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[93/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[94/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[95/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[96/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[97/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/portable-test-end.cpp.obj
+[98/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[99/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[100/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[101/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[102/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[103/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[104/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/sources/smp_test3/main.cpp.obj
+[105/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[106/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[107/152] Linking CXX executable platform-bin/port-tests/test/smp_test3-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test3-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 106948	   1260	69843560	69951768	42b6118	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-qemu.elf
+[108/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[109/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[110/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[111/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[112/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[113/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[114/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[115/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[116/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[117/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/sources/smp_test4/main.cpp.obj
+[118/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[119/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/portable-test-end.cpp.obj
+[120/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[121/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[122/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[123/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[124/152] Linking CXX executable platform-bin/port-tests/test/smp_test3-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test3-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 114284	   1260	69843560	69959104	42b7dc0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-hwd.elf
+[125/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[126/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[127/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[128/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[129/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[130/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[131/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/sources/smp_test4/main.cpp.obj
+[132/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[133/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[134/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[135/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[136/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[137/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/portable-test-end.cpp.obj
+[138/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[139/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[140/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[141/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[142/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[143/152] Linking CXX executable platform-bin/port-tests/test/smp_test4-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test4-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 101804	   1244	69941688	70044736	42ccc40	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test4-qemu.elf
+[144/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[145/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[146/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[147/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[148/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[149/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[150/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[151/152] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[152/152] Linking CXX executable platform-bin/port-tests/test/smp_test4-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test4-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 109132	   1244	69941688	70052064	42ce8e0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test4-hwd.elf

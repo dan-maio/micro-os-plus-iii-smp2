@@ -1,0 +1,116 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+    Start 17: aarch64-rpi4b-smp-list-storage-test-qemu
+1/1 Test #17: aarch64-rpi4b-smp-list-storage-test-qemu ...***Failed  Required regular expression not found. Regex=[RESULT: PASS
+]  7.11 sec
+
+
++== RPi 4 B µOS++ smp-list-storage-test : 4-core intrusive list in 3 regions ==+
+
+os_startup_initialize_free_store(0x3b6000,67108864)
+first_fit_top(0x3b6000,67108864) @0xf15d8 app-heap
+out_of_memory_handler(0x885e0) @0xf15d8 app-heap
+estd::pmr::set_default_resource(0xf15d8) 
+rtos::memory::set_default_resource(0xf15d8) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0xf1580 malloc
+scheduler::start() 
+os_main on core 0
+SMP up (c1=3 c2=3 c3=3) after 0 ms
+  stacks  00000000000a52d0..00000000000ed2d0
+  .data   0000000000094400..0000000000094800 (records)
+  heap    00000000003b6000..00000000043b6000
+
+-- phase 1: 4 threads, 8 records + 1 text each on the stack, in .data, on the heap
+  w0 c0: 8 records + 1 text on its stack @ad1a0, in .data @94400, on the heap @43b1af0
+  w1 c1: 8 records + 1 text on its stack @b51a0, in .data @94500, on the heap @43b1640
+  w2 c2: 8 records + 1 text on its stack @bd1a0, in .data @94600, on the heap @43b1480
+  w3 c3: 8 records + 1 text on its stack @c51a0, in .data @94700, on the heap @43b1390
+  w0: stack 8, data 8, heap 8 records
+  w1: stack 8, data 8, heap 8 records
+  w2: stack 8, data 8, heap 8 records
+  w3: stack 8, data 8, heap 8 records
+  lists: 96 records, 12 texts (4 uppercased in .data) ok
+  after the threads returned: 64 records, 8 texts, 0 on a stack ok
+
+-- phase 2: 10 rounds of 8 workers + 1 scanner, 1000 ms each
+  round 0 w0 c0: pushed 7902, unlinked 7902, changed 2268, searched 1141
+  round 0 w2 c2: pushed 8659, unlinked 8659, changed 2506, searched 1315
+  round 0 w3 c3: pushed 8266, unlinked 8266, changed 2470, searched 1254
+  round 0 w1 c1: pushed 8541, unlinked 8541, changed 2584, searched 1278
+  round 0 w7 c3: pushed 8304, unlinked 8304, changed 2422, searched 1170
+  round 0 w5 c1: pushed 8489, unlinked 8489, changed 2593, searched 1271
+  round 0 w4 c0: pushed 7878, unlinked 7878, changed 2290, searched 1197
+  round 0 w6 c2: pushed 8639, unlinked 8639, changed 2579, searched 1247
+  round 0: 9 threads joined, +66678 -66678 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 1 w5 c1: pushed 8730, unlinked 8730, changed 2568, searched 1253
+  round 1 w6 c2: pushed 8532, unlinked 8532, changed 2586, searched 1242
+  round 1 w7 c3: pushed 8203, unlinked 8203, changed 2404, searched 1268
+  round 1 w4 c0: pushed 8455, unlinked 8455, changed 2507, searched 1235
+  round 1 w1 c1: pushed 8608, unlinked 8608, changed 2497, searched 1356
+  round 1 w0 c0: pushed 8501, unlinked 8501, changed 2478, searched 1218
+  round 1 w2 c2: pushed 8439, unlinked 8439, changed 2542, searched 1263
+  round 1 w3 c3: pushed 8259, unlinked 8259, changed 2526, searched 1199
+  round 1: 9 threads joined, +67727 -67727 nodes, 999 scans, lists 64/8, heap 19216 B ok
+  round 2 w0 c0: pushed 8413, unlinked 8413, changed 2521, searched 1231
+  round 2 w5 c1: pushed 8698, unlinked 8698, changed 2615, searched 1329
+  round 2 w4 c0: pushed 8535, unlinked 8535, changed 2523, searched 1211
+  round 2 w6 c2: pushed 8778, unlinked 8778, changed 2530, searched 1357
+  round 2 w7 c3: pushed 8285, unlinked 8285, changed 2414, searched 1175
+  round 2 w3 c3: pushed 8388, unlinked 8388, changed 2448, searched 1207
+  round 2 w2 c2: pushed 8714, unlinked 8714, changed 2501, searched 1349
+  round 2 w1 c1: pushed 8675, unlinked 8675, changed 2600, searched 1264
+  round 2: 9 threads joined, +68486 -68486 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 3 w6 c2: pushed 8613, unlinked 8613, changed 2567, searched 1325
+  round 3 w5 c1: pushed 8518, unlinked 8518, changed 2560, searched 1305
+  round 3 w4 c0: pushed 8104, unlinked 8104, changed 2423, searched 1117
+  round 3 w3 c3: pushed 8389, unlinked 8389, changed 2558, searched 1262
+  round 3 w1 c1: pushed 8508, unlinked 8508, changed 2500, searched 1260
+  round 3 w2 c2: pushed 8547, unlinked 8547, changed 2598, searched 1301
+  round 3 w0 c0: pushed 7966, unlinked 7966, changed 2336, searched 1188
+  round 3 w7 c3: pushed 8287, unlinked 8287, changed 2487, searched 1233
+  round 3: 9 threads joined, +66932 -66932 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 4 w0 c0: pushed 8179, unlinked 8179, changed 2420, searched 1195
+  round 4 w7 c3: pushed 8184, unlinked 8184, changed 2441, searched 1141
+  round 4 w4 c0: pushed 8110, unlinked 8110, changed 2527, searched 1169
+  round 4 w3 c3: pushed 8277, unlinked 8277, changed 2443, searched 1236
+  round 4 w1 c1: pushed 8526, unlinked 8526, changed 2500, searched 1229
+  round 4 w5 c1: pushed 8655, unlinked 8655, changed 2574, searched 1228
+  round 4 w6 c2: pushed 8354, unlinked 8354, changed 2425, searched 1222
+  round 4 w2 c2: pushed 8493, unlinked 8493, changed 2421, searched 1261
+  round 4: 9 threads joined, +66778 -66778 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 5 w4 c0: pushed 8101, unlinked 8101, changed 2351, searched 1193
+  round 5 w6 c2: pushed 8224, unlinked 8224, changed 2435, searched 1189
+  round 5 w3 c3: pushed 8390, unlinked 8390, changed 2518, searched 1284
+  round 5 w2 c2: pushed 8378, unlinked 8378, changed 2377, searched 1258
+  round 5 w1 c1: pushed 8463, unlinked 8463, changed 2544, searched 1233
+  round 5 w5 c1: pushed 8481, unlinked 8481, changed 2534, searched 1232
+  round 5 w0 c0: pushed 8070, unlinked 8070, changed 2324, searched 1173
+  round 5 w7 c3: pushed 8302, unlinked 8302, changed 2471, searched 1244
+  round 5: 9 threads joined, +66409 -66409 nodes, 1000 scans, lists 64/8, heap 19216 B ok
+  round 6 w5 c1: pushed 8429, unlinked 8429, changed 2564, searched 1202
+  round 6 w2 c2: pushed 8541, unlinked 8541, changed 2601, searched 1325
+  round 6 w3 c3: pushed 8511, unlinked 8511, changed 2532, searched 1287
+  round 6 w7 c3: pushed 8286, unlinked 8286, changed 2390, searched 1268
+  round 6 w6 c2: pushed 8652, unlinked 8652, changed 2492, searched 1273
+  round 6 w1 c1: pushed 8450, unlinked 8450, changed 2517, searched 1225
+  round 6 w0 c0: pushed 8291, unlinked 8291, changed 2442, searched 1210
+  round 6 w4 c0: pushed 8338, unlinked 8338, changed 2462, searched 1265
+  round 6: 9 threads joined, +67498 -67498 nodes, 1000 scans, lists 64/8, heap 19216 B ok
+assertion "!interrupts::in_handler_mode ()" failed
+file: "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp"
+line: 211
+function: os::rtos::result_t os::rtos::clock::sleep_for(duration_t)
+this_thread: scan7 @0x43b04a0
+abort(), exiting...
+
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+qemu    =   7.11 sec*proc (1 test)
+
+Total Test time (real) =   7.11 sec
+
+The following tests FAILED:
+	 17 - aarch64-rpi4b-smp-list-storage-test-qemu (Failed) qemu
+Errors while running CTest

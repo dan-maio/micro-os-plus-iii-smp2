@@ -1,0 +1,797 @@
+> cmake -S . -B build/aarch64-rpi-zero-2w-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch64-rpi-zero-2w
+-- µOS++ III micro-os-plus-iii-aarch64: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64
+-- µOS++ III micro-os-plus-iii-devices-storage: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-storage
+-- µOS++ III micro-os-plus-iii-devices-bcm283x: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-bcm283x
+-- µOS++ IIIe aarch64 port: micro-os-plus::aarch64
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III aarch64 board tests: 36 targets, board=rpi-zero-2w, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w
+-- AArch64 rpi-zero-2w: port tests + harness suites registered
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug
+> cmake --build build/aarch64-rpi-zero-2w-cmake-gcc-debug
+[0/2] Re-checking globbed directories...
+[1/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[2/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[3/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[4/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[5/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[6/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[7/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[8/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[9/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[10/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[11/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[12/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[13/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[14/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[15/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[16/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[17/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[18/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[19/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[20/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[21/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[22/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[23/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[24/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[25/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/mutex-stress/harness-suite.cpp.obj
+[26/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[27/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[28/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[29/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[30/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[31/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[32/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/mutex-stress/harness-suite.cpp.obj
+[33/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[34/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[35/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[36/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[37/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[38/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[39/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/rtos-apis/harness-suite.cpp.obj
+[40/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[41/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[42/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[43/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/cmsis-os-validator/harness-suite.cpp.obj
+[44/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[45/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/clock-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/clock-test/main.cpp: In function 'int os_main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/clock-test/main.cpp:141:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  141 | }
+      | ^
+[46/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[47/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[48/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[49/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/cmsis-os-validator/harness-suite.cpp.obj
+[50/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[51/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[52/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[53/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[54/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/rtos-apis/harness-suite.cpp.obj
+[55/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[56/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[57/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[58/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[59/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[60/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[61/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[62/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[63/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[64/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/clock-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/clock-test/main.cpp: In function 'int os_main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/clock-test/main.cpp:141:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  141 | }
+      | ^
+[65/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[66/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[67/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[68/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[69/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[70/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[71/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[72/380] Linking CXX executable platform-bin/port-tests/test/clock-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/clock-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 104496	   1480	70088384	70194360	42f14b8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/clock-test-qemu.elf
+[73/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[74/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[75/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[76/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[77/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[78/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[79/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[80/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[81/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[82/380] Linking CXX executable platform-bin/port-tests/test/cmsis-os-validator-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/cmsis-os-validator-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 188736	   3112	70129680	70321528	4310578	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/cmsis-os-validator-qemu.elf
+[83/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[84/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[85/380] Linking CXX executable platform-bin/port-tests/test/clock-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/clock-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 107168	   1480	70088384	70197032	42f1f28	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/clock-test-hwd.elf
+[86/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[87/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[88/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[89/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[90/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[91/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[92/380] Linking CXX executable platform-bin/port-tests/test/mutex-stress-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/mutex-stress-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 128640	   1504	70088832	70218976	42f74e0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/mutex-stress-qemu.elf
+[93/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[94/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[95/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[96/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[97/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[98/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[99/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[100/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[101/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[102/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[103/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[104/380] Linking CXX executable platform-bin/port-tests/test/cmsis-os-validator-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/cmsis-os-validator-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 191408	   3112	70129680	70324200	4310fe8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/cmsis-os-validator-hwd.elf
+[105/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[106/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[107/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[108/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[109/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[110/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[111/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/sd_test/main.cpp.obj
+[112/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[113/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[114/380] Linking CXX executable platform-bin/port-tests/test/mutex-stress-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/mutex-stress-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 131184	   1504	70088832	70221520	42f7ed0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/mutex-stress-hwd.elf
+[115/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[116/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/sd_test/main.cpp.obj
+[117/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[118/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[119/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[120/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[121/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[122/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[123/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[124/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[125/380] Linking CXX executable platform-bin/port-tests/test/rtos-apis-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/rtos-apis-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 287456	   1600	70158608	70447664	432f230	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/rtos-apis-qemu.elf
+[126/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[127/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[128/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[129/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[130/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[131/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[132/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[133/380] Linking CXX executable platform-bin/port-tests/test/sd_test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/sd_test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 111104	   1480	70268752	70381336	431ef18	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-qemu.elf
+[134/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[135/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[136/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[137/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[138/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[139/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[140/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[141/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[142/380] Linking CXX executable platform-bin/port-tests/test/rtos-apis-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/rtos-apis-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 289936	   1600	70158608	70450144	432fbe0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/rtos-apis-hwd.elf
+[143/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[144/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[145/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[146/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[147/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[148/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[149/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[150/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[151/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[152/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[153/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[154/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[155/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/smp-mat-sdcard-test/main.cpp.obj
+[156/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[157/380] Linking CXX executable platform-bin/port-tests/test/sd_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/sd_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 123600	   1480	70269376	70394456	4322258	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-hwd.elf
+[158/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[159/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[160/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[161/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[162/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[163/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[164/380] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 123776	   1584	70850384	70975744	43b0100	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+[165/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[166/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[167/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/wifi-net/main.cpp.obj
+[168/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[169/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/smp-mat-sdcard-test/main.cpp.obj
+[170/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/usb_test/main.cpp.obj
+[171/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[172/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[173/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[174/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[175/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[176/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[177/380] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 136048	   1504	70851008	70988560	43b3310	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+[178/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[179/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/smp-mat-test/main.cpp.obj
+[180/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/wifi/src/platform.cpp.obj'
+[181/380] Linking CXX executable platform-bin/port-tests/test/usb_test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/usb_test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 129472	   1616	71338080	71469168	4428870	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-qemu.elf
+[182/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[183/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[184/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[185/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[186/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[187/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/usb_test/main.cpp.obj
+[188/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[189/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[190/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[191/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[192/380] Linking CXX executable platform-bin/port-tests/test/smp-mat-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-mat-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 112560	   1488	70379200	70493248	433a440	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-qemu.elf
+[193/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[194/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[195/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[196/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/wifi-net/main.cpp.obj
+[197/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[198/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[199/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[200/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[201/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[202/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[203/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/wifi-tcp-server/main.cpp.obj
+[204/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[205/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[206/380] Linking CXX executable platform-bin/port-tests/test/usb_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/usb_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 144448	   1544	71338704	71484696	442c518	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-hwd.elf
+[207/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[208/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/smp-mat-test/main.cpp.obj
+[209/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[210/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/wifi/src/platform.cpp.obj'
+[211/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[212/380] Linking CXX executable platform-bin/port-tests/test/wifi-net-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/wifi-net-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 101680	   1496	70317888	70421064	4328a48	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-net-qemu.elf
+[213/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/wifi/src/platform.cpp.obj'
+[214/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[215/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[216/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[217/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w/wifi-tcp-server/main.cpp.obj
+[218/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[219/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[220/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[221/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[222/380] Linking CXX executable platform-bin/port-tests/test/smp-mat-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-mat-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 116304	   1488	70379200	70496992	433b2e0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-hwd.elf
+[223/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[224/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[225/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[226/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[227/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[228/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/wifi/src/platform.cpp.obj'
+[229/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[230/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/portable-test-end.cpp.obj
+[231/380] Linking CXX executable platform-bin/port-tests/test/wifi-tcp-server-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/wifi-tcp-server-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 101712	   1496	70317888	70421096	4328a68	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-tcp-server-qemu.elf
+[232/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[233/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[234/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[235/380] Linking CXX executable platform-bin/port-tests/test/wifi-net-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/wifi-net-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+1098848	   1720	71517664	72618232	45410f8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-net-hwd.elf
+[236/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[237/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[238/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[239/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[240/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[241/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[242/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[243/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[244/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[245/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[246/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[247/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[248/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/portable-test-end.cpp.obj
+[249/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[250/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[251/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[252/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[253/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/portable-test-end.cpp.obj
+[254/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[255/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[256/380] Linking CXX executable platform-bin/port-tests/test/smp_test0-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test0-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 120224	   1496	70088656	70210376	42f5348	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-qemu.elf
+[257/380] Linking CXX executable platform-bin/port-tests/test/wifi-tcp-server-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/wifi-tcp-server-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+1093104	   1576	79906096	81000776	4d3f948	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-tcp-server-hwd.elf
+[258/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[259/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[260/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[261/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[262/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[263/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[264/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[265/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[266/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[267/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[268/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[269/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[270/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[271/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[272/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[273/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/portable-test-end.cpp.obj
+[274/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[275/380] Linking CXX executable platform-bin/port-tests/test/smp_test0-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test0-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 122896	   1496	70088656	70213048	42f5db8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-hwd.elf
+[276/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[277/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[278/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[279/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[280/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[281/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/portable-test-end.cpp.obj
+[282/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[283/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[284/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[285/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[286/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[287/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[288/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/portable-test-end.cpp.obj
+[289/380] Linking CXX executable platform-bin/port-tests/test/smp_test1-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test1-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 126976	   1520	70186960	70315456	430edc0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test1-qemu.elf
+[290/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[291/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[292/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[293/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[294/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[295/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[296/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/portable-test-end.cpp.obj
+[297/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[298/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[299/380] Linking CXX executable platform-bin/port-tests/test/smp_test2-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test2-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 124576	   1504	70219728	70345808	4316450	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test2-qemu.elf
+[300/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[301/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[302/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[303/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[304/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[305/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[306/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[307/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[308/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/portable-test-end.cpp.obj
+[309/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[310/380] Linking CXX executable platform-bin/port-tests/test/smp_test1-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test1-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 129648	   1520	70186960	70318128	430f830	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test1-hwd.elf
+[311/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[312/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[313/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[314/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[315/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[316/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[317/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[318/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[319/380] Linking CXX executable platform-bin/port-tests/test/smp_test2-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test2-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 127248	   1504	70219728	70348480	4316ec0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test2-hwd.elf
+[320/380] Linking CXX executable platform-bin/port-tests/test/smp_test3-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test3-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 130096	   1520	70186960	70318576	430f9f0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-qemu.elf
+[321/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[322/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[323/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[324/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[325/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[326/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/portable-test-end.cpp.obj
+[327/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[328/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[329/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[330/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[331/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[332/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[333/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[334/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[335/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[336/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/portable-test-end.cpp.obj
+[337/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[338/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[339/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[340/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/platforms/aarch64-rpi-zero-2w/src/platform-support.cpp.obj
+[341/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[342/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[343/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[344/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[345/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[346/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[347/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[348/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/context_switch.cpp.obj'
+[349/380] Linking CXX executable platform-bin/port-tests/test/smp_test4-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test4-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 125056	   1504	70383568	70510128	433e630	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test4-qemu.elf
+[350/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp: In function 'void _Exit(int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/handlers.cpp:51:43: warning: 'noreturn' function does return
+   51 | void _Exit (int code) { port_exit (code); }
+      |                                           ^
+[351/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/smp_secondary.cpp.obj'
+[352/380] Linking CXX executable platform-bin/port-tests/test/smp_test3-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test3-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 132768	   1520	70186960	70321248	4310460	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-hwd.elf
+[353/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/exception_handler.cpp.obj'
+[354/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[355/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[356/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[357/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/smp.cpp:81:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   81 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[358/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[359/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/sources/smp-num-test/main.cpp.obj
+[360/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[361/380] Linking CXX executable platform-bin/port-tests/test/smp_test4-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp_test4-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 127728	   1504	70383568	70512800	433f0a0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp_test4-hwd.elf
+[362/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/sources/smp-num-test/main.cpp.obj
+[363/380] Linking CXX executable platform-bin/port-tests/test/smp-num-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-num-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 120512	   1584	70842192	70964288	43ad440	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-qemu.elf
+[364/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[365/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[366/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[367/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/sources/smp-pipeline-test/main.cpp.obj
+[368/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[369/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/sources/smp-pipeline-test/main.cpp.obj
+[370/380] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 174276	   1584	70567760	70743620	4377644	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-qemu.elf
+[371/380] Linking CXX executable platform-bin/port-tests/test/smp-num-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-num-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 132352	   1504	70580672	70714528	43704a0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-hwd.elf
+[372/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[373/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/sources/smp-pro-cons-test/main.cpp.obj
+[374/380] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 186292	   1504	70568384	70756180	437a754	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+[375/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[376/380] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/sources/smp-pro-cons-test/main.cpp.obj
+[377/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[378/380] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[379/380] Linking CXX executable platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 124352	   1488	70141632	70267472	4303250	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf
+[380/380] Linking CXX executable platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 126944	   1488	70141632	70270064	4303c70	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf

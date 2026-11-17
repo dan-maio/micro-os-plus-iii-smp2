@@ -1,0 +1,18 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+    Start 25: aarch32-rpi-zero-2w-smp_test0-qemu
+1/5 Test #25: aarch32-rpi-zero-2w-smp_test0-qemu ...   Passed   10.08 sec
+    Start 27: aarch32-rpi-zero-2w-smp_test1-qemu
+2/5 Test #27: aarch32-rpi-zero-2w-smp_test1-qemu ...   Passed   10.15 sec
+    Start 29: aarch32-rpi-zero-2w-smp_test2-qemu
+3/5 Test #29: aarch32-rpi-zero-2w-smp_test2-qemu ...   Passed    0.60 sec
+    Start 31: aarch32-rpi-zero-2w-smp_test3-qemu
+4/5 Test #31: aarch32-rpi-zero-2w-smp_test3-qemu ...   Passed   10.16 sec
+    Start 33: aarch32-rpi-zero-2w-smp_test4-qemu
+5/5 Test #33: aarch32-rpi-zero-2w-smp_test4-qemu ...   Passed   10.14 sec
+
+100% tests passed out of 5
+
+Label Time Summary:
+qemu    =  41.14 sec*proc (5 tests)
+
+Total Test time (real) =  41.14 sec

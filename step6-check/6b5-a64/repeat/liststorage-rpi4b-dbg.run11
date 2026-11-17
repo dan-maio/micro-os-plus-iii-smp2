@@ -1,0 +1,71 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+    Start 17: aarch64-rpi4b-smp-list-storage-test-qemu
+1/1 Test #17: aarch64-rpi4b-smp-list-storage-test-qemu ...***Failed  Required regular expression not found. Regex=[RESULT: PASS
+]  2.73 sec
+
+
++== RPi 4 B µOS++ smp-list-storage-test : 4-core intrusive list in 3 regions ==+
+
+os_startup_initialize_free_store(0x3b6000,67108864)
+first_fit_top(0x3b6000,67108864) @0xf15d8 app-heap
+out_of_memory_handler(0x885e0) @0xf15d8 app-heap
+estd::pmr::set_default_resource(0xf15d8) 
+rtos::memory::set_default_resource(0xf15d8) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0xf1580 malloc
+scheduler::start() 
+os_main on core 0
+SMP up (c1=3 c2=3 c3=3) after 0 ms
+  stacks  00000000000a52d0..00000000000ed2d0
+  .data   0000000000094400..0000000000094800 (records)
+  heap    00000000003b6000..00000000043b6000
+
+-- phase 1: 4 threads, 8 records + 1 text each on the stack, in .data, on the heap
+  w0 c0: 8 records + 1 text on its stack @ad1a0, in .data @94400, on the heap @43b1af0
+  w1 c1: 8 records + 1 text on its stack @b51a0, in .data @94500, on the heap @43b1640
+  w3 c3: 8 records + 1 text on its stack @c51a0, in .data @94700, on the heap @43b1460
+  w2 c2: 8 records + 1 text on its stack @bd1a0, in .data @94600, on the heap @43b14c0
+  w0: stack 8, data 8, heap 8 records
+  w1: stack 8, data 8, heap 8 records
+  w2: stack 8, data 8, heap 8 records
+  w3: stack 8, data 8, heap 8 records
+  lists: 96 records, 12 texts (4 uppercased in .data) ok
+  after the threads returned: 64 records, 8 texts, 0 on a stack ok
+
+-- phase 2: 10 rounds of 8 workers + 1 scanner, 1000 ms each
+  round 0 w7 c3: pushed 8372, unlinked 8372, changed 2447, searched 1186
+  round 0 w6 c2: pushed 8557, unlinked 8557, changed 2560, searched 1230
+  round 0 w1 c1: pushed 8987, unlinked 8987, changed 2693, searched 1345
+  round 0 w2 c2: pushed 8331, unlinked 8331, changed 2413, searched 1252
+  round 0 w4 c0: pushed 8444, unlinked 8444, changed 2450, searched 1292
+  round 0 w0 c0: pushed 8542, unlinked 8542, changed 2440, searched 1230
+  round 0 w3 c3: pushed 8570, unlinked 8570, changed 2557, searched 1298
+  round 0 w5 c1: pushed 8867, unlinked 8867, changed 2725, searched 1341
+  round 0: 9 threads joined, +68670 -68670 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 1 w1 c1: pushed 8834, unlinked 8834, changed 2565, searched 1390
+  round 1 w7 c3: pushed 8481, unlinked 8481, changed 2489, searched 1308
+  round 1 w0 c0: pushed 8330, unlinked 8330, changed 2435, searched 1193
+  round 1 w5 c1: pushed 8906, unlinked 8906, changed 2618, searched 1269
+  round 1 w2 c2: pushed 8593, unlinked 8593, changed 2593, searched 1283
+  round 1 w3 c3: pushed 8537, unlinked 8537, changed 2598, searched 1242
+  round 1 w6 c2: pushed 8585, unlinked 8585, changed 2601, searched 1247
+  round 1 w4 c0: pushed 8252, unlinked 8252, changed 2443, searched 1210
+  round 1: 9 threads joined, +68518 -68518 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+assertion "!interrupts::in_handler_mode ()" failed
+file: "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp"
+line: 211
+function: os::rtos::result_t os::rtos::clock::sleep_for(duration_t)
+this_thread: scan2 @0x43b0470
+abort(), exiting...
+
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+qemu    =   2.73 sec*proc (1 test)
+
+Total Test time (real) =   2.73 sec
+
+The following tests FAILED:
+	 17 - aarch64-rpi4b-smp-list-storage-test-qemu (Failed) qemu
+Errors while running CTest

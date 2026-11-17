@@ -1,0 +1,275 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+      Start  1: aarch64-rpi4b-clock-test-qemu
+ 1/30 Test  #1: aarch64-rpi4b-clock-test-qemu ......................   Passed    5.30 sec
+      Start  3: aarch64-rpi4b-cmsis-os-validator-qemu
+ 2/30 Test  #3: aarch64-rpi4b-cmsis-os-validator-qemu ..............***Failed  Error regular expression found in output. Regex=[RESULT: FAIL] 11.51 sec
+os_startup_initialize_free_store(0x388000,67108864)
+first_fit_top(0x388000,67108864) @0xaa298 app-heap
+out_of_memory_handler(0x8ae18) @0xaa298 app-heap
+estd::pmr::set_default_resource(0xaa298) 
+rtos::memory::set_default_resource(0xaa298) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0xaa240 malloc
+scheduler::start() 
+CMSIS-RTOS Test Suite   Nov 17 2026   16:50:03 
+
+TEST 01: TC_ThreadCreate                  PASSED
+TEST 02: TC_ThreadMultiInstance           PASSED
+TEST 03: TC_ThreadTerminate               PASSED
+TEST 04: TC_ThreadRestart                 PASSED
+TEST 05: TC_ThreadGetId                   PASSED
+TEST 06: TC_ThreadPriority                PASSED
+TEST 07: TC_ThreadPriorityExec            PASSED
+TEST 08: TC_ThreadChainedCreate           PASSED
+TEST 09: TC_ThreadYield                   PASSED
+TEST 10: TC_ThreadParam                   PASSED
+TEST 11: TC_ThreadInterrupts              PASSED
+TEST 12: TC_GenWaitBasic                  PASSED
+TEST 13: TC_GenWaitInterrupts             PASSED
+TEST 14: TC_TimerOneShot                  PASSED
+TEST 15: TC_TimerPeriodic                 PASSED
+TEST 16: TC_TimerParam                    PASSED
+TEST 17: TC_TimerInterrupts               PASSED
+TEST 18: TC_SignalMainThread              PASSED
+TEST 19: TC_SignalChildThread             PASSED
+TEST 20: TC_SignalChildToParent           PASSED
+TEST 21: TC_SignalChildToChild            PASSED
+TEST 22: TC_SignalWaitTimeout             PASSED
+TEST 23: TC_SignalParam                   PASSED
+TEST 24: TC_SignalInterrupts              PASSED
+TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+TEST 26: TC_SemaphoreObtainCounting       PASSED
+TEST 27: TC_SemaphoreObtainBinary         PASSED
+TEST 28: TC_SemaphoreWaitForBinary        PASSED
+TEST 29: TC_SemaphoreWaitForCounting      PASSED
+TEST 30: TC_SemaphoreZeroCount            PASSED
+TEST 31: TC_SemaphoreWaitTimeout          PASSED
+TEST 32: TC_SemParam                      PASSED
+TEST 33: TC_SemInterrupts                 PASSED
+TEST 34: TC_MutexBasic                    PASSED
+TEST 35: TC_MutexTimeout                  PASSED
+TEST 36: TC_MutexNestedAcquire            PASSED
+TEST 37: TC_MutexPriorityInversion        PASSED
+TEST 38: TC_MutexOwnership                PASSED
+TEST 39: TC_MutexParam                    PASSED
+TEST 40: TC_MutexInterrupts               PASSED
+TEST 41: TC_MemPoolAllocAndFree           PASSED
+TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+TEST 43: TC_MemPoolZeroInit               PASSED
+TEST 44: TC_MemPoolParam                  PASSED
+TEST 45: TC_MemPoolInterrupts             PASSED
+TEST 46: TC_MsgQBasic                     PASSED
+TEST 47: TC_MsgQWait                      PASSED
+TEST 48: TC_MsgQParam                     PASSED
+TEST 49: TC_MsgQInterrupts                PASSED
+TEST 50: TC_MsgFromThreadToISR            
+  RV_MsgQueue.c (188) [FAILED]
+  RV_MsgQueue.c (188) [FAILED]
+TEST 51: TC_MsgFromISRToThread            PASSED
+TEST 52: TC_MailAlloc                     PASSED
+TEST 53: TC_MailCAlloc                    PASSED
+TEST 54: TC_MailToThread                  PASSED
+TEST 55: TC_MailFromThread                PASSED
+TEST 56: TC_MailTimeout                   PASSED
+TEST 57: TC_MailParam                     PASSED
+TEST 58: TC_MailInterrupts                PASSED
+TEST 59: TC_MailFromThreadToISR           A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3    0x4383550, 2A2
+
+  RV_MailQueue.c (238) [FAILED]A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4    0x43835b0, 2A3
+
+  RV_MailQueue.c (238) [FAILED]A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2 A2    0x43835f0, 2A4
+
+  RV_MailQueue.c (238) [FAILED]
+TEST 60: TC_MailFromISRToThread           PASSED
+
+Test Summary: 60 Tests, 60 Executed, 58 Passed, 2 Failed, 0 Warnings.
+Test Result: FAILED
+
+RESULT: FAIL
+
+RESULT: FAIL
+
+      Start  5: aarch64-rpi4b-eth-net-qemu
+ 3/30 Test  #5: aarch64-rpi4b-eth-net-qemu .........................***Skipped   0.09 sec
+      Start  7: aarch64-rpi4b-eth-tcp-server-qemu
+ 4/30 Test  #7: aarch64-rpi4b-eth-tcp-server-qemu ..................***Skipped   0.08 sec
+      Start  9: aarch64-rpi4b-mutex-stress-qemu
+ 5/30 Test  #9: aarch64-rpi4b-mutex-stress-qemu ....................   Passed   35.23 sec
+      Start 11: aarch64-rpi4b-rtos-apis-qemu
+ 6/30 Test #11: aarch64-rpi4b-rtos-apis-qemu .......................   Passed    7.18 sec
+      Start 13: aarch64-rpi4b-sd_test-qemu-sd-make
+ 7/30 Test #13: aarch64-rpi4b-sd_test-qemu-sd-make .................   Passed    0.03 sec
+      Start 15: aarch64-rpi4b-sd_test-qemu
+ 8/30 Test #15: aarch64-rpi4b-sd_test-qemu .........................   Passed    0.75 sec
+      Start 14: aarch64-rpi4b-sd_test-qemu-sd-remove
+ 9/30 Test #14: aarch64-rpi4b-sd_test-qemu-sd-remove ...............   Passed    0.00 sec
+      Start 17: aarch64-rpi4b-smp-list-storage-test-qemu
+10/30 Test #17: aarch64-rpi4b-smp-list-storage-test-qemu ...........***Failed  Required regular expression not found. Regex=[RESULT: PASS
+]  8.11 sec
+
+
++== RPi 4 B µOS++ smp-list-storage-test : 4-core intrusive list in 3 regions ==+
+
+os_startup_initialize_free_store(0x3b6000,67108864)
+first_fit_top(0x3b6000,67108864) @0xf15d8 app-heap
+out_of_memory_handler(0x885e0) @0xf15d8 app-heap
+estd::pmr::set_default_resource(0xf15d8) 
+rtos::memory::set_default_resource(0xf15d8) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0xf1580 malloc
+scheduler::start() 
+os_main on core 0
+SMP up (c1=3 c2=3 c3=3) after 0 ms
+  stacks  00000000000a52d0..00000000000ed2d0
+  .data   0000000000094400..0000000000094800 (records)
+  heap    00000000003b6000..00000000043b6000
+
+-- phase 1: 4 threads, 8 records + 1 text each on the stack, in .data, on the heap
+  w0 c0: 8 records + 1 text on its stack @ad1a0, in .data @94400, on the heap @43b1af0
+  w1 c1: 8 records + 1 text on its stack @b51a0, in .data @94500, on the heap @43b1640
+  w3 c3: 8 records + 1 text on its stack @c51a0, in .data @94700, on the heap @43b1300
+  w2 c2: 8 records + 1 text on its stack @bd1a0, in .data @94600, on the heap @43b1480
+  w0: stack 8, data 8, heap 8 records
+  w1: stack 8, data 8, heap 8 records
+  w2: stack 8, data 8, heap 8 records
+  w3: stack 8, data 8, heap 8 records
+  lists: 96 records, 12 texts (4 uppercased in .data) ok
+  after the threads returned: 64 records, 8 texts, 0 on a stack ok
+
+-- phase 2: 10 rounds of 8 workers + 1 scanner, 1000 ms each
+  round 0 w0 c0: pushed 7915, unlinked 7915, changed 2271, searched 1144
+  round 0 w3 c3: pushed 8244, unlinked 8244, changed 2465, searched 1254
+  round 0 w2 c2: pushed 8380, unlinked 8380, changed 2429, searched 1265
+  round 0 w6 c2: pushed 8412, unlinked 8412, changed 2519, searched 1206
+  round 0 w5 c1: pushed 8028, unlinked 8028, changed 2445, searched 1193
+  round 0 w1 c1: pushed 7990, unlinked 7990, changed 2418, searched 1194
+  round 0 w4 c0: pushed 7871, unlinked 7871, changed 2289, searched 1195
+  round 0 w7 c3: pushed 8141, unlinked 8141, changed 2375, searched 1140
+  round 0: 9 threads joined, +64981 -64981 nodes, 999 scans, lists 64/8, heap 19216 B ok
+  round 1 w1 c1: pushed 8690, unlinked 8690, changed 2520, searched 1370
+  round 1 w2 c2: pushed 8837, unlinked 8837, changed 2668, searched 1319
+  round 1 w3 c3: pushed 8735, unlinked 8735, changed 2647, searched 1279
+  round 1 w4 c0: pushed 8496, unlinked 8496, changed 2523, searched 1244
+  round 1 w6 c2: pushed 8901, unlinked 8901, changed 2682, searched 1278
+  round 1 w5 c1: pushed 8654, unlinked 8654, changed 2552, searched 1239
+  round 1 w0 c0: pushed 8628, unlinked 8628, changed 2505, searched 1241
+  round 1 w7 c3: pushed 8634, unlinked 8634, changed 2544, searched 1336
+  round 1: 9 threads joined, +69575 -69575 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 2 w7 c3: pushed 8409, unlinked 8409, changed 2444, searched 1203
+  round 2 w0 c0: pushed 8265, unlinked 8265, changed 2472, searched 1210
+  round 2 w5 c1: pushed 8405, unlinked 8405, changed 2537, searched 1288
+  round 2 w6 c2: pushed 8674, unlinked 8674, changed 2511, searched 1339
+  round 2 w4 c0: pushed 8301, unlinked 8301, changed 2450, searched 1178
+  round 2 w3 c3: pushed 8587, unlinked 8587, changed 2513, searched 1238
+  round 2 w1 c1: pushed 8502, unlinked 8502, changed 2552, searched 1241
+  round 2 w2 c2: pushed 8646, unlinked 8646, changed 2475, searched 1336
+  round 2: 9 threads joined, +67789 -67789 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 3 w6 c2: pushed 8594, unlinked 8594, changed 2564, searched 1320
+  round 3 w5 c1: pushed 8365, unlinked 8365, changed 2504, searched 1278
+  round 3 w0 c0: pushed 8242, unlinked 8242, changed 2418, searched 1233
+  round 3 w3 c3: pushed 8288, unlinked 8288, changed 2528, searched 1250
+  round 3 w4 c0: pushed 8163, unlinked 8163, changed 2442, searched 1125
+  round 3 w1 c1: pushed 8434, unlinked 8434, changed 2470, searched 1247
+  round 3 w7 c3: pushed 8160, unlinked 8160, changed 2452, searched 1215
+  round 3 w2 c2: pushed 8468, unlinked 8468, changed 2568, searched 1291
+  round 3: 9 threads joined, +66714 -66714 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 4 w2 c2: pushed 8277, unlinked 8277, changed 2358, searched 1225
+  round 4 w0 c0: pushed 8032, unlinked 8032, changed 2378, searched 1170
+  round 4 w7 c3: pushed 8253, unlinked 8253, changed 2462, searched 1150
+  round 4 w4 c0: pushed 8058, unlinked 8058, changed 2513, searched 1159
+  round 4 w1 c1: pushed 8496, unlinked 8496, changed 2492, searched 1220
+  round 4 w6 c2: pushed 8244, unlinked 8244, changed 2398, searched 1210
+  round 4 w3 c3: pushed 8230, unlinked 8230, changed 2425, searched 1228
+  round 4 w5 c1: pushed 8416, unlinked 8416, changed 2513, searched 1196
+  round 4: 9 threads joined, +66006 -66006 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+  round 5 w6 c2: pushed 8201, unlinked 8201, changed 2429, searched 1188
+  round 5 w1 c1: pushed 8052, unlinked 8052, changed 2397, searched 1173
+  round 5 w2 c2: pushed 8217, unlinked 8217, changed 2334, searched 1237
+  round 5 w0 c0: pushed 8060, unlinked 8060, changed 2319, searched 1172
+  round 5 w7 c3: pushed 8124, unlinked 8124, changed 2428, searched 1213
+  round 5 w5 c1: pushed 8210, unlinked 8210, changed 2457, searched 1203
+  round 5 w3 c3: pushed 8126, unlinked 8126, changed 2422, searched 1238
+  round 5 w4 c0: pushed 8004, unlinked 8004, changed 2326, searched 1180
+  round 5: 9 threads joined, +64994 -64994 nodes, 1000 scans, lists 64/8, heap 19216 B ok
+  round 6 w5 c1: pushed 8159, unlinked 8159, changed 2478, searched 1147
+  round 6 w3 c3: pushed 8202, unlinked 8202, changed 2449, searched 1237
+  round 6 w0 c0: pushed 8034, unlinked 8034, changed 2358, searched 1173
+  round 6 w1 c1: pushed 8157, unlinked 8157, changed 2432, searched 1183
+  round 6 w2 c2: pushed 8372, unlinked 8372, changed 2556, searched 1295
+  round 6 w7 c3: pushed 8069, unlinked 8069, changed 2323, searched 1241
+  round 6 w4 c0: pushed 7859, unlinked 7859, changed 2307, searched 1205
+  round 6 w6 c2: pushed 8463, unlinked 8463, changed 2422, searched 1256
+  round 6: 9 threads joined, +65315 -65315 nodes, 998 scans, lists 64/8, heap 19216 B ok
+  round 7 w7 c3: pushed 8164, unlinked 8164, changed 2506, searched 1229
+  round 7 w1 c1: pushed 8407, unlinked 8407, changed 2512, searched 1189
+  round 7 w3 c3: pushed 8342, unlinked 8342, changed 2385, searched 1187
+  round 7 w2 c2: pushed 8336, unlinked 8336, changed 2498, searched 1262
+  round 7 w0 c0: pushed 8080, unlinked 8080, changed 2392, searched 1247
+  round 7 w6 c2: pushed 8364, unlinked 8364, changed 2467, searched 1227
+  round 7 w4 c0: pushed 8087, unlinked 8087, changed 2318, searched 1236
+  round 7 w5 c1: pushed 8301, unlinked 8301, changed 2407, searched 1272
+  round 7: 9 threads joined, +66081 -66081 nodes, 1001 scans, lists 64/8, heap 19216 B ok
+assertion "!interrupts::in_handler_mode ()" failed
+file: "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp"
+line: 211
+function: os::rtos::result_t os::rtos::clock::sleep_for(duration_t)
+this_thread: scan8 @0x43b0650
+abort(), exiting...
+
+      Start 19: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-make
+11/30 Test #19: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.01 sec
+      Start 21: aarch64-rpi4b-smp-mat-sdcard-test-qemu
+12/30 Test #21: aarch64-rpi4b-smp-mat-sdcard-test-qemu .............   Passed    0.53 sec
+      Start 20: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-remove
+13/30 Test #20: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.00 sec
+      Start 23: aarch64-rpi4b-smp-mat-test-qemu
+14/30 Test #23: aarch64-rpi4b-smp-mat-test-qemu ....................   Passed    0.22 sec
+      Start 25: aarch64-rpi4b-smp-shapes-test-qemu
+15/30 Test #25: aarch64-rpi4b-smp-shapes-test-qemu .................   Passed   30.11 sec
+      Start 27: aarch64-rpi4b-smp_mem_inter_test-qemu
+16/30 Test #27: aarch64-rpi4b-smp_mem_inter_test-qemu ..............   Passed    3.16 sec
+      Start 29: aarch64-rpi4b-smp_mem_test-qemu
+17/30 Test #29: aarch64-rpi4b-smp_mem_test-qemu ....................   Passed    2.11 sec
+      Start 31: aarch64-rpi4b-usb_big_test-qemu
+18/30 Test #31: aarch64-rpi4b-usb_big_test-qemu ....................***Skipped   0.09 sec
+      Start 33: aarch64-rpi4b-smp_test0-qemu
+19/30 Test #33: aarch64-rpi4b-smp_test0-qemu .......................   Passed   10.09 sec
+      Start 35: aarch64-rpi4b-smp_test1-qemu
+20/30 Test #35: aarch64-rpi4b-smp_test1-qemu .......................   Passed   10.15 sec
+      Start 37: aarch64-rpi4b-smp_test2-qemu
+21/30 Test #37: aarch64-rpi4b-smp_test2-qemu .......................   Passed    0.61 sec
+      Start 39: aarch64-rpi4b-smp_test3-qemu
+22/30 Test #39: aarch64-rpi4b-smp_test3-qemu .......................   Passed   10.15 sec
+      Start 41: aarch64-rpi4b-smp_test4-qemu
+23/30 Test #41: aarch64-rpi4b-smp_test4-qemu .......................   Passed   10.16 sec
+      Start 43: aarch64-rpi4b-smp-num-test-qemu-sd-make
+24/30 Test #43: aarch64-rpi4b-smp-num-test-qemu-sd-make ............   Passed    0.03 sec
+      Start 45: aarch64-rpi4b-smp-num-test-qemu
+25/30 Test #45: aarch64-rpi4b-smp-num-test-qemu ....................   Passed   60.75 sec
+      Start 44: aarch64-rpi4b-smp-num-test-qemu-sd-remove
+26/30 Test #44: aarch64-rpi4b-smp-num-test-qemu-sd-remove ..........   Passed    0.00 sec
+      Start 47: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make
+27/30 Test #47: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make .......   Passed    0.01 sec
+      Start 49: aarch64-rpi4b-smp-pipeline-test-qemu
+28/30 Test #49: aarch64-rpi4b-smp-pipeline-test-qemu ...............   Passed   30.71 sec
+      Start 48: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove
+29/30 Test #48: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove .....   Passed    0.01 sec
+      Start 51: aarch64-rpi4b-smp-pro-cons-test-qemu
+30/30 Test #51: aarch64-rpi4b-smp-pro-cons-test-qemu ...............   Passed    4.52 sec
+
+93% tests passed, 2 tests failed out of 30
+
+Label Time Summary:
+qemu    = 241.72 sec*proc (30 tests)
+
+Total Test time (real) = 241.74 sec
+
+The following tests did not run:
+	  5 - aarch64-rpi4b-eth-net-qemu (Skipped)
+	  7 - aarch64-rpi4b-eth-tcp-server-qemu (Skipped)
+	 31 - aarch64-rpi4b-usb_big_test-qemu (Skipped)
+
+The following tests FAILED:
+	  3 - aarch64-rpi4b-cmsis-os-validator-qemu (Failed)    qemu
+	 17 - aarch64-rpi4b-smp-list-storage-test-qemu (Failed) qemu
+Errors while running CTest

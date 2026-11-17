@@ -1,0 +1,10 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-release
+    Start 24: aarch32-rpi3b-smp_test2-qemu
+1/1 Test #24: aarch32-rpi3b-smp_test2-qemu .....   Passed    0.59 sec
+
+100% tests passed out of 1
+
+Label Time Summary:
+qemu    =   0.59 sec*proc (1 test)
+
+Total Test time (real) =   0.59 sec

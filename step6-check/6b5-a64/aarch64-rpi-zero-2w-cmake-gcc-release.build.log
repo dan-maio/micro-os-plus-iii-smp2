@@ -1,0 +1,14 @@
+> cmake -S . -B build/aarch64-rpi-zero-2w-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=aarch64-rpi-zero-2w
+-- µOS++ III micro-os-plus-iii-aarch64: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64
+-- µOS++ III micro-os-plus-iii-devices-storage: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-storage
+-- µOS++ III micro-os-plus-iii-devices-bcm283x: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-bcm283x
+-- µOS++ IIIe aarch64 port: micro-os-plus::aarch64
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III aarch64 board tests: 36 targets, board=rpi-zero-2w, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch64/micro-os-plus-iii-aarch64/test/rpi-zero-2w
+-- AArch64 rpi-zero-2w: port tests + harness suites registered
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-release
+> cmake --build build/aarch64-rpi-zero-2w-cmake-gcc-release
+[0/2] Re-checking globbed directories...
+ninja: no work to do.

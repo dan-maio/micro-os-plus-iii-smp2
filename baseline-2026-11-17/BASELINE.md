@@ -53,6 +53,25 @@ identical to step 4 (same compile and link commands); 12 repeats on it all
 passed (`step5-check/prove/`). A rare race in the POSIX port's context switch,
 to be investigated separately.
 
+**AArch64 output was invisible under QEMU until step 6** (fixed in the
+AArch64 port, include/semihosting.hpp): printf() and the kernel trace went
+to semihosting SYS_WRITE on handle 1, which nothing opens, so QEMU dropped
+them; only the SYS_WRITE0 lines (RESULT) reached the log. The "stops with no
+RESULT line" failures above (smp-shapes on the Pi 4 B) were therefore
+silent. With the output visible:
+
+`aarch64-rpi4b-smp-list-storage-test-qemu`, debug: stops on the kernel
+assertion `!interrupts::in_handler_mode ()` in `clock::sleep_for()`
+(os-clocks.cpp:211), raised in an ordinary thread (scan8): the kernel
+believes a thread runs in an interrupt handler. 3 failures in 13 runs after
+the semihosting fix (it never failed in the 6 earlier runs; the extra
+semihosting traps, each of which stops every core in QEMU, change the
+timing). Very likely the same bug as the smp-shapes stops. A kernel/port
+bug, to be investigated separately.
+
+`aarch64-rpi-zero-2w-smp-pipeline-test-qemu`, release: once, all threads
+stalled after 9.2 s (no output, no assertion); 0 in 12 repeats.
+
 ## Setup fixes made before the baseline (no repository change)
 
 - `aarch64-rpi4b-cmake-gcc-debug/release` had never been `xpm install --config`'d

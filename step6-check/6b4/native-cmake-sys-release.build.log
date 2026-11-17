@@ -1,0 +1,215 @@
+> cmake -S . -B build/native-cmake-sys-release -G Ninja -D CMAKE_BUILD_TYPE=Release -D PLATFORM_NAME=native --log-level=VERBOSE
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 16.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.2.0-pre.1
+-- Platform name: native
+-- Build type: Release
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-release
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Linux
+-- CMAKE_SYSTEM_PROCESSOR: x86_64
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/native/cmake/definitions.cmake...
+-- Including tests/platforms/native/cmake/dependencies-folders.cmake...
+-- µOS++ III micro-os-plus-iii-posix-arch: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-posix-arch/micro-os-plus-iii-posix-arch
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding 'build/native-cmake-sys-release/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch'...
+-- µOS++ III POSIX port: micro-os-plus::posix-arch
+-- Adding 'build/native-cmake-sys-release/xpacks/@xpack-3rd-party/libucontext'...
+-- Processing xPack @xpack-3rd-party/libucontext@1.2.0-5...
+-- > xpack-3rd-party-libucontext-interface
+-- + -I include
+-- + -I arch/x86_64/include
+-- + -I arch/common
+-- + arch/x86_64/getcontext.S
+-- + arch/x86_64/makecontext.c
+-- + arch/x86_64/setcontext.S
+-- + arch/x86_64/swapcontext.S
+-- + arch/x86_64/trampoline.c
+-- + libucontext_posix.c
+-- + -D _XOPEN_SOURCE=700L
+-- > xpack-3rd-party::libucontext -> xpack-3rd-party-libucontext-interface
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/native'...
+-- Including tests/platforms/native/cmake/platform-library.cmake...
+-- > platform-native-interface
+-- + -I include
+-- + -D MICRO_OS_PLUS_PLATFORM_NATIVE
+-- + -D _POSIX_C_SOURCE=200809L
+-- + -Werror
+-- + $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-unknown-warning-option>
+-- + $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-documentation>
+-- + $<$<PLATFORM_ID:Darwin>:-Wno-missing-include-dirs>
+-- + $<$<CONFIG:Release,MinSizeRel>:-flto>
+-- + $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-no-pie>
+-- + micro-os-plus::posix-arch
+-- + micro-os-plus::board
+-- + -Werror
+-- + $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-unknown-warning-option>
+-- + $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-documentation>
+-- + $<$<PLATFORM_ID:Darwin>:-Wno-missing-include-dirs>
+-- + $<$<CONFIG:Release,MinSizeRel>:-flto>
+-- + $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-no-pie>
+-- + $<$<PLATFORM_ID:Windows>:-static>
+-- + $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
+-- + $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
+-- + $<$<PLATFORM_ID:Linux,Darwin>:>
+-- > micro-os-plus::platform -> platform-native-interface
+-- µOS++ III posix board tests: 16 targets, board=native, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-posix-arch/micro-os-plus-iii-posix-arch/test/native
+-- native (posix-arch): port tests registered (native)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-release
+> cmake -S . -B build/native-cmake-sys-release -G Ninja -D CMAKE_BUILD_TYPE=Release -D PLATFORM_NAME=native
+-- µOS++ III micro-os-plus-iii-posix-arch: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-posix-arch/micro-os-plus-iii-posix-arch
+-- µOS++ III POSIX port: micro-os-plus::posix-arch
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III posix board tests: 16 targets, board=native, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-posix-arch/micro-os-plus-iii-posix-arch/test/native
+-- native (posix-arch): port tests registered (native)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-release
+> cmake --build build/native-cmake-sys-release
+[0/2] Re-checking globbed directories...
+[1/4] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/portable-test-end.cpp.o
+[2/4] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/platforms/native/src/platform-support.cpp.o
+[3/4] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/sources/smp_test2/main.cpp.o
+[4/4] Linking CXX executable platform-bin/port-tests/smp_test2-host

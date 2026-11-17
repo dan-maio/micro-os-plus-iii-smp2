@@ -1,0 +1,18 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-release
+    Start 43: aarch64-rpi4b-smp_test0-qemu
+1/5 Test #43: aarch64-rpi4b-smp_test0-qemu .....   Passed   10.10 sec
+    Start 45: aarch64-rpi4b-smp_test1-qemu
+2/5 Test #45: aarch64-rpi4b-smp_test1-qemu .....   Passed   10.13 sec
+    Start 47: aarch64-rpi4b-smp_test2-qemu
+3/5 Test #47: aarch64-rpi4b-smp_test2-qemu .....   Passed    0.61 sec
+    Start 49: aarch64-rpi4b-smp_test3-qemu
+4/5 Test #49: aarch64-rpi4b-smp_test3-qemu .....   Passed   10.15 sec
+    Start 51: aarch64-rpi4b-smp_test4-qemu
+5/5 Test #51: aarch64-rpi4b-smp_test4-qemu .....   Passed   10.16 sec
+
+100% tests passed out of 5
+
+Label Time Summary:
+qemu    =  41.14 sec*proc (5 tests)
+
+Total Test time (real) =  41.15 sec

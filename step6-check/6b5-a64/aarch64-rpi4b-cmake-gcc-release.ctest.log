@@ -1,0 +1,161 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-release
+      Start  1: aarch64-rpi4b-clock-test-qemu
+ 1/30 Test  #1: aarch64-rpi4b-clock-test-qemu ......................   Passed    5.30 sec
+      Start  3: aarch64-rpi4b-cmsis-os-validator-qemu
+ 2/30 Test  #3: aarch64-rpi4b-cmsis-os-validator-qemu ..............***Failed  Error regular expression found in output. Regex=[RESULT: FAIL] 11.55 sec
+os_startup_initialize_free_store(0x385000,67108864)
+first_fit_top(0x385000,67108864) @0xa7298 app-heap
+out_of_memory_handler(0x89d90) @0xa7298 app-heap
+estd::pmr::set_default_resource(0xa7298) 
+rtos::memory::set_default_resource(0xa7298) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0xa7240 malloc
+scheduler::start() 
+CMSIS-RTOS Test Suite   Nov 17 2026   16:51:49 
+
+TEST 01: TC_ThreadCreate                  PASSED
+TEST 02: TC_ThreadMultiInstance           PASSED
+TEST 03: TC_ThreadTerminate               PASSED
+TEST 04: TC_ThreadRestart                 PASSED
+TEST 05: TC_ThreadGetId                   PASSED
+TEST 06: TC_ThreadPriority                PASSED
+TEST 07: TC_ThreadPriorityExec            PASSED
+TEST 08: TC_ThreadChainedCreate           PASSED
+TEST 09: TC_ThreadYield                   PASSED
+TEST 10: TC_ThreadParam                   PASSED
+TEST 11: TC_ThreadInterrupts              PASSED
+TEST 12: TC_GenWaitBasic                  PASSED
+TEST 13: TC_GenWaitInterrupts             PASSED
+TEST 14: TC_TimerOneShot                  PASSED
+TEST 15: TC_TimerPeriodic                 PASSED
+TEST 16: TC_TimerParam                    PASSED
+TEST 17: TC_TimerInterrupts               PASSED
+TEST 18: TC_SignalMainThread              PASSED
+TEST 19: TC_SignalChildThread             PASSED
+TEST 20: TC_SignalChildToParent           PASSED
+TEST 21: TC_SignalChildToChild            PASSED
+TEST 22: TC_SignalWaitTimeout             PASSED
+TEST 23: TC_SignalParam                   PASSED
+TEST 24: TC_SignalInterrupts              PASSED
+TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+TEST 26: TC_SemaphoreObtainCounting       PASSED
+TEST 27: TC_SemaphoreObtainBinary         PASSED
+TEST 28: TC_SemaphoreWaitForBinary        PASSED
+TEST 29: TC_SemaphoreWaitForCounting      PASSED
+TEST 30: TC_SemaphoreZeroCount            PASSED
+TEST 31: TC_SemaphoreWaitTimeout          PASSED
+TEST 32: TC_SemParam                      PASSED
+TEST 33: TC_SemInterrupts                 PASSED
+TEST 34: TC_MutexBasic                    PASSED
+TEST 35: TC_MutexTimeout                  PASSED
+TEST 36: TC_MutexNestedAcquire            PASSED
+TEST 37: TC_MutexPriorityInversion        PASSED
+TEST 38: TC_MutexOwnership                PASSED
+TEST 39: TC_MutexParam                    PASSED
+TEST 40: TC_MutexInterrupts               PASSED
+TEST 41: TC_MemPoolAllocAndFree           PASSED
+TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+TEST 43: TC_MemPoolZeroInit               PASSED
+TEST 44: TC_MemPoolParam                  PASSED
+TEST 45: TC_MemPoolInterrupts             PASSED
+TEST 46: TC_MsgQBasic                     PASSED
+TEST 47: TC_MsgQWait                      PASSED
+TEST 48: TC_MsgQParam                     PASSED
+TEST 49: TC_MsgQInterrupts                PASSED
+TEST 50: TC_MsgFromThreadToISR            PASSED
+TEST 51: TC_MsgFromISRToThread            PASSED
+TEST 52: TC_MailAlloc                     PASSED
+TEST 53: TC_MailCAlloc                    PASSED
+TEST 54: TC_MailToThread                  PASSED
+TEST 55: TC_MailFromThread                PASSED
+TEST 56: TC_MailTimeout                   PASSED
+TEST 57: TC_MailParam                     PASSED
+TEST 58: TC_MailInterrupts                PASSED
+TEST 59: TC_MailFromThreadToISR           A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4 A4    0x43805b0, 4A3
+
+  RV_MailQueue.c (238) [FAILED]A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5 A5    0x4380530, 4A4
+
+  RV_MailQueue.c (238) [FAILED]A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3 A3    0x4380550, 4A5
+
+  RV_MailQueue.c (238) [FAILED]
+TEST 60: TC_MailFromISRToThread           PASSED
+
+Test Summary: 60 Tests, 60 Executed, 59 Passed, 1 Failed, 0 Warnings.
+Test Result: FAILED
+
+RESULT: FAIL
+
+RESULT: FAIL
+
+      Start  5: aarch64-rpi4b-eth-net-qemu
+ 3/30 Test  #5: aarch64-rpi4b-eth-net-qemu .........................***Skipped   0.10 sec
+      Start  7: aarch64-rpi4b-eth-tcp-server-qemu
+ 4/30 Test  #7: aarch64-rpi4b-eth-tcp-server-qemu ..................***Skipped   0.08 sec
+      Start  9: aarch64-rpi4b-mutex-stress-qemu
+ 5/30 Test  #9: aarch64-rpi4b-mutex-stress-qemu ....................   Passed   35.25 sec
+      Start 11: aarch64-rpi4b-rtos-apis-qemu
+ 6/30 Test #11: aarch64-rpi4b-rtos-apis-qemu .......................   Passed    7.21 sec
+      Start 13: aarch64-rpi4b-sd_test-qemu-sd-make
+ 7/30 Test #13: aarch64-rpi4b-sd_test-qemu-sd-make .................   Passed    0.02 sec
+      Start 15: aarch64-rpi4b-sd_test-qemu
+ 8/30 Test #15: aarch64-rpi4b-sd_test-qemu .........................   Passed    0.71 sec
+      Start 14: aarch64-rpi4b-sd_test-qemu-sd-remove
+ 9/30 Test #14: aarch64-rpi4b-sd_test-qemu-sd-remove ...............   Passed    0.00 sec
+      Start 17: aarch64-rpi4b-smp-list-storage-test-qemu
+10/30 Test #17: aarch64-rpi4b-smp-list-storage-test-qemu ...........   Passed   10.09 sec
+      Start 19: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-make
+11/30 Test #19: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.01 sec
+      Start 21: aarch64-rpi4b-smp-mat-sdcard-test-qemu
+12/30 Test #21: aarch64-rpi4b-smp-mat-sdcard-test-qemu .............   Passed    0.53 sec
+      Start 20: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-remove
+13/30 Test #20: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.01 sec
+      Start 23: aarch64-rpi4b-smp-mat-test-qemu
+14/30 Test #23: aarch64-rpi4b-smp-mat-test-qemu ....................   Passed    0.26 sec
+      Start 25: aarch64-rpi4b-smp-shapes-test-qemu
+15/30 Test #25: aarch64-rpi4b-smp-shapes-test-qemu .................   Passed   30.11 sec
+      Start 27: aarch64-rpi4b-smp_mem_inter_test-qemu
+16/30 Test #27: aarch64-rpi4b-smp_mem_inter_test-qemu ..............   Passed    3.15 sec
+      Start 29: aarch64-rpi4b-smp_mem_test-qemu
+17/30 Test #29: aarch64-rpi4b-smp_mem_test-qemu ....................   Passed    2.09 sec
+      Start 31: aarch64-rpi4b-usb_big_test-qemu
+18/30 Test #31: aarch64-rpi4b-usb_big_test-qemu ....................***Skipped   0.08 sec
+      Start 33: aarch64-rpi4b-smp_test0-qemu
+19/30 Test #33: aarch64-rpi4b-smp_test0-qemu .......................   Passed   10.09 sec
+      Start 35: aarch64-rpi4b-smp_test1-qemu
+20/30 Test #35: aarch64-rpi4b-smp_test1-qemu .......................   Passed   10.16 sec
+      Start 37: aarch64-rpi4b-smp_test2-qemu
+21/30 Test #37: aarch64-rpi4b-smp_test2-qemu .......................   Passed    0.61 sec
+      Start 39: aarch64-rpi4b-smp_test3-qemu
+22/30 Test #39: aarch64-rpi4b-smp_test3-qemu .......................   Passed   10.15 sec
+      Start 41: aarch64-rpi4b-smp_test4-qemu
+23/30 Test #41: aarch64-rpi4b-smp_test4-qemu .......................   Passed   10.17 sec
+      Start 43: aarch64-rpi4b-smp-num-test-qemu-sd-make
+24/30 Test #43: aarch64-rpi4b-smp-num-test-qemu-sd-make ............   Passed    0.02 sec
+      Start 45: aarch64-rpi4b-smp-num-test-qemu
+25/30 Test #45: aarch64-rpi4b-smp-num-test-qemu ....................   Passed   60.76 sec
+      Start 44: aarch64-rpi4b-smp-num-test-qemu-sd-remove
+26/30 Test #44: aarch64-rpi4b-smp-num-test-qemu-sd-remove ..........   Passed    0.00 sec
+      Start 47: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make
+27/30 Test #47: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make .......   Passed    0.01 sec
+      Start 49: aarch64-rpi4b-smp-pipeline-test-qemu
+28/30 Test #49: aarch64-rpi4b-smp-pipeline-test-qemu ...............   Passed   30.69 sec
+      Start 48: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove
+29/30 Test #48: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove .....   Passed    0.01 sec
+      Start 51: aarch64-rpi4b-smp-pro-cons-test-qemu
+30/30 Test #51: aarch64-rpi4b-smp-pro-cons-test-qemu ...............   Passed    4.51 sec
+
+97% tests passed, 1 tests failed out of 30
+
+Label Time Summary:
+qemu    = 243.73 sec*proc (30 tests)
+
+Total Test time (real) = 243.74 sec
+
+The following tests did not run:
+	  5 - aarch64-rpi4b-eth-net-qemu (Skipped)
+	  7 - aarch64-rpi4b-eth-tcp-server-qemu (Skipped)
+	 31 - aarch64-rpi4b-usb_big_test-qemu (Skipped)
+
+The following tests FAILED:
+	  3 - aarch64-rpi4b-cmsis-os-validator-qemu (Failed)    qemu
+Errors while running CTest

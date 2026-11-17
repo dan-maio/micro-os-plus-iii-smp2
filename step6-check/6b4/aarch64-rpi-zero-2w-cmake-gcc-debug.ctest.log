@@ -1,0 +1,10 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug
+    Start 29: aarch64-rpi-zero-2w-smp_test2-qemu
+1/1 Test #29: aarch64-rpi-zero-2w-smp_test2-qemu ...   Passed    0.58 sec
+
+100% tests passed out of 1
+
+Label Time Summary:
+qemu    =   0.58 sec*proc (1 test)
+
+Total Test time (real) =   0.59 sec

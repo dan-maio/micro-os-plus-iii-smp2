@@ -1,0 +1,99 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-release
+      Start  1: aarch64-rpi-zero-2w-clock-test-qemu
+ 1/26 Test  #1: aarch64-rpi-zero-2w-clock-test-qemu ......................   Passed    5.30 sec
+      Start  3: aarch64-rpi-zero-2w-cmsis-os-validator-qemu
+ 2/26 Test  #3: aarch64-rpi-zero-2w-cmsis-os-validator-qemu ..............   Passed   11.54 sec
+      Start  5: aarch64-rpi-zero-2w-mutex-stress-qemu
+ 3/26 Test  #5: aarch64-rpi-zero-2w-mutex-stress-qemu ....................   Passed   35.20 sec
+      Start  7: aarch64-rpi-zero-2w-rtos-apis-qemu
+ 4/26 Test  #7: aarch64-rpi-zero-2w-rtos-apis-qemu .......................   Passed    7.20 sec
+      Start  9: aarch64-rpi-zero-2w-sd_test-qemu-sd-make
+ 5/26 Test  #9: aarch64-rpi-zero-2w-sd_test-qemu-sd-make .................   Passed    0.02 sec
+      Start 11: aarch64-rpi-zero-2w-sd_test-qemu
+ 6/26 Test #11: aarch64-rpi-zero-2w-sd_test-qemu .........................   Passed    0.65 sec
+      Start 10: aarch64-rpi-zero-2w-sd_test-qemu-sd-remove
+ 7/26 Test #10: aarch64-rpi-zero-2w-sd_test-qemu-sd-remove ...............   Passed    0.00 sec
+      Start 13: aarch64-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make
+ 8/26 Test #13: aarch64-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.01 sec
+      Start 15: aarch64-rpi-zero-2w-smp-mat-sdcard-test-qemu
+ 9/26 Test #15: aarch64-rpi-zero-2w-smp-mat-sdcard-test-qemu .............   Passed    0.52 sec
+      Start 14: aarch64-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove
+10/26 Test #14: aarch64-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.00 sec
+      Start 17: aarch64-rpi-zero-2w-smp-mat-test-qemu
+11/26 Test #17: aarch64-rpi-zero-2w-smp-mat-test-qemu ....................   Passed    0.23 sec
+      Start 19: aarch64-rpi-zero-2w-usb_test-qemu
+12/26 Test #19: aarch64-rpi-zero-2w-usb_test-qemu ........................***Skipped   0.47 sec
+      Start 21: aarch64-rpi-zero-2w-wifi-net-qemu
+13/26 Test #21: aarch64-rpi-zero-2w-wifi-net-qemu ........................***Skipped   0.08 sec
+      Start 23: aarch64-rpi-zero-2w-wifi-tcp-server-qemu
+14/26 Test #23: aarch64-rpi-zero-2w-wifi-tcp-server-qemu .................***Skipped   0.08 sec
+      Start 25: aarch64-rpi-zero-2w-smp_test0-qemu
+15/26 Test #25: aarch64-rpi-zero-2w-smp_test0-qemu .......................   Passed   10.08 sec
+      Start 27: aarch64-rpi-zero-2w-smp_test1-qemu
+16/26 Test #27: aarch64-rpi-zero-2w-smp_test1-qemu .......................   Passed   10.16 sec
+      Start 29: aarch64-rpi-zero-2w-smp_test2-qemu
+17/26 Test #29: aarch64-rpi-zero-2w-smp_test2-qemu .......................   Passed    0.62 sec
+      Start 31: aarch64-rpi-zero-2w-smp_test3-qemu
+18/26 Test #31: aarch64-rpi-zero-2w-smp_test3-qemu .......................   Passed   10.16 sec
+      Start 33: aarch64-rpi-zero-2w-smp_test4-qemu
+19/26 Test #33: aarch64-rpi-zero-2w-smp_test4-qemu .......................   Passed   10.16 sec
+      Start 35: aarch64-rpi-zero-2w-smp-num-test-qemu-sd-make
+20/26 Test #35: aarch64-rpi-zero-2w-smp-num-test-qemu-sd-make ............   Passed    0.03 sec
+      Start 37: aarch64-rpi-zero-2w-smp-num-test-qemu
+21/26 Test #37: aarch64-rpi-zero-2w-smp-num-test-qemu ....................   Passed   60.78 sec
+      Start 36: aarch64-rpi-zero-2w-smp-num-test-qemu-sd-remove
+22/26 Test #36: aarch64-rpi-zero-2w-smp-num-test-qemu-sd-remove ..........   Passed    0.00 sec
+      Start 39: aarch64-rpi-zero-2w-smp-pipeline-test-qemu-sd-make
+23/26 Test #39: aarch64-rpi-zero-2w-smp-pipeline-test-qemu-sd-make .......   Passed    0.01 sec
+      Start 41: aarch64-rpi-zero-2w-smp-pipeline-test-qemu
+24/26 Test #41: aarch64-rpi-zero-2w-smp-pipeline-test-qemu ...............***Failed  Required regular expression not found. Regex=[RESULT: PASS
+]397.09 sec
+os_startup_initialize_free_store(0x3f6000,67108864)
+first_fit_top(0x3f6000,67108864) @0x131e30 app-heap
+out_of_memory_handler(0x87c80) @0x131e30 app-heap
+estd::pmr::set_default_resource(0x131e30) 
+rtos::memory::set_default_resource(0x131e30) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x131dd0 malloc
+scheduler::start() 
+
++== RPi Zero 2W µOS++ SMP PIPELINE TEST (AArch64) ==+
+13 threads, 4 cores, shared queues, SD-card persistence & yield() stress
+
+Initialising SD card...
+  SD card ready: 8388608 sectors (~4096 MiB)
+  flatfs volume formatted, pipe.dat ready
+join: c1=3 c2=3 c3=3 (0 ms)
+13 pipeline threads successfully started!
+running pipeline for 30000 ms ...
+[t= 1205 ms] pipe: in_q= 0 sd_q= 0 | prod=111 proc=111 sd=109 aud=108 | yields: P=0 W=6749 C=27 S=60 A=108
+[t= 2207 ms] pipe: in_q= 1 sd_q= 0 | prod=221 proc=220 sd=217 aud=217 | yields: P=0 W=13463 C=54 S=116 A=217
+[t= 3208 ms] pipe: in_q= 0 sd_q= 2 | prod=330 proc=330 sd=328 aud=328 | yields: P=0 W=20209 C=82 S=176 A=328
+[t= 4208 ms] pipe: in_q= 0 sd_q= 1 | prod=439 proc=439 sd=436 aud=436 | yields: P=0 W=26864 C=108 S=233 A=436
+[t= 5208 ms] pipe: in_q= 0 sd_q= 2 | prod=548 proc=548 sd=546 aud=543 | yields: P=0 W=33467 C=135 S=292 A=543
+[t= 6208 ms] pipe: in_q= 0 sd_q= 2 | prod=658 proc=658 sd=656 aud=654 | yields: P=0 W=40152 C=163 S=350 A=654
+[t= 7208 ms] pipe: in_q= 0 sd_q= 2 | prod=767 proc=767 sd=763 aud=763 | yields: P=0 W=46934 C=191 S=407 A=763
+[t= 8211 ms] pipe: in_q= 0 sd_q= 0 | prod=875 proc=875 sd=874 aud=872 | yields: P=0 W=53654 C=217 S=466 A=872
+[t= 9213 ms] pipe: in_q= 0 sd_q= 0 | prod=986 proc=986 sd=982 aud=982 | yields: P=0 W=60296 C=246 S=523 A=982
+qemu-system-aarch64: terminating on signal 15 from pid 829161 (/usr/bin/bash)
+
+      Start 40: aarch64-rpi-zero-2w-smp-pipeline-test-qemu-sd-remove
+25/26 Test #40: aarch64-rpi-zero-2w-smp-pipeline-test-qemu-sd-remove .....   Passed    0.00 sec
+      Start 43: aarch64-rpi-zero-2w-smp-pro-cons-test-qemu
+26/26 Test #43: aarch64-rpi-zero-2w-smp-pro-cons-test-qemu ...............   Passed    4.49 sec
+
+96% tests passed, 1 tests failed out of 26
+
+Label Time Summary:
+qemu    = 564.88 sec*proc (26 tests)
+
+Total Test time (real) = 564.90 sec
+
+The following tests did not run:
+	 19 - aarch64-rpi-zero-2w-usb_test-qemu (Skipped)
+	 21 - aarch64-rpi-zero-2w-wifi-net-qemu (Skipped)
+	 23 - aarch64-rpi-zero-2w-wifi-tcp-server-qemu (Skipped)
+
+The following tests FAILED:
+	 41 - aarch64-rpi-zero-2w-smp-pipeline-test-qemu (Failed) qemu
+Errors while running CTest
