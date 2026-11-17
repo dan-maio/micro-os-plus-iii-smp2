@@ -139,6 +139,56 @@ remote: kernel `43ef532f` (2026-10-08), `-cortexm` `687e975`,
   `native-actions` `link-deps` and the native `dependencies-folders.cmake`
   all use `@micro-os-plus/micro-os-plus-iii-posix-arch`.
 
+### 1.2 Re-review after step 5 (2026-11-17, evening)
+
+Read on GitHub (`gh api`, nothing pushed): the micro-os-plus organisation,
+and `micro-os-plus-iii`, `-cortexm`, `-posix-arch`, `-aarch32`, `-aarch64`
+on `xpack-development`.
+
+**Unchanged since §1.1:** the kernel (`43ef532f`), `-cortexm` (`687e975`)
+and `-posix-arch` (`49282e6`).
+
+**New facts:**
+
+- `micro-os-plus-iii-aarch32` and `-aarch64` exist upstream, published at
+  `0.1.0`, and are empty (package.json, README, LICENSE, ignore files). The
+  names are reserved. Our local `v0.1.0-pre.1` sorts *before* `0.1.0`; a
+  publication would need `0.2.0` or later.
+- The organisation also has a newer component set (`architecture-*-xpack`,
+  `devices-qemu-*-xpack`, `devices-raspberry-pi-xpack`, `startup-xpack`,
+  `semihosting-xpack`, `micro-test-plus-xpack`), with headers under
+  `include/micro-os-plus/` and its own `tests/` per package. It is not used
+  by `micro-os-plus-iii`; it is the newer edition's.
+
+**How IIIe configures, builds and tests (unchanged), and where we stand:**
+
+| Upstream IIIe | Here after step 5 |
+|---|---|
+| One xpm test project, the kernel's `tests/`; every configuration inherits hidden blocks (`*-actions`, `cmake-actions`, `*-dependencies`, toolchain, `qemu-arm-`/`openocd-dependencies`) | same, plus the hidden blocks `aarch32-*`, `aarch64-*`, `arm-cmsis-core-dependencies` in the same shape |
+| The port is declared (`cortexm-dependencies`: `github:…#v1.1.0`, `"local": "link"`) | linked, not declared, until publication (decision in step 2) |
+| The `test` action is `ctest` (`commandCMakePerformTests`); no per-test actions | `ctest -LE hwd`, plus many per-test actions (`test-sd_test-qemu`, …) that only repeat `ctest -R` |
+| Tests come from `tests/sources/` (rtos-apis, mutex-stress, cmsis-os-validator, blinky, instrumentation); each platform's `CMakeLists.txt` builds and registers them | the same suites, plus the SMP/board tests from the ports' `test/<board>/`, built by the port's builder |
+| **The ports carry no tests** (`-cortexm`: `test/.gitkeep`; `-posix-arch`: two small `trace-*` programs, no project) | the ports carry their board tests (step 6 planned a `tests/` project in every package) |
+| A hardware board's device code is in its platform (`platforms/nucleo-f411re/device/`: CMSIS device header, linker scripts, vectors, start-up); chips come from xPacks (`@xpacks/arm-cmsis`, `@xpack-3rd-party/raspberrypi-pico-sdk`); a TODO moves the STM32 files to `devices-stm32f4-extras` | device packages (step 5); linker scripts in the platform (step 4) |
+| Hardware test: CTest runs OpenOCD directly (`openocd -f interface/… -f target/… -c "program … verify" -c "arm semihosting enable" -c reset`) | `hw.sh` through bash (step 7) |
+| FatFs: `@xpacks/chan-fatfs` 0.13.1, through the POSIX I/O integration (rtos-apis' `test-chan-fatfs`) | our SD tests use FatFs R0.15a directly (step 5c open) |
+
+**What this changes in the plan:**
+
+1. **Step 6 as written goes beyond IIIe.** "Each package tests itself"
+   (a `tests/` project per port and device package) is the newer edition's
+   pattern; IIIe keeps every test in the kernel's `tests/`. The IIIe way
+   for the SMP and board tests is the kernel's `tests/`: portable SMP tests
+   in `tests/sources/`, board-specific ones registered by the board's
+   platform.
+2. **The per-test xpm actions** are not upstream's; `ctest -R <test>`
+   does the same. They can go.
+3. **Step 7 matches upstream** (OpenOCD from CTest); the multi-core boards
+   need a Tcl script where the NUCLEO needs only `program … reset`.
+4. **AArch version numbers:** above upstream's `0.1.0` when publishing.
+5. **FatFs:** upstream's own use is the POSIX I/O integration, which points
+   to the "full upstream model" for 5c.
+
 ## 2. What is the same, and what differs
 
 **The same.** The outer mechanism: xpm configurations in

@@ -338,6 +338,121 @@ Ubuntu x64 and arm64, macOS Intel and Apple Silicon, and Windows.</li>
 <code>dependencies-folders.cmake</code> all use
 <code>@micro-os-plus/micro-os-plus-iii-posix-arch</code>.</li>
 </ul>
+<h3 id="re-review-after-step-5-2026-11-17-evening">1.2 Re-review after
+step 5 (2026-11-17, evening)</h3>
+<p>Read on GitHub (<code>gh api</code>, nothing pushed): the
+micro-os-plus organisation, and <code>micro-os-plus-iii</code>,
+<code>-cortexm</code>, <code>-posix-arch</code>, <code>-aarch32</code>,
+<code>-aarch64</code> on <code>xpack-development</code>.</p>
+<p><strong>Unchanged since §1.1:</strong> the kernel
+(<code>43ef532f</code>), <code>-cortexm</code> (<code>687e975</code>)
+and <code>-posix-arch</code> (<code>49282e6</code>).</p>
+<p><strong>New facts:</strong></p>
+<ul>
+<li><code>micro-os-plus-iii-aarch32</code> and <code>-aarch64</code>
+exist upstream, published at <code>0.1.0</code>, and are empty
+(package.json, README, LICENSE, ignore files). The names are reserved.
+Our local <code>v0.1.0-pre.1</code> sorts <em>before</em>
+<code>0.1.0</code>; a publication would need <code>0.2.0</code> or
+later.</li>
+<li>The organisation also has a newer component set
+(<code>architecture-*-xpack</code>, <code>devices-qemu-*-xpack</code>,
+<code>devices-raspberry-pi-xpack</code>, <code>startup-xpack</code>,
+<code>semihosting-xpack</code>, <code>micro-test-plus-xpack</code>),
+with headers under <code>include/micro-os-plus/</code> and its own
+<code>tests/</code> per package. It is not used by
+<code>micro-os-plus-iii</code>; it is the newer edition’s.</li>
+</ul>
+<p><strong>How IIIe configures, builds and tests (unchanged), and where
+we stand:</strong></p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Upstream IIIe</th>
+<th>Here after step 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One xpm test project, the kernel’s <code>tests/</code>; every
+configuration inherits hidden blocks (<code>*-actions</code>,
+<code>cmake-actions</code>, <code>*-dependencies</code>, toolchain,
+<code>qemu-arm-</code>/<code>openocd-dependencies</code>)</td>
+<td>same, plus the hidden blocks <code>aarch32-*</code>,
+<code>aarch64-*</code>, <code>arm-cmsis-core-dependencies</code> in the
+same shape</td>
+</tr>
+<tr>
+<td>The port is declared (<code>cortexm-dependencies</code>:
+<code>github:…#v1.1.0</code>, <code>"local": "link"</code>)</td>
+<td>linked, not declared, until publication (decision in step 2)</td>
+</tr>
+<tr>
+<td>The <code>test</code> action is <code>ctest</code>
+(<code>commandCMakePerformTests</code>); no per-test actions</td>
+<td><code>ctest -LE hwd</code>, plus many per-test actions
+(<code>test-sd_test-qemu</code>, …) that only repeat
+<code>ctest -R</code></td>
+</tr>
+<tr>
+<td>Tests come from <code>tests/sources/</code> (rtos-apis,
+mutex-stress, cmsis-os-validator, blinky, instrumentation); each
+platform’s <code>CMakeLists.txt</code> builds and registers them</td>
+<td>the same suites, plus the SMP/board tests from the ports’
+<code>test/&lt;board&gt;/</code>, built by the port’s builder</td>
+</tr>
+<tr>
+<td><strong>The ports carry no tests</strong> (<code>-cortexm</code>:
+<code>test/.gitkeep</code>; <code>-posix-arch</code>: two small
+<code>trace-*</code> programs, no project)</td>
+<td>the ports carry their board tests (step 6 planned a
+<code>tests/</code> project in every package)</td>
+</tr>
+<tr>
+<td>A hardware board’s device code is in its platform
+(<code>platforms/nucleo-f411re/device/</code>: CMSIS device header,
+linker scripts, vectors, start-up); chips come from xPacks
+(<code>@xpacks/arm-cmsis</code>,
+<code>@xpack-3rd-party/raspberrypi-pico-sdk</code>); a TODO moves the
+STM32 files to <code>devices-stm32f4-extras</code></td>
+<td>device packages (step 5); linker scripts in the platform (step
+4)</td>
+</tr>
+<tr>
+<td>Hardware test: CTest runs OpenOCD directly
+(<code>openocd -f interface/… -f target/… -c "program … verify" -c "arm semihosting enable" -c reset</code>)</td>
+<td><code>hw.sh</code> through bash (step 7)</td>
+</tr>
+<tr>
+<td>FatFs: <code>@xpacks/chan-fatfs</code> 0.13.1, through the POSIX I/O
+integration (rtos-apis’ <code>test-chan-fatfs</code>)</td>
+<td>our SD tests use FatFs R0.15a directly (step 5c open)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>What this changes in the plan:</strong></p>
+<ol type="1">
+<li><strong>Step 6 as written goes beyond IIIe.</strong> “Each package
+tests itself” (a <code>tests/</code> project per port and device
+package) is the newer edition’s pattern; IIIe keeps every test in the
+kernel’s <code>tests/</code>. The IIIe way for the SMP and board tests
+is the kernel’s <code>tests/</code>: portable SMP tests in
+<code>tests/sources/</code>, board-specific ones registered by the
+board’s platform.</li>
+<li><strong>The per-test xpm actions</strong> are not upstream’s;
+<code>ctest -R &lt;test&gt;</code> does the same. They can go.</li>
+<li><strong>Step 7 matches upstream</strong> (OpenOCD from CTest); the
+multi-core boards need a Tcl script where the NUCLEO needs only
+<code>program … reset</code>.</li>
+<li><strong>AArch version numbers:</strong> above upstream’s
+<code>0.1.0</code> when publishing.</li>
+<li><strong>FatFs:</strong> upstream’s own use is the POSIX I/O
+integration, which points to the “full upstream model” for 5c.</li>
+</ol>
 <h2 id="what-is-the-same-and-what-differs">2. What is the same, and what
 differs</h2>
 <p><strong>The same.</strong> The outer mechanism: xpm configurations in
