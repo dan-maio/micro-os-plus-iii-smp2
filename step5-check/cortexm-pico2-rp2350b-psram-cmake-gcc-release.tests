@@ -1,0 +1,3 @@
+cortexm-pico2-rp2350b-psram-fp-switch-qemu Passed
+cortexm-pico2-rp2350b-psram-sc-test-ko-qemu Passed
+cortexm-pico2-rp2350b-psram-smp-test1-qemu Passed

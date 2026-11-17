@@ -13,3 +13,6 @@
 # local only. compare.py and compare-all.txt are the record.
 /step4-check/before/
 /step4-check/*.ninja-cmds.after
+!/step5-check/
+/step5-check/before/
+/step5-check/*.ninja-cmds.after
