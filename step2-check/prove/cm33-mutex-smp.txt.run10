@@ -1,0 +1,81 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/wt-smp/micro-os-plus-iii/tests/build/2xcortex-m33-cmake-gcc-debug
+    Start 2: 2xcortex-m33-mutex-stress-test
+1/1 Test #2: 2xcortex-m33-mutex-stress-test ...***Failed   28.17 sec
+Invalid read at addr 0x10000000, size 4, region '(null)', reason: rejected
+Invalid read at addr 0x10000004, size 4, region '(null)', reason: rejected
+Invalid read at addr 0x10000000, size 4, region '(null)', reason: rejected
+Invalid read at addr 0x10000004, size 4, region '(null)', reason: rejected
+
+Hardware initialised
+Main stack 0x80fff400-0x81000000
+os_startup_initialize_free_store(0x80004c64,16754588)
+first_fit_top(0x80004c64,16754588) @0x80000f5c app-heap
+out_of_memory_handler(0x10019a09) @0x80000f5c app-heap
+estd::pmr::set_default_resource(0x80000f5c) 
+rtos::memory::set_default_resource(0x80000f5c) 
+os_run_init_array()
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x80000ed4 malloc
+::malloc(1088)=0x80ffefc0
+Static objects constructed
+
+µOS++ IIIe version 7.0.1
+Copyright (c) 2007-2023 Liviu Ionescu
+Scheduler: µOS++ Cortex-M33 SMP (SSE-200), 2 cores, 1ms tick
+Scheduler frequency: 1000 ticks/sec
+Default stack size: 2048 bytes
+Interrupts stack size: 3072 bytes
+Built with GCC 15.2.1 20251203, with exceptions
+
+scheduler::start() 
+
+main(argc=1, argv=[""]);
+::malloc(1024)=0x80ffd278
+
+Mutex stress & uniformity test
+Built with GCC 15.2.1 20251203
+Seed 1467201464
+mutex_test @0x80ffee00 t0
+mutex_test @0x80ffed68 t1
+mutex_test @0x80ffecd0 t2
+mutex_test @0x80ffec38 t3
+mutex_test @0x80ffeba0 t4
+mutex_test @0x80ffeb08 t5
+mutex_test @0x80ffea70 t6
+mutex_test @0x80ffe9d8 t7
+mutex_test @0x80ffe940 t8
+mutex_test @0x80ffe8a8 t9
+periodic @0x80ffe828
+!!!!![  5s] t0:34   t1:39   t2:35   t3:37   t4:41   t5:40   t6:41   t7:38   t8:36   t9:41   sum=382, avg=38, sigma=2, delta in [-4,3] [-10%,8%]
+!!!!![ 10s] t0:68   t1:81   t2:78   t3:77   t4:78   t5:83   t6:77   t7:73   t8:73   t9:81   sum=769, avg=77, sigma=4, delta in [-9,6] [-11%,8%]
+!!!!![ 15s] t0:108  t1:117  t2:119  t3:118  t4:112  t5:119  t6:113  t7:112  t8:116  t9:116  sum=1150, avg=115, sigma=3, delta in [-7,4] [-5%,3%]
+!!!!![ 20s] t0:150  t1:157  t2:157  t3:158  t4:152  t5:159  t6:156  t7:156  t8:154  t9:159  sum=1558, avg=156, sigma=2, delta in [-6,3] [-3%,2%]
+!!!!![ 25s] t0:188  t1:198  t2:193  t3:197  t4:190  t5:198  t6:193  t7:194  t8:196  t9:196  sum=1943, avg=194, sigma=3, delta in [-6,4] [-2%,2%]
+!!!!![ 30s] t0:227  t1:239  t2:233  t3:239  t4:230  t5:238  t6:235  t7:230  t8:233  t9:238  sum=2342, avg=234, sigma=4, delta in [-7,5] [-2%,2%]
+!!!!![ 35s] t0:265  t1:280  t2:270  t3:280  t4:272  t5:275  t6:273  t7:269  t8:273  t9:274  sum=2731, avg=273, sigma=4, delta in [-8,7] [-2%,3%]
+__cxa_pure_virtual
+abort(), exiting...
+_Exit()
+
+Memory 'app-heap' @0x80000f5c: 
+	total: 16754588 bytes, 
+	allocated: 22980 bytes in 14 chunk(s), 
+	freed: 16731608 bytes in 2 chunk(s), 
+	max: 31204 bytes, 
+	calls: 18 allocs, 4 deallocs
+Main thread stack: 2708/3996 bytes used
+Interrupts stack: 1224/3072 bytes used
+
+Hasta la Vista!
+
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+qemu    =  28.17 sec*proc (1 test)
+
+Total Test time (real) =  28.17 sec
+
+The following tests FAILED:
+	  2 - 2xcortex-m33-mutex-stress-test (Failed)           qemu
+Errors while running CTest

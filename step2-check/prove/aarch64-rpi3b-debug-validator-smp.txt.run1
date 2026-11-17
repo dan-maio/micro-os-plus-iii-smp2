@@ -1,0 +1,24 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/wt-smp/micro-os-plus-iii/tests/build/aarch64-rpi3b-cmake-gcc-debug
+    Start 3: aarch64-rpi3b-cmsis-os-validator-qemu
+1/1 Test #3: aarch64-rpi3b-cmsis-os-validator-qemu ...***Failed   11.63 sec
+cmsis-os-validator       
+QEMU 9.2.4 monitor - type 'help' for more information
+(qemu) 
+RESULT: FAIL
+
+RESULT: FAIL
+FAIL  (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/wt-smp/micro-os-plus-iii/tests/build/aarch64-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/.qemu-logs/cmsis-os-validator.log)
+
+qemu suite: 0 passed, 0 skipped, 1 failed
+
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+qemu    =  11.63 sec*proc (1 test)
+
+Total Test time (real) =  11.64 sec
+
+The following tests FAILED:
+	  3 - aarch64-rpi3b-cmsis-os-validator-qemu (Failed)    qemu
+Errors while running CTest

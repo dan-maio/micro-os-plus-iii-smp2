@@ -1,0 +1,13 @@
+run 1 FAIL
+run 2 PASS
+run 3 PASS
+run 4 PASS
+run 5 PASS
+run 6 PASS
+run 7 PASS
+run 8 PASS
+run 9 PASS
+run 10 PASS
+run 11 PASS
+run 12 PASS
+DONE pass=11 fail=1

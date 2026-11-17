@@ -27,6 +27,20 @@ test alone as "flaky, as in the baseline".
 `smp` branch (built from git worktrees under `wt-smp/`): **5 failures in 12 runs**
 of the release build. The baseline's two passes were luck.
 
+`2xcortex-m33-mutex-stress-test`, **debug** build: fails now and then, at a random
+point after 20-35 s. Seen as `!assertion "!scheduler::locked ()" failed` in
+`os::rtos::mutex::lock()` (src/rtos/os-mutex.cpp:1071) and as `__cxa_pure_virtual`,
+then `abort()`. Found in the step 2 check; measured on the unchanged `smp` branch
+(worktrees under `wt-smp/`): **1 failure in 12 runs**; the step 2 build: 1 in 13.
+The compile commands and the link of both builds are identical. A real SMP race in
+the kernel, to be investigated separately.
+
+`cmsis-os-validator-qemu` on the other AArch boards (aarch32-rpi3b, aarch64-rpi3b,
+aarch64-rpi-zero-2w): `RESULT: FAIL` now and then, like on the Pi 4 B. Found in the
+step 2 check; 12 runs of each on `smp` and on step 2: aarch64-rpi3b debug failed 1
+in 12 on both, the other two 0 in 12 on both. Compile commands identical to `smp`.
+Details: `step2-check/prove/`.
+
 ## Setup fixes made before the baseline (no repository change)
 
 - `aarch64-rpi4b-cmake-gcc-debug/release` had never been `xpm install --config`'d
