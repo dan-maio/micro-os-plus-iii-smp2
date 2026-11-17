@@ -1,0 +1,648 @@
+> cmake -S . -B build/pico2-1cpu-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=pico2-1cpu --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.2.0-pre.1
+-- Platform name: pico2-1cpu
+-- Build type: MinSizeRel
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding 'sources/fp-switch'...
+-- > test-fp-switch-interface
+-- + -I include
+-- + src/main.cpp
+-- > test::fp-switch -> test-fp-switch-interface
+-- Adding 'build/pico2-1cpu-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm'...
+-- > micro-os-plus::cortexm-qemu-m0 -> micro-os-plus-iii-cortexm-qemu-m0-interface
+-- > micro-os-plus::cortexm-qemu-m3 -> micro-os-plus-iii-cortexm-qemu-m3-interface
+-- > micro-os-plus::cortexm-qemu-m4f -> micro-os-plus-iii-cortexm-qemu-m4f-interface
+-- > micro-os-plus::cortexm-qemu-m7 -> micro-os-plus-iii-cortexm-qemu-m7-interface
+-- > micro-os-plus::cortexm-qemu-m33 -> micro-os-plus-iii-cortexm-qemu-m33-interface
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board pico2
+-- Adding 'device-qemu-cortexm'...
+-- Processing 'tests/device-qemu-cortexm'...
+-- > device-qemu-cortexm-interface
+-- + -I include
+-- + src/system-cortexm.c
+-- + src/initialize-hardware.c
+-- + src/vectors-cortexm.c
+-- + src/exception-handlers.cpp
+-- + -D MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M33
+-- + xpacks::arm-cmsis
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/mem-mps2-an505.ld
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/sections-flash.ld
+-- > micro-os-plus::device -> device-qemu-cortexm-interface
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Adding 'build/pico2-1cpu-cmake-gcc-release/xpacks/@xpacks/arm-cmsis'...
+-- Processing xPack @xpacks/arm-cmsis@4.5.0-7...
+-- > xpacks-arm-cmsis-interface
+-- + -I CMSIS/Include
+-- + -I CMSIS/Driver/Include
+-- > xpacks::arm-cmsis -> xpacks-arm-cmsis-interface
+-- Adding 'build/pico2-1cpu-cmake-gcc-release/xpacks/@xpack-3rd-party/arm-cmsis-core'...
+-- Processing xPack @xpack-3rd-party/arm-cmsis-core@5.4.0-6...
+-- > xpack-3rd-party-arm-cmsis-core-m-interface
+-- + -I CMSIS/Core/Include
+-- + -D __PROGRAM_START
+-- > xpack-3rd-party::arm-cmsis-core-m -> xpack-3rd-party-arm-cmsis-core-m-interface
+-- > xpack-3rd-party-arm-cmsis-core-a-interface
+-- + -I CMSIS/Core_A/Include
+-- + -D __PROGRAM_START
+-- > xpack-3rd-party::arm-cmsis-core-a -> xpack-3rd-party-arm-cmsis-core-a-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/pico2-1cpu'...
+-- Cortex-M pico2-1cpu: harness suites registered (pico2-1cpu)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release
+> cmake -S . -B build/pico2-1cpu-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=pico2-1cpu
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board pico2
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Cortex-M pico2-1cpu: harness suites registered (pico2-1cpu)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release
+> cmake --build build/pico2-1cpu-cmake-gcc-release
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+> cd build/pico2-1cpu-cmake-gcc-release && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: pico2-1cpu-rtos-apis-test
+
+1: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an505" "--cpu" "cortex-m33" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/platform-bin/rtos-apis-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+1: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/platform-bin
+1: Test timeout computed to be: 1200
+1: Invalid read at addr 0x10000000, size 4, region '(null)', reason: rejected
+1: Invalid read at addr 0x10000004, size 4, region '(null)', reason: rejected
+1: 
+1: µOS++ RTOS simple APIs test
+1: Built with GCC 15.2.1 20251203
+1: 
+1: Test C++ API - started
+1: 
+1: Threads:
+1: main, 29% (1176/3996), run, 11, 130091 
+1: idle, 5% (120/2044), rdy, 8, 67036 
+1: 
+1: Test C++ API - Memory managers
+1: 
+1: Test C++ API - Threads
+1: > func() on thread -
+1: > func() on thread th2
+1: > func() on thread th3
+1: > func() on thread th4
+1: > func() on thread th5
+1: > func() on thread th6
+1: > func() on thread th7
+1: > func() on thread th8
+1: > func() on thread th9
+1: > func() on thread th10
+1: > func() on thread th11
+1: > func() on thread -
+1: > func() on thread ath2
+1: > func() on thread -
+1: > func() on thread sth2
+1: 
+1: Test C++ API - Thread stack
+1: 
+1: Test C++ API - Thread event flags
+1: 
+1: Test C++ API - Message queues
+1: 
+1: Test C++ API - Memory pools
+1: 
+1: Test C++ API - Condition variables
+1: 
+1: Test C++ API - Event flags
+1: 
+1: Test C++ API - Mutexes
+1: 0x80ffdb00
+1: 0x80ffdb00
+1: 0x80ffdb00
+1: 0x80ffdb00
+1: 0x80ffdb00
+1: 0x0
+1: 
+1: Test C++ API - Semaphores
+1: 
+1: Test C++ API - Timers
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: 
+1: Test C++ API - done
+1: errno=0
+1: 
+1: Test C API - started
+1: 
+1: Threads:
+1: main, 29% (1176/3996), run, 115, 623242 
+1: idle, 5% (120/2044), rdy, 86, 463704 
+1: 
+1: Test C API - Scheduler
+1: 
+1: Test C API - Clocks
+1: 
+1: Test C API - Threads
+1: > func
+1: > func
+1: > func
+1: > func
+1: 
+1: Test C API - Thread stack
+1: 
+1: Test C API - Thread event flags
+1: 
+1: Test C API - Timers
+1: >> tmfunc
+1: >> tmfunc
+1: >> tmfunc
+1: >> tmfunc
+1: 
+1: Test C API - Mutexes
+1: 
+1: Test C API - Semaphores
+1: 
+1: Test C API - Memory pools
+1: 
+1: Test C API - Message queues
+1: 
+1: Test C API - Event flags
+1: 
+1: Test C API - Condition variables
+1: 
+1: Test C API - done
+1: errno=0
+1: 
+1: Test ISO C++ API - Threads
+1: task1()
+1: task2(0x80fff2a8)
+1: task3(0x80fff2a8)
+1: task4(7,xyz)
+1: 
+1: Test ISO C++ API - Mutexes
+1: 
+1: Test ISO C++ API - Condition variables
+1: 
+1: Test ISO C++ API - Chrono
+1: Systick_clock::now() = 102 ticks
+1: system_clock::now() = 102000 us
+1: high_resolution_clock::now() = 102429750 ns
+1: sleep_for<chrono::realtime_clock> (1s)
+1: sleep_for<chrono::realtime_clock> (1001ms)
+1: sleep_until (chrono::realtime_clock::now () + 1000ms)
+1: sleep_until (chrono::realtime_clock::now () + 1s)
+1: 
+1: Test ISO C++ API - Done
+1: errno=0
+1: 
+1: Test POSIX I/O - Block device partitions - C++ API
+1: 
+1: Test POSIX I/O - Block device locked - C++ API
+1: 
+1: Test POSIX I/O - Block device unlocked - C++ API
+1: 
+1: Test POSIX I/O - Block device - intermixed opens - C++ API
+1: errno=0
+1: 
+1: Chan FatFS - 512/512 fat12, step 0
+1: 
+1: test_diskio(0x80f7d9d8, 3, 0x80f6c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: 
+1: Chan FatFS - 512/512 fat12, step 1
+1: 
+1: test_diskio(0x80f7d9d8, 3, 0x80f6c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: 
+1: Chan FatFS - 512/512 fat12, step 2
+1: 
+1: test_diskio(0x80f7d9d8, 3, 0x80f6c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: 
+1: Chan FatFS - 512/512 fat12 mutex
+1: 
+1: test_diskio(0x80f7d9d8, 3, 0x80f6c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: errno=0
+1: done
+1/4 Test #1: pico2-1cpu-rtos-apis-test ............   Passed    5.72 sec
+test 2
+    Start 2: pico2-1cpu-mutex-stress-test
+
+2: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an505" "--cpu" "cortex-m33" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/platform-bin/mutex-stress-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+2: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/platform-bin
+2: Test timeout computed to be: 1200
+2: Invalid read at addr 0x10000000, size 4, region '(null)', reason: rejected
+2: Invalid read at addr 0x10000004, size 4, region '(null)', reason: rejected
+2: 
+2: Mutex stress & uniformity test
+2: Built with GCC 15.2.1 20251203
+2: Seed 673178079
+2: [  5s] t0:38   t1:43   t2:39   t3:42   t4:38   t5:39   t6:36   t7:41   t8:38   t9:42   sum=396, avg=40, sigma=2, delta in [-4,3] [-9%,8%]
+2: [ 10s] t0:79   t1:81   t2:78   t3:80   t4:80   t5:81   t6:73   t7:79   t8:73   t9:83   sum=787, avg=79, sigma=3, delta in [-6,4] [-7%,5%]
+2: [ 15s] t0:119  t1:114  t2:124  t3:116  t4:118  t5:121  t6:111  t7:119  t8:113  t9:122  sum=1177, avg=118, sigma=3, delta in [-7,6] [-5%,5%]
+2: [ 20s] t0:164  t1:150  t2:166  t3:154  t4:156  t5:163  t6:150  t7:159  t8:153  t9:159  sum=1574, avg=157, sigma=5, delta in [-7,9] [-3%,6%]
+2: [ 25s] t0:205  t1:185  t2:208  t3:190  t4:192  t5:206  t6:184  t7:196  t8:189  t9:196  sum=1951, avg=195, sigma=8, delta in [-11,13] [-5%,7%]
+2: [ 30s] t0:243  t1:226  t2:249  t3:230  t4:230  t5:238  t6:229  t7:245  t8:228  t9:231  sum=2349, avg=235, sigma=7, delta in [-9,14] [-3%,6%]
+2: [ 35s] t0:280  t1:265  t2:287  t3:271  t4:268  t5:274  t6:271  t7:282  t8:268  t9:271  sum=2737, avg=274, sigma=6, delta in [-9,13] [-2%,5%]
+2: Done.
+2/4 Test #2: pico2-1cpu-mutex-stress-test .........   Passed   28.15 sec
+test 3
+    Start 3: pico2-1cpu-fp-switch-test
+
+3: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an505" "--cpu" "cortex-m33" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/platform-bin/fp-switch-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+3: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/platform-bin
+3: Test timeout computed to be: 1200
+3: Invalid read at addr 0x10000000, size 4, region '(null)', reason: rejected
+3: Invalid read at addr 0x10000004, size 4, region '(null)', reason: rejected
+3: 
+3: FPU context switch test, 6 threads, 3000 ticks
+3: thread 0: 5862 rounds, 0 bad, 0 migrated
+3: thread 1: 8973 rounds, 0 bad, 0 migrated
+3: thread 2: 11996 rounds, 0 bad, 0 migrated
+3: thread 3: 2539 rounds, 0 bad, 0 migrated
+3: thread 4: 17916 rounds, 0 bad, 0 migrated
+3: thread 5: 20986 rounds, 0 bad, 0 migrated
+3: total: 68272 rounds, 0 bad, 0 migrated
+3/4 Test #3: pico2-1cpu-fp-switch-test ............   Passed    2.44 sec
+test 4
+    Start 4: pico2-1cpu-cmsis-os-validator-test
+
+4: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an505" "--cpu" "cortex-m33" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/platform-bin/cmsis-os-validator-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+4: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release/platform-bin
+4: Test timeout computed to be: 1200
+4: Invalid read at addr 0x10000000, size 4, region '(null)', reason: rejected
+4: Invalid read at addr 0x10000004, size 4, region '(null)', reason: rejected
+4: Read of unassigned area of PPB: offset 0x1000
+4: Read of unassigned area of PPB: offset 0x1000
+4: Read of unassigned area of PPB: offset 0x1000
+4: Write of unassigned area of PPB: offset 0x1000
+4: Read of unassigned area of PPB: offset 0x1004
+4: Read of unassigned area of PPB: offset 0x1004
+4: CMSIS-RTOS Test Suite   Nov 17 2026   10:24:38 
+4: 
+4: TEST 01: TC_ThreadCreate                  PASSED
+4: TEST 02: TC_ThreadMultiInstance           PASSED
+4: TEST 03: TC_ThreadTerminate               PASSED
+4: TEST 04: TC_ThreadRestart                 PASSED
+4: TEST 05: TC_ThreadGetId                   PASSED
+4: TEST 06: TC_ThreadPriority                PASSED
+4: TEST 07: TC_ThreadPriorityExec            PASSED
+4: TEST 08: TC_ThreadChainedCreate           PASSED
+4: TEST 09: TC_ThreadYield                   PASSED
+4: TEST 10: TC_ThreadParam                   PASSED
+4: TEST 11: TC_ThreadInterrupts              PASSED
+4: TEST 12: TC_GenWaitBasic                  PASSED
+4: TEST 13: TC_GenWaitInterrupts             PASSED
+4: TEST 14: TC_TimerOneShot                  PASSED
+4: TEST 15: TC_TimerPeriodic                 PASSED
+4: TEST 16: TC_TimerParam                    PASSED
+4: TEST 17: TC_TimerInterrupts               PASSED
+4: TEST 18: TC_SignalMainThread              PASSED
+4: TEST 19: TC_SignalChildThread             PASSED
+4: TEST 20: TC_SignalChildToParent           PASSED
+4: TEST 21: TC_SignalChildToChild            PASSED
+4: TEST 22: TC_SignalWaitTimeout             PASSED
+4: TEST 23: TC_SignalParam                   PASSED
+4: TEST 24: TC_SignalInterrupts              PASSED
+4: TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+4: TEST 26: TC_SemaphoreObtainCounting       PASSED
+4: TEST 27: TC_SemaphoreObtainBinary         PASSED
+4: TEST 28: TC_SemaphoreWaitForBinary        PASSED
+4: TEST 29: TC_SemaphoreWaitForCounting      PASSED
+4: TEST 30: TC_SemaphoreZeroCount            PASSED
+4: TEST 31: TC_SemaphoreWaitTimeout          PASSED
+4: TEST 32: TC_SemParam                      PASSED
+4: TEST 33: TC_SemInterrupts                 PASSED
+4: TEST 34: TC_MutexBasic                    PASSED
+4: TEST 35: TC_MutexTimeout                  PASSED
+4: TEST 36: TC_MutexNestedAcquire            PASSED
+4: TEST 37: TC_MutexPriorityInversion        PASSED
+4: TEST 38: TC_MutexOwnership                PASSED
+4: TEST 39: TC_MutexParam                    PASSED
+4: TEST 40: TC_MutexInterrupts               PASSED
+4: TEST 41: TC_MemPoolAllocAndFree           PASSED
+4: TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+4: TEST 43: TC_MemPoolZeroInit               PASSED
+4: TEST 44: TC_MemPoolParam                  PASSED
+4: TEST 45: TC_MemPoolInterrupts             PASSED
+4: TEST 46: TC_MsgQBasic                     PASSED
+4: TEST 47: TC_MsgQWait                      PASSED
+4: TEST 48: TC_MsgQParam                     PASSED
+4: TEST 49: TC_MsgQInterrupts                PASSED
+4: TEST 50: TC_MsgFromThreadToISR            PASSED
+4: TEST 51: TC_MsgFromISRToThread            PASSED
+4: TEST 52: TC_MailAlloc                     PASSED
+4: TEST 53: TC_MailCAlloc                    PASSED
+4: TEST 54: TC_MailToThread                  PASSED
+4: TEST 55: TC_MailFromThread                PASSED
+4: TEST 56: TC_MailTimeout                   PASSED
+4: TEST 57: TC_MailParam                     PASSED
+4: TEST 58: TC_MailInterrupts                PASSED
+4: TEST 59: TC_MailFromThreadToISR           PASSED
+4: TEST 60: TC_MailFromISRToThread           PASSED
+4: 
+4: Test Summary: 60 Tests, 60 Executed, 60 Passed, 0 Failed, 0 Warnings.
+4: Test Result: PASSED
+4/4 Test #4: pico2-1cpu-cmsis-os-validator-test ...   Passed    9.22 sec
+
+100% tests passed, 0 tests failed out of 4
+
+Label Time Summary:
+qemu    =  45.54 sec*proc (4 tests)
+
+Total Test time (real) =  45.54 sec

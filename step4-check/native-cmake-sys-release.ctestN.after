@@ -1,0 +1,17 @@
+native-clock-test-host
+native-cmsis-os-validator-host
+native-flatfs-test-host
+native-mutex-ceiling-test-host
+native-mutex-stress-host
+native-rtos-apis-host
+native-smp-mat-test-host
+native-smp-mutex-stress-host
+native-smp-num-test-host
+native-smp-pipeline-test-host
+native-smp-pro-cons-test-host
+native-smp-rtos-apis-host
+native-smp_test0-host
+native-smp_test1-host
+native-smp_test2-host
+native-smp_test3-host
+native-smp_test4-host

@@ -1,0 +1,4 @@
+pico2-1cpu-cmsis-os-validator-test
+pico2-1cpu-fp-switch-test
+pico2-1cpu-mutex-stress-test
+pico2-1cpu-rtos-apis-test

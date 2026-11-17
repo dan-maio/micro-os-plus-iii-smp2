@@ -1,0 +1,863 @@
+> cmake -S . -B build/qemu-cortex-m3-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=qemu-cortex-m3 --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.2.0-pre.1
+-- Platform name: qemu-cortex-m3
+-- Build type: MinSizeRel
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding 'build/qemu-cortex-m3-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm'...
+-- > micro-os-plus::cortexm-qemu-m0 -> micro-os-plus-iii-cortexm-qemu-m0-interface
+-- > micro-os-plus::cortexm-qemu-m3 -> micro-os-plus-iii-cortexm-qemu-m3-interface
+-- > micro-os-plus::cortexm-qemu-m4f -> micro-os-plus-iii-cortexm-qemu-m4f-interface
+-- > micro-os-plus::cortexm-qemu-m7 -> micro-os-plus-iii-cortexm-qemu-m7-interface
+-- > micro-os-plus::cortexm-qemu-m33 -> micro-os-plus-iii-cortexm-qemu-m33-interface
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm (+ -rp2350, -rp2040)
+-- Adding 'device-qemu-cortexm'...
+-- Processing 'tests/device-qemu-cortexm'...
+-- > device-qemu-cortexm-interface
+-- + -I include
+-- + src/system-cortexm.c
+-- + src/initialize-hardware.c
+-- + src/vectors-cortexm.c
+-- + src/exception-handlers.cpp
+-- + -D MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M3
+-- + xpacks::arm-cmsis
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/mem-mps2-an385.ld
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/sections-flash.ld
+-- > micro-os-plus::device -> device-qemu-cortexm-interface
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Adding 'build/qemu-cortex-m3-cmake-gcc-release/xpacks/@xpacks/arm-cmsis'...
+-- Processing xPack @xpacks/arm-cmsis@4.5.0-7...
+-- > xpacks-arm-cmsis-interface
+-- + -I CMSIS/Include
+-- + -I CMSIS/Driver/Include
+-- > xpacks::arm-cmsis -> xpacks-arm-cmsis-interface
+-- Adding 'build/qemu-cortex-m3-cmake-gcc-release/xpacks/@xpack-3rd-party/arm-cmsis-core'...
+-- Processing xPack @xpack-3rd-party/arm-cmsis-core@5.4.0-6...
+-- > xpack-3rd-party-arm-cmsis-core-m-interface
+-- + -I CMSIS/Core/Include
+-- + -D __PROGRAM_START
+-- > xpack-3rd-party::arm-cmsis-core-m -> xpack-3rd-party-arm-cmsis-core-m-interface
+-- > xpack-3rd-party-arm-cmsis-core-a-interface
+-- + -I CMSIS/Core_A/Include
+-- + -D __PROGRAM_START
+-- > xpack-3rd-party::arm-cmsis-core-a -> xpack-3rd-party-arm-cmsis-core-a-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/qemu-cortex-m3'...
+-- Cortex-M qemu-cortex-m3: harness suites registered (qemu-cortex-m3)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_TOOLCHAIN_FILE
+
+
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release
+> cmake -S . -B build/qemu-cortex-m3-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=qemu-cortex-m3
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm (+ -rp2350, -rp2040)
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Cortex-M qemu-cortex-m3: harness suites registered (qemu-cortex-m3)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release
+> cmake --build build/qemu-cortex-m3-cmake-gcc-release
+[1/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[2/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/instrumentation-config.cpp.obj
+[3/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/test-cmsis-os1.cpp.obj
+[4/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[5/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[6/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[7/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[8/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[9/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[10/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/test-c-api.c.obj
+[11/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[12/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/test-cpp-mem.cpp.obj
+[13/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[14/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[15/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[16/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[17/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[18/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/test-posix-io-api.cpp.obj
+[19/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[20/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/main.cpp.obj
+[21/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[22/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[23/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[24/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/test-chan-fatfs.cpp.obj
+[25/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[26/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[27/228] Building CXX object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[28/228] Building C object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/libc/getentropy.c.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/libc/getentropy.c:20:1: warning: no previous prototype for '_getentropy' [-Wmissing-prototypes]
+   20 | _getentropy (void* buffer, size_t length)
+      | ^~~~~~~~~~~
+[29/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[30/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/device-qemu-cortexm/src/system-cortexm.c.obj
+[31/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/device-qemu-cortexm/src/initialize-hardware.c.obj
+[32/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[33/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[34/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/device-qemu-cortexm/src/vectors-cortexm.c.obj
+[35/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[36/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/device-qemu-cortexm/src/exception-handlers.cpp.obj
+[37/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[38/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[39/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace-semihosting.cpp.obj
+[40/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/reset-hardware.c.obj
+[41/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialize-hardware.c.obj
+[42/228] Building C object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/exception-handlers.c.obj
+[43/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[44/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[45/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[46/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[47/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[48/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[49/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[50/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[51/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[52/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[53/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[54/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[55/228] Building CXX object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core.cpp.obj'
+[56/228] Building C object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/xpacks/@xpacks/chan-fatfs/source/ffunicode.c.obj'
+[57/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[58/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[59/228] Building CXX object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/xpacks/@xpacks/chan-fatfs/src/posix-io/ffsystem.cpp.obj'
+[60/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[61/228] Building CXX object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/xpacks/@xpacks/chan-fatfs/src/posix-io/utils.cpp.obj'
+[62/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/startup.cpp.obj
+[63/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[64/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[65/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[66/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[67/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[68/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[69/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[70/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/test-iso-api.cpp.obj
+[71/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[72/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[73/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[74/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[75/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[76/228] Building CXX object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.obj'
+[77/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[78/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[79/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[80/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[81/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[82/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[83/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[84/228] Building CXX object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[85/228] Building CXX object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[86/228] Building CXX object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[87/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[88/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/__/__/sources/mutex-stress/src/test.cpp.obj
+[89/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/__/__/sources/mutex-stress/src/main.cpp.obj
+[90/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[91/228] Building CXX object platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/sources/rtos-apis/src/test-cpp-api.cpp.obj
+[92/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[93/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[94/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[95/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[96/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[97/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[98/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[99/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[100/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[101/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[102/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[103/228] Building CXX object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[104/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/__/__/device-qemu-cortexm/src/system-cortexm.c.obj
+[105/228] Building C object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/libc/getentropy.c.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/libc/getentropy.c:20:1: warning: no previous prototype for '_getentropy' [-Wmissing-prototypes]
+   20 | _getentropy (void* buffer, size_t length)
+      | ^~~~~~~~~~~
+[106/228] Building C object 'platform-bin/CMakeFiles/rtos-apis-test.dir/__/__/xpacks/@xpacks/chan-fatfs/source/ff.c.obj'
+[107/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/__/__/device-qemu-cortexm/src/initialize-hardware.c.obj
+[108/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/__/__/device-qemu-cortexm/src/vectors-cortexm.c.obj
+[109/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[110/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[111/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/__/__/device-qemu-cortexm/src/exception-handlers.cpp.obj
+[112/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialize-hardware.c.obj
+[113/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/reset-hardware.c.obj
+[114/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace-semihosting.cpp.obj
+[115/228] Linking CXX executable platform-bin/rtos-apis-test.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/rtos-apis-test.elf has a LOAD segment with RWX permissions
+[116/228] Building C object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/exception-handlers.c.obj
+[117/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[118/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[119/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[120/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[121/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[122/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[123/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[124/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[125/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[126/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[127/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[128/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[129/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[130/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[131/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[132/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[133/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[134/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[135/228] Building CXX object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core.cpp.obj'
+[136/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[137/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[138/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[139/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[140/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[141/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/startup.cpp.obj
+[142/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[143/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[144/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[145/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[146/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[147/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[148/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[149/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[150/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[151/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[152/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[153/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[154/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[155/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[156/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[157/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[158/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[159/228] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[160/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[161/228] Linking CXX executable platform-bin/mutex-stress-test.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/mutex-stress-test.elf has a LOAD segment with RWX permissions
+[162/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[163/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[164/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[165/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[166/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[167/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[168/228] Building CXX object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/semihosting-exit.cpp.obj'
+[169/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[170/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/libc/getentropy.c.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/libc/getentropy.c:20:1: warning: no previous prototype for '_getentropy' [-Wmissing-prototypes]
+   20 | _getentropy (void* buffer, size_t length)
+      | ^~~~~~~~~~~
+[171/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/device-qemu-cortexm/src/system-cortexm.c.obj
+[172/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/device-qemu-cortexm/src/initialize-hardware.c.obj
+[173/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[174/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[175/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/device-qemu-cortexm/src/vectors-cortexm.c.obj
+[176/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialize-hardware.c.obj
+[177/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[178/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/reset-hardware.c.obj
+[179/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/device-qemu-cortexm/src/exception-handlers.cpp.obj
+[180/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[181/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace-semihosting.cpp.obj
+[182/228] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/exception-handlers.c.obj
+[183/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[184/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[185/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[186/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[187/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[188/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[189/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[190/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[191/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[192/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[193/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[194/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/cmsis-plus/src/main.c.obj'
+[195/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[196/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[197/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/cmsis_rv.c.obj'
+[198/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Framework.c.obj'
+[199/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[200/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[201/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[202/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Report.c.obj'
+[203/228] Building CXX object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm/src/rtos/os-core.cpp.obj'
+[204/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_GenWait.c.obj'
+[205/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Signal.c.obj'
+[206/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Timer.c.obj'
+[207/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[208/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/startup.cpp.obj
+[209/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_WaitFunc.c.obj'
+[210/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_MemoryPool.c.obj'
+[211/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Thread.c.obj'
+[212/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_MsgQueue.c.obj'
+[213/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Mutex.c.obj'
+[214/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[215/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Semaphore.c.obj'
+[216/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[217/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[218/228] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_MailQueue.c.obj'
+[219/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[220/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[221/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[222/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[223/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[224/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[225/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[226/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[227/228] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[228/228] Linking CXX executable platform-bin/cmsis-os-validator-test.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/cmsis-os-validator-test.elf has a LOAD segment with RWX permissions
+> cd build/qemu-cortex-m3-cmake-gcc-release && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start 1: qemu-cortex-m3-rtos-apis-test
+
+1: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an385" "--cpu" "cortex-m3" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/platform-bin/rtos-apis-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+1: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/platform-bin
+1: Test timeout computed to be: 1200
+1: 
+1: µOS++ RTOS simple APIs test
+1: Built with GCC 15.2.1 20251203
+1: 
+1: Test C++ API - started
+1: 
+1: Threads:
+1: main, 24% (968/3996), run, 6, 62701 
+1: idle, 5% (120/2044), rdy, 10, 79431 
+1: 
+1: Test C++ API - Memory managers
+1: 
+1: Test C++ API - Threads
+1: > func() on thread -
+1: > func() on thread th2
+1: > func() on thread th3
+1: > func() on thread th4
+1: > func() on thread th5
+1: > func() on thread th6
+1: > func() on thread th7
+1: > func() on thread th8
+1: > func() on thread th9
+1: > func() on thread th10
+1: > func() on thread th11
+1: > func() on thread -
+1: > func() on thread ath2
+1: > func() on thread -
+1: > func() on thread sth2
+1: 
+1: Test C++ API - Thread stack
+1: 
+1: Test C++ API - Thread event flags
+1: 
+1: Test C++ API - Message queues
+1: 
+1: Test C++ API - Memory pools
+1: 
+1: Test C++ API - Condition variables
+1: 
+1: Test C++ API - Event flags
+1: 
+1: Test C++ API - Mutexes
+1: 0x207fdb00
+1: 0x207fdb00
+1: 0x207fdb00
+1: 0x207fdb00
+1: 0x207fdb00
+1: 0x0
+1: 
+1: Test C++ API - Semaphores
+1: 
+1: Test C++ API - Timers
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: >> tmfunc()
+1: 
+1: Test C++ API - done
+1: errno=0
+1: 
+1: Test C API - started
+1: 
+1: Threads:
+1: main, 25% (1032/3996), run, 98, 326647 
+1: idle, 7% (152/2044), rdy, 88, 459729 
+1: 
+1: Test C API - Scheduler
+1: 
+1: Test C API - Clocks
+1: 
+1: Test C API - Threads
+1: > func
+1: > func
+1: > func
+1: > func
+1: 
+1: Test C API - Thread stack
+1: 
+1: Test C API - Thread event flags
+1: 
+1: Test C API - Timers
+1: >> tmfunc
+1: >> tmfunc
+1: >> tmfunc
+1: >> tmfunc
+1: 
+1: Test C API - Mutexes
+1: 
+1: Test C API - Semaphores
+1: 
+1: Test C API - Memory pools
+1: 
+1: Test C API - Message queues
+1: 
+1: Test C API - Event flags
+1: 
+1: Test C API - Condition variables
+1: 
+1: Test C API - done
+1: errno=0
+1: 
+1: Test ISO C++ API - Threads
+1: task1()
+1: task2(0x207ff2c0)
+1: task3(0x207ff2c0)
+1: task4(7,xyz)
+1: 
+1: Test ISO C++ API - Mutexes
+1: 
+1: Test ISO C++ API - Condition variables
+1: 
+1: Test ISO C++ API - Chrono
+1: Systick_clock::now() = 90 ticks
+1: system_clock::now() = 90000 us
+1: high_resolution_clock::now() = 90509625 ns
+1: sleep_for<chrono::realtime_clock> (1s)
+1: sleep_for<chrono::realtime_clock> (1001ms)
+1: sleep_until (chrono::realtime_clock::now () + 1000ms)
+1: sleep_until (chrono::realtime_clock::now () + 1s)
+1: 
+1: Test ISO C++ API - Done
+1: errno=0
+1: 
+1: Test POSIX I/O - Block device partitions - C++ API
+1: 
+1: Test POSIX I/O - Block device locked - C++ API
+1: 
+1: Test POSIX I/O - Block device unlocked - C++ API
+1: 
+1: Test POSIX I/O - Block device - intermixed opens - C++ API
+1: errno=0
+1: 
+1: Chan FatFS - 512/512 fat12, step 0
+1: 
+1: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: 
+1: Chan FatFS - 512/512 fat12, step 1
+1: 
+1: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: 
+1: Chan FatFS - 512/512 fat12, step 2
+1: 
+1: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: 
+1: Chan FatFS - 512/512 fat12 mutex
+1: 
+1: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+1: ---- Test cycle 1 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 2 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: ---- Test cycle 3 of 3 ----
+1:  Number of sectors is 128
+1:  Size of sector is 512 bytes
+1:  Size of the erase block is 512 sectors
+1:  Barrier test skipped
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file2-with-long-name.extension"
+1: "file1-with-long-name.extension"
+1: "folder1-with-long-name"
+1: "file3-with-long-name.extension"
+1: "folder3-with-long-name"
+1: "file5-with-long-name.extension"
+1: "folder4-with-long-name"
+1: "file6-with-long-name.extension"
+1: errno=0
+1: done
+1/3 Test #1: qemu-cortex-m3-rtos-apis-test ............   Passed    4.58 sec
+test 2
+    Start 2: qemu-cortex-m3-mutex-stress-test
+
+2: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an385" "--cpu" "cortex-m3" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/platform-bin/mutex-stress-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+2: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/platform-bin
+2: Test timeout computed to be: 1200
+2: 
+2: Mutex stress & uniformity test
+2: Built with GCC 15.2.1 20251203
+2: Seed 1404696972
+2: [  5s] t0:37   t1:44   t2:38   t3:35   t4:38   t5:32   t6:38   t7:39   t8:41   t9:38   sum=380, avg=38, sigma=3, delta in [-6,6] [-15%,16%]
+2: [ 10s] t0:76   t1:81   t2:72   t3:78   t4:77   t5:72   t6:80   t7:78   t8:74   t9:74   sum=762, avg=76, sigma=3, delta in [-4,5] [-4%,7%]
+2: [ 15s] t0:116  t1:123  t2:118  t3:113  t4:116  t5:110  t6:119  t7:116  t8:117  t9:112  sum=1160, avg=116, sigma=3, delta in [-6,7] [-4%,6%]
+2: [ 20s] t0:152  t1:159  t2:159  t3:153  t4:156  t5:152  t6:161  t7:156  t8:161  t9:151  sum=1560, avg=156, sigma=3, delta in [-5,5] [-2%,3%]
+2: [ 25s] t0:189  t1:193  t2:203  t3:196  t4:192  t5:192  t6:198  t7:196  t8:204  t9:192  sum=1955, avg=196, sigma=4, delta in [-7,8] [-3%,4%]
+2: [ 30s] t0:237  t1:232  t2:237  t3:238  t4:233  t5:228  t6:238  t7:235  t8:245  t9:235  sum=2358, avg=236, sigma=4, delta in [-8,9] [-2%,4%]
+2: [ 35s] t0:273  t1:266  t2:275  t3:279  t4:274  t5:265  t6:274  t7:279  t8:283  t9:276  sum=2744, avg=274, sigma=5, delta in [-9,9] [-2%,3%]
+2: Done.
+2/3 Test #2: qemu-cortex-m3-mutex-stress-test .........   Passed   22.55 sec
+test 3
+    Start 3: qemu-cortex-m3-cmsis-os-validator-test
+
+3: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "--machine" "mps2-an385" "--cpu" "cortex-m3" "--kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/platform-bin/cmsis-os-validator-test.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+3: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/qemu-cortex-m3-cmake-gcc-release/platform-bin
+3: Test timeout computed to be: 1200
+3: Read of unassigned area of PPB: offset 0x1000
+3: Read of unassigned area of PPB: offset 0x1000
+3: Read of unassigned area of PPB: offset 0x1000
+3: Write of unassigned area of PPB: offset 0x1000
+3: Read of unassigned area of PPB: offset 0x1004
+3: Read of unassigned area of PPB: offset 0x1004
+3: CMSIS-RTOS Test Suite   Nov 17 2026   14:36:48 
+3: 
+3: TEST 01: TC_ThreadCreate                  PASSED
+3: TEST 02: TC_ThreadMultiInstance           PASSED
+3: TEST 03: TC_ThreadTerminate               PASSED
+3: TEST 04: TC_ThreadRestart                 PASSED
+3: TEST 05: TC_ThreadGetId                   PASSED
+3: TEST 06: TC_ThreadPriority                PASSED
+3: TEST 07: TC_ThreadPriorityExec            PASSED
+3: TEST 08: TC_ThreadChainedCreate           PASSED
+3: TEST 09: TC_ThreadYield                   PASSED
+3: TEST 10: TC_ThreadParam                   PASSED
+3: TEST 11: TC_ThreadInterrupts              PASSED
+3: TEST 12: TC_GenWaitBasic                  PASSED
+3: TEST 13: TC_GenWaitInterrupts             PASSED
+3: TEST 14: TC_TimerOneShot                  PASSED
+3: TEST 15: TC_TimerPeriodic                 PASSED
+3: TEST 16: TC_TimerParam                    PASSED
+3: TEST 17: TC_TimerInterrupts               PASSED
+3: TEST 18: TC_SignalMainThread              PASSED
+3: TEST 19: TC_SignalChildThread             PASSED
+3: TEST 20: TC_SignalChildToParent           PASSED
+3: TEST 21: TC_SignalChildToChild            PASSED
+3: TEST 22: TC_SignalWaitTimeout             PASSED
+3: TEST 23: TC_SignalParam                   PASSED
+3: TEST 24: TC_SignalInterrupts              PASSED
+3: TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+3: TEST 26: TC_SemaphoreObtainCounting       PASSED
+3: TEST 27: TC_SemaphoreObtainBinary         PASSED
+3: TEST 28: TC_SemaphoreWaitForBinary        PASSED
+3: TEST 29: TC_SemaphoreWaitForCounting      PASSED
+3: TEST 30: TC_SemaphoreZeroCount            PASSED
+3: TEST 31: TC_SemaphoreWaitTimeout          PASSED
+3: TEST 32: TC_SemParam                      PASSED
+3: TEST 33: TC_SemInterrupts                 PASSED
+3: TEST 34: TC_MutexBasic                    PASSED
+3: TEST 35: TC_MutexTimeout                  PASSED
+3: TEST 36: TC_MutexNestedAcquire            PASSED
+3: TEST 37: TC_MutexPriorityInversion        PASSED
+3: TEST 38: TC_MutexOwnership                PASSED
+3: TEST 39: TC_MutexParam                    PASSED
+3: TEST 40: TC_MutexInterrupts               PASSED
+3: TEST 41: TC_MemPoolAllocAndFree           PASSED
+3: TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+3: TEST 43: TC_MemPoolZeroInit               PASSED
+3: TEST 44: TC_MemPoolParam                  PASSED
+3: TEST 45: TC_MemPoolInterrupts             PASSED
+3: TEST 46: TC_MsgQBasic                     PASSED
+3: TEST 47: TC_MsgQWait                      PASSED
+3: TEST 48: TC_MsgQParam                     PASSED
+3: TEST 49: TC_MsgQInterrupts                PASSED
+3: TEST 50: TC_MsgFromThreadToISR            PASSED
+3: TEST 51: TC_MsgFromISRToThread            PASSED
+3: TEST 52: TC_MailAlloc                     PASSED
+3: TEST 53: TC_MailCAlloc                    PASSED
+3: TEST 54: TC_MailToThread                  PASSED
+3: TEST 55: TC_MailFromThread                PASSED
+3: TEST 56: TC_MailTimeout                   PASSED
+3: TEST 57: TC_MailParam                     PASSED
+3: TEST 58: TC_MailInterrupts                PASSED
+3: TEST 59: TC_MailFromThreadToISR           PASSED
+3: TEST 60: TC_MailFromISRToThread           PASSED
+3: 
+3: Test Summary: 60 Tests, 60 Executed, 60 Passed, 0 Failed, 0 Warnings.
+3: Test Result: PASSED
+3/3 Test #3: qemu-cortex-m3-cmsis-os-validator-test ...   Passed    7.39 sec
+
+100% tests passed, 0 tests failed out of 3
+
+Label Time Summary:
+qemu    =  34.52 sec*proc (3 tests)
+
+Total Test time (real) =  34.53 sec

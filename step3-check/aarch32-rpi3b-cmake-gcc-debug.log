@@ -1,0 +1,2842 @@
+> cmake -S . -B build/aarch32-rpi3b-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch32-rpi3b --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.2.0-pre.1
+-- Platform name: aarch32-rpi3b
+-- Build type: Debug
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/aarch32-rpi3b/cmake/definitions.cmake...
+-- Including tests/platforms/aarch32-rpi3b/cmake/dependencies-folders.cmake...
+-- µOS++ III micro-os-plus-iii-aarch32: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding 'build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32'...
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32 (BOARD=rpi3b)
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/aarch32-rpi3b'...
+-- Including tests/platforms/aarch32-rpi3b/cmake/platform-library.cmake...
+-- > micro-os-plus::platform -> platform-aarch32-rpi3b-interface
+-- > micro-os-plus::platform-support -> platform-aarch32-rpi3b-support-interface
+-- µOS++ III AArch32 tests: 32 targets, board=rpi3b, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b
+-- AArch32 rpi3b: port tests + harness suites registered (aarch32-rpi3b)
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+> cmake -S . -B build/aarch32-rpi3b-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch32-rpi3b
+-- µOS++ III micro-os-plus-iii-aarch32: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32 (BOARD=rpi3b)
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III AArch32 tests: 32 targets, board=rpi3b, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b
+-- AArch32 rpi3b: port tests + harness suites registered (aarch32-rpi3b)
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+> cmake --build build/aarch32-rpi3b-cmake-gcc-debug
+[0/2] Re-checking globbed directories...
+[1/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[2/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[3/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[4/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[5/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[6/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[7/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[8/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[9/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[10/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[11/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[12/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[13/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/rpi3b/mutex-stress/harness-suite.cpp.obj
+[14/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[15/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[16/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[17/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/rpi3b/cmsis-os-validator/harness-suite.cpp.obj
+[18/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/rpi3b/cmsis-os-validator/harness-suite.cpp.obj
+[19/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/rpi3b/clock-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/clock-test/main.cpp: In function 'int os_main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/clock-test/main.cpp:141:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  141 | }
+      | ^
+[20/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[21/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[22/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/rpi3b/mutex-stress/harness-suite.cpp.obj
+[23/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[24/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[25/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[26/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/rpi3b/clock-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/clock-test/main.cpp: In function 'int os_main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/clock-test/main.cpp:141:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  141 | }
+      | ^
+[27/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[28/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[29/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[30/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[31/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[32/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[33/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/rpi3b/rtos-apis/harness-suite.cpp.obj
+[34/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[35/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[36/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[37/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[38/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[39/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[40/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[41/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/rpi3b/rtos-apis/harness-suite.cpp.obj
+[42/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[43/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[44/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[45/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[46/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[47/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[48/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[49/262] Linking CXX executable platform-bin/port-tests/test/clock-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/clock-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  89636	   1212	69793944	69884792	42a5b78	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/clock-test-qemu.elf
+[50/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[51/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[52/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[53/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/cmsis-os-validator-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[54/262] Linking CXX executable platform-bin/port-tests/test/cmsis-os-validator-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/cmsis-os-validator-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 165004	   2072	69817416	69984492	42be0ec	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/cmsis-os-validator-qemu.elf
+[55/262] Linking CXX executable platform-bin/port-tests/test/mutex-stress-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/mutex-stress-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 105612	   1244	69794160	69901016	42a9ad8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/mutex-stress-qemu.elf
+[56/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[57/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[58/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[59/262] Linking CXX executable platform-bin/port-tests/test/cmsis-os-validator-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/cmsis-os-validator-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 172076	   2072	69817416	69991564	42bfc8c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/cmsis-os-validator-hwd.elf
+[60/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[61/262] Linking CXX executable platform-bin/port-tests/test/clock-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/clock-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  97220	   1212	69793944	69892376	42a7918	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/clock-test-hwd.elf
+[62/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[63/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[64/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[65/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[66/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[67/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[68/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[69/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[70/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[71/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[72/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[73/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[74/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[75/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[76/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[77/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[78/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[79/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/rpi3b/sd_test/main.cpp.obj
+[80/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[81/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/rpi3b/sd_test/main.cpp.obj
+[82/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[83/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[84/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[85/262] Linking CXX executable platform-bin/port-tests/test/rtos-apis-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/rtos-apis-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 260628	   1276	69863624	70125528	42e07d8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/rtos-apis-qemu.elf
+[86/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[87/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[88/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[89/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[90/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/mutex-stress-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[91/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/rtos-apis-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[92/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[93/262] Linking CXX executable platform-bin/port-tests/test/sd_test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sd_test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  95812	   1212	69884080	69981104	42bd3b0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-qemu.elf
+[94/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[95/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[96/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[97/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[98/262] Linking CXX executable platform-bin/port-tests/test/mutex-stress-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/mutex-stress-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 112620	   1244	69794160	69908024	42ab638	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/mutex-stress-hwd.elf
+[99/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[100/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[101/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[102/262] Linking CXX executable platform-bin/port-tests/test/rtos-apis-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/rtos-apis-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 267700	   1276	69863624	70132600	42e2378	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/rtos-apis-hwd.elf
+[103/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[104/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[105/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[106/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[107/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[108/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[109/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[110/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[111/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[112/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[113/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/rpi3b/smp-mat-sdcard-test/main.cpp.obj
+[114/262] Linking CXX executable platform-bin/port-tests/test/sd_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sd_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 112756	   1212	69884680	69998648	42c1838	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-hwd.elf
+[115/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[116/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[117/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[118/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[119/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[120/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[121/262] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 109020	   1288	70517408	70627716	435b184	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+[122/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/rpi3b/smp-mat-sdcard-test/main.cpp.obj
+[123/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[124/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[125/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[126/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/rpi3b/smp-mat-test/main.cpp.obj
+[127/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[128/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[129/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/rpi3b/smp-num-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'bool {anonymous}::sd_append(const char*, unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:155:26: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  155 |       ++g_core_lines[core];
+      |         ~~~~~~~~~~~~~~~~~^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'void* {anonymous}::sd_text_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:395:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  395 |               ++g_text_written;
+      |                 ^~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:399:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  399 |               ++g_text_fail;
+      |                 ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'void* {anonymous}::compute_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:449:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  449 |               ++g_calc_written;
+      |                 ^~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:453:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  453 |               ++g_calc_fail;
+      |                 ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'void* {anonymous}::reader_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:492:13: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  492 |           ++g_read_fail;
+      |             ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'int os_main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:627:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  627 |         ++g_read_fail;
+      |           ^~~~~~~~~~~
+[130/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[131/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[132/262] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 126108	   1240	70518008	70645356	435f66c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+[133/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[134/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[135/262] Linking CXX executable platform-bin/port-tests/test/smp-mat-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  99076	   1216	70046904	70147196	42e5c7c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-qemu.elf
+[136/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[137/262] Linking CXX executable platform-bin/port-tests/test/smp-num-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-num-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 106404	   1288	70433792	70541484	43460ac	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-qemu.elf
+[138/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[139/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[140/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/rpi3b/smp-mat-test/main.cpp.obj
+[141/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/rpi3b/smp-num-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'bool {anonymous}::sd_append(const char*, unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:155:26: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  155 |       ++g_core_lines[core];
+      |         ~~~~~~~~~~~~~~~~~^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'void* {anonymous}::sd_text_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:395:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  395 |               ++g_text_written;
+      |                 ^~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:399:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  399 |               ++g_text_fail;
+      |                 ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'void* {anonymous}::compute_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:449:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  449 |               ++g_calc_written;
+      |                 ^~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:453:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  453 |               ++g_calc_fail;
+      |                 ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'void* {anonymous}::reader_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:492:13: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  492 |           ++g_read_fail;
+      |             ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp: In function 'int os_main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp-num-test/main.cpp:627:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  627 |         ++g_read_fail;
+      |           ^~~~~~~~~~~
+[142/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[143/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[144/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[145/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[146/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[147/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[148/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[149/262] Linking CXX executable platform-bin/port-tests/test/smp-mat-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 107812	   1216	70046904	70155932	42e7e9c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-hwd.elf
+[150/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[151/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[152/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[153/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[154/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[155/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[156/262] Linking CXX executable platform-bin/port-tests/test/smp-num-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-num-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 123068	   1232	70172248	70296548	430a3e4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-hwd.elf
+[157/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[158/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/rpi3b/smp-pipeline-test/main.cpp.obj
+[159/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[160/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[161/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[162/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[163/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/rpi3b/smp-pro-cons-test/main.cpp.obj
+[164/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[165/262] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 152416	   1288	70066432	70220136	42f7968	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-qemu.elf
+[166/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[167/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[168/262] Linking CXX executable platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 110884	   1216	69844248	69956348	42b72fc	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf
+[169/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[170/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/rpi3b/smp-pipeline-test/main.cpp.obj
+[171/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[172/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[173/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[174/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[175/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[176/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/rpi3b/smp_test0/main.cpp.obj
+[177/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[178/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[179/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/rpi3b/smp-pro-cons-test/main.cpp.obj
+[180/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[181/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[182/262] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 169256	   1232	70067032	70237520	42fbd50	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+[183/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/rpi3b/smp_test0/main.cpp.obj
+[184/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[185/262] Linking CXX executable platform-bin/port-tests/test/smp_test0-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test0-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  84260	   1212	69785640	69871112	42a2608	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-qemu.elf
+[186/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[187/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[188/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[189/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[190/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[191/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[192/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[193/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[194/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[195/262] Linking CXX executable platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 118212	   1216	69844248	69963676	42b8f9c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf
+[196/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[197/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[198/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[199/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-qemu.dir/rpi3b/smp_test1/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test1/main.cpp: In function 'void* pinger(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test1/main.cpp:32:65: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   32 |   for (;;) { g_ping.wait(); g_ping_core = (int)port_cpu_id(); ++g_rounds; g_pong.post(); }
+      |                                                                 ^~~~~~~~
+[200/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[201/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[202/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[203/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[204/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[205/262] Linking CXX executable platform-bin/port-tests/test/smp_test1-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test1-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  90548	   1224	69843512	69935284	42b20b4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test1-qemu.elf
+[206/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[207/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/rpi3b/smp_test1/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test1/main.cpp: In function 'void* pinger(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test1/main.cpp:32:65: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   32 |   for (;;) { g_ping.wait(); g_ping_core = (int)port_cpu_id(); ++g_rounds; g_pong.post(); }
+      |                                                                 ^~~~~~~~
+[208/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[209/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[210/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[211/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[212/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[213/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-qemu.dir/rpi3b/smp_test2/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test2/main.cpp: In function 'void* worker(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test2/main.cpp:53:5: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   53 |   ++g_done;
+      |     ^~~~~~
+[214/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[215/262] Linking CXX executable platform-bin/port-tests/test/smp_test0-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test0-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  93708	   1212	69785640	69880560	42a4af0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-hwd.elf
+[216/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[217/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[218/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[219/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[220/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[221/262] Linking CXX executable platform-bin/port-tests/test/smp_test2-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test2-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  90652	   1216	69859544	69951412	42b5fb4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test2-qemu.elf
+[222/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[223/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[224/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/rpi3b/smp_test3/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp: In function 'void* producer(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp:40:45: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   40 |   for (;;) { g_mq.send(&v, sizeof(v), 0); ++g_produced; ++v; sysclock.sleep_for(20); }
+      |                                             ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp: In function 'void* consumer(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp:50:9: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   50 |       ++g_consumed;
+      |         ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp:52:18: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   52 |       if (p) { ++g_primes; led_state = !led_state; led::set(led_state); }
+      |                  ^~~~~~~~
+[225/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[226/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[227/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/rpi3b/smp_test2/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test2/main.cpp: In function 'void* worker(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test2/main.cpp:53:5: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   53 |   ++g_done;
+      |     ^~~~~~
+[228/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[229/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[230/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[231/262] Linking CXX executable platform-bin/port-tests/test/smp_test1-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test1-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 100636	   1224	69843512	69945372	42b481c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test1-hwd.elf
+[232/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[233/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[234/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[235/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[236/262] Linking CXX executable platform-bin/port-tests/test/smp_test3-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test3-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  96676	   1216	69843592	69941484	42b38ec	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-qemu.elf
+[237/262] Linking CXX executable platform-bin/port-tests/test/smp_test2-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test2-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 101436	   1216	69859544	69962196	42b89d4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test2-hwd.elf
+[238/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[239/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[240/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[241/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[242/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[243/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-qemu.dir/rpi3b/smp_test4/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test4/main.cpp: In function 'void* worker(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test4/main.cpp:37:32: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   37 |     if (c < OS_NCPU) hist[id][c]++;
+      |                      ~~~~~~~~~~^
+[244/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[245/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/rpi3b/smp_test3/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp: In function 'void* producer(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp:40:45: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   40 |   for (;;) { g_mq.send(&v, sizeof(v), 0); ++g_produced; ++v; sysclock.sleep_for(20); }
+      |                                             ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp: In function 'void* consumer(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp:50:9: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   50 |       ++g_consumed;
+      |         ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test3/main.cpp:52:18: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   52 |       if (p) { ++g_primes; led_state = !led_state; led::set(led_state); }
+      |                  ^~~~~~~~
+[246/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[247/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[248/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[249/262] Linking CXX executable platform-bin/port-tests/test/smp_test4-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test4-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  90820	   1216	69941704	70033740	42ca14c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test4-qemu.elf
+[250/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[251/262] Linking CXX executable platform-bin/port-tests/test/smp_test3-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test3-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 108036	   1216	69843592	69952844	42b654c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-hwd.elf
+[252/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[253/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[254/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[255/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/rpi3b/usb_test/main.cpp.obj
+[256/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/rpi3b/smp_test4/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test4/main.cpp: In function 'void* worker(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/smp_test4/main.cpp:37:32: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   37 |     if (c < OS_NCPU) hist[id][c]++;
+      |                      ~~~~~~~~~~^
+[257/262] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/rpi3b/usb_test/main.cpp.obj
+[258/262] Linking CXX executable platform-bin/port-tests/test/usb_test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/usb_test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 114940	   1328	71008824	71125092	43d4864	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-qemu.elf
+[259/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[260/262] Linking CXX executable platform-bin/port-tests/test/smp_test4-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test4-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 101276	   1216	69941704	70044196	42cca24	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test4-hwd.elf
+[261/262] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[262/262] Linking CXX executable platform-bin/port-tests/test/usb_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/usb_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 134836	   1276	71009424	71145536	43d9840	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-hwd.elf
+> cd build/aarch32-rpi3b-cmake-gcc-debug && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+      Start  1: aarch32-rpi3b-clock-test-qemu
+
+1: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/clock-test-qemu.bin,addr=0x10000"
+1: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+1: Test timeout computed to be: 300
+1: 
+1: +== RPi 3 B µOS++ CLOCK TEST ==+
+1: os_startup_initialize_free_store(0x2b8000,67108864)
+1: first_fit_top(0x2b8000,67108864) @0x30548 app-heap
+1: out_of_memory_handler(0x16420) @0x30548 app-heap
+1: estd::pmr::set_default_resource(0x30548) 
+1: rtos::memory::set_default_resource(0x30548) 
+1: rtos::memory::init_once_default_resource() 
+1: malloc_memory_resource() @0x30518 malloc
+1: scheduler::start() 
+1: cntfreq 62487808 Hz, cycles_per_tick 62487
+1: 5000 ticks: sysclock +5000, System Timer 4998775 us, hrclock 4999819 us
+1:   [ok] the tick keeps the System Timer's time
+1:   [ok] hrclock keeps the System Timer's time
+1: core 0: hrclock.sleep_until(now + 100 ms) 101239 us, now - steady_now 26395 cycles
+1:   [ok] hrclock sleep 100 ms (core 0)
+1:   [ok] woken promptly after the tick (core 0)
+1: core 1: hrclock.sleep_until(now + 100 ms) 100684 us, now - steady_now 12330 cycles
+1:   [ok] hrclock sleep 100 ms (core 1)
+1:   [ok] woken promptly after core 0's tick (core 1)
+1: RESULT: PASS (clock-test: tick, hrclock and cross-core wake)
+ 1/24 Test  #1: aarch32-rpi3b-clock-test-qemu ......................   Passed    5.29 sec
+test 3
+      Start  3: aarch32-rpi3b-cmsis-os-validator-qemu
+
+3: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/cmsis-os-validator-qemu.bin,addr=0x10000"
+3: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+3: Test timeout computed to be: 300
+3: os_startup_initialize_free_store(0x2d0000,67108864)
+3: first_fit_top(0x2d0000,67108864) @0x3b188 app-heap
+3: out_of_memory_handler(0x1baa4) @0x3b188 app-heap
+3: estd::pmr::set_default_resource(0x3b188) 
+3: rtos::memory::set_default_resource(0x3b188) 
+3: rtos::memory::init_once_default_resource() 
+3: malloc_memory_resource() @0x3b158 malloc
+3: scheduler::start() 
+3: CMSIS-RTOS Test Suite   Nov 17 2026   09:26:06 
+3: 
+3: TEST 01: TC_ThreadCreate                  PASSED
+3: TEST 02: TC_ThreadMultiInstance           PASSED
+3: TEST 03: TC_ThreadTerminate               PASSED
+3: TEST 04: TC_ThreadRestart                 PASSED
+3: TEST 05: TC_ThreadGetId                   PASSED
+3: TEST 06: TC_ThreadPriority                PASSED
+3: TEST 07: TC_ThreadPriorityExec            PASSED
+3: TEST 08: TC_ThreadChainedCreate           PASSED
+3: TEST 09: TC_ThreadYield                   PASSED
+3: TEST 10: TC_ThreadParam                   PASSED
+3: TEST 11: TC_ThreadInterrupts              PASSED
+3: TEST 12: TC_GenWaitBasic                  PASSED
+3: TEST 13: TC_GenWaitInterrupts             PASSED
+3: TEST 14: TC_TimerOneShot                  PASSED
+3: TEST 15: TC_TimerPeriodic                 PASSED
+3: TEST 16: TC_TimerParam                    PASSED
+3: TEST 17: TC_TimerInterrupts               PASSED
+3: TEST 18: TC_SignalMainThread              PASSED
+3: TEST 19: TC_SignalChildThread             PASSED
+3: TEST 20: TC_SignalChildToParent           PASSED
+3: TEST 21: TC_SignalChildToChild            PASSED
+3: TEST 22: TC_SignalWaitTimeout             PASSED
+3: TEST 23: TC_SignalParam                   PASSED
+3: TEST 24: TC_SignalInterrupts              PASSED
+3: TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+3: TEST 26: TC_SemaphoreObtainCounting       PASSED
+3: TEST 27: TC_SemaphoreObtainBinary         PASSED
+3: TEST 28: TC_SemaphoreWaitForBinary        PASSED
+3: TEST 29: TC_SemaphoreWaitForCounting      PASSED
+3: TEST 30: TC_SemaphoreZeroCount            PASSED
+3: TEST 31: TC_SemaphoreWaitTimeout          PASSED
+3: TEST 32: TC_SemParam                      PASSED
+3: TEST 33: TC_SemInterrupts                 PASSED
+3: TEST 34: TC_MutexBasic                    PASSED
+3: TEST 35: TC_MutexTimeout                  PASSED
+3: TEST 36: TC_MutexNestedAcquire            PASSED
+3: TEST 37: TC_MutexPriorityInversion        PASSED
+3: TEST 38: TC_MutexOwnership                PASSED
+3: TEST 39: TC_MutexParam                    PASSED
+3: TEST 40: TC_MutexInterrupts               PASSED
+3: TEST 41: TC_MemPoolAllocAndFree           PASSED
+3: TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+3: TEST 43: TC_MemPoolZeroInit               PASSED
+3: TEST 44: TC_MemPoolParam                  PASSED
+3: TEST 45: TC_MemPoolInterrupts             PASSED
+3: TEST 46: TC_MsgQBasic                     PASSED
+3: TEST 47: TC_MsgQWait                      PASSED
+3: TEST 48: TC_MsgQParam                     PASSED
+3: TEST 49: TC_MsgQInterrupts                PASSED
+3: TEST 50: TC_MsgFromThreadToISR            PASSED
+3: TEST 51: TC_MsgFromISRToThread            PASSED
+3: TEST 52: TC_MailAlloc                     PASSED
+3: TEST 53: TC_MailCAlloc                    PASSED
+3: TEST 54: TC_MailToThread                  PASSED
+3: TEST 55: TC_MailFromThread                PASSED
+3: TEST 56: TC_MailTimeout                   PASSED
+3: TEST 57: TC_MailParam                     PASSED
+3: TEST 58: TC_MailInterrupts                PASSED
+3: TEST 59: TC_MailFromThreadToISR           PASSED
+3: TEST 60: TC_MailFromISRToThread           PASSED
+3: 
+3: Test Summary: 60 Tests, 60 Executed, 60 Passed, 0 Failed, 0 Warnings.
+3: Test Result: PASSED
+3: 
+3: RESULT: PASS
+ 2/24 Test  #3: aarch32-rpi3b-cmsis-os-validator-qemu ..............   Passed   11.57 sec
+test 5
+      Start  5: aarch32-rpi3b-mutex-stress-qemu
+
+5: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/mutex-stress-qemu.bin,addr=0x10000"
+5: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+5: Test timeout computed to be: 300
+5: os_startup_initialize_free_store(0x2bc000,67108864)
+5: first_fit_top(0x2bc000,67108864) @0x2c308 app-heap
+5: out_of_memory_handler(0x15c38) @0x2c308 app-heap
+5: estd::pmr::set_default_resource(0x2c308) 
+5: rtos::memory::set_default_resource(0x2c308) 
+5: rtos::memory::init_once_default_resource() 
+5: malloc_memory_resource() @0x2c2d8 malloc
+5: scheduler::start() 
+5: 
+5: Mutex stress & uniformity test
+5: Built with GCC 15.2.1 20251203
+5: Seed 1524190859
+5: mutex_test @0x34098 t0
+5: mutex_test @0x34130 t1
+5: mutex_test @0x341c8 t2
+5: mutex_test @0x34260 t3
+5: mutex_test @0x342f8 t4
+5: mutex_test @0x34390 t5
+5: mutex_test @0x34428 t6
+5: mutex_test @0x344c0 t7
+5: mutex_test @0x34558 t8
+5: mutex_test @0x345f0 t9
+5: periodic @0x34018
+5: [  5s] t0:44   t1:38   t2:40   t3:38   t4:40   t5:41   t6:38   t7:43   t8:37   t9:40   sum=399, avg=40, sigma=2, delta in [-3,4] [-7%,10%]
+5: [ 10s] t0:83   t1:78   t2:84   t3:76   t4:80   t5:83   t6:75   t7:86   t8:72   t9:77   sum=794, avg=79, sigma=4, delta in [-7,7] [-8%,9%]
+5: [ 15s] t0:123  t1:118  t2:120  t3:118  t4:127  t5:125  t6:116  t7:128  t8:108  t9:116  sum=1199, avg=120, sigma=5, delta in [-12,8] [-9%,7%]
+5: [ 20s] t0:162  t1:159  t2:161  t3:159  t4:165  t5:166  t6:157  t7:170  t8:144  t9:150  sum=1593, avg=159, sigma=7, delta in [-15,11] [-8%,7%]
+5: [ 25s] t0:201  t1:199  t2:204  t3:197  t4:202  t5:207  t6:198  t7:214  t8:183  t9:190  sum=1995, avg=200, sigma=8, delta in [-17,14] [-8%,7%]
+5: [ 30s] t0:242  t1:241  t2:243  t3:239  t4:241  t5:244  t6:235  t7:251  t8:218  t9:224  sum=2378, avg=238, sigma=9, delta in [-20,13] [-7%,5%]
+5: [ 35s] t0:283  t1:281  t2:288  t3:276  t4:280  t5:281  t6:271  t7:293  t8:256  t9:268  sum=2777, avg=278, sigma=10, delta in [-22,15] [-7%,5%]
+5: Done.
+5: 
+5: RESULT: PASS
+ 3/24 Test  #5: aarch32-rpi3b-mutex-stress-qemu ....................   Passed   35.18 sec
+test 7
+      Start  7: aarch32-rpi3b-rtos-apis-qemu
+
+7: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/rtos-apis-qemu.bin,addr=0x10000"
+7: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+7: Test timeout computed to be: 300
+7: os_startup_initialize_free_store(0x2f4000,67108864)
+7: first_fit_top(0x2f4000,67108864) @0x520e8 app-heap
+7: out_of_memory_handler(0x1fadc) @0x520e8 app-heap
+7: estd::pmr::set_default_resource(0x520e8) 
+7: rtos::memory::init_once_default_resource() 
+7: malloc_memory_resource() @0x520b8 malloc
+7: first_fit_top(0x4274000,524288) @0x4273fc0 sys-heap
+7: lifo(0x4274000,524288) @0x4273fc0 sys-heap
+7: out_of_memory_handler(0x1fae4) @0x4273fc0 sys-heap
+7: rtos::memory::set_default_resource(0x4273fc0) 
+7: block_pool_typed_inclusive() @0x4273dc8 threads-pool
+7: out_of_memory_handler(0x1fae4) @0x4273dc8 threads-pool
+7: rtos::memory::set_resource_typed<os::rtos::thread>(0x4273dc8) 
+7: block_pool_typed_inclusive() @0x4273d50 condvars-pool
+7: out_of_memory_handler(0x1fae4) @0x4273d50 condvars-pool
+7: rtos::memory::set_resource_typed<os::rtos::condition_variable>(0x4273d50) 
+7: block_pool_typed_inclusive() @0x4273cd0 evflags-pool
+7: out_of_memory_handler(0x1fae4) @0x4273cd0 evflags-pool
+7: rtos::memory::set_resource_typed<os::rtos::event_flags>(0x4273cd0) 
+7: block_pool_typed_inclusive() @0x4273be8 mempools-pool
+7: out_of_memory_handler(0x1fae4) @0x4273be8 mempools-pool
+7: rtos::memory::set_resource_typed<os::rtos::memory_pool>(0x4273be8) 
+7: block_pool_typed_inclusive() @0x4273ac8 mqueues-pool
+7: out_of_memory_handler(0x1fae4) @0x4273ac8 mqueues-pool
+7: rtos::memory::set_resource_typed<os::rtos::message_queue>(0x4273ac8) 
+7: block_pool_typed_inclusive() @0x4273a00 mutexes-pool
+7: out_of_memory_handler(0x1fae4) @0x4273a00 mutexes-pool
+7: rtos::memory::set_resource_typed<os::rtos::mutex>(0x4273a00) 
+7: block_pool_typed_inclusive() @0x4273970 semaphores-pool
+7: out_of_memory_handler(0x1fae4) @0x4273970 semaphores-pool
+7: rtos::memory::set_resource_typed<os::rtos::semaphore>(0x4273970) 
+7: block_pool_typed_inclusive() @0x4273880 timers-pool
+7: out_of_memory_handler(0x1fae4) @0x4273880 timers-pool
+7: rtos::memory::set_resource_typed<os::rtos::timer>(0x4273880) 
+7: Device '/dev/mc' linked
+7: my_char_impl()=@0x62ef4 1
+7: Device '/dev/mc2' linked
+7: my_char_impl()=@0x62ecc 2
+7: Device '/dev/mb' linked
+7: my_block_impl::my_block_impl()=@0x62e64
+7: Device '/dev/mb-p1' linked
+7: Device '/dev/mb-p2' linked
+7: file_descriptors_manager::file_descriptors_manager(5)=0x62d9c
+7: scheduler::start() 
+7: 
+7: µOS++ RTOS simple APIs test
+7: Built with GCC 15.2.1 20251203
+7: 
+7: Test C++ API - started
+7: 
+7: Threads:
+7: main, 3% (1084/32764), run, 11, 384873 
+7: idle1, 3% (532/16380), run, 20, 562042 
+7: idle2, 3% (532/16380), run, 18, 503316 
+7: idle3, 3% (532/16380), run, 16, 437516 
+7: idle, 3% (556/16380), rdy, 9, 299885 
+7: 
+7: Test C++ API - Memory managers
+7: block_pool(2,8,0x6b268,60) @0x6b2f8 bp1
+7: ~block_pool() @0x6b2f8 bp1
+7: block_pool_typed_inclusive() @0x6b2f8 bp2
+7: ~block_pool_typed_inclusive() @0x6b2f8 bp2
+7: ~block_pool() @0x6b2f8 bp2
+7: block_pool_typed_allocated(2,0x6b268) @0x6b2f8 bp3
+7: ~block_pool_typed_allocated() @0x6b2f8 bp3
+7: ~block_pool() @0x6b2f8 bp3
+7: 
+7: Test C++ API - Threads
+7: > func() on thread -
+7: > func() on thread th2
+7: > func() on thread th3
+7: > func() on thread th4
+7: > func() on thread th5
+7: > func() on thread th6
+7: > func() on thread th7
+7: > func() on thread th8
+7: > func() on thread th9
+7: allocator_stateless_polymorphic_synchronized() @0x6b2f8 0x4273dc8
+7: allocate(1) @0x6b208
+7: > func() on thread th10
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273dc8
+7: allocate(1) @0x6b208
+7: > func() on thread th11
+7: deallocate(0x4273e98,1) @0x6b260
+7: deallocate(0x4273e08,1) @0x6b2f8
+7: > func() on thread -
+7: > func() on thread ath2
+7: > func() on thread -
+7: > func() on thread sth2
+7: 
+7: Test C++ API - Thread stack
+7: 
+7: Test C++ API - Thread event flags
+7: 
+7: Test C++ API - Message queues
+7: allocator_stateless_polymorphic_synchronized() @0x6b258 0x4273ac8
+7: allocate(1) @0x6b200
+7: allocator_stateless_polymorphic_synchronized() @0x6b24c 0x4273ac8
+7: allocate(1) @0x6b200
+7: deallocate(0x4273b50,1) @0x6b260
+7: deallocate(0x4273b08,1) @0x6b2f8
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273ac8
+7: allocator_stateless_polymorphic_synchronized() @0x6b24c 0x4273ac8
+7: allocate(1) @0x6b208
+7: allocator_stateless_polymorphic_synchronized() @0x6b248 0x4273ac8
+7: allocate(1) @0x6b208
+7: deallocate(0x4273b50,1) @0x6b24c
+7: deallocate(0x4273b08,1) @0x6b2f8
+7: 
+7: Test C++ API - Memory pools
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273be8
+7: allocator_stateless_polymorphic_synchronized() @0x6b248 0x4273be8
+7: allocate(1) @0x6b200
+7: allocator_stateless_polymorphic_synchronized() @0x6b244 0x4273be8
+7: allocate(1) @0x6b200
+7: deallocate(0x4273c5c,1) @0x6b24c
+7: deallocate(0x4273c28,1) @0x6b2f8
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273ac8
+7: allocator_stateless_polymorphic_synchronized() @0x6b24c 0x4273be8
+7: allocate(1) @0x6b208
+7: allocator_stateless_polymorphic_synchronized() @0x6b248 0x4273be8
+7: allocate(1) @0x6b208
+7: deallocate(0x4273c5c,1) @0x6b24c
+7: deallocate(0x4273c28,1) @0x6b2f8
+7: 
+7: Test C++ API - Condition variables
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273d50
+7: allocator_stateless_polymorphic_synchronized() @0x6b2f8 0x4273d50
+7: allocate(1) @0x6b20c
+7: allocator_stateless_polymorphic_synchronized() @0x6b24c 0x4273d50
+7: allocate(1) @0x6b20c
+7: deallocate(0x4273da0,1) @0x6b24c
+7: deallocate(0x4273d90,1) @0x6b2f8
+7: 
+7: Test C++ API - Event flags
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273cd0
+7: allocator_stateless_polymorphic_synchronized() @0x6b2f8 0x4273cd0
+7: allocate(1) @0x6b20c
+7: allocator_stateless_polymorphic_synchronized() @0x6b24c 0x4273cd0
+7: allocate(1) @0x6b20c
+7: deallocate(0x4273d24,1) @0x6b24c
+7: deallocate(0x4273d10,1) @0x6b2f8
+7: 
+7: Test C++ API - Mutexes
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273a00
+7: allocator_stateless_polymorphic_synchronized() @0x6b2f8 0x4273a00
+7: allocate(1) @0x6b20c
+7: allocator_stateless_polymorphic_synchronized() @0x6b24c 0x4273a00
+7: allocate(1) @0x6b20c
+7: deallocate(0x4273a6c,1) @0x6b24c
+7: deallocate(0x4273a40,1) @0x6b2f8
+7: 0x42e3d50
+7: 0x42e3d50
+7: 0x42e3d50
+7: 0x42e3d50
+7: 0x42e3d50
+7: 0x0
+7: 
+7: Test C++ API - Semaphores
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273970
+7: allocator_stateless_polymorphic_synchronized() @0x6b2f8 0x4273970
+7: allocate(1) @0x6b20c
+7: allocator_stateless_polymorphic_synchronized() @0x6b24c 0x4273970
+7: allocate(1) @0x6b20c
+7: deallocate(0x42739c8,1) @0x6b24c
+7: deallocate(0x42739b0,1) @0x6b2f8
+7: 
+7: Test C++ API - Timers
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: >> tmfunc()
+7: allocator_stateless_polymorphic_synchronized() @0x6b260 0x4273880
+7: allocator_stateless_polymorphic_synchronized() @0x6b2f8 0x4273880
+7: allocate(1) @0x6b20c
+7: >> tmfunc()
+7: allocator_stateless_polymorphic_synchronized() @0x6b24c 0x4273880
+7: allocate(1) @0x6b20c
+7: >> tmfunc()
+7: deallocate(0x42738f8,1) @0x6b24c
+7: deallocate(0x42738c0,1) @0x6b2f8
+7: 
+7: Test C++ API - done
+7: errno=0
+7: 
+7: Test C API - started
+7: 
+7: Threads:
+7: main, 4% (1404/32764), run, 102, 1365772 
+7: idle1, 3% (532/16380), run, 100, 3045133 
+7: idle2, 3% (532/16380), run, 98, 2979592 
+7: idle3, 3% (532/16380), run, 96, 2915002 
+7: idle, 6% (1056/16380), rdy, 91, 1831111 
+7: 
+7: Test C API - Scheduler
+7: 
+7: Test C API - Clocks
+7: 
+7: Test C API - Threads
+7: > func
+7: > func
+7: > func
+7: > func
+7: 
+7: Test C API - Thread stack
+7: 
+7: Test C API - Thread event flags
+7: 
+7: Test C API - Timers
+7: >> tmfunc
+7: >> tmfunc
+7: >> tmfunc
+7: >> tmfunc
+7: 
+7: Test C API - Mutexes
+7: 
+7: Test C API - Semaphores
+7: 
+7: Test C API - Memory pools
+7: 
+7: Test C API - Message queues
+7: 
+7: Test C API - Event flags
+7: 
+7: Test C API - Condition variables
+7: 
+7: Test C API - done
+7: errno=0
+7: 
+7: Test ISO C++ API - Threads
+7: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(); Args = {}]() @0x6b348
+7: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*())()>]()
+7: task1()
+7: join() @0x6b348
+7: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*())()>]()
+7: join() @0x6b348 joined
+7: ~thread() @0x6b348
+7: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(const void*); Args = {char*}]() @0x6b354
+7: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(const void*)>]()
+7: task2(0x6b347)
+7: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(void*); Args = {char*}]() @0x6b360
+7: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(void*)>]()
+7: task3(0x6b347)
+7: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(int, const char*); Args = {int, const char (&)[4]}]() @0x6b370
+7: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(int, const char*))(int, const char*)>]()
+7: task4(7,xyz)
+7: join() @0x6b354
+7: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(const void*)>]()
+7: join() @0x6b354 joined
+7: join() @0x6b360
+7: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(void*)>]()
+7: join() @0x6b360 joined
+7: join() @0x6b370
+7: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(int, const char*))(int, const char*)>]()
+7: join() @0x6b370 joined
+7: ~thread() @0x6b370
+7: ~thread() @0x6b360
+7: ~thread() @0x6b354
+7: 
+7: Test ISO C++ API - Mutexes
+7: 
+7: Test ISO C++ API - Condition variables
+7: 
+7: Test ISO C++ API - Chrono
+7: Systick_clock::now() = 87 ticks
+7: system_clock::now() = 87000 us
+7: high_resolution_clock::now() = 87620084 ns
+7: sleep_for<chrono::realtime_clock> (1s)
+7: sleep_for<chrono::realtime_clock> (1001ms)
+7: sleep_until (chrono::realtime_clock::now () + 1000ms)
+7: sleep_until (chrono::realtime_clock::now () + 1s)
+7: 
+7: Test ISO C++ API - Done
+7: errno=0
+7: 
+7: Test POSIX I/O - Block device partitions - C++ API
+7: 
+7: Test POSIX I/O - Block device locked - C++ API
+7: 
+7: Test POSIX I/O - Block device unlocked - C++ API
+7: 
+7: Test POSIX I/O - Block device - intermixed opens - C++ API
+7: errno=0
+7: 
+7: Chan FatFS - 512/512 fat12, step 0
+7: Device '/dev/ch-bk-1' linked
+7: my_block_impl::my_block_impl()=@0x4271dcc
+7: 
+7: test_diskio(0x4271db0, 3, 0x4260d98, 4100)
+7: ---- Test cycle 1 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 2 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 3 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file5-with-long-name.extension"
+7: "folder4-with-long-name"
+7: "file6-with-long-name.extension"
+7: my_block_impl::~my_block_impl() @0x4271dcc
+7: 
+7: Chan FatFS - 512/512 fat12, step 1
+7: Device '/dev/ch-bk-1' linked
+7: my_block_impl::my_block_impl()=@0x4271dcc
+7: 
+7: test_diskio(0x4271db0, 3, 0x4260d98, 4100)
+7: ---- Test cycle 1 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 2 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 3 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file5-with-long-name.extension"
+7: "folder4-with-long-name"
+7: "file6-with-long-name.extension"
+7: my_block_impl::~my_block_impl() @0x4271dcc
+7: 
+7: Chan FatFS - 512/512 fat12, step 2
+7: Device '/dev/ch-bk-1' linked
+7: my_block_impl::my_block_impl()=@0x4271dcc
+7: 
+7: test_diskio(0x4271db0, 3, 0x4260d98, 4100)
+7: ---- Test cycle 1 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 2 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 3 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file5-with-long-name.extension"
+7: "folder4-with-long-name"
+7: "file6-with-long-name.extension"
+7: my_block_impl::~my_block_impl() @0x4271dcc
+7: 
+7: Chan FatFS - 512/512 fat12 mutex
+7: Device '/dev/ch-bk-1m' linked
+7: my_block_impl::my_block_impl()=@0x4271dcc
+7: 
+7: test_diskio(0x4271db0, 3, 0x4260d98, 4100)
+7: ---- Test cycle 1 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 2 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: ---- Test cycle 3 of 3 ----
+7:  Number of sectors is 128
+7:  Size of sector is 512 bytes
+7:  Size of the erase block is 512 sectors
+7:  Barrier test skipped
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file2-with-long-name.extension"
+7: "file1-with-long-name.extension"
+7: "folder1-with-long-name"
+7: "file3-with-long-name.extension"
+7: "folder3-with-long-name"
+7: "file5-with-long-name.extension"
+7: "folder4-with-long-name"
+7: "file6-with-long-name.extension"
+7: my_block_impl::~my_block_impl() @0x4271dcc
+7: errno=0
+7: done
+7: 
+7: RESULT: PASS
+ 4/24 Test  #7: aarch32-rpi3b-rtos-apis-qemu .......................   Passed    7.22 sec
+test 9
+      Start  9: aarch32-rpi3b-sd_test-qemu-sd-make
+
+9: Test command: /usr/bin/python3 "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/rpi3b/sd_test/flatfs_tool.py" "make-seed" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-sd_test-qemu.disk.img"
+9: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+9: Test timeout computed to be: 10000000
+9: made /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-sd_test-qemu.disk.img: 8388608 sectors, seed.bin (100000 B) written.
+ 5/24 Test  #9: aarch32-rpi3b-sd_test-qemu-sd-make .................   Passed    0.02 sec
+test 11
+      Start 11: aarch32-rpi3b-sd_test-qemu
+
+11: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-drive" "file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-sd_test-qemu.disk.img,if=sd,format=raw" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-qemu.bin,addr=0x10000"
+11: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+11: Test timeout computed to be: 450
+11: os_startup_initialize_free_store(0x2d0000,67108864)
+11: first_fit_top(0x2d0000,67108864) @0x47cf8 app-heap
+11: out_of_memory_handler(0x15780) @0x47cf8 app-heap
+11: estd::pmr::set_default_resource(0x47cf8) 
+11: rtos::memory::set_default_resource(0x47cf8) 
+11: rtos::memory::init_once_default_resource() 
+11: malloc_memory_resource() @0x47cc8 malloc
+11: scheduler::start() 
+11: 
+11: +=================================================+
+11: |  Raspberry Pi 3 B - micro-os-plus-iii      |
+11: |  SD card (Arasan EMMC/SDHCI, PIO) + flatfs     |
+11: +=================================================+
+11: Initialising SD card via SDHCI @0x3F300000...
+11:   SD card ready: SDHC/SDXC (block addressing), 8388608 sectors (~4096 MiB)
+11: Phase A: host->device  (mount host-seeded volume, read seed.bin)
+11:   mounted volume.
+11:   seed.bin: 100000 bytes, checksum OK
+11:   [PASS] host-created seed.bin verified on device
+11: 
+11: Phase B: device->device  (format, write, read-back verify)
+11:   [PASS] format
+11:   writing hello.txt (40 B text)...
+11:   writing data1.bin (3000 B pattern)...
+11:   writing data2.bin (70000 B pattern)...
+11:   writing big.bin (307200 B pattern)...
+11: 
+11:   read-back verification:
+11:   [PASS] hello.txt read-back verified (40 B)
+11:   [PASS] data1.bin read-back verified (3000 B)
+11:   [PASS] data2.bin read-back verified (70000 B)
+11:   [PASS] big.bin read-back verified (307200 B)
+11: 
+11: Volume contents:
+11:   card: 8388608 sectors  free: 8385799 sectors  files: 4
+11:     hello.txt             start=    2065  size=      40
+11:     data1.bin             start=    2066  size=    3000
+11:     data2.bin             start=    2072  size=   70000
+11:     big.bin               start=    2209  size=  307200
+11: 
+11: RESULT: PASS (SD + flatfs verified)
+11: -------------------------------------------------
+ 6/24 Test #11: aarch32-rpi3b-sd_test-qemu .........................   Passed    0.65 sec
+test 10
+      Start 10: aarch32-rpi3b-sd_test-qemu-sd-remove
+
+10: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/cmake/3.26.5-1.1/.content/bin/cmake "-E" "rm" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-sd_test-qemu.disk.img"
+10: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+10: Test timeout computed to be: 10000000
+ 7/24 Test #10: aarch32-rpi3b-sd_test-qemu-sd-remove ...............   Passed    0.00 sec
+test 13
+      Start 13: aarch32-rpi3b-smp-mat-sdcard-test-qemu-sd-make
+
+13: Test command: /usr/bin/python3 "-c" "open(__import__('sys').argv[1],'wb').truncate(4<<30)" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-mat-sdcard-test-qemu.disk.img"
+13: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+13: Test timeout computed to be: 10000000
+ 8/24 Test #13: aarch32-rpi3b-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.01 sec
+test 15
+      Start 15: aarch32-rpi3b-smp-mat-sdcard-test-qemu
+
+15: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-drive" "file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-mat-sdcard-test-qemu.disk.img,if=sd,format=raw" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.bin,addr=0x10000"
+15: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+15: Test timeout computed to be: 2000
+15: os_startup_initialize_free_store(0x36c000,67108864)
+15: first_fit_top(0x36c000,67108864) @0xe5ac8 app-heap
+15: out_of_memory_handler(0x185d4) @0xe5ac8 app-heap
+15: estd::pmr::set_default_resource(0xe5ac8) 
+15: rtos::memory::set_default_resource(0xe5ac8) 
+15: rtos::memory::init_once_default_resource() 
+15: malloc_memory_resource() @0xe5a98 malloc
+15: scheduler::start() 
+15: 
+15: =============================================
+15:   Raspberry Pi 3 B - BCM2837 (4x Cortex-A53, AArch32)
+15:   micro-os-plus-iii  smp-mat-sdcard-test
+15:   parallel block linear solver, matrices on SD
+15:   N = 200, B = 20, cores = 4
+15: =============================================
+15: NOTE: 10 blocks over 4 cores (uneven round-robin split).
+15: Initialising SD card (Arasan EMMC/SDHCI)...
+15:   SD ready: 8388608 sectors (~4096 MiB)
+15:   flatfs volume formatted.
+15: Generating diagonally dominant 200 x 200 matrix...
+15:   matrix generated.
+15: Storing A and b on the SD card (A.mat, b.mat)...
+15:   stored A.mat (160000 bytes)
+15:   stored b.mat (800 bytes)
+15: Loading A_block/b_block from the SD card (solver working set)...
+15:   solver working set loaded from SD.
+15: Loading A/b for the classical solve from the SD card...
+15:   classical working set loaded from SD.
+15: 
+15: core 0: releasing the secondary cores...
+15: core 0: SMP up (c1=3 c2=3 c3=3).
+15: Starting Thread Pool of 10 worker threads...
+15: Submitting 20 tasks to the Thread Pool...
+15: Thread Pool: Worker executed task 0 on CPU 0
+15: Thread Pool: Worker executed task 1 on CPU 1
+15: Thread Pool: Worker executed task 3 on CPU 1
+15: Thread Pool: Worker executed task 5 on CPU 3
+15: Thread Pool: Worker executed task 2 on CPU 0
+15: Thread Pool: Worker executed task 11 on CPU 0
+15: Thread Pool: Worker executed task 9 on CPU 0
+15: Thread Pool: Worker executed task 6 on CPU 0
+15: Thread Pool: Worker executed task 12 on CPU 1
+15: Thread Pool: Worker executed task 10 on CPU 3
+15: Thread Pool: Worker executed task 16 on CPU 0
+15: Thread Pool: Worker executed task 17 on CPU 0
+15: Thread Pool: Worker executed task 8 on CPU 3
+15: Thread Pool: Worker executed task 14 on CPU 0
+15: Thread Pool: Worker executed task 15 on CPU 1
+15: Thread Pool: Worker executed task 7 on CPU 2
+15: Thread Pool: Worker executed task 13 on CPU 1
+15: Thread Pool: Worker executed task 4 on CPU 2
+15: Thread Pool: Worker executed task 18 on CPU 0
+15: Thread Pool: Worker executed task 19 on CPU 1
+15: Thread Pool demo finished. All 20 tasks executed successfully.
+15: 
+15: Starting parallel 4-core block elimination (N=200, B=20)...
+15: Block elimination finished.
+15: Solving full system using classical elimination...
+15: Classical elimination finished.
+15: 
+15: +---------------------------------------------------+
+15: | COMPARING BLOCK ELIMINATION VS CLASSICAL SOLVER  |
+15: +---------------------------------------------------+
+15: x[0] Block = 0.001917 | Classic = 0.001917 | Abs Diff = 0.000000
+15: x[6] Block = 0.001973 | Classic = 0.001973 | Abs Diff = 0.000000
+15: x[12] Block = 0.002067 | Classic = 0.002067 | Abs Diff = 0.000000
+15: x[18] Block = 0.002207 | Classic = 0.002207 | Abs Diff = 0.000000
+15: x[24] Block = 0.002243 | Classic = 0.002243 | Abs Diff = 0.000000
+15: x[30] Block = 0.002120 | Classic = 0.002120 | Abs Diff = 0.000000
+15: x[36] Block = 0.002038 | Classic = 0.002038 | Abs Diff = 0.000000
+15: x[42] Block = 0.002380 | Classic = 0.002380 | Abs Diff = 0.000000
+15: x[48] Block = 0.002022 | Classic = 0.002022 | Abs Diff = 0.000000
+15: x[54] Block = 0.002002 | Classic = 0.002002 | Abs Diff = 0.000000
+15: x[60] Block = 0.001977 | Classic = 0.001977 | Abs Diff = 0.000000
+15: x[66] Block = 0.002080 | Classic = 0.002080 | Abs Diff = 0.000000
+15: x[72] Block = 0.002067 | Classic = 0.002067 | Abs Diff = 0.000000
+15: x[78] Block = 0.001722 | Classic = 0.001722 | Abs Diff = 0.000000
+15: x[84] Block = 0.002120 | Classic = 0.002120 | Abs Diff = 0.000000
+15: x[90] Block = 0.001987 | Classic = 0.001987 | Abs Diff = 0.000000
+15: x[96] Block = 0.002050 | Classic = 0.002050 | Abs Diff = 0.000000
+15: x[102] Block = 0.001663 | Classic = 0.001663 | Abs Diff = 0.000000
+15: x[108] Block = 0.001781 | Classic = 0.001781 | Abs Diff = 0.000000
+15: x[114] Block = 0.002325 | Classic = 0.002325 | Abs Diff = 0.000000
+15: x[120] Block = 0.001839 | Classic = 0.001839 | Abs Diff = 0.000000
+15: x[126] Block = 0.001808 | Classic = 0.001808 | Abs Diff = 0.000000
+15: x[132] Block = 0.001611 | Classic = 0.001611 | Abs Diff = 0.000000
+15: x[138] Block = 0.001816 | Classic = 0.001816 | Abs Diff = 0.000000
+15: x[144] Block = 0.001969 | Classic = 0.001969 | Abs Diff = 0.000000
+15: x[150] Block = 0.001661 | Classic = 0.001661 | Abs Diff = 0.000000
+15: x[156] Block = 0.001942 | Classic = 0.001942 | Abs Diff = 0.000000
+15: x[162] Block = 0.002066 | Classic = 0.002066 | Abs Diff = 0.000000
+15: x[168] Block = 0.001696 | Classic = 0.001696 | Abs Diff = 0.000000
+15: x[174] Block = 0.001770 | Classic = 0.001770 | Abs Diff = 0.000000
+15: x[180] Block = 0.002032 | Classic = 0.002032 | Abs Diff = 0.000000
+15: x[186] Block = 0.001864 | Classic = 0.001864 | Abs Diff = 0.000000
+15: x[192] Block = 0.001807 | Classic = 0.001807 | Abs Diff = 0.000000
+15: x[198] Block = 0.002180 | Classic = 0.002180 | Abs Diff = 0.000000
+15: -----------------------------------------------------
+15: Total Absolute Difference (Sum): 0.000000
+15: Max Absolute Difference:        0.000000
+15: Residual ||A*x_block - b||_inf: 0.000001
+15: Residual ||A*x_classic - b||_inf: 0.000001
+15: -----------------------------------------------------
+15: Performance Metrics:
+15:   Parallel Block Solver: 7343.000 us
+15:   Classical Solver:      29587.000 us
+15:   Speedup Ratio:         4.029x
+15: +---------------------------------------------------+
+15: Storing solutions on the SD card (x_block.mat, xclassic.mat)...
+15:   solution round-trip to/from SD: OK
+15: RESULT: PASS (block == classical within tolerance, SD round-trip OK)
+15: ---------------------------------------------
+ 9/24 Test #15: aarch32-rpi3b-smp-mat-sdcard-test-qemu .............   Passed    0.52 sec
+test 14
+      Start 14: aarch32-rpi3b-smp-mat-sdcard-test-qemu-sd-remove
+
+14: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/cmake/3.26.5-1.1/.content/bin/cmake "-E" "rm" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-mat-sdcard-test-qemu.disk.img"
+14: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+14: Test timeout computed to be: 10000000
+10/24 Test #14: aarch32-rpi3b-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.00 sec
+test 17
+      Start 17: aarch32-rpi3b-smp-mat-test-qemu
+
+17: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-qemu.bin,addr=0x10000"
+17: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+17: Test timeout computed to be: 900
+17: os_startup_initialize_free_store(0x2f8000,67108864)
+17: first_fit_top(0x2f8000,67108864) @0x70648 app-heap
+17: out_of_memory_handler(0x1855c) @0x70648 app-heap
+17: estd::pmr::set_default_resource(0x70648) 
+17: rtos::memory::set_default_resource(0x70648) 
+17: rtos::memory::init_once_default_resource() 
+17: malloc_memory_resource() @0x70618 malloc
+17: scheduler::start() 
+17: 
+17: =============================================
+17:   Raspberry Pi 3 B - BCM2837 (4x Cortex-A53, AArch32)
+17:   micro-os-plus-iii  smp-mat-test (all in RAM)
+17:   parallel block linear solver
+17:   N = 120, B = 20, cores = 4
+17: =============================================
+17: core 0: releasing cores 1..3...
+17: core 0: SMP up (c1=3 c2=3 c3=3, 0 ms).
+17: Starting Thread Pool of 10 worker threads...
+17: Submitting 20 tasks to the Thread Pool...
+17: Thread Pool: Worker executed task 0 on CPU 0
+17: Thread Pool: Worker executed task 1 on CPU 0
+17: Thread Pool: Worker executed task 2 on CPU 0
+17: Thread Pool: Worker executed task 4 on CPU 3
+17: Thread Pool: Worker executed task 7 on CPU 3
+17: Thread Pool: Worker executed task 8 on CPU 2
+17: Thread Pool: Worker executed task 3 on CPU 2
+17: Thread Pool: Worker executed task 9 on CPU 1
+17: Thread Pool: Worker executed task 12 on CPU 0
+17: Thread Pool: Worker executed task 10 on CPU 0
+17: Thread Pool: Worker executed task 5 on CPU 3
+17: Thread Pool: Worker executed task 14 on CPU 0
+17: Thread Pool: Worker executed task 16 on CPU 3
+17: Thread Pool: Worker executed task 19 on CPU 0
+17: Thread Pool: Worker executed task 6 on CPU 1
+17: Thread Pool: Worker executed task 13 on CPU 0
+17: Thread Pool: Worker executed task 18 on CPU 1
+17: Thread Pool: Worker executed task 17 on CPU 2
+17: Thread Pool: Worker executed task 11 on CPU 3
+17: Thread Pool: Worker executed task 15 on CPU 2
+17: Thread Pool demo finished. All 20 tasks executed successfully.
+17: 
+17: NOTE: 6 blocks over 4 cores (uneven round-robin split).
+17: Generating diagonally dominant 120 x 120 matrix...
+17: Starting parallel 4 -core block elimination...
+17: Block elimination finished.
+17: Solving full system using classical elimination...
+17: Classical elimination finished.
+17: 
+17: +---------------------------------------------------+
+17: | COMPARING BLOCK ELIMINATION VS CLASSICAL SOLVER  |
+17: +---------------------------------------------------+
+17: x[0] Block = 0.003343 | Classic = 0.003343 | Abs Diff = 0.000000
+17: x[1] Block = 0.003210 | Classic = 0.003210 | Abs Diff = 0.000000
+17: x[2] Block = 0.003193 | Classic = 0.003193 | Abs Diff = 0.000000
+17: x[3] Block = 0.003209 | Classic = 0.003209 | Abs Diff = 0.000000
+17: x[4] Block = 0.002922 | Classic = 0.002922 | Abs Diff = 0.000000
+17: x[5] Block = 0.003019 | Classic = 0.003019 | Abs Diff = 0.000000
+17: x[6] Block = 0.003283 | Classic = 0.003283 | Abs Diff = 0.000000
+17: x[7] Block = 0.003196 | Classic = 0.003196 | Abs Diff = 0.000000
+17: x[8] Block = 0.003215 | Classic = 0.003215 | Abs Diff = 0.000000
+17: x[9] Block = 0.003282 | Classic = 0.003282 | Abs Diff = 0.000000
+17: x[10] Block = 0.003093 | Classic = 0.003093 | Abs Diff = 0.000000
+17: x[11] Block = 0.003500 | Classic = 0.003500 | Abs Diff = 0.000000
+17: x[12] Block = 0.003521 | Classic = 0.003521 | Abs Diff = 0.000000
+17: x[13] Block = 0.004170 | Classic = 0.004170 | Abs Diff = 0.000000
+17: x[14] Block = 0.003280 | Classic = 0.003280 | Abs Diff = 0.000000
+17: x[15] Block = 0.003685 | Classic = 0.003685 | Abs Diff = 0.000000
+17: x[16] Block = 0.003431 | Classic = 0.003431 | Abs Diff = 0.000000
+17: x[17] Block = 0.003808 | Classic = 0.003808 | Abs Diff = 0.000000
+17: x[18] Block = 0.003569 | Classic = 0.003569 | Abs Diff = 0.000000
+17: x[19] Block = 0.003504 | Classic = 0.003504 | Abs Diff = 0.000000
+17: x[20] Block = 0.003569 | Classic = 0.003569 | Abs Diff = 0.000000
+17: x[21] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+17: x[22] Block = 0.002927 | Classic = 0.002927 | Abs Diff = 0.000000
+17: x[23] Block = 0.003788 | Classic = 0.003788 | Abs Diff = 0.000000
+17: x[24] Block = 0.003486 | Classic = 0.003486 | Abs Diff = 0.000000
+17: x[25] Block = 0.003190 | Classic = 0.003190 | Abs Diff = 0.000000
+17: x[26] Block = 0.003291 | Classic = 0.003291 | Abs Diff = 0.000000
+17: x[27] Block = 0.003152 | Classic = 0.003152 | Abs Diff = 0.000000
+17: x[28] Block = 0.003313 | Classic = 0.003313 | Abs Diff = 0.000000
+17: x[29] Block = 0.003370 | Classic = 0.003370 | Abs Diff = 0.000000
+17: x[30] Block = 0.003147 | Classic = 0.003147 | Abs Diff = 0.000000
+17: x[31] Block = 0.003443 | Classic = 0.003443 | Abs Diff = 0.000000
+17: x[32] Block = 0.003093 | Classic = 0.003093 | Abs Diff = 0.000000
+17: x[33] Block = 0.003355 | Classic = 0.003355 | Abs Diff = 0.000000
+17: x[34] Block = 0.003485 | Classic = 0.003485 | Abs Diff = 0.000000
+17: x[35] Block = 0.002541 | Classic = 0.002541 | Abs Diff = 0.000000
+17: x[36] Block = 0.003829 | Classic = 0.003829 | Abs Diff = 0.000000
+17: x[37] Block = 0.003803 | Classic = 0.003803 | Abs Diff = 0.000000
+17: x[38] Block = 0.003037 | Classic = 0.003037 | Abs Diff = 0.000000
+17: x[39] Block = 0.004004 | Classic = 0.004004 | Abs Diff = 0.000000
+17: x[40] Block = 0.003734 | Classic = 0.003734 | Abs Diff = 0.000000
+17: x[41] Block = 0.003660 | Classic = 0.003660 | Abs Diff = 0.000000
+17: x[42] Block = 0.003792 | Classic = 0.003792 | Abs Diff = 0.000000
+17: x[43] Block = 0.003233 | Classic = 0.003233 | Abs Diff = 0.000000
+17: x[44] Block = 0.003311 | Classic = 0.003311 | Abs Diff = 0.000000
+17: x[45] Block = 0.002977 | Classic = 0.002977 | Abs Diff = 0.000000
+17: x[46] Block = 0.003304 | Classic = 0.003304 | Abs Diff = 0.000000
+17: x[47] Block = 0.003513 | Classic = 0.003513 | Abs Diff = 0.000000
+17: x[48] Block = 0.003623 | Classic = 0.003623 | Abs Diff = 0.000000
+17: x[49] Block = 0.003396 | Classic = 0.003396 | Abs Diff = 0.000000
+17: x[50] Block = 0.003458 | Classic = 0.003458 | Abs Diff = 0.000000
+17: x[51] Block = 0.003371 | Classic = 0.003371 | Abs Diff = 0.000000
+17: x[52] Block = 0.003164 | Classic = 0.003164 | Abs Diff = 0.000000
+17: x[53] Block = 0.003532 | Classic = 0.003532 | Abs Diff = 0.000000
+17: x[54] Block = 0.003636 | Classic = 0.003636 | Abs Diff = 0.000000
+17: x[55] Block = 0.003944 | Classic = 0.003944 | Abs Diff = 0.000000
+17: x[56] Block = 0.003592 | Classic = 0.003592 | Abs Diff = 0.000000
+17: x[57] Block = 0.003169 | Classic = 0.003169 | Abs Diff = 0.000000
+17: x[58] Block = 0.003511 | Classic = 0.003511 | Abs Diff = 0.000000
+17: x[59] Block = 0.003066 | Classic = 0.003066 | Abs Diff = 0.000000
+17: x[60] Block = 0.003175 | Classic = 0.003175 | Abs Diff = 0.000000
+17: x[61] Block = 0.003562 | Classic = 0.003562 | Abs Diff = 0.000000
+17: x[62] Block = 0.002659 | Classic = 0.002659 | Abs Diff = 0.000000
+17: x[63] Block = 0.003602 | Classic = 0.003602 | Abs Diff = 0.000000
+17: x[64] Block = 0.003036 | Classic = 0.003036 | Abs Diff = 0.000000
+17: x[65] Block = 0.003580 | Classic = 0.003580 | Abs Diff = 0.000000
+17: x[66] Block = 0.003361 | Classic = 0.003361 | Abs Diff = 0.000000
+17: x[67] Block = 0.002781 | Classic = 0.002781 | Abs Diff = 0.000000
+17: x[68] Block = 0.003216 | Classic = 0.003216 | Abs Diff = 0.000000
+17: x[69] Block = 0.003187 | Classic = 0.003187 | Abs Diff = 0.000000
+17: x[70] Block = 0.004606 | Classic = 0.004606 | Abs Diff = 0.000000
+17: x[71] Block = 0.003390 | Classic = 0.003390 | Abs Diff = 0.000000
+17: x[72] Block = 0.002917 | Classic = 0.002917 | Abs Diff = 0.000000
+17: x[73] Block = 0.003266 | Classic = 0.003266 | Abs Diff = 0.000000
+17: x[74] Block = 0.003139 | Classic = 0.003139 | Abs Diff = 0.000000
+17: x[75] Block = 0.003189 | Classic = 0.003189 | Abs Diff = 0.000000
+17: x[76] Block = 0.002743 | Classic = 0.002743 | Abs Diff = 0.000000
+17: x[77] Block = 0.003229 | Classic = 0.003229 | Abs Diff = 0.000000
+17: x[78] Block = 0.003516 | Classic = 0.003516 | Abs Diff = 0.000000
+17: x[79] Block = 0.002963 | Classic = 0.002963 | Abs Diff = 0.000000
+17: x[80] Block = 0.003640 | Classic = 0.003640 | Abs Diff = 0.000000
+17: x[81] Block = 0.003361 | Classic = 0.003361 | Abs Diff = 0.000000
+17: x[82] Block = 0.003759 | Classic = 0.003759 | Abs Diff = 0.000000
+17: x[83] Block = 0.003119 | Classic = 0.003119 | Abs Diff = 0.000000
+17: x[84] Block = 0.003322 | Classic = 0.003322 | Abs Diff = 0.000000
+17: x[85] Block = 0.003362 | Classic = 0.003362 | Abs Diff = 0.000000
+17: x[86] Block = 0.003174 | Classic = 0.003174 | Abs Diff = 0.000000
+17: x[87] Block = 0.003374 | Classic = 0.003374 | Abs Diff = 0.000000
+17: x[88] Block = 0.003255 | Classic = 0.003255 | Abs Diff = 0.000000
+17: x[89] Block = 0.003070 | Classic = 0.003070 | Abs Diff = 0.000000
+17: x[90] Block = 0.003496 | Classic = 0.003496 | Abs Diff = 0.000000
+17: x[91] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+17: x[92] Block = 0.003470 | Classic = 0.003470 | Abs Diff = 0.000000
+17: x[93] Block = 0.003455 | Classic = 0.003455 | Abs Diff = 0.000000
+17: x[94] Block = 0.003128 | Classic = 0.003128 | Abs Diff = 0.000000
+17: x[95] Block = 0.003788 | Classic = 0.003788 | Abs Diff = 0.000000
+17: x[96] Block = 0.004060 | Classic = 0.004060 | Abs Diff = 0.000000
+17: x[97] Block = 0.003034 | Classic = 0.003034 | Abs Diff = 0.000000
+17: x[98] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+17: x[99] Block = 0.003647 | Classic = 0.003647 | Abs Diff = 0.000000
+17: x[100] Block = 0.003197 | Classic = 0.003197 | Abs Diff = 0.000000
+17: x[101] Block = 0.002948 | Classic = 0.002948 | Abs Diff = 0.000000
+17: x[102] Block = 0.003072 | Classic = 0.003072 | Abs Diff = 0.000000
+17: x[103] Block = 0.003618 | Classic = 0.003618 | Abs Diff = 0.000000
+17: x[104] Block = 0.003176 | Classic = 0.003176 | Abs Diff = 0.000000
+17: x[105] Block = 0.003416 | Classic = 0.003416 | Abs Diff = 0.000000
+17: x[106] Block = 0.003408 | Classic = 0.003408 | Abs Diff = 0.000000
+17: x[107] Block = 0.003526 | Classic = 0.003526 | Abs Diff = 0.000000
+17: x[108] Block = 0.002748 | Classic = 0.002748 | Abs Diff = 0.000000
+17: x[109] Block = 0.002987 | Classic = 0.002987 | Abs Diff = 0.000000
+17: x[110] Block = 0.003210 | Classic = 0.003210 | Abs Diff = 0.000000
+17: x[111] Block = 0.003457 | Classic = 0.003457 | Abs Diff = 0.000000
+17: x[112] Block = 0.003811 | Classic = 0.003811 | Abs Diff = 0.000000
+17: x[113] Block = 0.002582 | Classic = 0.002582 | Abs Diff = 0.000000
+17: x[114] Block = 0.003437 | Classic = 0.003437 | Abs Diff = 0.000000
+17: x[115] Block = 0.003795 | Classic = 0.003795 | Abs Diff = 0.000000
+17: x[116] Block = 0.003576 | Classic = 0.003576 | Abs Diff = 0.000000
+17: x[117] Block = 0.002935 | Classic = 0.002935 | Abs Diff = 0.000000
+17: x[118] Block = 0.003321 | Classic = 0.003321 | Abs Diff = 0.000000
+17: x[119] Block = 0.002714 | Classic = 0.002714 | Abs Diff = 0.000000
+17: -----------------------------------------------------
+17: Total Absolute Difference (Sum): 0.000000
+17: Max Absolute Difference:        0.000000
+17: -----------------------------------------------------
+17: Performance Metrics:
+17:   Parallel Block Solver: 2835.000 us
+17:   Classical Solver:      17851.000 us
+17:   Speedup Ratio:         6.297x
+17: +---------------------------------------------------+
+17: RESULT: PASS (block == classical within tolerance)
+17: ---------------------------------------------
+11/24 Test #17: aarch32-rpi3b-smp-mat-test-qemu ....................   Passed    0.22 sec
+test 19
+      Start 19: aarch32-rpi3b-smp-num-test-qemu-sd-make
+
+19: Test command: /usr/bin/python3 "-c" "open(__import__('sys').argv[1],'wb').truncate(4<<30)" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-num-test-qemu.disk.img"
+19: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+19: Test timeout computed to be: 10000000
+12/24 Test #19: aarch32-rpi3b-smp-num-test-qemu-sd-make ............   Passed    0.01 sec
+test 21
+      Start 21: aarch32-rpi3b-smp-num-test-qemu
+
+21: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-drive" "file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-num-test-qemu.disk.img,if=sd,format=raw" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-qemu.bin,addr=0x10000"
+21: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+21: Test timeout computed to be: 1000
+21: os_startup_initialize_free_store(0x358000,67108864)
+21: first_fit_top(0x358000,67108864) @0xd09e8 app-heap
+21: out_of_memory_handler(0x17580) @0xd09e8 app-heap
+21: estd::pmr::set_default_resource(0xd09e8) 
+21: rtos::memory::set_default_resource(0xd09e8) 
+21: rtos::memory::init_once_default_resource() 
+21: malloc_memory_resource() @0xd09b8 malloc
+21: scheduler::start() 
+21: 
+21: +== RPi 3 B µOS++ NUM TEST (AArch32) : uart+LED+SD+FPU ==+
+21: 
+21: Initialising SD card via SDHCI @0x3F300000...
+21:   SD card ready: 8388608 sectors (~4096 MiB)
+21:   flatfs volume formatted.
+21:   removed previous num.txt (if any)
+21: join: c1=3 c2=3 c3=3 (0 ms)
+21: [c0] led on
+21: threads started (uart=high, led=above_normal, text=normal, compute=below_normal, reader=low)
+21: running for 60000 ms ...
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c1] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c2][reader] pass 0: num.txt now 3602 bytes (+3602)
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c2][reader] pass 1: num.txt now 7204 bytes (+3602)
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c1][reader] pass 2: num.txt now 10260 bytes (+3056)
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0][reader] pass 3: num.txt now 14642 bytes (+4382)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c1][reader] pass 4: num.txt now 18166 bytes (+3524)
+21: [c1] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c1] led off
+21: [c0][reader] pass 5: num.txt now 22002 bytes (+3836)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c2][reader] pass 6: num.txt now 25448 bytes (+3446)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0][reader] pass 7: num.txt now 29206 bytes (+3758)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c1][reader] pass 8: num.txt now 32808 bytes (+3602)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0][reader] pass 9: num.txt now 36644 bytes (+3836)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c1][reader] pass 10: num.txt now 40324 bytes (+3680)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c1] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c1][reader] pass 11: num.txt now 44004 bytes (+3680)
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c3][reader] pass 12: num.txt now 47606 bytes (+3602)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c1] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c3][reader] pass 13: num.txt now 51364 bytes (+3758)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c1][reader] pass 14: num.txt now 54498 bytes (+3134)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c3][reader] pass 15: num.txt now 58880 bytes (+4382)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c2][reader] pass 16: num.txt now 62560 bytes (+3680)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c1] led off
+21: [c0] led on
+21: [c0][reader] pass 17: num.txt now 65928 bytes (+3368)
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c3][reader] pass 18: num.txt now 69296 bytes (+3368)
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] led on
+21: [c0] led off
+21: [c0] LED stopped
+21: [c0][reader] stopped after 19 dumps
+21: 
+21: ---- num.txt on SD (69920 bytes, final dump) ----
+21: ---- end num.txt ----
+21: num.txt lines by core: c0=297 c1=182 c2=157 c3=124
+21: run 60000 ms, text=380 calc=380
+21: 
+21: RESULT: PASS
+13/24 Test #21: aarch32-rpi3b-smp-num-test-qemu ....................   Passed   60.77 sec
+test 20
+      Start 20: aarch32-rpi3b-smp-num-test-qemu-sd-remove
+
+20: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/cmake/3.26.5-1.1/.content/bin/cmake "-E" "rm" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-num-test-qemu.disk.img"
+20: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+20: Test timeout computed to be: 10000000
+14/24 Test #20: aarch32-rpi3b-smp-num-test-qemu-sd-remove ..........   Passed    0.00 sec
+test 23
+      Start 23: aarch32-rpi3b-smp-pipeline-test-qemu-sd-make
+
+23: Test command: /usr/bin/python3 "-c" "open(__import__('sys').argv[1],'wb').truncate(4<<30)" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-pipeline-test-qemu.disk.img"
+23: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+23: Test timeout computed to be: 10000000
+15/24 Test #23: aarch32-rpi3b-smp-pipeline-test-qemu-sd-make .......   Passed    0.01 sec
+test 25
+      Start 25: aarch32-rpi3b-smp-pipeline-test-qemu
+
+25: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-drive" "file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-pipeline-test-qemu.disk.img,if=sd,format=raw" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-qemu.bin,addr=0x10000"
+25: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+25: Test timeout computed to be: 1000
+25: os_startup_initialize_free_store(0x308000,67108864)
+25: first_fit_top(0x308000,67108864) @0x822a8 app-heap
+25: out_of_memory_handler(0x17c48) @0x822a8 app-heap
+25: estd::pmr::set_default_resource(0x822a8) 
+25: rtos::memory::set_default_resource(0x822a8) 
+25: rtos::memory::init_once_default_resource() 
+25: malloc_memory_resource() @0x82278 malloc
+25: scheduler::start() 
+25: 
+25: +== RPi 3 B µOS++ SMP PIPELINE TEST (AArch32) ==+
+25: 13 threads, 4 cores, shared queues, SD-card persistence & yield() stress
+25: 
+25: Initialising SD card via SDHCI @0x3F300000...
+25:   SD card ready: 8388608 sectors (~4096 MiB)
+25:   flatfs volume formatted, pipe.dat ready
+25: join: c1=3 c2=3 c3=3 (0 ms)
+25: 13 pipeline threads successfully started!
+25: running pipeline for 30000 ms ...
+25: [t= 1203 ms] pipe: in_q= 0 sd_q= 2 | prod=111 proc=111 sd=108 aud=106 | yields: P=0 W=6857 C=27 S=58 A=106
+25: [t= 2205 ms] pipe: in_q= 0 sd_q= 1 | prod=220 proc=220 sd=217 aud=217 | yields: P=0 W=13756 C=53 S=116 A=217
+25: [t= 3206 ms] pipe: in_q= 0 sd_q= 1 | prod=329 proc=329 sd=328 aud=325 | yields: P=0 W=20611 C=81 S=174 A=325
+25: [t= 4206 ms] pipe: in_q= 0 sd_q= 0 | prod=438 proc=438 sd=438 aud=433 | yields: P=0 W=27514 C=108 S=232 A=433
+25: [t= 5206 ms] pipe: in_q= 0 sd_q= 0 | prod=547 proc=547 sd=546 aud=546 | yields: P=0 W=34441 C=135 S=291 A=546
+25: [t= 6206 ms] pipe: in_q= 1 sd_q= 0 | prod=657 proc=656 sd=654 aud=652 | yields: P=0 W=41299 C=163 S=347 A=652
+25: [t= 7207 ms] pipe: in_q= 0 sd_q= 1 | prod=766 proc=766 sd=764 aud=764 | yields: P=0 W=48214 C=189 S=404 A=764
+25: [t= 8208 ms] pipe: in_q= 0 sd_q= 1 | prod=875 proc=875 sd=874 aud=870 | yields: P=0 W=55106 C=217 S=463 A=870
+25: [t= 9208 ms] pipe: in_q= 0 sd_q= 0 | prod=985 proc=985 sd=982 aud=982 | yields: P=0 W=62006 C=245 S=520 A=982
+25: [t=10208 ms] pipe: in_q= 0 sd_q= 2 | prod=1093 proc=1093 sd=1091 aud=1088 | yields: P=0 W=68895 C=272 S=580 A=1088
+25: [t=11208 ms] pipe: in_q= 0 sd_q= 1 | prod=1202 proc=1202 sd=1201 aud=1198 | yields: P=0 W=75785 C=299 S=638 A=1198
+25: [t=12208 ms] pipe: in_q= 0 sd_q= 1 | prod=1311 proc=1311 sd=1310 aud=1306 | yields: P=0 W=82683 C=326 S=694 A=1306
+25: [t=13209 ms] pipe: in_q= 0 sd_q= 1 | prod=1420 proc=1420 sd=1419 aud=1415 | yields: P=0 W=89613 C=353 S=753 A=1415
+25: [t=14209 ms] pipe: in_q= 0 sd_q= 2 | prod=1530 proc=1530 sd=1527 aud=1525 | yields: P=0 W=96537 C=382 S=809 A=1525
+25: [t=15210 ms] pipe: in_q= 1 sd_q= 0 | prod=1640 proc=1639 sd=1638 aud=1638 | yields: P=0 W=103439 C=408 S=870 A=1638
+25: [t=16210 ms] pipe: in_q= 1 sd_q= 0 | prod=1749 proc=1748 sd=1746 aud=1746 | yields: P=0 W=110318 C=436 S=929 A=1746
+25: [t=17212 ms] pipe: in_q= 0 sd_q= 1 | prod=1857 proc=1857 sd=1856 aud=1855 | yields: P=0 W=117277 C=462 S=987 A=1855
+25: [t=18213 ms] pipe: in_q= 0 sd_q= 3 | prod=1968 proc=1968 sd=1964 aud=1960 | yields: P=0 W=124152 C=490 S=1043 A=1960
+25: [t=19215 ms] pipe: in_q= 0 sd_q= 2 | prod=2077 proc=2077 sd=2073 aud=2069 | yields: P=0 W=131022 C=518 S=1099 A=2069
+25: [t=20215 ms] pipe: in_q= 0 sd_q= 0 | prod=2185 proc=2185 sd=2184 aud=2181 | yields: P=0 W=137953 C=544 S=1157 A=2181
+25: [t=21218 ms] pipe: in_q= 0 sd_q= 0 | prod=2295 proc=2295 sd=2292 aud=2292 | yields: P=0 W=144834 C=572 S=1213 A=2292
+25: [t=22220 ms] pipe: in_q= 0 sd_q= 2 | prod=2404 proc=2404 sd=2402 aud=2402 | yields: P=0 W=151748 C=600 S=1274 A=2402
+25: [t=23221 ms] pipe: in_q= 0 sd_q= 2 | prod=2514 proc=2514 sd=2512 aud=2509 | yields: P=0 W=158685 C=627 S=1333 A=2509
+25: [t=24221 ms] pipe: in_q= 0 sd_q= 1 | prod=2623 proc=2623 sd=2619 aud=2619 | yields: P=0 W=165595 C=654 S=1393 A=2619
+25: [t=25222 ms] pipe: in_q= 0 sd_q= 0 | prod=2731 proc=2731 sd=2730 aud=2727 | yields: P=0 W=172575 C=681 S=1453 A=2727
+25: [t=26224 ms] pipe: in_q= 0 sd_q= 0 | prod=2842 proc=2842 sd=2838 aud=2837 | yields: P=0 W=179444 C=709 S=1511 A=2837
+25: [t=27227 ms] pipe: in_q= 0 sd_q= 0 | prod=2950 proc=2950 sd=2947 aud=2944 | yields: P=0 W=186396 C=737 S=1570 A=2944
+25: [t=28229 ms] pipe: in_q= 0 sd_q= 2 | prod=3060 proc=3060 sd=3057 aud=3055 | yields: P=0 W=193343 C=763 S=1628 A=3055
+25: [t=29230 ms] pipe: in_q= 0 sd_q= 0 | prod=3169 proc=3169 sd=3167 aud=3163 | yields: P=0 W=200301 C=791 S=1689 A=3163
+25: 
+25: stopping pipeline threads...
+25: 
+25: ================ Pipeline Test Summary ================
+25: Records Produced:  3275
+25: Records Processed: 3275
+25: Records Written:   3275
+25: Records Audited:   3274
+25: Errors: CRC=0, Sequence=0, Write=0
+25: Yield Calls Breakdown:
+25:   Producer yield backpressure: 0
+25:   Worker queue wait yields:    207000
+25:   Compute chunking yields:     817
+25:   SD writer turn yields:       1749
+25:   Auditor chunk read yields:   3274
+25:   Total yield() calls:         212840
+25: Yields by Core: c0=116864 c1=51092 c2=28872 c3=16012
+25: Produced by Core: c0=2851 c1=249 c2=117 c3=58
+25: Processed by Core: c0=2505 c1=441 c2=230 c3=99
+25: =======================================================
+25: 
+25: RESULT: PASS
+16/24 Test #25: aarch32-rpi3b-smp-pipeline-test-qemu ...............   Passed   30.68 sec
+test 24
+      Start 24: aarch32-rpi3b-smp-pipeline-test-qemu-sd-remove
+
+24: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/cmake/3.26.5-1.1/.content/bin/cmake "-E" "rm" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/aarch32-rpi3b-smp-pipeline-test-qemu.disk.img"
+24: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+24: Test timeout computed to be: 10000000
+17/24 Test #24: aarch32-rpi3b-smp-pipeline-test-qemu-sd-remove .....   Passed    0.01 sec
+test 27
+      Start 27: aarch32-rpi3b-smp-pro-cons-test-qemu
+
+27: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-pro-cons-test-qemu.bin,addr=0x10000"
+27: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+27: Test timeout computed to be: 1000
+27: os_startup_initialize_free_store(0x2c8000,67108864)
+27: first_fit_top(0x2c8000,67108864) @0x41cc8 app-heap
+27: out_of_memory_handler(0x1a7c0) @0x41cc8 app-heap
+27: estd::pmr::set_default_resource(0x41cc8) 
+27: rtos::memory::set_default_resource(0x41cc8) 
+27: rtos::memory::init_once_default_resource() 
+27: malloc_memory_resource() @0x41c98 malloc
+27: scheduler::start() 
+27: 
+27: +=============================================================+
+27: |  RPi 3 B µOS++ SMP PRODUCER-CONSUMER KERNEL OBJECT TEST |
+27: |  BCM2837 (4x Cortex-A53, AArch32) — ALL Kernel Objects Demo |
+27: +=============================================================+
+27: 
+27: Secondary cores joined: c1=3 c2=3 c3=3 (0 ms)
+27: Starting periodic software timer (200 ms)...
+27: 12 concurrent threads started across 4 cores!
+27: Running pipeline for 4000 ms ...
+27: 
+27: [t= 1006 ms] pipe: prod=319 (+319) cons=319 (+319) | pool=319/319 | yields=638 | ticks=5 | stages=40
+27: [t= 2006 ms] pipe: prod=635 (+316) cons=635 (+316) | pool=635/635 | yields=1270 | ticks=10 | stages=80
+27: [t= 3006 ms] pipe: prod=953 (+318) cons=953 (+318) | pool=953/953 | yields=1906 | ticks=15 | stages=120
+27: [t= 4006 ms] pipe: prod=1270 (+317) cons=1270 (+317) | pool=1270/1270 | yields=2540 | ticks=20 | stages=159
+27: 
+27: Stopping producer-consumer pipeline threads...
+27: 
+27: ================ Producer-Consumer Test Summary ================
+27: Kernel Objects Tested:
+27:   [1] thread              : 12 threads active across 4 cores
+27:   [2] memory_pool         : allocs=1272, frees=1272 (diff=0)
+27:   [3] message_queue       : sent=1272, received=1272
+27:   [4] semaphore_counting  : flow-control tokens acquired & returned
+27:   [5] semaphore_binary    : 159 stage synchronizations verified
+27:   [6] mutex               : protected console, stats, and condition var
+27:   [7] condition_variable  : 79 batches signaled & verified
+27:   [8] event_flags         : multi-bit lifecycle & timer flags handled
+27:   [9] timer               : 22 software timer ticks delivered
+27:   [10] sysclock           : sleep_for() & timestamping verified
+27:   [11] yield/suspend/res  : 2544 yields, 11 suspends, 11 resumes
+27: Errors:
+27:   CRC Errors: 0
+27: SMP Core Distribution:
+27:   Produced by core : c0=401 c1=334 c2=286 c3=251 
+27:   Consumed by core : c0=276 c1=326 c2=344 c3=326 
+27:   Yields by core   : c0=677 c1=660 c2=630 c3=577 
+27: ================================================================
+27: 
+27: RESULT: PASS
+18/24 Test #27: aarch32-rpi3b-smp-pro-cons-test-qemu ...............   Passed    4.52 sec
+test 29
+      Start 29: aarch32-rpi3b-smp_test0-qemu
+
+29: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-qemu.bin,addr=0x10000"
+29: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+29: Test timeout computed to be: 150
+29: 
+29: 
+29: +=============================================+
+29: |  Raspberry Pi 3 B  -  µOS++ SMP TEST 0  |
+29: |  Phase 1: UART + MMU + 1ms tick (core 0)    |
+29: +=============================================+
+29: 
+29: os_startup_initialize_free_store(0x2b4000,67108864)
+29: first_fit_top(0x2b4000,67108864) @0x2cfd8 app-heap
+29: out_of_memory_handler(0x1541c) @0x2cfd8 app-heap
+29: estd::pmr::set_default_resource(0x2cfd8) 
+29: rtos::memory::set_default_resource(0x2cfd8) 
+29: rtos::memory::init_once_default_resource() 
+29: malloc_memory_resource() @0x2cfa8 malloc
+29: scheduler::start() 
+29: Scheduler started on core 0. Heartbeat via sysclock.sleep_for(1000):
+29: [tick] heartbeat 0  os_clock=0 ms
+29: [tick] heartbeat 1  os_clock=1001 ms
+29: [tick] heartbeat 2  os_clock=2001 ms
+29: [tick] heartbeat 3  os_clock=3001 ms
+29: [tick] heartbeat 4  os_clock=4001 ms
+29: [tick] heartbeat 5  os_clock=5001 ms
+29: [tick] heartbeat 6  os_clock=6001 ms
+29: [tick] heartbeat 7  os_clock=7001 ms
+29: [tick] heartbeat 8  os_clock=8001 ms
+29: [tick] heartbeat 9  os_clock=9001 ms
+29: RESULT: PASS (10 heartbeats on core 0)
+19/24 Test #29: aarch32-rpi3b-smp_test0-qemu .......................   Passed   10.10 sec
+test 31
+      Start 31: aarch32-rpi3b-smp_test1-qemu
+
+31: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test1-qemu.bin,addr=0x10000"
+31: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+31: Test timeout computed to be: 150
+31: 
+31: 
+31: +== RPi 3 B µOS++ SMP TEST 1 : semaphore ping-pong + LED ==+
+31: 
+31: os_startup_initialize_free_store(0x2c4000,67108864)
+31: first_fit_top(0x2c4000,67108864) @0x3ca78 app-heap
+31: out_of_memory_handler(0x16aa4) @0x3ca78 app-heap
+31: estd::pmr::set_default_resource(0x3ca78) 
+31: rtos::memory::set_default_resource(0x3ca78) 
+31: rtos::memory::init_once_default_resource() 
+31: malloc_memory_resource() @0x3ca48 malloc
+31: scheduler::start() 
+31: join: c1=3 c2=3 c3=3 (0ms)
+31: [c0] rounds=2  ping@c1 pong@c1  t=6ms
+31: [c2] rounds=67436  ping@c0 pong@c1  t=1006ms
+31: [c2] rounds=136073  ping@c0 pong@c1  t=2006ms
+31: [c2] rounds=200833  ping@c0 pong@c1  t=3006ms
+31: [c2] rounds=266355  ping@c0 pong@c1  t=4006ms
+31: [c2] rounds=333962  ping@c0 pong@c1  t=5006ms
+31: [c2] rounds=402885  ping@c0 pong@c1  t=6006ms
+31: [c2] rounds=471112  ping@c0 pong@c1  t=7006ms
+31: [c2] rounds=537773  ping@c0 pong@c1  t=8006ms
+31: [c2] rounds=604460  ping@c0 pong@c1  t=9006ms
+31: [c2] rounds=670139  ping@c0 pong@c1  t=10006ms
+31: 
+31: RESULT: PASS
+20/24 Test #31: aarch32-rpi3b-smp_test1-qemu .......................   Passed   10.08 sec
+test 33
+      Start 33: aarch32-rpi3b-smp_test2-qemu
+
+33: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test2-qemu.bin,addr=0x10000"
+33: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+33: Test timeout computed to be: 300
+33: 
+33: 
+33: +== RPi 3 B µOS++ SMP TEST 2 : 4-core lock coherency ==+
+33: 
+33: os_startup_initialize_free_store(0x2c8000,67108864)
+33: first_fit_top(0x2c8000,67108864) @0x40978 app-heap
+33: out_of_memory_handler(0x169d0) @0x40978 app-heap
+33: estd::pmr::set_default_resource(0x40978) 
+33: rtos::memory::set_default_resource(0x40978) 
+33: rtos::memory::init_once_default_resource() 
+33: malloc_memory_resource() @0x40948 malloc
+33: scheduler::start() 
+33: os_main on core 0
+33: Releasing cores 1..3...
+33: join: c1=3 c2=3 c3=3 (0ms)
+33: [c0] worker done, counter=7756
+33: [c3] worker done, counter=7873
+33: [c1] worker done, counter=7990
+33: [c2] worker done, counter=8000
+33: progress: w0=1999 w1=1999 w2=1999 w3=1999 done=4 counter=8000
+33: 
+33: ==== RESULT ====
+33: counter = 8000  expected = 8000
+33: PASS: lock coherent across 4 cores
+33: 
+33: RESULT: PASS
+21/24 Test #33: aarch32-rpi3b-smp_test2-qemu .......................   Passed    0.60 sec
+test 35
+      Start 35: aarch32-rpi3b-smp_test3-qemu
+
+35: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-qemu.bin,addr=0x10000"
+35: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+35: Test timeout computed to be: 150
+35: 
+35: 
+35: +== RPi 3 B µOS++ SMP TEST 3 : message_queue producer/consumer ==+
+35: 
+35: os_startup_initialize_free_store(0x2c4000,67108864)
+35: first_fit_top(0x2c4000,67108864) @0x3e2b8 app-heap
+35: out_of_memory_handler(0x17e44) @0x3e2b8 app-heap
+35: estd::pmr::set_default_resource(0x3e2b8) 
+35: rtos::memory::set_default_resource(0x3e2b8) 
+35: rtos::memory::init_once_default_resource() 
+35: malloc_memory_resource() @0x3e288 malloc
+35: scheduler::start() 
+35: join: c1=3 c2=3 c3=3 (0ms)
+35: [c1] produced=1 consumed=1 primes=1 t=7ms
+35: [c1] recv 2 PRIME
+35: [c1] recv 3 PRIME
+35: [c1] recv 4 composite
+35: [c1] recv 5 PRIME
+35: [c1] recv 6 composite
+35: [c1] recv 7 PRIME
+35: [c1] recv 8 composite
+35: [c1] recv 9 composite
+35: [c1] recv 10 composite
+35: [c1] recv 11 PRIME
+35: [c1] recv 12 composite
+35: [c1] recv 13 PRIME
+35: [c1] recv 14 composite
+35: [c1] recv 15 composite
+35: [c1] recv 16 composite
+35: [c1] recv 17 PRIME
+35: [c1] recv 18 composite
+35: [c1] recv 19 PRIME
+35: [c1] recv 20 composite
+35: [c1] recv 21 composite
+35: [c1] recv 22 composite
+35: [c1] recv 23 PRIME
+35: [c1] recv 24 composite
+35: [c1] recv 25 composite
+35: [c1] recv 26 composite
+35: [c1] recv 27 composite
+35: [c1] recv 28 composite
+35: [c1] recv 29 PRIME
+35: [c1] recv 30 composite
+35: [c1] recv 31 PRIME
+35: [c1] recv 32 composite
+35: [c1] recv 33 composite
+35: [c1] recv 34 composite
+35: [c1] recv 35 composite
+35: [c1] recv 36 composite
+35: [c1] recv 37 PRIME
+35: [c1] recv 38 composite
+35: [c1] recv 39 composite
+35: [c1] recv 40 composite
+35: [c1] recv 41 PRIME
+35: [c1] recv 42 composite
+35: [c1] recv 43 PRIME
+35: [c1] recv 44 composite
+35: [c1] recv 45 composite
+35: [c1] recv 46 composite
+35: [c1] recv 47 PRIME
+35: [c1] recv 48 composite
+35: [c1] recv 49 composite
+35: [c1] recv 50 composite
+35: [c1] recv 51 composite
+35: [c1] recv 52 composite
+35: [c2] produced=51 consumed=51 primes=15 t=1007ms
+35: [c1] recv 53 PRIME
+35: [c1] recv 54 composite
+35: [c1] recv 55 composite
+35: [c1] recv 56 composite
+35: [c1] recv 57 composite
+35: [c1] recv 58 composite
+35: [c1] recv 59 PRIME
+35: [c1] recv 60 composite
+35: [c1] recv 61 PRIME
+35: [c1] recv 62 composite
+35: [c1] recv 63 composite
+35: [c1] recv 64 composite
+35: [c1] recv 65 composite
+35: [c1] recv 66 composite
+35: [c1] recv 67 PRIME
+35: [c1] recv 68 composite
+35: [c1] recv 69 composite
+35: [c1] recv 70 composite
+35: [c1] recv 71 PRIME
+35: [c1] recv 72 composite
+35: [c1] recv 73 PRIME
+35: [c1] recv 74 composite
+35: [c1] recv 75 composite
+35: [c1] recv 76 composite
+35: [c1] recv 77 composite
+35: [c1] recv 78 composite
+35: [c1] recv 79 PRIME
+35: [c1] recv 80 composite
+35: [c1] recv 81 composite
+35: [c1] recv 82 composite
+35: [c1] recv 83 PRIME
+35: [c1] recv 84 composite
+35: [c1] recv 85 composite
+35: [c1] recv 86 composite
+35: [c1] recv 87 composite
+35: [c1] recv 88 composite
+35: [c1] recv 89 PRIME
+35: [c1] recv 90 composite
+35: [c1] recv 91 composite
+35: [c1] recv 92 composite
+35: [c1] recv 93 composite
+35: [c1] recv 94 composite
+35: [c1] recv 95 composite
+35: [c1] recv 96 composite
+35: [c1] recv 97 PRIME
+35: [c1] recv 98 composite
+35: [c1] recv 99 composite
+35: [c1] recv 100 composite
+35: [c1] recv 101 PRIME
+35: [c1] recv 102 composite
+35: [c2] produced=101 consumed=101 primes=26 t=2008ms
+35: [c1] recv 103 PRIME
+35: [c1] recv 104 composite
+35: [c1] recv 105 composite
+35: [c1] recv 106 composite
+35: [c1] recv 107 PRIME
+35: [c1] recv 108 composite
+35: [c1] recv 109 PRIME
+35: [c1] recv 110 composite
+35: [c1] recv 111 composite
+35: [c1] recv 112 composite
+35: [c1] recv 113 PRIME
+35: [c1] recv 114 composite
+35: [c1] recv 115 composite
+35: [c1] recv 116 composite
+35: [c1] recv 117 composite
+35: [c1] recv 118 composite
+35: [c1] recv 119 composite
+35: [c1] recv 120 composite
+35: [c1] recv 121 composite
+35: [c1] recv 122 composite
+35: [c1] recv 123 composite
+35: [c1] recv 124 composite
+35: [c1] recv 125 composite
+35: [c1] recv 126 composite
+35: [c1] recv 127 PRIME
+35: [c1] recv 128 composite
+35: [c1] recv 129 composite
+35: [c1] recv 130 composite
+35: [c1] recv 131 PRIME
+35: [c1] recv 132 composite
+35: [c1] recv 133 composite
+35: [c1] recv 134 composite
+35: [c1] recv 135 composite
+35: [c1] recv 136 composite
+35: [c1] recv 137 PRIME
+35: [c1] recv 138 composite
+35: [c1] recv 139 PRIME
+35: [c1] recv 140 composite
+35: [c1] recv 141 composite
+35: [c1] recv 142 composite
+35: [c1] recv 143 composite
+35: [c1] recv 144 composite
+35: [c1] recv 145 composite
+35: [c1] recv 146 composite
+35: [c1] recv 147 composite
+35: [c1] recv 148 composite
+35: [c1] recv 149 PRIME
+35: [c1] recv 150 composite
+35: [c1] recv 151 PRIME
+35: [c1] recv 152 composite
+35: [c2] produced=151 consumed=151 primes=36 t=3008ms
+35: [c1] recv 153 composite
+35: [c1] recv 154 composite
+35: [c1] recv 155 composite
+35: [c1] recv 156 composite
+35: [c1] recv 157 PRIME
+35: [c1] recv 158 composite
+35: [c1] recv 159 composite
+35: [c1] recv 160 composite
+35: [c1] recv 161 composite
+35: [c1] recv 162 composite
+35: [c1] recv 163 PRIME
+35: [c1] recv 164 composite
+35: [c1] recv 165 composite
+35: [c1] recv 166 composite
+35: [c1] recv 167 PRIME
+35: [c1] recv 168 composite
+35: [c1] recv 169 composite
+35: [c1] recv 170 composite
+35: [c1] recv 171 composite
+35: [c1] recv 172 composite
+35: [c1] recv 173 PRIME
+35: [c1] recv 174 composite
+35: [c1] recv 175 composite
+35: [c1] recv 176 composite
+35: [c1] recv 177 composite
+35: [c1] recv 178 composite
+35: [c1] recv 179 PRIME
+35: [c1] recv 180 composite
+35: [c1] recv 181 PRIME
+35: [c1] recv 182 composite
+35: [c1] recv 183 composite
+35: [c1] recv 184 composite
+35: [c1] recv 185 composite
+35: [c1] recv 186 composite
+35: [c1] recv 187 composite
+35: [c1] recv 188 composite
+35: [c1] recv 189 composite
+35: [c1] recv 190 composite
+35: [c1] recv 191 PRIME
+35: [c1] recv 192 composite
+35: [c1] recv 193 PRIME
+35: [c1] recv 194 composite
+35: [c1] recv 195 composite
+35: [c1] recv 196 composite
+35: [c1] recv 197 PRIME
+35: [c1] recv 198 composite
+35: [c1] recv 199 PRIME
+35: [c1] recv 200 composite
+35: [c1] recv 201 composite
+35: [c1] recv 202 composite
+35: [c2] produced=201 consumed=201 primes=46 t=4008ms
+35: [c1] recv 203 composite
+35: [c1] recv 204 composite
+35: [c1] recv 205 composite
+35: [c1] recv 206 composite
+35: [c1] recv 207 composite
+35: [c1] recv 208 composite
+35: [c1] recv 209 composite
+35: [c1] recv 210 composite
+35: [c1] recv 211 PRIME
+35: [c1] recv 212 composite
+35: [c1] recv 213 composite
+35: [c1] recv 214 composite
+35: [c1] recv 215 composite
+35: [c1] recv 216 composite
+35: [c1] recv 217 composite
+35: [c1] recv 218 composite
+35: [c1] recv 219 composite
+35: [c1] recv 220 composite
+35: [c1] recv 221 composite
+35: [c1] recv 222 composite
+35: [c1] recv 223 PRIME
+35: [c1] recv 224 composite
+35: [c1] recv 225 composite
+35: [c1] recv 226 composite
+35: [c1] recv 227 PRIME
+35: [c1] recv 228 composite
+35: [c1] recv 229 PRIME
+35: [c1] recv 230 composite
+35: [c1] recv 231 composite
+35: [c1] recv 232 composite
+35: [c1] recv 233 PRIME
+35: [c1] recv 234 composite
+35: [c1] recv 235 composite
+35: [c1] recv 236 composite
+35: [c1] recv 237 composite
+35: [c1] recv 238 composite
+35: [c1] recv 239 PRIME
+35: [c1] recv 240 composite
+35: [c1] recv 241 PRIME
+35: [c1] recv 242 composite
+35: [c1] recv 243 composite
+35: [c1] recv 244 composite
+35: [c1] recv 245 composite
+35: [c1] recv 246 composite
+35: [c1] recv 247 composite
+35: [c1] recv 248 composite
+35: [c1] recv 249 composite
+35: [c1] recv 250 composite
+35: [c1] recv 251 PRIME
+35: [c1] recv 252 composite
+35: [c2] produced=251 consumed=251 primes=54 t=5008ms
+35: [c1] recv 253 composite
+35: [c1] recv 254 composite
+35: [c1] recv 255 composite
+35: [c1] recv 256 composite
+35: [c1] recv 257 PRIME
+35: [c1] recv 258 composite
+35: [c1] recv 259 composite
+35: [c1] recv 260 composite
+35: [c1] recv 261 composite
+35: [c1] recv 262 composite
+35: [c1] recv 263 PRIME
+35: [c1] recv 264 composite
+35: [c1] recv 265 composite
+35: [c1] recv 266 composite
+35: [c1] recv 267 composite
+35: [c1] recv 268 composite
+35: [c1] recv 269 PRIME
+35: [c1] recv 270 composite
+35: [c1] recv 271 PRIME
+35: [c1] recv 272 composite
+35: [c1] recv 273 composite
+35: [c1] recv 274 composite
+35: [c1] recv 275 composite
+35: [c1] recv 276 composite
+35: [c1] recv 277 PRIME
+35: [c1] recv 278 composite
+35: [c1] recv 279 composite
+35: [c1] recv 280 composite
+35: [c1] recv 281 PRIME
+35: [c1] recv 282 composite
+35: [c1] recv 283 PRIME
+35: [c1] recv 284 composite
+35: [c1] recv 285 composite
+35: [c1] recv 286 composite
+35: [c1] recv 287 composite
+35: [c1] recv 288 composite
+35: [c1] recv 289 composite
+35: [c1] recv 290 composite
+35: [c1] recv 291 composite
+35: [c1] recv 292 composite
+35: [c1] recv 293 PRIME
+35: [c1] recv 294 composite
+35: [c1] recv 295 composite
+35: [c1] recv 296 composite
+35: [c1] recv 297 composite
+35: [c1] recv 298 composite
+35: [c1] recv 299 composite
+35: [c1] recv 300 composite
+35: [c1] recv 301 composite
+35: [c1] recv 302 composite
+35: [c2] produced=301 consumed=301 primes=62 t=6008ms
+35: [c1] recv 303 composite
+35: [c1] recv 304 composite
+35: [c1] recv 305 composite
+35: [c1] recv 306 composite
+35: [c1] recv 307 PRIME
+35: [c1] recv 308 composite
+35: [c1] recv 309 composite
+35: [c1] recv 310 composite
+35: [c1] recv 311 PRIME
+35: [c1] recv 312 composite
+35: [c1] recv 313 PRIME
+35: [c1] recv 314 composite
+35: [c1] recv 315 composite
+35: [c1] recv 316 composite
+35: [c1] recv 317 PRIME
+35: [c1] recv 318 composite
+35: [c1] recv 319 composite
+35: [c1] recv 320 composite
+35: [c1] recv 321 composite
+35: [c1] recv 322 composite
+35: [c1] recv 323 composite
+35: [c1] recv 324 composite
+35: [c1] recv 325 composite
+35: [c1] recv 326 composite
+35: [c1] recv 327 composite
+35: [c1] recv 328 composite
+35: [c1] recv 329 composite
+35: [c1] recv 330 composite
+35: [c1] recv 331 PRIME
+35: [c1] recv 332 composite
+35: [c1] recv 333 composite
+35: [c1] recv 334 composite
+35: [c1] recv 335 composite
+35: [c1] recv 336 composite
+35: [c1] recv 337 PRIME
+35: [c1] recv 338 composite
+35: [c1] recv 339 composite
+35: [c1] recv 340 composite
+35: [c1] recv 341 composite
+35: [c1] recv 342 composite
+35: [c1] recv 343 composite
+35: [c1] recv 344 composite
+35: [c1] recv 345 composite
+35: [c1] recv 346 composite
+35: [c1] recv 347 PRIME
+35: [c1] recv 348 composite
+35: [c1] recv 349 PRIME
+35: [c1] recv 350 composite
+35: [c1] recv 351 composite
+35: [c1] recv 352 composite
+35: [c2] produced=351 consumed=351 primes=70 t=7008ms
+35: [c1] recv 353 PRIME
+35: [c1] recv 354 composite
+35: [c1] recv 355 composite
+35: [c1] recv 356 composite
+35: [c1] recv 357 composite
+35: [c1] recv 358 composite
+35: [c1] recv 359 PRIME
+35: [c1] recv 360 composite
+35: [c1] recv 361 composite
+35: [c1] recv 362 composite
+35: [c1] recv 363 composite
+35: [c1] recv 364 composite
+35: [c1] recv 365 composite
+35: [c1] recv 366 composite
+35: [c1] recv 367 PRIME
+35: [c1] recv 368 composite
+35: [c1] recv 369 composite
+35: [c1] recv 370 composite
+35: [c1] recv 371 composite
+35: [c1] recv 372 composite
+35: [c1] recv 373 PRIME
+35: [c1] recv 374 composite
+35: [c1] recv 375 composite
+35: [c1] recv 376 composite
+35: [c1] recv 377 composite
+35: [c1] recv 378 composite
+35: [c1] recv 379 PRIME
+35: [c1] recv 380 composite
+35: [c1] recv 381 composite
+35: [c1] recv 382 composite
+35: [c1] recv 383 PRIME
+35: [c1] recv 384 composite
+35: [c1] recv 385 composite
+35: [c1] recv 386 composite
+35: [c1] recv 387 composite
+35: [c1] recv 388 composite
+35: [c1] recv 389 PRIME
+35: [c1] recv 390 composite
+35: [c1] recv 391 composite
+35: [c1] recv 392 composite
+35: [c1] recv 393 composite
+35: [c1] recv 394 composite
+35: [c1] recv 395 composite
+35: [c1] recv 396 composite
+35: [c1] recv 397 PRIME
+35: [c1] recv 398 composite
+35: [c1] recv 399 composite
+35: [c1] recv 400 composite
+35: [c1] recv 401 PRIME
+35: [c1] recv 402 composite
+35: [c2] produced=401 consumed=401 primes=79 t=8008ms
+35: [c1] recv 403 composite
+35: [c1] recv 404 composite
+35: [c1] recv 405 composite
+35: [c1] recv 406 composite
+35: [c1] recv 407 composite
+35: [c1] recv 408 composite
+35: [c1] recv 409 PRIME
+35: [c1] recv 410 composite
+35: [c1] recv 411 composite
+35: [c1] recv 412 composite
+35: [c1] recv 413 composite
+35: [c1] recv 414 composite
+35: [c1] recv 415 composite
+35: [c1] recv 416 composite
+35: [c1] recv 417 composite
+35: [c1] recv 418 composite
+35: [c1] recv 419 PRIME
+35: [c1] recv 420 composite
+35: [c1] recv 421 PRIME
+35: [c1] recv 422 composite
+35: [c1] recv 423 composite
+35: [c1] recv 424 composite
+35: [c1] recv 425 composite
+35: [c1] recv 426 composite
+35: [c1] recv 427 composite
+35: [c1] recv 428 composite
+35: [c1] recv 429 composite
+35: [c1] recv 430 composite
+35: [c1] recv 431 PRIME
+35: [c1] recv 432 composite
+35: [c1] recv 433 PRIME
+35: [c1] recv 434 composite
+35: [c1] recv 435 composite
+35: [c1] recv 436 composite
+35: [c1] recv 437 composite
+35: [c1] recv 438 composite
+35: [c1] recv 439 PRIME
+35: [c1] recv 440 composite
+35: [c1] recv 441 composite
+35: [c1] recv 442 composite
+35: [c1] recv 443 PRIME
+35: [c1] recv 444 composite
+35: [c1] recv 445 composite
+35: [c1] recv 446 composite
+35: [c1] recv 447 composite
+35: [c1] recv 448 composite
+35: [c1] recv 449 PRIME
+35: [c1] recv 450 composite
+35: [c1] recv 451 composite
+35: [c1] recv 452 composite
+35: [c2] produced=451 consumed=451 primes=87 t=9008ms
+35: [c1] recv 453 composite
+35: [c1] recv 454 composite
+35: [c1] recv 455 composite
+35: [c1] recv 456 composite
+35: [c1] recv 457 PRIME
+35: [c1] recv 458 composite
+35: [c1] recv 459 composite
+35: [c1] recv 460 composite
+35: [c1] recv 461 PRIME
+35: [c1] recv 462 composite
+35: [c1] recv 463 PRIME
+35: [c1] recv 464 composite
+35: [c1] recv 465 composite
+35: [c1] recv 466 composite
+35: [c1] recv 467 PRIME
+35: [c1] recv 468 composite
+35: [c1] recv 469 composite
+35: [c1] recv 470 composite
+35: [c1] recv 471 composite
+35: [c1] recv 472 composite
+35: [c1] recv 473 composite
+35: [c1] recv 474 composite
+35: [c1] recv 475 composite
+35: [c1] recv 476 composite
+35: [c1] recv 477 composite
+35: [c1] recv 478 composite
+35: [c1] recv 479 PRIME
+35: [c1] recv 480 composite
+35: [c1] recv 481 composite
+35: [c1] recv 482 composite
+35: [c1] recv 483 composite
+35: [c1] recv 484 composite
+35: [c1] recv 485 composite
+35: [c1] recv 486 composite
+35: [c1] recv 487 PRIME
+35: [c1] recv 488 composite
+35: [c1] recv 489 composite
+35: [c1] recv 490 composite
+35: [c1] recv 491 PRIME
+35: [c1] recv 492 composite
+35: [c1] recv 493 composite
+35: [c1] recv 494 composite
+35: [c1] recv 495 composite
+35: [c1] recv 496 composite
+35: [c1] recv 497 composite
+35: [c1] recv 498 composite
+35: [c1] recv 499 PRIME
+35: [c1] recv 500 composite
+35: [c1] recv 501 composite
+35: [c1] recv 502 composite
+35: 
+35: RESULT: PASS
+22/24 Test #35: aarch32-rpi3b-smp_test3-qemu .......................   Passed   10.10 sec
+test 37
+      Start 37: aarch32-rpi3b-smp_test4-qemu
+
+37: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp_test4-qemu.bin,addr=0x10000"
+37: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+37: Test timeout computed to be: 150
+37: 
+37: 
+37: +== RPi 3 B µOS++ SMP TEST 4 : no-affinity load balancing ==+
+37: 
+37: os_startup_initialize_free_store(0x2dc000,67108864)
+37: first_fit_top(0x2dc000,67108864) @0x54b18 app-heap
+37: out_of_memory_handler(0x16b08) @0x54b18 app-heap
+37: estd::pmr::set_default_resource(0x54b18) 
+37: rtos::memory::set_default_resource(0x54b18) 
+37: rtos::memory::init_once_default_resource() 
+37: malloc_memory_resource() @0x54ae8 malloc
+37: scheduler::start() 
+37: join: c1=3 c2=3 c3=3 (0ms)
+37: w0 [ c0=4 c1=0 c2=1 c3=1 ]
+37: w1 [ c0=1 c1=2 c2=2 c3=1 ]
+37: w2 [ c0=0 c1=2 c2=2 c3=2 ]
+37: w3 [ c0=3 c1=1 c2=0 c3=2 ]
+37: w4 [ c0=0 c1=4 c2=1 c3=1 ]
+37: w5 [ c0=1 c1=1 c2=1 c3=2 ]
+37: w6 [ c0=1 c1=0 c2=1 c3=3 ]
+37: w7 [ c0=0 c1=3 c2=2 c3=0 ]
+37: -- reporter on c0 t=10ms --
+37: w0 [ c0=379 c1=345 c2=366 c3=352 ]
+37: w1 [ c0=348 c1=347 c2=357 c3=369 ]
+37: w2 [ c0=355 c1=366 c2=364 c3=353 ]
+37: w3 [ c0=369 c1=392 c2=361 c3=320 ]
+37: w4 [ c0=374 c1=362 c2=345 c3=346 ]
+37: w5 [ c0=390 c1=343 c2=396 c3=320 ]
+37: w6 [ c0=390 c1=335 c2=346 c3=364 ]
+37: w7 [ c0=366 c1=344 c2=386 c3=326 ]
+37: -- reporter on c0 t=1010ms --
+37: w0 [ c0=729 c1=682 c2=759 c3=687 ]
+37: w1 [ c0=733 c1=706 c2=714 c3=725 ]
+37: w2 [ c0=741 c1=744 c2=753 c3=635 ]
+37: w3 [ c0=715 c1=737 c2=758 c3=681 ]
+37: w4 [ c0=747 c1=707 c2=725 c3=675 ]
+37: w5 [ c0=802 c1=678 c2=725 c3=677 ]
+37: w6 [ c0=750 c1=687 c2=690 c3=740 ]
+37: w7 [ c0=730 c1=715 c2=719 c3=708 ]
+37: -- reporter on c0 t=2010ms --
+37: w0 [ c0=1099 c1=1044 c2=1123 c3=1029 ]
+37: w1 [ c0=1111 c1=1073 c2=1070 c3=1070 ]
+37: w2 [ c0=1124 c1=1059 c2=1109 c3=986 ]
+37: w3 [ c0=1092 c1=1079 c2=1127 c3=1019 ]
+37: w4 [ c0=1114 c1=1066 c2=1084 c3=1033 ]
+37: w5 [ c0=1152 c1=1004 c2=1096 c3=1050 ]
+37: w6 [ c0=1095 c1=1044 c2=1066 c3=1075 ]
+37: w7 [ c0=1098 c1=1100 c2=1055 c3=1042 ]
+37: -- reporter on c0 t=3010ms --
+37: w0 [ c0=1487 c1=1400 c2=1483 c3=1372 ]
+37: w1 [ c0=1478 c1=1411 c2=1421 c3=1440 ]
+37: w2 [ c0=1487 c1=1441 c2=1485 c3=1317 ]
+37: w3 [ c0=1510 c1=1439 c2=1473 c3=1359 ]
+37: w4 [ c0=1436 c1=1413 c2=1441 c3=1424 ]
+37: w5 [ c0=1530 c1=1351 c2=1477 c3=1377 ]
+37: w6 [ c0=1470 c1=1377 c2=1437 c3=1417 ]
+37: w7 [ c0=1439 c1=1458 c2=1426 c3=1393 ]
+37: -- reporter on c0 t=4010ms --
+37: w0 [ c0=1822 c1=1747 c2=1835 c3=1748 ]
+37: w1 [ c0=1841 c1=1768 c2=1783 c3=1787 ]
+37: w2 [ c0=1890 c1=1784 c2=1856 c3=1648 ]
+37: w3 [ c0=1871 c1=1783 c2=1853 c3=1715 ]
+37: w4 [ c0=1794 c1=1782 c2=1815 c3=1762 ]
+37: w5 [ c0=1893 c1=1728 c2=1829 c3=1743 ]
+37: w6 [ c0=1857 c1=1716 c2=1824 c3=1743 ]
+37: w7 [ c0=1823 c1=1813 c2=1767 c3=1741 ]
+37: -- reporter on c0 t=5010ms --
+37: w0 [ c0=2163 c1=2094 c2=2204 c3=2119 ]
+37: w1 [ c0=2205 c1=2117 c2=2138 c3=2132 ]
+37: w2 [ c0=2254 c1=2148 c2=2226 c3=1990 ]
+37: w3 [ c0=2231 c1=2132 c2=2204 c3=2086 ]
+37: w4 [ c0=2193 c1=2149 c2=2164 c3=2098 ]
+37: w5 [ c0=2275 c1=2107 c2=2216 c3=2074 ]
+37: w6 [ c0=2239 c1=2070 c2=2177 c3=2090 ]
+37: w7 [ c0=2189 c1=2176 c2=2146 c3=2088 ]
+37: -- reporter on c0 t=6010ms --
+37: w0 [ c0=2519 c1=2455 c2=2573 c3=2481 ]
+37: w1 [ c0=2589 c1=2450 c2=2471 c3=2508 ]
+37: w2 [ c0=2640 c1=2509 c2=2570 c3=2337 ]
+37: w3 [ c0=2571 c1=2514 c2=2600 c3=2413 ]
+37: w4 [ c0=2590 c1=2508 c2=2532 c3=2421 ]
+37: w5 [ c0=2635 c1=2422 c2=2579 c3=2424 ]
+37: w6 [ c0=2595 c1=2442 c2=2560 c3=2440 ]
+37: w7 [ c0=2567 c1=2524 c2=2508 c3=2428 ]
+37: -- reporter on c0 t=7010ms --
+37: w0 [ c0=2903 c1=2807 c2=2956 c3=2810 ]
+37: w1 [ c0=2957 c1=2794 c2=2806 c3=2886 ]
+37: w2 [ c0=3002 c1=2848 c2=2924 c3=2688 ]
+37: w3 [ c0=2943 c1=2847 c2=2955 c3=2773 ]
+37: w4 [ c0=2953 c1=2858 c2=2892 c3=2772 ]
+37: w5 [ c0=2980 c1=2775 c2=2959 c3=2784 ]
+37: w6 [ c0=2963 c1=2825 c2=2908 c3=2773 ]
+37: w7 [ c0=2966 c1=2872 c2=2886 c3=2729 ]
+37: -- reporter on c0 t=8010ms --
+37: w0 [ c0=3301 c1=3163 c2=3275 c3=3167 ]
+37: w1 [ c0=3304 c1=3141 c2=3165 c3=3259 ]
+37: w2 [ c0=3398 c1=3219 c2=3285 c3=3022 ]
+37: w3 [ c0=3306 c1=3182 c2=3330 c3=3130 ]
+37: w4 [ c0=3322 c1=3245 c2=3270 c3=3096 ]
+37: w5 [ c0=3333 c1=3139 c2=3329 c3=3163 ]
+37: w6 [ c0=3350 c1=3208 c2=3261 c3=3114 ]
+37: w7 [ c0=3326 c1=3202 c2=3283 c3=3068 ]
+37: -- reporter on c0 t=9010ms --
+37: 
+37: RESULT: PASS
+23/24 Test #37: aarch32-rpi3b-smp_test4-qemu .......................   Passed   10.12 sec
+test 39
+      Start 39: aarch32-rpi3b-usb_test-qemu
+
+39: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-qemu.bin,addr=0x10000"
+39: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+39: Test timeout computed to be: 200
+39: os_startup_initialize_free_store(0x3e8000,67108864)
+39: first_fit_top(0x3e8000,67108864) @0x15f098 app-heap
+39: out_of_memory_handler(0x185a4) @0x15f098 app-heap
+39: estd::pmr::set_default_resource(0x15f098) 
+39: rtos::memory::set_default_resource(0x15f098) 
+39: rtos::memory::init_once_default_resource() 
+39: malloc_memory_resource() @0x15f068 malloc
+39: scheduler::start() 
+39: 
+39: === usb_test on Raspberry Pi 3 B ===
+39: USB power domain: on (code=0x80000000 state=0x00000001 alias=1)
+39: DWC2 GSNPSID: 0x4f54294a  GHWCFG2: 0x250dc016
+39: DWC2 GHWCFG3: 0x10000044  GHWCFG4: 0x00000000
+39: storage: no SD card detected
+39: storage: RamUartSink
+39: 
+39: RESULT: SKIP (no USB device mode)
+24/24 Test #39: aarch32-rpi3b-usb_test-qemu ........................***Skipped   0.46 sec
+
+100% tests passed, 0 tests failed out of 24
+
+Label Time Summary:
+qemu    = 198.15 sec*proc (24 tests)
+
+Total Test time (real) = 198.16 sec
+
+The following tests did not run:
+	 39 - aarch32-rpi3b-usb_test-qemu (Skipped)

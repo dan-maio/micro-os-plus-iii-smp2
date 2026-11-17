@@ -1,0 +1,3 @@
+qemu-cortex-m7f-rtos-apis-test Passed
+qemu-cortex-m7f-mutex-stress-test Passed
+qemu-cortex-m7f-cmsis-os-validator-test Passed

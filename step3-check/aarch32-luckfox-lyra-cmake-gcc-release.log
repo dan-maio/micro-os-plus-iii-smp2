@@ -1,0 +1,724 @@
+> cmake -S . -B build/aarch32-luckfox-lyra-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=aarch32-luckfox-lyra -D ENABLE_HW_TESTS=ON --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.2.0-pre.1
+-- Platform name: aarch32-luckfox-lyra
+-- Build type: MinSizeRel
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/aarch32-luckfox-lyra/cmake/definitions.cmake...
+-- Including tests/platforms/aarch32-luckfox-lyra/cmake/dependencies-folders.cmake...
+-- µOS++ III micro-os-plus-iii-aarch32: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32'...
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32 (BOARD=luckfox-lyra)
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/aarch32-luckfox-lyra'...
+-- Including tests/platforms/aarch32-luckfox-lyra/cmake/platform-library.cmake...
+-- > micro-os-plus::platform -> platform-aarch32-luckfox-lyra-interface
+-- > micro-os-plus::platform-support -> platform-aarch32-luckfox-lyra-support-interface
+-- µOS++ III AArch32 tests: 20 targets, board=luckfox-lyra, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra
+-- µOS++ III AArch32: no aarch64 toolchain, QEMU boot shim not built
+-- AArch32 Luckfox Lyra: port tests + harness suites registered
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release
+> cmake -S . -B build/aarch32-luckfox-lyra-cmake-gcc-release -G Ninja -D CMAKE_BUILD_TYPE=MinSizeRel -D PLATFORM_NAME=aarch32-luckfox-lyra -D ENABLE_HW_TESTS=ON
+-- µOS++ III micro-os-plus-iii-aarch32: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32 (BOARD=luckfox-lyra)
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III AArch32 tests: 20 targets, board=luckfox-lyra, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra
+-- µOS++ III AArch32: no aarch64 toolchain, QEMU boot shim not built
+-- AArch32 Luckfox Lyra: port tests + harness suites registered
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release
+> cmake --build build/aarch32-luckfox-lyra-cmake-gcc-release
+[0/2] Re-checking globbed directories...
+[1/191] Building CXX object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp:14:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp: In function 'void semihosting::exit(int, int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:46: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                              ^~~~
+      |                                    --------------
+      |                                    static_cast<uint32_t> (code)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:62: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                                              ^~~~~~~
+      |                                                    -----------------
+      |                                                    static_cast<uint32_t> (subcode)
+[2/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[3/191] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:46,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp:50:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp: In function 'void semihosting::exit(int, int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:46: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                              ^~~~
+      |                                    --------------
+      |                                    static_cast<uint32_t> (code)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:62: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                                              ^~~~~~~
+      |                                                    -----------------
+      |                                                    static_cast<uint32_t> (subcode)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:55:7: warning: padding struct size to alignment boundary with 3 bytes [-Wpadded]
+   55 | class Uart1 {
+      |       ^~~~~
+[4/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[5/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[6/191] Building CXX object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:46,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp:3:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp: In function 'void semihosting::exit(int, int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:46: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                              ^~~~
+      |                                    --------------
+      |                                    static_cast<uint32_t> (code)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:62: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                                              ^~~~~~~
+      |                                                    -----------------
+      |                                                    static_cast<uint32_t> (subcode)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:55:7: warning: padding struct size to alignment boundary with 3 bytes [-Wpadded]
+   55 | class Uart1 {
+      |       ^~~~~
+[7/191] Building CXX object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:46,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp:1:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp: In function 'void semihosting::exit(int, int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:46: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                              ^~~~
+      |                                    --------------
+      |                                    static_cast<uint32_t> (code)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:62: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                                              ^~~~~~~
+      |                                                    -----------------
+      |                                                    static_cast<uint32_t> (subcode)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:55:7: warning: padding struct size to alignment boundary with 3 bytes [-Wpadded]
+   55 | class Uart1 {
+      |       ^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp:8:17: warning: no previous declaration for 'void port_ctx_switch_corrupt(uint32_t, uint32_t)' [-Wmissing-declarations]
+    8 | extern "C" void port_ctx_switch_corrupt(uint32_t new_sp, uint32_t old_sp)
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp:20:32: warning: no previous declaration for 'void port_ctx_switchHandler()' [-Wmissing-declarations]
+   20 | extern "C" [[gnu::naked]] void port_ctx_switchHandler()
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+[8/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[9/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[10/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[11/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[12/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[13/191] Building CXX object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp:6:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/exception_handler.hpp:56:8: warning: padding struct size to alignment boundary with 2 bytes [-Wpadded]
+   56 | struct FaultInfo {
+      |        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/exception_handler.hpp:69:28: warning: padding struct to align 'exception::TestMode::continue_address' [-Wpadded]
+   69 |     volatile std::uint32_t continue_address;
+      |                            ^~~~~~~~~~~~~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:46,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp:7:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp: In function 'void semihosting::exit(int, int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:46: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                              ^~~~
+      |                                    --------------
+      |                                    static_cast<uint32_t> (code)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:62: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                                              ^~~~~~~
+      |                                                    -----------------
+      |                                                    static_cast<uint32_t> (subcode)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:55:7: warning: padding struct size to alignment boundary with 3 bytes [-Wpadded]
+   55 | class Uart1 {
+      |       ^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp: In function 'const char* exception::fault_status_string(FaultStatus)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp:128:12: warning: enumeration value 'Unknown' not handled in switch [-Wswitch-enum]
+  128 |     switch (status) {
+      |            ^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp: In function 'void exception::{anonymous}::print_register_dump(const exception::ExceptionContext*, uint32_t, uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp:201:30: warning: unsigned conversion from 'int' to 'long unsigned int' changes value from '-2147483648' to '2147483648' [-Wsign-conversion]
+  201 |     fault_out << ((spsr & (1 << 31)) ? 'N' : 'n');
+      |                           ~~~^~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp: In function 'void exception::{anonymous}::print_instruction_at(uint32_t)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp:223:87: warning: unsigned conversion from 'int' to 'long unsigned int' changes value from '-4' to '4294967292' [-Wsign-conversion]
+  223 |     volatile std::uint32_t* ptr = reinterpret_cast<volatile std::uint32_t*>(address & ~3);
+      |                                                                                       ^~
+[14/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[15/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[16/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[17/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[18/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[19/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[20/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[21/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[22/191] Building CXX object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h: In function 'void os::rtos::port::scheduler::greeting()':
+<command-line>: warning: use of old-style cast to 'int' [-Wold-style-cast]
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h:28:32: note: in expansion of macro 'OS_NCPU'
+   28 |                          (int) OS_NCPU);
+      |                                ^~~~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os.h:97,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:15:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h:28:26: warning: useless cast to type 'int' [-Wuseless-cast]
+   28 |                          (int) OS_NCPU);
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:46,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:19:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp: In function 'void semihosting::exit(int, int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:46: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                              ^~~~
+      |                                    --------------
+      |                                    static_cast<uint32_t> (code)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:62: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                                              ^~~~~~~
+      |                                                    -----------------
+      |                                                    static_cast<uint32_t> (subcode)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:55:7: warning: padding struct size to alignment boundary with 3 bytes [-Wpadded]
+   55 | class Uart1 {
+      |       ^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:24:17: warning: redundant redeclaration of 'void os_systick_handler()' in same scope [-Wredundant-decls]
+   24 | extern "C" void os_systick_handler (void);
+      |                 ^~~~~~~~~~~~~~~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os-decls.h:29,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os.h:76:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os-c-decls.h:1495:3: note: previous declaration of 'void os_systick_handler()'
+ 1495 |   os_systick_handler (void);
+      |   ^~~~~~~~~~~~~~~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:20:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp: In function 'void validate_context(uint32_t*, uint32_t*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/smp.hpp:16:23: warning: use of old-style cast to 'uint32_t*' {aka 'long unsigned int*'} [-Wold-style-cast]
+   16 | #define PORT_RAM_BASE 0x00200000
+      |                       ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:39:27: note: in expansion of macro 'PORT_RAM_BASE'
+   39 |   if (new_sp < (uint32_t*)PORT_RAM_BASE || new_sp >= (uint32_t*)PORT_RAM_END)
+      |                           ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/smp.hpp:17:23: warning: use of old-style cast to 'uint32_t*' {aka 'long unsigned int*'} [-Wold-style-cast]
+   17 | #define PORT_RAM_END  0x08000000
+      |                       ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:39:65: note: in expansion of macro 'PORT_RAM_END'
+   39 |   if (new_sp < (uint32_t*)PORT_RAM_BASE || new_sp >= (uint32_t*)PORT_RAM_END)
+      |                                                                 ^~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:43:69: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+   43 |       uart::uart1 << "  new_sp=0x"; uart::uart1.print_hex((uint32_t)new_sp, 8);
+      |                                                                     ^~~~~~
+      |                                                           ----------------
+      |                                                           reinterpret_cast<uint32_t> (new_sp)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:44:69: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+   44 |       uart::uart1 << "  old_sp=0x"; uart::uart1.print_hex((uint32_t)old_sp, 8);
+      |                                                                     ^~~~~~
+      |                                                           ----------------
+      |                                                           reinterpret_cast<uint32_t> (old_sp)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:58:65: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+   58 |   uart::uart1 << "  new_sp=0x"; uart::uart1.print_hex((uint32_t)new_sp, 8);
+      |                                                                 ^~~~~~
+      |                                                       ----------------
+      |                                                       reinterpret_cast<uint32_t> (new_sp)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:59:65: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+   59 |   uart::uart1 << "  old_sp=0x"; uart::uart1.print_hex((uint32_t)old_sp, 8);
+      |                                                                 ^~~~~~
+      |                                                       ----------------
+      |                                                       reinterpret_cast<uint32_t> (old_sp)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:68:31: warning: no previous declaration for 'void port_external_irq_handler(uint32_t)' [-Wmissing-declarations]
+   68 | extern "C" [[gnu::weak]] void port_external_irq_handler(uint32_t iar)
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp:74:23: warning: no previous declaration for 'uint32_t* port_isr_handler(uint32_t*)' [-Wmissing-declarations]
+   74 | extern "C" uint32_t * port_isr_handler(uint32_t *current_sp)
+      |                       ^~~~~~~~~~~~~~~~
+[23/191] Building CXX object platform-bin/CMakeFiles/mutex-stress-test.dir/src/platform-support.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h: In function 'void os::rtos::port::scheduler::greeting()':
+<command-line>: warning: use of old-style cast to 'int' [-Wold-style-cast]
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h:28:32: note: in expansion of macro 'OS_NCPU'
+   28 |                          (int) OS_NCPU);
+      |                                ^~~~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os.h:97,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/src/platform-support.cpp:38:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h:28:26: warning: useless cast to type 'int' [-Wuseless-cast]
+   28 |                          (int) OS_NCPU);
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:46,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/src/platform-support.cpp:44:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp: In function 'void semihosting::exit(int, int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:46: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                              ^~~~
+      |                                    --------------
+      |                                    static_cast<uint32_t> (code)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:62: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                                              ^~~~~~~
+      |                                                    -----------------
+      |                                                    static_cast<uint32_t> (subcode)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:55:7: warning: padding struct size to alignment boundary with 3 bytes [-Wpadded]
+   55 | class Uart1 {
+      |       ^~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/src/platform-support.cpp:45:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/exception_handler.hpp:56:8: warning: padding struct size to alignment boundary with 2 bytes [-Wpadded]
+   56 | struct FaultInfo {
+      |        ^~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/exception_handler.hpp:69:28: warning: padding struct to align 'exception::TestMode::continue_address' [-Wpadded]
+   69 |     volatile std::uint32_t continue_address;
+      |                            ^~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/src/platform-support.cpp:57:15: warning: redundant redeclaration of 'void os_startup_create_thread_idle()' in same scope [-Wredundant-decls]
+   57 |   extern void os_startup_create_thread_idle (void);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os.h:93:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os-hooks.h:98:3: note: previous declaration of 'void os_startup_create_thread_idle()'
+   98 |   os_startup_create_thread_idle (void);
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/src/platform-support.cpp: In function 'int main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/src/platform-support.cpp:137:9: warning: cast from 'char*' to 'os::rtos::thread::stack::element_t*' {aka 'long unsigned int*'} increases required alignment of target type [-Wcast-align]
+  137 |         reinterpret_cast<thread::stack::element_t*> (__fiq_stack_top),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/src/platform-support.cpp:138:25: warning: conversion to 'std::size_t' {aka 'unsigned int'} from 'int' may change the sign of the result [-Wsign-conversion]
+  138 |         __irq_stack_top - __fiq_stack_top);
+      |         ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+[24/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[25/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[26/191] Building CXX object 'platform-bin/CMakeFiles/mutex-stress-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h: In function 'void os::rtos::port::scheduler::greeting()':
+<command-line>: warning: use of old-style cast to 'int' [-Wold-style-cast]
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h:28:32: note: in expansion of macro 'OS_NCPU'
+   28 |                          (int) OS_NCPU);
+      |                                ^~~~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os.h:97,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp:20:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/cmsis-plus/rtos/port/os-inlines.h:28:26: warning: useless cast to type 'int' [-Wuseless-cast]
+   28 |                          (int) OS_NCPU);
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:46,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp:27:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp: In function 'void semihosting::exit(int, int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:46: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                              ^~~~
+      |                                    --------------
+      |                                    static_cast<uint32_t> (code)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/include/semihosting.hpp:109:62: warning: use of old-style cast to 'uint32_t' {aka 'long unsigned int'} [-Wold-style-cast]
+  109 |     volatile uint32_t block[2] = { (uint32_t)code, (uint32_t)subcode };
+      |                                                              ^~~~~~~
+      |                                                    -----------------
+      |                                                    static_cast<uint32_t> (subcode)
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/include/uart.hpp:55:7: warning: padding struct size to alignment boundary with 3 bytes [-Wpadded]
+   55 | class Uart1 {
+      |       ^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp: In function 'os::rtos::port::stack::element_t* os::rtos::port::scheduler::switch_stacks(os::rtos::port::stack::element_t*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp:266:27: warning: cast from 'char*' to 'uint32_t*' {aka 'long unsigned int*'} increases required alignment of target type [-Wcast-align]
+  266 |                      && ((reinterpret_cast<uint32_t*> (p)[ctx_cpsr_word]
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp: In static member function 'static void os::rtos::port::context::create(void*, void*, void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp:332:9: warning: redundant class-key 'class' in reference to 'class os::rtos::thread::context' [-Wredundant-tags]
+  332 |         class rtos::thread::context* th_ctx
+      |         ^~~~~
+      |         -----
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp:333:27: warning: redundant class-key 'class' in reference to 'class os::rtos::thread::context' [-Wredundant-tags]
+  333 |             = static_cast<class rtos::thread::context*> (context);
+      |                           ^~~~~
+      |                           -----
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp: At global scope:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp:397:18: warning: no previous declaration for 'void* port_switch_stacks(void*)' [-Wmissing-declarations]
+  397 | extern "C" void* port_switch_stacks(void* sp)
+      |                  ^~~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp:406:17: warning: redundant redeclaration of 'void os_systick_handler()' in same scope [-Wredundant-decls]
+  406 | extern "C" void os_systick_handler (void);
+      |                 ^~~~~~~~~~~~~~~~~~
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os-decls.h:29,
+                 from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os.h:76:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/rtos/os-c-decls.h:1495:3: note: previous declaration of 'void os_systick_handler()'
+ 1495 |   os_systick_handler (void);
+      |   ^~~~~~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp:412:17: warning: no previous declaration for 'void port_smp_secondary_start()' [-Wmissing-declarations]
+  412 | extern "C" void port_smp_secondary_start(void)
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~
+[27/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/luckfox-lyra/sd_test/main.cpp.obj
+[28/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[29/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/luckfox-lyra/clock-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/clock-test/main.cpp: In function 'int os_main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/clock-test/main.cpp:191:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  191 | }
+      | ^
+[30/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[31/191] Linking CXX executable platform-bin/port-tests/test/mutex-stress-test-hwd
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/mutex-stress-test-hwd has a LOAD segment with RWX permissions
+[32/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[33/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[34/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[35/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[36/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[37/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[38/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[39/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[40/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[41/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/clock-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[42/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[43/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[44/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[45/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[46/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[47/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[48/191] Linking CXX executable platform-bin/port-tests/test/sd_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sd_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 100404	   1240	22383328	22484972	15717ec	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/sd_test-hwd.elf
+[49/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[50/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[51/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[52/191] Linking CXX executable platform-bin/port-tests/test/clock-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/clock-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  84100	   1232	22292664	22377996	155760c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/clock-test-hwd.elf
+[53/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[54/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[55/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/luckfox-lyra/smp-mat-sdcard-test/main.cpp.obj
+[56/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[57/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/luckfox-lyra/smp-num-test/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp: In function 'bool {anonymous}::sd_append(const char*, unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp:155:26: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  155 |       ++g_core_lines[core];
+      |         ~~~~~~~~~~~~~~~~~^
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp: In function 'void* {anonymous}::sd_text_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp:395:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  395 |               ++g_text_written;
+      |                 ^~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp:399:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  399 |               ++g_text_fail;
+      |                 ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp: In function 'void* {anonymous}::compute_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp:449:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  449 |               ++g_calc_written;
+      |                 ^~~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp:453:17: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  453 |               ++g_calc_fail;
+      |                 ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp: In function 'void* {anonymous}::reader_thread(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp:492:13: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  492 |           ++g_read_fail;
+      |             ^~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp: In function 'int os_main(int, char**)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp-num-test/main.cpp:627:11: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+  627 |         ++g_read_fail;
+      |           ^~~~~~~~~~~
+[58/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[59/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[60/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[61/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/luckfox-lyra/smp-mat-test/main.cpp.obj
+[62/191] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 112820	   1304	23002472	23116596	160bb34	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+[63/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[64/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[65/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[66/191] Linking CXX executable platform-bin/port-tests/test/smp-mat-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  95028	   1240	22531504	22627772	15945bc	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp-mat-test-hwd.elf
+[67/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[68/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[69/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[70/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[71/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[72/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[73/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[74/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[75/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[76/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[77/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[78/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/luckfox-lyra/smp-pro-cons-test/main.cpp.obj
+[79/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[80/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[81/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[82/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[83/191] Linking CXX executable platform-bin/port-tests/test/smp-num-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-num-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 109868	   1296	22668824	22779988	15b9854	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp-num-test-hwd.elf
+[84/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/luckfox-lyra/smp-pipeline-test/main.cpp.obj
+[85/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[86/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[87/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[88/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[89/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[90/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/luckfox-lyra/smp_test0/main.cpp.obj
+[91/191] Linking CXX executable platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 102652	   1240	22340936	22444828	1567b1c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf
+[92/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[93/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test0-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[94/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[95/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/luckfox-lyra/smp_test1/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test1/main.cpp: In function 'void* pinger(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test1/main.cpp:33:97: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   33 |   while (g_running) { g_ping.wait(); if (!g_running) break; g_ping_core = (int)port_cpu_id(); ++g_rounds; g_pong.post(); }
+      |                                                                                                 ^~~~~~~~
+[96/191] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 155672	   1296	22563608	22720576	15ab040	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+[97/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[98/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[99/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[100/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[101/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[102/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/luckfox-lyra/smp_test2/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test2/main.cpp: In function 'void* worker(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test2/main.cpp:53:5: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   53 |   ++g_done;
+      |     ^~~~~~
+[103/191] Linking CXX executable platform-bin/port-tests/test/smp_test0-hwd.elf
+   text	   data	    bss	    dec	    hex	filename
+  82476	   1232	22284424	22368132	1554f84	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test0-hwd.elf
+[104/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[105/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[106/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[107/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/boards/luckfox-lyra/usb/src/usb_env_stateos.cpp.obj
+[108/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[109/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[110/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[111/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test1-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[112/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[113/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[114/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[115/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/boards/luckfox-lyra/usb/src/usb_env_stateos.cpp.obj
+[116/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[117/191] Linking CXX executable platform-bin/port-tests/test/smp_test1-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test1-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  88636	   1248	22340216	22430100	1564194	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test1-hwd.elf
+[118/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[119/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/luckfox-lyra/smp_test3/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test3/main.cpp: In function 'void* producer(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test3/main.cpp:40:45: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   40 |   for (;;) { g_mq.send(&v, sizeof(v), 0); ++g_produced; ++v; sysclock.sleep_for(20); }
+      |                                             ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test3/main.cpp: In function 'void* consumer(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test3/main.cpp:50:9: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   50 |       ++g_consumed;
+      |         ^~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test3/main.cpp:52:18: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   52 |       if (p) { ++g_primes; led_state = !led_state; led::set(led_state); }
+      |                  ^~~~~~~~
+[120/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[121/191] Linking CXX executable platform-bin/port-tests/test/smp_test2-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test2-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  89604	   1232	22339848	22430684	15643dc	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test2-hwd.elf
+[122/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[123/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[124/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[125/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[126/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[127/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[128/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[129/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[130/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/luckfox-lyra/smp_test4/main.cpp.obj
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test4/main.cpp: In function 'void* worker(void*)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-aarch32/test/luckfox-lyra/smp_test4/main.cpp:38:32: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   38 |     if (c < OS_NCPU) hist[id][c]++;
+      |                      ~~~~~~~~~~^
+[131/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[132/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[133/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[134/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[135/191] Linking CXX executable platform-bin/port-tests/test/smp_test3-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test3-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  93540	   1232	22340296	22435068	15654fc	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test3-hwd.elf
+[136/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[137/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[138/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[139/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[140/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int2-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[141/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/luckfox-lyra/smp_test6/main.cpp.obj
+[142/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[143/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[144/191] Linking CXX executable platform-bin/port-tests/test/smp_test4-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test4-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  88812	   1240	22438384	22528436	157c1b4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test4-hwd.elf
+[145/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test5-hwd.dir/luckfox-lyra/smp_test5/main.cpp.obj
+[146/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[147/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[148/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[149/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test6-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[150/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/luckfox-lyra/smp_test7/main.cpp.obj
+[151/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int3-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[152/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[153/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[154/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[155/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[156/191] Linking CXX executable platform-bin/port-tests/test/smp_test5-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test5-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 118260	   1292	22289480	22409032	155ef48	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test5-hwd.elf
+[157/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int4-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[158/191] Linking CXX executable platform-bin/port-tests/test/smp_test6-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test6-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 125316	   1452	22359536	22486304	1571d20	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test6-hwd.elf
+[159/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[160/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test7-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[161/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[162/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[163/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[164/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[165/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[166/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/smp.cpp.obj'
+[167/191] Linking CXX executable platform-bin/port-tests/test/smp_test7-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test7-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 146868	   1528	22397040	22545436	158041c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test7-hwd.elf
+[168/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int5-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[169/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[170/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[171/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[172/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[173/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int2-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[174/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[175/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int2-hwd.dir/luckfox-lyra/smp_test_int2/main.cpp.obj
+[176/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[177/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[178/191] Linking CXX executable platform-bin/port-tests/test/smp_test_int2-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test_int2-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  89604	   1232	22280496	22371332	1555c04	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test_int2-hwd.elf
+[179/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int3-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[180/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int-hwd.dir/luckfox-lyra/smp_test_int/main.cpp.obj
+[181/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[182/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int4-hwd.dir/luckfox-lyra/smp_test_int4/main.cpp.obj
+[183/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int3-hwd.dir/luckfox-lyra/smp_test_int3/main.cpp.obj
+[184/191] Linking CXX executable platform-bin/port-tests/test/smp_test_int-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test_int-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  93708	   1232	22276368	22371308	1555bec	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test_int-hwd.elf
+[185/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int4-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[186/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/src/rtos/port_isr.cpp.obj'
+[187/191] Linking CXX executable platform-bin/port-tests/test/smp_test_int3-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test_int3-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  93204	   1272	22280672	22375148	1556aec	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test_int3-hwd.elf
+[188/191] Linking CXX executable platform-bin/port-tests/test/smp_test_int4-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test_int4-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 110836	   1332	22300536	22412704	155fda0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test_int4-hwd.elf
+[189/191] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp_test_int5-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[190/191] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp_test_int5-hwd.dir/luckfox-lyra/smp_test_int5/main.cpp.obj
+[191/191] Linking CXX executable platform-bin/port-tests/test/smp_test_int5-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp_test_int5-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  93452	   1232	22278496	22373180	155633c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/platform-bin/port-tests/test/smp_test_int5-hwd.elf
+> cd build/aarch32-luckfox-lyra-cmake-gcc-release && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-release
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+No tests were found!!!

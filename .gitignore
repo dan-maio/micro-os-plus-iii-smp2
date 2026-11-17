@@ -6,3 +6,10 @@
 !/baseline-2026-11-17/
 !/step1-check/
 !/step2-check/
+!/step3-check/
+!/step4-check/
+# The step 4 snapshots (every compile and build command before and after) are
+# large and carry the user's cache-only settings (Wi-Fi test credentials):
+# local only. compare.py and compare-all.txt are the record.
+/step4-check/before/
+/step4-check/*.ninja-cmds.after

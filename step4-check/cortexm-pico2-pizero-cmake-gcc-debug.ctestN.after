@@ -1,0 +1,14 @@
+cortexm-pico2-pizero-exc-test-hwd
+cortexm-pico2-pizero-psram-exec-hwd
+cortexm-pico2-pizero-psram-mat-test-250-hwd
+cortexm-pico2-pizero-sc-test-ko-hwd
+cortexm-pico2-pizero-smp-mat-test-hwd
+cortexm-pico2-pizero-smp-test0-hwd
+cortexm-pico2-pizero-smp-test1-hwd
+cortexm-pico2-pizero-smp-test2-hwd
+cortexm-pico2-pizero-smp-test3-hwd
+cortexm-pico2-pizero-smp-test4-hwd
+cortexm-pico2-pizero-smp-test5-hwd
+cortexm-pico2-pizero-smp-test-ko-hwd
+cortexm-pico2-pizero-smp-test-usb-cdc-acm-hwd
+cortexm-pico2-pizero-smp-test-usb-hid-hwd

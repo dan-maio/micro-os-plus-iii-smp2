@@ -1,0 +1,17 @@
+native-clock-test-host Passed
+native-flatfs-test-host Passed
+native-mutex-ceiling-test-host Passed
+native-mutex-stress-host Passed
+native-rtos-apis-host Passed
+native-smp-mat-test-host Passed
+native-smp-mutex-stress-host Passed
+native-smp-num-test-host Passed
+native-smp-pipeline-test-host Passed
+native-smp-pro-cons-test-host Passed
+native-smp-rtos-apis-host Passed
+native-smp_test0-host Passed
+native-smp_test1-host Passed
+native-smp_test2-host Passed
+native-smp_test3-host Passed
+native-smp_test4-host Passed
+native-cmsis-os-validator-host Passed

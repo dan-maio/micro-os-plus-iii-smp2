@@ -1,0 +1,4 @@
+2xcortex-m33-rtos-apis-test Passed
+2xcortex-m33-mutex-stress-test Passed
+2xcortex-m33-fp-switch-test Passed
+2xcortex-m33-cmsis-os-validator-test Passed

@@ -1576,6 +1576,51 @@ the port defines all its SoC targets instead (until step 5 moves them
 out).</p>
 <p>Check, per board: <code>compile_commands.json</code> identical before
 and after; <code>ctest -N</code> identical.</p>
+<p><strong>Done 2026-11-17</strong> (kernel <code>77be949f</code>;
+cortexm <code>ad9d97f</code>, aarch32 <code>50972b7</code>, aarch64
+<code>70712d0</code>, posix-arch <code>226f12d</code>), with two
+decisions agreed during the step:</p>
+<ul>
+<li><strong>The board code stays where it is for now.</strong> Each
+board’s facts and linker scripts moved; its code (src/, include/, wifi/,
+usb/, net/, glue/, the QEMU shim) stays in the port’s
+<code>test/boards/&lt;b&gt;/</code>, added to the build by the
+platform’s <code>micro-os-plus::board</code>, not by the port library.
+It moves once: chip code in step 5, board tests in step 6. Until step 6
+a port’s own stand-alone build (<code>-DBOARD=…</code>) does not work;
+the kernel’s tests are not affected.</li>
+<li><strong>The OpenOCD files stay next to <code>hw.sh</code></strong>
+and move in step 7, with the runner that uses them, so step 4 needed no
+hardware run.</li>
+</ul>
+<p>How it is built: each board platform has
+<code>cmake/board.cmake</code> (the facts, including <code>BOARD</code>,
+the port’s test folder, and <code>UOS_PORT_LIB</code>, the port core the
+board was proven with) and <code>device/linker-scripts/</code>; its
+<code>platform-library.cmake</code> builds
+<code>micro-os-plus::board</code>
+(<code>tests/cmake/uos-cortexm-board.cmake</code>,
+<code>uos-aarch-board.cmake</code>; native inline) and links it after
+the port. The Cortex-M port now has three core targets
+(<code>micro-os-plus::cortexm</code>, <code>-rp2350</code>,
+<code>-rp2040</code>); the AArch ports’ targets are architecture only;
+no port links the kernel or reads a board.</p>
+<p>Check in <code>step4-check/</code>, from fresh CMake caches: every
+compile and link command and every <code>ctest -N</code> list of the 40
+configurations is identical to before, after normalising only spelling
+(a port reached through its xpm link is its folder; an object is its
+target and source; a linker script is its file name). One include order
+moved, on the 12 AArch configurations (<code>port/smp-common</code> and
+<code>test_smpl/include</code> now come before the SoC and board
+folders): no header name exists in both, so no compile can change. Full
+build and test: 40/40 built, the same 364 tests, 3 known flaky failures
+(<code>BASELINE.md</code>).</p>
+<p>For step 5: the AArch32 port compiled <code>soc/bcm2837/</code> for
+every board, the RK3506 Lyra included;
+<code>aarch32-luckfox-lyra/cmake/board.cmake</code> keeps
+<code>UOS_BOARD_SOC bcm2837</code> so step 4 changes nothing, and says
+so. The device package split (D3) is where it gets the RK3506 SoC
+instead.</p>
 <h3 id="step-5-device-xpacks-8-d3">Step 5 — device xPacks (§8, D3)</h3>
 <p>New <strong>local</strong> repositories in this workspace (D5), each
 an xPack (<code>package.json</code> with <code>xpack</code>,
@@ -1714,6 +1759,9 @@ and <code>micro-os-plus-iii-cortexm/README.md</code>. The history notes
 (<code>docs/smp-integration/</code>, <code>docs/specs/</code>) stay as
 they are. The SD read-back check <code>sd_test/verify.sh</code> did is
 <code>python3 sd_test/flatfs_tool.py verify &lt;image&gt;</code>.</li>
+<li>The ports’ <code>test/hw.sh</code> header comments still describe a
+board folder as “board.cmake, src/, include/ and test/”; correct with
+step 7.</li>
 <li>At publishing: <code>include/cmsis-plus/os-versions.h</code> still
 says 7.0.1 (upstream left it so at v7.1.0 too); set it with the release
 version.</li>

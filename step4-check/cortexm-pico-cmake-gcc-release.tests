@@ -1,0 +1,6 @@
+cortexm-pico-cmsis-os-validator-qemu Passed
+cortexm-pico-fp-switch-qemu Passed
+cortexm-pico-mutex-stress-qemu Passed
+cortexm-pico-rtos-apis-qemu Passed
+cortexm-pico-sc-test-ko-qemu Passed
+cortexm-pico-smp-test1-qemu Passed

@@ -1,0 +1,1027 @@
+> cmake -S . -B build/cortexm-pico-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=cortexm-pico --log-level=VERBOSE -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/arm-none-eabi-gcc.cmake
+-- Including micro-os-plus-build-helper module...
+-- CMake version: 3.26.5
+-- Compiler: GNU 15.2.1
+-- package.name: @micro-os-plus/micro-os-plus-iii
+-- package.version: 7.2.0-pre.1
+-- Platform name: cortexm-pico
+-- Build type: Debug
+-- Project path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests
+-- Build path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+-- Module path: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/xpacks/@micro-os-plus/build-helper/cmake
+-- CMAKE_C_COMPILER_ID: GNU
+-- CMAKE_SYSTEM_NAME: Generic
+-- CMAKE_SYSTEM_PROCESSOR: arm
+-- Including tests/cmake/common-options.cmake...
+-- Adding GCC warnings...
+-- > micro-os-plus-common-options-interface
+-- + -D $<$<CONFIG:Debug>:DEBUG>
+-- + -D $<$<CONFIG:Debug>:TRACE>
+-- + -D OS_USE_OS_APP_CONFIG_H
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + -Wall
+-- + -Waggregate-return
+-- + -Wcast-align
+-- + -Wcast-qual
+-- + -Wconversion
+-- + -Wdouble-promotion
+-- + -Wduplicated-branches
+-- + -Wduplicated-cond
+-- + -Wextra
+-- + -Wfloat-conversion
+-- + -Wfloat-equal
+-- + -Wformat-nonliteral
+-- + -Wformat-overflow=2
+-- + -Wformat-security
+-- + -Wformat-signedness
+-- + -Wformat-truncation=2
+-- + -Wformat-y2k
+-- + -Wformat=2
+-- + -Wlogical-op
+-- + -Wmissing-declarations
+-- + $<$<NOT:$<PLATFORM_ID:Darwin>>:-Wmissing-include-dirs>
+-- + -Wnull-dereference
+-- + -Wpacked
+-- + -Wpadded
+-- + -Wpointer-arith
+-- + -Wredundant-decls
+-- + -Wshadow
+-- + -Wshift-overflow=2
+-- + -Wsign-conversion
+-- + -Wswitch-default
+-- + -Wswitch-enum
+-- + -Wundef
+-- + -Wuninitialized
+-- + -Wvla
+-- + $<$<COMPILE_LANGUAGE:C>:-Wbad-function-cast>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wc++-compat>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wduplicate-decl-specifier>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wmissing-prototypes>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wnested-externs>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
+-- + $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wnon-virtual-dtor>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wold-style-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Woverloaded-virtual>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wplacement-new=2>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wregister>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsign-promo>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wstrict-null-sentinel>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-methods>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-final-types>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wsuggest-override>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wuseless-cast>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wzero-as-null-pointer-constant>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wextra-semi>
+-- + -Warith-conversion
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wcomma-subscript>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wredundant-tags>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wvolatile>
+-- + $<$<COMPILE_LANGUAGE:CXX>:-Wmismatched-tags>
+-- + -fmessage-length=0
+-- + -fsigned-char
+-- + -ffunction-sections
+-- + -fdata-sections
+-- + -fdiagnostics-color=always
+-- + $<$<CONFIG:Debug>:-v>
+-- > micro-os-plus::common-options -> micro-os-plus-common-options-interface
+-- Including tests/platforms/cortexm-pico/cmake/definitions.cmake...
+-- Including tests/platforms/cortexm-pico/cmake/dependencies-folders.cmake...
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- Adding 'sources/rtos-apis'...
+-- > test-rtos-apis-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test-c-api.c
+-- + src/test-chan-fatfs.cpp
+-- + src/test-cmsis-os1.cpp
+-- + src/test-cpp-api.cpp
+-- + src/test-cpp-mem.cpp
+-- + src/test-iso-api.cpp
+-- + src/test-posix-io-api.cpp
+-- + src/instrumentation-config.cpp
+-- > test::rtos-apis -> test-rtos-apis-interface
+-- Adding 'sources/mutex-stress'...
+-- > test-mutex-stress-interface
+-- + -I include
+-- + src/main.cpp
+-- + src/test.cpp
+-- > test::mutex-stress -> test-mutex-stress-interface
+-- Adding 'sources/cmsis-os-validator'...
+-- > test-cmsis-os-validator-interface
+-- + -I include
+-- > test::cmsis-os-validator -> test-cmsis-os-validator-interface
+-- Adding 'sources/fp-switch'...
+-- > test-fp-switch-interface
+-- + -I include
+-- + src/main.cpp
+-- > test::fp-switch -> test-fp-switch-interface
+-- Adding 'build/cortexm-pico-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-cortexm'...
+-- > micro-os-plus::cortexm-qemu-m0 -> micro-os-plus-iii-cortexm-qemu-m0-interface
+-- > micro-os-plus::cortexm-qemu-m3 -> micro-os-plus-iii-cortexm-qemu-m3-interface
+-- > micro-os-plus::cortexm-qemu-m4f -> micro-os-plus-iii-cortexm-qemu-m4f-interface
+-- > micro-os-plus::cortexm-qemu-m7 -> micro-os-plus-iii-cortexm-qemu-m7-interface
+-- > micro-os-plus::cortexm-qemu-m33 -> micro-os-plus-iii-cortexm-qemu-m33-interface
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board pico
+-- Adding 'device-qemu-cortexm'...
+-- Processing 'tests/device-qemu-cortexm'...
+-- > device-qemu-cortexm-interface
+-- + -I include
+-- + src/system-cortexm.c
+-- + src/initialize-hardware.c
+-- + src/vectors-cortexm.c
+-- + src/exception-handlers.cpp
+-- + -D MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M0
+-- + xpacks::arm-cmsis
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/mem-mps2-an385.ld
+-- + -T/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/device-qemu-cortexm/linker-scripts/sections-flash.ld
+-- > micro-os-plus::device -> device-qemu-cortexm-interface
+-- Adding 'xpacks/@xpacks/arm-cmsis-rtos-validator'...
+-- Processing xPack @xpacks/arm-cmsis-rtos-validator@1.0.0-4...
+-- > xpacks-arm-cmsis-os-validator-interface
+-- + -I Include
+-- + -I cmsis-plus/include
+-- + cmsis-plus/src/main.c
+-- + Source/RV_Framework.c
+-- + Source/cmsis_rv.c
+-- + Source/RV_Signal.c
+-- + Source/RV_Report.c
+-- + Source/RV_Thread.c
+-- + Source/RV_MailQueue.c
+-- + Source/RV_Timer.c
+-- + Source/RV_GenWait.c
+-- + Source/RV_WaitFunc.c
+-- + Source/RV_MemoryPool.c
+-- + Source/RV_MsgQueue.c
+-- + Source/RV_Mutex.c
+-- + Source/RV_Semaphore.c
+-- > xpacks::arm-cmsis-os-validator -> xpacks-arm-cmsis-os-validator-interface
+-- Adding 'xpacks/@xpacks/chan-fatfs'...
+-- Processing xPack @xpacks/chan-fatfs@0.13.1-5...
+-- > xpacks-chan-fatfs-interface
+-- + -I include
+-- + source/ff.c
+-- + source/ffunicode.c
+-- + src/posix-io/chan-fatfs-directory.cpp
+-- + src/posix-io/chan-fatfs-file-sytem.cpp
+-- + src/posix-io/chan-fatfs-file.cpp
+-- + src/posix-io/diskio.cpp
+-- + src/posix-io/ffsystem.cpp
+-- + src/posix-io/utils.cpp
+-- > xpacks::chan-fatfs -> xpacks-chan-fatfs-interface
+-- Adding 'build/cortexm-pico-cmake-gcc-debug/xpacks/@xpacks/arm-cmsis'...
+-- Processing xPack @xpacks/arm-cmsis@4.5.0-7...
+-- > xpacks-arm-cmsis-interface
+-- + -I CMSIS/Include
+-- + -I CMSIS/Driver/Include
+-- > xpacks::arm-cmsis -> xpacks-arm-cmsis-interface
+-- Adding top library...
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- Processing 'tests/platforms/cortexm-pico'...
+-- Including tests/platforms/cortexm-pico/cmake/platform-library.cmake...
+-- > micro-os-plus::platform -> platform-cortexm-pico-interface
+-- µOS++ III Cortex-M tests: 40 targets, board=pico, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico
+-- Cortex-M pico: port tests registered (cortexm-pico)
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+> cmake -S . -B build/cortexm-pico-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=cortexm-pico
+-- µOS++ III micro-os-plus-iii-cortexm: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm
+-- µOS++ III Cortex-M port: micro-os-plus::cortexm, board pico
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III Cortex-M tests: 40 targets, board=pico, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii-cortexm/test/pico
+-- Cortex-M pico: port tests registered (cortexm-pico)
+-- Configuring done (0.0s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+> cmake --build build/cortexm-pico-cmake-gcc-debug
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+> cd build/cortexm-pico-cmake-gcc-debug && ctest -V -LE hwd
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/DartConfiguration.tcl
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 1
+    Start  1: cortexm-pico-cmsis-os-validator-qemu
+
+1: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an385" "-cpu" "cortex-m3" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin/port-tests/test/cmsis-os-validator-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+1: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin
+1: Test timeout computed to be: 300
+1: 
+1: Hardware initialised
+1: Main stack 0x207ff400-0x20800000
+1: os_startup_initialize_free_store(0x2000472c,8367316)
+1: first_fit_top(0x2000472c,8367316) @0x20000914 app-heap
+1: out_of_memory_handler(0x5181) @0x20000914 app-heap
+1: estd::pmr::set_default_resource(0x20000914) 
+1: rtos::memory::set_default_resource(0x20000914) 
+1: os_run_init_array()
+1: rtos::memory::init_once_default_resource() 
+1: malloc_memory_resource() @0x200008e8 malloc
+1: Static objects constructed
+1: 
+1: µOS++ IIIe version 7.0.1
+1: Copyright (c) 2007-2023 Liviu Ionescu
+1: Scheduler: µOS++ Cortex-M0/0+, preemptive, DI/EI, WFI
+1: System clock: 16000000 Hz
+1: Scheduler frequency: 1000 ticks/sec
+1: Default stack size: 2048 bytes
+1: Interrupts stack size: 3072 bytes
+1: Built with GCC 15.2.1 20251203, no exceptions
+1: 
+1: scheduler::start() 
+1: 
+1: main(argc=1, argv=[""]);
+1: Read of unassigned area of PPB: offset 0x1000
+1: Read of unassigned area of PPB: offset 0x1000
+1: Read of unassigned area of PPB: offset 0x1000
+1: Write of unassigned area of PPB: offset 0x1000
+1: Read of unassigned area of PPB: offset 0x1004
+1: Read of unassigned area of PPB: offset 0x1004
+1: CMSIS-RTOS Test Suite   Nov 17 2026   10:12:43 
+1: 
+1: TEST 01: TC_ThreadCreate                  PASSED
+1: TEST 02: TC_ThreadMultiInstance           PASSED
+1: TEST 03: TC_ThreadTerminate               PASSED
+1: TEST 04: TC_ThreadRestart                 PASSED
+1: TEST 05: TC_ThreadGetId                   PASSED
+1: TEST 06: TC_ThreadPriority                PASSED
+1: TEST 07: TC_ThreadPriorityExec            PASSED
+1: TEST 08: TC_ThreadChainedCreate           PASSED
+1: TEST 09: TC_ThreadYield                   PASSED
+1: TEST 10: TC_ThreadParam                   PASSED
+1: TEST 11: TC_ThreadInterrupts              PASSED
+1: TEST 12: TC_GenWaitBasic                  PASSED
+1: TEST 13: TC_GenWaitInterrupts             PASSED
+1: TEST 14: TC_TimerOneShot                  PASSED
+1: TEST 15: TC_TimerPeriodic                 PASSED
+1: TEST 16: TC_TimerParam                    PASSED
+1: TEST 17: TC_TimerInterrupts               PASSED
+1: TEST 18: TC_SignalMainThread              PASSED
+1: TEST 19: TC_SignalChildThread             PASSED
+1: TEST 20: TC_SignalChildToParent           PASSED
+1: TEST 21: TC_SignalChildToChild            PASSED
+1: TEST 22: TC_SignalWaitTimeout             PASSED
+1: TEST 23: TC_SignalParam                   PASSED
+1: TEST 24: TC_SignalInterrupts              PASSED
+1: TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+1: TEST 26: TC_SemaphoreObtainCounting       PASSED
+1: TEST 27: TC_SemaphoreObtainBinary         PASSED
+1: TEST 28: TC_SemaphoreWaitForBinary        PASSED
+1: TEST 29: TC_SemaphoreWaitForCounting      PASSED
+1: TEST 30: TC_SemaphoreZeroCount            PASSED
+1: TEST 31: TC_SemaphoreWaitTimeout          PASSED
+1: TEST 32: TC_SemParam                      PASSED
+1: TEST 33: TC_SemInterrupts                 PASSED
+1: TEST 34: TC_MutexBasic                    PASSED
+1: TEST 35: TC_MutexTimeout                  PASSED
+1: TEST 36: TC_MutexNestedAcquire            PASSED
+1: TEST 37: TC_MutexPriorityInversion        PASSED
+1: TEST 38: TC_MutexOwnership                PASSED
+1: TEST 39: TC_MutexParam                    PASSED
+1: TEST 40: TC_MutexInterrupts               PASSED
+1: TEST 41: TC_MemPoolAllocAndFree           PASSED
+1: TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+1: TEST 43: TC_MemPoolZeroInit               PASSED
+1: TEST 44: TC_MemPoolParam                  PASSED
+1: TEST 45: TC_MemPoolInterrupts             PASSED
+1: TEST 46: TC_MsgQBasic                     PASSED
+1: TEST 47: TC_MsgQWait                      PASSED
+1: TEST 48: TC_MsgQParam                     PASSED
+1: TEST 49: TC_MsgQInterrupts                PASSED
+1: TEST 50: TC_MsgFromThreadToISR            PASSED
+1: TEST 51: TC_MsgFromISRToThread            PASSED
+1: TEST 52: TC_MailAlloc                     PASSED
+1: TEST 53: TC_MailCAlloc                    PASSED
+1: TEST 54: TC_MailToThread                  PASSED
+1: TEST 55: TC_MailFromThread                PASSED
+1: TEST 56: TC_MailTimeout                   PASSED
+1: TEST 57: TC_MailParam                     PASSED
+1: TEST 58: TC_MailInterrupts                PASSED
+1: TEST 59: TC_MailFromThreadToISR           PASSED
+1: TEST 60: TC_MailFromISRToThread           PASSED
+1: 
+1: Test Summary: 60 Tests, 60 Executed, 60 Passed, 0 Failed, 0 Warnings.
+1: Test Result: PASSED
+1: 
+1: RESULT: PASS
+1: RESULT: PASS
+1: _main_trampoline() exit = 0
+1: exit(0)
+1: os_run_fini_array()
+1/6 Test  #1: cortexm-pico-cmsis-os-validator-qemu ...   Passed    7.36 sec
+test 5
+    Start  5: cortexm-pico-fp-switch-qemu
+
+5: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an385" "-cpu" "cortex-m3" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin/port-tests/test/fp-switch-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+5: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin
+5: Test timeout computed to be: 300
+5: 
+5: Hardware initialised
+5: Main stack 0x207ff400-0x20800000
+5: os_startup_initialize_free_store(0x20000a1c,8382948)
+5: first_fit_top(0x20000a1c,8382948) @0x200005dc app-heap
+5: out_of_memory_handler(0x26a1) @0x200005dc app-heap
+5: estd::pmr::set_default_resource(0x200005dc) 
+5: rtos::memory::set_default_resource(0x200005dc) 
+5: os_run_init_array()
+5: rtos::memory::init_once_default_resource() 
+5: malloc_memory_resource() @0x200005b0 malloc
+5: Static objects constructed
+5: 
+5: µOS++ IIIe version 7.0.1
+5: Copyright (c) 2007-2023 Liviu Ionescu
+5: Scheduler: µOS++ Cortex-M0/0+, preemptive, DI/EI, WFI
+5: System clock: 16000000 Hz
+5: Scheduler frequency: 1000 ticks/sec
+5: Default stack size: 2048 bytes
+5: Interrupts stack size: 3072 bytes
+5: Built with GCC 15.2.1 20251203, no exceptions
+5: 
+5: scheduler::start() 
+5: 
+5: main(argc=1, argv=[""]);
+5: 
+5: FPU context switch test: no FPU, nothing to test
+5: 
+5: RESULT: PASS
+5: RESULT: PASS
+5: _main_trampoline() exit = 0
+5: exit(0)
+5: os_run_fini_array()
+2/6 Test  #5: cortexm-pico-fp-switch-qemu ............   Passed    0.04 sec
+test 7
+    Start  7: cortexm-pico-mutex-stress-qemu
+
+7: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an385" "-cpu" "cortex-m3" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin/port-tests/test/mutex-stress-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+7: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin
+7: Test timeout computed to be: 300
+7: 
+7: Hardware initialised
+7: Main stack 0x207ff400-0x20800000
+7: os_startup_initialize_free_store(0x20000a74,8382860)
+7: first_fit_top(0x20000a74,8382860) @0x200005dc app-heap
+7: out_of_memory_handler(0x2db5) @0x200005dc app-heap
+7: estd::pmr::set_default_resource(0x200005dc) 
+7: rtos::memory::set_default_resource(0x200005dc) 
+7: os_run_init_array()
+7: rtos::memory::init_once_default_resource() 
+7: malloc_memory_resource() @0x200005b0 malloc
+7: Static objects constructed
+7: 
+7: µOS++ IIIe version 7.0.1
+7: Copyright (c) 2007-2023 Liviu Ionescu
+7: Scheduler: µOS++ Cortex-M0/0+, preemptive, DI/EI, WFI
+7: System clock: 16000000 Hz
+7: Scheduler frequency: 1000 ticks/sec
+7: Default stack size: 2048 bytes
+7: Interrupts stack size: 3072 bytes
+7: Built with GCC 15.2.1 20251203, no exceptions
+7: 
+7: scheduler::start() 
+7: 
+7: main(argc=1, argv=[""]);
+7: 
+7: Mutex stress & uniformity test
+7: Built with GCC 15.2.1 20251203
+7: Seed 1491554429
+7: mutex_test @0x207fed78 t0
+7: mutex_test @0x207fee08 t1
+7: mutex_test @0x207fee98 t2
+7: mutex_test @0x207fef28 t3
+7: mutex_test @0x207fefb8 t4
+7: mutex_test @0x207ff048 t5
+7: mutex_test @0x207ff0d8 t6
+7: mutex_test @0x207ff168 t7
+7: mutex_test @0x207ff1f8 t8
+7: mutex_test @0x207ff288 t9
+7: periodic @0x207fed00
+7: [  5s] t0:39   t1:40   t2:37   t3:40   t4:38   t5:37   t6:41   t7:35   t8:37   t9:36   sum=380, avg=38, sigma=1, delta in [-3,3] [-7%,8%]
+7: [ 10s] t0:80   t1:77   t2:76   t3:79   t4:77   t5:79   t6:82   t7:76   t8:74   t9:77   sum=777, avg=78, sigma=2, delta in [-4,4] [-4%,5%]
+7: [ 15s] t0:123  t1:116  t2:119  t3:118  t4:116  t5:121  t6:120  t7:115  t8:113  t9:116  sum=1177, avg=118, sigma=2, delta in [-5,5] [-3%,4%]
+7: [ 20s] t0:164  t1:153  t2:160  t3:155  t4:153  t5:161  t6:159  t7:153  t8:156  t9:153  sum=1567, avg=157, sigma=3, delta in [-4,7] [-2%,4%]
+7: [ 25s] t0:204  t1:194  t2:200  t3:191  t4:188  t5:199  t6:201  t7:191  t8:192  t9:198  sum=1958, avg=196, sigma=5, delta in [-8,8] [-3%,4%]
+7: [ 30s] t0:245  t1:228  t2:244  t3:230  t4:227  t5:238  t6:240  t7:237  t8:229  t9:237  sum=2355, avg=236, sigma=6, delta in [-9,9] [-3%,4%]
+7: [ 35s] t0:290  t1:269  t2:286  t3:275  t4:268  t5:277  t6:282  t7:283  t8:262  t9:281  sum=2773, avg=277, sigma=8, delta in [-15,13] [-4%,5%]
+7: Done.
+7: 
+7: RESULT: PASS
+7: RESULT: PASS
+7: _main_trampoline() exit = 0
+7: exit(0)
+7: os_run_fini_array()
+3/6 Test  #7: cortexm-pico-mutex-stress-qemu .........   Passed   22.54 sec
+test 10
+    Start 10: cortexm-pico-rtos-apis-qemu
+
+10: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an385" "-cpu" "cortex-m3" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin/port-tests/test/rtos-apis-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+10: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin
+10: Test timeout computed to be: 300
+10: 
+10: Hardware initialised
+10: Main stack 0x207ff400-0x20800000
+10: os_startup_initialize_free_store(0x20003968,8370840)
+10: first_fit_top(0x20003968,8370840) @0x2000062c app-heap
+10: out_of_memory_handler(0x77ad) @0x2000062c app-heap
+10: estd::pmr::set_default_resource(0x2000062c) 
+10: rtos::memory::init_once_default_resource() 
+10: malloc_memory_resource() @0x20000600 malloc
+10: first_fit_top(0x2077f400,524288) @0x2077f3c0 sys-heap
+10: lifo(0x2077f400,524288) @0x2077f3c0 sys-heap
+10: out_of_memory_handler(0x77b5) @0x2077f3c0 sys-heap
+10: rtos::memory::set_default_resource(0x2077f3c0) 
+10: block_pool_typed_inclusive() @0x2077f1e0 threads-pool
+10: out_of_memory_handler(0x77b5) @0x2077f1e0 threads-pool
+10: rtos::memory::set_resource_typed<os::rtos::thread>(0x2077f1e0) 
+10: block_pool_typed_inclusive() @0x2077f168 condvars-pool
+10: out_of_memory_handler(0x77b5) @0x2077f168 condvars-pool
+10: rtos::memory::set_resource_typed<os::rtos::condition_variable>(0x2077f168) 
+10: block_pool_typed_inclusive() @0x2077f0e8 evflags-pool
+10: out_of_memory_handler(0x77b5) @0x2077f0e8 evflags-pool
+10: rtos::memory::set_resource_typed<os::rtos::event_flags>(0x2077f0e8) 
+10: block_pool_typed_inclusive() @0x2077f000 mempools-pool
+10: out_of_memory_handler(0x77b5) @0x2077f000 mempools-pool
+10: rtos::memory::set_resource_typed<os::rtos::memory_pool>(0x2077f000) 
+10: block_pool_typed_inclusive() @0x2077eee0 mqueues-pool
+10: out_of_memory_handler(0x77b5) @0x2077eee0 mqueues-pool
+10: rtos::memory::set_resource_typed<os::rtos::message_queue>(0x2077eee0) 
+10: block_pool_typed_inclusive() @0x2077ee18 mutexes-pool
+10: out_of_memory_handler(0x77b5) @0x2077ee18 mutexes-pool
+10: rtos::memory::set_resource_typed<os::rtos::mutex>(0x2077ee18) 
+10: block_pool_typed_inclusive() @0x2077ed88 semaphores-pool
+10: out_of_memory_handler(0x77b5) @0x2077ed88 semaphores-pool
+10: rtos::memory::set_resource_typed<os::rtos::semaphore>(0x2077ed88) 
+10: block_pool_typed_inclusive() @0x2077ec98 timers-pool
+10: out_of_memory_handler(0x77b5) @0x2077ec98 timers-pool
+10: rtos::memory::set_resource_typed<os::rtos::timer>(0x2077ec98) 
+10: os_run_init_array()
+10: Device '/dev/mc' linked
+10: my_char_impl()=@0x200031fc 1
+10: Device '/dev/mc2' linked
+10: my_char_impl()=@0x200031d4 2
+10: Device '/dev/mb' linked
+10: my_block_impl::my_block_impl()=@0x2000316c
+10: Device '/dev/mb-p1' linked
+10: Device '/dev/mb-p2' linked
+10: file_descriptors_manager::file_descriptors_manager(5)=0x200030a4
+10: Static objects constructed
+10: 
+10: µOS++ IIIe version 7.0.1
+10: Copyright (c) 2007-2023 Liviu Ionescu
+10: Scheduler: µOS++ Cortex-M0/0+, preemptive, DI/EI, WFI
+10: System clock: 16000000 Hz
+10: Scheduler frequency: 1000 ticks/sec
+10: Default stack size: 2048 bytes
+10: Interrupts stack size: 3072 bytes
+10: Built with GCC 15.2.1 20251203, no exceptions
+10: 
+10: scheduler::start() 
+10: 
+10: main(argc=1, argv=[""]);
+10: 
+10: µOS++ RTOS simple APIs test
+10: Built with GCC 15.2.1 20251203
+10: 
+10: Test C++ API - started
+10: 
+10: Threads:
+10: main, 27% (1084/3996), run, 6, 58784 
+10: idle, 5% (112/2044), rdy, 10, 81743 
+10: 
+10: Test C++ API - Memory managers
+10: block_pool(2,8,0x207ff208,60) @0x207ff290 bp1
+10: ~block_pool() @0x207ff290 bp1
+10: block_pool_typed_inclusive() @0x207ff290 bp2
+10: ~block_pool_typed_inclusive() @0x207ff290 bp2
+10: ~block_pool() @0x207ff290 bp2
+10: block_pool_typed_allocated(2,0x207ff208) @0x207ff290 bp3
+10: ~block_pool_typed_allocated() @0x207ff290 bp3
+10: ~block_pool() @0x207ff290 bp3
+10: 
+10: Test C++ API - Threads
+10: > func() on thread -
+10: > func() on thread th2
+10: > func() on thread th3
+10: > func() on thread th4
+10: > func() on thread th5
+10: > func() on thread th6
+10: > func() on thread th7
+10: > func() on thread th8
+10: > func() on thread th9
+10: allocator_stateless_polymorphic_synchronized() @0x207ff290 0x2077f1e0
+10: allocate(1) @0x207ff188
+10: > func() on thread th10
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077f1e0
+10: allocate(1) @0x207ff188
+10: > func() on thread th11
+10: deallocate(0x2077f2a8,1) @0x207ff200
+10: deallocate(0x2077f220,1) @0x207ff290
+10: > func() on thread -
+10: > func() on thread ath2
+10: > func() on thread -
+10: > func() on thread sth2
+10: 
+10: Test C++ API - Thread stack
+10: 
+10: Test C++ API - Thread event flags
+10: 
+10: Test C++ API - Message queues
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1f8 0x2077eee0
+10: allocate(1) @0x207ff180
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1ec 0x2077eee0
+10: allocate(1) @0x207ff180
+10: deallocate(0x2077ef68,1) @0x207ff200
+10: deallocate(0x2077ef20,1) @0x207ff290
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077eee0
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1ec 0x2077eee0
+10: allocate(1) @0x207ff188
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1e8 0x2077eee0
+10: allocate(1) @0x207ff188
+10: deallocate(0x2077ef68,1) @0x207ff1ec
+10: deallocate(0x2077ef20,1) @0x207ff290
+10: 
+10: Test C++ API - Memory pools
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077f000
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1e8 0x2077f000
+10: allocate(1) @0x207ff180
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1e4 0x2077f000
+10: allocate(1) @0x207ff180
+10: deallocate(0x2077f074,1) @0x207ff1ec
+10: deallocate(0x2077f040,1) @0x207ff290
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077eee0
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1ec 0x2077f000
+10: allocate(1) @0x207ff188
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1e8 0x2077f000
+10: allocate(1) @0x207ff188
+10: deallocate(0x2077f074,1) @0x207ff1ec
+10: deallocate(0x2077f040,1) @0x207ff290
+10: 
+10: Test C++ API - Condition variables
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077f168
+10: allocator_stateless_polymorphic_synchronized() @0x207ff290 0x2077f168
+10: allocate(1) @0x207ff18c
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1ec 0x2077f168
+10: allocate(1) @0x207ff18c
+10: deallocate(0x2077f1b8,1) @0x207ff1ec
+10: deallocate(0x2077f1a8,1) @0x207ff290
+10: 
+10: Test C++ API - Event flags
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077f0e8
+10: allocator_stateless_polymorphic_synchronized() @0x207ff290 0x2077f0e8
+10: allocate(1) @0x207ff18c
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1ec 0x2077f0e8
+10: allocate(1) @0x207ff18c
+10: deallocate(0x2077f13c,1) @0x207ff1ec
+10: deallocate(0x2077f128,1) @0x207ff290
+10: 
+10: Test C++ API - Mutexes
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077ee18
+10: allocator_stateless_polymorphic_synchronized() @0x207ff290 0x2077ee18
+10: allocate(1) @0x207ff18c
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1ec 0x2077ee18
+10: allocate(1) @0x207ff18c
+10: deallocate(0x2077ee84,1) @0x207ff1ec
+10: deallocate(0x2077ee58,1) @0x207ff290
+10: 0x207fdb00
+10: 0x207fdb00
+10: 0x207fdb00
+10: 0x207fdb00
+10: 0x207fdb00
+10: 0x0
+10: 
+10: Test C++ API - Semaphores
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077ed88
+10: allocator_stateless_polymorphic_synchronized() @0x207ff290 0x2077ed88
+10: allocate(1) @0x207ff18c
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1ec 0x2077ed88
+10: allocate(1) @0x207ff18c
+10: deallocate(0x2077ede0,1) @0x207ff1ec
+10: deallocate(0x2077edc8,1) @0x207ff290
+10: 
+10: Test C++ API - Timers
+10: >> tmfunc()
+10: >> tmfunc()
+10: >> tmfunc()
+10: >> tmfunc()
+10: >> tmfunc()
+10: >> tmfunc()
+10: >> tmfunc()
+10: allocator_stateless_polymorphic_synchronized() @0x207ff200 0x2077ec98
+10: allocator_stateless_polymorphic_synchronized() @0x207ff290 0x2077ec98
+10: allocate(1) @0x207ff18c
+10: >> tmfunc()
+10: allocator_stateless_polymorphic_synchronized() @0x207ff1ec 0x2077ec98
+10: allocate(1) @0x207ff18c
+10: >> tmfunc()
+10: deallocate(0x2077ed10,1) @0x207ff1ec
+10: deallocate(0x2077ecd8,1) @0x207ff290
+10: 
+10: Test C++ API - done
+10: errno=0
+10: 
+10: Test C API - started
+10: 
+10: Threads:
+10: main, 34% (1372/3996), run, 95, 313162 
+10: idle, 7% (160/2044), rdy, 87, 439932 
+10: 
+10: Test C API - Scheduler
+10: 
+10: Test C API - Clocks
+10: 
+10: Test C API - Threads
+10: > func
+10: > func
+10: > func
+10: > func
+10: 
+10: Test C API - Thread stack
+10: 
+10: Test C API - Thread event flags
+10: 
+10: Test C API - Timers
+10: >> tmfunc
+10: >> tmfunc
+10: >> tmfunc
+10: >> tmfunc
+10: 
+10: Test C API - Mutexes
+10: 
+10: Test C API - Semaphores
+10: 
+10: Test C API - Memory pools
+10: 
+10: Test C API - Message queues
+10: 
+10: Test C API - Event flags
+10: 
+10: Test C API - Condition variables
+10: 
+10: Test C API - done
+10: errno=0
+10: 
+10: Test ISO C++ API - Threads
+10: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(); Args = {}]() @0x207ff2c0
+10: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*())()>]()
+10: task1()
+10: join() @0x207ff2c0
+10: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*())()>]()
+10: join() @0x207ff2c0 joined
+10: ~thread() @0x207ff2c0
+10: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(const void*); Args = {char*}]() @0x207ff2cc
+10: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(const void*)>]()
+10: task2(0x207ff2bf)
+10: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(void*); Args = {char*}]() @0x207ff2d8
+10: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(void*)>]()
+10: task3(0x207ff2bf)
+10: os::estd::thread::thread(Callable_T&&, Args_T&& ...) [with F = void (&)(int, const char*); Args = {int, const char (&)[4]}]() @0x207ff2e8
+10: static void os::estd::thread::run_function_object(const void*) [with F_T = std::_Bind<void (*(int, const char*))(int, const char*)>]()
+10: task4(7,xyz)
+10: join() @0x207ff2cc
+10: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(const void*)>]()
+10: join() @0x207ff2cc joined
+10: join() @0x207ff2d8
+10: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(char*))(void*)>]()
+10: join() @0x207ff2d8 joined
+10: join() @0x207ff2e8
+10: static void os::estd::thread::delete_function_object(const void*) [with F_T = std::_Bind<void (*(int, const char*))(int, const char*)>]()
+10: join() @0x207ff2e8 joined
+10: ~thread() @0x207ff2e8
+10: ~thread() @0x207ff2d8
+10: ~thread() @0x207ff2cc
+10: 
+10: Test ISO C++ API - Mutexes
+10: 
+10: Test ISO C++ API - Condition variables
+10: 
+10: Test ISO C++ API - Chrono
+10: Systick_clock::now() = 81 ticks
+10: system_clock::now() = 81000 us
+10: high_resolution_clock::now() = 81550187 ns
+10: sleep_for<chrono::realtime_clock> (1s)
+10: sleep_for<chrono::realtime_clock> (1001ms)
+10: sleep_until (chrono::realtime_clock::now () + 1000ms)
+10: sleep_until (chrono::realtime_clock::now () + 1s)
+10: 
+10: Test ISO C++ API - Done
+10: errno=0
+10: 
+10: Test POSIX I/O - Block device partitions - C++ API
+10: 
+10: Test POSIX I/O - Block device locked - C++ API
+10: 
+10: Test POSIX I/O - Block device unlocked - C++ API
+10: 
+10: Test POSIX I/O - Block device - intermixed opens - C++ API
+10: errno=0
+10: 
+10: Chan FatFS - 512/512 fat12, step 0
+10: Device '/dev/ch-bk-1' linked
+10: my_block_impl::my_block_impl()=@0x2077d9f4
+10: 
+10: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+10: ---- Test cycle 1 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: ---- Test cycle 2 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: ---- Test cycle 3 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file5-with-long-name.extension"
+10: "folder4-with-long-name"
+10: "file6-with-long-name.extension"
+10: my_block_impl::~my_block_impl() @0x2077d9f4
+10: 
+10: Chan FatFS - 512/512 fat12, step 1
+10: Device '/dev/ch-bk-1' linked
+10: my_block_impl::my_block_impl()=@0x2077d9f4
+10: 
+10: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+10: ---- Test cycle 1 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: ---- Test cycle 2 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: ---- Test cycle 3 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file5-with-long-name.extension"
+10: "folder4-with-long-name"
+10: "file6-with-long-name.extension"
+10: my_block_impl::~my_block_impl() @0x2077d9f4
+10: 
+10: Chan FatFS - 512/512 fat12, step 2
+10: Device '/dev/ch-bk-1' linked
+10: my_block_impl::my_block_impl()=@0x2077d9f4
+10: 
+10: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+10: ---- Test cycle 1 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: ---- Test cycle 2 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: ---- Test cycle 3 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file5-with-long-name.extension"
+10: "folder4-with-long-name"
+10: "file6-with-long-name.extension"
+10: my_block_impl::~my_block_impl() @0x2077d9f4
+10: 
+10: Chan FatFS - 512/512 fat12 mutex
+10: Device '/dev/ch-bk-1m' linked
+10: my_block_impl::my_block_impl()=@0x2077d9f4
+10: 
+10: test_diskio(0x2077d9d8, 3, 0x2076c9c0, 4100)
+10: ---- Test cycle 1 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: ---- Test cycle 2 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: ---- Test cycle 3 of 3 ----
+10:  Number of sectors is 128
+10:  Size of sector is 512 bytes
+10:  Size of the erase block is 512 sectors
+10:  Barrier test skipped
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file2-with-long-name.extension"
+10: "file1-with-long-name.extension"
+10: "folder1-with-long-name"
+10: "file3-with-long-name.extension"
+10: "folder3-with-long-name"
+10: "file5-with-long-name.extension"
+10: "folder4-with-long-name"
+10: "file6-with-long-name.extension"
+10: my_block_impl::~my_block_impl() @0x2077d9f4
+10: errno=0
+10: done
+10: 
+10: RESULT: PASS
+10: RESULT: PASS
+10: _main_trampoline() exit = 0
+10: exit(0)
+10: file_descriptors_manager::~file_descriptors_manager() @0x200030a4
+10: my_block_impl::~my_block_impl() @0x2000316c
+10: ~my_char_impl() @0x200031d4
+10: ~my_char_impl() @0x200031fc
+10: os_run_fini_array()
+4/6 Test #10: cortexm-pico-rtos-apis-qemu ............   Passed    4.60 sec
+test 13
+    Start 13: cortexm-pico-sc-test-ko-qemu
+
+13: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an385" "-cpu" "cortex-m3" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin/port-tests/test/sc-test-ko-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+13: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin
+13: Test timeout computed to be: 300
+13: 
+13: Hardware initialised
+13: Main stack 0x207ff400-0x20800000
+13: os_startup_initialize_free_store(0x20004c34,8366028)
+13: first_fit_top(0x20004c34,8366028) @0x200048fc app-heap
+13: out_of_memory_handler(0x49f1) @0x200048fc app-heap
+13: estd::pmr::set_default_resource(0x200048fc) 
+13: rtos::memory::set_default_resource(0x200048fc) 
+13: os_run_init_array()
+13: rtos::memory::init_once_default_resource() 
+13: malloc_memory_resource() @0x200048d0 malloc
+13: Static objects constructed
+13: 
+13: µOS++ IIIe version 7.0.1
+13: Copyright (c) 2007-2023 Liviu Ionescu
+13: Scheduler: µOS++ Cortex-M0/0+, preemptive, DI/EI, WFI
+13: System clock: 16000000 Hz
+13: Scheduler frequency: 1000 ticks/sec
+13: Default stack size: 2048 bytes
+13: Interrupts stack size: 3072 bytes
+13: Built with GCC 15.2.1 20251203, no exceptions
+13: 
+13: scheduler::start() 
+13: 
+13: main(argc=1, argv=[""]);
+13: 
+13: =============================================
+13:   Pico / RP2040B - micro-os-plus-iii
+13:   sc-test-ko : kernel objects, single core
+13: =============================================
+13: [      11 ms] PASS mutex: mutual-exclusion counter
+13: [      96 ms] PASS mutex: try_lock busy when held
+13: [     177 ms] PASS recursive mutex: nested lock + reacquire
+13: [     263 ms] PASS counting semaphore: 3 consumed + empty try_wait
+13: [     348 ms] PASS binary semaphore: post/wait
+13: [     436 ms] PASS event flags: raise/wait mask + try_wait
+13: [     521 ms] PASS message queue: send/receive + payload verify
+13: [     603 ms] PASS memory pool: alloc/exhaust/free/reuse + capacity
+13: [     696 ms] PASS condition variable: predicate wait + signal
+13: [     984 ms] PASS periodic timer: ~20 fires in 205 ms
+13: ---------------------------------------------
+13: 
+13: RESULT: PASS  (10 passed, 0 failed)
+13: RESULT: PASS
+5/6 Test #13: cortexm-pico-sc-test-ko-qemu ...........   Passed    0.71 sec
+test 21
+    Start 21: cortexm-pico-smp-test1-qemu
+
+21: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-arm "-M" "mps2-an385" "-cpu" "cortex-m3" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin/port-tests/test/smp-test1-qemu.elf" "--nographic" "-d" "unimp,guest_errors" "--semihosting-config" "enable=on,target=native"
+21: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug/platform-bin
+21: Test timeout computed to be: 300
+21: 
+21: Hardware initialised
+21: Main stack 0x207ff400-0x20800000
+21: os_startup_initialize_free_store(0x200039ec,8370708)
+21: first_fit_top(0x200039ec,8370708) @0x200036b4 app-heap
+21: out_of_memory_handler(0x31a1) @0x200036b4 app-heap
+21: estd::pmr::set_default_resource(0x200036b4) 
+21: rtos::memory::set_default_resource(0x200036b4) 
+21: os_run_init_array()
+21: rtos::memory::init_once_default_resource() 
+21: malloc_memory_resource() @0x20003688 malloc
+21: Static objects constructed
+21: 
+21: µOS++ IIIe version 7.0.1
+21: Copyright (c) 2007-2023 Liviu Ionescu
+21: Scheduler: µOS++ Cortex-M0/0+, preemptive, DI/EI, WFI
+21: System clock: 16000000 Hz
+21: Scheduler frequency: 1000 ticks/sec
+21: Default stack size: 2048 bytes
+21: Interrupts stack size: 3072 bytes
+21: Built with GCC 15.2.1 20251203, no exceptions
+21: 
+21: scheduler::start() 
+21: 
+21: main(argc=1, argv=[""]);
+21: 
+21: =============================================
+21:   Pico / RP2040 - micro-os-plus-iii
+21:   smp-test1 : single-core RTOS (core 0)
+21: =============================================
+21: [       3 ms] worker #0  local=1    global=1
+21: [       4 ms] worker #1  local=1    global=2
+21: [     504 ms] worker #0  local=2    global=3
+21: [     505 ms] worker #1  local=2    global=4
+21: [    1005 ms] worker #1  local=3    global=5
+21: [    1006 ms] worker #0  local=3    global=6
+21: [    1506 ms] worker #0  local=4    global=7
+21: [    1506 ms] worker #1  local=4    global=8
+21: [    2007 ms] worker #0  local=5    global=9
+21: [    2007 ms] worker #1  local=5    global=10
+21: [    2508 ms] worker #0  local=6    global=11
+21: [    2508 ms] worker #1  local=6    global=12
+21: [    3008 ms] worker #1  local=7    global=13
+21: [    3008 ms] worker #0  local=7    global=14
+21: [    3509 ms] worker #1  local=8    global=15
+21: [    3509 ms] worker #0  local=8    global=16
+21: [    4010 ms] worker #1  local=9    global=17
+21: [    4010 ms] worker #0  local=9    global=18
+21: [    4511 ms] worker #1  local=10   global=19
+21: [    4511 ms] worker #0  local=10   global=20
+21: 
+21: RESULT: PASS  (global=20, wrk0=10, wrk1=10)
+21: RESULT: PASS
+6/6 Test #21: cortexm-pico-smp-test1-qemu ............   Passed    3.26 sec
+
+100% tests passed, 0 tests failed out of 6
+
+Label Time Summary:
+qemu    =  38.51 sec*proc (6 tests)
+
+Total Test time (real) =  38.51 sec
