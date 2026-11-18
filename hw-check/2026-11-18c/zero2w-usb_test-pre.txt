@@ -1,0 +1,141 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/wt-smp/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+    Start 32: aarch32-rpi-zero-2w-usb_test-hwd
+1/1 Test #32: aarch32-rpi-zero-2w-usb_test-hwd ...***Failed  185.06 sec
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] waiting 12s for board to boot after reset...
+[hw] --- usb_test (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Warn : Transport "jtag" was already selected
+Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E46268C3571E0D36
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (JTAG)
+Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 1000 kHz
+Info : cmsis-dap JTAG TLR_RESET
+Info : cmsis-dap JTAG TLR_RESET
+Info : JTAG tap: bcm2837.cpu tap/device found: 0x4ba00477 (mfg: 0x23b (ARM Ltd), part: 0xba00, ver: 0x4)
+Info : [bcm2837.ap] Examination succeed
+Info : bcm2837.cpu0: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu0] external reset detected
+Info : [bcm2837.cpu0] Examination succeed
+Info : bcm2837.cpu1: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu1] external reset detected
+Info : [bcm2837.cpu1] Examination succeed
+Info : bcm2837.cpu2: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu2] external reset detected
+Info : [bcm2837.cpu2] Examination succeed
+Info : bcm2837.cpu3: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu3] external reset detected
+Info : [bcm2837.cpu3] Examination succeed
+Info : [bcm2837.ap] gdb port disabled
+Info : [bcm2837.cpu0] gdb port disabled
+Info : [bcm2837.cpu1] gdb port disabled
+Info : [bcm2837.cpu2] gdb port disabled
+Info : [bcm2837.cpu3] gdb port disabled
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 1 2 3 ---
+Info : bcm2837.cpu0 cluster 0 core 0 multi core
+[bcm2837.cpu0] target halted in ARM state due to debug-request, current mode: Hypervisor
+cpsr: 0x400001da pc: 0xd12f50a0
+MMU: disabled, D-Cache: disabled, I-Cache: enabled
+Info : bcm2837.cpu1 cluster 0 core 1 multi core
+[bcm2837.cpu1] target halted in Thumb state due to debug-request, current mode: Hypervisor
+cpsr: 0x600001fa pc: 0x0000007a
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+Info : bcm2837.cpu2 cluster 0 core 2 multi core
+[bcm2837.cpu2] target halted in Thumb state due to debug-request, current mode: Hypervisor
+cpsr: 0x600001fa pc: 0x0000007a
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+Info : bcm2837.cpu3 cluster 0 core 3 multi core
+[bcm2837.cpu3] target halted in Thumb state due to debug-request, current mode: Hypervisor
+cpsr: 0x600001fa pc: 0x0000007a
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+--- stage: enable semihosting on cores 0 1 2 3 ---
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/wt-smp/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-hwd ---
+--- stage: resume cores 0 1 2 3 at 0x1003c ---
+Info : Listening on port 6666 for tcl connections
+Info : Listening on port 4444 for telnet connections
+USB power domain: FAILED (code=0x00000000 state=0x00000003 alias=0)
+storage: FAT window LBA 8192, 62402560 sectors (30470 MiB)
+storage: FAT32, 32 sectors/cluster, 1949127 clusters
+storage: 31186032 KiB total, 31164864 KiB free
+storage: FatFsSink (FAT32 tests/)
+USB device configured by host
+stored: send_file.py -> tests/SEND_F~1.PY (8.3)
+---- BEGIN send_file.py (2993 bytes) ----
+---- END send_file.py crc32=c1041f6c ----
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu0] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: Could not initialize the APB-AP
+Error: [bcm2837.cpu0] Examination failed
+Error: [bcm2837.cpu0] Examination failed, GDB will be halted. Polling again in 100ms
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu1] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: Could not initialize the APB-AP
+Error: [bcm2837.cpu1] Examination failed
+Error: [bcm2837.cpu1] Examination failed, GDB will be halted. Polling again in 100ms
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu0] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: Could not initialize the APB-AP
+Error: [bcm2837.cpu0] Examination failed
+Error: [bcm2837.cpu0] Examination failed, GDB will be halted. Polling again in 300ms
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu2] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: Could not initialize the APB-AP
+Error: [bcm2837.cpu2] Examination failed
+Error: [bcm2837.cpu2] Examination failed, GDB will be halted. Polling again in 100ms
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu1] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: Could not initialize the APB-AP
+Error: [bcm2837.cpu1] Examination failed
+Error: [bcm2837.cpu1] Examination failed, GDB will be halted. Polling again in 300ms
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu3] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: Could not initialize the APB-AP
+Error: [bcm2837.cpu3] Examination failed
+Error: [bcm2837.cpu3] Examination failed, GDB will be halted. Polling again in 100ms
+shutdown command invoked
+
+usb_test                 DEBUG LINK LOST  (the DAP stopped answering, not a firmware fault)
+    retry with UOS_HW_ADAPTER_KHZ=1000, and check the board's supply
+
+[hw] usb_test did not pass — power-cycle the board before retrying.
+
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+hwd    = 185.06 sec*proc (1 test)
+
+Total Test time (real) = 185.06 sec
+
+The following tests FAILED:
+	 32 - aarch32-rpi-zero-2w-usb_test-hwd (Failed)         hwd
+Errors while running CTest
+rc=8

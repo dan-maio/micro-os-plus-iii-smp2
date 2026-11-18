@@ -35,4 +35,24 @@ The first Zero 2 W batch failed every test in 0.1 s: "JTAG scan chain
 interrogation failed: all ones" (the board was not reachable); after the
 user's check, all passed.
 
-Not run: usb_test (gadget; its host side not driven yet).
+usb_test: PASS (102 s) on its pre-rewrite storage (the old FatFs on the
+boot card, micro-os-plus::devices). Host side send_file.py send_file.py --get
+(2993 bytes, read back byte-for-byte), as in its last pass before the
+rewrite (2026-10-24); JTAG 4000 kHz.
+
+The posix-io + Chan FatFs usb_test (step 5c) lost the JTAG link right after
+mounting the card, 3 runs in 3 ("Invalid ACK (7)", the runner's "DEBUG LINK
+LOST"); the app itself kept running and serving USB. The pre-rewrite build
+(wt-smp/, the smp branch) passed on the same board, cables and clock, with
+no JTAG error. Same compile defines, SD and USB drivers, memory layout,
+runner and OpenOCD config; the difference is the storage layer, cause not
+found. usb_test is back on the old set (aarch32 rpi-zero-2w only, where it is
+proven) until that is investigated; the old FatFs stays while it needs it.
+Its other copies (aarch32 rpi3b, aarch64 rpi3b and rpi-zero-2w) are still the
+posix-io version, not yet run on hardware.
+
+Earlier failed attempts, not the board's fault: host_xfer.py's 1 MiB file
+(its 115200-baud hexdump takes ~300 s, the host waits 120 s for the reply);
+python3 -I (send_file.py cannot import host_xfer); no --terminate (the run
+waited for its terminating PING). Files: usb-test.sh, usb-test-pre.sh,
+zero2w-usb_test*.txt, zero2w-usb_test-pre*.txt.
