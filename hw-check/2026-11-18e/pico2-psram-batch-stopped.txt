@@ -1,0 +1,14 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug
+      Start  1: cortexm-pico2-rp2350b-psram-exc-test-hwd
+ 1/15 Test  #1: cortexm-pico2-rp2350b-psram-exc-test-hwd ....................   Passed    9.11 sec
+      Start  3: cortexm-pico2-rp2350b-psram-fp-switch-hwd
+ 2/15 Test  #3: cortexm-pico2-rp2350b-psram-fp-switch-hwd ...................   Passed   12.18 sec
+      Start  5: cortexm-pico2-rp2350b-psram-sc-test-ko-hwd
+ 3/15 Test  #5: cortexm-pico2-rp2350b-psram-sc-test-ko-hwd ..................   Passed    9.12 sec
+      Start  6: cortexm-pico2-rp2350b-psram-smp-mat-test-hwd
+ 4/15 Test  #6: cortexm-pico2-rp2350b-psram-smp-mat-test-hwd ................   Passed   19.20 sec
+      Start  7: cortexm-pico2-rp2350b-psram-smp-test-ko-hwd
+ 5/15 Test  #7: cortexm-pico2-rp2350b-psram-smp-test-ko-hwd .................   Passed    9.29 sec
+      Start  8: cortexm-pico2-rp2350b-psram-smp-test-nested-hwd
+ 6/15 Test  #8: cortexm-pico2-rp2350b-psram-smp-test-nested-hwd .............   Passed   28.34 sec
+      Start  9: cortexm-pico2-rp2350b-psram-smp-test-nested-clock-hwd

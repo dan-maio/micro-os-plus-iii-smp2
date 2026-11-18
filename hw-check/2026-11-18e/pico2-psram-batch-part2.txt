@@ -1,0 +1,20 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug
+    Start 12: cortexm-pico2-rp2350b-psram-smp-test0-hwd
+1/6 Test #12: cortexm-pico2-rp2350b-psram-smp-test0-hwd ...   Passed   26.42 sec
+    Start 14: cortexm-pico2-rp2350b-psram-smp-test1-hwd
+2/6 Test #14: cortexm-pico2-rp2350b-psram-smp-test1-hwd ...   Passed   12.18 sec
+    Start 15: cortexm-pico2-rp2350b-psram-smp-test2-hwd
+3/6 Test #15: cortexm-pico2-rp2350b-psram-smp-test2-hwd ...   Passed   18.25 sec
+    Start 16: cortexm-pico2-rp2350b-psram-smp-test3-hwd
+4/6 Test #16: cortexm-pico2-rp2350b-psram-smp-test3-hwd ...   Passed    8.14 sec
+    Start 17: cortexm-pico2-rp2350b-psram-smp-test4-hwd
+5/6 Test #17: cortexm-pico2-rp2350b-psram-smp-test4-hwd ...   Passed   10.17 sec
+    Start 18: cortexm-pico2-rp2350b-psram-smp-test5-hwd
+6/6 Test #18: cortexm-pico2-rp2350b-psram-smp-test5-hwd ...   Passed   12.21 sec
+
+100% tests passed out of 6
+
+Label Time Summary:
+hwd    =  87.36 sec*proc (6 tests)
+
+Total Test time (real) =  87.36 sec
