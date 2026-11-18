@@ -1,0 +1,33 @@
+> cmake -S . -B build/native-cmake-sys-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=native
+-- µOS++ III micro-os-plus-iii-posix-arch: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/posix-arch/micro-os-plus-iii-posix-arch
+-- µOS++ III micro-os-plus-iii-devices-storage: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-storage
+-- µOS++ III POSIX port: micro-os-plus::posix-arch
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III posix board tests: 16 targets, board=native, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/posix-arch/micro-os-plus-iii-posix-arch/test/native
+-- native (posix-arch): port tests registered (native)
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-debug
+> cmake --build build/native-cmake-sys-debug
+[0/2] Re-checking globbed directories...
+[1/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/portable-test-end.cpp.o
+[2/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/portable-test-end.cpp.o
+[3/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/portable-test-end.cpp.o
+[4/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/portable-test-end.cpp.o
+[5/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/portable-test-end.cpp.o
+[6/20] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/portable-test-end.cpp.o
+[7/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/portable-test-end.cpp.o
+[8/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/portable-test-end.cpp.o
+[9/20] Linking CXX executable platform-bin/port-tests/smp_test1-host
+[10/20] Linking CXX executable platform-bin/port-tests/smp-pro-cons-test-host
+[11/20] Linking CXX executable platform-bin/port-tests/smp_test2-host
+[12/20] Linking CXX executable platform-bin/port-tests/smp_test3-host
+[13/20] Linking CXX executable platform-bin/port-tests/smp-mat-test-host
+[14/20] Linking CXX executable platform-bin/port-tests/clock-test-host
+[15/20] Linking CXX executable platform-bin/port-tests/smp-num-test-host
+[16/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/portable-test-end.cpp.o
+[17/20] Linking CXX executable platform-bin/port-tests/smp_test4-host
+[18/20] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/portable-test-end.cpp.o
+[19/20] Linking CXX executable platform-bin/port-tests/smp-pipeline-test-host
+[20/20] Linking CXX executable platform-bin/port-tests/smp_test0-host
+# (last 200 lines kept; warnings+errors in the full log: 0)
