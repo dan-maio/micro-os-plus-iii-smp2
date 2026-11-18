@@ -1,0 +1,3 @@
+connecting to 192.168.1.65:7, sending 262144 bytes ...
+sent 262144 bytes, CRC-32 ff1d2b6f; echo identical; 0.19 s, 11.1 Mbit/s each way
+PASS: echo identical (compare the CRC-32 with the board's console)

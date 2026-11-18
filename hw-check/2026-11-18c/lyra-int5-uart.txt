@@ -1,0 +1,2 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+    Start 8: aarch32-luckfox-lyra-smp_test_int5-hwd

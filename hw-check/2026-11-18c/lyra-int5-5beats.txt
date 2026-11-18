@@ -1,0 +1,245 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+    Start 8: aarch32-luckfox-lyra-smp_test_int5-hwd
+1/1 Test #8: aarch32-luckfox-lyra-smp_test_int5-hwd ...***Failed  617.85 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp_test_int5 (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f003a0, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test_int5-hwd ---
+--- stage: resume cores 0 at 0x20003c ---
+Info : tcl server disabled
+Info : telnet server disabled
+
+
++=============================================+
+|  Luckfox Lyra µOS++ SMP TEST INT5           |
+|  Cortex-M0 -> A7 mailbox doorbell (AMP)     |
+|  M0 pings cores 1 & 2; core 0 logs          |
++=============================================+
+
+os_startup_initialize_free_store(0x6400000,16777216)
+first_fit_top(0x6400000,16777216) @0x21fc68 app-heap
+out_of_memory_handler(0x207cd8) @0x21fc68 app-heap
+estd::pmr::set_default_resource(0x21fc68) 
+rtos::memory::set_default_resource(0x21fc68) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x21fc38 malloc
+
+µOS++ IIIe version 7.0.1
+Scheduler: µOS++ Luckfox Lyra B (RK3506, Cortex-A7 SMP), 3 CPU(s), 1ms tick, LDREX lock
+scheduler::start() 
+IRQs enabled (timer only)
+
+Core 0: setting up SRAM mailbox...
+Core 0: releasing core 1...
+Core 0: releasing core 2...
+Core 0: secondary-core startup signals sent.
+Waiting for cores 1 and 2 to join...
+cores: c1=3 c2=3 (after 0ms)
+
+Discovering mailbox CH1/CH2 GIC IDs (ISPENDR diff)...
+  CH1 -> GIC ID 171   CH2 -> GIC ID 172
+  routed: CH1->core1, CH2->core2
+
+SELF-TRIGGER mode: core 0 fires the mailboxes (M0 not required)
+
+Logger running on core 0. Cores 1/2 idle, waiting on mailbox IRQs.
+---------------------------------------------------------------
+
+core 1 received int from Cortex-M0  (#1, data=0x1D1D0000)
+core 2 received int from Cortex-M0  (#1, data=0x2D2D0000)
+core 1 received int from Cortex-M0  (#2, data=0x1D1D0001)
+core 2 received int from Cortex-M0  (#2, data=0x2D2D0001)
+core 1 received int from Cortex-M0  (#3, data=0x1D1D0002)
+core 2 received int from Cortex-M0  (#3, data=0x2D2D0002)
+core 1 received int from Cortex-M0  (#4, data=0x1D1D0003)
+core 2 received int from Cortex-M0  (#4, data=0x2D2D0003)
+core 1 received int from Cortex-M0  (#5, data=0x1D1D0004)
+core 2 received int from Cortex-M0  (#5, data=0x2D2D0004)
+core 1 received int from Cortex-M0  (#6, data=0x1D1D0005)
+core 2 received int from Cortex-M0  (#6, data=0x2D2D0005)
+core 1 received int from Cortex-M0  (#7, data=0x1D1D0006)
+core 2 received int from Cortex-M0  (#7, data=0x2D2D0006)
+core 1 received int from Cortex-M0  (#8, data=0x1D1D0007)
+core 2 received int from Cortex-M0  (#8, data=0x2D2D0007)
+core 1 received int from Cortex-M0  (#9, data=0x1D1D0008)
+core 2 received int from Cortex-M0  (#9, data=0x2D2D0008)
+core 1 received int from Cortex-M0  (#10, data=0x1D1D0009)
+core 2 received int from Cortex-M0  (#10, data=0x2D2D0009)
+core 1 received int from Cortex-M0  (#11, data=0x1D1D000A)
+core 2 received int from Cortex-M0  (#11, data=0x2D2D000A)
+core 1 received int from Cortex-M0  (#12, data=0x1D1D000B)
+core 2 received int from Cortex-M0  (#12, data=0x2D2D000B)
+core 1 received int from Cortex-M0  (#13, data=0x1D1D000C)
+core 2 received int from Cortex-M0  (#13, data=0x2D2D000C)
+core 1 received int from Cortex-M0  (#14, data=0x1D1D000D)
+core 2 received int from Cortex-M0  (#14, data=0x2D2D000D)
+core 1 received int from Cortex-M0  (#15, data=0x1D1D000E)
+core 2 received int from Cortex-M0  (#15, data=0x2D2D000E)
+core 1 received int from Cortex-M0  (#16, data=0x1D1D000F)
+core 2 received int from Cortex-M0  (#16, data=0x2D2D000F)
+core 1 received int from Cortex-M0  (#17, data=0x1D1D0010)
+core 2 received int from Cortex-M0  (#17, data=0x2D2D0010)
+led on  | M0 seq=-613073411
+core 1 received int from Cortex-M0  (#18, data=0x1D1D0011)
+core 2 received int from Cortex-M0  (#18, data=0x2D2D0011)
+core 1 received int from Cortex-M0  (#19, data=0x1D1D0012)
+core 2 received int from Cortex-M0  (#19, data=0x2D2D0012)
+core 1 received int from Cortex-M0  (#20, data=0x1D1D0013)
+core 2 received int from Cortex-M0  (#20, data=0x2D2D0013)
+core 1 received int from Cortex-M0  (#21, data=0x1D1D0014)
+core 2 received int from Cortex-M0  (#21, data=0x2D2D0014)
+core 1 received int from Cortex-M0  (#22, data=0x1D1D0015)
+core 2 received int from Cortex-M0  (#22, data=0x2D2D0015)
+core 1 received int from Cortex-M0  (#23, data=0x1D1D0016)
+core 2 received int from Cortex-M0  (#23, data=0x2D2D0016)
+core 1 received int from Cortex-M0  (#24, data=0x1D1D0017)
+core 2 received int from Cortex-M0  (#24, data=0x2D2D0017)
+core 1 received int from Cortex-M0  (#25, data=0x1D1D0018)
+core 2 received int from Cortex-M0  (#25, data=0x2D2D0018)
+beat 1/5
+core 1 received int from Cortex-M0  (#26, data=0x1D1D0019)
+core 2 received int from Cortex-M0  (#26, data=0x2D2D0019)
+core 1 received int from Cortex-M0  (#27, data=0x1D1D001A)
+core 2 received int from Cortex-M0  (#27, data=0x2D2D001A)
+core 1 received int from Cortex-M0  (#28, data=0x1D1D001B)
+core 2 received int from Cortex-M0  (#28, data=0x2D2D001B)
+core 1 received int from Cortex-M0  (#29, data=0x1D1D001C)
+core 2 received int from Cortex-M0  (#29, data=0x2D2D001C)
+core 1 received int from Cortex-M0  (#30, data=0x1D1D001D)
+core 2 received int from Cortex-M0  (#30, data=0x2D2D001D)
+core 1 received int from Cortex-M0  (#31, data=0x1D1D001E)
+core 2 received int from Cortex-M0  (#31, data=0x2D2D001E)
+core 1 received int from Cortex-M0  (#32, data=0x1D1D001F)
+core 2 received int from Cortex-M0  (#32, data=0x2D2D001F)
+core 1 received int from Cortex-M0  (#33, data=0x1D1D0020)
+core 2 received int from Cortex-M0  (#33, data=0x2D2D0020)
+core 1 received int from Cortex-M0  (#34, data=0x1D1D0021)
+core 2 received int from Cortex-M0  (#34, data=0x2D2D0021)
+core 1 received int from Cortex-M0  (#35, data=0x1D1D0022)
+core 2 received int from Cortex-M0  (#35, data=0x2D2D0022)
+led off | M0 seq=-613073411
+core 1 received int from Cortex-M0  (#36, data=0x1D1D0023)
+core 2 received int from Cortex-M0  (#36, data=0x2D2D0023)
+core 1 received int from Cortex-M0  (#37, data=0x1D1D0024)
+core 2 received int from Cortex-M0  (#37, data=0x2D2D0024)
+core 1 received int from Cortex-M0  (#38, data=0x1D1D0025)
+core 2 received int from Cortex-M0  (#38, data=0x2D2D0025)
+core 1 received int from Cortex-M0  (#39, data=0x1D1D0026)
+core 2 received int from Cortex-M0  (#39, data=0x2D2D0026)
+core 1 received int from Cortex-M0  (#40, data=0x1D1D0027)
+core 2 received int from Cortex-M0  (#40, data=0x2D2D0027)beat 2/5
+core 2 received int from Cortex-M0  (#40, data=0x2D2D0027)
+core 1 received int from Cortex-M0  (#41, data=0x1D1D0028)
+core 2 received int from Cortex-M0  (#41, data=0x2D2D0028)
+core 1 received int from Cortex-M0  (#42, data=0x1D1D0029)
+core 2 received int from Cortex-M0  (#42, data=0x2D2D0029)
+core 1 received int from Cortex-M0  (#43, data=0x1D1D002A)
+core 2 received int from Cortex-M0  (#43, data=0x2D2D002A)
+core 1 received int from Cortex-M0  (#44, data=0x1D1D002B)
+core 2 received int from Cortex-M0  (#44, data=0x2D2D002B)
+core 1 received int from Cortex-M0  (#45, data=0x1D1D002C)
+core 2 received int from Cortex-M0  (#45, data=0x2D2D002C)
+core 1 received int from Cortex-M0  (#46, data=0x1D1D002D)
+core 2 received int from Cortex-M0  (#46, data=0x2D2D002D)
+core 1 received int from Cortex-M0  (#47, data=0x1D1D002E)
+core 2 received int from Cortex-M0  (#47, data=0x2D2D002E)
+core 1 received int from Cortex-M0  (#48, data=0x1D1D002F)
+core 2 received int from Cortex-M0  (#48, data=0x2D2D002F)
+core 1 received int from Cortex-M0  (#49, data=0x1D1D0030)
+core 2 received int from Cortex-M0  (#49, data=0x2D2D0030)
+core 1 received int from Cortex-M0  (#50, data=0x1D1D0031)
+core 2 received int from Cortex-M0  (#50, data=0x2D2D0031)
+core 1 received int from Cortex-M0  (#51, data=0x1D1D0032)
+core 2 received int from Cortex-M0  (#51, data=0x2D2D0032)
+core 1 received int from Cortex-M0  (#52, data=0x1D1D0033)
+core 2 received int from Cortex-M0  (#52, data=0x2D2D0033)
+core 1 received int from Cortex-M0  (#53, data=0x1D1D0034)
+core 2 received int from Cortex-M0  (#53, data=0x2D2D0034)
+led on  | M0 seq=-613073411
+core 1 received int from Cortex-M0  (#54, data=0x1D1D0035)
+core 2 received int from Cortex-M0  (#54, data=0x2D2D0035)
+core 1 received int from Cortex-M0  (#55, data=0x1D1D0036)
+core 2 received int from Cortex-M0  (#55, data=0x2D2D0036)
+core 1 received int from Cortex-M0  (#56, data=0x1D1D0037)
+core 2 received int from Cortex-M0  (#56, data=0x2D2D0037)
+core 1 received int from Cortex-M0  (#57, data=0x1D1D0038)
+core 2 received int from Cortex-M0  (#57, data=0x2D2D0038)
+core 1 received int from Cortex-M0  (#58, data=0x1D1D0039)
+core 2 received int from Cortex-M0  (#58, data=0x2D2D0039)
+core 1 received int from Cortex-M0  (#59, data=0x1D1D003A)
+core 2 received int from Cortex-M0  (#59, data=0x2D2D003A)
+core 1 received int from Cortex-M0  (#60, data=0x1D1D003B)
+core 2 received int from Cortex-M0  (#60, data=0x2D2D003B)
+core 1 received int from Cortex-M0  (#61, data=0x1D1D003C)
+core 2 received int from Cortex-M0  (#61, data=0x2D2D003C)
+core 1 received int from Cortex-M0  (#62, data=0x1D1D003D)
+core 2 received int from Cortex-M0  (#62, data=0x2D2D003D)
+core 1 received int from Cortex-M0  (#63, data=0x1D1D003E)
+core 2 received int from Cortex-M0  (#63, data=0x2D2D003E)
+core 1 received int from Cortex-M0  (#64, data=0x1D1D003F)
+core 2 received int from Cortex-M0  (#64, data=0x2D2D003F)
+core 1 received int from Cortex-M0  (#65, data=0x1D1D0040)
+core 2 rebeat 3/5
+core 2 received int from Cortex-M0  (#65, data=0x2D2D0040)
+core 1 received int from Cortex-M0  (#66, data=0x1D1D0041)
+core 2 received int from Cortex-M0  (#66, data=0x2D2D0041)
+core 1 received int from Cortex-M0  (#67, data=0x1D1D0042)
+core 2 received int from Cortex-M0  (#67, data=0x2D2D0042)
+core 1 received int from Cortex-M0  (#68, data=0x1D1D0043)
+core 2 received int from Cortex-M0  (#68, data=0x2D2D0043)
+core 1 received int from Cortex-M0  (#69, data=0x1D1D0044)
+core 2 received int from Cortex-M0  (#69, data=0x2D2D0044)
+core 1 reError: error reading data: Success
+Error: Could not read DSCR register
+Error: Error waiting for cortex_a_exec_opcode
+Error: CMSIS-DAP command mismatch. Sent 0x12 received 0x5
+Info : SWD DPIDR 0x2ba01477
+Error: Failed semihosting operation (0x04)
+[rk3506.a7.0] target halted in ARM state due to undefined, current mode: Supervisor
+cpsr: 0x20000093 pc: 0x00200008, semihosting
+[rk3506.a7.0] MMU: enabled, D-Cache: enabled, I-Cache: enabled
+Error: [rk3506.a7.0] Polling failed, trying to reexamine
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+shutdown command invoked
+
+smp_test_int5            TIMEOUT after 600s
+
+[hw] smp_test_int5 did not pass — power-cycle the board before retrying.
+
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+hwd    = 617.85 sec*proc (1 test)
+
+Total Test time (real) = 617.85 sec
+
+The following tests FAILED:
+	  8 - aarch32-luckfox-lyra-smp_test_int5-hwd (Failed)   hwd
+Errors while running CTest

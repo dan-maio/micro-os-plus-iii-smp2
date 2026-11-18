@@ -1,0 +1,251 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+      Start  3: aarch32-rpi-zero-2w-wifi-net-hwd
+ 1/16 Test  #3: aarch32-rpi-zero-2w-wifi-net-hwd ..............***Failed    0.10 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/wifi-net.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] wifi-net did not pass — power-cycle the board before retrying.
+
+      Start  6: aarch32-rpi-zero-2w-mutex-stress-hwd
+ 2/16 Test  #6: aarch32-rpi-zero-2w-mutex-stress-hwd ..........***Failed    0.15 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/mutex-stress.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] mutex-stress did not pass — power-cycle the board before retrying.
+
+      Start  8: aarch32-rpi-zero-2w-rtos-apis-hwd
+ 3/16 Test  #8: aarch32-rpi-zero-2w-rtos-apis-hwd .............***Failed    0.14 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/rtos-apis.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] rtos-apis did not pass — power-cycle the board before retrying.
+
+      Start 10: aarch32-rpi-zero-2w-cmsis-os-validator-hwd
+ 4/16 Test #10: aarch32-rpi-zero-2w-cmsis-os-validator-hwd ....***Failed    0.13 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/cmsis-os-validator.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] cmsis-os-validator did not pass — power-cycle the board before retrying.
+
+      Start 12: aarch32-rpi-zero-2w-smp_test0-hwd
+ 5/16 Test #12: aarch32-rpi-zero-2w-smp_test0-hwd .............***Failed    0.17 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test0.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp_test0 did not pass — power-cycle the board before retrying.
+
+      Start 14: aarch32-rpi-zero-2w-smp_test1-hwd
+ 6/16 Test #14: aarch32-rpi-zero-2w-smp_test1-hwd .............***Failed    0.13 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test1.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp_test1 did not pass — power-cycle the board before retrying.
+
+      Start 16: aarch32-rpi-zero-2w-smp_test2-hwd
+ 7/16 Test #16: aarch32-rpi-zero-2w-smp_test2-hwd .............***Failed    0.11 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test2.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp_test2 did not pass — power-cycle the board before retrying.
+
+      Start 18: aarch32-rpi-zero-2w-smp_test3-hwd
+ 8/16 Test #18: aarch32-rpi-zero-2w-smp_test3-hwd .............***Failed    0.13 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test3.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp_test3 did not pass — power-cycle the board before retrying.
+
+      Start 20: aarch32-rpi-zero-2w-smp_test4-hwd
+ 9/16 Test #20: aarch32-rpi-zero-2w-smp_test4-hwd .............***Failed    0.18 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test4.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp_test4 did not pass — power-cycle the board before retrying.
+
+      Start 24: aarch32-rpi-zero-2w-smp-num-test-hwd
+10/16 Test #24: aarch32-rpi-zero-2w-smp-num-test-hwd ..........***Failed    0.13 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp-num-test.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp-num-test did not pass — power-cycle the board before retrying.
+
+      Start 28: aarch32-rpi-zero-2w-smp-pipeline-test-hwd
+11/16 Test #28: aarch32-rpi-zero-2w-smp-pipeline-test-hwd .....***Failed    0.13 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp-pipeline-test.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp-pipeline-test did not pass — power-cycle the board before retrying.
+
+      Start 30: aarch32-rpi-zero-2w-smp-pro-cons-test-hwd
+12/16 Test #30: aarch32-rpi-zero-2w-smp-pro-cons-test-hwd .....***Failed    0.14 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp-pro-cons-test.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp-pro-cons-test did not pass — power-cycle the board before retrying.
+
+      Start 32: aarch32-rpi-zero-2w-smp-mat-test-hwd
+13/16 Test #32: aarch32-rpi-zero-2w-smp-mat-test-hwd ..........***Failed    0.14 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp-mat-test.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp-mat-test did not pass — power-cycle the board before retrying.
+
+      Start 36: aarch32-rpi-zero-2w-sd_test-hwd
+14/16 Test #36: aarch32-rpi-zero-2w-sd_test-hwd ...............***Failed    0.13 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/sd_test.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] sd_test did not pass — power-cycle the board before retrying.
+
+      Start 40: aarch32-rpi-zero-2w-smp-mat-sdcard-test-hwd
+15/16 Test #40: aarch32-rpi-zero-2w-smp-mat-sdcard-test-hwd ...***Failed    0.11 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp-mat-sdcard-test.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] smp-mat-sdcard-test did not pass — power-cycle the board before retrying.
+
+      Start 42: aarch32-rpi-zero-2w-clock-test-hwd
+16/16 Test #42: aarch32-rpi-zero-2w-clock-test-hwd ............***Failed    0.12 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] watchdog reset FAILED -- OpenOCD did not reach the board (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/clock-test.reset.log):
+Error: JTAG scan chain interrogation failed: all ones
+Error: Check JTAG interface, timings, target power, etc.
+Error: Trying to use configured scan chain anyway...
+Error: bcm2837.cpu: IR capture error; saw 0x0f not 0x01
+Error: Invalid ACK (7) in DAP response
+
+[hw] clock-test did not pass — power-cycle the board before retrying.
+
+
+0% tests passed, 16 tests failed out of 16
+
+Label Time Summary:
+hwd    =   2.14 sec*proc (16 tests)
+
+Total Test time (real) =   2.16 sec
+
+The following tests FAILED:
+	  3 - aarch32-rpi-zero-2w-wifi-net-hwd (Failed)         hwd
+	  6 - aarch32-rpi-zero-2w-mutex-stress-hwd (Failed)     hwd
+	  8 - aarch32-rpi-zero-2w-rtos-apis-hwd (Failed)        hwd
+	 10 - aarch32-rpi-zero-2w-cmsis-os-validator-hwd (Failed) hwd
+	 12 - aarch32-rpi-zero-2w-smp_test0-hwd (Failed)        hwd
+	 14 - aarch32-rpi-zero-2w-smp_test1-hwd (Failed)        hwd
+	 16 - aarch32-rpi-zero-2w-smp_test2-hwd (Failed)        hwd
+	 18 - aarch32-rpi-zero-2w-smp_test3-hwd (Failed)        hwd
+	 20 - aarch32-rpi-zero-2w-smp_test4-hwd (Failed)        hwd
+	 24 - aarch32-rpi-zero-2w-smp-num-test-hwd (Failed)     hwd
+	 28 - aarch32-rpi-zero-2w-smp-pipeline-test-hwd (Failed) hwd
+	 30 - aarch32-rpi-zero-2w-smp-pro-cons-test-hwd (Failed) hwd
+	 32 - aarch32-rpi-zero-2w-smp-mat-test-hwd (Failed)     hwd
+	 36 - aarch32-rpi-zero-2w-sd_test-hwd (Failed)          hwd
+	 40 - aarch32-rpi-zero-2w-smp-mat-sdcard-test-hwd (Failed) hwd
+	 42 - aarch32-rpi-zero-2w-clock-test-hwd (Failed)       hwd
+Errors while running CTest
