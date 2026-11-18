@@ -1,0 +1,17 @@
+configs with unexpected changes: 0
+aarch32-luckfox-lyra-cmake-gcc-debug build=0 storage-hwd-elfs=7 | No tests were found!!!
+aarch32-luckfox-lyra-cmake-gcc-release build=0 storage-hwd-elfs=7 | No tests were found!!!
+aarch32-rpi3b-cmake-gcc-debug build=0 storage-hwd-elfs=5 | 100% tests passed out of 20
+aarch32-rpi3b-cmake-gcc-release build=0 storage-hwd-elfs=5 | 100% tests passed out of 20
+aarch32-rpi-zero-2w-cmake-gcc-debug build=0 storage-hwd-elfs=7 | 100% tests passed out of 22
+aarch32-rpi-zero-2w-cmake-gcc-release build=0 storage-hwd-elfs=7 | 100% tests passed out of 22
+aarch64-rpi3b-cmake-gcc-debug build=0 storage-hwd-elfs=5 | 100% tests passed out of 20
+aarch64-rpi3b-cmake-gcc-release build=0 storage-hwd-elfs=5 | 100% tests passed out of 20
+aarch64-rpi4b-cmake-gcc-debug build=0 storage-hwd-elfs=8 | 100% tests passed out of 25
+aarch64-rpi4b-cmake-gcc-release build=0 storage-hwd-elfs=8 | 100% tests passed out of 25
+aarch64-rpi-zero-2w-cmake-gcc-debug build=0 storage-hwd-elfs=7 | 100% tests passed out of 22
+aarch64-rpi-zero-2w-cmake-gcc-release build=0 storage-hwd-elfs=7 | 100% tests passed out of 22
+native-cmake-sys-debug build=0 storage-hwd-elfs=0 | 100% tests passed out of 13
+native-cmake-sys-release build=0 storage-hwd-elfs=0 | 100% tests passed out of 13
+
+[exited with code 0]

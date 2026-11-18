@@ -1,0 +1,63 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+      Start  5: aarch64-rpi4b-eth-net-qemu
+ 1/25 Test  #5: aarch64-rpi4b-eth-net-qemu .........................***Skipped   0.08 sec
+      Start  7: aarch64-rpi4b-eth-tcp-server-qemu
+ 2/25 Test  #7: aarch64-rpi4b-eth-tcp-server-qemu ..................***Skipped   0.08 sec
+      Start 15: aarch64-rpi4b-smp-shapes-test-qemu-sd-make
+ 3/25 Test #15: aarch64-rpi4b-smp-shapes-test-qemu-sd-make .........   Passed    0.04 sec
+      Start 17: aarch64-rpi4b-smp-shapes-test-qemu
+ 4/25 Test #17: aarch64-rpi4b-smp-shapes-test-qemu .................   Passed   30.13 sec
+      Start 16: aarch64-rpi4b-smp-shapes-test-qemu-sd-remove
+ 5/25 Test #16: aarch64-rpi4b-smp-shapes-test-qemu-sd-remove .......   Passed    0.00 sec
+      Start 23: aarch64-rpi4b-usb_big_test-qemu
+ 6/25 Test #23: aarch64-rpi4b-usb_big_test-qemu ....................***Skipped   0.08 sec
+      Start 25: aarch64-rpi4b-smp_test0-qemu
+ 7/25 Test #25: aarch64-rpi4b-smp_test0-qemu .......................   Passed   10.09 sec
+      Start 27: aarch64-rpi4b-smp_test1-qemu
+ 8/25 Test #27: aarch64-rpi4b-smp_test1-qemu .......................   Passed   10.14 sec
+      Start 29: aarch64-rpi4b-smp_test2-qemu
+ 9/25 Test #29: aarch64-rpi4b-smp_test2-qemu .......................   Passed    0.60 sec
+      Start 31: aarch64-rpi4b-smp_test3-qemu
+10/25 Test #31: aarch64-rpi4b-smp_test3-qemu .......................   Passed   10.15 sec
+      Start 33: aarch64-rpi4b-smp_test4-qemu
+11/25 Test #33: aarch64-rpi4b-smp_test4-qemu .......................   Passed   10.17 sec
+      Start 35: aarch64-rpi4b-smp-num-test-qemu-sd-make
+12/25 Test #35: aarch64-rpi4b-smp-num-test-qemu-sd-make ............   Passed    0.07 sec
+      Start 37: aarch64-rpi4b-smp-num-test-qemu
+13/25 Test #37: aarch64-rpi4b-smp-num-test-qemu ....................   Passed   60.56 sec
+      Start 36: aarch64-rpi4b-smp-num-test-qemu-sd-remove
+14/25 Test #36: aarch64-rpi4b-smp-num-test-qemu-sd-remove ..........   Passed    0.00 sec
+      Start 39: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make
+15/25 Test #39: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make .......   Passed    0.06 sec
+      Start 41: aarch64-rpi4b-smp-pipeline-test-qemu
+16/25 Test #41: aarch64-rpi4b-smp-pipeline-test-qemu ...............   Passed   30.52 sec
+      Start 40: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove
+17/25 Test #40: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove .....   Passed    0.01 sec
+      Start 43: aarch64-rpi4b-smp-pro-cons-test-qemu
+18/25 Test #43: aarch64-rpi4b-smp-pro-cons-test-qemu ...............   Passed    4.53 sec
+      Start 45: aarch64-rpi4b-smp-mat-test-qemu
+19/25 Test #45: aarch64-rpi4b-smp-mat-test-qemu ....................   Passed    0.24 sec
+      Start 47: aarch64-rpi4b-sd_test-qemu-sd-make
+20/25 Test #47: aarch64-rpi4b-sd_test-qemu-sd-make .................   Passed    0.05 sec
+      Start 49: aarch64-rpi4b-sd_test-qemu
+21/25 Test #49: aarch64-rpi4b-sd_test-qemu .........................   Passed    0.27 sec
+      Start 48: aarch64-rpi4b-sd_test-qemu-sd-remove
+22/25 Test #48: aarch64-rpi4b-sd_test-qemu-sd-remove ...............   Passed    0.00 sec
+      Start 51: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-make
+23/25 Test #51: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.04 sec
+      Start 53: aarch64-rpi4b-smp-mat-sdcard-test-qemu
+24/25 Test #53: aarch64-rpi4b-smp-mat-sdcard-test-qemu .............   Passed    0.36 sec
+      Start 52: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-remove
+25/25 Test #52: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.00 sec
+
+100% tests passed out of 25
+
+Label Time Summary:
+qemu    = 168.28 sec*proc (25 tests)
+
+Total Test time (real) = 168.29 sec
+
+The following tests did not run:
+	  5 - aarch64-rpi4b-eth-net-qemu (Skipped)
+	  7 - aarch64-rpi4b-eth-tcp-server-qemu (Skipped)
+	 23 - aarch64-rpi4b-usb_big_test-qemu (Skipped)

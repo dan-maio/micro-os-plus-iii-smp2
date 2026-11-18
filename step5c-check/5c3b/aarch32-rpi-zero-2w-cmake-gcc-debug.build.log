@@ -1,0 +1,104 @@
+> cmake -S . -B build/aarch32-rpi-zero-2w-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch32-rpi-zero-2w
+-- µOS++ III micro-os-plus-iii-aarch32: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32
+-- µOS++ III micro-os-plus-iii-devices-storage: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-storage
+-- µOS++ III micro-os-plus-iii-devices-bcm283x: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-bcm283x
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III aarch32 board tests: 36 targets, board=rpi-zero-2w, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/rpi-zero-2w
+-- AArch32 rpi-zero-2w: port tests + harness suites registered (aarch32-rpi-zero-2w)
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+> cmake --build build/aarch32-rpi-zero-2w-cmake-gcc-debug
+[0/2] Re-checking globbed directories...
+[1/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/portable-test-storage-sd.cpp.obj
+[2/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/portable-test-storage-sd.cpp.obj
+[3/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/portable-test-storage-sd.cpp.obj
+[4/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/portable-test-storage-sd.cpp.obj
+[5/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/portable-test-storage-sd.cpp.obj
+[6/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/portable-test-storage-sd.cpp.obj
+[7/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/portable-test-storage-sd.cpp.obj
+[8/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/portable-test-storage-sd.cpp.obj
+[9/48] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/wifi/src/wifi_app.cpp.obj'
+[10/48] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/wifi/src/wifi_app.cpp.obj'
+[11/48] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/wifi/src/wifi_app.cpp.obj'
+[12/48] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/wifi/src/wifi_app.cpp.obj'
+[13/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-hwd.dir/portable-test-storage.cpp.obj
+[14/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-qemu.dir/portable-test-storage.cpp.obj
+[15/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-tcp-server-qemu.dir/portable-test-storage.cpp.obj
+[16/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-qemu.dir/portable-test-storage.cpp.obj
+[17/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/portable-test-storage-sd.cpp.obj
+[18/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/portable-test-storage-sd.cpp.obj
+[19/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/portable-test-storage-sd.cpp.obj
+[20/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/portable-test-storage.cpp.obj
+[21/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/portable-test-storage-sd.cpp.obj
+[22/48] Linking CXX executable platform-bin/port-tests/test/smp-num-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-num-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 169396	   1260	70174000	70344656	4315fd0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-qemu.elf
+[23/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-num-test-hwd.dir/portable-test-storage.cpp.obj
+[24/48] Linking CXX executable platform-bin/port-tests/test/wifi-tcp-server-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/wifi-tcp-server-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+1132332	   1300	79514944	80648576	4ce9980	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-tcp-server-hwd.elf
+[25/48] Linking CXX executable platform-bin/port-tests/test/wifi-net-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/wifi-net-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  98404	   1244	69933384	70033032	42c9e88	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-net-qemu.elf
+[26/48] Linking CXX executable platform-bin/port-tests/test/wifi-tcp-server-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/wifi-tcp-server-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  98436	   1244	69933384	70033064	42c9ea8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-tcp-server-qemu.elf
+[27/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/portable-test-storage.cpp.obj
+[28/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/wifi-net-hwd.dir/portable-test-storage.cpp.obj
+[29/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/portable-test-storage-sd.cpp.obj
+[30/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/portable-test-storage-sd.cpp.obj
+[31/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/portable-test-storage.cpp.obj
+[32/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/portable-test-storage.cpp.obj
+[33/48] Linking CXX executable platform-bin/port-tests/test/smp-num-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-num-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 176740	   1260	70174000	70352000	4317c80	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-hwd.elf
+[34/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/portable-test-storage.cpp.obj
+[35/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/rpi-zero-2w/usb_test/main.cpp.obj
+[36/48] Linking CXX executable platform-bin/port-tests/test/wifi-net-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/wifi-net-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+1137780	   1452	71126320	72265552	44eaf50	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/wifi-net-hwd.elf
+[37/48] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 222520	   1260	70068800	70292580	4309464	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+[38/48] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 215192	   1260	70068800	70285252	43077c4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-qemu.elf
+[39/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/portable-test-storage.cpp.obj
+[40/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/portable-test-storage.cpp.obj
+[41/48] Linking CXX executable platform-bin/port-tests/test/sd_test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sd_test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 163268	   1256	69804560	69969084	42ba4bc	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-qemu.elf
+[42/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/usb_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/rpi-zero-2w/usb_test/main.cpp.obj
+[43/48] Linking CXX executable platform-bin/port-tests/test/usb_test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/usb_test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 181228	   1292	71011336	71193856	43e5500	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-qemu.elf
+[44/48] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/portable-test-storage.cpp.obj
+[45/48] Linking CXX executable platform-bin/port-tests/test/sd_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sd_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 170596	   1256	69804560	69976412	42bc15c	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-hwd.elf
+[46/48] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 175140	   1268	70519808	70696216	436bd18	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+[47/48] Linking CXX executable platform-bin/port-tests/test/usb_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/usb_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 189404	   1292	71011336	71202032	43e74f0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-hwd.elf
+[48/48] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 182468	   1268	70519808	70703544	436d9b8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+# (last 200 lines kept; warnings+errors in the full log: 14)
