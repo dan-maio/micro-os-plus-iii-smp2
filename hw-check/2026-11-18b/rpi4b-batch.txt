@@ -1,0 +1,115 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+      Start  4: aarch64-rpi4b-smp-list-storage-test-hwd
+ 1/19 Test  #4: aarch64-rpi4b-smp-list-storage-test-hwd ...***Failed   20.49 sec
+[hw] WARNING: an OpenOCD process is already running — the probe may be busy
+[hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+[hw] executing pre-load reset on bcm2711.cpu0...
+[hw] waiting 10s for board to boot after reset...
+[hw] --- smp-list-storage-test (1800s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Warn : Transport "jtag" was already selected
+Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E661410403809139
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (JTAG)
+Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : cmsis-dap JTAG TLR_RESET
+Info : cmsis-dap JTAG TLR_RESET
+Info : JTAG tap: bcm2711.cpu tap/device found: 0x4ba00477 (mfg: 0x23b (ARM Ltd), part: 0xba00, ver: 0x4)
+Info : [bcm2711.ap] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80410088
+Info : bcm2711.cpu0: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu0] external reset detected
+Info : [bcm2711.cpu0] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80510088
+Info : bcm2711.cpu1: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu1] external reset detected
+Info : [bcm2711.cpu1] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80610088
+Info : bcm2711.cpu2: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu2] external reset detected
+Info : [bcm2711.cpu2] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80710088
+Info : bcm2711.cpu3: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu3] external reset detected
+Info : [bcm2711.cpu3] Examination succeed
+Info : [bcm2711.ap] gdb port disabled
+Info : [bcm2711.cpu0] gdb port disabled
+Info : [bcm2711.cpu1] gdb port disabled
+Info : [bcm2711.cpu2] gdb port disabled
+Info : [bcm2711.cpu3] gdb port disabled
+--- stage: halt cores 0 ---
+Info : bcm2711.cpu0 socket 0 cluster 0 core 0 multi core
+bcm2711.cpu0 halted in AArch64 state due to debug-request, current mode: EL2H
+cpsr: 0x000003c9 pc: 0x200
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+--- stage: enable semihosting on cores 0 1 2 3 ---
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin/port-tests/test/smp-list-storage-test-hwd ---
+--- stage: resume cores 0 at 0x80000 ---
+  start PC core 0 = pc (/64): 0x0000000000080000
+Info : tcl server disabled
+Info : telnet server disabled
+
+smp-list-storage-test    OPENOCD DIED
+
+[hw] smp-list-storage-test did not pass — power-cycle the board before retrying.
+
+      Start  8: aarch64-rpi4b-smp-shapes-test-hwd
+ 2/19 Test  #8: aarch64-rpi4b-smp-shapes-test-hwd .........   Passed   50.00 sec
+      Start 10: aarch64-rpi4b-smp_mem_inter_test-hwd
+ 3/19 Test #10: aarch64-rpi4b-smp_mem_inter_test-hwd ......   Passed  195.78 sec
+      Start 12: aarch64-rpi4b-smp_mem_test-hwd
+ 4/19 Test #12: aarch64-rpi4b-smp_mem_test-hwd ............   Passed   46.16 sec
+      Start 15: aarch64-rpi4b-mutex-stress-hwd
+ 5/19 Test #15: aarch64-rpi4b-mutex-stress-hwd ............   Passed   49.22 sec
+      Start 17: aarch64-rpi4b-rtos-apis-hwd
+ 6/19 Test #17: aarch64-rpi4b-rtos-apis-hwd ...............   Passed   24.68 sec
+      Start 19: aarch64-rpi4b-cmsis-os-validator-hwd
+ 7/19 Test #19: aarch64-rpi4b-cmsis-os-validator-hwd ......   Passed   26.77 sec
+      Start 21: aarch64-rpi4b-smp_test0-hwd
+ 8/19 Test #21: aarch64-rpi4b-smp_test0-hwd ...............   Passed   24.66 sec
+      Start 23: aarch64-rpi4b-smp_test1-hwd
+ 9/19 Test #23: aarch64-rpi4b-smp_test1-hwd ...............   Passed   24.73 sec
+      Start 25: aarch64-rpi4b-smp_test2-hwd
+10/19 Test #25: aarch64-rpi4b-smp_test2-hwd ...............   Passed   14.42 sec
+      Start 27: aarch64-rpi4b-smp_test3-hwd
+11/19 Test #27: aarch64-rpi4b-smp_test3-hwd ...............   Passed   24.69 sec
+      Start 29: aarch64-rpi4b-smp_test4-hwd
+12/19 Test #29: aarch64-rpi4b-smp_test4-hwd ...............   Passed   24.67 sec
+      Start 33: aarch64-rpi4b-smp-num-test-hwd
+13/19 Test #33: aarch64-rpi4b-smp-num-test-hwd ............   Passed   32.88 sec
+      Start 37: aarch64-rpi4b-smp-pipeline-test-hwd
+14/19 Test #37: aarch64-rpi4b-smp-pipeline-test-hwd .......   Passed   47.21 sec
+      Start 39: aarch64-rpi4b-smp-pro-cons-test-hwd
+15/19 Test #39: aarch64-rpi4b-smp-pro-cons-test-hwd .......   Passed   18.53 sec
+      Start 41: aarch64-rpi4b-smp-mat-test-hwd
+16/19 Test #41: aarch64-rpi4b-smp-mat-test-hwd ............   Passed   15.45 sec
+      Start 45: aarch64-rpi4b-sd_test-hwd
+17/19 Test #45: aarch64-rpi4b-sd_test-hwd .................   Passed   16.47 sec
+      Start 49: aarch64-rpi4b-smp-mat-sdcard-test-hwd
+18/19 Test #49: aarch64-rpi4b-smp-mat-sdcard-test-hwd .....   Passed   16.57 sec
+      Start 51: aarch64-rpi4b-clock-test-hwd
+19/19 Test #51: aarch64-rpi4b-clock-test-hwd ..............   Passed   19.55 sec
+
+95% tests passed, 1 tests failed out of 19
+
+Label Time Summary:
+hwd    = 692.95 sec*proc (19 tests)
+
+Total Test time (real) = 692.98 sec
+
+The following tests FAILED:
+	  4 - aarch64-rpi4b-smp-list-storage-test-hwd (Failed)  hwd
+Errors while running CTest

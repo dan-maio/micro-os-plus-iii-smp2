@@ -1,0 +1,18 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-weactf411-cmake-gcc-debug
+    Start 1: cortexm-weactf411-cmsis-os-validator-hwd
+1/5 Test #1: cortexm-weactf411-cmsis-os-validator-hwd ...   Passed   23.25 sec
+    Start 2: cortexm-weactf411-mos-test1-hwd
+2/5 Test #2: cortexm-weactf411-mos-test1-hwd ............   Passed    9.13 sec
+    Start 3: cortexm-weactf411-mutex-stress-hwd
+3/5 Test #3: cortexm-weactf411-mutex-stress-hwd .........   Passed   44.48 sec
+    Start 4: cortexm-weactf411-rtos-apis-hwd
+4/5 Test #4: cortexm-weactf411-rtos-apis-hwd ............   Passed   42.58 sec
+    Start 5: cortexm-weactf411-spi-pipeline-hwd
+5/5 Test #5: cortexm-weactf411-spi-pipeline-hwd .........   Passed   50.55 sec
+
+100% tests passed out of 5
+
+Label Time Summary:
+hwd    = 169.99 sec*proc (5 tests)
+
+Total Test time (real) = 170.00 sec
