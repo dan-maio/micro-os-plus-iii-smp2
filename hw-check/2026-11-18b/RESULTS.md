@@ -44,4 +44,11 @@ connected" (nobody connected within its 60 s). Two "JTAG probe on Pico"
 probes were attached by then: the Pi 4 B's is E661410403809139 (the other,
 E46268C3571E0D36, reached no board: "scan chain interrogation failed").
 
-Not run (it needs the user): usb_big_test (host tool over USB-C).
+usb_big_test: PASS (the host's file echoed and stored on the SD card), 30 s.
+Driven here (usb-big.sh): the test started, its gadget 1d6b:0104 appeared on
+the PC's USB bus, then the test's host tool sent a generated 4 MiB pattern
+(--big 4194304): "All 4194304 bytes sent in 5 chunks", "ACK: count=4194304,
+status OK", "PASSED: all 4194304 bytes match"; the board stored it as
+tests/usbfile.bin through posix-io and read it back.
+
+The Pi 4 B has now passed every one of its 22 hardware tests.
