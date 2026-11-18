@@ -9,7 +9,7 @@
  * which is what the firmware and Linux do on these boards.
  *
  * Selected with SD_BACKEND_SDHOST. The same `sd::SdCard` as the other back
- * ends: flatfs, FatFs' diskio and the tests name only this interface.
+ * ends: the posix-io block device and the tests name only this interface.
  *
  * Pins: GPIO48-53 in ALT0 (the Arasan uses the same pins in ALT3). init()
  * routes them.

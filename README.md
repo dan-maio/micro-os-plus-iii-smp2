@@ -9,7 +9,7 @@ targets it needs.
 ## Targets
 
 - `micro-os-plus::soc-bcm2837`, `::soc-bcm2711` (headers; a board compiles the SoC's `src/`)
-- `micro-os-plus::devices` (SD + DWC2 USB gadget), `::devices-sd` (SD only)
+- `micro-os-plus::devices-sd-posix` (the SD card as a µOS++ POSIX I/O block device), `::devices-sdhost-posix` (the same over the SDHOST controller), `::devices-usb` (the DWC2 USB gadget)
 
 ## Origin
 

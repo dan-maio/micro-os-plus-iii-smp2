@@ -11,14 +11,12 @@
 #                        they were the two ports' copies and are kept as they
 #                        are until they are reconciled and re-proven
 #
-# The chip-independent part (flatfs, the FatFs glue, sd.hpp) is
+# The chip-independent part (sd.hpp, the posix-io block device) is
 # micro-os-plus-iii-devices-storage.
 #
-# Exports: micro-os-plus::soc-bcm2837, ::soc-bcm2711, ::devices (SD + USB
-# gadget), ::devices-sd (SD only, for a board with no usable DWC2 device port),
-# ::devices-sd-posix (the SD card as a posix-io block device, no flatfs/FatFs),
-# ::devices-sdhost-posix (the same over the SDHOST controller), ::devices-usb
-# (the DWC2 gadget alone)
+# Exports: micro-os-plus::soc-bcm2837, ::soc-bcm2711, ::devices-sd-posix (the
+# SD card as a posix-io block device), ::devices-sdhost-posix (the same over
+# the SDHOST controller), ::devices-usb (the DWC2 gadget)
 # -----------------------------------------------------------------------------
 cmake_minimum_required (VERSION 3.20)
 
@@ -57,45 +55,10 @@ else ()
   set (_drivers "")
 endif ()
 
-if (_drivers AND NOT TARGET micro-os-plus::devices)
-  # The SD card driver (sd.cpp) and the DWC2 USB device controller.
-  add_library (micro-os-plus-iii-devices-interface INTERFACE)
-  target_include_directories (
-    micro-os-plus-iii-devices-interface INTERFACE "${_drivers}/include"
-  )
-  target_sources (
-    micro-os-plus-iii-devices-interface
-    INTERFACE "${_drivers}/src/sd.cpp" "${_drivers}/src/usb_dwc2.cpp"
-  )
-  target_link_libraries (
-    micro-os-plus-iii-devices-interface INTERFACE micro-os-plus::devices-storage
-  )
-  add_library (micro-os-plus::devices ALIAS micro-os-plus-iii-devices-interface)
-endif ()
-
-if (_drivers AND NOT TARGET micro-os-plus::devices-sd)
-  # The SD half of the set above, without the DWC2 USB driver. A board with no
-  # USB device controller the tests can use (the Pi 4 B: its USB-C port is
-  # DWC2 in a different place, and its type-A ports sit behind the VL805)
-  # links this one instead -- usb_dwc2.cpp includes the BCM2837 headers and
-  # would not compile for another SoC.
-  add_library (micro-os-plus-iii-devices-sd-interface INTERFACE)
-  target_include_directories (
-    micro-os-plus-iii-devices-sd-interface INTERFACE "${_drivers}/include"
-  )
-  target_sources (
-    micro-os-plus-iii-devices-sd-interface INTERFACE "${_drivers}/src/sd.cpp"
-  )
-  target_link_libraries (
-    micro-os-plus-iii-devices-sd-interface INTERFACE micro-os-plus::devices-storage
-  )
-  add_library (micro-os-plus::devices-sd ALIAS micro-os-plus-iii-devices-sd-interface)
-endif ()
-
 if (_drivers AND NOT TARGET micro-os-plus::devices-sd-posix)
   # The SD card driver as a µOS++ POSIX I/O block device (sd::block_device,
-  # micro-os-plus-iii-devices-storage), with none of the old file systems:
-  # the file system comes from @xpacks/chan-fatfs.
+  # micro-os-plus-iii-devices-storage); the file system comes from
+  # @xpacks/chan-fatfs.
   add_library (micro-os-plus-iii-devices-sd-posix-interface INTERFACE)
   target_include_directories (
     micro-os-plus-iii-devices-sd-posix-interface INTERFACE "${_drivers}/include"
@@ -113,9 +76,8 @@ endif ()
 if (_drivers AND NOT TARGET micro-os-plus::devices-sdhost-posix)
   # The BCM2837's other SD controller, SDHOST, as a µOS++ POSIX I/O block
   # device (sd::block_device): for a board whose Arasan controller drives
-  # something else (the Zero 2 W's and Pi 3 B's Wi-Fi radio), with none of
-  # the old file systems. Instead of devices-sd-posix, never with it: both
-  # define sd::SdCard.
+  # something else (the Zero 2 W's and Pi 3 B's Wi-Fi radio). Instead of
+  # devices-sd-posix, never with it: both define sd::SdCard.
   add_library (micro-os-plus-iii-devices-sdhost-posix-interface INTERFACE)
   target_include_directories (
     micro-os-plus-iii-devices-sdhost-posix-interface INTERFACE "${_drivers}/include"
@@ -134,9 +96,8 @@ if (_drivers AND NOT TARGET micro-os-plus::devices-sdhost-posix)
 endif ()
 
 if (_drivers AND NOT TARGET micro-os-plus::devices-usb)
-  # The DWC2 USB device controller alone, for a test that reaches the card
-  # through the posix-io set above (devices-sd-posix): the USB half of
-  # micro-os-plus::devices, without its SD driver and old file systems.
+  # The DWC2 USB device controller, for a test that also reaches the card
+  # through the posix-io set above (devices-sd-posix).
   add_library (micro-os-plus-iii-devices-usb-interface INTERFACE)
   target_include_directories (
     micro-os-plus-iii-devices-usb-interface INTERFACE "${_drivers}/include"
