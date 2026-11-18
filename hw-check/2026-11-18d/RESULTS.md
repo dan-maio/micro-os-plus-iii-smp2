@@ -48,3 +48,13 @@ send_file.py --get --terminate, read back byte-for-byte. Logs in
 usb_test copies are now the posix-io version; proven on the Zero 2 W
 (AArch32 and AArch64). The JTAG-link loss at the USB bring-up stays open
 (intermittent, either storage, most likely the supply).
+
+## Pi 3 B (AArch32): 15/15 pass
+
+Olimex probe (`PROBE=olimex`, through the AArch32 Zero 2 W runner); build
+rebuilt from the current tree first. mutex-stress, rtos-apis,
+cmsis-os-validator, smp_test0-4, smp-num-test, smp-pipeline-test,
+smp-pro-cons-test, smp-mat-test, sd_test, smp-mat-sdcard-test, clock-test.
+442 s. (A second AArch64 batch was started by mistake with the AArch32 card
+in and stopped during its first test; the first AArch64 batch above is
+valid: its logs show every core halted in AArch64 state.)

@@ -1,0 +1,2 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi3b-cmake-gcc-debug
+      Start  3: aarch64-rpi3b-mutex-stress-hwd
