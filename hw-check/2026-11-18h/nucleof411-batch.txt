@@ -1,0 +1,16 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-nucleof411-cmake-gcc-debug
+    Start 1: cortexm-nucleof411-cmsis-os-validator-hwd
+1/4 Test #1: cortexm-nucleof411-cmsis-os-validator-hwd ...   Passed   32.33 sec
+    Start 2: cortexm-nucleof411-mos-test1-hwd
+2/4 Test #2: cortexm-nucleof411-mos-test1-hwd ............   Passed   11.14 sec
+    Start 3: cortexm-nucleof411-mutex-stress-hwd
+3/4 Test #3: cortexm-nucleof411-mutex-stress-hwd .........   Passed   44.48 sec
+    Start 4: cortexm-nucleof411-rtos-apis-hwd
+4/4 Test #4: cortexm-nucleof411-rtos-apis-hwd ............   Passed   43.45 sec
+
+100% tests passed out of 4
+
+Label Time Summary:
+hwd    = 131.40 sec*proc (4 tests)
+
+Total Test time (real) = 131.41 sec
