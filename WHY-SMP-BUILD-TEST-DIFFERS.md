@@ -171,7 +171,7 @@ and `-posix-arch` (`49282e6`).
 | **The ports carry no tests** (`-cortexm`: `test/.gitkeep`; `-posix-arch`: two small `trace-*` programs, no project) | the ports carry their board tests (step 6 planned a `tests/` project in every package) |
 | A hardware board's device code is in its platform (`platforms/nucleo-f411re/device/`: CMSIS device header, linker scripts, vectors, start-up); chips come from xPacks (`@xpacks/arm-cmsis`, `@xpack-3rd-party/raspberrypi-pico-sdk`); a TODO moves the STM32 files to `devices-stm32f4-extras` | device packages (step 5); linker scripts in the platform (step 4) |
 | Hardware test: CTest runs OpenOCD directly (`openocd -f interface/… -f target/… -c "program … verify" -c "arm semihosting enable" -c reset`) | `hw.sh` through bash (step 7) |
-| FatFs: `@xpacks/chan-fatfs` 0.13.1, through the POSIX I/O integration (rtos-apis' `test-chan-fatfs`) | our SD tests use FatFs R0.15a directly (step 5c open) |
+| FatFs: `@xpacks/chan-fatfs` 0.13.1, through the POSIX I/O integration (rtos-apis' `test-chan-fatfs`) | the same since step 5c: the SD card as a posix-io block device under `@xpacks/chan-fatfs`; R0.15a and flatfs deleted |
 
 **What this changes in the plan:**
 
@@ -936,6 +936,23 @@ commands, with only the folder names changed.
 5b (kernel `93ac3181`): the Lyra no longer compiles the BCM2837 SoC folder
 (see step 4). Its images, disassembled, are identical except the order of
 three interworking stubs in the linker's stub block.
+
+**5c done 2026-11-18.** The SD card is a µOS++ POSIX I/O block device
+(`sd::block_device`, `micro-os-plus-iii-devices-storage`), the file system
+`@xpacks/chan-fatfs` mounted at `/sd/` (`board-tests/portable-test-storage.cpp`);
+every SD test was rewritten on it (the portable ones in `tests/sources/`, the
+board tests through `UOS_TESTS_STORAGE`) and proven on hardware on every board
+(`hw-check/2026-11-18*/`). Then the old storage was deleted: flatfs, FatFs
+R0.15a and its glue (`devices-storage`), the old sets `micro-os-plus::devices`,
+`devices-sd` (`devices-bcm283x`), `devices-rk3506`, the `-posix-arch` copies
+(FatFs, flatfs, a stale BCM2837 SD/USB driver copy) and the native
+`flatfs-test`, with the builder's `BOARD_TEST_NEED_DEVICES` / `UOS_BOARD_DEVICES`
+hook. Check (`step5c-check/cleanup/`): all 40 configurations configure; 38 with
+identical compile and link commands, the two native ones without
+`flatfs-test`'s 49 objects and link only; all 40 build; native 20/20 (debug and
+release). Not in 5c: the WeAct F411's own flatfs on its SPI NOR
+(`spi-pipeline`), a different store; the docs that describe the removed hook
+(the docs step).
 
 ### Step 6 — each package tests itself (§10, D4)
 
