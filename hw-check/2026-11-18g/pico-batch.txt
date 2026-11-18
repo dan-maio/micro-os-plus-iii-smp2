@@ -1,0 +1,44 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+      Start  2: cortexm-pico-cmsis-os-validator-hwd
+ 1/18 Test  #2: cortexm-pico-cmsis-os-validator-hwd .......   Passed   13.14 sec
+      Start  3: cortexm-pico-cmsis-os-validator-ram-hwd
+ 2/18 Test  #3: cortexm-pico-cmsis-os-validator-ram-hwd ...   Passed   13.19 sec
+      Start  4: cortexm-pico-exc-test-hwd
+ 3/18 Test  #4: cortexm-pico-exc-test-hwd .................   Passed    5.09 sec
+      Start  6: cortexm-pico-fp-switch-hwd
+ 4/18 Test  #6: cortexm-pico-fp-switch-hwd ................   Passed    2.04 sec
+      Start  8: cortexm-pico-mutex-stress-hwd
+ 5/18 Test  #8: cortexm-pico-mutex-stress-hwd .............   Passed   39.46 sec
+      Start  9: cortexm-pico-mutex-stress-ram-hwd
+ 6/18 Test  #9: cortexm-pico-mutex-stress-ram-hwd .........   Passed   38.48 sec
+      Start 11: cortexm-pico-rtos-apis-hwd
+ 7/18 Test #11: cortexm-pico-rtos-apis-hwd ................   Passed   29.36 sec
+      Start 12: cortexm-pico-rtos-apis-ram-hwd
+ 8/18 Test #12: cortexm-pico-rtos-apis-ram-hwd ............   Passed   28.38 sec
+      Start 14: cortexm-pico-sc-test-ko-hwd
+ 9/18 Test #14: cortexm-pico-sc-test-ko-hwd ...............   Passed    3.09 sec
+      Start 15: cortexm-pico-smp-mat-test-hwd
+10/18 Test #15: cortexm-pico-smp-mat-test-hwd .............   Passed    4.09 sec
+      Start 16: cortexm-pico-smp-mat-test-ram-hwd
+11/18 Test #16: cortexm-pico-smp-mat-test-ram-hwd .........   Passed    2.10 sec
+      Start 17: cortexm-pico-smp-test-ko-hwd
+12/18 Test #17: cortexm-pico-smp-test-ko-hwd ..............   Passed    3.08 sec
+      Start 18: cortexm-pico-smp-test0-hwd
+13/18 Test #18: cortexm-pico-smp-test0-hwd ................   Passed   24.31 sec
+      Start 20: cortexm-pico-smp-test1-hwd
+14/18 Test #20: cortexm-pico-smp-test1-hwd ................   Passed    7.14 sec
+      Start 21: cortexm-pico-smp-test2-hwd
+15/18 Test #21: cortexm-pico-smp-test2-hwd ................   Passed   12.19 sec
+      Start 22: cortexm-pico-smp-test3-hwd
+16/18 Test #22: cortexm-pico-smp-test3-hwd ................   Passed    2.08 sec
+      Start 23: cortexm-pico-smp-test4-hwd
+17/18 Test #23: cortexm-pico-smp-test4-hwd ................   Passed    4.09 sec
+      Start 24: cortexm-pico-smp-test5-hwd
+18/18 Test #24: cortexm-pico-smp-test5-hwd ................   Passed    6.12 sec
+
+100% tests passed out of 18
+
+Label Time Summary:
+hwd    = 237.43 sec*proc (18 tests)
+
+Total Test time (real) = 237.46 sec
