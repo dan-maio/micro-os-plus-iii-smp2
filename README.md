@@ -8,7 +8,9 @@ targets it needs.
 
 ## Targets
 
-- `micro-os-plus::devices-storage`
+- `micro-os-plus::devices-storage`: flatfs, FatFs R0.15a with its disk glue, and `sd.hpp`
+- `micro-os-plus::devices-storage-sd`: `sd.hpp` only
+- `micro-os-plus::devices-storage-posix`: the SD card as a µOS++ POSIX I/O block device (`sd-block-device.h`, `sd::block_device`), for the `@xpacks/chan-fatfs` POSIX I/O file system; the card driver comes from the consumer
 
 ## Origin
 
