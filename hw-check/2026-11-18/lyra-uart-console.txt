@@ -1,0 +1,14 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+    Start 10: aarch32-luckfox-lyra-smp_test1-hwd
+1/3 Test #10: aarch32-luckfox-lyra-smp_test1-hwd ......   Passed   26.55 sec
+    Start 14: aarch32-luckfox-lyra-smp-num-test-hwd
+2/3 Test #14: aarch32-luckfox-lyra-smp-num-test-hwd ...   Passed   39.57 sec
+    Start 17: aarch32-luckfox-lyra-smp-mat-test-hwd
+3/3 Test #17: aarch32-luckfox-lyra-smp-mat-test-hwd ...   Passed   17.43 sec
+
+100% tests passed out of 3
+
+Label Time Summary:
+hwd    =  83.55 sec*proc (3 tests)
+
+Total Test time (real) =  83.56 sec

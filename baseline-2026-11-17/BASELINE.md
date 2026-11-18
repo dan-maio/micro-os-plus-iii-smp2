@@ -40,6 +40,10 @@ aarch64-rpi-zero-2w): `RESULT: FAIL` now and then, like on the Pi 4 B. Found in 
 step 2 check; 12 runs of each on `smp` and on step 2: aarch64-rpi3b debug failed 1
 in 12 on both, the other two 0 in 12 on both. Compile commands identical to `smp`.
 Details: `step2-check/prove/`.
+Update 2026-11-18 (after 6b-9a, the validator built from test::cmsis-os-validator
+with the core-0 pinning in the platform): aarch32-rpi3b debug failed 2 in 20 runs
+(each time one case of 60, e.g. `TC_MailFromThreadToISR`; 12 in a row passed,
+`hw-check/2026-11-18/validator-a32-rpi3b/`). The same intermittent failure.
 
 `aarch64-rpi4b-smp-shapes-test-qemu`, **release** build too: seen in the step 5a
 check (stops after round 10 of 20, no `RESULT:` line), the same symptom as the

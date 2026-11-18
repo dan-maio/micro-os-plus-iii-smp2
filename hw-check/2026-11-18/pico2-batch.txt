@@ -1,0 +1,108 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-debug
+      Start  1: cortexm-pico2-clock-test-hwd
+ 1/20 Test  #1: cortexm-pico2-clock-test-hwd ...............   Passed    5.10 sec
+      Start  3: cortexm-pico2-cmsis-os-validator-hwd
+ 2/20 Test  #3: cortexm-pico2-cmsis-os-validator-hwd .......   Passed   15.17 sec
+      Start  4: cortexm-pico2-cmsis-os-validator-ram-hwd
+ 3/20 Test  #4: cortexm-pico2-cmsis-os-validator-ram-hwd ...   Passed   14.23 sec
+      Start  5: cortexm-pico2-exc-test-hwd
+ 4/20 Test  #5: cortexm-pico2-exc-test-hwd .................   Passed    5.10 sec
+      Start  7: cortexm-pico2-fp-switch-hwd
+ 5/20 Test  #7: cortexm-pico2-fp-switch-hwd ................   Passed    8.12 sec
+      Start  9: cortexm-pico2-mutex-stress-hwd
+ 6/20 Test  #9: cortexm-pico2-mutex-stress-hwd .............   Passed   40.43 sec
+      Start 10: cortexm-pico2-mutex-stress-ram-hwd
+ 7/20 Test #10: cortexm-pico2-mutex-stress-ram-hwd .........   Passed   39.47 sec
+      Start 12: cortexm-pico2-rtos-apis-hwd
+ 8/20 Test #12: cortexm-pico2-rtos-apis-hwd ................   Passed   31.34 sec
+      Start 13: cortexm-pico2-rtos-apis-ram-hwd
+ 9/20 Test #13: cortexm-pico2-rtos-apis-ram-hwd ............   Passed   29.37 sec
+      Start 15: cortexm-pico2-sc-test-ko-hwd
+10/20 Test #15: cortexm-pico2-sc-test-ko-hwd ...............   Passed    4.09 sec
+      Start 16: cortexm-pico2-smp-mat-test-hwd
+11/20 Test #16: cortexm-pico2-smp-mat-test-hwd .............   Passed    4.08 sec
+      Start 17: cortexm-pico2-smp-mat-test-ram-hwd
+12/20 Test #17: cortexm-pico2-smp-mat-test-ram-hwd .........   Passed    3.12 sec
+      Start 18: cortexm-pico2-smp-test-ko-hwd
+13/20 Test #18: cortexm-pico2-smp-test-ko-hwd ..............   Passed    4.10 sec
+      Start 19: cortexm-pico2-smp-test-usb-cdc-acm-hwd
+14/20 Test #19: cortexm-pico2-smp-test-usb-cdc-acm-hwd .....   Passed   54.56 sec
+      Start 20: cortexm-pico2-smp-test-usb-hid-hwd
+15/20 Test #20: cortexm-pico2-smp-test-usb-hid-hwd .........***Failed  242.35 sec
+== Raspberry Pi Pico 2 (RP2350, 2x Cortex-M33 SMP) : smp-test-usb-hid ==
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+_rv_reset_init
+Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E6633861A34C2E38
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 0 SWDIO/TMS = 0 TDI = 0 TDO = 0 nTRST = 0 nRESET = 0
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 1000 kHz
+Info : SWD DPIDR 0x4c013477
+Info : [rp2350.cm0] Cortex-M33 r1p0 processor detected
+Info : [rp2350.cm0] target has 8 breakpoints, 4 watchpoints
+Info : [rp2350.cm0] Examination succeed
+Info : [rp2350.cm1] Cortex-M33 r1p0 processor detected
+Info : [rp2350.cm1] target has 8 breakpoints, 4 watchpoints
+Info : [rp2350.cm1] Examination succeed
+Info : [rp2350.cm0] gdb port disabled
+Info : [rp2350.cm1] gdb port disabled
+[rp2350.cm0] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+[rp2350.cm1] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+Info : RP2350 rev 2, QSPI Flash size override = 4096 KiB in 1024 sectors
+Info : RP2xxx ROM API function FC @ 3711
+[rp2350.cm0] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+[rp2350.cm1] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+Info : RP2xxx ROM API function FC @ 3711
+** Programming Started **
+Info : Padding image section 2 at 0x10009c88 with 120 bytes (bank write end alignment)
+Warn : Adding extra erase range, 0x10009d00 .. 0x10009fff
+** Programming Finished **
+** Verify Started **
+** Verified OK **
+[rp2350.cm0] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+[rp2350.cm1] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+Info : RP2xxx ROM API function FC @ 3711
+semihosting is enabled
+semihosting is enabled
+Info : tcl server disabled
+Info : telnet server disabled
+Info : [rp2350.cm1] external reset detected
+shutdown command invoked
+
+smp-test-usb-hid         TIMEOUT after 240s  (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-debug/platform-bin/port-tests/.hw-logs/smp-test-usb-hid.log)
+Power-cycle the board before the next test.
+
+      Start 22: cortexm-pico2-smp-test1-hwd
+16/20 Test #22: cortexm-pico2-smp-test1-hwd ................   Passed    8.11 sec
+      Start 23: cortexm-pico2-smp-test2-hwd
+17/20 Test #23: cortexm-pico2-smp-test2-hwd ................   Passed   13.18 sec
+      Start 24: cortexm-pico2-smp-test3-hwd
+18/20 Test #24: cortexm-pico2-smp-test3-hwd ................   Passed    4.08 sec
+      Start 25: cortexm-pico2-smp-test4-hwd
+19/20 Test #25: cortexm-pico2-smp-test4-hwd ................   Passed    5.09 sec
+      Start 26: cortexm-pico2-smp-test5-hwd
+20/20 Test #26: cortexm-pico2-smp-test5-hwd ................   Passed    7.12 sec
+
+95% tests passed, 1 tests failed out of 20
+
+Label Time Summary:
+hwd    = 538.21 sec*proc (20 tests)
+
+Total Test time (real) = 538.23 sec
+
+The following tests FAILED:
+	 20 - cortexm-pico2-smp-test-usb-hid-hwd (Failed)       hwd
+Errors while running CTest

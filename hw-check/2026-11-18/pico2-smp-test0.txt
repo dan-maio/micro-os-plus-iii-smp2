@@ -1,0 +1,84 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 21
+    Start 21: cortexm-pico2-smp-test0-hwd
+
+21: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/cortexm/micro-os-plus-iii-cortexm/test/boards/pico2/hw.sh" "smp-test0" "240"
+21: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-debug/platform-bin
+21: Environment variables: 
+21:  BUILD=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-debug/platform-bin/port-tests
+21: Test timeout computed to be: 300
+21: == Raspberry Pi Pico 2 (RP2350, 2x Cortex-M33 SMP) : smp-test0 ==
+21: xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+21: Licensed under GNU GPL v2
+21: For bug reports, read
+21: 	http://openocd.org/doc/doxygen/bugs.html
+21: _rv_reset_init
+21: Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E6633861A34C2E38
+21: Info : CMSIS-DAP: SWD supported
+21: Info : CMSIS-DAP: Atomic commands supported
+21: Info : CMSIS-DAP: Test domain timer supported
+21: Info : CMSIS-DAP: FW Version = 2.0.0
+21: Info : CMSIS-DAP: Interface Initialised (SWD)
+21: Info : SWCLK/TCK = 0 SWDIO/TMS = 0 TDI = 0 TDO = 0 nTRST = 0 nRESET = 0
+21: Info : CMSIS-DAP: Interface ready
+21: Info : clock speed 1000 kHz
+21: Info : SWD DPIDR 0x4c013477
+21: Info : [rp2350.cm0] Cortex-M33 r1p0 processor detected
+21: Info : [rp2350.cm0] target has 8 breakpoints, 4 watchpoints
+21: Info : [rp2350.cm0] Examination succeed
+21: Info : [rp2350.cm1] Cortex-M33 r1p0 processor detected
+21: Info : [rp2350.cm1] target has 8 breakpoints, 4 watchpoints
+21: Info : [rp2350.cm1] Examination succeed
+21: Info : [rp2350.cm0] gdb port disabled
+21: Info : [rp2350.cm1] gdb port disabled
+21: [rp2350.cm0] halted due to debug-request, current mode: Thread 
+21: xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+21: [rp2350.cm1] halted due to debug-request, current mode: Thread 
+21: xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+21: Info : RP2350 rev 2, QSPI Flash size override = 4096 KiB in 1024 sectors
+21: Info : RP2xxx ROM API function FC @ 3711
+21: [rp2350.cm0] halted due to debug-request, current mode: Thread 
+21: xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+21: [rp2350.cm1] halted due to debug-request, current mode: Thread 
+21: xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+21: Info : RP2xxx ROM API function FC @ 3711
+21: ** Programming Started **
+21: Info : Padding image section 2 at 0x10000b78 with 136 bytes (bank write end alignment)
+21: Warn : Adding extra erase range, 0x10000c00 .. 0x10000fff
+21: ** Programming Finished **
+21: ** Verify Started **
+21: ** Verified OK **
+21: [rp2350.cm0] halted due to debug-request, current mode: Thread 
+21: xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+21: [rp2350.cm1] halted due to debug-request, current mode: Thread 
+21: xPSR: 0xf9000000 pc: 0x00000088 msp: 0xf0000000
+21: Info : RP2xxx ROM API function FC @ 3711
+21: semihosting is enabled
+21: semihosting is enabled
+21: Info : tcl server disabled
+21: Info : telnet server disabled
+21: Info : [rp2350.cm1] external reset detected
+21: RESULT: PASS
+21: RESULT: PASS
+21: 
+21: smp-test0                PASS  (23s)
+21: Power-cycle the board before the next test.
+1/1 Test #21: cortexm-pico2-smp-test0-hwd ......   Passed   23.24 sec
+
+The following tests passed:
+	cortexm-pico2-smp-test0-hwd
+
+100% tests passed out of 1
+
+Label Time Summary:
+hwd    =  23.24 sec*proc (1 test)
+
+Total Test time (real) =  23.24 sec
+pico2 rc=0

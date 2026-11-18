@@ -1,0 +1,93 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 9
+    Start 9: aarch32-luckfox-lyra-smp_test0-hwd
+
+9: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/hw.sh" "smp_test0" "600"
+9: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin
+9: Environment variables: 
+9:  BUILD=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests
+9:  UOS_SMP_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/..
+9: Test timeout computed to be: 1200
+9: hw.sh: RK3506 full global reset (glb_srstn_1)...
+9: [hw] WARNING: an OpenOCD process is already running — the probe may be busy
+9: [hw]          (LIBUSB_ERROR_BUSY). Kill it first: pkill -9 -f openocd
+9: [hw] --- smp_test0 (600s max) ---
+9: xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+9: Licensed under GNU GPL v2
+9: For bug reports, read
+9: 	http://openocd.org/doc/doxygen/bugs.html
+9: Info : CMSIS-DAP: SWD supported
+9: Info : CMSIS-DAP: FW Version = 2.0.0
+9: Info : CMSIS-DAP: Interface Initialised (SWD)
+9: Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+9: Info : CMSIS-DAP: Interface ready
+9: Info : clock speed 4000 kHz
+9: Info : SWD DPIDR 0x2ba01477
+9: Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+9: Info : [rk3506.a7.0] Examination succeed
+9: Info : [rk3506.a7.0] gdb port disabled
+9: Info : [rk3506.a7.1] gdb port disabled
+9: Info : [rk3506.a7.2] gdb port disabled
+9: Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+9: [rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+9: cpsr: 0x200001d3 pc: 0x03f003a0, semihosting
+9: [rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+9: RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+9: --- stage: JTAG clock -> 4000 kHz ---
+9: --- stage: halt cores 0 ---
+9: --- stage: enable semihosting on cores 0 ---
+9: --- stage: pre-load ---
+9: SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+9: --- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-hwd ---
+9: --- stage: resume cores 0 at 0x20003c ---
+9: Info : tcl server disabled
+9: Info : telnet server disabled
+9: os_startup_initialize_free_store(0x6400000,16777216)
+9: first_fit_top(0x6400000,16777216) @0x21b078 app-heap
+9: out_of_memory_handler(0x204d80) @0x21b078 app-heap
+9: estd::pmr::set_default_resource(0x21b078) 
+9: rtos::memory::set_default_resource(0x21b078) 
+9: rtos::memory::init_once_default_resource() 
+9: malloc_memory_resource() @0x21b048 malloc
+9: scheduler::start() 
+9: Core 0: setting up SRAM mailbox...
+9: Core 0: releasing core 1...
+9: Core 0: releasing core 2...
+9: Core 0: secondary-core startup signals sent.
+9: smp_test0: scheduler + tick, os_main on core 0
+9: [tick] heartbeat 0  sysclock=426 ms
+9: [tick] heartbeat 1  sysclock=1838 ms
+9: [tick] heartbeat 2  sysclock=3250 ms
+9: [tick] heartbeat 3  sysclock=4662 ms
+9: [tick] heartbeat 4  sysclock=6074 ms
+9: [tick] heartbeat 5  sysclock=7486 ms
+9: [tick] heartbeat 6  sysclock=8898 ms
+9: [tick] heartbeat 7  sysclock=10310 ms
+9: [tick] heartbeat 8  sysclock=11722 ms
+9: [tick] heartbeat 9  sysclock=13134 ms
+9: 10 heartbeats on core 0
+9: 
+9: RESULT: PASS
+9: 
+9: smp_test0                PASS  (88s)
+9: 
+9: [hw] smp_test0 PASSED — power-cycle the board before the next test.
+1/1 Test #9: aarch32-luckfox-lyra-smp_test0-hwd ...   Passed   94.76 sec
+
+The following tests passed:
+	aarch32-luckfox-lyra-smp_test0-hwd
+
+100% tests passed out of 1
+
+Label Time Summary:
+hwd    =  94.76 sec*proc (1 test)
+
+Total Test time (real) =  94.76 sec
+lyra rc=0

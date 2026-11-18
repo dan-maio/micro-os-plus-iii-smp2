@@ -1,0 +1,26 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+    Start  9: aarch32-luckfox-lyra-smp_test0-hwd
+1/9 Test  #9: aarch32-luckfox-lyra-smp_test0-hwd .............   Passed   26.08 sec
+    Start 11: aarch32-luckfox-lyra-smp_test2-hwd
+2/9 Test #11: aarch32-luckfox-lyra-smp_test2-hwd .............   Passed   17.06 sec
+    Start 12: aarch32-luckfox-lyra-smp_test3-hwd
+3/9 Test #12: aarch32-luckfox-lyra-smp_test3-hwd .............   Passed   27.30 sec
+    Start 13: aarch32-luckfox-lyra-smp_test4-hwd
+4/9 Test #13: aarch32-luckfox-lyra-smp_test4-hwd .............   Passed   26.36 sec
+    Start 15: aarch32-luckfox-lyra-smp-pipeline-test-hwd
+5/9 Test #15: aarch32-luckfox-lyra-smp-pipeline-test-hwd .....   Passed   56.93 sec
+    Start 16: aarch32-luckfox-lyra-smp-pro-cons-test-hwd
+6/9 Test #16: aarch32-luckfox-lyra-smp-pro-cons-test-hwd .....   Passed   22.26 sec
+    Start 18: aarch32-luckfox-lyra-sd_test-hwd
+7/9 Test #18: aarch32-luckfox-lyra-sd_test-hwd ...............   Passed   22.28 sec
+    Start 19: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd
+8/9 Test #19: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd ...   Passed   23.80 sec
+    Start 20: aarch32-luckfox-lyra-clock-test-hwd
+9/9 Test #20: aarch32-luckfox-lyra-clock-test-hwd ............   Passed   21.43 sec
+
+100% tests passed out of 9
+
+Label Time Summary:
+hwd    = 243.50 sec*proc (9 tests)
+
+Total Test time (real) = 243.52 sec

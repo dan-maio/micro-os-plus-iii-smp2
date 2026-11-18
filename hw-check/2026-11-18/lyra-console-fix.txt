@@ -1,0 +1,234 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+    Start 10: aarch32-luckfox-lyra-smp_test1-hwd
+1/3 Test #10: aarch32-luckfox-lyra-smp_test1-hwd ......   Passed   72.16 sec
+    Start 14: aarch32-luckfox-lyra-smp-num-test-hwd
+2/3 Test #14: aarch32-luckfox-lyra-smp-num-test-hwd ...***Failed  630.91 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp-num-test (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f00394, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-hwd ---
+--- stage: resume cores 0 at 0x20003c ---
+Info : tcl server disabled
+Info : telnet server disabled
+os_startup_initialize_free_store(0x6400000,16777216)
+first_fit_top(0x6400000,16777216) @0x288878 app-heap
+out_of_memory_handler(0x20739c) @0x288878 app-heap
+estd::pmr::set_default_resource(0x288878) 
+rtos::memory::set_default_resource(0x288878) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x288848 malloc
+file_descriptors_manager::file_descriptors_manager(16)=0x2911a4
+Device '/dev/sd' linked
+scheduler::start() 
+Core 0: setting up SRAM mailbox...
+Core 0: releasing core 1...
+Core 0: releasing core 2...
+Core 0: secondary-core startup signals sent.
+storage: SD card /dev/sd...
+storage: SD card ready, 125042688 sectors (~61056 MiB)
+Device '/dev/sd1' linked
+storage: FAT window LBA 0, 125042688 sectors (61056 MiB)
+storage: FAT volume mounted at /sd/, test files in /sd/tests/
+
++== µOS++ NUM TEST : console + pacer + SD + FPU, 3 cores ==+
+
+  FAT volume at /sd/, num.txt in /sd/tests/.
+  removed previous num.txt (if any)
+[c0][uart] tick 0  (text=0 calc=0)
+[c1] led on
+threads started (uart=high, led=above_normal, text=normal, compute=below_normal, reader=low)
+running for 60000 ms ...
+[c0][uart] tick 1  (text=0 calc=0)
+[c2] led off
+[c0][uart] tick 2  (text=0 calc=0)
+[c0] led on
+[c0][uart] tick 3  (text=0 calc=0)
+[c2] led off
+[c0][uart] tick 4  (text=0 calc=0)
+[c1] led on
+[c0][uart] tick 5  (text=0 calc=0)
+[c2] led off
+[c0][uart] tick 6  (text=0 calc=0)
+[c0] led on
+[c0][uart] tick 7  (text=0 calc=0)
+[c0] led off
+[c0][uart] tick 8  (text=0 calc=0)
+[c0] led on
+[c0][uart] tick 9  (text=0 calc=0)
+[c0] led off
+[c0][uart] tick 10  (text=0 calc=0)
+[c0] led on
+[c0][reader] pass 0: num.txt now 3680 bytes (+3680)
+[c2] TE[Xc0T]t[huea rt] tick 11 n (textj=20 c aolc=20)he lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem ENDInfo : [rk3506.a7.1] MPIDR level2 0, cluster f, core 1, multi core, no SMT
+
+
+[c1] led off[c1] CALC 000: sin(0.100)=+0.099833 cos(0.100)=+0.995004 log(0.100)=-2.302585
+
+[c0][uart] tick 12  (text=20 calc=20)[c1] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c2] led on[c2] CALC 001: sin(0.470)=+0.452886 cos(0.470)=+0.891568 log(0.470)=-0.755023
+
+[c0][uart] tick 13  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c2] led off[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0][uart] tick 14  (text=20 calc=20)[c1] CALC 002: sin(0.840)=+0.744643 cos(0.840)=+0.667463 log(0.840)=-0.174353
+
+[c0] led on[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c0][uart] tick 15  (text=20 calc=20)[c1] CALC 003: sin(1.210)=+0.935616 cos(1.210)=+0.353019 log(1.210)=+0.190620
+
+[c0] led off[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c0][uart] tick 16  (text=20 calc=20)[c1] CALC 004: sin(1.580)=+0.999958 cos(1.580)=-0.009204 log(1.580)=+0.457425
+
+[c0] led on[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c0][uart] tick 17  (text=20 calc=20)[c1] CALC 005: sin(1.950)=+0.928960 cos(1.950)=-0.370181 log(1.950)=+0.667829
+
+[c2] led off[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0][uart] tick 18  (text=20 calc=20)[c1] CALC 006: sin(2.320)=+0.732231 cos(2.320)=-0.681056 log(2.320)=+0.841567
+
+[c2] led on[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c0][uart] tick 19  (text=20 calc=20)[c1] CALC 007: sin(2.690)=+0.436399 cos(2.690)=-0.899753 log(2.690)=+0.989541
+
+[c0] led off[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c0][uart] tick 20  (text=20 calc=20)[c1] CALC 008: sin(3.060)=+0.081502 cos(3.060)=-0.996673 log(3.060)=+1.118415
+
+[c0] led on[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c0][uart] tick 21  (text=80 calc=20)[c1] CALC 009: sin(3.430)=-0.284426 cos(3.430)=-0.958698 log(3.430)=+1.232560
+
+[c0] led off[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0][uart] tick 22  (text=80 calc=20)[c1] CALC 010: sin(3.800)=-0.611858 cos(3.800)=-0.790968 log(3.800)=+1.335001
+
+[c2] led on[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c0][uart] tick 23  (text=80 calc=20)[c1] CALC 011: sin(4.170)=-0.856478 cos(4.170)=-0.516183 log(4.170)=+1.427916
+
+[c2] led off[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c0][uart] tick 24  (text=80 calc=20)[c1] CALC 012: sin(4.540)=-0.985178 cos(4.540)=-0.171536 log(4.540)=+1.512927
+
+[c0] led on[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c0][uart] tick 25  (text=80 calc=20)[c1] CALC 013: sin(4.910)=-0.980538 cos(4.910)=+0.196327 log(4.910)=+1.591274
+
+[c0] led off[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0][uart] tick 26  (text=80 calc=20)[c1] CALC 014: sin(5.280)=-0.843188 cos(5.280)=+0.537619 log(5.280)=+1.663926
+
+[c0] led on[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c0][uart] tick 27  (text=80 calc=20)[c1] CALC 015: sin(5.650)=-0.591716 cos(5.650)=+0.806147 log(5.650)=+1.731656
+
+[c2] led off[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c0][uart] tick 28  (text=80 calc=20)[c1] CALC 016: sin(6.020)=-0.260158 cos(6.020)=+0.965566 log(6.020)=+1.795087
+
+[c2] led on[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c0][uart] tick 29  (text=80 calc=20)[c1] CALC 017: sin(6.390)=+0.106612 cos(6.390)=+0.994301 log(6.390)=+1.854734
+
+[c0] led off[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0][uart] tick 30  (text=80 calc=20)[c1] CALC 018: sin(6.760)=+0.458952 cos(6.760)=+0.888461 log(6.760)=+1.911023
+
+[c0] led on[c1] CALC 019: sin(7.130)=+0.749174 cos(7.130)=+0.662373 log(7.130)=+1.964311
+
+[c0][uart] tick 31  (text=140 calc=20)[c0][uart] tick 31  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 32  (text=140 calc=20)
+[c0] led on
+[c0][uart] tick 33  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 34  (text=140 calc=20)
+[c0] led on
+[c0][uart] tick 35  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 36  (text=140 calc=20)
+[c0] led on
+[c0][uart] tick 37  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 38  (text=140 calc=20)
+[c0] led on
+[c0][uart] tick 39  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 40  (text=140 calc=20)
+[c0] led on
+[c0][reader] pass 1: num.txt now 20080 bytes (+16400)
+[c2[c]2 TE XET t heh[c0][uuiakr tb]r otick 41  (texs t=1e6r0  tchael cl=a40) dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem ENDInfo : [rk3506.a7.2] MPIDR level2 0, cluster f, core 2, multi core, no SMT
+
+
+[c0] led on[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+---- num.txt on SD (20080 bytes, final dump) ----[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c2] TEX[cT 0the ed off brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+
+
+c0] led on[c1] CALC 000: sin(0.100)=+0.099833 cos(0.100)=+0.995004 log(0.100)=-2.302585[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+
+
+c0] led off[c1] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+
+
+c0] led on[c2] CALC 001: sin(0.470)=+0.452886 cos(0.470)=+0.891568 log(0.470)=-0.755023[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+
+
+c0] led off[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lError: error reading data: Success
+Error: Could not read DSCR register
+Error: Error waiting for cortex_a_exec_opcode
+Error: CMSIS-DAP command mismatch. Sent 0x12 received 0x5
+Info : SWD DPIDR 0x2ba01477
+Error: Failed semihosting operation (0x04)
+[rk3506.a7.0] target halted in ARM state due to undefined, current mode: Supervisor
+cpsr: 0x20010093 pc: 0x00200008, semihosting
+[rk3506.a7.0] MMU: enabled, D-Cache: enabled, I-Cache: enabled
+Error: [rk3506.a7.0] Polling failed, trying to reexamine
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am ENDshutdown command invoked
+
+smp-num-test             TIMEOUT after 600s
+
+[hw] smp-num-test did not pass — power-cycle the board before retrying.
+
+    Start 17: aarch32-luckfox-lyra-smp-mat-test-hwd

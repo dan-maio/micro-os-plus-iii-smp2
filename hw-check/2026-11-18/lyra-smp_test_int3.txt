@@ -1,0 +1,67 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 6
+    Start 6: aarch32-luckfox-lyra-smp_test_int3-hwd
+
+6: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/boards/luckfox-lyra/hw.sh" "smp_test_int3" "600"
+6: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin
+6: Environment variables: 
+6:  BUILD=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests
+6:  UOS_SMP_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/..
+6: Test timeout computed to be: 1200
+6: hw.sh: RK3506 full global reset (glb_srstn_1)...
+6: [hw] --- smp_test_int3 (600s max) ---
+6: xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+6: Licensed under GNU GPL v2
+6: For bug reports, read
+6: 	http://openocd.org/doc/doxygen/bugs.html
+6: Info : CMSIS-DAP: SWD supported
+6: Info : CMSIS-DAP: FW Version = 2.0.0
+6: Info : CMSIS-DAP: Interface Initialised (SWD)
+6: Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+6: Info : CMSIS-DAP: Interface ready
+6: Info : clock speed 4000 kHz
+6: Info : SWD DPIDR 0x2ba01477
+6: Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+6: Info : [rk3506.a7.0] Examination succeed
+6: Info : [rk3506.a7.0] gdb port disabled
+6: Info : [rk3506.a7.1] gdb port disabled
+6: Info : [rk3506.a7.2] gdb port disabled
+6: Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+6: [rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+6: cpsr: 0x200001d3 pc: 0x03f00180, semihosting
+6: [rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+6: RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+6: --- stage: JTAG clock -> 4000 kHz ---
+6: --- stage: halt cores 0 ---
+6: --- stage: enable semihosting on cores 0 ---
+6: --- stage: pre-load ---
+6: SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+6: --- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test_int3-hwd ---
+6: --- stage: resume cores 0 at 0x20003c ---
+6: Info : tcl server disabled
+6: Info : telnet server disabled
+6: 
+6: RESULT: PASS
+6: 
+6: smp_test_int3            PASS  (71s)
+6: 
+6: [hw] smp_test_int3 PASSED — power-cycle the board before the next test.
+1/1 Test #6: aarch32-luckfox-lyra-smp_test_int3-hwd ...   Passed   77.39 sec
+
+The following tests passed:
+	aarch32-luckfox-lyra-smp_test_int3-hwd
+
+100% tests passed out of 1
+
+Label Time Summary:
+hwd    =  77.39 sec*proc (1 test)
+
+Total Test time (real) =  77.40 sec
+rc=0

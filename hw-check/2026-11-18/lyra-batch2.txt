@@ -1,0 +1,674 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+      Start  1: aarch32-luckfox-lyra-smp_test_int-hwd
+ 1/15 Test  #1: aarch32-luckfox-lyra-smp_test_int-hwd ..........   Passed  225.42 sec
+      Start  2: aarch32-luckfox-lyra-smp_test_int2-hwd
+ 2/15 Test  #2: aarch32-luckfox-lyra-smp_test_int2-hwd .........   Passed  122.57 sec
+      Start  3: aarch32-luckfox-lyra-smp_test_int5-hwd
+ 3/15 Test  #3: aarch32-luckfox-lyra-smp_test_int5-hwd .........***Failed  621.76 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp_test_int5 (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f00170, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test_int5-hwd ---
+--- stage: resume cores 0 at 0x20003c ---
+Info : tcl server disabled
+Info : telnet server disabled
+
+
++=============================================+
+|  Luckfox Lyra µOS++ SMP TEST INT5           |
+|  Cortex-M0 -> A7 mailbox doorbell (AMP)     |
+|  M0 pings cores 1 & 2; core 0 logs          |
++=============================================+
+
+os_startup_initialize_free_store(0x6400000,16777216)
+first_fit_top(0x6400000,16777216) @0x21fbb0 app-heap
+out_of_memory_handler(0x207c20) @0x21fbb0 app-heap
+estd::pmr::set_default_resource(0x21fbb0) 
+rtos::memory::set_default_resource(0x21fbb0) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x21fb80 malloc
+
+µOS++ IIIe version 7.0.1
+Scheduler: µOS++ Luckfox Lyra B (RK3506, Cortex-A7 SMP), 3 CPU(s), 1ms tick, LDREX lock
+scheduler::start() 
+IRQs enabled (timer only)
+
+Core 0: setting up SRAM mailbox...
+Core 0: releasing core 1...
+Core 0: releasing core 2...
+Core 0: secondary-core startup signals sent.
+Waiting for cores 1 and 2 to join...
+cores: c1=3 c2=3 (after 0ms)
+
+Discovering mailbox CH1/CH2 GIC IDs (ISPENDR diff)...
+  CH1 -> GIC ID 171   CH2 -> GIC ID 172
+  routed: CH1->core1, CH2->core2
+
+SELF-TRIGGER mode: core 0 fires the mailboxes (M0 not required)
+
+Logger running on core 0. Cores 1/2 idle, waiting on mailbox IRQs.
+---------------------------------------------------------------
+
+core 1 received int from Cortex-M0  (#1, data=0x1D1D0000)
+core 2 received int from Cortex-M0  (#1, data=0x2D2D0000)
+core 1 received int from Cortex-M0  (#2, data=0x1D1D0001)
+core 2 received int from Cortex-M0  (#2, data=0x2D2D0001)
+core 1 received int from Cortex-M0  (#3, data=0x1D1D0002)
+core 2 received int from Cortex-M0  (#3, data=0x2D2D0002)
+core 1 received int from Cortex-M0  (#4, data=0x1D1D0003)
+core 2 received int from Cortex-M0  (#4, data=0x2D2D0003)
+core 1 received int from Cortex-M0  (#5, data=0x1D1D0004)
+core 2 received int from Cortex-M0  (#5, data=0x2D2D0004)
+core 1 received int from Cortex-M0  (#6, data=0x1D1D0005)
+core 2 received int from Cortex-M0  (#6, data=0x2D2D0005)
+core 1 received int from Cortex-M0  (#7, data=0x1D1D0006)
+core 2 received int from Cortex-M0  (#7, data=0x2D2D0006)
+core 1 received int from Cortex-M0  (#8, data=0x1D1D0007)
+core 2 received int from Cortex-M0  (#8, data=0x2D2D0007)
+core 1 received int from Cortex-M0  (#9, data=0x1D1D0008)
+core 2 received int from Cortex-M0  (#9, data=0x2D2D0008)
+core 1 received int from Cortex-M0  (#10, data=0x1D1D0009)
+core 2 received int from Cortex-M0  (#10, data=0x2D2D0009)
+core 1 received int from Cortex-M0  (#11, data=0x1D1D000A)
+core 2 received int from Cortex-M0  (#11, data=0x2D2D000A)
+core 1 received int from Cortex-M0  (#12, data=0x1D1D000B)
+core 2 received int from Cortex-M0  (#12, data=0x2D2D000B)
+core 1 received int from Cortex-M0  (#13, data=0x1D1D000C)
+core 2 received int from Cortex-M0  (#13, data=0x2D2D000C)
+core 1 received int from Cortex-M0  (#14, data=0x1D1D000D)
+core 2 received int from Cortex-M0  (#14, data=0x2D2D000D)
+core 1 received int from Cortex-M0  (#15, data=0x1D1D000E)
+core 2 received int from Cortex-M0  (#15, data=0x2D2D000E)
+core 1 received int from Cortex-M0  (#16, data=0x1D1D000F)
+core 2 received int from Cortex-M0  (#16, data=0x2D2D000F)
+core 1 received int from Cortex-M0  (#17, data=0x1D1D0010)
+core 2 received int from Cortex-M0  (#17, data=0x2D2D0010)
+led on  | M0 seq=-604144131
+core 1 received int from Cortex-M0  (#18, data=0x1D1D0011)
+core 2 received int from Cortex-M0  (#18, data=0x2D2D0011)
+core 1 received int from Cortex-M0  (#19, data=0x1D1D0012)
+core 2 received int from Cortex-M0  (#19, data=0x2D2D0012)
+core 1 received int from Cortex-M0  (#20, data=0x1D1D0013)
+core 2 received int from Cortex-M0  (#20, data=0x2D2D0013)
+core 1 received int from Cortex-M0  (#21, data=0x1D1D0014)
+core 2 received int from Cortex-M0  (#21, data=0x2D2D0014)
+core 1 received int from Cortex-M0  (#22, data=0x1D1D0015)
+core 2 received int from Cortex-M0  (#22, data=0x2D2D0015)
+core 1 received int from Cortex-M0  (#23, data=0x1D1D0016)
+core 2 received int from Cortex-M0  (#23, data=0x2D2D0016)
+core 1 received int from Cortex-M0  (#24, data=0x1D1D0017)
+core 2 received int from Cortex-M0  (#24, data=0x2D2D0017)
+core 1 received int from Cortex-M0  (#25, data=0x1D1D0018)
+core 2 received int from Cortex-M0  (#25, data=0x2D2D0018)
+beat 1/20
+core 1 received int from Cortex-M0  (#26, data=0x1D1D0019)
+core 2 received int from Cortex-M0  (#26, data=0x2D2D0019)
+core 1 received int from Cortex-M0  (#27, data=0x1D1D001A)
+core 2 received int from Cortex-M0  (#27, data=0x2D2D001A)
+core 1 received int from Cortex-M0  (#28, data=0x1D1D001B)
+core 2 received int from Cortex-M0  (#28, data=0x2D2D001B)
+core 1 received int from Cortex-M0  (#29, data=0x1D1D001C)
+core 2 received int from Cortex-M0  (#29, data=0x2D2D001C)
+core 1 received int from Cortex-M0  (#30, data=0x1D1D001D)
+core 2 received int from Cortex-M0  (#30, data=0x2D2D001D)
+core 1 received int from Cortex-M0  (#31, data=0x1D1D001E)
+core 2 received int from Cortex-M0  (#31, data=0x2D2D001E)
+core 1 received int from Cortex-M0  (#32, data=0x1D1D001F)
+core 2 received int from Cortex-M0  (#32, data=0x2D2D001F)
+core 1 received int from Cortex-M0  (#33, data=0x1D1D0020)
+core 2 received int from Cortex-M0  (#33, data=0x2D2D0020)
+core 1 received int from Cortex-M0  (#34, data=0x1D1D0021)
+core 2 received int from Cortex-M0  (#34, data=0x2D2D0021)
+core 1 received int from Cortex-M0  (#35, data=0x1D1D0022)
+core 2 received int from Cortex-M0  (#35, data=0x2D2D0022)
+led off | M0 seq=-604144131
+core 1 received int from Cortex-M0  (#36, data=0x1D1D0023)
+core 2 received int from Cortex-M0  (#36, data=0x2D2D0023)
+core 1 received int from Cortex-M0  (#37, data=0x1D1D0024)
+core 2 received int from Cortex-M0  (#37, data=0x2D2D0024)
+core 1 received int frombeat 2/20
+core 1 received int from Cortex-M0  (#38, data=0x1D1D0025)
+core 2 received int from Cortex-M0  (#38, data=0x2D2D0025)
+core 1 received int from Cortex-M0  (#39, data=0x1D1D0026)
+core 2 received int from Cortex-M0  (#39, data=0x2D2D0026)
+core 1 received int from Cortex-M0  (#40, data=0x1D1D0027)
+core 2 received int from Cortex-M0  (#40, data=0x2D2D0027)
+core 1 received int from Cortex-M0  (#41, data=0x1D1D0028)
+core 2 received int from Cortex-M0  (#41, data=0x2D2D0028)
+core 1 received int from Cortex-M0  (#42, data=0x1D1D0029)
+core 2 received int from Cortex-M0  (#42, data=0x2D2D0029)
+core 1 received int from Cortex-M0  (#43, data=0x1D1D002A)
+core 2 received int from Cortex-M0  (#43, data=0x2D2D002A)
+core 1 received int from Cortex-M0  (#44, data=0x1D1D002B)
+core 2 received int from Cortex-M0  (#44, data=0x2D2D002B)
+core 1 received int from Cortex-M0  (#45, data=0x1D1D002C)
+core 2 received int from Cortex-M0  (#45, data=0x2D2D002C)
+core 1 received int from Cortex-M0  (#46, data=0x1D1D002D)
+core 2 received int from Cortex-M0  (#46, data=0x2D2D002D)
+core 1 received int from Cortex-M0  (#47, data=0x1D1D002E)
+core 2 received int from Cortex-M0  (#47, data=0x2D2D002E)
+core 1 received int from Cortex-M0  (#48, data=0x1D1D002F)
+core 2 received int from Cortex-M0  (#48, data=0x2D2D002F)
+core 1 received int from Cortex-M0  (#49, data=0x1D1D0030)
+core 2 received int from Cortex-M0  (#49, data=0x2D2D0030)
+core 1 received int from Cortex-M0  (#50, data=0x1D1D0031)
+core 2 received int from Cortex-M0  (#50, data=0x2D2D0031)
+core 1 received int from Cortex-M0  (#51, data=0x1D1D0032)
+core 2 received int from Cortex-M0  (#51, data=0x2D2D0032)
+core 1 received int from Cortex-M0  (#52, data=0x1D1D0033)
+core 2 received int from Cortex-M0  (#52, data=0x2D2D0033)
+core 1 received int from Cortex-M0  (#53, data=0x1D1D0034)
+core 2 received int from Cortex-M0  (#53, data=0x2D2D0034)
+led on  | M0 seq=-604144131
+core 1 received int from Cortex-M0  (#54, data=0x1D1D0035)
+core 2 received int from Cortex-M0  (#54, data=0x2D2D0035)
+core 1 received int from Cortex-M0  (#55, data=0x1D1D0036)
+core 2 received int from Cortex-M0  (#55, data=0x2D2D0036)
+core 1 received int from Cortex-M0  (#56, data=0x1D1D0037)
+core 2 received int from Cortex-M0  (#56, data=0x2D2D0037)
+core 1 received int from Cortex-M0  (#57, data=0x1D1D0038)
+core 2 received int from Cortex-M0  (#57, data=0x2D2D0038)
+core 1 received int from Cortex-M0  (#58, data=0x1D1D0039)
+core 2 received int from Cortex-M0  (#58, data=0x2D2D0039)
+core 1 received int from Cortex-M0  (#59, data=0x1D1D003A)
+core 2 received int from Cortex-M0  (#59, data=0x2D2D003A)
+core 1 received int from Cortex-M0  (#60, data=0x1D1D003B)
+core 2 received int from Cortex-M0  (#60, data=0x2D2D003B)
+core 1 received int from Cortex-M0  (#61, data=0x1D1D003C)
+core 2 received int from Cortex-M0  (#61, data=0x2D2D003C)
+core 1 received int from Cortex-M0  (#62, data=0x1D1D003D)
+core 2 received int from Cortex-M0  (#62, data=0x2D2D003D)
+beat 3/20
+core 1 received int from Cortex-M0  (#63, data=0x1D1D003E)
+core 1 received int from Cortex-M0  (#64, data=0x1D1D003F)
+core 2 received int from Cortex-M0  (#63, data=0x2D2D003E)
+core 2 received int from Cortex-M0  (#64, data=0x2D2D003F)
+core 1 received int from Cortex-M0  (#65, data=0x1D1D0040)
+core 2 received int from Cortex-M0  (#65, data=0x2D2D0040)
+core 1 received int from Cortex-M0  (#66, data=0x1D1D0041)
+core 2 received int from Cortex-M0  (#66, data=0x2D2D0041)
+core 1 received int from Cortex-M0  (#67, data=0x1D1D0042)
+core 2 received int from Cortex-M0  (#67, data=0x2D2D0042)
+core 1 received int from Cortex-M0  (#68, data=0x1D1D0043)
+core 2 received int from Cortex-M0  (#68, data=0x2D2D0043)
+core 1 received int from Cortex-M0  (#69, data=0x1D1D0044)
+core 2 received int from Cortex-M0  (#69, data=0x2D2D0044)
+core 1 received int from Cortex-M0  (#70, data=0x1D1D0045)
+core 2 received int from Cortex-M0  (#70, data=0x2D2D0045)
+shutdown command invoked
+
+smp_test_int5            TIMEOUT after 600s
+
+[hw] smp_test_int5 did not pass — power-cycle the board before retrying.
+
+      Start  4: aarch32-luckfox-lyra-smp_test1-hwd
+ 4/15 Test  #4: aarch32-luckfox-lyra-smp_test1-hwd .............   Passed   72.27 sec
+      Start  5: aarch32-luckfox-lyra-smp_test2-hwd
+ 5/15 Test  #5: aarch32-luckfox-lyra-smp_test2-hwd .............   Passed   74.65 sec
+      Start  6: aarch32-luckfox-lyra-smp_test3-hwd
+ 6/15 Test  #6: aarch32-luckfox-lyra-smp_test3-hwd .............   Passed   73.34 sec
+      Start  7: aarch32-luckfox-lyra-smp_test4-hwd
+ 7/15 Test  #7: aarch32-luckfox-lyra-smp_test4-hwd .............   Passed  116.00 sec
+      Start  8: aarch32-luckfox-lyra-smp-num-test-hwd
+ 8/15 Test  #8: aarch32-luckfox-lyra-smp-num-test-hwd ..........***Failed  624.76 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp-num-test (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f00174, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-hwd ---
+--- stage: resume cores 0 at 0x20003c ---
+Info : tcl server disabled
+Info : telnet server disabled
+os_startup_initialize_free_store(0x6400000,16777216)
+first_fit_top(0x6400000,16777216) @0x288878 app-heap
+out_of_memory_handler(0x20739c) @0x288878 app-heap
+estd::pmr::set_default_resource(0x288878) 
+rtos::memory::set_default_resource(0x288878) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x288848 malloc
+file_descriptors_manager::file_descriptors_manager(16)=0x2911a4
+Device '/dev/sd' linked
+scheduler::start() 
+Core 0: setting up SRAM mailbox...
+Core 0: releasing core 1...
+Core 0: releasing core 2...
+Core 0: secondary-core startup signals sent.
+storage: SD card /dev/sd...
+storage: SD card ready, 125042688 sectors (~61056 MiB)
+Device '/dev/sd1' linked
+storage: FAT window LBA 0, 125042688 sectors (61056 MiB)
+storage: FAT volume mounted at /sd/, test files in /sd/tests/
+
++== µOS++ NUM TEST : console + pacer + SD + FPU, 3 cores ==+
+
+  FAT volume at /sd/, num.txt in /sd/tests/.
+  removed previous num.txt (if any)
+[c0][uart] tick 0  (text=0 calc=0)
+[c2] led on
+threads started (uart=high, led=above_normal, text=normal, compute=below_normal, reader=low)
+running for 60000 ms ...
+[c0][uart] tick 1  (text=0 calc=0)
+[c1] led off
+[c0][uart] tick 2  (text=0 calc=0)
+[c0] led on
+[c0][uart] tick 3  (text=0 calc=0)
+[c2] led off
+[c0][uart] tick 4  (text=0 calc=0)
+[c2] led on
+[c0][uart] tick 5  (text=0 calc=0)
+[c2] led off
+[c0][uart] tick 6  (text=0 calc=0)
+[c0] led on
+[c0][uart] tick 7  (text=0 calc=0)
+[c0] led off
+[c0][uart] tick 8  (text=0 calc=0)
+[c0] led on
+[c0][uart] tick 9  (text=0 calc=0)
+[c0] led off
+[c0][uart] tick 10  (text=0 calc=0)
+[c0] led on
+[c0][reader] pass 0: num.txt now 3680 bytes (+3680)
+[c1] TE[XcT0 ][uar t] tkick 11 n (text=u2m0p sc alc=20)h lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem ENDInfo : [rk3506.a7.2] MPIDR level2 0, cluster f, core 2, multi core, no SMT
+
+
+[c2] led off[c2] CALC 000: sin(0.100)=+0.099833 cos(0.100)=+0.995004 log(0.100)=-2.302585
+
+[c0][uart] tick 12  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c1] led on[c1] CALC 001: sin(0.470)=+0.452886 cos(0.470)=+0.891568 log(0.470)=-0.755023
+
+[c0][uart] tick 13  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c1] led off[c1] CALC 002: sin(0.840)=+0.744643 cos(0.840)=+0.667463 log(0.840)=-0.174353
+
+[c0][uart] tick 14  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0] led on[c1] CALC 003: sin(1.210)=+0.935616 cos(1.210)=+0.353019 log(1.210)=+0.190620
+
+[c0][uart] tick 15  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c0] led off[c1] CALC 004: sin(1.580)=+0.999958 cos(1.580)=-0.009204 log(1.580)=+0.457425
+
+[c0][uart] tick 16  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c0] led on[c1] CALC 005: sin(1.950)=+0.928960 cos(1.950)=-0.370181 log(1.950)=+0.667829
+
+[c0][uart] tick 17  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c1] led off[c1] CALC 006: sin(2.320)=+0.732231 cos(2.320)=-0.681056 log(2.320)=+0.841567
+
+[c0][uart] tick 18  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c1] led on[c1] CALC 007: sin(2.690)=+0.436399 cos(2.690)=-0.899753 log(2.690)=+0.989541
+
+[c0][uart] tick 19  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c0] led off[c1] CALC 008: sin(3.060)=+0.081502 cos(3.060)=-0.996673 log(3.060)=+1.118415
+
+[c0][uart] tick 20  (text=20 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c0] led on[c1] CALC 009: sin(3.430)=-0.284426 cos(3.430)=-0.958698 log(3.430)=+1.232560
+
+[c0][uart] tick 21  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c0] led off[c1] CALC 010: sin(3.800)=-0.611858 cos(3.800)=-0.790968 log(3.800)=+1.335001
+
+[c0][uart] tick 22  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0] led on[c1] CALC 011: sin(4.170)=-0.856478 cos(4.170)=-0.516183 log(4.170)=+1.427916
+
+[c0][uart] tick 23  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c1] led off[c1] CALC 012: sin(4.540)=-0.985178 cos(4.540)=-0.171536 log(4.540)=+1.512927
+
+[c0][uart] tick 24  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c1] led on[c1] CALC 013: sin(4.910)=-0.980538 cos(4.910)=+0.196327 log(4.910)=+1.591274
+
+[c0][uart] tick 25  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c0] led off[c1] CALC 014: sin(5.280)=-0.843188 cos(5.280)=+0.537619 log(5.280)=+1.663926
+
+[c0][uart] tick 26  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0] led on[c1] CALC 015: sin(5.650)=-0.591716 cos(5.650)=+0.806147 log(5.650)=+1.731656
+
+[c0][uart] tick 27  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c0] led off[c1] CALC 016: sin(6.020)=-0.260158 cos(6.020)=+0.965566 log(6.020)=+1.795087
+
+[c0][uart] tick 28  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c1] led on[c1] CALC 017: sin(6.390)=+0.106612 cos(6.390)=+0.994301 log(6.390)=+1.854734
+
+[c0][uart] tick 29  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c1] led off[c1] CALC 018: sin(6.760)=+0.458952 cos(6.760)=+0.888461 log(6.760)=+1.911023
+
+[c0][uart] tick 30  (text=80 calc=20)[c2] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0] led on[c1] CALC 019: sin(7.130)=+0.749174 cos(7.130)=+0.662373 log(7.130)=+1.964311
+
+[c0][uart] tick 31  (text=140 calc=20)[c0][uart] tick 31  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 32  (text=140 calc=20)
+[c0] led on
+[c0][uart] tick 33  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 34  (text=140 calc=20)
+[c0] led on
+[c0][uart] tick 35  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 36  (text=140 calc=20)
+[c0] led on
+[c0][uart] tick 37  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 38  (text=140 calc=20)
+[c0] led on
+[c0][uart] tick 39  (text=140 calc=20)
+[c0] led off
+[c0][uart] tick 40  (text=140 calc=20)
+[c0] led on
+[c0][reader] pass 1: num.txt now 20080 bytes (+16400)
+[c[1]c TEuXTa the tquick1  b r(otwen fox jumcpasl co=ver the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c1] led off[c1] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+
+[c1] TEX[T ]theu qu]ick brown   fox jum1ps ovcearl the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c2] led on[c1] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0][uart] tick 43  (text=160 calc=40)[c1] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c0] led off[c1] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c0][uart] tick 44  (text=160 calc=40)[c1] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c1] led on[c1] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c0][uart] tick 45  (text=160 calc=40)[c1] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+
+[c1] led off[c1] TEXT the quick brown fox jumps over the lazy dog ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum-ipsum END
+
+[c0][uart] tick 46  (text=160 calc=40)[c1] TEXT the quick brown fox jumps over the lazy dog dolor-dolor-dolor-dolor-dolor-dolor-dolor-dolor END
+
+[c0] led on[c1] TEXT the quick brown fox jumps over the lazy dog amet-amet-amet-amet-amet-amet-amet-amet-amet-am END
+
+[c1] TEXT the quick brown fox jumps over the lazy dog lorem-lorem-lorem-lorem-lorem-lorem-lorem-lorem END
+shutdown command invoked
+
+smp-num-test             TIMEOUT after 600s
+
+[hw] smp-num-test did not pass — power-cycle the board before retrying.
+
+      Start  9: aarch32-luckfox-lyra-smp-pipeline-test-hwd
+ 9/15 Test  #9: aarch32-luckfox-lyra-smp-pipeline-test-hwd .....   Passed  299.23 sec
+      Start 10: aarch32-luckfox-lyra-smp-pro-cons-test-hwd
+10/15 Test #10: aarch32-luckfox-lyra-smp-pro-cons-test-hwd .....   Passed  196.00 sec
+      Start 11: aarch32-luckfox-lyra-smp-mat-test-hwd
+11/15 Test #11: aarch32-luckfox-lyra-smp-mat-test-hwd ..........***Failed  621.78 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp-mat-test (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f00394, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-hwd ---
+--- stage: resume cores 0 at 0x20003c ---
+Info : tcl server disabled
+Info : telnet server disabled
+os_startup_initialize_free_store(0x6400000,16777216)
+first_fit_top(0x6400000,16777216) @0x2574d0 app-heap
+out_of_memory_handler(0x207d78) @0x2574d0 app-heap
+estd::pmr::set_default_resource(0x2574d0) 
+rtos::memory::set_default_resource(0x2574d0) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x2574a0 malloc
+scheduler::start() 
+Core 0: setting up SRAM mailbox...
+Core 0: releasing core 1...
+Core 0: releasing core 2...
+Core 0: secondary-core startup signals sent.
+
+=============================================
+  micro-os-plus-iii  smp-mat-test (all in RAM)
+  parallel block linear solver
+  N = 120, B = 20, cores = 3
+=============================================
+Starting Thread Pool of 10 worker threads...
+Submitting 20 tasks to the Thread Pool...
+Thread Pool: Worker executed task 0 on CPU 0
+Info : [rk3506.a7.1] MPIDR level2 0, cluster f, core 1, multi core, no SMT
+Thread Pool: Worker executed task 1 on CPU 1
+Info : [rk3506.a7.2] MPIDR level2 0, cluster f, core 2, multi core, no SMT
+Thread Pool: Worker executed task 2 on CPU 2
+Thread Pool: Worker executed task 3 on CPU 0
+Thread Pool: Worker executed task 4 on CPU 1
+Thread Pool: Worker executed task 5 on CPU 2
+Thread Pool: Worker executed task 6 on CPU 0
+Thread Pool: Worker executed task 7 on CPU 1
+Thread Pool: Worker executed task 8 on CPU 2
+Thread Pool: Worker executed task 9 on CPU 0
+Thread Pool: Worker executed task 19 on CPU 0
+Thread Pool: Worker executed task 11 on CPU 1
+Thread Pool: Worker executed task 12 on CPU 2
+Thread Pool: Worker executed task 13 on CPU 0
+Thread Pool: Worker executed task 14 on CPU 1
+Thread Pool: Worker executed task 15 on CPU 2
+Thread Pool: Worker executed task 16 on CPU 0
+Thread Pool: Worker executed task 17 on CPU 1
+Thread Pool: Worker executed task 18 on CPU 2
+Thread Pool: Worker executed task 10 on CPU 0
+Thread Pool demo finished. All 20 tasks executed successfully.
+
+Generating diagonally dominant 120 x 120 matrix...
+Starting parallel 3 -core block elimination...
+Block elimination finished.
+Solving full system using classical elimination...
+Classical elimination finished.
+
++---------------------------------------------------+
+| COMPARING BLOCK ELIMINATION VS CLASSICAL SOLVER  |
++---------------------------------------------------+
+x[0] Block = 0.003343 | Classic = 0.003343 | Abs Diff = 0.000000
+x[1] Block = 0.003210 | Classic = 0.003210 | Abs Diff = 0.000000
+x[2] Block = 0.003193 | Classic = 0.003193 | Abs Diff = 0.000000
+x[3] Block = 0.003209 | Classic = 0.003209 | Abs Diff = 0.000000
+x[4] Block = 0.002922 | Classic = 0.002922 | Abs Diff = 0.000000
+x[5] Block = 0.003019 | Classic = 0.003019 | Abs Diff = 0.000000
+x[6] Block = 0.003283 | Classic = 0.003283 | Abs Diff = 0.000000
+x[7] Block = 0.003196 | Classic = 0.003196 | Abs Diff = 0.000000
+x[8] Block = 0.003215 | Classic = 0.003215 | Abs Diff = 0.000000
+x[9] Block = 0.003282 | Classic = 0.003282 | Abs Diff = 0.000000
+x[10] Block = 0.003093 | Classic = 0.003093 | Abs Diff = 0.000000
+x[11] Block = 0.003500 | Classic = 0.003500 | Abs Diff = 0.000000
+x[12] Block = 0.003521 | Classic = 0.003521 | Abs Diff = 0.000000
+x[13] Block = 0.004170 | Classic = 0.004170 | Abs Diff = 0.000000
+x[14] Block = 0.003280 | Classic = 0.003280 | Abs Diff = 0.000000
+x[15] Block = 0.003685 | Classic = 0.003685 | Abs Diff = 0.000000
+x[16] Block = 0.003431 | Classic = 0.003431 | Abs Diff = 0.000000
+x[17] Block = 0.003808 | Classic = 0.003808 | Abs Diff = 0.000000
+x[18] Block = 0.003569 | Classic = 0.003569 | Abs Diff = 0.000000
+x[19] Block = 0.003504 | Classic = 0.003504 | Abs Diff = 0.000000
+x[20] Block = 0.003569 | Classic = 0.003569 | Abs Diff = 0.000000
+x[21] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+x[22] Block = 0.002927 | Classic = 0.002927 | Abs Diff = 0.000000
+x[23] Block = 0.003788 | Classic = 0.003788 | Abs Diff = 0.000000
+x[24] Block = 0.003486 | Classic = 0.003486 | Abs Diff = 0.000000
+x[25] Block = 0.003190 | Classic = 0.003190 | Abs Diff = 0.000000
+x[26] Block = 0.003291 | Classic = 0.003291 | Abs Diff = 0.000000
+x[27] Block = 0.003152 | Classic = 0.003152 | Abs Diff = 0.000000
+x[28] Block = 0.003313 | Classic = 0.003313 | Abs Diff = 0.000000
+x[29] Block = 0.003370 | Classic = 0.003370 | Abs Diff = 0.000000
+x[30] Block = 0.003147 | Classic = 0.003147 | Abs Diff = 0.000000
+x[31] Block = 0.003443 | Classic = 0.003443 | Abs Diff = 0.000000
+x[32] Block = 0.003093 | Classic = 0.003093 | Abs Diff = 0.000000
+x[33] Block = 0.003355 | Classic = 0.003355 | Abs Diff = 0.000000
+x[34] Block = 0.003485 | Classic = 0.003485 | Abs Diff = 0.000000
+x[35] Block = 0.002541 | Classic = 0.002541 | Abs Diff = 0.000000
+x[36] Block = 0.003829 | Classic = 0.003829 | Abs Diff = 0.000000
+x[37] Block = 0.003803 | Classic = 0.003803 | Abs Diff = 0.000000
+x[38] Block = 0.003037 | Classic = 0.003037 | Abs Diff = 0.000000
+x[39] Block = 0.004004 | Classic = 0.004004 | Abs Diff = 0.000000
+x[40] Block = 0.003734 | Classic = 0.003734 | Abs Diff = 0.000000
+x[41] Block = 0.003660 | Classic = 0.003660 | Abs Diff = 0.000000
+x[42] Block = 0.003792 | Classic = 0.003792 | Abs Diff = 0.000000
+x[43] Block = 0.003233 | Classic = 0.003233 | Abs Diff = 0.000000
+x[44] Block = 0.003311 | Classic = 0.003311 | Abs Diff = 0.000000
+x[45] Block = 0.002977 | Classic = 0.002977 | Abs Diff = 0.000000
+x[46] Block = 0.003304 | Classic = 0.003304 | Abs Diff = 0.000000
+x[47] Block = 0.003513 | Classic = 0.003513 | Abs Diff = 0.000000
+x[48] Block = 0.003623 | Classic = 0.003623 | Abs Diff = 0.000000
+x[49] Block = 0.003396 | Classic = 0.003396 | Abs Diff = 0.000000
+x[50] Block = 0.003458 | Classic = 0.003458 | Abs Diff = 0.000000
+x[51] Block = 0.003371 | Classic = 0.003371 | Abs Diff = 0.000000
+x[52] Block = 0.003164 | Classic = 0.003164 | Abs Diff = 0.000000
+x[53] Block = 0.003532 | Classic = 0.003532 | Abs Diff = 0.000000
+x[54] Block = 0.003636 | Classic = 0.003636 | Abs Diff = 0.000000
+x[55] Block = 0.003944 | Classic = 0.003944 | Abs Diff = 0.000000
+x[56] Block = 0.003592 | Classic = 0.003592 | Abs Diff = 0.000000
+x[57] Block = 0.003169 | Classic = 0.003169 | Abs Diff = 0.000000
+x[58] Block = 0.003511 | Classic = 0.003511 | Abs Diff = 0.000000
+x[59] Block = 0.003066 | Classic = 0.003066 | Abs Diff = 0.000000
+x[60] Block = 0.003175 | Classic = 0.003175 | Abs Diff = 0.000000
+x[61] Block = 0.003562 | Classic = 0.003562 | Abs Diff = 0.000000
+x[62] Block = 0.002659 | Classic = 0.002659 | Abs Diff = 0.000000
+x[63] Block = 0.003602 | Classic = 0.003602 | Abs Diff = 0.000000
+x[64] Block = 0.003036 | Classic = 0.003036 | Abs Diff = 0.000000
+x[65] Block = 0.003580 | Classic = 0.003580 | Abs Diff = 0.000000
+x[66] Block = 0.003361 | Classic = 0.003361 | Abs Diff = 0.000000
+x[67] Block = 0.002781 | Classic = 0.002781 | Abs Diff = 0.000000
+x[68] Block = 0.003216 | Classic = 0.003216 | Abs Diff = 0.000000
+x[69] Block = 0.003187 | Classic = 0.003187 | Abs Diff = 0.000000
+x[70] Block = 0.004606 | Classic = 0.004606 | Abs Diff = 0.000000
+x[71] Block = 0.003390 | Classic = 0.003390 | Abs Diff = 0.000000
+x[72] Block = 0.002917 | Classic = 0.002917 | Abs Diff = 0.000000
+x[73] Block = 0.003266 | Classic = 0.003266 | Abs Diff = 0.000000
+x[74] Block = 0.003139 | Classic = 0.003139 | Abs Diff = 0.000000
+x[75] Block = 0.003189 | Classic = 0.003189 | Abs Diff = 0.000000
+x[76] Block = 0.002743 | Classic = 0.002743 | Abs Diff = 0.000000
+x[77] Block = 0.003229 | Classic = 0.003229 | Abs Diff = 0.000000
+x[78] Block = 0.003516 | Classic = 0.003516 | Abs Diff = 0.000000
+x[79] Block = 0.002963 | Classic = 0.002963 | Abs Diff = 0.000000
+x[80] Block = 0.003640 | Classic = 0.003640 | Abs Diff = 0.000000
+x[81] Block = 0.003361 | Classic = 0.003361 | Abs Diff = 0.000000
+x[82] Block = 0.003759 | Classic = 0.003759 | Abs Diff = 0.000000
+x[83] Block = 0.003119 | Classic = 0.003119 | Abs Diff = 0.000000
+x[84] Block = 0.003322 | Classic = 0.003322 | Abs Diff = 0.000000
+x[85] Block = 0.003362 | Classic = 0.003362 | Abs Diff = 0.000000
+x[86] Block = 0.003174 | Classic = 0.003174 | Abs Diff = 0.000000
+x[87] Block = 0.003374 | Classic = 0.003374 | Abs Diff = 0.000000
+x[88] Block = 0.003255 | Classic = 0.003255 | Abs Diff = 0.000000
+x[89] Block = 0.003070 | Classic = 0.003070 | Abs Diff = 0.000000
+x[90] Block = 0.003496 | Classic = 0.003496 | Abs Diff = 0.000000
+x[91] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+x[92] Block = 0.003470 | Classic = 0.003470 | Abs Diff = 0.000000
+x[93] Block = 0.003455 | Classic = 0.003455 | Abs Diff = 0.000000
+x[94] Block = 0.003128 | Classic = 0.003128 | Abs Diff = 0.000000
+x[95] Block = 0.003788 | Classic = 0.003788 | Abs Diff = 0.000000
+x[96] Block = 0.004060 | Classic = 0.004060 | Abs Diff = 0.000000
+x[97] Block = 0.003034 | Classic = 0.003034 | Abs Diff = 0.000000
+x[98] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+x[99] Block = 0.003647 | Classic = 0.003647 | Abs Diff = 0.000000
+x[100] Block = 0.003197 | Classic = 0.003197 | Abs Diff = 0.000000
+x[101] Block = 0.002948 | Classic = 0.002948 | Abs Diff = 0.000000
+x[102] Block = 0.003072 | Classic = 0.003072 | Abs Diff = 0.000000
+shutdown command invoked
+
+smp-mat-test             TIMEOUT after 600s
+
+[hw] smp-mat-test did not pass — power-cycle the board before retrying.
+
+      Start 12: aarch32-luckfox-lyra-sd_test-hwd
+12/15 Test #12: aarch32-luckfox-lyra-sd_test-hwd ...............   Passed  171.55 sec
+      Start 13: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd
+13/15 Test #13: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd ...   Passed  455.78 sec
+      Start 14: aarch32-luckfox-lyra-clock-test-hwd
+14/15 Test #14: aarch32-luckfox-lyra-clock-test-hwd ............   Passed  102.95 sec
+      Start 15: aarch32-luckfox-lyra-mutex-stress-test-hwd
+15/15 Test #15: aarch32-luckfox-lyra-mutex-stress-test-hwd .....   Passed  140.93 sec
+
+80% tests passed, 3 tests failed out of 15
+
+Label Time Summary:
+hwd    = 3919.01 sec*proc (15 tests)
+
+Total Test time (real) = 3919.03 sec
+
+The following tests FAILED:
+	  3 - aarch32-luckfox-lyra-smp_test_int5-hwd (Failed)   hwd
+	  8 - aarch32-luckfox-lyra-smp-num-test-hwd (Failed)    hwd
+	 11 - aarch32-luckfox-lyra-smp-mat-test-hwd (Failed)    hwd
+Errors while running CTest

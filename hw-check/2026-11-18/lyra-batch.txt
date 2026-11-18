@@ -1,0 +1,6 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+      Start  1: aarch32-luckfox-lyra-smp_test5-hwd
+ 1/20 Test  #1: aarch32-luckfox-lyra-smp_test5-hwd .............   Passed  173.49 sec
+      Start  2: aarch32-luckfox-lyra-smp_test6-hwd
+ 2/20 Test  #2: aarch32-luckfox-lyra-smp_test6-hwd .............   Passed   80.38 sec
+      Start  3: aarch32-luckfox-lyra-smp_test7-hwd
