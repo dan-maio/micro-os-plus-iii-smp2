@@ -44,8 +44,8 @@
 // and the Pi 3 is wired to the Arasan; a test that uses the radio and the card
 // together names SDHOST for the card.
 //
-// All of them define `sd::SdCard` with the same eight methods; flatfs, FatFs'
-// diskio and the tests name only that.
+// All of them define `sd::SdCard` with the same eight methods; the posix-io
+// block device (sd-block-device.h) and the tests name only that.
 //
 // The third one has no silicon behind it and is not a simulation of the other
 // two: it is a block device that happens to be a file, which is all any of

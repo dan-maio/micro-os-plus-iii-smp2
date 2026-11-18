@@ -1,15 +1,14 @@
 # -----------------------------------------------------------------------------
 # micro-os-plus-iii-devices-storage -- the chip-independent storage drivers of
-# µOS++ III: the flatfs file system, the FatFs disk glue and the SD card
-# interface (sd.hpp, which selects the controller back-end a device package
-# provides with SD_BACKEND_*).
+# µOS++ III: the SD card interface (sd.hpp, which selects the controller
+# back-end a device package provides with SD_BACKEND_*) and the card as a
+# µOS++ POSIX I/O block device, for the @xpacks/chan-fatfs file system.
 #
 # Used by the device packages (micro-os-plus-iii-devices-bcm283x, -rk3506);
 # it reads no board and no chip. The back-end headers (sd_sdhost.hpp,
 # sd_dwmmc.hpp, ...) come from the device package that links this one.
 #
-# Exports: micro-os-plus::devices-storage (flatfs, FatFs R0.15a and its glue,
-# sd.hpp), micro-os-plus::devices-storage-sd (sd.hpp only) and
+# Exports: micro-os-plus::devices-storage-sd (sd.hpp) and
 # micro-os-plus::devices-storage-posix (the SD card as a posix-io block device).
 # -----------------------------------------------------------------------------
 cmake_minimum_required (VERSION 3.20)
@@ -18,28 +17,7 @@ project (micro-os-plus-iii-devices-storage LANGUAGES C CXX)
 
 set (UOS_DEVICES_STORAGE_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" CACHE INTERNAL "")
 
-if (NOT TARGET micro-os-plus::devices-storage)
-  add_library (micro-os-plus-iii-devices-storage-interface INTERFACE)
-  target_include_directories (
-    micro-os-plus-iii-devices-storage-interface
-    INTERFACE
-      "${CMAKE_CURRENT_SOURCE_DIR}/include"
-      "${CMAKE_CURRENT_SOURCE_DIR}/fatfs"
-  )
-  target_sources (
-    micro-os-plus-iii-devices-storage-interface
-    INTERFACE
-      "${CMAKE_CURRENT_SOURCE_DIR}/src/flatfs.cpp"
-      "${CMAKE_CURRENT_SOURCE_DIR}/fatfs/ff.c"
-      "${CMAKE_CURRENT_SOURCE_DIR}/fatfs/diskio_sd.cpp"
-      "${CMAKE_CURRENT_SOURCE_DIR}/fatfs/fatfs_hw.cpp"
-  )
-  add_library (micro-os-plus::devices-storage
-               ALIAS micro-os-plus-iii-devices-storage-interface)
-endif ()
-
-# The SD card interface alone (sd.hpp): for a consumer that brings the card
-# driver and wants none of the file systems above.
+# The SD card interface (sd.hpp): for a consumer that brings the card driver.
 if (NOT TARGET micro-os-plus::devices-storage-sd)
   add_library (micro-os-plus-iii-devices-storage-sd-interface INTERFACE)
   target_include_directories (
