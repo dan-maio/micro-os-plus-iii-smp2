@@ -8,7 +8,7 @@ targets it needs.
 
 ## Targets
 
-- `micro-os-plus::devices-rk3506` (SD over DW-MMC, with `SD_BACKEND_DWMMC`)
+- `micro-os-plus::devices-rk3506-sd-posix` (the SD host over DW-MMC, with `SD_BACKEND_DWMMC`, as a µOS++ POSIX I/O block device)
 
 ## Origin
 

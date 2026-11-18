@@ -11,8 +11,8 @@
  * phases and the clock source get lost.
  *
  * What this file adds is only the shape the rest of the workspace expects:
- * `sd::SdCard`'s eight methods, forwarding to `sdcard::SdMmc`. flatfs, FatFs'
- * diskio and the tests compile against it unchanged, and nothing a Raspberry
+ * `sd::SdCard`'s eight methods, forwarding to `sdcard::SdMmc`. The posix-io
+ * block device and the tests compile against it unchanged, and nothing a Raspberry
  * Pi builds is touched by its existence.
  */
 #pragma once
