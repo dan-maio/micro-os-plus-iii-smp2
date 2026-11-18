@@ -1,0 +1,51 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/wt-smp/micro-os-plus-iii/tests/build/aarch64-rpi3b-cmake-gcc-release
+    Start 17: aarch64-rpi3b-smp-pipeline-test-qemu
+1/1 Test #17: aarch64-rpi3b-smp-pipeline-test-qemu ...***Failed   22.31 sec
+smp-pipeline-test        
+QEMU 9.2.4 monitor - type 'help' for more information
+(qemu) 
++== RPi 3 B µOS++ SMP PIPELINE TEST (AArch64) ==+
+13 threads, 4 cores, shared queues, SD-card persistence & yield() stress
+
+Initialising SD card via SDHCI @0x3F300000...
+  SD card ready: 8388608 sectors (~4096 MiB)
+  flatfs volume formatted, pipe.dat ready
+join: c1=3 c2=3 c3=3 (0 ms)
+13 pipeline threads successfully started!
+running pipeline for 30000 ms ...
+[t= 1201 ms] pipe: in_q= 0 sd_q= 2 | prod=111 proc=111 sd=109 aud=109 | yields: P=0 W=6722 C=27 S=58 A=109
+[t= 2202 ms] pipe: in_q= 0 sd_q= 1 | prod=220 proc=220 sd=219 aud=214 | yields: P=0 W=13552 C=53 S=113 A=214
+[t= 3202 ms] pipe: in_q= 0 sd_q= 0 | prod=328 proc=328 sd=327 aud=327 | yields: P=0 W=20392 C=81 S=172 A=327
+[t= 4203 ms] pipe: in_q= 0 sd_q= 0 | prod=438 proc=438 sd=436 aud=434 | yields: P=0 W=27256 C=108 S=229 A=434
+[t= 5204 ms] pipe: in_q= 1 sd_q= 0 | prod=548 proc=547 sd=546 aud=546 | yields: P=0 W=34121 C=135 S=290 A=546
+[t= 6205 ms] pipe: in_q= 1 sd_q= 1 | prod=658 proc=657 sd=655 aud=652 | yields: P=0 W=41042 C=163 S=350 A=652
+[t= 7206 ms] pipe: in_q= 1 sd_q= 0 | prod=767 proc=766 sd=765 aud=760 | yields: P=0 W=47870 C=190 S=409 A=760
+[t= 8206 ms] pipe: in_q= 0 sd_q= 1 | prod=875 proc=875 sd=874 aud=870 | yields: P=0 W=54688 C=218 S=468 A=870
+[t= 9207 ms] pipe: in_q= 0 sd_q= 4 | prod=986 proc=986 sd=982 aud=982 | yields: P=0 W=61572 C=245 S=524 A=982
+[t=10207 ms] pipe: in_q= 0 sd_q= 3 | prod=1094 proc=1094 sd=1091 aud=1091 | yields: P=0 W=68461 C=272 S=583 A=1091
+[t=11207 ms] pipe: in_q= 0 sd_q= 2 | prod=1203 proc=1203 sd=1199 aud=1199 | yields: P=0 W=75305 C=300 S=640 A=1199
+[t=12207 ms] pipe: in_q= 0 sd_q= 2 | prod=1312 proc=1312 sd=1310 aud=1310 | yields: P=0 W=82154 C=326 S=697 A=1310
+[t=13207 ms] pipe: in_q= 0 sd_q= 1 | prod=1421 proc=1421 sd=1418 aud=1414 | yields: P=0 W=88990 C=354 S=755 A=1414
+[t=14208 ms] pipe: in_q= 0 sd_q= 2 | prod=1531 proc=1531 sd=1529 aud=1525 | yields: P=0 W=95878 C=381 S=816 A=1525
+[t=15208 ms] pipe: in_q= 1 sd_q= 1 | prod=1640 proc=1639 sd=1638 aud=1638 | yields: P=0 W=102711 C=408 S=875 A=1638
+[t=16208 ms] pipe: in_q= 0 sd_q= 1 | prod=1749 proc=1749 sd=1746 aud=1746 | yields: P=0 W=109588 C=436 S=935 A=1746
+[t=17209 ms] pipe: in_q= 0 sd_q= 1 | prod=1857 proc=1857 sd=1855 aud=1855 | yields: P=0 W=116455 C=463 S=992 A=1855
+[t=18212 ms] pipe: in_q= 0 sd_q= 0 | prod=1968 proc=1968 sd=1964 aud=1963 | yields: P=0 W=123336 C=490 S=1049 A=1963
+[t=19213 ms] pipe: in_q= 0 sd_q= 2 | prod=2077 proc=2077 sd=2073 aud=2068 | yields: P=0 W=130199 C=518 S=1104 A=2068
+[t=20214 ms] pipe: in_q= 0 sd_q= 0 | prod=2185 proc=2185 sd=2184 aud=2181 | yields: P=0 W=137043 C=546 S=1162 A=2181
+[t=21215 ms] pipe: in_q= 0 sd_q= 0 | prod=2295 proc=2295 sd=2292 aud=2288 | yields: P=0 W=143932 C=572 S=1220 A=2288
+NO RESULT (rc=1)  (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/wt-smp/micro-os-plus-iii/tests/build/aarch64-rpi3b-cmake-gcc-release/platform-bin/port-tests/test/.qemu-logs/smp-pipeline-test.log)
+
+qemu suite: 0 passed, 0 skipped, 1 failed
+
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+qemu    =  22.31 sec*proc (1 test)
+
+Total Test time (real) =  22.31 sec
+
+The following tests FAILED:
+	 17 - aarch64-rpi3b-smp-pipeline-test-qemu (Failed)     qemu
+Errors while running CTest

@@ -1,0 +1,18 @@
+configs with unexpected changes: 0
+aarch32-luckfox-lyra-cmake-gcc-debug build=0 clock-test-image=2 | No tests were found!!!
+aarch32-luckfox-lyra-cmake-gcc-release build=0 clock-test-image=2 | No tests were found!!!
+aarch32-rpi3b-cmake-gcc-debug build=0 clock-test-image=2 | 100% tests passed out of 20
+aarch32-rpi3b-cmake-gcc-release build=0 clock-test-image=2 | 100% tests passed out of 20
+aarch32-rpi-zero-2w-cmake-gcc-debug build=0 clock-test-image=2 | 100% tests passed out of 20
+aarch32-rpi-zero-2w-cmake-gcc-release build=0 clock-test-image=2 | 100% tests passed out of 20
+aarch64-rpi3b-cmake-gcc-debug build=0 clock-test-image=2 | 100% tests passed out of 20
+aarch64-rpi3b-cmake-gcc-release build=0 clock-test-image=2 | 95% tests passed, 1 tests failed out of 20
+	 24 - aarch64-rpi3b-smp-pipeline-test-qemu (Timeout)    qemu
+aarch64-rpi4b-cmake-gcc-debug build=0 clock-test-image=2 | 100% tests passed out of 20
+aarch64-rpi4b-cmake-gcc-release build=0 clock-test-image=2 | 100% tests passed out of 20
+aarch64-rpi-zero-2w-cmake-gcc-debug build=0 clock-test-image=2 | 100% tests passed out of 20
+aarch64-rpi-zero-2w-cmake-gcc-release build=0 clock-test-image=2 | 100% tests passed out of 20
+native-cmake-sys-debug build=0 clock-test-image=0 | 100% tests passed out of 14
+native-cmake-sys-release build=0 clock-test-image=0 | 100% tests passed out of 14
+
+[exited with code 0]

@@ -72,6 +72,17 @@ bug, to be investigated separately.
 `aarch64-rpi-zero-2w-smp-pipeline-test-qemu`, release: once, all threads
 stalled after 9.2 s (no output, no assertion); 0 in 12 repeats.
 
+`aarch64-rpi3b-smp-pipeline-test-qemu`, release (step 6b-8 check,
+2026-11-18): all threads stalled at 16 s of the 30 s run (no output, no
+assertion, until the 1000 s timeout); in 12 repeats once more, at 28 s. Proven
+pre-existing on the same machine and configuration with the pre-alignment
+code (wt-smp, flatfs, its own port copy; step6-check/6b8/prove-pipeline/): 24
+runs, 22 passed, 1 QEMU exit with rc=1 and no RESULT line at 21 s (an
+assertion, invisible on AArch64 before the 6b-5 semihosting fix), 1 hang past
+150 s. The same mid-run fault as the zero-2w stall above: a kernel/port bug,
+like the in_handler_mode assertion, to be investigated separately; not caused
+by the posix-io/Chan FatFs storage of step 5c.
+
 ## Setup fixes made before the baseline (no repository change)
 
 - `aarch64-rpi4b-cmake-gcc-debug/release` had never been `xpm install --config`'d

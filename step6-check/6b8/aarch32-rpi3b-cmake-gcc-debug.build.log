@@ -1,0 +1,15 @@
+> cmake -S . -B build/aarch32-rpi3b-cmake-gcc-debug -G Ninja -D CMAKE_BUILD_TYPE=Debug -D PLATFORM_NAME=aarch32-rpi3b
+-- µOS++ III micro-os-plus-iii-aarch32: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32
+-- µOS++ III micro-os-plus-iii-devices-storage: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-storage
+-- µOS++ III micro-os-plus-iii-devices-bcm283x: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-bcm283x
+-- µOS++ IIIe aarch32 port: micro-os-plus::aarch32
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III aarch32 board tests: 32 targets, board=rpi3b, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/rpi3b
+-- AArch32 rpi3b: port tests + harness suites registered (aarch32-rpi3b)
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+> cmake --build build/aarch32-rpi3b-cmake-gcc-debug
+[0/2] Re-checking globbed directories...
+ninja: no work to do.
+# (last 200 lines kept; warnings+errors in the full log: 0)
