@@ -1,0 +1,201 @@
+      |                                   ^~~~~~~~~~
+[218/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/mmu.cpp.obj'
+[219/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x/soc/bcm2837/src/mailbox.cpp.obj'
+[220/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/timer_arm.cpp.obj'
+[221/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[222/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp:67:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   67 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[223/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[224/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[225/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[226/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[227/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[228/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[229/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[230/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[231/372] Linking CXX executable platform-bin/port-tests/test/smp-num-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-num-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 176612	   1256	70174000	70351868	4317bfc	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-num-test-hwd.elf
+[232/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[233/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[234/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[235/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[236/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[237/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[238/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[239/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[240/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[241/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[242/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/portable-test-end.cpp.obj
+[243/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[244/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/ffsystem.cpp.obj'
+[245/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[246/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/platforms/aarch32-rpi-zero-2w/src/platform-support.cpp.obj
+[247/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[248/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[249/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/utils.cpp.obj'
+[250/372] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/source/ffunicode.c.obj'
+[251/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[252/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[253/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[254/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x/drivers/aarch32/src/sd.cpp.obj'
+[255/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[256/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[257/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[258/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[259/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[260/372] Building C object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[261/372] Building C object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[262/372] Building C object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[263/372] Building C object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[264/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[265/372] Building C object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[266/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-storage/posix-io/src/sd-block-device.cpp.obj'
+[267/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/portable-test-storage.cpp.obj
+[268/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.obj'
+[269/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/rpi-zero-2w/src/test-smp-boot.cpp.obj
+[270/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[271/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[272/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[273/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[274/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[275/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[276/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[277/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[278/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[279/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[280/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[281/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/sources/smp-pipeline-test/main.cpp.obj
+[282/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[283/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[284/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[285/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[286/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[287/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[288/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[289/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[290/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/handlers.cpp.obj'
+[291/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/smp_secondary.cpp.obj'
+[292/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[293/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[294/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[295/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[296/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/mmu.cpp.obj'
+[297/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp:23:35: warning: '__smp_spin' initialized and declared 'extern'
+   23 | extern "C" volatile std::uint32_t __smp_spin[OS_NCPU] = {0, 0, 0, 0};
+      |                                   ^~~~~~~~~~
+[298/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[299/372] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/startup.S.obj'
+[300/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[301/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp:67:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   67 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[302/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[303/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x/soc/bcm2837/src/mailbox.cpp.obj'
+[304/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[305/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[306/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[307/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/timer_arm.cpp.obj'
+[308/372] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/source/ff.c.obj'
+[309/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[310/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[311/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[312/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[313/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[314/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[315/372] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 214984	   1256	70068800	70285040	43076f0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-qemu.elf
+[316/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[317/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[318/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[319/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[320/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[321/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/portable-test-end.cpp.obj
+[322/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[323/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[324/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/platforms/aarch32-rpi-zero-2w/src/platform-support.cpp.obj
+[325/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/ffsystem.cpp.obj'
+[326/372] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/source/ffunicode.c.obj'
+[327/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[328/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x/drivers/aarch32/src/sd.cpp.obj'
+[329/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[330/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[331/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/utils.cpp.obj'
+[332/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[333/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[334/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[335/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[336/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[337/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[338/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-storage/posix-io/src/sd-block-device.cpp.obj'
+[339/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[340/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/portable-test-storage.cpp.obj
+[341/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[342/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[343/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.obj'
+[344/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[345/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-qemu.dir/portable-test-end.cpp.obj
+[346/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[347/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-pro-cons-test-hwd.dir/portable-test-end.cpp.obj
+[348/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-hwd.dir/portable-test-end.cpp.obj
+[349/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/portable-test-end.cpp.obj
+[350/372] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[351/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-test-qemu.dir/portable-test-end.cpp.obj
+[352/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/sources/sd_test/main.cpp.obj
+[353/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/__/sources/sd_test/main.cpp.obj
+[354/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/portable-test-end.cpp.obj
+[355/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/portable-test-end.cpp.obj
+[356/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/portable-test-storage.cpp.obj
+[357/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-qemu.dir/portable-test-storage.cpp.obj
+[358/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/portable-test-end.cpp.obj
+[359/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/portable-test-storage.cpp.obj
+[360/372] Linking CXX executable platform-bin/port-tests/test/sd_test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sd_test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 163076	   1252	69804560	69968888	42ba3f8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-qemu.elf
+[361/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/portable-test-storage.cpp.obj
+[362/372] Linking CXX executable platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 114316	   1252	69844224	69959792	42b8070	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pro-cons-test-qemu.elf
+[363/372] Linking CXX executable platform-bin/port-tests/test/sd_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sd_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 170404	   1252	69804560	69976216	42bc098	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-hwd.elf
+[364/372] Linking CXX executable platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 121644	   1252	69844224	69967120	42b9d10	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pro-cons-test-hwd.elf
+[365/372] Linking CXX executable platform-bin/port-tests/test/smp-mat-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 103500	   1260	70046928	70151688	42e6e08	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-qemu.elf
+[366/372] Linking CXX executable platform-bin/port-tests/test/smp-mat-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 110828	   1260	70046928	70159016	42e8aa8	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-hwd.elf
+[367/372] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-pipeline-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/source/ff.c.obj'
+[368/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/sources/smp-mat-sdcard-test/main.cpp.obj
+[369/372] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/sources/smp-mat-sdcard-test/main.cpp.obj
+[370/372] Linking CXX executable platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-pipeline-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 222328	   1256	70068800	70292384	43093a0	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-pipeline-test-hwd.elf
+[371/372] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 182276	   1264	70519808	70703348	436d8f4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+[372/372] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 175012	   1264	70519808	70696084	436bc94	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+# (last 200 lines kept; warnings+errors in the full log: 30)

@@ -1,0 +1,201 @@
+[2191/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[2192/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[2193/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[2194/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[2195/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[2196/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[2197/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[2198/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[2199/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[2200/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-storage/posix-io/src/sd-block-device.cpp.obj'
+[2201/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[2202/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/portable-test-storage.cpp.obj
+[2203/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[2204/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.obj'
+[2205/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[2206/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/rpi3b/src/test-smp-boot.cpp.obj
+[2207/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[2208/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[2209/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[2210/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[2211/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[2212/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[2213/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[2214/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[2215/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[2216/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[2217/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[2218/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[2219/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[2220/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[2221/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[2222/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[2223/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/sources/smp-mat-sdcard-test/main.cpp.obj
+[2224/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[2225/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[2226/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[2227/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[2228/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/handlers.cpp.obj'
+[2229/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[2230/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/mmu.cpp.obj'
+[2231/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/smp_secondary.cpp.obj'
+[2232/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp:23:35: warning: '__smp_spin' initialized and declared 'extern'
+   23 | extern "C" volatile std::uint32_t __smp_spin[OS_NCPU] = {0, 0, 0, 0};
+      |                                   ^~~~~~~~~~
+[2233/2367] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/startup.S.obj'
+[2234/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[2235/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x/soc/bcm2837/src/mailbox.cpp.obj'
+[2236/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[2237/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[2238/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[2239/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[2240/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[2241/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp:67:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   67 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[2242/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[2243/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[2244/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/timer_arm.cpp.obj'
+[2245/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[2246/2367] Building C object 'platform-bin/port-tests/test/CMakeFiles/sd_test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/source/ff.c.obj'
+[2247/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[2248/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[2249/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[2250/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[2251/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[2252/2367] Linking CXX executable platform-bin/port-tests/test/sd_test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/sd_test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 170404	   1252	69804560	69976216	42bc098	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-hwd.elf
+[2253/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[2254/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[2255/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[2256/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/portable-test-end.cpp.obj
+[2257/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[2258/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[2259/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[2260/2367] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/source/ffunicode.c.obj'
+[2261/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[2262/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[2263/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/ffsystem.cpp.obj'
+[2264/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[2265/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/utils.cpp.obj'
+[2266/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[2267/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[2268/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[2269/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[2270/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[2271/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x/drivers/aarch32/src/sd.cpp.obj'
+[2272/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.obj
+[2273/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.obj
+[2274/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[2275/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[2276/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[2277/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.obj
+[2278/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.obj
+[2279/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[2280/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.obj
+[2281/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.obj
+[2282/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-storage/posix-io/src/sd-block-device.cpp.obj'
+[2283/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[2284/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.obj'
+[2285/2367] Building C object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.obj
+[2286/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/portable-test-storage.cpp.obj
+[2287/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[2288/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[2289/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch32/micro-os-plus-iii-aarch32/test/rpi3b/src/test-smp-boot.cpp.obj
+[2290/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[2291/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[2292/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[2293/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[2294/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[2295/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[2296/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[2297/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[2298/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[2299/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[2300/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[2301/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[2302/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[2303/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[2304/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[2305/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[2306/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/context_switch.cpp.obj'
+[2307/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/semihosting-exit.cpp.obj'
+[2308/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/smp_secondary.cpp.obj'
+[2309/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[2310/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[2311/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[2312/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/handlers.cpp.obj'
+[2313/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/test_smpl/src/board-contract.cpp.obj
+[2314/2367] Building ASM object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/startup.S.obj'
+[2315/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/mmu.cpp.obj'
+[2316/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp: In function 'void {anonymous}::release_one(unsigned int)':
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/smp.cpp:67:50: warning: '++' expression of 'volatile'-qualified type is deprecated [-Wvolatile]
+   67 |         for (volatile unsigned d = 0; d < 50u; ++d) { }
+      |                                                  ^
+[2317/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[2318/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp.obj'
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/port_sys.cpp:23:35: warning: '__smp_spin' initialized and declared 'extern'
+   23 | extern "C" volatile std::uint32_t __smp_spin[OS_NCPU] = {0, 0, 0, 0};
+      |                                   ^~~~~~~~~~
+[2319/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/semihosting/c-syscalls-semihosting.cpp.obj
+[2320/2367] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-qemu.dir/__/xpacks/@xpacks/chan-fatfs/source/ff.c.obj'
+[2321/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x/soc/bcm2837/src/mailbox.cpp.obj'
+[2322/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/sources/smp-mat-sdcard-test/main.cpp.obj
+[2323/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[2324/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/timer_arm.cpp.obj'
+[2325/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/newlib/c-newlib-reent.cpp.obj
+[2326/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.obj
+[2327/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[2328/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[2329/2367] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 175012	   1264	70519808	70696084	436bc94	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.elf
+[2330/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[2331/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[2332/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[2333/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[2334/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[2335/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[2336/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/platforms/aarch32-rpi3b/src/platform-support.cpp.obj
+[2337/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.obj
+[2338/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[2339/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/portable-test-end.cpp.obj
+[2340/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/exception_handler.cpp.obj'
+[2341/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[2342/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[2343/2367] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/source/ffunicode.c.obj'
+[2344/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/ffsystem.cpp.obj'
+[2345/2367] Building the AArch64->AArch32 QEMU boot shim
+[2346/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/utils.cpp.obj'
+[2347/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/test/boards/rpi-zero-2w/src/rtos/port_isr.cpp.obj'
+[2348/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[2349/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[2350/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[2351/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[2352/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[2353/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-bcm283x/drivers/aarch32/src/sd.cpp.obj'
+[2354/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+[2355/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[2356/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.obj'
+[2357/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[2358/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-storage/posix-io/src/sd-block-device.cpp.obj'
+[2359/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[2360/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[2361/2367] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/portable-test-storage.cpp.obj
+[2362/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch32/src/rtos/os-core.cpp.obj'
+[2363/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[2364/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[2365/2367] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[2366/2367] Building C object 'platform-bin/port-tests/test/CMakeFiles/smp-mat-sdcard-test-hwd.dir/__/xpacks/@xpacks/chan-fatfs/source/ff.c.obj'
+[2367/2367] Linking CXX executable platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/arm-none-eabi-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/bin/ld: warning: platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 182276	   1264	70519808	70703348	436d8f4	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-hwd.elf
+# (last 200 lines kept; warnings+errors in the full log: 98)

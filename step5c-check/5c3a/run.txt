@@ -1,0 +1,17 @@
+configs with unexpected changes: 0
+aarch32-luckfox-lyra-cmake-gcc-debug build=0 | No tests were found!!!
+aarch32-luckfox-lyra-cmake-gcc-release build=0 | No tests were found!!!
+aarch32-rpi3b-cmake-gcc-debug build=0 | 100% tests passed out of 19
+aarch32-rpi3b-cmake-gcc-release build=0 | 100% tests passed out of 19
+aarch32-rpi-zero-2w-cmake-gcc-debug build=0 | 100% tests passed out of 19
+aarch32-rpi-zero-2w-cmake-gcc-release build=0 | 100% tests passed out of 19
+aarch64-rpi3b-cmake-gcc-debug build=0 | 100% tests passed out of 19
+aarch64-rpi3b-cmake-gcc-release build=0 | 100% tests passed out of 19
+aarch64-rpi4b-cmake-gcc-debug build=0 | 100% tests passed out of 19
+aarch64-rpi4b-cmake-gcc-release build=0 | 100% tests passed out of 19
+aarch64-rpi-zero-2w-cmake-gcc-debug build=0 | 100% tests passed out of 19
+aarch64-rpi-zero-2w-cmake-gcc-release build=0 | 100% tests passed out of 19
+native-cmake-sys-debug build=0 | 100% tests passed out of 13
+native-cmake-sys-release build=0 | 100% tests passed out of 13
+
+[exited with code 0]
