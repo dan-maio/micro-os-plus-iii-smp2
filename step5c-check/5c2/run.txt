@@ -1,0 +1,25 @@
+configs with unexpected changes: 0
+aarch32-luckfox-lyra-cmake-gcc-debug build=0 hwd-elfs=2 | No tests were found!!! | 
+aarch32-luckfox-lyra-cmake-gcc-release build=0 hwd-elfs=2 | No tests were found!!! | 
+aarch32-rpi3b-cmake-gcc-debug build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch32-rpi3b-cmake-gcc-release build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch32-rpi-zero-2w-cmake-gcc-debug build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch32-rpi-zero-2w-cmake-gcc-release build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch64-rpi3b-cmake-gcc-debug build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch64-rpi3b-cmake-gcc-release build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch64-rpi4b-cmake-gcc-debug build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch64-rpi4b-cmake-gcc-release build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch64-rpi-zero-2w-cmake-gcc-debug build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+aarch64-rpi-zero-2w-cmake-gcc-release build=0 hwd-elfs=2 | The following tests passed:
+100% tests passed out of 6 | sd_test: the SD card through  sd_test: SD verified round-trip to/from SD: OK verdict: pass 
+
+[exited with code 1]

@@ -1,0 +1,234 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added setup test aarch32-rpi-zero-2w-sd_test-qemu-sd-make required by fixture aarch32-rpi-zero-2w-sd_test-qemu-sd
+Added cleanup test aarch32-rpi-zero-2w-sd_test-qemu-sd-remove required by fixture aarch32-rpi-zero-2w-sd_test-qemu-sd
+Added setup test aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make required by fixture aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd
+Added cleanup test aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove required by fixture aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd
+Added 4 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 37
+    Start 37: aarch32-rpi-zero-2w-sd_test-qemu-sd-make
+
+37: Test command: /usr/bin/python3 "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/board-tests/sd-image.py" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch32-rpi-zero-2w-sd_test-qemu.disk.img" "--seed"
+37: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+37: Test timeout computed to be: 10000000
+1/6 Test #37: aarch32-rpi-zero-2w-sd_test-qemu-sd-make .................   Passed    0.06 sec
+test 39
+    Start 39: aarch32-rpi-zero-2w-sd_test-qemu
+
+39: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-drive" "file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch32-rpi-zero-2w-sd_test-qemu.disk.img,if=sd,format=raw" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/sd_test-qemu.bin,addr=0x10000"
+39: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+39: Test timeout computed to be: 450
+39: os_startup_initialize_free_store(0x2cc000,67108864)
+39: first_fit_top(0x2cc000,67108864) @0x3c778 app-heap
+39: out_of_memory_handler(0x179f8) @0x3c778 app-heap
+39: estd::pmr::set_default_resource(0x3c778) 
+39: rtos::memory::set_default_resource(0x3c778) 
+39: rtos::memory::init_once_default_resource() 
+39: malloc_memory_resource() @0x3c748 malloc
+39: file_descriptors_manager::file_descriptors_manager(16)=0x44ba0
+39: Device '/dev/sd' linked
+39: scheduler::start() 
+39: sd_test: the SD card through µOS++ POSIX I/O and Chan FatFs
+39:   SD card ready: 8388608 sectors (~4096 MiB)
+39:   FAT window: start LBA 2048, 8386560 sectors (4095 MiB)
+39: Device '/dev/sd1' linked
+39:   mounted the FAT volume at /sd/
+39: 
+39: Phase A: host->device  (seed.bin, written by the host)
+39:   seed.bin: 100000 bytes, content OK
+39:   [PASS] host-created seed.bin verified on device
+39: 
+39: Phase B: device->device  (files in /sd/tests)
+39:   writing /sd/tests/hello.txt (39 B text)...
+39:   [PASS] hello.txt
+39:   writing /sd/tests/data1.bin (3000 B pattern)...
+39:   [PASS] data1.bin
+39:   writing /sd/tests/data2.bin (70000 B pattern)...
+39:   [PASS] data2.bin
+39:   writing /sd/tests/big.bin (307200 B pattern)...
+39:   [PASS] big.bin
+39: 
+39:   read-back verification:
+39:   [PASS] hello.txt read-back verified (39 B)
+39:   [PASS] data1.bin read-back verified (3000 B)
+39:   [PASS] data2.bin read-back verified (70000 B)
+39:   [PASS] big.bin read-back verified (307200 B)
+39:   volume: 4193280 KiB total, 4184600 KiB free
+39: 
+39: tests/ contents:
+39:     hello.txt
+39:     data1.bin
+39:     data2.bin
+39:     big.bin
+39:   [PASS] tests/ lists the files written
+39: 
+39: sd_test: SD verified
+39: 
+39: RESULT: PASS
+2/6 Test #39: aarch32-rpi-zero-2w-sd_test-qemu .........................   Passed    0.27 sec
+test 38
+    Start 38: aarch32-rpi-zero-2w-sd_test-qemu-sd-remove
+
+38: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/cmake/3.26.5-1.1/.content/bin/cmake "-E" "rm" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch32-rpi-zero-2w-sd_test-qemu.disk.img"
+38: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+38: Test timeout computed to be: 10000000
+3/6 Test #38: aarch32-rpi-zero-2w-sd_test-qemu-sd-remove ...............   Passed    0.00 sec
+test 41
+    Start 41: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make
+
+41: Test command: /usr/bin/python3 "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/board-tests/sd-image.py" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu.disk.img"
+41: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+41: Test timeout computed to be: 10000000
+4/6 Test #41: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.04 sec
+test 43
+    Start 43: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu
+
+43: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-drive" "file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu.disk.img,if=sd,format=raw" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-sdcard-test-qemu.bin,addr=0x10000"
+43: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+43: Test timeout computed to be: 2000
+43: os_startup_initialize_free_store(0x37c000,67108864)
+43: first_fit_top(0x37c000,67108864) @0xebbc8 app-heap
+43: out_of_memory_handler(0x19e34) @0xebbc8 app-heap
+43: estd::pmr::set_default_resource(0xebbc8) 
+43: rtos::memory::set_default_resource(0xebbc8) 
+43: rtos::memory::init_once_default_resource() 
+43: malloc_memory_resource() @0xebb98 malloc
+43: file_descriptors_manager::file_descriptors_manager(16)=0xf3ff0
+43: Device '/dev/sd' linked
+43: scheduler::start() 
+43: 
+43: =============================================
+43:   micro-os-plus-iii  smp-mat-sdcard-test
+43:   parallel block linear solver, matrices on SD
+43:   N = 200, B = 20, cores = 4
+43: =============================================
+43: Mounting the SD card...
+43:   SD ready: 8388608 sectors (~4096 MiB)
+43: Device '/dev/sd1' linked
+43:   FAT volume at /sd/ (LBA 2048), files in /sd/tests.
+43: Starting Thread Pool of 10 worker threads...
+43: Submitting 20 tasks to the Thread Pool...
+43: Thread Pool: Worker executed task 0 on CPU 0
+43: Thread Pool: Worker executed task 2 on CPU 0
+43: Thread Pool: Worker executed task 3 on CPU 2
+43: Thread Pool: Worker executed task 5 on CPU 1
+43: Thread Pool: Worker executed task 7 on CPU 0
+43: Thread Pool: Worker executed task 1 on CPU 1
+43: Thread Pool: Worker executed task 8 on CPU 2
+43: Thread Pool: Worker executed task 4 on CPU 3
+43: Thread Pool: Worker executed task 17 on CPU 3
+43: Thread Pool: Worker executed task 18 on CPU 3
+43: Thread Pool: Worker executed task 11 on CPU 1
+43: Thread Pool: Worker executed task 10 on CPU 0
+43: Thread Pool: Worker executed task 12 on CPU 0
+43: Thread Pool: Worker executed task 13 on CPU 2
+43: Thread Pool: Worker executed task 14 on CPU 1
+43: Thread Pool: Worker executed task 15 on CPU 1
+43: Thread Pool: Worker executed task 16 on CPU 2
+43: Thread Pool: Worker executed task 9 on CPU 0
+43: Thread Pool: Worker executed task 19 on CPU 3
+43: Thread Pool: Worker executed task 6 on CPU 3
+43: Thread Pool demo finished. All 20 tasks executed successfully.
+43: 
+43: NOTE: 10 blocks over 4 cores (uneven round-robin split).
+43: Generating diagonally dominant 200 x 200 matrix...
+43:   matrix generated.
+43: Storing A and b on the SD card (A.mat, b.mat)...
+43:   stored A.mat (160000 bytes), b.mat (800 bytes)
+43: Loading A_block/b_block from the SD card (solver working set)...
+43: Loading A/b for the classical solve from the SD card...
+43:   both working sets loaded from SD.
+43: 
+43: Starting parallel 4 -core block elimination...
+43: Block elimination finished.
+43: Solving full system using classical elimination...
+43: Classical elimination finished.
+43: 
+43: +---------------------------------------------------+
+43: | COMPARING BLOCK ELIMINATION VS CLASSICAL SOLVER  |
+43: +---------------------------------------------------+
+43: x[0] Block = 0.001917 | Classic = 0.001917 | Abs Diff = 0.000000
+43: x[6] Block = 0.001973 | Classic = 0.001973 | Abs Diff = 0.000000
+43: x[12] Block = 0.002067 | Classic = 0.002067 | Abs Diff = 0.000000
+43: x[18] Block = 0.002207 | Classic = 0.002207 | Abs Diff = 0.000000
+43: x[24] Block = 0.002243 | Classic = 0.002243 | Abs Diff = 0.000000
+43: x[30] Block = 0.002120 | Classic = 0.002120 | Abs Diff = 0.000000
+43: x[36] Block = 0.002038 | Classic = 0.002038 | Abs Diff = 0.000000
+43: x[42] Block = 0.002380 | Classic = 0.002380 | Abs Diff = 0.000000
+43: x[48] Block = 0.002022 | Classic = 0.002022 | Abs Diff = 0.000000
+43: x[54] Block = 0.002002 | Classic = 0.002002 | Abs Diff = 0.000000
+43: x[60] Block = 0.001977 | Classic = 0.001977 | Abs Diff = 0.000000
+43: x[66] Block = 0.002080 | Classic = 0.002080 | Abs Diff = 0.000000
+43: x[72] Block = 0.002067 | Classic = 0.002067 | Abs Diff = 0.000000
+43: x[78] Block = 0.001722 | Classic = 0.001722 | Abs Diff = 0.000000
+43: x[84] Block = 0.002120 | Classic = 0.002120 | Abs Diff = 0.000000
+43: x[90] Block = 0.001987 | Classic = 0.001987 | Abs Diff = 0.000000
+43: x[96] Block = 0.002050 | Classic = 0.002050 | Abs Diff = 0.000000
+43: x[102] Block = 0.001663 | Classic = 0.001663 | Abs Diff = 0.000000
+43: x[108] Block = 0.001781 | Classic = 0.001781 | Abs Diff = 0.000000
+43: x[114] Block = 0.002325 | Classic = 0.002325 | Abs Diff = 0.000000
+43: x[120] Block = 0.001839 | Classic = 0.001839 | Abs Diff = 0.000000
+43: x[126] Block = 0.001808 | Classic = 0.001808 | Abs Diff = 0.000000
+43: x[132] Block = 0.001611 | Classic = 0.001611 | Abs Diff = 0.000000
+43: x[138] Block = 0.001816 | Classic = 0.001816 | Abs Diff = 0.000000
+43: x[144] Block = 0.001969 | Classic = 0.001969 | Abs Diff = 0.000000
+43: x[150] Block = 0.001661 | Classic = 0.001661 | Abs Diff = 0.000000
+43: x[156] Block = 0.001942 | Classic = 0.001942 | Abs Diff = 0.000000
+43: x[162] Block = 0.002066 | Classic = 0.002066 | Abs Diff = 0.000000
+43: x[168] Block = 0.001696 | Classic = 0.001696 | Abs Diff = 0.000000
+43: x[174] Block = 0.001770 | Classic = 0.001770 | Abs Diff = 0.000000
+43: x[180] Block = 0.002032 | Classic = 0.002032 | Abs Diff = 0.000000
+43: x[186] Block = 0.001864 | Classic = 0.001864 | Abs Diff = 0.000000
+43: x[192] Block = 0.001807 | Classic = 0.001807 | Abs Diff = 0.000000
+43: x[198] Block = 0.002180 | Classic = 0.002180 | Abs Diff = 0.000000
+43: -----------------------------------------------------
+43: Total Absolute Difference (Sum): 0.000000
+43: Max Absolute Difference:        0.000000
+43: -----------------------------------------------------
+43: Performance Metrics:
+43:   Parallel Block Solver: 7280.000 us
+43:   Classical Solver:      59501.000 us
+43:   Speedup Ratio:         8.173x
+43: +---------------------------------------------------+
+43: Residual ||A*x_block - b||_inf:   0.000001
+43: Residual ||A*x_classic - b||_inf: 0.000001
+43: Storing solutions on the SD card (x_block.mat, xclassic.mat)...
+43:   solution round-trip to/from SD: OK
+43: 
+43: tests/ contents:
+43:     A.MAT
+43:     b.mat
+43:     x_block.mat
+43:     xclassic.mat
+43: verdict: pass (block == classical within tolerance, SD round-trip OK)
+43: ---------------------------------------------
+43: 
+43: RESULT: PASS
+5/6 Test #43: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu .............   Passed    0.38 sec
+test 42
+    Start 42: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove
+
+42: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/cmake/3.26.5-1.1/.content/bin/cmake "-E" "rm" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu.disk.img"
+42: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug/platform-bin
+42: Test timeout computed to be: 10000000
+6/6 Test #42: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.00 sec
+
+The following tests passed:
+	aarch32-rpi-zero-2w-sd_test-qemu-sd-make
+	aarch32-rpi-zero-2w-sd_test-qemu
+	aarch32-rpi-zero-2w-sd_test-qemu-sd-remove
+	aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make
+	aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu
+	aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove
+
+100% tests passed out of 6
+
+Label Time Summary:
+qemu    =   0.75 sec*proc (6 tests)
+
+Total Test time (real) =   0.76 sec
