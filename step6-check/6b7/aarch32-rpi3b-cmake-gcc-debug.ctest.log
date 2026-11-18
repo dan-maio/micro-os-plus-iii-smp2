@@ -1,0 +1,206 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 38
+    Start 38: aarch32-rpi3b-smp-mat-test-qemu
+
+38: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/qemu-arm/9.2.4-1.1/.content/bin/qemu-system-aarch64 "-M" "raspi3b" "-smp" "4" "-nographic" "-serial" "none" "-monitor" "none" "-semihosting-config" "enable=on,target=native" "-kernel" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/shim8.img" "-device" "loader,file=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin/port-tests/test/smp-mat-test-qemu.bin,addr=0x10000"
+38: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-debug/platform-bin
+38: Test timeout computed to be: 900
+38: os_startup_initialize_free_store(0x2f8000,67108864)
+38: first_fit_top(0x2f8000,67108864) @0x69738 app-heap
+38: out_of_memory_handler(0x17dfc) @0x69738 app-heap
+38: estd::pmr::set_default_resource(0x69738) 
+38: rtos::memory::set_default_resource(0x69738) 
+38: rtos::memory::init_once_default_resource() 
+38: malloc_memory_resource() @0x69708 malloc
+38: scheduler::start() 
+38: 
+38: =============================================
+38:   micro-os-plus-iii  smp-mat-test (all in RAM)
+38:   parallel block linear solver
+38:   N = 120, B = 20, cores = 4
+38: =============================================
+38: Starting Thread Pool of 10 worker threads...
+38: Submitting 20 tasks to the Thread Pool...
+38: Thread Pool: Worker executed task 0 on CPU 0
+38: Thread Pool: Worker executed task 1 on CPU 0
+38: Thread Pool: Worker executed task 2 on CPU 0
+38: Thread Pool: Worker executed task 5 on CPU 0
+38: Thread Pool: Worker executed task 6 on CPU 3
+38: Thread Pool: Worker executed task 3 on CPU 1
+38: Thread Pool: Worker executed task 13 on CPU 0
+38: Thread Pool: Worker executed task 9 on CPU 0
+38: Thread Pool: Worker executed task 10 on CPU 1
+38: Thread Pool: Worker executed task 4 on CPU 3
+38: Thread Pool: Worker executed task 12 on CPU 0
+38: Thread Pool: Worker executed task 11 on CPU 3
+38: Thread Pool: Worker executed task 17 on CPU 0
+38: Thread Pool: Worker executed task 7 on CPU 2
+38: Thread Pool: Worker executed task 14 on CPU 2
+38: Thread Pool: Worker executed task 16 on CPU 0
+38: Thread Pool: Worker executed task 15 on CPU 1
+38: Thread Pool: Worker executed task 8 on CPU 1
+38: Thread Pool: Worker executed task 18 on CPU 3
+38: Thread Pool: Worker executed task 19 on CPU 3
+38: Thread Pool demo finished. All 20 tasks executed successfully.
+38: 
+38: NOTE: 6 blocks over 4 cores (uneven round-robin split).
+38: Generating diagonally dominant 120 x 120 matrix...
+38: Starting parallel 4 -core block elimination...
+38: Block elimination finished.
+38: Solving full system using classical elimination...
+38: Classical elimination finished.
+38: 
+38: +---------------------------------------------------+
+38: | COMPARING BLOCK ELIMINATION VS CLASSICAL SOLVER  |
+38: +---------------------------------------------------+
+38: x[0] Block = 0.003343 | Classic = 0.003343 | Abs Diff = 0.000000
+38: x[1] Block = 0.003210 | Classic = 0.003210 | Abs Diff = 0.000000
+38: x[2] Block = 0.003193 | Classic = 0.003193 | Abs Diff = 0.000000
+38: x[3] Block = 0.003209 | Classic = 0.003209 | Abs Diff = 0.000000
+38: x[4] Block = 0.002922 | Classic = 0.002922 | Abs Diff = 0.000000
+38: x[5] Block = 0.003019 | Classic = 0.003019 | Abs Diff = 0.000000
+38: x[6] Block = 0.003283 | Classic = 0.003283 | Abs Diff = 0.000000
+38: x[7] Block = 0.003196 | Classic = 0.003196 | Abs Diff = 0.000000
+38: x[8] Block = 0.003215 | Classic = 0.003215 | Abs Diff = 0.000000
+38: x[9] Block = 0.003282 | Classic = 0.003282 | Abs Diff = 0.000000
+38: x[10] Block = 0.003093 | Classic = 0.003093 | Abs Diff = 0.000000
+38: x[11] Block = 0.003500 | Classic = 0.003500 | Abs Diff = 0.000000
+38: x[12] Block = 0.003521 | Classic = 0.003521 | Abs Diff = 0.000000
+38: x[13] Block = 0.004170 | Classic = 0.004170 | Abs Diff = 0.000000
+38: x[14] Block = 0.003280 | Classic = 0.003280 | Abs Diff = 0.000000
+38: x[15] Block = 0.003685 | Classic = 0.003685 | Abs Diff = 0.000000
+38: x[16] Block = 0.003431 | Classic = 0.003431 | Abs Diff = 0.000000
+38: x[17] Block = 0.003808 | Classic = 0.003808 | Abs Diff = 0.000000
+38: x[18] Block = 0.003569 | Classic = 0.003569 | Abs Diff = 0.000000
+38: x[19] Block = 0.003504 | Classic = 0.003504 | Abs Diff = 0.000000
+38: x[20] Block = 0.003569 | Classic = 0.003569 | Abs Diff = 0.000000
+38: x[21] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+38: x[22] Block = 0.002927 | Classic = 0.002927 | Abs Diff = 0.000000
+38: x[23] Block = 0.003788 | Classic = 0.003788 | Abs Diff = 0.000000
+38: x[24] Block = 0.003486 | Classic = 0.003486 | Abs Diff = 0.000000
+38: x[25] Block = 0.003190 | Classic = 0.003190 | Abs Diff = 0.000000
+38: x[26] Block = 0.003291 | Classic = 0.003291 | Abs Diff = 0.000000
+38: x[27] Block = 0.003152 | Classic = 0.003152 | Abs Diff = 0.000000
+38: x[28] Block = 0.003313 | Classic = 0.003313 | Abs Diff = 0.000000
+38: x[29] Block = 0.003370 | Classic = 0.003370 | Abs Diff = 0.000000
+38: x[30] Block = 0.003147 | Classic = 0.003147 | Abs Diff = 0.000000
+38: x[31] Block = 0.003443 | Classic = 0.003443 | Abs Diff = 0.000000
+38: x[32] Block = 0.003093 | Classic = 0.003093 | Abs Diff = 0.000000
+38: x[33] Block = 0.003355 | Classic = 0.003355 | Abs Diff = 0.000000
+38: x[34] Block = 0.003485 | Classic = 0.003485 | Abs Diff = 0.000000
+38: x[35] Block = 0.002541 | Classic = 0.002541 | Abs Diff = 0.000000
+38: x[36] Block = 0.003829 | Classic = 0.003829 | Abs Diff = 0.000000
+38: x[37] Block = 0.003803 | Classic = 0.003803 | Abs Diff = 0.000000
+38: x[38] Block = 0.003037 | Classic = 0.003037 | Abs Diff = 0.000000
+38: x[39] Block = 0.004004 | Classic = 0.004004 | Abs Diff = 0.000000
+38: x[40] Block = 0.003734 | Classic = 0.003734 | Abs Diff = 0.000000
+38: x[41] Block = 0.003660 | Classic = 0.003660 | Abs Diff = 0.000000
+38: x[42] Block = 0.003792 | Classic = 0.003792 | Abs Diff = 0.000000
+38: x[43] Block = 0.003233 | Classic = 0.003233 | Abs Diff = 0.000000
+38: x[44] Block = 0.003311 | Classic = 0.003311 | Abs Diff = 0.000000
+38: x[45] Block = 0.002977 | Classic = 0.002977 | Abs Diff = 0.000000
+38: x[46] Block = 0.003304 | Classic = 0.003304 | Abs Diff = 0.000000
+38: x[47] Block = 0.003513 | Classic = 0.003513 | Abs Diff = 0.000000
+38: x[48] Block = 0.003623 | Classic = 0.003623 | Abs Diff = 0.000000
+38: x[49] Block = 0.003396 | Classic = 0.003396 | Abs Diff = 0.000000
+38: x[50] Block = 0.003458 | Classic = 0.003458 | Abs Diff = 0.000000
+38: x[51] Block = 0.003371 | Classic = 0.003371 | Abs Diff = 0.000000
+38: x[52] Block = 0.003164 | Classic = 0.003164 | Abs Diff = 0.000000
+38: x[53] Block = 0.003532 | Classic = 0.003532 | Abs Diff = 0.000000
+38: x[54] Block = 0.003636 | Classic = 0.003636 | Abs Diff = 0.000000
+38: x[55] Block = 0.003944 | Classic = 0.003944 | Abs Diff = 0.000000
+38: x[56] Block = 0.003592 | Classic = 0.003592 | Abs Diff = 0.000000
+38: x[57] Block = 0.003169 | Classic = 0.003169 | Abs Diff = 0.000000
+38: x[58] Block = 0.003511 | Classic = 0.003511 | Abs Diff = 0.000000
+38: x[59] Block = 0.003066 | Classic = 0.003066 | Abs Diff = 0.000000
+38: x[60] Block = 0.003175 | Classic = 0.003175 | Abs Diff = 0.000000
+38: x[61] Block = 0.003562 | Classic = 0.003562 | Abs Diff = 0.000000
+38: x[62] Block = 0.002659 | Classic = 0.002659 | Abs Diff = 0.000000
+38: x[63] Block = 0.003602 | Classic = 0.003602 | Abs Diff = 0.000000
+38: x[64] Block = 0.003036 | Classic = 0.003036 | Abs Diff = 0.000000
+38: x[65] Block = 0.003580 | Classic = 0.003580 | Abs Diff = 0.000000
+38: x[66] Block = 0.003361 | Classic = 0.003361 | Abs Diff = 0.000000
+38: x[67] Block = 0.002781 | Classic = 0.002781 | Abs Diff = 0.000000
+38: x[68] Block = 0.003216 | Classic = 0.003216 | Abs Diff = 0.000000
+38: x[69] Block = 0.003187 | Classic = 0.003187 | Abs Diff = 0.000000
+38: x[70] Block = 0.004606 | Classic = 0.004606 | Abs Diff = 0.000000
+38: x[71] Block = 0.003390 | Classic = 0.003390 | Abs Diff = 0.000000
+38: x[72] Block = 0.002917 | Classic = 0.002917 | Abs Diff = 0.000000
+38: x[73] Block = 0.003266 | Classic = 0.003266 | Abs Diff = 0.000000
+38: x[74] Block = 0.003139 | Classic = 0.003139 | Abs Diff = 0.000000
+38: x[75] Block = 0.003189 | Classic = 0.003189 | Abs Diff = 0.000000
+38: x[76] Block = 0.002743 | Classic = 0.002743 | Abs Diff = 0.000000
+38: x[77] Block = 0.003229 | Classic = 0.003229 | Abs Diff = 0.000000
+38: x[78] Block = 0.003516 | Classic = 0.003516 | Abs Diff = 0.000000
+38: x[79] Block = 0.002963 | Classic = 0.002963 | Abs Diff = 0.000000
+38: x[80] Block = 0.003640 | Classic = 0.003640 | Abs Diff = 0.000000
+38: x[81] Block = 0.003361 | Classic = 0.003361 | Abs Diff = 0.000000
+38: x[82] Block = 0.003759 | Classic = 0.003759 | Abs Diff = 0.000000
+38: x[83] Block = 0.003119 | Classic = 0.003119 | Abs Diff = 0.000000
+38: x[84] Block = 0.003322 | Classic = 0.003322 | Abs Diff = 0.000000
+38: x[85] Block = 0.003362 | Classic = 0.003362 | Abs Diff = 0.000000
+38: x[86] Block = 0.003174 | Classic = 0.003174 | Abs Diff = 0.000000
+38: x[87] Block = 0.003374 | Classic = 0.003374 | Abs Diff = 0.000000
+38: x[88] Block = 0.003255 | Classic = 0.003255 | Abs Diff = 0.000000
+38: x[89] Block = 0.003070 | Classic = 0.003070 | Abs Diff = 0.000000
+38: x[90] Block = 0.003496 | Classic = 0.003496 | Abs Diff = 0.000000
+38: x[91] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+38: x[92] Block = 0.003470 | Classic = 0.003470 | Abs Diff = 0.000000
+38: x[93] Block = 0.003455 | Classic = 0.003455 | Abs Diff = 0.000000
+38: x[94] Block = 0.003128 | Classic = 0.003128 | Abs Diff = 0.000000
+38: x[95] Block = 0.003788 | Classic = 0.003788 | Abs Diff = 0.000000
+38: x[96] Block = 0.004060 | Classic = 0.004060 | Abs Diff = 0.000000
+38: x[97] Block = 0.003034 | Classic = 0.003034 | Abs Diff = 0.000000
+38: x[98] Block = 0.003031 | Classic = 0.003031 | Abs Diff = 0.000000
+38: x[99] Block = 0.003647 | Classic = 0.003647 | Abs Diff = 0.000000
+38: x[100] Block = 0.003197 | Classic = 0.003197 | Abs Diff = 0.000000
+38: x[101] Block = 0.002948 | Classic = 0.002948 | Abs Diff = 0.000000
+38: x[102] Block = 0.003072 | Classic = 0.003072 | Abs Diff = 0.000000
+38: x[103] Block = 0.003618 | Classic = 0.003618 | Abs Diff = 0.000000
+38: x[104] Block = 0.003176 | Classic = 0.003176 | Abs Diff = 0.000000
+38: x[105] Block = 0.003416 | Classic = 0.003416 | Abs Diff = 0.000000
+38: x[106] Block = 0.003408 | Classic = 0.003408 | Abs Diff = 0.000000
+38: x[107] Block = 0.003526 | Classic = 0.003526 | Abs Diff = 0.000000
+38: x[108] Block = 0.002748 | Classic = 0.002748 | Abs Diff = 0.000000
+38: x[109] Block = 0.002987 | Classic = 0.002987 | Abs Diff = 0.000000
+38: x[110] Block = 0.003210 | Classic = 0.003210 | Abs Diff = 0.000000
+38: x[111] Block = 0.003457 | Classic = 0.003457 | Abs Diff = 0.000000
+38: x[112] Block = 0.003811 | Classic = 0.003811 | Abs Diff = 0.000000
+38: x[113] Block = 0.002582 | Classic = 0.002582 | Abs Diff = 0.000000
+38: x[114] Block = 0.003437 | Classic = 0.003437 | Abs Diff = 0.000000
+38: x[115] Block = 0.003795 | Classic = 0.003795 | Abs Diff = 0.000000
+38: x[116] Block = 0.003576 | Classic = 0.003576 | Abs Diff = 0.000000
+38: x[117] Block = 0.002935 | Classic = 0.002935 | Abs Diff = 0.000000
+38: x[118] Block = 0.003321 | Classic = 0.003321 | Abs Diff = 0.000000
+38: x[119] Block = 0.002714 | Classic = 0.002714 | Abs Diff = 0.000000
+38: -----------------------------------------------------
+38: Total Absolute Difference (Sum): 0.000000
+38: Max Absolute Difference:        0.000000
+38: -----------------------------------------------------
+38: Performance Metrics:
+38:   Parallel Block Solver: 3439.000 us
+38:   Classical Solver:      17217.000 us
+38:   Speedup Ratio:         5.006x
+38: +---------------------------------------------------+
+38: verdict: pass (block == classical within tolerance)
+38: ---------------------------------------------
+38: 
+38: RESULT: PASS
+1/1 Test #38: aarch32-rpi3b-smp-mat-test-qemu ...   Passed    0.25 sec
+
+The following tests passed:
+	aarch32-rpi3b-smp-mat-test-qemu
+
+100% tests passed out of 1
+
+Label Time Summary:
+qemu    =   0.25 sec*proc (1 test)
+
+Total Test time (real) =   0.25 sec

@@ -1,0 +1,584 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 16
+    Start 16: native-smp-mat-test-host
+
+16: Test command: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-debug/platform-bin/port-tests/smp-mat-test-host
+16: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-debug/platform-bin
+16: Test timeout computed to be: 900
+16: rtos::memory::init_once_default_resource() 
+16: malloc_memory_resource() @0x55f771901c40 malloc
+16: first_fit_top(0x55f7719444b0,33554432) @0x55f771944448 app-heap
+16: out_of_memory_handler(0x55f7715baa3a) @0x55f771944448 app-heap
+16: estd::pmr::set_default_resource(0x55f771944448) 
+16: scheduler::start() 
+16: 
+16: =============================================
+16:   micro-os-plus-iii  smp-mat-test (all in RAM)
+16:   parallel block linear solver
+16:   N = 500, B = 50, cores = 4
+16: =============================================
+16: Starting Thread Pool of 10 worker threads...
+16: Submitting 20 tasks to the Thread Pool...
+16: Thread Pool: Worker executed task 0 on CPU 0
+16: Thread Pool: Worker executed task 1 on CPU 1
+16: Thread Pool: Worker executed task 2 on CPU 2
+16: Thread Pool: Worker executed task 3 on CPU 0
+16: Thread Pool: Worker executed task 5 on CPU 2
+16: Thread Pool: Worker executed task 4 on CPU 3
+16: Thread Pool: Worker executed task 6 on CPU 1
+16: Thread Pool: Worker executed task 7 on CPU 2
+16: Thread Pool: Worker executed task 8 on CPU 0
+16: Thread Pool: Worker executed task 12 on CPU 1
+16: Thread Pool: Worker executed task 9 on CPU 3
+16: Thread Pool: Worker executed task 10 on CPU 0
+16: Thread Pool: Worker executed task 14 on CPU 3
+16: Thread Pool: Worker executed task 15 on CPU 0
+16: Thread Pool: Worker executed task 11 on CPU 1
+16: Thread Pool: Worker executed task 16 on CPU 1
+16: Thread Pool: Worker executed task 19 on CPU 1
+16: Thread Pool: Worker executed task 17 on CPU 2
+16: Thread Pool: Worker executed task 18 on CPU 3
+16: Thread Pool: Worker executed task 13 on CPU 1
+16: Thread Pool demo finished. All 20 tasks executed successfully.
+16: 
+16: NOTE: 10 blocks over 4 cores (uneven round-robin split).
+16: Generating diagonally dominant 500 x 500 matrix...
+16: Starting parallel 4 -core block elimination...
+16: Block elimination finished.
+16: Solving full system using classical elimination...
+16: Classical elimination finished.
+16: 
+16: +---------------------------------------------------+
+16: | COMPARING BLOCK ELIMINATION VS CLASSICAL SOLVER  |
+16: +---------------------------------------------------+
+16: x[0] Block = 0.000794 | Classic = 0.000794 | Abs Diff = 0.000000
+16: x[1] Block = 0.000887 | Classic = 0.000887 | Abs Diff = 0.000000
+16: x[2] Block = 0.000818 | Classic = 0.000818 | Abs Diff = 0.000000
+16: x[3] Block = 0.000743 | Classic = 0.000743 | Abs Diff = 0.000000
+16: x[4] Block = 0.000747 | Classic = 0.000747 | Abs Diff = 0.000000
+16: x[5] Block = 0.000797 | Classic = 0.000797 | Abs Diff = 0.000000
+16: x[6] Block = 0.000817 | Classic = 0.000817 | Abs Diff = 0.000000
+16: x[7] Block = 0.000802 | Classic = 0.000802 | Abs Diff = 0.000000
+16: x[8] Block = 0.000733 | Classic = 0.000733 | Abs Diff = 0.000000
+16: x[9] Block = 0.000765 | Classic = 0.000765 | Abs Diff = 0.000000
+16: x[10] Block = 0.000764 | Classic = 0.000764 | Abs Diff = 0.000000
+16: x[11] Block = 0.000807 | Classic = 0.000807 | Abs Diff = 0.000000
+16: x[12] Block = 0.000724 | Classic = 0.000724 | Abs Diff = 0.000000
+16: x[13] Block = 0.000794 | Classic = 0.000794 | Abs Diff = 0.000000
+16: x[14] Block = 0.000760 | Classic = 0.000760 | Abs Diff = 0.000000
+16: x[15] Block = 0.000773 | Classic = 0.000773 | Abs Diff = 0.000000
+16: x[16] Block = 0.000831 | Classic = 0.000831 | Abs Diff = 0.000000
+16: x[17] Block = 0.000764 | Classic = 0.000764 | Abs Diff = 0.000000
+16: x[18] Block = 0.000713 | Classic = 0.000713 | Abs Diff = 0.000000
+16: x[19] Block = 0.000794 | Classic = 0.000794 | Abs Diff = 0.000000
+16: x[20] Block = 0.000785 | Classic = 0.000785 | Abs Diff = 0.000000
+16: x[21] Block = 0.000786 | Classic = 0.000786 | Abs Diff = 0.000000
+16: x[22] Block = 0.000779 | Classic = 0.000779 | Abs Diff = 0.000000
+16: x[23] Block = 0.000780 | Classic = 0.000780 | Abs Diff = 0.000000
+16: x[24] Block = 0.000746 | Classic = 0.000746 | Abs Diff = 0.000000
+16: x[25] Block = 0.000821 | Classic = 0.000821 | Abs Diff = 0.000000
+16: x[26] Block = 0.000793 | Classic = 0.000793 | Abs Diff = 0.000000
+16: x[27] Block = 0.000861 | Classic = 0.000861 | Abs Diff = 0.000000
+16: x[28] Block = 0.000777 | Classic = 0.000777 | Abs Diff = 0.000000
+16: x[29] Block = 0.000744 | Classic = 0.000744 | Abs Diff = 0.000000
+16: x[30] Block = 0.000871 | Classic = 0.000871 | Abs Diff = 0.000000
+16: x[31] Block = 0.000839 | Classic = 0.000839 | Abs Diff = 0.000000
+16: x[32] Block = 0.000816 | Classic = 0.000816 | Abs Diff = 0.000000
+16: x[33] Block = 0.000742 | Classic = 0.000742 | Abs Diff = 0.000000
+16: x[34] Block = 0.000866 | Classic = 0.000866 | Abs Diff = 0.000000
+16: x[35] Block = 0.000772 | Classic = 0.000772 | Abs Diff = 0.000000
+16: x[36] Block = 0.000740 | Classic = 0.000740 | Abs Diff = 0.000000
+16: x[37] Block = 0.000858 | Classic = 0.000858 | Abs Diff = 0.000000
+16: x[38] Block = 0.000876 | Classic = 0.000876 | Abs Diff = 0.000000
+16: x[39] Block = 0.000766 | Classic = 0.000766 | Abs Diff = 0.000000
+16: x[40] Block = 0.000704 | Classic = 0.000704 | Abs Diff = 0.000000
+16: x[41] Block = 0.000871 | Classic = 0.000871 | Abs Diff = 0.000000
+16: x[42] Block = 0.000851 | Classic = 0.000851 | Abs Diff = 0.000000
+16: x[43] Block = 0.000737 | Classic = 0.000737 | Abs Diff = 0.000000
+16: x[44] Block = 0.000866 | Classic = 0.000866 | Abs Diff = 0.000000
+16: x[45] Block = 0.000875 | Classic = 0.000875 | Abs Diff = 0.000000
+16: x[46] Block = 0.000722 | Classic = 0.000722 | Abs Diff = 0.000000
+16: x[47] Block = 0.000784 | Classic = 0.000784 | Abs Diff = 0.000000
+16: x[48] Block = 0.000821 | Classic = 0.000821 | Abs Diff = 0.000000
+16: x[49] Block = 0.000824 | Classic = 0.000824 | Abs Diff = 0.000000
+16: x[50] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[51] Block = 0.000752 | Classic = 0.000752 | Abs Diff = 0.000000
+16: x[52] Block = 0.000820 | Classic = 0.000820 | Abs Diff = 0.000000
+16: x[53] Block = 0.000781 | Classic = 0.000781 | Abs Diff = 0.000000
+16: x[54] Block = 0.000798 | Classic = 0.000798 | Abs Diff = 0.000000
+16: x[55] Block = 0.000818 | Classic = 0.000818 | Abs Diff = 0.000000
+16: x[56] Block = 0.000763 | Classic = 0.000763 | Abs Diff = 0.000000
+16: x[57] Block = 0.000746 | Classic = 0.000746 | Abs Diff = 0.000000
+16: x[58] Block = 0.000807 | Classic = 0.000807 | Abs Diff = 0.000000
+16: x[59] Block = 0.000882 | Classic = 0.000882 | Abs Diff = 0.000000
+16: x[60] Block = 0.000810 | Classic = 0.000810 | Abs Diff = 0.000000
+16: x[61] Block = 0.000872 | Classic = 0.000872 | Abs Diff = 0.000000
+16: x[62] Block = 0.000849 | Classic = 0.000849 | Abs Diff = 0.000000
+16: x[63] Block = 0.000827 | Classic = 0.000827 | Abs Diff = 0.000000
+16: x[64] Block = 0.000792 | Classic = 0.000792 | Abs Diff = 0.000000
+16: x[65] Block = 0.000825 | Classic = 0.000825 | Abs Diff = 0.000000
+16: x[66] Block = 0.000801 | Classic = 0.000801 | Abs Diff = 0.000000
+16: x[67] Block = 0.000778 | Classic = 0.000778 | Abs Diff = 0.000000
+16: x[68] Block = 0.000792 | Classic = 0.000792 | Abs Diff = 0.000000
+16: x[69] Block = 0.000726 | Classic = 0.000726 | Abs Diff = 0.000000
+16: x[70] Block = 0.000825 | Classic = 0.000825 | Abs Diff = 0.000000
+16: x[71] Block = 0.000867 | Classic = 0.000867 | Abs Diff = 0.000000
+16: x[72] Block = 0.000741 | Classic = 0.000741 | Abs Diff = 0.000000
+16: x[73] Block = 0.000788 | Classic = 0.000788 | Abs Diff = 0.000000
+16: x[74] Block = 0.000836 | Classic = 0.000836 | Abs Diff = 0.000000
+16: x[75] Block = 0.000824 | Classic = 0.000824 | Abs Diff = 0.000000
+16: x[76] Block = 0.000809 | Classic = 0.000809 | Abs Diff = 0.000000
+16: x[77] Block = 0.000766 | Classic = 0.000766 | Abs Diff = 0.000000
+16: x[78] Block = 0.000760 | Classic = 0.000760 | Abs Diff = 0.000000
+16: x[79] Block = 0.000787 | Classic = 0.000787 | Abs Diff = 0.000000
+16: x[80] Block = 0.000785 | Classic = 0.000785 | Abs Diff = 0.000000
+16: x[81] Block = 0.000850 | Classic = 0.000850 | Abs Diff = 0.000000
+16: x[82] Block = 0.000753 | Classic = 0.000753 | Abs Diff = 0.000000
+16: x[83] Block = 0.000716 | Classic = 0.000716 | Abs Diff = 0.000000
+16: x[84] Block = 0.000828 | Classic = 0.000828 | Abs Diff = 0.000000
+16: x[85] Block = 0.000862 | Classic = 0.000862 | Abs Diff = 0.000000
+16: x[86] Block = 0.000762 | Classic = 0.000762 | Abs Diff = 0.000000
+16: x[87] Block = 0.000815 | Classic = 0.000815 | Abs Diff = 0.000000
+16: x[88] Block = 0.000844 | Classic = 0.000844 | Abs Diff = 0.000000
+16: x[89] Block = 0.000770 | Classic = 0.000770 | Abs Diff = 0.000000
+16: x[90] Block = 0.000694 | Classic = 0.000694 | Abs Diff = 0.000000
+16: x[91] Block = 0.000729 | Classic = 0.000729 | Abs Diff = 0.000000
+16: x[92] Block = 0.000806 | Classic = 0.000806 | Abs Diff = 0.000000
+16: x[93] Block = 0.000847 | Classic = 0.000847 | Abs Diff = 0.000000
+16: x[94] Block = 0.000720 | Classic = 0.000720 | Abs Diff = 0.000000
+16: x[95] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[96] Block = 0.000813 | Classic = 0.000813 | Abs Diff = 0.000000
+16: x[97] Block = 0.000758 | Classic = 0.000758 | Abs Diff = 0.000000
+16: x[98] Block = 0.000845 | Classic = 0.000845 | Abs Diff = 0.000000
+16: x[99] Block = 0.000772 | Classic = 0.000772 | Abs Diff = 0.000000
+16: x[100] Block = 0.000770 | Classic = 0.000770 | Abs Diff = 0.000000
+16: x[101] Block = 0.000834 | Classic = 0.000834 | Abs Diff = 0.000000
+16: x[102] Block = 0.000855 | Classic = 0.000855 | Abs Diff = 0.000000
+16: x[103] Block = 0.000784 | Classic = 0.000784 | Abs Diff = 0.000000
+16: x[104] Block = 0.000740 | Classic = 0.000740 | Abs Diff = 0.000000
+16: x[105] Block = 0.000768 | Classic = 0.000768 | Abs Diff = 0.000000
+16: x[106] Block = 0.000859 | Classic = 0.000859 | Abs Diff = 0.000000
+16: x[107] Block = 0.000767 | Classic = 0.000767 | Abs Diff = 0.000000
+16: x[108] Block = 0.000808 | Classic = 0.000808 | Abs Diff = 0.000000
+16: x[109] Block = 0.000797 | Classic = 0.000797 | Abs Diff = 0.000000
+16: x[110] Block = 0.000833 | Classic = 0.000833 | Abs Diff = 0.000000
+16: x[111] Block = 0.000657 | Classic = 0.000657 | Abs Diff = 0.000000
+16: x[112] Block = 0.000840 | Classic = 0.000840 | Abs Diff = 0.000000
+16: x[113] Block = 0.000870 | Classic = 0.000870 | Abs Diff = 0.000000
+16: x[114] Block = 0.000837 | Classic = 0.000837 | Abs Diff = 0.000000
+16: x[115] Block = 0.000901 | Classic = 0.000901 | Abs Diff = 0.000000
+16: x[116] Block = 0.000747 | Classic = 0.000747 | Abs Diff = 0.000000
+16: x[117] Block = 0.000745 | Classic = 0.000745 | Abs Diff = 0.000000
+16: x[118] Block = 0.000824 | Classic = 0.000824 | Abs Diff = 0.000000
+16: x[119] Block = 0.000827 | Classic = 0.000827 | Abs Diff = 0.000000
+16: x[120] Block = 0.000729 | Classic = 0.000729 | Abs Diff = 0.000000
+16: x[121] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[122] Block = 0.000818 | Classic = 0.000818 | Abs Diff = 0.000000
+16: x[123] Block = 0.000746 | Classic = 0.000746 | Abs Diff = 0.000000
+16: x[124] Block = 0.000759 | Classic = 0.000759 | Abs Diff = 0.000000
+16: x[125] Block = 0.000741 | Classic = 0.000741 | Abs Diff = 0.000000
+16: x[126] Block = 0.000841 | Classic = 0.000841 | Abs Diff = 0.000000
+16: x[127] Block = 0.000905 | Classic = 0.000905 | Abs Diff = 0.000000
+16: x[128] Block = 0.000885 | Classic = 0.000885 | Abs Diff = 0.000000
+16: x[129] Block = 0.000818 | Classic = 0.000818 | Abs Diff = 0.000000
+16: x[130] Block = 0.000842 | Classic = 0.000842 | Abs Diff = 0.000000
+16: x[131] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[132] Block = 0.000787 | Classic = 0.000787 | Abs Diff = 0.000000
+16: x[133] Block = 0.000771 | Classic = 0.000771 | Abs Diff = 0.000000
+16: x[134] Block = 0.000736 | Classic = 0.000736 | Abs Diff = 0.000000
+16: x[135] Block = 0.000810 | Classic = 0.000810 | Abs Diff = 0.000000
+16: x[136] Block = 0.000815 | Classic = 0.000815 | Abs Diff = 0.000000
+16: x[137] Block = 0.000763 | Classic = 0.000763 | Abs Diff = 0.000000
+16: x[138] Block = 0.000826 | Classic = 0.000826 | Abs Diff = 0.000000
+16: x[139] Block = 0.000777 | Classic = 0.000777 | Abs Diff = 0.000000
+16: x[140] Block = 0.000831 | Classic = 0.000831 | Abs Diff = 0.000000
+16: x[141] Block = 0.000754 | Classic = 0.000754 | Abs Diff = 0.000000
+16: x[142] Block = 0.000771 | Classic = 0.000771 | Abs Diff = 0.000000
+16: x[143] Block = 0.000726 | Classic = 0.000726 | Abs Diff = 0.000000
+16: x[144] Block = 0.000843 | Classic = 0.000843 | Abs Diff = 0.000000
+16: x[145] Block = 0.000821 | Classic = 0.000821 | Abs Diff = 0.000000
+16: x[146] Block = 0.000785 | Classic = 0.000785 | Abs Diff = 0.000000
+16: x[147] Block = 0.000797 | Classic = 0.000797 | Abs Diff = 0.000000
+16: x[148] Block = 0.000736 | Classic = 0.000736 | Abs Diff = 0.000000
+16: x[149] Block = 0.000809 | Classic = 0.000809 | Abs Diff = 0.000000
+16: x[150] Block = 0.000678 | Classic = 0.000678 | Abs Diff = 0.000000
+16: x[151] Block = 0.000774 | Classic = 0.000774 | Abs Diff = 0.000000
+16: x[152] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[153] Block = 0.000835 | Classic = 0.000835 | Abs Diff = 0.000000
+16: x[154] Block = 0.000772 | Classic = 0.000772 | Abs Diff = 0.000000
+16: x[155] Block = 0.000795 | Classic = 0.000795 | Abs Diff = 0.000000
+16: x[156] Block = 0.000744 | Classic = 0.000744 | Abs Diff = 0.000000
+16: x[157] Block = 0.000823 | Classic = 0.000823 | Abs Diff = 0.000000
+16: x[158] Block = 0.000726 | Classic = 0.000726 | Abs Diff = 0.000000
+16: x[159] Block = 0.000754 | Classic = 0.000754 | Abs Diff = 0.000000
+16: x[160] Block = 0.000773 | Classic = 0.000773 | Abs Diff = 0.000000
+16: x[161] Block = 0.000809 | Classic = 0.000809 | Abs Diff = 0.000000
+16: x[162] Block = 0.000758 | Classic = 0.000758 | Abs Diff = 0.000000
+16: x[163] Block = 0.000835 | Classic = 0.000835 | Abs Diff = 0.000000
+16: x[164] Block = 0.000800 | Classic = 0.000800 | Abs Diff = 0.000000
+16: x[165] Block = 0.000750 | Classic = 0.000750 | Abs Diff = 0.000000
+16: x[166] Block = 0.000812 | Classic = 0.000812 | Abs Diff = 0.000000
+16: x[167] Block = 0.000814 | Classic = 0.000814 | Abs Diff = 0.000000
+16: x[168] Block = 0.000811 | Classic = 0.000811 | Abs Diff = 0.000000
+16: x[169] Block = 0.000730 | Classic = 0.000730 | Abs Diff = 0.000000
+16: x[170] Block = 0.000786 | Classic = 0.000786 | Abs Diff = 0.000000
+16: x[171] Block = 0.000806 | Classic = 0.000806 | Abs Diff = 0.000000
+16: x[172] Block = 0.000883 | Classic = 0.000883 | Abs Diff = 0.000000
+16: x[173] Block = 0.000854 | Classic = 0.000854 | Abs Diff = 0.000000
+16: x[174] Block = 0.000839 | Classic = 0.000839 | Abs Diff = 0.000000
+16: x[175] Block = 0.000835 | Classic = 0.000835 | Abs Diff = 0.000000
+16: x[176] Block = 0.000811 | Classic = 0.000811 | Abs Diff = 0.000000
+16: x[177] Block = 0.000846 | Classic = 0.000846 | Abs Diff = 0.000000
+16: x[178] Block = 0.000723 | Classic = 0.000723 | Abs Diff = 0.000000
+16: x[179] Block = 0.000841 | Classic = 0.000841 | Abs Diff = 0.000000
+16: x[180] Block = 0.000764 | Classic = 0.000764 | Abs Diff = 0.000000
+16: x[181] Block = 0.000780 | Classic = 0.000780 | Abs Diff = 0.000000
+16: x[182] Block = 0.000882 | Classic = 0.000882 | Abs Diff = 0.000000
+16: x[183] Block = 0.000885 | Classic = 0.000885 | Abs Diff = 0.000000
+16: x[184] Block = 0.000829 | Classic = 0.000829 | Abs Diff = 0.000000
+16: x[185] Block = 0.000816 | Classic = 0.000816 | Abs Diff = 0.000000
+16: x[186] Block = 0.000841 | Classic = 0.000841 | Abs Diff = 0.000000
+16: x[187] Block = 0.000761 | Classic = 0.000761 | Abs Diff = 0.000000
+16: x[188] Block = 0.000829 | Classic = 0.000829 | Abs Diff = 0.000000
+16: x[189] Block = 0.000703 | Classic = 0.000703 | Abs Diff = 0.000000
+16: x[190] Block = 0.000832 | Classic = 0.000832 | Abs Diff = 0.000000
+16: x[191] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[192] Block = 0.000734 | Classic = 0.000734 | Abs Diff = 0.000000
+16: x[193] Block = 0.000732 | Classic = 0.000732 | Abs Diff = 0.000000
+16: x[194] Block = 0.000835 | Classic = 0.000835 | Abs Diff = 0.000000
+16: x[195] Block = 0.000829 | Classic = 0.000829 | Abs Diff = 0.000000
+16: x[196] Block = 0.000782 | Classic = 0.000782 | Abs Diff = 0.000000
+16: x[197] Block = 0.000836 | Classic = 0.000836 | Abs Diff = 0.000000
+16: x[198] Block = 0.000765 | Classic = 0.000765 | Abs Diff = 0.000000
+16: x[199] Block = 0.000820 | Classic = 0.000820 | Abs Diff = 0.000000
+16: x[200] Block = 0.000778 | Classic = 0.000778 | Abs Diff = 0.000000
+16: x[201] Block = 0.000772 | Classic = 0.000772 | Abs Diff = 0.000000
+16: x[202] Block = 0.000811 | Classic = 0.000811 | Abs Diff = 0.000000
+16: x[203] Block = 0.000798 | Classic = 0.000798 | Abs Diff = 0.000000
+16: x[204] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[205] Block = 0.000723 | Classic = 0.000723 | Abs Diff = 0.000000
+16: x[206] Block = 0.000740 | Classic = 0.000740 | Abs Diff = 0.000000
+16: x[207] Block = 0.000740 | Classic = 0.000740 | Abs Diff = 0.000000
+16: x[208] Block = 0.000748 | Classic = 0.000748 | Abs Diff = 0.000000
+16: x[209] Block = 0.000845 | Classic = 0.000845 | Abs Diff = 0.000000
+16: x[210] Block = 0.000871 | Classic = 0.000871 | Abs Diff = 0.000000
+16: x[211] Block = 0.000765 | Classic = 0.000765 | Abs Diff = 0.000000
+16: x[212] Block = 0.000794 | Classic = 0.000794 | Abs Diff = 0.000000
+16: x[213] Block = 0.000746 | Classic = 0.000746 | Abs Diff = 0.000000
+16: x[214] Block = 0.000790 | Classic = 0.000790 | Abs Diff = 0.000000
+16: x[215] Block = 0.000807 | Classic = 0.000807 | Abs Diff = 0.000000
+16: x[216] Block = 0.000786 | Classic = 0.000786 | Abs Diff = 0.000000
+16: x[217] Block = 0.000773 | Classic = 0.000773 | Abs Diff = 0.000000
+16: x[218] Block = 0.000742 | Classic = 0.000742 | Abs Diff = 0.000000
+16: x[219] Block = 0.000809 | Classic = 0.000809 | Abs Diff = 0.000000
+16: x[220] Block = 0.000838 | Classic = 0.000838 | Abs Diff = 0.000000
+16: x[221] Block = 0.000840 | Classic = 0.000840 | Abs Diff = 0.000000
+16: x[222] Block = 0.000718 | Classic = 0.000718 | Abs Diff = 0.000000
+16: x[223] Block = 0.000916 | Classic = 0.000916 | Abs Diff = 0.000000
+16: x[224] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[225] Block = 0.000815 | Classic = 0.000815 | Abs Diff = 0.000000
+16: x[226] Block = 0.000773 | Classic = 0.000773 | Abs Diff = 0.000000
+16: x[227] Block = 0.000849 | Classic = 0.000849 | Abs Diff = 0.000000
+16: x[228] Block = 0.000840 | Classic = 0.000840 | Abs Diff = 0.000000
+16: x[229] Block = 0.000755 | Classic = 0.000755 | Abs Diff = 0.000000
+16: x[230] Block = 0.000764 | Classic = 0.000764 | Abs Diff = 0.000000
+16: x[231] Block = 0.000816 | Classic = 0.000816 | Abs Diff = 0.000000
+16: x[232] Block = 0.000855 | Classic = 0.000855 | Abs Diff = 0.000000
+16: x[233] Block = 0.000819 | Classic = 0.000819 | Abs Diff = 0.000000
+16: x[234] Block = 0.000850 | Classic = 0.000850 | Abs Diff = 0.000000
+16: x[235] Block = 0.000742 | Classic = 0.000742 | Abs Diff = 0.000000
+16: x[236] Block = 0.000819 | Classic = 0.000819 | Abs Diff = 0.000000
+16: x[237] Block = 0.000775 | Classic = 0.000775 | Abs Diff = 0.000000
+16: x[238] Block = 0.000805 | Classic = 0.000805 | Abs Diff = 0.000000
+16: x[239] Block = 0.000748 | Classic = 0.000748 | Abs Diff = 0.000000
+16: x[240] Block = 0.000806 | Classic = 0.000806 | Abs Diff = 0.000000
+16: x[241] Block = 0.000781 | Classic = 0.000781 | Abs Diff = 0.000000
+16: x[242] Block = 0.000807 | Classic = 0.000807 | Abs Diff = 0.000000
+16: x[243] Block = 0.000796 | Classic = 0.000796 | Abs Diff = 0.000000
+16: x[244] Block = 0.000735 | Classic = 0.000735 | Abs Diff = 0.000000
+16: x[245] Block = 0.000854 | Classic = 0.000854 | Abs Diff = 0.000000
+16: x[246] Block = 0.000788 | Classic = 0.000788 | Abs Diff = 0.000000
+16: x[247] Block = 0.000833 | Classic = 0.000833 | Abs Diff = 0.000000
+16: x[248] Block = 0.000851 | Classic = 0.000851 | Abs Diff = 0.000000
+16: x[249] Block = 0.000783 | Classic = 0.000783 | Abs Diff = 0.000000
+16: x[250] Block = 0.000825 | Classic = 0.000825 | Abs Diff = 0.000000
+16: x[251] Block = 0.000834 | Classic = 0.000834 | Abs Diff = 0.000000
+16: x[252] Block = 0.000801 | Classic = 0.000801 | Abs Diff = 0.000000
+16: x[253] Block = 0.000879 | Classic = 0.000879 | Abs Diff = 0.000000
+16: x[254] Block = 0.000787 | Classic = 0.000787 | Abs Diff = 0.000000
+16: x[255] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[256] Block = 0.000763 | Classic = 0.000763 | Abs Diff = 0.000000
+16: x[257] Block = 0.000857 | Classic = 0.000857 | Abs Diff = 0.000000
+16: x[258] Block = 0.000863 | Classic = 0.000863 | Abs Diff = 0.000000
+16: x[259] Block = 0.000695 | Classic = 0.000695 | Abs Diff = 0.000000
+16: x[260] Block = 0.000892 | Classic = 0.000892 | Abs Diff = 0.000000
+16: x[261] Block = 0.000812 | Classic = 0.000812 | Abs Diff = 0.000000
+16: x[262] Block = 0.000773 | Classic = 0.000773 | Abs Diff = 0.000000
+16: x[263] Block = 0.000749 | Classic = 0.000749 | Abs Diff = 0.000000
+16: x[264] Block = 0.000838 | Classic = 0.000838 | Abs Diff = 0.000000
+16: x[265] Block = 0.000719 | Classic = 0.000719 | Abs Diff = 0.000000
+16: x[266] Block = 0.000818 | Classic = 0.000818 | Abs Diff = 0.000000
+16: x[267] Block = 0.000732 | Classic = 0.000732 | Abs Diff = 0.000000
+16: x[268] Block = 0.000784 | Classic = 0.000784 | Abs Diff = 0.000000
+16: x[269] Block = 0.000819 | Classic = 0.000819 | Abs Diff = 0.000000
+16: x[270] Block = 0.000786 | Classic = 0.000786 | Abs Diff = 0.000000
+16: x[271] Block = 0.000810 | Classic = 0.000810 | Abs Diff = 0.000000
+16: x[272] Block = 0.000812 | Classic = 0.000812 | Abs Diff = 0.000000
+16: x[273] Block = 0.000868 | Classic = 0.000868 | Abs Diff = 0.000000
+16: x[274] Block = 0.000853 | Classic = 0.000853 | Abs Diff = 0.000000
+16: x[275] Block = 0.000800 | Classic = 0.000800 | Abs Diff = 0.000000
+16: x[276] Block = 0.000795 | Classic = 0.000795 | Abs Diff = 0.000000
+16: x[277] Block = 0.000860 | Classic = 0.000860 | Abs Diff = 0.000000
+16: x[278] Block = 0.000759 | Classic = 0.000759 | Abs Diff = 0.000000
+16: x[279] Block = 0.000786 | Classic = 0.000786 | Abs Diff = 0.000000
+16: x[280] Block = 0.000835 | Classic = 0.000835 | Abs Diff = 0.000000
+16: x[281] Block = 0.000902 | Classic = 0.000902 | Abs Diff = 0.000000
+16: x[282] Block = 0.000809 | Classic = 0.000809 | Abs Diff = 0.000000
+16: x[283] Block = 0.000767 | Classic = 0.000767 | Abs Diff = 0.000000
+16: x[284] Block = 0.000827 | Classic = 0.000827 | Abs Diff = 0.000000
+16: x[285] Block = 0.000775 | Classic = 0.000775 | Abs Diff = 0.000000
+16: x[286] Block = 0.000836 | Classic = 0.000836 | Abs Diff = 0.000000
+16: x[287] Block = 0.000706 | Classic = 0.000706 | Abs Diff = 0.000000
+16: x[288] Block = 0.000792 | Classic = 0.000792 | Abs Diff = 0.000000
+16: x[289] Block = 0.000714 | Classic = 0.000714 | Abs Diff = 0.000000
+16: x[290] Block = 0.000876 | Classic = 0.000876 | Abs Diff = 0.000000
+16: x[291] Block = 0.000779 | Classic = 0.000779 | Abs Diff = 0.000000
+16: x[292] Block = 0.000747 | Classic = 0.000747 | Abs Diff = 0.000000
+16: x[293] Block = 0.000817 | Classic = 0.000817 | Abs Diff = 0.000000
+16: x[294] Block = 0.000783 | Classic = 0.000783 | Abs Diff = 0.000000
+16: x[295] Block = 0.000772 | Classic = 0.000772 | Abs Diff = 0.000000
+16: x[296] Block = 0.000847 | Classic = 0.000847 | Abs Diff = 0.000000
+16: x[297] Block = 0.000778 | Classic = 0.000778 | Abs Diff = 0.000000
+16: x[298] Block = 0.000822 | Classic = 0.000822 | Abs Diff = 0.000000
+16: x[299] Block = 0.000742 | Classic = 0.000742 | Abs Diff = 0.000000
+16: x[300] Block = 0.000780 | Classic = 0.000780 | Abs Diff = 0.000000
+16: x[301] Block = 0.000760 | Classic = 0.000760 | Abs Diff = 0.000000
+16: x[302] Block = 0.000839 | Classic = 0.000839 | Abs Diff = 0.000000
+16: x[303] Block = 0.000730 | Classic = 0.000730 | Abs Diff = 0.000000
+16: x[304] Block = 0.000885 | Classic = 0.000885 | Abs Diff = 0.000000
+16: x[305] Block = 0.000798 | Classic = 0.000798 | Abs Diff = 0.000000
+16: x[306] Block = 0.000738 | Classic = 0.000738 | Abs Diff = 0.000000
+16: x[307] Block = 0.000777 | Classic = 0.000777 | Abs Diff = 0.000000
+16: x[308] Block = 0.000787 | Classic = 0.000787 | Abs Diff = 0.000000
+16: x[309] Block = 0.000714 | Classic = 0.000714 | Abs Diff = 0.000000
+16: x[310] Block = 0.000812 | Classic = 0.000812 | Abs Diff = 0.000000
+16: x[311] Block = 0.000814 | Classic = 0.000814 | Abs Diff = 0.000000
+16: x[312] Block = 0.000890 | Classic = 0.000890 | Abs Diff = 0.000000
+16: x[313] Block = 0.000793 | Classic = 0.000793 | Abs Diff = 0.000000
+16: x[314] Block = 0.000806 | Classic = 0.000806 | Abs Diff = 0.000000
+16: x[315] Block = 0.000888 | Classic = 0.000888 | Abs Diff = 0.000000
+16: x[316] Block = 0.000787 | Classic = 0.000787 | Abs Diff = 0.000000
+16: x[317] Block = 0.000711 | Classic = 0.000711 | Abs Diff = 0.000000
+16: x[318] Block = 0.000848 | Classic = 0.000848 | Abs Diff = 0.000000
+16: x[319] Block = 0.000781 | Classic = 0.000781 | Abs Diff = 0.000000
+16: x[320] Block = 0.000766 | Classic = 0.000766 | Abs Diff = 0.000000
+16: x[321] Block = 0.000844 | Classic = 0.000844 | Abs Diff = 0.000000
+16: x[322] Block = 0.000809 | Classic = 0.000809 | Abs Diff = 0.000000
+16: x[323] Block = 0.000785 | Classic = 0.000785 | Abs Diff = 0.000000
+16: x[324] Block = 0.000825 | Classic = 0.000825 | Abs Diff = 0.000000
+16: x[325] Block = 0.000845 | Classic = 0.000845 | Abs Diff = 0.000000
+16: x[326] Block = 0.000826 | Classic = 0.000826 | Abs Diff = 0.000000
+16: x[327] Block = 0.000759 | Classic = 0.000759 | Abs Diff = 0.000000
+16: x[328] Block = 0.000801 | Classic = 0.000801 | Abs Diff = 0.000000
+16: x[329] Block = 0.000764 | Classic = 0.000764 | Abs Diff = 0.000000
+16: x[330] Block = 0.000810 | Classic = 0.000810 | Abs Diff = 0.000000
+16: x[331] Block = 0.000810 | Classic = 0.000810 | Abs Diff = 0.000000
+16: x[332] Block = 0.000855 | Classic = 0.000855 | Abs Diff = 0.000000
+16: x[333] Block = 0.000837 | Classic = 0.000837 | Abs Diff = 0.000000
+16: x[334] Block = 0.000854 | Classic = 0.000854 | Abs Diff = 0.000000
+16: x[335] Block = 0.000806 | Classic = 0.000806 | Abs Diff = 0.000000
+16: x[336] Block = 0.000814 | Classic = 0.000814 | Abs Diff = 0.000000
+16: x[337] Block = 0.000765 | Classic = 0.000765 | Abs Diff = 0.000000
+16: x[338] Block = 0.000801 | Classic = 0.000801 | Abs Diff = 0.000000
+16: x[339] Block = 0.000811 | Classic = 0.000811 | Abs Diff = 0.000000
+16: x[340] Block = 0.000816 | Classic = 0.000816 | Abs Diff = 0.000000
+16: x[341] Block = 0.000789 | Classic = 0.000789 | Abs Diff = 0.000000
+16: x[342] Block = 0.000829 | Classic = 0.000829 | Abs Diff = 0.000000
+16: x[343] Block = 0.000783 | Classic = 0.000783 | Abs Diff = 0.000000
+16: x[344] Block = 0.000803 | Classic = 0.000803 | Abs Diff = 0.000000
+16: x[345] Block = 0.000833 | Classic = 0.000833 | Abs Diff = 0.000000
+16: x[346] Block = 0.000800 | Classic = 0.000800 | Abs Diff = 0.000000
+16: x[347] Block = 0.000776 | Classic = 0.000776 | Abs Diff = 0.000000
+16: x[348] Block = 0.000768 | Classic = 0.000768 | Abs Diff = 0.000000
+16: x[349] Block = 0.000819 | Classic = 0.000819 | Abs Diff = 0.000000
+16: x[350] Block = 0.000860 | Classic = 0.000860 | Abs Diff = 0.000000
+16: x[351] Block = 0.000805 | Classic = 0.000805 | Abs Diff = 0.000000
+16: x[352] Block = 0.000827 | Classic = 0.000827 | Abs Diff = 0.000000
+16: x[353] Block = 0.000723 | Classic = 0.000723 | Abs Diff = 0.000000
+16: x[354] Block = 0.000802 | Classic = 0.000802 | Abs Diff = 0.000000
+16: x[355] Block = 0.000856 | Classic = 0.000856 | Abs Diff = 0.000000
+16: x[356] Block = 0.000792 | Classic = 0.000792 | Abs Diff = 0.000000
+16: x[357] Block = 0.000842 | Classic = 0.000842 | Abs Diff = 0.000000
+16: x[358] Block = 0.000840 | Classic = 0.000840 | Abs Diff = 0.000000
+16: x[359] Block = 0.000823 | Classic = 0.000823 | Abs Diff = 0.000000
+16: x[360] Block = 0.000765 | Classic = 0.000765 | Abs Diff = 0.000000
+16: x[361] Block = 0.000823 | Classic = 0.000823 | Abs Diff = 0.000000
+16: x[362] Block = 0.000755 | Classic = 0.000755 | Abs Diff = 0.000000
+16: x[363] Block = 0.000854 | Classic = 0.000854 | Abs Diff = 0.000000
+16: x[364] Block = 0.000790 | Classic = 0.000790 | Abs Diff = 0.000000
+16: x[365] Block = 0.000795 | Classic = 0.000795 | Abs Diff = 0.000000
+16: x[366] Block = 0.000792 | Classic = 0.000792 | Abs Diff = 0.000000
+16: x[367] Block = 0.000723 | Classic = 0.000723 | Abs Diff = 0.000000
+16: x[368] Block = 0.000834 | Classic = 0.000834 | Abs Diff = 0.000000
+16: x[369] Block = 0.000736 | Classic = 0.000736 | Abs Diff = 0.000000
+16: x[370] Block = 0.000752 | Classic = 0.000752 | Abs Diff = 0.000000
+16: x[371] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[372] Block = 0.000754 | Classic = 0.000754 | Abs Diff = 0.000000
+16: x[373] Block = 0.000728 | Classic = 0.000728 | Abs Diff = 0.000000
+16: x[374] Block = 0.000726 | Classic = 0.000726 | Abs Diff = 0.000000
+16: x[375] Block = 0.000871 | Classic = 0.000871 | Abs Diff = 0.000000
+16: x[376] Block = 0.000761 | Classic = 0.000761 | Abs Diff = 0.000000
+16: x[377] Block = 0.000847 | Classic = 0.000847 | Abs Diff = 0.000000
+16: x[378] Block = 0.000821 | Classic = 0.000821 | Abs Diff = 0.000000
+16: x[379] Block = 0.000785 | Classic = 0.000785 | Abs Diff = 0.000000
+16: x[380] Block = 0.000794 | Classic = 0.000794 | Abs Diff = 0.000000
+16: x[381] Block = 0.000821 | Classic = 0.000821 | Abs Diff = 0.000000
+16: x[382] Block = 0.000765 | Classic = 0.000765 | Abs Diff = 0.000000
+16: x[383] Block = 0.000853 | Classic = 0.000853 | Abs Diff = 0.000000
+16: x[384] Block = 0.000745 | Classic = 0.000745 | Abs Diff = 0.000000
+16: x[385] Block = 0.000778 | Classic = 0.000778 | Abs Diff = 0.000000
+16: x[386] Block = 0.000744 | Classic = 0.000744 | Abs Diff = 0.000000
+16: x[387] Block = 0.000784 | Classic = 0.000784 | Abs Diff = 0.000000
+16: x[388] Block = 0.000767 | Classic = 0.000767 | Abs Diff = 0.000000
+16: x[389] Block = 0.000780 | Classic = 0.000780 | Abs Diff = 0.000000
+16: x[390] Block = 0.000783 | Classic = 0.000783 | Abs Diff = 0.000000
+16: x[391] Block = 0.000803 | Classic = 0.000803 | Abs Diff = 0.000000
+16: x[392] Block = 0.000844 | Classic = 0.000844 | Abs Diff = 0.000000
+16: x[393] Block = 0.000777 | Classic = 0.000777 | Abs Diff = 0.000000
+16: x[394] Block = 0.000848 | Classic = 0.000848 | Abs Diff = 0.000000
+16: x[395] Block = 0.000870 | Classic = 0.000870 | Abs Diff = 0.000000
+16: x[396] Block = 0.000749 | Classic = 0.000749 | Abs Diff = 0.000000
+16: x[397] Block = 0.000771 | Classic = 0.000771 | Abs Diff = 0.000000
+16: x[398] Block = 0.000775 | Classic = 0.000775 | Abs Diff = 0.000000
+16: x[399] Block = 0.000821 | Classic = 0.000821 | Abs Diff = 0.000000
+16: x[400] Block = 0.000784 | Classic = 0.000784 | Abs Diff = 0.000000
+16: x[401] Block = 0.000769 | Classic = 0.000769 | Abs Diff = 0.000000
+16: x[402] Block = 0.000795 | Classic = 0.000795 | Abs Diff = 0.000000
+16: x[403] Block = 0.000777 | Classic = 0.000777 | Abs Diff = 0.000000
+16: x[404] Block = 0.000764 | Classic = 0.000764 | Abs Diff = 0.000000
+16: x[405] Block = 0.000815 | Classic = 0.000815 | Abs Diff = 0.000000
+16: x[406] Block = 0.000830 | Classic = 0.000830 | Abs Diff = 0.000000
+16: x[407] Block = 0.000796 | Classic = 0.000796 | Abs Diff = 0.000000
+16: x[408] Block = 0.000820 | Classic = 0.000820 | Abs Diff = 0.000000
+16: x[409] Block = 0.000764 | Classic = 0.000764 | Abs Diff = 0.000000
+16: x[410] Block = 0.000837 | Classic = 0.000837 | Abs Diff = 0.000000
+16: x[411] Block = 0.000778 | Classic = 0.000778 | Abs Diff = 0.000000
+16: x[412] Block = 0.000830 | Classic = 0.000830 | Abs Diff = 0.000000
+16: x[413] Block = 0.000721 | Classic = 0.000721 | Abs Diff = 0.000000
+16: x[414] Block = 0.000729 | Classic = 0.000729 | Abs Diff = 0.000000
+16: x[415] Block = 0.000793 | Classic = 0.000793 | Abs Diff = 0.000000
+16: x[416] Block = 0.000856 | Classic = 0.000856 | Abs Diff = 0.000000
+16: x[417] Block = 0.000836 | Classic = 0.000836 | Abs Diff = 0.000000
+16: x[418] Block = 0.000771 | Classic = 0.000771 | Abs Diff = 0.000000
+16: x[419] Block = 0.000743 | Classic = 0.000743 | Abs Diff = 0.000000
+16: x[420] Block = 0.000819 | Classic = 0.000819 | Abs Diff = 0.000000
+16: x[421] Block = 0.000768 | Classic = 0.000768 | Abs Diff = 0.000000
+16: x[422] Block = 0.000805 | Classic = 0.000805 | Abs Diff = 0.000000
+16: x[423] Block = 0.000831 | Classic = 0.000831 | Abs Diff = 0.000000
+16: x[424] Block = 0.000817 | Classic = 0.000817 | Abs Diff = 0.000000
+16: x[425] Block = 0.000779 | Classic = 0.000779 | Abs Diff = 0.000000
+16: x[426] Block = 0.000813 | Classic = 0.000813 | Abs Diff = 0.000000
+16: x[427] Block = 0.000802 | Classic = 0.000802 | Abs Diff = 0.000000
+16: x[428] Block = 0.000820 | Classic = 0.000820 | Abs Diff = 0.000000
+16: x[429] Block = 0.000848 | Classic = 0.000848 | Abs Diff = 0.000000
+16: x[430] Block = 0.000869 | Classic = 0.000869 | Abs Diff = 0.000000
+16: x[431] Block = 0.000873 | Classic = 0.000873 | Abs Diff = 0.000000
+16: x[432] Block = 0.000758 | Classic = 0.000758 | Abs Diff = 0.000000
+16: x[433] Block = 0.000898 | Classic = 0.000898 | Abs Diff = 0.000000
+16: x[434] Block = 0.000784 | Classic = 0.000784 | Abs Diff = 0.000000
+16: x[435] Block = 0.000851 | Classic = 0.000851 | Abs Diff = 0.000000
+16: x[436] Block = 0.000837 | Classic = 0.000837 | Abs Diff = 0.000000
+16: x[437] Block = 0.000722 | Classic = 0.000722 | Abs Diff = 0.000000
+16: x[438] Block = 0.000857 | Classic = 0.000857 | Abs Diff = 0.000000
+16: x[439] Block = 0.000851 | Classic = 0.000851 | Abs Diff = 0.000000
+16: x[440] Block = 0.000817 | Classic = 0.000817 | Abs Diff = 0.000000
+16: x[441] Block = 0.000824 | Classic = 0.000824 | Abs Diff = 0.000000
+16: x[442] Block = 0.000773 | Classic = 0.000773 | Abs Diff = 0.000000
+16: x[443] Block = 0.000798 | Classic = 0.000798 | Abs Diff = 0.000000
+16: x[444] Block = 0.000898 | Classic = 0.000898 | Abs Diff = 0.000000
+16: x[445] Block = 0.000799 | Classic = 0.000799 | Abs Diff = 0.000000
+16: x[446] Block = 0.000839 | Classic = 0.000839 | Abs Diff = 0.000000
+16: x[447] Block = 0.000770 | Classic = 0.000770 | Abs Diff = 0.000000
+16: x[448] Block = 0.000816 | Classic = 0.000816 | Abs Diff = 0.000000
+16: x[449] Block = 0.000824 | Classic = 0.000824 | Abs Diff = 0.000000
+16: x[450] Block = 0.000880 | Classic = 0.000880 | Abs Diff = 0.000000
+16: x[451] Block = 0.000784 | Classic = 0.000784 | Abs Diff = 0.000000
+16: x[452] Block = 0.000861 | Classic = 0.000861 | Abs Diff = 0.000000
+16: x[453] Block = 0.000792 | Classic = 0.000792 | Abs Diff = 0.000000
+16: x[454] Block = 0.000747 | Classic = 0.000747 | Abs Diff = 0.000000
+16: x[455] Block = 0.000815 | Classic = 0.000815 | Abs Diff = 0.000000
+16: x[456] Block = 0.000754 | Classic = 0.000754 | Abs Diff = 0.000000
+16: x[457] Block = 0.000789 | Classic = 0.000789 | Abs Diff = 0.000000
+16: x[458] Block = 0.000803 | Classic = 0.000803 | Abs Diff = 0.000000
+16: x[459] Block = 0.000789 | Classic = 0.000789 | Abs Diff = 0.000000
+16: x[460] Block = 0.000815 | Classic = 0.000815 | Abs Diff = 0.000000
+16: x[461] Block = 0.000847 | Classic = 0.000847 | Abs Diff = 0.000000
+16: x[462] Block = 0.000735 | Classic = 0.000735 | Abs Diff = 0.000000
+16: x[463] Block = 0.000760 | Classic = 0.000760 | Abs Diff = 0.000000
+16: x[464] Block = 0.000792 | Classic = 0.000792 | Abs Diff = 0.000000
+16: x[465] Block = 0.000841 | Classic = 0.000841 | Abs Diff = 0.000000
+16: x[466] Block = 0.000748 | Classic = 0.000748 | Abs Diff = 0.000000
+16: x[467] Block = 0.000772 | Classic = 0.000772 | Abs Diff = 0.000000
+16: x[468] Block = 0.000840 | Classic = 0.000840 | Abs Diff = 0.000000
+16: x[469] Block = 0.000811 | Classic = 0.000811 | Abs Diff = 0.000000
+16: x[470] Block = 0.000770 | Classic = 0.000770 | Abs Diff = 0.000000
+16: x[471] Block = 0.000844 | Classic = 0.000844 | Abs Diff = 0.000000
+16: x[472] Block = 0.000844 | Classic = 0.000844 | Abs Diff = 0.000000
+16: x[473] Block = 0.000769 | Classic = 0.000769 | Abs Diff = 0.000000
+16: x[474] Block = 0.000736 | Classic = 0.000736 | Abs Diff = 0.000000
+16: x[475] Block = 0.000720 | Classic = 0.000720 | Abs Diff = 0.000000
+16: x[476] Block = 0.000836 | Classic = 0.000836 | Abs Diff = 0.000000
+16: x[477] Block = 0.000725 | Classic = 0.000725 | Abs Diff = 0.000000
+16: x[478] Block = 0.000789 | Classic = 0.000789 | Abs Diff = 0.000000
+16: x[479] Block = 0.000709 | Classic = 0.000709 | Abs Diff = 0.000000
+16: x[480] Block = 0.000812 | Classic = 0.000812 | Abs Diff = 0.000000
+16: x[481] Block = 0.000748 | Classic = 0.000748 | Abs Diff = 0.000000
+16: x[482] Block = 0.000891 | Classic = 0.000891 | Abs Diff = 0.000000
+16: x[483] Block = 0.000775 | Classic = 0.000775 | Abs Diff = 0.000000
+16: x[484] Block = 0.000761 | Classic = 0.000761 | Abs Diff = 0.000000
+16: x[485] Block = 0.000818 | Classic = 0.000818 | Abs Diff = 0.000000
+16: x[486] Block = 0.000705 | Classic = 0.000705 | Abs Diff = 0.000000
+16: x[487] Block = 0.000833 | Classic = 0.000833 | Abs Diff = 0.000000
+16: x[488] Block = 0.000772 | Classic = 0.000772 | Abs Diff = 0.000000
+16: x[489] Block = 0.000834 | Classic = 0.000834 | Abs Diff = 0.000000
+16: x[490] Block = 0.000811 | Classic = 0.000811 | Abs Diff = 0.000000
+16: x[491] Block = 0.000838 | Classic = 0.000838 | Abs Diff = 0.000000
+16: x[492] Block = 0.000827 | Classic = 0.000827 | Abs Diff = 0.000000
+16: x[493] Block = 0.000870 | Classic = 0.000870 | Abs Diff = 0.000000
+16: x[494] Block = 0.000798 | Classic = 0.000798 | Abs Diff = 0.000000
+16: x[495] Block = 0.000872 | Classic = 0.000872 | Abs Diff = 0.000000
+16: x[496] Block = 0.000830 | Classic = 0.000830 | Abs Diff = 0.000000
+16: x[497] Block = 0.000794 | Classic = 0.000794 | Abs Diff = 0.000000
+16: x[498] Block = 0.000758 | Classic = 0.000758 | Abs Diff = 0.000000
+16: x[499] Block = 0.000768 | Classic = 0.000768 | Abs Diff = 0.000000
+16: -----------------------------------------------------
+16: Total Absolute Difference (Sum): 0.000000
+16: Max Absolute Difference:        0.000000
+16: -----------------------------------------------------
+16: Performance Metrics:
+16:   Parallel Block Solver: 49114.000 us
+16:   Classical Solver:      69295.000 us
+16:   Speedup Ratio:         1.411x
+16: +---------------------------------------------------+
+16: verdict: pass (block == classical within tolerance)
+16: ---------------------------------------------
+16: 
+16: RESULT: PASS
+1/1 Test #16: native-smp-mat-test-host .........   Passed    0.20 sec
+
+The following tests passed:
+	native-smp-mat-test-host
+
+100% tests passed out of 1
+
+Label Time Summary:
+host    =   0.20 sec*proc (1 test)
+
+Total Test time (real) =   0.20 sec
