@@ -15,7 +15,8 @@
 # micro-os-plus-iii-devices-storage.
 #
 # Exports: micro-os-plus::soc-bcm2837, ::soc-bcm2711, ::devices (SD + USB
-# gadget), ::devices-sd (SD only, for a board with no usable DWC2 device port)
+# gadget), ::devices-sd (SD only, for a board with no usable DWC2 device port),
+# ::devices-sd-posix (the SD card as a posix-io block device, no flatfs/FatFs)
 # -----------------------------------------------------------------------------
 cmake_minimum_required (VERSION 3.20)
 
@@ -87,6 +88,24 @@ if (_drivers AND NOT TARGET micro-os-plus::devices-sd)
     micro-os-plus-iii-devices-sd-interface INTERFACE micro-os-plus::devices-storage
   )
   add_library (micro-os-plus::devices-sd ALIAS micro-os-plus-iii-devices-sd-interface)
+endif ()
+
+if (_drivers AND NOT TARGET micro-os-plus::devices-sd-posix)
+  # The SD card driver as a µOS++ POSIX I/O block device (sd::block_device,
+  # micro-os-plus-iii-devices-storage), with none of the old file systems:
+  # the file system comes from @xpacks/chan-fatfs.
+  add_library (micro-os-plus-iii-devices-sd-posix-interface INTERFACE)
+  target_include_directories (
+    micro-os-plus-iii-devices-sd-posix-interface INTERFACE "${_drivers}/include"
+  )
+  target_sources (
+    micro-os-plus-iii-devices-sd-posix-interface INTERFACE "${_drivers}/src/sd.cpp"
+  )
+  target_link_libraries (
+    micro-os-plus-iii-devices-sd-posix-interface
+    INTERFACE micro-os-plus::devices-storage-sd micro-os-plus::devices-storage-posix
+  )
+  add_library (micro-os-plus::devices-sd-posix ALIAS micro-os-plus-iii-devices-sd-posix-interface)
 endif ()
 
 # Where a consumer that builds a driver itself (a test with its own SD set)
