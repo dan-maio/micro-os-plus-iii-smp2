@@ -46,7 +46,14 @@ LOST"); the app itself kept running and serving USB. The pre-rewrite build
 (wt-smp/, the smp branch) passed on the same board, cables and clock, with
 no JTAG error. Same compile defines, SD and USB drivers, memory layout,
 runner and OpenOCD config; the difference is the storage layer, cause not
-found. usb_test is back on the old set (aarch32 rpi-zero-2w only, where it is
+found.
+
+**Correction (run d, same day):** the pre-rewrite storage lost the link in the
+same way on the AArch64 Zero 2 W, with an unexpected reset of the board: the
+storage is not the cause, the USB bring-up is (most likely the supply); see
+2026-11-18d/RESULTS.md. The A/B below was luck.
+
+usb_test is back on the old set (aarch32 rpi-zero-2w only, where it is
 proven) until that is investigated; the old FatFs stays while it needs it.
 Its other copies (aarch32 rpi3b, aarch64 rpi3b and rpi-zero-2w) are still the
 posix-io version, not yet run on hardware.

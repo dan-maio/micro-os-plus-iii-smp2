@@ -1,0 +1,152 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug
+      Start  2: aarch64-rpi-zero-2w-usb_test-hwd
+ 1/18 Test  #2: aarch64-rpi-zero-2w-usb_test-hwd ..............***Failed   79.77 sec
+[hw] executing pre-load reset on bcm2837.cpu0...
+[hw] waiting 12s for board to boot after reset...
+[hw] --- usb_test (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Warn : Transport "jtag" was already selected
+Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E46268C3571E0D36
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (JTAG)
+Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : cmsis-dap JTAG TLR_RESET
+Info : cmsis-dap JTAG TLR_RESET
+Info : JTAG tap: bcm2837.cpu tap/device found: 0x4ba00477 (mfg: 0x23b (ARM Ltd), part: 0xba00, ver: 0x4)
+Info : [bcm2837.ap] Examination succeed
+Info : bcm2837.cpu0: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu0] external reset detected
+Info : [bcm2837.cpu0] Examination succeed
+Info : bcm2837.cpu1: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu1] external reset detected
+Info : [bcm2837.cpu1] Examination succeed
+Info : bcm2837.cpu2: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu2] external reset detected
+Info : [bcm2837.cpu2] Examination succeed
+Info : bcm2837.cpu3: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu3] external reset detected
+Info : [bcm2837.cpu3] Examination succeed
+Info : [bcm2837.ap] gdb port disabled
+Info : [bcm2837.cpu0] gdb port disabled
+Info : [bcm2837.cpu1] gdb port disabled
+Info : [bcm2837.cpu2] gdb port disabled
+Info : [bcm2837.cpu3] gdb port disabled
+--- stage: halt cores 0 1 2 3 ---
+Info : bcm2837.cpu0 socket 0 cluster 0 core 0 multi core
+bcm2837.cpu0 halted in AArch64 state due to debug-request, current mode: EL2H
+cpsr: 0x000003c9 pc: 0x36225ade90ddf200
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+Info : bcm2837.cpu1 socket 0 cluster 0 core 1 multi core
+bcm2837.cpu1 halted in AArch64 state due to debug-request, current mode: EL2H
+cpsr: 0x000003c9 pc: 0x7c
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+Info : bcm2837.cpu2 socket 0 cluster 0 core 2 multi core
+bcm2837.cpu2 halted in AArch64 state due to debug-request, current mode: EL2H
+cpsr: 0x000003c9 pc: 0x7c
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+Info : bcm2837.cpu3 socket 0 cluster 0 core 3 multi core
+bcm2837.cpu3 halted in AArch64 state due to debug-request, current mode: EL2H
+cpsr: 0x000003c9 pc: 0x7c
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+--- stage: enable semihosting on cores 0 1 2 3 ---
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/port-tests/test/usb_test-hwd ---
+--- stage: resume cores 0 1 2 3 at 0x80000 ---
+  start PC core 0 = pc (/64): 0x0000000000080000
+Info : tcl server disabled
+Info : telnet server disabled
+USB power domain: FAILED (code=0x00000000 state=0x00000003 alias=0)
+storage: FAT window LBA 8192, 124661760 sectors (60870 MiB)
+storage: FAT32, 32 sectors/cluster, 3893777 clusters
+storage: 62300432 KiB total, 62144464 KiB free
+storage: FatFsSink (FAT32 tests/)
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu0] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: Could not initialize the APB-AP
+Error: [bcm2837.cpu0] Examination failed
+Error: [bcm2837.cpu0] Examination failed, GDB will be halted. Polling again in 100ms
+Error: [bcm2837.cpu0] Polling failed, trying to reexamine
+Info : bcm2837.cpu0: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2837.cpu0] Examination succeed
+Error: Invalid ACK (7) in DAP response
+Error: Debug regions are unpowered, an unexpected reset might have happened
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu0] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu0] Examination failed
+Error: [bcm2837.cpu0] Examination failed, GDB will be halted. Polling again in 100ms
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: [bcm2837.cpu1] Polling failed, trying to reexamine
+Error: Invalid ACK (7) in DAP response
+Error: JTAG-DP STICKY ERROR
+Error: Could not initialize the APB-AP
+Error: [bcm2837.cpu1] Examination failed
+Error: [bcm2837.cpu1] Examination failed, GDB will be halted. Polling again in 100ms
+Error: [bcm2837.cpu0] Polling failed, trying to reexamine
+Info : bcm2837.cpu0: hardware has 6 breakpoints, 4 watchpoints
+Error: error handling USB events: System call interrupted (perhaps due to signal)
+Error: CMSIS-DAP command CMD_DAP_JTAG_SEQ failed.
+
+usb_test                 DEBUG LINK LOST  (the DAP stopped answering, not a firmware fault)
+    retry with UOS_HW_ADAPTER_KHZ=1000, and check the board's supply
+
+[hw] usb_test did not pass — power-cycle the board before retrying.
+
+      Start  4: aarch64-rpi-zero-2w-wifi-net-hwd
+ 2/18 Test  #4: aarch64-rpi-zero-2w-wifi-net-hwd ..............   Passed   83.96 sec
+      Start  6: aarch64-rpi-zero-2w-wifi-tcp-server-hwd
+ 3/18 Test  #6: aarch64-rpi-zero-2w-wifi-tcp-server-hwd .......   Passed  137.04 sec
+      Start  8: aarch64-rpi-zero-2w-mutex-stress-hwd
+ 4/18 Test  #8: aarch64-rpi-zero-2w-mutex-stress-hwd ..........   Passed   54.20 sec
+      Start 10: aarch64-rpi-zero-2w-rtos-apis-hwd
+ 5/18 Test #10: aarch64-rpi-zero-2w-rtos-apis-hwd .............   Passed   32.76 sec
+      Start 12: aarch64-rpi-zero-2w-cmsis-os-validator-hwd
+ 6/18 Test #12: aarch64-rpi-zero-2w-cmsis-os-validator-hwd ....   Passed   32.80 sec
+      Start 14: aarch64-rpi-zero-2w-smp_test0-hwd
+ 7/18 Test #14: aarch64-rpi-zero-2w-smp_test0-hwd .............   Passed   29.69 sec
+      Start 16: aarch64-rpi-zero-2w-smp_test1-hwd
+ 8/18 Test #16: aarch64-rpi-zero-2w-smp_test1-hwd .............   Passed   29.69 sec
+      Start 18: aarch64-rpi-zero-2w-smp_test2-hwd
+ 9/18 Test #18: aarch64-rpi-zero-2w-smp_test2-hwd .............   Passed   19.47 sec
+      Start 20: aarch64-rpi-zero-2w-smp_test3-hwd
+10/18 Test #20: aarch64-rpi-zero-2w-smp_test3-hwd .............   Passed   29.68 sec
+      Start 22: aarch64-rpi-zero-2w-smp_test4-hwd
+11/18 Test #22: aarch64-rpi-zero-2w-smp_test4-hwd .............   Passed   29.71 sec
+      Start 26: aarch64-rpi-zero-2w-smp-num-test-hwd
+12/18 Test #26: aarch64-rpi-zero-2w-smp-num-test-hwd ..........   Passed   38.87 sec
+      Start 30: aarch64-rpi-zero-2w-smp-pipeline-test-hwd
+13/18 Test #30: aarch64-rpi-zero-2w-smp-pipeline-test-hwd .....   Passed   54.25 sec
+      Start 32: aarch64-rpi-zero-2w-smp-pro-cons-test-hwd
+14/18 Test #32: aarch64-rpi-zero-2w-smp-pro-cons-test-hwd .....   Passed   24.59 sec
+      Start 34: aarch64-rpi-zero-2w-smp-mat-test-hwd
+15/18 Test #34: aarch64-rpi-zero-2w-smp-mat-test-hwd ..........   Passed   20.50 sec
+      Start 38: aarch64-rpi-zero-2w-sd_test-hwd
+16/18 Test #38: aarch64-rpi-zero-2w-sd_test-hwd ...............   Passed   22.58 sec
+      Start 42: aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd
+17/18 Test #42: aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd ...   Passed   22.58 sec
+      Start 44: aarch64-rpi-zero-2w-clock-test-hwd
+18/18 Test #44: aarch64-rpi-zero-2w-clock-test-hwd ............   Passed   24.59 sec
+
+94% tests passed, 1 tests failed out of 18
+
+Label Time Summary:
+hwd    = 766.73 sec*proc (18 tests)
+
+Total Test time (real) = 766.76 sec
+
+The following tests FAILED:
+	  2 - aarch64-rpi-zero-2w-usb_test-hwd (Failed)         hwd
+Errors while running CTest

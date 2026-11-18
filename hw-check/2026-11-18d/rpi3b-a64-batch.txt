@@ -1,0 +1,38 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi3b-cmake-gcc-debug
+      Start  3: aarch64-rpi3b-mutex-stress-hwd
+ 1/15 Test  #3: aarch64-rpi3b-mutex-stress-hwd ..........   Passed   51.10 sec
+      Start  5: aarch64-rpi3b-rtos-apis-hwd
+ 2/15 Test  #5: aarch64-rpi3b-rtos-apis-hwd .............   Passed   25.56 sec
+      Start  7: aarch64-rpi3b-cmsis-os-validator-hwd
+ 3/15 Test  #7: aarch64-rpi3b-cmsis-os-validator-hwd ....   Passed   28.64 sec
+      Start  9: aarch64-rpi3b-smp_test0-hwd
+ 4/15 Test  #9: aarch64-rpi3b-smp_test0-hwd .............   Passed   25.57 sec
+      Start 11: aarch64-rpi3b-smp_test1-hwd
+ 5/15 Test #11: aarch64-rpi3b-smp_test1-hwd .............   Passed   26.58 sec
+      Start 13: aarch64-rpi3b-smp_test2-hwd
+ 6/15 Test #13: aarch64-rpi3b-smp_test2-hwd .............   Passed   16.35 sec
+      Start 15: aarch64-rpi3b-smp_test3-hwd
+ 7/15 Test #15: aarch64-rpi3b-smp_test3-hwd .............   Passed   26.59 sec
+      Start 17: aarch64-rpi3b-smp_test4-hwd
+ 8/15 Test #17: aarch64-rpi3b-smp_test4-hwd .............   Passed   25.57 sec
+      Start 21: aarch64-rpi3b-smp-num-test-hwd
+ 9/15 Test #21: aarch64-rpi3b-smp-num-test-hwd ..........   Passed   34.75 sec
+      Start 25: aarch64-rpi3b-smp-pipeline-test-hwd
+10/15 Test #25: aarch64-rpi3b-smp-pipeline-test-hwd .....   Passed   48.02 sec
+      Start 27: aarch64-rpi3b-smp-pro-cons-test-hwd
+11/15 Test #27: aarch64-rpi3b-smp-pro-cons-test-hwd .....   Passed   20.37 sec
+      Start 29: aarch64-rpi3b-smp-mat-test-hwd
+12/15 Test #29: aarch64-rpi3b-smp-mat-test-hwd ..........   Passed   16.43 sec
+      Start 33: aarch64-rpi3b-sd_test-hwd
+13/15 Test #33: aarch64-rpi3b-sd_test-hwd ...............   Passed   18.41 sec
+      Start 37: aarch64-rpi3b-smp-mat-sdcard-test-hwd
+14/15 Test #37: aarch64-rpi3b-smp-mat-sdcard-test-hwd ...   Passed   19.42 sec
+      Start 39: aarch64-rpi3b-clock-test-hwd
+15/15 Test #39: aarch64-rpi3b-clock-test-hwd ............   Passed   21.47 sec
+
+100% tests passed out of 15
+
+Label Time Summary:
+hwd    = 404.83 sec*proc (15 tests)
+
+Total Test time (real) = 404.86 sec

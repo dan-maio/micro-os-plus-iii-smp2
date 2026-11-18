@@ -1,0 +1,3 @@
+gadget after 200 s: 
+1d6b:0104 not found. Connect the host to the Zero 2W's OTG micro-USB port (the one labelled USB, not PWR IN) with usb_test running, then check `lsusb -d 1d6b:0104`.
+host rc=1
