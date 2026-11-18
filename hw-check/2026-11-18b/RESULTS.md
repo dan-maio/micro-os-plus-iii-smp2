@@ -28,5 +28,20 @@ smp-list-storage-test failed first with "OPENOCD DIED" right after the resume:
 the batch's first test, started at the same moment as the WeAct's OpenOCD
 session; alone it passed. Start the second board a few seconds later.
 
-Not run (they need the user): usb_big_test (host tool), eth-net and
-eth-tcp-server (Ethernet, a TCP client).
+Network tests, run afterwards on the user's request (Ethernet cabled, DHCP):
+
+| test | | time |
+|---|---|---|
+| eth-net | PASS (link, address, gateway ping, log on the SD card) | 25 s |
+| eth-tcp-server | PASS (client served, stream on the SD card) | 43 s |
+
+eth-tcp-server's client was eth-tcp-host.py, run here: the board's address
+(192.168.1.191, MAC dc:a6:32:..., a Raspberry Pi OUI) found from the PC's
+neighbour table after one ping of the /24 (the board prints its address only
+on the UART, the user's). Client: 262144 bytes sent, CRC-32 15aff1b5, echo
+identical, 161 Mbit/s each way. The first run failed "no TCP client
+connected" (nobody connected within its 60 s). Two "JTAG probe on Pico"
+probes were attached by then: the Pi 4 B's is E661410403809139 (the other,
+E46268C3571E0D36, reached no board: "scan chain interrogation failed").
+
+Not run (it needs the user): usb_big_test (host tool over USB-C).

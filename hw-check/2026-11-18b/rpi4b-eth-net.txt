@@ -1,0 +1,92 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 2
+    Start 2: aarch64-rpi4b-eth-net-hwd
+
+2: Test command: /usr/bin/bash "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/aarch64/micro-os-plus-iii-aarch64/test/boards/rpi4b/hw.sh" "eth-net" "1800"
+2: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin
+2: Environment variables: 
+2:  BUILD=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin/port-tests
+2:  UOS_SMP_DIR=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/..
+2: Test timeout computed to be: 2400
+2: [hw] executing pre-load reset on bcm2711.cpu0...
+2: [hw] waiting 10s for board to boot after reset...
+2: [hw] --- eth-net (1800s max) ---
+2: xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+2: Licensed under GNU GPL v2
+2: For bug reports, read
+2: 	http://openocd.org/doc/doxygen/bugs.html
+2: Warn : Transport "jtag" was already selected
+2: Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E661410403809139
+2: Info : CMSIS-DAP: SWD supported
+2: Info : CMSIS-DAP: JTAG supported
+2: Info : CMSIS-DAP: Atomic commands supported
+2: Info : CMSIS-DAP: Test domain timer supported
+2: Info : CMSIS-DAP: FW Version = 2.0.0
+2: Info : CMSIS-DAP: Interface Initialised (JTAG)
+2: Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 0 nRESET = 1
+2: Info : CMSIS-DAP: Interface ready
+2: Info : clock speed 4000 kHz
+2: Info : cmsis-dap JTAG TLR_RESET
+2: Info : cmsis-dap JTAG TLR_RESET
+2: Info : JTAG tap: bcm2711.cpu tap/device found: 0x4ba00477 (mfg: 0x23b (ARM Ltd), part: 0xba00, ver: 0x4)
+2: Info : [bcm2711.ap] Examination succeed
+2: Error: JTAG-DP STICKY ERROR
+2: Error: Failed to read memory at 0x80410088
+2: Info : bcm2711.cpu0: hardware has 6 breakpoints, 4 watchpoints
+2: Info : [bcm2711.cpu0] external reset detected
+2: Info : [bcm2711.cpu0] Examination succeed
+2: Error: JTAG-DP STICKY ERROR
+2: Error: Failed to read memory at 0x80510088
+2: Info : bcm2711.cpu1: hardware has 6 breakpoints, 4 watchpoints
+2: Info : [bcm2711.cpu1] external reset detected
+2: Info : [bcm2711.cpu1] Examination succeed
+2: Error: JTAG-DP STICKY ERROR
+2: Error: Failed to read memory at 0x80610088
+2: Info : bcm2711.cpu2: hardware has 6 breakpoints, 4 watchpoints
+2: Info : [bcm2711.cpu2] external reset detected
+2: Info : [bcm2711.cpu2] Examination succeed
+2: Error: JTAG-DP STICKY ERROR
+2: Error: Failed to read memory at 0x80710088
+2: Info : bcm2711.cpu3: hardware has 6 breakpoints, 4 watchpoints
+2: Info : [bcm2711.cpu3] external reset detected
+2: Info : [bcm2711.cpu3] Examination succeed
+2: Info : [bcm2711.ap] gdb port disabled
+2: Info : [bcm2711.cpu0] gdb port disabled
+2: Info : [bcm2711.cpu1] gdb port disabled
+2: Info : [bcm2711.cpu2] gdb port disabled
+2: Info : [bcm2711.cpu3] gdb port disabled
+2: --- stage: halt cores 0 ---
+2: Info : bcm2711.cpu0 socket 0 cluster 0 core 0 multi core
+2: bcm2711.cpu0 halted in AArch64 state due to debug-request, current mode: EL2H
+2: cpsr: 0x000003c9 pc: 0x200
+2: MMU: disabled, D-Cache: disabled, I-Cache: disabled
+2: --- stage: enable semihosting on cores 0 1 2 3 ---
+2: --- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin/port-tests/test/eth-net-hwd ---
+2: --- stage: resume cores 0 at 0x80000 ---
+2:   start PC core 0 = pc (/64): 0x0000000000080000
+2: Info : tcl server disabled
+2: Info : telnet server disabled
+2: 
+2: RESULT: PASS (link, address, gateway ping, log on the SD card)
+2: 
+2: eth-net                  PASS  (13s)
+2: 
+2: [hw] eth-net PASSED — power-cycle the board before the next test.
+1/1 Test #2: aarch64-rpi4b-eth-net-hwd ........   Passed   24.63 sec
+
+The following tests passed:
+	aarch64-rpi4b-eth-net-hwd
+
+100% tests passed out of 1
+
+Label Time Summary:
+hwd    =  24.63 sec*proc (1 test)
+
+Total Test time (real) =  24.63 sec
