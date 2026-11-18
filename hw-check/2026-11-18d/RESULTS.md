@@ -38,3 +38,13 @@ side send_file.py send_file.py --get --terminate (2993 bytes, read back
 byte-for-byte). Script usb-test-a64.sh, logs zero2w-a64-usb_test-2*.txt.
 So the rewrite works on the board; the JTAG-link loss at the USB bring-up
 is intermittent, with either storage.
+
+## usb_test (Zero 2 W, AArch32) after the revert: PASS
+
+aarch32 7250d51 (usb_test on the old storage) reverted (b3f3e22): usb_test is
+the posix-io + Chan FatFs version again. 44 s; host side send_file.py
+send_file.py --get --terminate, read back byte-for-byte. Logs in
+../2026-11-18c/zero2w-usb_test*.txt (overwritten by this run). All four
+usb_test copies are now the posix-io version; proven on the Zero 2 W
+(AArch32 and AArch64). The JTAG-link loss at the USB bring-up stays open
+(intermittent, either storage, most likely the supply).
