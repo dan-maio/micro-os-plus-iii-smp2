@@ -30,3 +30,11 @@ AArch32 pre-rewrite passes were luck): the failure is at the USB bring-up
 the USB port powers up (the runner's hint: "check the board's supply").
 The AArch64 usb_test storage change was undone (not committed); the board
 recovered by itself for the rest of the batch.
+
+## usb_test again (Zero 2 W, AArch64): PASS
+
+The posix-io + Chan FatFs version (the rewrite, as committed), 36 s; host
+side send_file.py send_file.py --get --terminate (2993 bytes, read back
+byte-for-byte). Script usb-test-a64.sh, logs zero2w-a64-usb_test-2*.txt.
+So the rewrite works on the board; the JTAG-link loss at the USB bring-up
+is intermittent, with either storage.

@@ -1,0 +1,10 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug
+    Start 2: aarch64-rpi-zero-2w-usb_test-hwd
+1/1 Test #2: aarch64-rpi-zero-2w-usb_test-hwd ...   Passed   35.79 sec
+
+100% tests passed out of 1
+
+Label Time Summary:
+hwd    =  35.79 sec*proc (1 test)
+
+Total Test time (real) =  35.79 sec
