@@ -1,0 +1,54 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug
+    Start  9: cortexm-pico2-rp2350b-psram-smp-test-nested-clock-hwd
+1/3 Test  #9: cortexm-pico2-rp2350b-psram-smp-test-nested-clock-hwd .......***Failed    9.12 sec
+== WeAct RP2350B (16 MB flash + 8 MB PSRAM, 2x Cortex-M33 SMP) : smp-test-nested-clock ==
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+_rv_reset_init
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: SWO-UART supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 1000 kHz
+Info : SWD DPIDR 0x4c013477
+Info : [rp2350.cm0] Cortex-M33 r1p0 processor detected
+Info : [rp2350.cm0] target has 8 breakpoints, 4 watchpoints
+Info : [rp2350.cm0] Examination succeed
+Info : [rp2350.cm1] Cortex-M33 r1p0 processor detected
+Info : [rp2350.cm1] target has 8 breakpoints, 4 watchpoints
+Info : [rp2350.cm1] Examination succeed
+Info : [rp2350.cm0] gdb port disabled
+Info : [rp2350.cm1] gdb port disabled
+[rp2350.cm0] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+[rp2350.cm1] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+Info : RP2350 rev 3, QSPI Flash size override = 16384 KiB in 4096 sectors
+Info : RP2xxx ROM API function FC @ 3801
+[rp2350.cm0] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+[rp2350.cm1] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+Info : RP2xxx ROM API function FC @ 3801
+** Programming Started **
+Info : Padding image section 3 at 0x10009f3c with 196 bytes (bank write end alignment)
+** Programming Finished **
+** Verify Started **
+** Verified OK **
+Error: [rp2350.cm0] DP initialisation failed
+Error: Error connecting DP: cannot read IDR
+Info : SWD DPIDR 0x4c013477
+Info : [rp2350.cm1] AP write error, reset will not halt
+
+
+smp-test-nested-clock    OPENOCD DIED  (see /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug/platform-bin/port-tests/.hw-logs/smp-test-nested-clock.log)
+Power-cycle the board before the next test.
+
+    Start 10: cortexm-pico2-rp2350b-psram-smp-test-nested-clock_200-hwd
