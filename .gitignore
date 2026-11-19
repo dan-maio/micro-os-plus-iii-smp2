@@ -38,3 +38,6 @@
 /step6-check/after6b9b/
 /step6-check/after-hw1/
 !/hw-check/
+!/step7-check/
+# The step 7 snapshot (every build command) is large and regenerable.
+/step7-check/after/
