@@ -1,7 +1,7 @@
 # SD Card (SDMMC) support — Luckfox Lyra B (RK3506)
 
-Bare-metal SD-card driver for the StateOS port. This folder is dropped into all
-three builds (AMP root, `SMP/`, `SMP_FINE/`) unchanged.
+Bare-metal SD-card driver for the RK3506, carried from the predecessor project
+(where it served a StateOS port) into this device package.
 
 ## Hardware
 
@@ -20,20 +20,23 @@ Pins: `GPIO3_A0..A5` → func1 = `SDMMC_CLK, CMD, D0, D1, D2, D3`.
 
 ## Files
 
-| File/Folder        | Purpose                                                        |
-|--------------------|----------------------------------------------------------------|
-| `sdmmc.hpp`        | Register map, SD command set, `sdcard::SdMmc` driver API        |
-| `sdmmc.cpp`        | DW-MMC host + SD identification + PIO block read/write          |
-| `sdcard_demo.cpp`  | Optional UART self-test (`sdcard::demo()`) — not auto-wired     |
-| `fatfs/`           | C version of the FatFs R0.15a filesystem library               |
-| `fatfs_cpp/`       | Modernized C++23 FatFs engine with RAII wrappers (`fs::File`/`fs::Dir`)|
-| `tests/`           | Low-level block I/O and FatFs C/C++ filesystem integration tests|
-| `reference/uboot-mmc/` | Verbatim U-Boot `drivers/mmc/` sources this was distilled from |
+In this package (`micro-os-plus-iii-devices-rk3506`, `soc/rk3506/`):
+
+| File | Purpose |
+|------|---------|
+| `include/sdmmc.hpp`, `src/sdmmc.cpp` | register map, SD command set, the `sdcard::SdMmc` driver: DW-MMC host, SD identification, PIO block read/write |
+| `include/sd_dwmmc.hpp`, `src/sd_dwmmc.cpp` | the `sd::SdCard` back-end over it (`SD_BACKEND_DWMMC`), which `micro-os-plus::devices-rk3506-sd-posix` presents as the µOS++ POSIX I/O block device `/dev/sd` |
+
+The file system is no longer here: the tests mount the card with the xPack
+Chan FatFs through µOS++ POSIX I/O (`micro-os-plus-iii-devices-storage`).
+The predecessor's `fatfs/` (FatFs R0.15a), `fatfs_cpp/`, `tests/` and
+`reference/uboot-mmc/` folders, and the `sdcard_demo.cpp` self-test, were not
+carried.
 
 ## API
 
 ```cpp
-#include "../sdcard/sdmmc.hpp"
+#include <sdmmc.hpp>
 
 sdcard::SdMmc sd;
 if (sd.init()) {                       // clocks + pinmux + SD ID sequence
@@ -60,21 +63,14 @@ garbage, this is almost always wrong — measure/derive the actual PLL rate that
 
 ## Wiring into a build
 
-The `Makefile` uses an explicit source list, so add one line to `CXX_SOURCES`:
-
-```make
-CXX_SOURCES += ../sdcard/sdmmc.cpp
-# optional self-test:
-CXX_SOURCES += ../sdcard/sdcard_demo.cpp
-```
-
-(Root build: use `sdcard/...` — no `../`.) Then call `sdcard::demo()` from your
-main thread after `uart::uart1.init()`. The include path already reaches
-`sdcard/` via the relative `#include "../sdcard/sdmmc.hpp"`.
+Link `micro-os-plus::devices-rk3506-sd-posix` (CMake, from this package). In
+the kernel's tests the Lyra platform does it for every storage test
+(`UOS_BOARD_SD_POSIX` in `tests/platforms/aarch32-luckfox-lyra/cmake/board.cmake`):
+the card is then `/dev/sd`, mounted at `/sd/` before the test starts.
 
 ## Provenance
 
 Reference vendor sources: `/…/Luckfox_Lyrs_B/SDK/u-boot/drivers/mmc/`. The
 DesignWare register semantics come from `include/dwmmc.h`; the SD state machine
-and CSD-capacity math come from `mmc.c`. Those files are copied under
-`reference/uboot-mmc/` so you can cross-check any register offset or quirk.
+and CSD-capacity math come from `mmc.c`. (The predecessor kept copies under
+`reference/uboot-mmc/`; they were not carried.)
