@@ -41,3 +41,4 @@
 !/step7-check/
 # The step 7 snapshot (every build command) is large and regenerable.
 /step7-check/after/
+!/docs-check/
