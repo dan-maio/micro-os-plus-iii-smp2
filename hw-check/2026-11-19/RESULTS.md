@@ -56,3 +56,23 @@ tests (pico-usb.sh): smp-test-usb-cdc-acm (170 s), smp-test-usb-hid (6 s).
 
 Use /dev/serial/by-id/ names for tio: the ttyACM numbers change with every
 replug.
+
+## WeAct F412: 5/5 pass
+
+ST-LINK/V2.1 (DBGMCU IDCODE 0x30006441, STM32F412, checked). mos-test1,
+uart-test1, rtos-apis (42 s), mutex-stress (44 s), cmsis-os-validator (32 s):
+the suites end through its test-end-console.h (uart::init, then 20 ms for the
+DMA). Its console is USART1 (PA9/PA10), not the ST-LINK's virtual COM port.
+weactf412-batch.txt.
+
+## PSRAM board (WeAct RP2350B): fp-switch pass
+
+CMSIS-DAP c251:f001, after a rescue reset; only fp-switch (the one test of
+this board that 6b-14 changed: it came from the Pico 2's suite wrapper, now
+from upstream's suite through the builder), 13 s. psram-fp-switch.txt.
+
+## Cortex-M after step 6b: all proven
+
+WeAct F411 5/5, Pico 2 21/21, Nucleo F411 4/4, Pico 20/20, WeAct F412 5/5,
+PSRAM fp-switch. Not run: the Pico 2 Pi Zero (no suites; only its runner
+path moved in 6b-13).
