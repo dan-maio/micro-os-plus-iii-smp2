@@ -76,3 +76,21 @@ from upstream's suite through the builder), 13 s. psram-fp-switch.txt.
 WeAct F411 5/5, Pico 2 21/21, Nucleo F411 4/4, Pico 20/20, WeAct F412 5/5,
 PSRAM fp-switch. Not run: the Pico 2 Pi Zero (no suites; only its runner
 path moved in 6b-13).
+
+## Pico 2 Pi Zero: 12/12 pass
+
+XV-Link CMSIS-DAP 0416:5951, after a rescue reset; the 12 automatic tests
+(its runner path moved in 6b-13; the two USB tests passed 2026-11-18 and are
+unchanged). pico2-pizero-batch.txt.
+
+## Luckfox Lyra: 18/18 pass (the automatic ones)
+
+WCH-Link 1a86:8011. lyra-batch.txt: 14/18 at first; the 4 failures
+(smp_test_int2, smp_test0, smp_test1, smp_test3) were all debug-link losses
+("DEBUG LINK LOST", "Failed to write memory", "CMSIS-DAP command mismatch"),
+all inside the window in which the Pi Zero's CMSIS-DAP session ran beside
+it. Rerun alone (lyra-rerun4.txt): 4/4. Not run: smp_test7 (USB transfer from
+the PC plus the user's y/n), smp_test_int3 and smp_test_int4 (keyboard over
+USB); they passed 2026-11-18 and their code did not change in 6b.
+Lesson: do not run Lyra beside another CMSIS-DAP board (the Pico 2 + WeAct
+F411 pair was fine).

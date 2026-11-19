@@ -1,0 +1,240 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+      Start  1: aarch32-luckfox-lyra-smp_test5-hwd
+ 1/18 Test  #1: aarch32-luckfox-lyra-smp_test5-hwd .............   Passed  166.29 sec
+      Start  2: aarch32-luckfox-lyra-smp_test6-hwd
+ 2/18 Test  #2: aarch32-luckfox-lyra-smp_test6-hwd .............   Passed   80.42 sec
+      Start  3: aarch32-luckfox-lyra-smp_test_int-hwd
+ 3/18 Test  #3: aarch32-luckfox-lyra-smp_test_int-hwd ..........   Passed  225.42 sec
+      Start  4: aarch32-luckfox-lyra-smp_test_int2-hwd
+ 4/18 Test  #4: aarch32-luckfox-lyra-smp_test_int2-hwd .........***Failed   21.21 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp_test_int2 (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f00394, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test_int2-hwd ---
+--- stage: resume cores 0 at 0x20003c ---
+Info : tcl server disabled
+Info : telnet server disabled
+
+
++=============================================+
+|  Luckfox Lyra µOS++ SMP TEST INT2   Error: Could not read DSCR register
+Error: Error waiting for cortex_a_exec_opcode
+Info : SWD DPIDR 0x2ba01477
+Error: Failed semihosting operation (0x04)
+[rk3506.a7.0] target halted in ARM state due to undefined, current mode: Supervisor
+cpsr: 0x600001d3 pc: 0x00200008, semihosting
+[rk3506.a7.0] MMU: enabled, D-Cache: enabled, I-Cache: enabled
+Error: [rk3506.a7.0] Polling failed, trying to reexamine
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+shutdown command invoked
+
+smp_test_int2            DEBUG LINK LOST  (the DAP stopped answering, not a firmware fault)
+    retry with UOS_HW_ADAPTER_KHZ=1000, and check the board's supply
+
+[hw] smp_test_int2 did not pass — power-cycle the board before retrying.
+
+      Start  5: aarch32-luckfox-lyra-smp_test_int5-hwd
+ 5/18 Test  #5: aarch32-luckfox-lyra-smp_test_int5-hwd .........   Passed   17.17 sec
+      Start  6: aarch32-luckfox-lyra-smp_test0-hwd
+ 6/18 Test  #6: aarch32-luckfox-lyra-smp_test0-hwd .............***Failed    7.90 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp_test0 (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f00170, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-hwd ---
+Info : SWD DPIDR 0x2ba01477
+Error: Failed to write memory at 0x80110080
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test0.cfg:23: Error: 
+Traceback (most recent call last):
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test0.cfg", line 23, in script
+    load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test0-hwd
+
+smp_test0                OPENOCD DIED
+
+[hw] smp_test0 did not pass — power-cycle the board before retrying.
+
+      Start  7: aarch32-luckfox-lyra-smp_test1-hwd
+ 7/18 Test  #7: aarch32-luckfox-lyra-smp_test1-hwd .............***Failed   23.13 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp_test1 (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x600001d3 pc: 0x03f0018c, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test1-hwd ---
+--- stage: resume cores 0 at 0x20003c ---
+Info : tcl server disabled
+Info : telnet server disabled
+Error: [rk3506.a7.0] Polling failed, trying to reexamine
+Info : SWD DPIDR 0x2ba01477
+Error: [rk3506.a7.0] Examination failed
+Error: [rk3506.a7.0] Examination failed, GDB will be halted. Polling again in 100ms
+Info : SWD DPIDR 0x2ba01477
+Error: [rk3506.a7.1] Polling failed, trying to reexamine
+Info : SWD DPIDR 0x2ba01477
+Error: Could not initialize the APB-AP
+Error: [rk3506.a7.1] Examination failed
+Error: [rk3506.a7.1] Examination failed, GDB will be halted. Polling again in 100ms
+Info : SWD DPIDR 0x2ba01477
+Error: [rk3506.a7.0] Polling failed, trying to reexamine
+Error: error reading data: Success
+Error: [rk3506.a7.0] Can't detect dbgbase from the ROM table; you need to specify it explicitly
+Error: [rk3506.a7.0] Examination failed
+Error: [rk3506.a7.0] Examination failed, GDB will be halted. Polling again in 100ms
+shutdown command invoked
+Error: CMSIS-DAP command mismatch. Sent 0x12 received 0x5
+Info : SWD DPIDR 0x2ba01477
+
+smp_test1                DEBUG LINK LOST  (the DAP stopped answering, not a firmware fault)
+    retry with UOS_HW_ADAPTER_KHZ=1000, and check the board's supply
+
+[hw] smp_test1 did not pass — power-cycle the board before retrying.
+
+      Start  8: aarch32-luckfox-lyra-smp_test2-hwd
+ 8/18 Test  #8: aarch32-luckfox-lyra-smp_test2-hwd .............   Passed   17.11 sec
+      Start  9: aarch32-luckfox-lyra-smp_test3-hwd
+ 9/18 Test  #9: aarch32-luckfox-lyra-smp_test3-hwd .............***Failed   11.98 sec
+hw.sh: RK3506 full global reset (glb_srstn_1)...
+[hw] --- smp_test3 (600s max) ---
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f00394, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-hwd ---
+Info : SWD DPIDR 0x2ba01477
+Error: Failed to write memory at 0x80110080
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test3.cfg:23: Error: 
+Traceback (most recent call last):
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/.hw-logs/smp_test3.cfg", line 23, in script
+    load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test3-hwd
+
+smp_test3                OPENOCD DIED
+
+[hw] smp_test3 did not pass — power-cycle the board before retrying.
+
+      Start 10: aarch32-luckfox-lyra-smp_test4-hwd
+10/18 Test #10: aarch32-luckfox-lyra-smp_test4-hwd .............   Passed   26.23 sec
+      Start 11: aarch32-luckfox-lyra-smp-num-test-hwd
+11/18 Test #11: aarch32-luckfox-lyra-smp-num-test-hwd ..........   Passed   39.54 sec
+      Start 12: aarch32-luckfox-lyra-smp-pipeline-test-hwd
+12/18 Test #12: aarch32-luckfox-lyra-smp-pipeline-test-hwd .....   Passed   57.00 sec
+      Start 13: aarch32-luckfox-lyra-smp-pro-cons-test-hwd
+13/18 Test #13: aarch32-luckfox-lyra-smp-pro-cons-test-hwd .....   Passed   22.16 sec
+      Start 14: aarch32-luckfox-lyra-smp-mat-test-hwd
+14/18 Test #14: aarch32-luckfox-lyra-smp-mat-test-hwd ..........   Passed   17.27 sec
+      Start 15: aarch32-luckfox-lyra-sd_test-hwd
+15/18 Test #15: aarch32-luckfox-lyra-sd_test-hwd ...............   Passed   22.70 sec
+      Start 16: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd
+16/18 Test #16: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd ...   Passed   23.54 sec
+      Start 17: aarch32-luckfox-lyra-clock-test-hwd
+17/18 Test #17: aarch32-luckfox-lyra-clock-test-hwd ............   Passed   21.46 sec
+      Start 18: aarch32-luckfox-lyra-mutex-stress-test-hwd
+18/18 Test #18: aarch32-luckfox-lyra-mutex-stress-test-hwd .....   Passed  141.61 sec
+
+78% tests passed, 4 tests failed out of 18
+
+Label Time Summary:
+hwd    = 942.13 sec*proc (18 tests)
+
+Total Test time (real) = 942.15 sec
+
+The following tests FAILED:
+	  4 - aarch32-luckfox-lyra-smp_test_int2-hwd (Failed)   hwd
+	  6 - aarch32-luckfox-lyra-smp_test0-hwd (Failed)       hwd
+	  7 - aarch32-luckfox-lyra-smp_test1-hwd (Failed)       hwd
+	  9 - aarch32-luckfox-lyra-smp_test3-hwd (Failed)       hwd
+Errors while running CTest
