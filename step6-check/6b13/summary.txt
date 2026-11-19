@@ -1,0 +1,14 @@
+cortexm-nucleof411-cmake-gcc-debug build rc=0, 4 hwd images: No tests were found!!!
+cortexm-nucleof411-cmake-gcc-release build rc=0, 4 hwd images: No tests were found!!!
+cortexm-pico-cmake-gcc-debug build rc=0, 20 hwd images: 100% tests passed out of 6
+cortexm-pico-cmake-gcc-release build rc=0, 20 hwd images: 100% tests passed out of 6
+cortexm-pico2-cmake-gcc-debug build rc=0, 21 hwd images: 100% tests passed out of 6
+cortexm-pico2-cmake-gcc-release build rc=0, 21 hwd images: 100% tests passed out of 6
+cortexm-pico2-pizero-cmake-gcc-debug build rc=0, 14 hwd images: No tests were found!!!
+cortexm-pico2-pizero-cmake-gcc-release build rc=0, 14 hwd images: No tests were found!!!
+cortexm-pico2-rp2350b-psram-cmake-gcc-debug build rc=0, 15 hwd images: 100% tests passed out of 3 (after the include fix)
+cortexm-pico2-rp2350b-psram-cmake-gcc-release build rc=0, 15 hwd images: 100% tests passed out of 3 (after the include fix)
+cortexm-weactf411-cmake-gcc-debug build rc=0, 5 hwd images: No tests were found!!!
+cortexm-weactf411-cmake-gcc-release build rc=0, 5 hwd images: No tests were found!!!
+cortexm-weactf412-cmake-gcc-debug build rc=0, 5 hwd images: No tests were found!!!
+cortexm-weactf412-cmake-gcc-release build rc=0, 5 hwd images: No tests were found!!!
