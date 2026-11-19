@@ -1,0 +1,6 @@
+aarch64-rpi3b-cmake-gcc-debug build rc=0: 100% tests passed out of 24
+aarch64-rpi3b-cmake-gcc-release build rc=0: 100% tests passed out of 24
+aarch64-rpi4b-cmake-gcc-debug build rc=0: 97% tests passed, 1 tests failed out of 32
+aarch64-rpi4b-cmake-gcc-release build rc=0: 97% tests passed, 1 tests failed out of 32
+aarch64-rpi-zero-2w-cmake-gcc-debug build rc=0: 100% tests passed out of 26
+aarch64-rpi-zero-2w-cmake-gcc-release build rc=0: 100% tests passed out of 26
