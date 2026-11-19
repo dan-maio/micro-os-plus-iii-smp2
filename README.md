@@ -1,9 +1,10 @@
 # micro-os-plus-iii-cortexm
 
-The Cortex-M port of µOS++ III — the third architecture project, beside
-[`micro-os-plus-iii-aarch32`](../micro-os-plus-iii-aarch32) and
-[`micro-os-plus-iii-aarch64`](../micro-os-plus-iii-aarch64), built the same
-way and from the same kernel.
+The Cortex-M port of µOS++ III, an xPack used by the kernel's test project
+(`micro-os-plus-iii/tests`) and by applications, as upstream's Cortex-M port
+is. The boards and their tests are in the kernel's `tests/platforms/cortexm-*/`;
+the chips' support is in the device packages `micro-os-plus-iii-devices-rp2xxx`
+and `micro-os-plus-iii-devices-stm32f4`.
 
 ## What is here
 
@@ -14,22 +15,20 @@ micro-os-plus-iii-cortexm/
 ├── include-m33/                     the generic Cortex-M33 port headers
 ├── include-rp2350/                  the RP2350 SMP port headers
 ├── include-rp2040/                  the RP2040 SMP port headers
-├── soc/                             CMSIS device headers + system_*.c:
-│                                    stm32f4xx, rp2350, rp2040 (no Pico SDK)
 ├── src/rtos/os-core.cpp             upstream: PendSV, SysTick, critical sections
 ├── src/rtos/os-core-m33.cpp         the generic M33 core (SSE-200 CPUID/MHU)
 ├── src/rtos/os-core-rp2350.cpp      the RP2350 SMP core (SIO lock/FIFO/CPUID)
 ├── src/rtos/os-core-rp2040.cpp      the RP2040 SMP core (ARMv6-M, SIO)
 ├── src/semihosting-exit.cpp         strong _Exit() through SYS_EXIT
 ├── src/libc/getentropy.c            getentropy() for libstdc++
-└── test/
-    ├── CMakeLists.txt  hw.sh  qemu.sh
-    ├── boards/<id>/                 board.cmake, include/, src/, linker.ld,
-    │                                openocd.cfg, hw.sh (qemu.sh where modelled)
-    └── <id>/                        that board's test applications
+└── test/                            empty (.gitkeep), as upstream's
 ```
 
-Seven boards, three Cortex-M profiles, one and two CPUs:
+The CMSIS device headers and `system_*.c` (stm32f4xx, rp2350, rp2040; no
+Pico SDK) are in the device packages. The boards, in the kernel's
+`tests/platforms/cortexm-<board>/` (board facts, code, linker scripts,
+`openocd.cfg`, the board's own tests): seven boards, three Cortex-M profiles,
+one and two CPUs:
 
 | board | part | CPUs | applications |
 |---|---|---|---|
@@ -41,37 +40,34 @@ Seven boards, three Cortex-M profiles, one and two CPUs:
 | `pico2-rp2350b-psram` | RP2350B + 8 MB PSRAM, 2× Cortex-M33 | **2** | the `pico2` set plus the PSRAM tests |
 | `pico` | RP2040, 2× Cortex-M0+ | **2** | the `pico2` set, adapted (`smp-mat-test` at N=80 to fit 264 KB; `fp-switch` has no FPU to test) |
 
-## Building
+## Building and running
 
-Clone the two siblings beside this one, then:
-
-```sh
-cmake -S . -B test/build -G Ninja -DBOARD=nucleof411 \
-      -DCMAKE_TOOLCHAIN_FILE=../micro-os-plus-iii/cmake/toolchains/arm-none-eabi.cmake
-cmake --build test/build -j
-```
-
-## Running
-
-Hardware only for the three STM32 boards: they are programmed over an ST-Link
-and run on the desk. The three RP2350 boards are programmed over CMSIS-DAP.
-The `pico` (RP2040) is programmed through the JTAGprobe (CMSIS-DAP v2,
-`2e8a:000c`) over SWD -- the RP2040 has no JTAG -- at 15 MHz by default;
-`UOS_HW_ADAPTER_KHZ` overrides it (`test/boards/pico/openocd.cfg`, `hw.sh`).
-OpenOCD does the whole job: program, enable semihosting, reset run. There is
-no GDB in this path and nothing is redirected.
+From the kernel's test project, with the port and the device packages linked
+(`xpm link` once in each, then `xpm run link-deps --config <configuration>`):
 
 ```sh
-BOARD=nucleof411 ./test/hw.sh          # list what is built
-BOARD=nucleof411 ./test/hw.sh mos-test1
+cd micro-os-plus-iii/tests
+xpm run prepare --config cortexm-nucleof411-cmake-gcc-debug
+xpm run build   --config cortexm-nucleof411-cmake-gcc-debug
+cd build/cortexm-nucleof411-cmake-gcc-debug
+ctest -R '^cortexm-nucleof411-mos-test1-hwd$' --output-on-failure   # one, on the board
+ctest -L hwd                                                         # all, on the board
 ```
 
-`test/qemu.sh` is a dispatcher to `test/boards/<id>/qemu.sh`. Only `pico2`
-and `pico` set `UOS_BOARD_LINKER_QEMU`, so they build an emulated image per
-test as well as the hardware one; the STM32 boards and `pico2-pizero` build
-hardware images only, and the dispatcher says so. The `pico` images run on
-QEMU's `mps2-an385` (`-cpu cortex-m3`, single core): the kernel tests only,
-since QEMU models neither the SIO, nor core 1, nor the USB.
+Hardware only for the three STM32 boards and `pico2-pizero`: they are
+programmed over an ST-Link or a CMSIS-DAP probe and run on the desk. The
+three RP2350 boards are programmed over CMSIS-DAP. The `pico` (RP2040) is
+programmed through the JTAGprobe (CMSIS-DAP v2, `2e8a:000c`) over SWD — the
+RP2040 has no JTAG — at 15 MHz by default; `UOS_HW_ADAPTER_KHZ` overrides it.
+CTest runs OpenOCD with the board's `openocd.cfg` and the commands in the
+platform's `CMakeLists.txt`: program, enable semihosting, reset, run. There
+is no GDB in this path and nothing is redirected; the test's semihosting exit
+ends OpenOCD and its `RESULT` line is the verdict.
+
+`pico2`, `pico` and `pico2-rp2350b-psram` also build emulated images
+(`ctest -L qemu`). The `pico` images run on QEMU's `mps2-an385`
+(`-cpu cortex-m3`, single core), the RP2350 ones on `mps2-an500`: the kernel
+tests only, since QEMU models neither the SIO, nor core 1, nor the USB.
 
 ## Pure RAM Execution on Pico 2 (RP2350)
 
@@ -81,26 +77,28 @@ Four tests run **entirely from internal SRAM** (`0x20000000`, 520 KB) without wr
 - `rtos-apis-ram`
 - `smp-mat-test-ram` (dual-core SMP parallel block linear solver)
 
-Each test directory (`test/pico2/<app>/`) contains:
+Each test folder (`tests/platforms/cortexm-pico2/tests/<app>/`, in the kernel) contains:
 - `linker-ram.ld`: Links `.text`, `.rodata`, `.data` in SRAM `0x20000000`. Sections `.bss`, `.heap`, `.stack` are marked `(NOLOAD)` and `.embedded_end_block` is embedded compactly in `.text` so the downloaded ELF size remains compact (~26–68 KB).
-- `hw.sh`: Dedicated hardware test runner that:
+- its run, in the platform's `CMakeLists.txt` (`_hwd_ram`), which:
   1. Relocates OpenOCD's target work-area to `0x20070000` (`rp2350.cm0 configure -work-area-phys 0x20070000 -work-area-size 0x8000`) so fast CRC verification never overlaps with application memory.
   2. Downloads the ELF into SRAM `0x20000000` via `load_image` and validates via `verify_image`.
   3. Resumes Core 1 (`rp2350.cm1`) to wait in bootrom.
   4. Configures Core 0 (`rp2350.cm0`) VTOR (`0xE000ED08`) to `0x20000000`, sets SP from `[0x20000000]` and PC from `[0x20000004] & ~1` (`_reset_handler`), enables semihosting, and resumes.
-  5. Monitors semihosting output for `RESULT: PASS` and exits cleanly.
-- `load-ram.cfg`: Standalone OpenOCD script for manual and interactive debug sessions.
+  5. The test's semihosting exit ends OpenOCD; its `RESULT` line is the verdict.
+- `hw.sh`, `load-ram.cfg`: the former runner and its OpenOCD script, kept
+  until the CTest run is proven on the board.
 - `README.md` and `README.pdf`: Self-contained test documentation and architecture notes.
 
-The `pico` (RP2040) has the same four tests in `test/pico/<app>/`, on its
-264 KB SRAM: `linker-ram.ld` discards `.boot2`, and `hw.sh`/`load-ram.cfg`
-put OpenOCD's work-area at `0x20041000` (size `0x1000`) and drive
+The `pico` (RP2040) has the same four tests in
+`tests/platforms/cortexm-pico/tests/<app>/`, on its 264 KB SRAM:
+`linker-ram.ld` discards `.boot2`, and the run puts OpenOCD's work-area at
+`0x20041000` (size `0x1000`) and drives
 `rp2040.core1` / `rp2040.core0`.
 
 ## Generic QEMU cores
 
 Besides the board cores, the port exports generic single-core QEMU cores that
-the harness's emulated configurations link, in `tests/device-qemu-cortexm`
+the tests' emulated configurations link, with `tests/device-qemu-cortexm`
 (vector table, CMSIS core, linker script):
 
 | target | CPU | used by |
@@ -149,11 +147,11 @@ PendSV saves s16–s31 for a thread whose frame is extended. The suite
 same three pieces (spinlock 0, the inter-core FIFO on `SIO_IRQ_PROC0` /
 `SIO_IRQ_PROC1` -- IRQs 15 and 16, one per core -- and `SIO_CPUID`), and
 core 1 is launched the same way, after the bootrom's 256-byte flash second
-stage (`test/boards/pico/src/boot2.S`). The Cortex-M0+ is ARMv6-M, so its
+stage (the platform's `src/boot2.S`). The Cortex-M0+ is ARMv6-M, so its
 core (`src/rtos/os-core-rp2040.cpp`) saves context with Thumb-1 code, has no
 BASEPRI (critical sections are PRIMASK) and no FPU (soft-float). It cannot
 read DHCSR from software either, so `src/semihosting-exit.cpp` and
-`test/boards/shared/debug-host.h` skip the "debugger attached" check on
+the kernel's `tests/board-tests/cortexm/debug-host.h` skip the "debugger attached" check on
 `__ARM_ARCH_6M__`.
 
 ## One CPU, and why that matters
