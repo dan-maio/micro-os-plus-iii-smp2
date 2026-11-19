@@ -1,0 +1,2 @@
+gadget 2207:001b after 1 s: Bus 003 Device 005: ID 2207:001b Fuzhou Rockchip Electronics Company 
+2207:001b not found

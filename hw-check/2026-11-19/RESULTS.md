@@ -94,3 +94,18 @@ the PC plus the user's y/n), smp_test_int3 and smp_test_int4 (keyboard over
 USB); they passed 2026-11-18 and their code did not change in 6b.
 Lesson: do not run Lyra beside another CMSIS-DAP board (the Pico 2 + WeAct
 F411 pair was fine).
+
+## Luckfox Lyra: the three USB tests -- 21/21 in all
+
+lyra-usb.sh / lyra-kbd.sh, driven from here:
+- smp_test7 PASS (60 s): 262144 bytes to gadget 2207:0019 with smp_test6's
+  usb_test_host --big ("ACK: count=262144, status OK", all bytes match); the
+  user answered the board's y/n on its UART.
+- smp_test_int3 PASS (77 s) and smp_test_int4 PASS (86 s): the verdict is the
+  host configuring the OTG1 gadget 2207:001B, which needs the Lyra's USB1 port
+  connected (it was not at first: int4 failed "NOT configured within 120 s";
+  int3's first try died loading while the Pi 4 B's probe was being plugged
+  in). Key records ('K', value, code LE16, seq LE32 on bulk EP 0x02) sent with
+  pyusb instead of the root-only kbd_forward: 6 for int3; for int4 the script
+  caught int3's gadget still on the bus and sent none (the test passes on
+  the configuration alone).

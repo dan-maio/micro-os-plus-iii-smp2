@@ -1,0 +1,2 @@
+gadget 2207:001b after 15 s: Bus 003 Device 005: ID 2207:001b Fuzhou Rockchip Electronics Company 
+sent 6 key records on EP 0x2
