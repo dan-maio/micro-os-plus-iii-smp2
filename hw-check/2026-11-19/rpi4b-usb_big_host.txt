@@ -1,0 +1,9 @@
+gadget after 16 s: Bus 001 Device 068: ID 1d6b:0104 Linux Foundation Multifunction Composite Gadget
+Found device: 1d6b:0104
+Current configuration: 1
+Interface 0 claimed successfully
+Using endpoints: IN=0x81 OUT=0x01
+All 4194304 bytes sent in 5 chunks, draining echo...
+ACK: count=4194304, status OK
+PASSED: all 4194304 bytes match
+host rc=0

@@ -109,3 +109,22 @@ lyra-usb.sh / lyra-kbd.sh, driven from here:
   pyusb instead of the root-only kbd_forward: 6 for int3; for int4 the script
   caught int3's gadget still on the bus and sent none (the test passes on
   the configuration alone).
+
+## Raspberry Pi 4 B (AArch64): 22/22 pass
+
+JTAG probe on Pico E661410403809139, alone (rpi4b-run.sh, its runner and
+OpenOCD config at their new place, tests/platforms/aarch64-rpi4b/):
+- 19 automatic (rpi4b-batch.txt), the upstream suites included;
+- eth-net PASS (25 s);
+- eth-tcp-server PASS (28 s): client eth-tcp-host.py run here against
+  192.168.1.191 (MAC dc:a6:32:65:cc:bb), 262144 bytes, CRC-32 15aff1b5, echo
+  identical, 165 Mbit/s;
+- usb_big_test PASS (31 s): usb_test_host --big 4194304 run here, "ACK:
+  count=4194304, status OK", all bytes match.
+
+## After step 6b, proven on hardware today
+
+Cortex-M: WeAct F411 5/5, Pico 2 21/21, Nucleo F411 4/4, Pico 20/20, WeAct
+F412 5/5, PSRAM fp-switch, Pico 2 Pi Zero 12/12. AArch32: Luckfox Lyra 21/21.
+AArch64: Pi 4 B 22/22. Not run today: the Pi 3 B and Zero 2 W (AArch32,
+AArch64), whose runners moved the same way as the Pi 4 B's.

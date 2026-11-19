@@ -1,0 +1,46 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+      Start  4: aarch64-rpi4b-smp-list-storage-test-hwd
+ 1/19 Test  #4: aarch64-rpi4b-smp-list-storage-test-hwd ...   Passed   24.62 sec
+      Start  8: aarch64-rpi4b-smp-shapes-test-hwd
+ 2/19 Test  #8: aarch64-rpi4b-smp-shapes-test-hwd .........   Passed   47.28 sec
+      Start 10: aarch64-rpi4b-smp_mem_inter_test-hwd
+ 3/19 Test #10: aarch64-rpi4b-smp_mem_inter_test-hwd ......   Passed  182.53 sec
+      Start 12: aarch64-rpi4b-smp_mem_test-hwd
+ 4/19 Test #12: aarch64-rpi4b-smp_mem_test-hwd ............   Passed   47.22 sec
+      Start 15: aarch64-rpi4b-mutex-stress-hwd
+ 5/19 Test #15: aarch64-rpi4b-mutex-stress-hwd ............   Passed   49.31 sec
+      Start 17: aarch64-rpi4b-rtos-apis-hwd
+ 6/19 Test #17: aarch64-rpi4b-rtos-apis-hwd ...............   Passed   24.67 sec
+      Start 19: aarch64-rpi4b-cmsis-os-validator-hwd
+ 7/19 Test #19: aarch64-rpi4b-cmsis-os-validator-hwd ......   Passed   26.70 sec
+      Start 21: aarch64-rpi4b-smp_test0-hwd
+ 8/19 Test #21: aarch64-rpi4b-smp_test0-hwd ...............   Passed   23.72 sec
+      Start 23: aarch64-rpi4b-smp_test1-hwd
+ 9/19 Test #23: aarch64-rpi4b-smp_test1-hwd ...............   Passed   24.67 sec
+      Start 25: aarch64-rpi4b-smp_test2-hwd
+10/19 Test #25: aarch64-rpi4b-smp_test2-hwd ...............   Passed   14.42 sec
+      Start 27: aarch64-rpi4b-smp_test3-hwd
+11/19 Test #27: aarch64-rpi4b-smp_test3-hwd ...............   Passed   24.67 sec
+      Start 29: aarch64-rpi4b-smp_test4-hwd
+12/19 Test #29: aarch64-rpi4b-smp_test4-hwd ...............   Passed   24.69 sec
+      Start 33: aarch64-rpi4b-smp-num-test-hwd
+13/19 Test #33: aarch64-rpi4b-smp-num-test-hwd ............   Passed   31.85 sec
+      Start 37: aarch64-rpi4b-smp-pipeline-test-hwd
+14/19 Test #37: aarch64-rpi4b-smp-pipeline-test-hwd .......   Passed   47.26 sec
+      Start 39: aarch64-rpi4b-smp-pro-cons-test-hwd
+15/19 Test #39: aarch64-rpi4b-smp-pro-cons-test-hwd .......   Passed   18.56 sec
+      Start 41: aarch64-rpi4b-smp-mat-test-hwd
+16/19 Test #41: aarch64-rpi4b-smp-mat-test-hwd ............   Passed   15.44 sec
+      Start 45: aarch64-rpi4b-sd_test-hwd
+17/19 Test #45: aarch64-rpi4b-sd_test-hwd .................   Passed   16.49 sec
+      Start 49: aarch64-rpi4b-smp-mat-sdcard-test-hwd
+18/19 Test #49: aarch64-rpi4b-smp-mat-sdcard-test-hwd .....   Passed   16.47 sec
+      Start 51: aarch64-rpi4b-clock-test-hwd
+19/19 Test #51: aarch64-rpi4b-clock-test-hwd ..............   Passed   19.57 sec
+
+100% tests passed out of 19
+
+Label Time Summary:
+hwd    = 680.13 sec*proc (19 tests)
+
+Total Test time (real) = 680.15 sec

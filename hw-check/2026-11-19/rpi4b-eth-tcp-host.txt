@@ -1,0 +1,5 @@
+Pi 4 B address: 192.168.1.191
+connecting to 192.168.1.191:7, sending 262144 bytes ...
+sent 262144 bytes, CRC-32 15aff1b5; echo identical; 0.01 s, 165.4 Mbit/s each way
+PASS: echo identical (compare the CRC-32 with the board's console)
+host rc=0
