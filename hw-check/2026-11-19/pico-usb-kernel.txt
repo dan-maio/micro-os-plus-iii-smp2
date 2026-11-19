@@ -1,0 +1,13 @@
+Nov 19 07:50:12 dan-8g kernel: usb 1-12.4.4: new full-speed USB device number 48 using xhci_hcd
+Nov 19 07:50:12 dan-8g kernel: usb 1-12.4.4: New USB device found, idVendor=cafe, idProduct=4013, bcdDevice= 1.00
+Nov 19 07:50:12 dan-8g kernel: usb 1-12.4.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Nov 19 07:50:12 dan-8g kernel: usb 1-12.4.4: Product: Pico2 CDC-ACM
+Nov 19 07:50:12 dan-8g kernel: usb 1-12.4.4: Manufacturer: TinyUSB
+Nov 19 07:50:12 dan-8g kernel: usb 1-12.4.4: SerialNumber: PICO2-0001
+Nov 19 07:53:02 dan-8g kernel: usb 1-12.4.4: USB disconnect, device number 48
+Nov 19 07:53:02 dan-8g kernel: usb 1-12.4.4: new full-speed USB device number 49 using xhci_hcd
+Nov 19 07:53:02 dan-8g kernel: usb 1-12.4.4: New USB device found, idVendor=cafe, idProduct=4012, bcdDevice= 1.00
+Nov 19 07:53:02 dan-8g kernel: usb 1-12.4.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Nov 19 07:53:02 dan-8g kernel: usb 1-12.4.4: Product: TinyUSB Device
+Nov 19 07:53:02 dan-8g kernel: usb 1-12.4.4: Manufacturer: TinyUSB
+Nov 19 07:53:02 dan-8g kernel: usb 1-12.4.4: SerialNumber: PICO2-0001

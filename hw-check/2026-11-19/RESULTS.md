@@ -25,3 +25,34 @@ the two USB tests driven from here.
   Pico2_CDC-ACM; the user's ttyACM0/1 untouched), a line then Escape;
 - smp-test-usb-hid: pyusb HID OUTPUT reports on cafe:4012 (the only one on the
   bus), text then Escape.
+
+## Nucleo F411: 4/4 pass
+
+ST-LINK/V2.1, in parallel with the Pico. mos-test1, rtos-apis, mutex-stress,
+cmsis-os-validator (the suites through the builder, test-end-console.h with
+uart::init and \r\n). nucleof411-batch.txt.
+
+The first attempt failed in 1 s per test: the ST-LINK had enumerated only
+partly (no virtual COM port; OpenOCD -d3: "claim interface failed"); a replug
+fixed it. Found on the way: five Cortex-M OpenOCD configs (nucleof411, pico,
+pico2-pizero, pico2-rp2350b-psram, weactf412) left the Tcl/telnet ports
+open, so two boards could collide on 6666/4444; now off, as on the others.
+
+## Pico (RP2040): 20/20 pass
+
+Raspberry Pi Debug Probe. 18 automatic (pico-batch.txt), then the two USB
+tests (pico-usb.sh): smp-test-usb-cdc-acm (170 s), smp-test-usb-hid (6 s).
+- The USB tests' build commands are identical to 2026-11-18's (step6-check
+  6b12 vs 6b14, 62 commands each).
+- My "USB only" script still contained the full batch line (a sed that did
+  not match): three reruns ran all 18 tests again first; the board was reset
+  over and over and its USB then failed to enumerate (kernel: "not accepting
+  address, error -71"). Fixed; only the two USB tests ran in the end, the
+  gadget enumerated at once.
+- The CDC test then got empty lines: the board takes input only while the
+  host holds its port open (DTR=1), and `printf > port` opens and closes it
+  per write. The scripts now open the board's port once, raw, and send the
+  line and Escape over it.
+
+Use /dev/serial/by-id/ names for tio: the ttyACM numbers change with every
+replug.

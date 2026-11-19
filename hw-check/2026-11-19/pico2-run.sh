@@ -21,7 +21,14 @@ for i in $(seq 1 90); do
 done
 if [ -n "$P" ]; then
   echo "board port $P ($(udevadm info -q property -n $P | grep '^ID_MODEL=' | cut -d= -f2)) after $i s" >> $H/pico2-cdc-acm-host.txt
-  sleep 2; printf 'hello from the host\r\n' > $P; sleep 1; printf '\x1b\r\n' > $P
+  # One open of the board's own port (vendor cafe), raw: the board takes input
+  # only while a host holds the port open (DTR=1), and a shell redirect opens
+  # and closes it per write, with the PC's line discipline echoing in between.
+  sleep 2; python3 -s -c "
+import os, tty, time
+fd = os.open('$P', os.O_RDWR | os.O_NOCTTY); tty.setraw(fd); time.sleep(1)
+os.write(fd, b'hello from the host\\r'); time.sleep(1)
+os.write(fd, b'\\x1b\\r'); time.sleep(1); os.close(fd)"
   echo "sent a line, then Escape" >> $H/pico2-cdc-acm-host.txt
 else echo "no board port appeared" >> $H/pico2-cdc-acm-host.txt; fi
 wait $CT

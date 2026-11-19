@@ -1,0 +1,8 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico-cmake-gcc-debug
+      Start  1: cortexm-pico-cmsis-os-validator-ram-hwd
+ 1/18 Test  #1: cortexm-pico-cmsis-os-validator-ram-hwd ...   Passed   13.17 sec
+      Start  2: cortexm-pico-exc-test-hwd
+ 2/18 Test  #2: cortexm-pico-exc-test-hwd .................   Passed    5.11 sec
+      Start  3: cortexm-pico-mutex-stress-ram-hwd
+ 3/18 Test  #3: cortexm-pico-mutex-stress-ram-hwd .........   Passed   38.47 sec
+      Start  4: cortexm-pico-rtos-apis-ram-hwd
