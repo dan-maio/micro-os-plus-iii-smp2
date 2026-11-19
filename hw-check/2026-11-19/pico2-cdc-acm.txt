@@ -1,0 +1,10 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-cmake-gcc-debug
+    Start 11: cortexm-pico2-smp-test-usb-cdc-acm-hwd
+1/1 Test #11: cortexm-pico2-smp-test-usb-cdc-acm-hwd ...   Passed   58.64 sec
+
+100% tests passed out of 1
+
+Label Time Summary:
+hwd    =  58.64 sec*proc (1 test)
+
+Total Test time (real) =  58.64 sec
