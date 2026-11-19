@@ -1,0 +1,16 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/pico2-1cpu-cmake-gcc-release
+    Start 1: pico2-1cpu-rtos-apis-test
+1/4 Test #1: pico2-1cpu-rtos-apis-test ............   Passed    5.73 sec
+    Start 2: pico2-1cpu-mutex-stress-test
+2/4 Test #2: pico2-1cpu-mutex-stress-test .........   Passed   28.16 sec
+    Start 3: pico2-1cpu-fp-switch-test
+3/4 Test #3: pico2-1cpu-fp-switch-test ............   Passed    2.45 sec
+    Start 4: pico2-1cpu-cmsis-os-validator-test
+4/4 Test #4: pico2-1cpu-cmsis-os-validator-test ...   Passed    9.22 sec
+
+100% tests passed out of 4
+
+Label Time Summary:
+qemu    =  45.57 sec*proc (4 tests)
+
+Total Test time (real) =  45.57 sec

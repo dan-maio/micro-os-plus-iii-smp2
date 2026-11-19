@@ -1,0 +1,9 @@
+aarch32-luckfox-lyra-cmake-gcc-debug: built, no non-hardware tests
+aarch32-luckfox-lyra-cmake-gcc-release: built, no non-hardware tests
+aarch32-rpi3b-cmake-gcc-debug: 100% tests passed out of 24
+aarch32-rpi3b-cmake-gcc-release: 100% tests passed out of 24
+aarch32-rpi-zero-2w-cmake-gcc-debug: 100% tests passed out of 26
+aarch32-rpi-zero-2w-cmake-gcc-release: 100% tests passed out of 26
+aarch64-rpi3b-cmake-gcc-debug: 100% tests passed out of 24
+aarch64-rpi3b-cmake-gcc-release: 100% tests passed out of 24
+aarch64-rpi4b-cmake-gcc-debug: 100% tests passed out of 32

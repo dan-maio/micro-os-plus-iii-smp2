@@ -1,0 +1,236 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug
+      Start  7: aarch64-rpi-zero-2w-wifi-net-hwd-reset
+ 1/32 Test  #7: aarch64-rpi-zero-2w-wifi-net-hwd-reset ..............***Failed    0.03 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-wifi-net-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start  6: aarch64-rpi-zero-2w-wifi-net-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-wifi-net-hwd-reset
+ 2/32 Test  #6: aarch64-rpi-zero-2w-wifi-net-hwd ....................***Not Run   0.00 sec
+      Start 14: aarch64-rpi-zero-2w-mutex-stress-hwd-reset
+ 3/32 Test #14: aarch64-rpi-zero-2w-mutex-stress-hwd-reset ..........***Failed    0.03 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-mutex-stress-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 13: aarch64-rpi-zero-2w-mutex-stress-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-mutex-stress-hwd-reset
+ 4/32 Test #13: aarch64-rpi-zero-2w-mutex-stress-hwd ................***Not Run   0.00 sec
+      Start 18: aarch64-rpi-zero-2w-rtos-apis-hwd-reset
+ 5/32 Test #18: aarch64-rpi-zero-2w-rtos-apis-hwd-reset .............***Failed    0.03 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-rtos-apis-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 17: aarch64-rpi-zero-2w-rtos-apis-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-rtos-apis-hwd-reset
+ 6/32 Test #17: aarch64-rpi-zero-2w-rtos-apis-hwd ...................***Not Run   0.00 sec
+      Start 22: aarch64-rpi-zero-2w-cmsis-os-validator-hwd-reset
+ 7/32 Test #22: aarch64-rpi-zero-2w-cmsis-os-validator-hwd-reset ....***Failed    0.05 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-cmsis-os-validator-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 21: aarch64-rpi-zero-2w-cmsis-os-validator-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-cmsis-os-validator-hwd-reset
+ 8/32 Test #21: aarch64-rpi-zero-2w-cmsis-os-validator-hwd ..........***Not Run   0.00 sec
+      Start 26: aarch64-rpi-zero-2w-smp_test0-hwd-reset
+ 9/32 Test #26: aarch64-rpi-zero-2w-smp_test0-hwd-reset .............***Failed    0.05 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp_test0-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 25: aarch64-rpi-zero-2w-smp_test0-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp_test0-hwd-reset
+10/32 Test #25: aarch64-rpi-zero-2w-smp_test0-hwd ...................***Not Run   0.00 sec
+      Start 30: aarch64-rpi-zero-2w-smp_test1-hwd-reset
+11/32 Test #30: aarch64-rpi-zero-2w-smp_test1-hwd-reset .............***Failed    0.06 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp_test1-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 29: aarch64-rpi-zero-2w-smp_test1-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp_test1-hwd-reset
+12/32 Test #29: aarch64-rpi-zero-2w-smp_test1-hwd ...................***Not Run   0.00 sec
+      Start 34: aarch64-rpi-zero-2w-smp_test2-hwd-reset
+13/32 Test #34: aarch64-rpi-zero-2w-smp_test2-hwd-reset .............***Failed    0.07 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp_test2-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 33: aarch64-rpi-zero-2w-smp_test2-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp_test2-hwd-reset
+14/32 Test #33: aarch64-rpi-zero-2w-smp_test2-hwd ...................***Not Run   0.00 sec
+      Start 38: aarch64-rpi-zero-2w-smp_test3-hwd-reset
+15/32 Test #38: aarch64-rpi-zero-2w-smp_test3-hwd-reset .............***Failed    0.04 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp_test3-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 37: aarch64-rpi-zero-2w-smp_test3-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp_test3-hwd-reset
+16/32 Test #37: aarch64-rpi-zero-2w-smp_test3-hwd ...................***Not Run   0.00 sec
+      Start 42: aarch64-rpi-zero-2w-smp_test4-hwd-reset
+17/32 Test #42: aarch64-rpi-zero-2w-smp_test4-hwd-reset .............***Failed    0.07 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp_test4-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 41: aarch64-rpi-zero-2w-smp_test4-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp_test4-hwd-reset
+18/32 Test #41: aarch64-rpi-zero-2w-smp_test4-hwd ...................***Not Run   0.00 sec
+      Start 48: aarch64-rpi-zero-2w-smp-num-test-hwd-reset
+19/32 Test #48: aarch64-rpi-zero-2w-smp-num-test-hwd-reset ..........***Failed    0.07 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp-num-test-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 47: aarch64-rpi-zero-2w-smp-num-test-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp-num-test-hwd-reset
+20/32 Test #47: aarch64-rpi-zero-2w-smp-num-test-hwd ................***Not Run   0.00 sec
+      Start 54: aarch64-rpi-zero-2w-smp-pipeline-test-hwd-reset
+21/32 Test #54: aarch64-rpi-zero-2w-smp-pipeline-test-hwd-reset .....***Failed    0.08 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp-pipeline-test-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 53: aarch64-rpi-zero-2w-smp-pipeline-test-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp-pipeline-test-hwd-reset
+22/32 Test #53: aarch64-rpi-zero-2w-smp-pipeline-test-hwd ...........***Not Run   0.00 sec
+      Start 58: aarch64-rpi-zero-2w-smp-pro-cons-test-hwd-reset
+23/32 Test #58: aarch64-rpi-zero-2w-smp-pro-cons-test-hwd-reset .....***Failed    0.06 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp-pro-cons-test-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 57: aarch64-rpi-zero-2w-smp-pro-cons-test-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp-pro-cons-test-hwd-reset
+24/32 Test #57: aarch64-rpi-zero-2w-smp-pro-cons-test-hwd ...........***Not Run   0.00 sec
+      Start 62: aarch64-rpi-zero-2w-smp-mat-test-hwd-reset
+25/32 Test #62: aarch64-rpi-zero-2w-smp-mat-test-hwd-reset ..........***Failed    0.06 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp-mat-test-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 61: aarch64-rpi-zero-2w-smp-mat-test-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp-mat-test-hwd-reset
+26/32 Test #61: aarch64-rpi-zero-2w-smp-mat-test-hwd ................***Not Run   0.00 sec
+      Start 68: aarch64-rpi-zero-2w-sd_test-hwd-reset
+27/32 Test #68: aarch64-rpi-zero-2w-sd_test-hwd-reset ...............***Failed    0.07 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-sd_test-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 67: aarch64-rpi-zero-2w-sd_test-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-sd_test-hwd-reset
+28/32 Test #67: aarch64-rpi-zero-2w-sd_test-hwd .....................***Not Run   0.00 sec
+      Start 74: aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd-reset
+29/32 Test #74: aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd-reset ...***Failed    0.07 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 73: aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd-reset
+30/32 Test #73: aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd .........***Not Run   0.00 sec
+      Start 78: aarch64-rpi-zero-2w-clock-test-hwd-reset
+31/32 Test #78: aarch64-rpi-zero-2w-clock-test-hwd-reset ............***Failed    0.07 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-clock-test-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+      Start 77: aarch64-rpi-zero-2w-clock-test-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-clock-test-hwd-reset
+32/32 Test #77: aarch64-rpi-zero-2w-clock-test-hwd ..................***Not Run   0.00 sec
+
+0% tests passed, 32 tests failed out of 32
+
+Label Time Summary:
+hwd          =   0.00 sec*proc (16 tests)
+hwd-reset    =   0.91 sec*proc (16 tests)
+
+Total Test time (real) =   0.93 sec
+
+The following tests FAILED:
+	  6 - aarch64-rpi-zero-2w-wifi-net-hwd (Not Run)        hwd
+	  7 - aarch64-rpi-zero-2w-wifi-net-hwd-reset (Failed)   hwd-reset
+	 13 - aarch64-rpi-zero-2w-mutex-stress-hwd (Not Run)    hwd
+	 14 - aarch64-rpi-zero-2w-mutex-stress-hwd-reset (Failed) hwd-reset
+	 17 - aarch64-rpi-zero-2w-rtos-apis-hwd (Not Run)       hwd
+	 18 - aarch64-rpi-zero-2w-rtos-apis-hwd-reset (Failed)  hwd-reset
+	 21 - aarch64-rpi-zero-2w-cmsis-os-validator-hwd (Not Run) hwd
+	 22 - aarch64-rpi-zero-2w-cmsis-os-validator-hwd-reset (Failed) hwd-reset
+	 25 - aarch64-rpi-zero-2w-smp_test0-hwd (Not Run)       hwd
+	 26 - aarch64-rpi-zero-2w-smp_test0-hwd-reset (Failed)  hwd-reset
+	 29 - aarch64-rpi-zero-2w-smp_test1-hwd (Not Run)       hwd
+	 30 - aarch64-rpi-zero-2w-smp_test1-hwd-reset (Failed)  hwd-reset
+	 33 - aarch64-rpi-zero-2w-smp_test2-hwd (Not Run)       hwd
+	 34 - aarch64-rpi-zero-2w-smp_test2-hwd-reset (Failed)  hwd-reset
+	 37 - aarch64-rpi-zero-2w-smp_test3-hwd (Not Run)       hwd
+	 38 - aarch64-rpi-zero-2w-smp_test3-hwd-reset (Failed)  hwd-reset
+	 41 - aarch64-rpi-zero-2w-smp_test4-hwd (Not Run)       hwd
+	 42 - aarch64-rpi-zero-2w-smp_test4-hwd-reset (Failed)  hwd-reset
+	 47 - aarch64-rpi-zero-2w-smp-num-test-hwd (Not Run)    hwd
+	 48 - aarch64-rpi-zero-2w-smp-num-test-hwd-reset (Failed) hwd-reset
+	 53 - aarch64-rpi-zero-2w-smp-pipeline-test-hwd (Not Run) hwd
+	 54 - aarch64-rpi-zero-2w-smp-pipeline-test-hwd-reset (Failed) hwd-reset
+	 57 - aarch64-rpi-zero-2w-smp-pro-cons-test-hwd (Not Run) hwd
+	 58 - aarch64-rpi-zero-2w-smp-pro-cons-test-hwd-reset (Failed) hwd-reset
+	 61 - aarch64-rpi-zero-2w-smp-mat-test-hwd (Not Run)    hwd
+	 62 - aarch64-rpi-zero-2w-smp-mat-test-hwd-reset (Failed) hwd-reset
+	 67 - aarch64-rpi-zero-2w-sd_test-hwd (Not Run)         hwd
+	 68 - aarch64-rpi-zero-2w-sd_test-hwd-reset (Failed)    hwd-reset
+	 73 - aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd (Not Run) hwd
+	 74 - aarch64-rpi-zero-2w-smp-mat-sdcard-test-hwd-reset (Failed) hwd-reset
+	 77 - aarch64-rpi-zero-2w-clock-test-hwd (Not Run)      hwd
+	 78 - aarch64-rpi-zero-2w-clock-test-hwd-reset (Failed) hwd-reset
+Errors while running CTest

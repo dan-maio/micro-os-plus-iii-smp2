@@ -1,0 +1,263 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+      Start  1: aarch64-rpi4b-eth-net-qemu
+ 1/32 Test  #1: aarch64-rpi4b-eth-net-qemu .........................***Skipped   0.09 sec
+      Start  5: aarch64-rpi4b-eth-tcp-server-qemu
+ 2/32 Test  #5: aarch64-rpi4b-eth-tcp-server-qemu ..................***Skipped   0.08 sec
+      Start  9: aarch64-rpi4b-smp-list-storage-test-qemu
+ 3/32 Test  #9: aarch64-rpi4b-smp-list-storage-test-qemu ...........   Passed   10.10 sec
+      Start 13: aarch64-rpi4b-smp-shapes-test-qemu-sd-make
+ 4/32 Test #13: aarch64-rpi4b-smp-shapes-test-qemu-sd-make .........   Passed    0.05 sec
+      Start 15: aarch64-rpi4b-smp-shapes-test-qemu
+ 5/32 Test #15: aarch64-rpi4b-smp-shapes-test-qemu .................***Failed  Required regular expression not found. Regex=[RESULT: PASS
+] 17.97 sec
+
+
++== RPi 4 B µOS++ smp-shapes-test : 4-core intrusive list + virtual shapes, UART + SD ==+
+
+os_startup_initialize_free_store(0x385000,67108864)
+first_fit_top(0x385000,67108864) @0xbf7c0 app-heap
+out_of_memory_handler(0x89bf8) @0xbf7c0 app-heap
+estd::pmr::set_default_resource(0xbf7c0) 
+rtos::memory::set_default_resource(0xbf7c0) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0xbf768 malloc
+file_descriptors_manager::file_descriptors_manager(16)=0xc3608
+Device '/dev/sd' linked
+scheduler::start() 
+storage: SD card /dev/sd...
+storage: SD card ready, 8388608 sectors (~4096 MiB)
+Device '/dev/sd1' linked
+storage: FAT window LBA 2048, 8386560 sectors (4095 MiB)
+storage: FAT volume mounted at /sd/, test files in /sd/tests/
+  FAT volume at /sd/, logging to /sd/tests/shapes.log
+smp-shapes-test: SMP up (c1=3 c2=3 c3=3) after 0 ms
+heap at start: 52352 B
+
+-- phase 1: 4 builder threads, 10 shapes of each kind
+  c0 circle   #0: a=1.00 b=2.00 area=3.1416 ok
+  c0 circle   #1: a=1.50 b=2.25 area=7.0686 ok
+  c0 circle   #2: a=2.00 b=2.50 area=12.5664 ok
+  c1 triangle #0: a=1.25 b=2.00 area=1.2500 ok
+  c1 triangle #1: a=1.75 b=2.25 area=1.9688 ok
+  c1 triangle #2: a=2.25 b=2.50 area=2.8125 ok
+  c1 triangle #3: a=2.75 b=2.75 area=3.7813 ok
+  c1 triangle #4: a=3.25 b=3.00 area=4.8750 ok
+  c1 triangle #5: a=3.75 b=3.25 area=6.0938 ok
+  c1 triangle #6: a=4.25 b=3.50 area=7.4375 ok
+  c1 triangle #7: a=4.75 b=3.75 area=8.9063 ok
+  c1 triangle #8: a=5.25 b=4.00 area=10.5000 ok
+  c1 triangle #9: a=5.75 b=4.25 area=12.2188 ok
+  c2 ellipse  #0: a=1.50 b=2.00 area=9.4248 ok
+  c2 ellipse  #1: a=2.00 b=2.25 area=14.1372 ok
+  c2 ellipse  #2: a=2.50 b=2.50 area=19.6350 ok
+  c2 ellipse  #3: a=3.00 b=2.75 area=25.9181 ok
+  c2 ellipse  #4: a=3.50 b=3.00 area=32.9867 ok
+  c2 ellipse  #5: a=4.00 b=3.25 area=40.8407 ok
+  c2 ellipse  #6: a=4.50 b=3.50 area=49.4801 ok
+  c2 ellipse  #7: a=5.00 b=3.75 area=58.9049 ok
+  c2 ellipse  #8: a=5.50 b=4.00 area=69.1150 ok
+  c2 ellipse  #9: a=6.00 b=4.25 area=80.1106 ok
+  c0 circle   #3: a=2.50 b=2.75 area=19.6350 ok
+  c0 circle   #4: a=3.00 b=3.00 area=28.2743 ok
+  c0 circle   #5: a=3.50 b=3.25 area=38.4845 ok
+  c3 rect     #0: a=1.75 b=2.00 area=3.5000 ok
+  c3 rect     #1: a=2.25 b=2.25 area=5.0625 ok
+  c3 rect     #2: a=2.75 b=2.50 area=6.8750 ok
+  c3 rect     #3: a=3.25 b=2.75 area=8.9375 ok
+  c0 circle   #6: a=4.00 b=3.50 area=50.2655 ok
+  c3 rect     #4: a=3.75 b=3.00 area=11.2500 ok
+  c3 rect     #5: a=4.25 b=3.25 area=13.8125 ok
+  c3 rect     #6: a=4.75 b=3.50 area=16.6250 ok
+  c3 rect     #7: a=5.25 b=3.75 area=19.6875 ok
+  c3 rect     #8: a=5.75 b=4.00 area=23.0000 ok
+  c3 rect     #9: a=6.25 b=4.25 area=26.5625 ok
+  c0 circle   #7: a=4.50 b=3.75 area=63.6173 ok
+  c0 circle   #8: a=5.00 b=4.00 area=78.5398 ok
+  c0 circle   #9: a=5.50 b=4.25 area=95.0332 ok
+  list: 40 shapes (10 circles, 10 triangles, 10 ellipses, 10 rects)
+  total area 992.3354 (builders 992.3354)
+
+-- phase 1b: 4 threads scale their kind at the same time
+  c0 circle  : area 396.6261 -> x2 1586.5043 -> back 396.6261; modify x3 95.0332 -> 855.2986 ok
+  c1 triangle: area 59.8438 -> x2 239.3750 -> back 59.8438; modify x3 12.2188 -> 109.9688 ok
+  c2 ellipse : area 400.5531 -> x2 1602.2123 -> back 400.5531; modify x3 80.1106 -> 720.9955 ok
+  c3 rect    : area 135.3125 -> x2 541.2500 -> back 135.3125; modify x3 26.5625 -> 239.0625 ok
+  total area after the round trip 992.3354 ok
+
+-- phase 2: 20 rounds of 8 workers + 1 scanner, 1500 ms each
+  round  0 w6 c2: +11152 -11152 scaled 5145 searched 2367
+  round  0 w1 c1: +11386 -11386 scaled 5218 searched 2416
+  round  0 w3 c3: +11508 -11508 scaled 5115 searched 2456
+  round  0 w4 c0: +10811 -10811 scaled 4859 searched 2359
+  round  0 w2 c2: +11373 -11373 scaled 5032 searched 2449
+  round  0 w7 c3: +11479 -11479 scaled 5041 searched 2466
+  round  0 w5 c1: +11419 -11419 scaled 5026 searched 2401
+  round  0 w0 c0: +10894 -10894 scaled 5030 searched 2298
+  round  0: 9 threads joined, +90022 -90022 shapes, 1501 scans, list 40, heap 54832 B ok
+  round  1 w5 c1: +11260 -11260 scaled 4972 searched 2338
+  round  1 w7 c3: +11305 -11305 scaled 5155 searched 2485
+  round  1 w2 c2: +11334 -11334 scaled 5002 searched 2461
+  round  1 w1 c1: +11153 -11153 scaled 5054 searched 2431
+  round  1 w3 c3: +11464 -11464 scaled 5172 searched 2425
+  round  1 w6 c2: +11453 -11453 scaled 5141 searched 2417
+  round  1 w4 c0: +11014 -11014 scaled 4917 searched 2377
+  round  1 w0 c0: +11007 -11007 scaled 5122 searched 2269
+  round  1: 9 threads joined, +89990 -89990 shapes, 1501 scans, list 40, heap 54832 B ok
+  round  2 w6 c2: +11474 -11474 scaled 5121 searched 2450
+  round  2 w2 c2: +11491 -11491 scaled 5106 searched 2367
+  round  2 w5 c1: +11298 -11298 scaled 5241 searched 2368
+  round  2 w3 c3: +11413 -11413 scaled 5116 searched 2323
+  round  2 w1 c1: +11454 -11454 scaled 5195 searched 2453
+  round  2 w7 c3: +11407 -11407 scaled 5039 searched 2350
+  round  2 w0 c0: +11109 -11109 scaled 5002 searched 2282
+  round  2 w4 c0: +11106 -11106 scaled 4938 searched 2373
+  round  2: 9 threads joined, +90752 -90752 shapes, 1500 scans, list 40, heap 54832 B ok
+  round  3 w1 c1: +11449 -11449 scaled 5308 searched 2474
+  round  3 w5 c1: +11472 -11472 scaled 5200 searched 2472
+  round  3 w7 c3: +11281 -11281 scaled 5043 searched 2328
+  round  3 w6 c2: +11433 -11433 scaled 5245 searched 2591
+  round  3 w2 c2: +11541 -11541 scaled 5246 searched 2461
+  round  3 w3 c3: +11343 -11343 scaled 5276 searched 2403
+  round  3 w4 c0: +11038 -11038 scaled 4966 searched 2307
+  round  3 w0 c0: +11120 -11120 scaled 4967 searched 2291
+  round  3: 9 threads joined, +90677 -90677 shapes, 1499 scans, list 40, heap 54832 B ok
+  round  4 w3 c3: +11342 -11342 scaled 5122 searched 2428
+  round  4 w7 c3: +11304 -11304 scaled 5016 searched 2409
+  round  4 w2 c2: +11658 -11658 scaled 5200 searched 2416
+  round  4 w5 c1: +11427 -11427 scaled 5244 searched 2373
+  round  4 w1 c1: +11527 -11527 scaled 5196 searched 2375
+  round  4 w6 c2: +11670 -11670 scaled 5273 searched 2478
+  round  4 w4 c0: +10845 -10845 scaled 5003 searched 2395
+  round  4 w0 c0: +10974 -10974 scaled 5075 searched 2342
+  round  4: 9 threads joined, +90747 -90747 shapes, 1501 scans, list 40, heap 54832 B ok
+  round  5 w5 c1: +11749 -11749 scaled 5295 searched 2498
+  round  5 w6 c2: +11252 -11252 scaled 5021 searched 2354
+  round  5 w1 c1: +11673 -11673 scaled 5363 searched 2472
+  round  5 w7 c3: +11400 -11400 scaled 5138 searched 2391
+  round  5 w3 c3: +11331 -11331 scaled 5104 searched 2389
+  round  5 w2 c2: +11195 -11195 scaled 5167 searched 2351
+  round  5 w4 c0: +10863 -10863 scaled 4951 searched 2274
+  round  5 w0 c0: +10790 -10790 scaled 5056 searched 2319
+  round  5: 9 threads joined, +90253 -90253 shapes, 1501 scans, list 40, heap 54832 B ok
+  round  6 w3 c3: +11484 -11484 scaled 5173 searched 2401
+  round  6 w6 c2: +11644 -11644 scaled 5229 searched 2415
+  round  6 w1 c1: +11549 -11549 scaled 5295 searched 2421
+  round  6 w5 c1: +11513 -11513 scaled 5076 searched 2419
+  round  6 w2 c2: +11490 -11490 scaled 5130 searched 2586
+  round  6 w7 c3: +11475 -11475 scaled 5289 searched 2419
+  round  6 w0 c0: +10982 -10982 scaled 5093 searched 2326
+  round  6 w4 c0: +11080 -11080 scaled 5042 searched 2325
+  round  6: 9 threads joined, +91217 -91217 shapes, 1501 scans, list 40, heap 54832 B ok
+  round  7 w1 c1: +11208 -11208 scaled 5113 searched 2395
+  round  7 w6 c2: +11452 -11452 scaled 5166 searched 2429
+  round  7 w5 c1: +11480 -11480 scaled 4961 searched 2532
+  round  7 w2 c2: +11395 -11395 scaled 5259 searched 2454
+  round  7 w3 c3: +11750 -11750 scaled 5283 searched 2494
+  round  7 w7 c3: +11777 -11777 scaled 5377 searched 2550
+  round  7 w4 c0: +10971 -10971 scaled 4811 searched 2322
+  round  7 w0 c0: +10891 -10891 scaled 4812 searched 2350
+  round  7: 9 threads joined, +90924 -90924 shapes, 1501 scans, list 40, heap 54832 B ok
+  round  8 w1 c1: +11222 -11222 scaled 5138 searched 2397
+  round  8 w5 c1: +11152 -11152 scaled 5094 searched 2322
+  round  8 w7 c3: +11282 -11282 scaled 4920 searched 2475
+  round  8 w2 c2: +11755 -11755 scaled 5267 searched 2522
+  round  8 w6 c2: +11655 -11655 scaled 5270 searched 2407
+  round  8 w3 c3: +11405 -11405 scaled 5102 searched 2479
+  round  8 w0 c0: +11150 -11150 scaled 4922 searched 2329
+  round  8 w4 c0: +11204 -11204 scaled 4952 searched 2366
+  round  8: 9 threads joined, +90825 -90825 shapes, 1501 scans, list 40, heap 54832 B ok
+  round  9 w1 c1: +11787 -11787 scaled 5367 searched 2443
+  round  9 w5 c1: +11844 -11844 scaled 5273 searched 2532
+  round  9 w7 c3: +11342 -11342 scaled 5023 searched 2380
+  round  9 w6 c2: +11197 -11197 scaled 5126 searched 2373
+  round  9 w2 c2: +11386 -11386 scaled 5095 searched 2453
+  round  9 w3 c3: +11357 -11357 scaled 5216 searched 2380
+  round  9 w0 c0: +10927 -10927 scaled 4904 searched 2351
+  round  9 w4 c0: +10790 -10790 scaled 4910 searched 2308
+  round  9: 9 threads joined, +90630 -90630 shapes, 1500 scans, list 40, heap 54832 B ok
+  round 10 w4 c0: +10894 -10894 scaled 4876 searched 2321
+  round 10 w1 c1: +11337 -11337 scaled 5022 searched 2389
+  round 10 w5 c1: +11275 -11275 scaled 5132 searched 2459
+  round 10 w7 c3: +11301 -11301 scaled 5190 searched 2381
+  round 10 w3 c3: +11236 -11236 scaled 5071 searched 2352
+  round 10 w2 c2: +11670 -11670 scaled 5375 searched 2589
+  round 10 w6 c2: +11489 -11489 scaled 5249 searched 2533
+  round 10 w0 c0: +10949 -10949 scaled 4944 searched 2296
+  round 10: 9 threads joined, +90151 -90151 shapes, 1500 scans, list 40, heap 54832 B ok
+assertion "!interrupts::in_handler_mode ()" failed
+file: "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp"
+line: 147
+function: os::rtos::port::scheduler::state_t os::rtos::port::scheduler::kernel_locked(state_t)
+this_thread: scan11 @0x4316520
+abort(), exiting...
+
+      Start 14: aarch64-rpi4b-smp-shapes-test-qemu-sd-remove
+ 6/32 Test #14: aarch64-rpi4b-smp-shapes-test-qemu-sd-remove .......   Passed    0.01 sec
+      Start 19: aarch64-rpi4b-smp_mem_inter_test-qemu
+ 7/32 Test #19: aarch64-rpi4b-smp_mem_inter_test-qemu ..............   Passed    3.16 sec
+      Start 23: aarch64-rpi4b-smp_mem_test-qemu
+ 8/32 Test #23: aarch64-rpi4b-smp_mem_test-qemu ....................   Passed    2.12 sec
+      Start 27: aarch64-rpi4b-usb_big_test-qemu
+ 9/32 Test #27: aarch64-rpi4b-usb_big_test-qemu ....................***Skipped   0.09 sec
+      Start 31: aarch64-rpi4b-mutex-stress-qemu
+10/32 Test #31: aarch64-rpi4b-mutex-stress-qemu ....................   Passed   35.24 sec
+      Start 35: aarch64-rpi4b-rtos-apis-qemu
+11/32 Test #35: aarch64-rpi4b-rtos-apis-qemu .......................   Passed    7.19 sec
+      Start 39: aarch64-rpi4b-cmsis-os-validator-qemu
+12/32 Test #39: aarch64-rpi4b-cmsis-os-validator-qemu ..............   Passed   11.53 sec
+      Start 43: aarch64-rpi4b-smp_test0-qemu
+13/32 Test #43: aarch64-rpi4b-smp_test0-qemu .......................   Passed   10.10 sec
+      Start 47: aarch64-rpi4b-smp_test1-qemu
+14/32 Test #47: aarch64-rpi4b-smp_test1-qemu .......................   Passed   10.16 sec
+      Start 51: aarch64-rpi4b-smp_test2-qemu
+15/32 Test #51: aarch64-rpi4b-smp_test2-qemu .......................   Passed    0.61 sec
+      Start 55: aarch64-rpi4b-smp_test3-qemu
+16/32 Test #55: aarch64-rpi4b-smp_test3-qemu .......................   Passed   10.16 sec
+      Start 59: aarch64-rpi4b-smp_test4-qemu
+17/32 Test #59: aarch64-rpi4b-smp_test4-qemu .......................   Passed   10.16 sec
+      Start 63: aarch64-rpi4b-smp-num-test-qemu-sd-make
+18/32 Test #63: aarch64-rpi4b-smp-num-test-qemu-sd-make ............   Passed    0.05 sec
+      Start 65: aarch64-rpi4b-smp-num-test-qemu
+19/32 Test #65: aarch64-rpi4b-smp-num-test-qemu ....................   Passed   15.54 sec
+      Start 64: aarch64-rpi4b-smp-num-test-qemu-sd-remove
+20/32 Test #64: aarch64-rpi4b-smp-num-test-qemu-sd-remove ..........   Passed    0.01 sec
+      Start 69: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make
+21/32 Test #69: aarch64-rpi4b-smp-pipeline-test-qemu-sd-make .......   Passed    0.06 sec
+      Start 71: aarch64-rpi4b-smp-pipeline-test-qemu
+22/32 Test #71: aarch64-rpi4b-smp-pipeline-test-qemu ...............   Passed   30.51 sec
+      Start 70: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove
+23/32 Test #70: aarch64-rpi4b-smp-pipeline-test-qemu-sd-remove .....   Passed    0.03 sec
+      Start 75: aarch64-rpi4b-smp-pro-cons-test-qemu
+24/32 Test #75: aarch64-rpi4b-smp-pro-cons-test-qemu ...............   Passed    4.51 sec
+      Start 79: aarch64-rpi4b-smp-mat-test-qemu
+25/32 Test #79: aarch64-rpi4b-smp-mat-test-qemu ....................   Passed    0.25 sec
+      Start 83: aarch64-rpi4b-sd_test-qemu-sd-make
+26/32 Test #83: aarch64-rpi4b-sd_test-qemu-sd-make .................   Passed    0.06 sec
+      Start 85: aarch64-rpi4b-sd_test-qemu
+27/32 Test #85: aarch64-rpi4b-sd_test-qemu .........................   Passed    0.26 sec
+      Start 84: aarch64-rpi4b-sd_test-qemu-sd-remove
+28/32 Test #84: aarch64-rpi4b-sd_test-qemu-sd-remove ...............   Passed    0.01 sec
+      Start 89: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-make
+29/32 Test #89: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.05 sec
+      Start 91: aarch64-rpi4b-smp-mat-sdcard-test-qemu
+30/32 Test #91: aarch64-rpi4b-smp-mat-sdcard-test-qemu .............   Passed    0.35 sec
+      Start 90: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-remove
+31/32 Test #90: aarch64-rpi4b-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.01 sec
+      Start 95: aarch64-rpi4b-clock-test-qemu
+32/32 Test #95: aarch64-rpi4b-clock-test-qemu ......................   Passed    5.30 sec
+
+97% tests passed, 1 tests failed out of 32
+
+Label Time Summary:
+qemu    = 185.79 sec*proc (32 tests)
+
+Total Test time (real) = 185.81 sec
+
+The following tests did not run:
+	  1 - aarch64-rpi4b-eth-net-qemu (Skipped)
+	  5 - aarch64-rpi4b-eth-tcp-server-qemu (Skipped)
+	 27 - aarch64-rpi4b-usb_big_test-qemu (Skipped)
+
+The following tests FAILED:
+	 15 - aarch64-rpi4b-smp-shapes-test-qemu (Failed)       qemu
+Errors while running CTest

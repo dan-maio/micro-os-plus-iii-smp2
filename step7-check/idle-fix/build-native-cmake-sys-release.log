@@ -1,0 +1,1357 @@
+[0/2] Re-checking globbed directories...
+[1/2] Re-running CMake...
+-- µOS++ III micro-os-plus-iii-posix-arch: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/posix-arch/micro-os-plus-iii-posix-arch
+-- µOS++ III micro-os-plus-iii-devices-storage: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/common/micro-os-plus-iii-devices-storage
+-- µOS++ III POSIX port: micro-os-plus::posix-arch
+-- µOS++ III SMP common: micro-os-plus::iii  standalone=FALSE
+-- µOS++ III posix board tests: 15 targets, board=native, from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/native/tests
+-- native (posix-arch): port tests registered (native)
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-release
+[0/2] Re-checking globbed directories...
+[1/921] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[2/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[3/921] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[4/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[5/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[6/921] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[7/921] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[8/921] Building C object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[9/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[10/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[11/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[12/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[13/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[14/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[15/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[16/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[17/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[18/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[19/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[20/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[21/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/cmsis_rv.c.o'
+[22/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Framework.c.o'
+[23/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Report.c.o'
+[24/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Signal.c.o'
+[25/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/cmsis-plus/src/main.c.o'
+[26/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[27/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[28/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Timer.c.o'
+[29/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Thread.c.o'
+[30/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_GenWait.c.o'
+[31/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[32/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_MailQueue.c.o'
+[33/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[34/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_WaitFunc.c.o'
+[35/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_MsgQueue.c.o'
+[36/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_MemoryPool.c.o'
+[37/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Semaphore.c.o'
+[38/921] Building C object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/__/xpacks/@xpacks/arm-cmsis-rtos-validator/Source/RV_Mutex.c.o'
+[39/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[40/921] Building CXX object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[41/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/src/heap.cpp.o
+[42/921] Building CXX object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[43/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[44/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[45/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[46/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[47/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[48/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[49/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[50/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[51/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[52/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[53/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[54/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[55/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[56/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[57/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[58/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[59/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[60/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[61/921] Building CXX object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[62/921] Building CXX object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[63/921] Building CXX object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[64/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[65/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[66/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[67/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[68/921] Building CXX object 'platform-bin/CMakeFiles/cmsis-os-validator-test.dir/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[69/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[70/921] Building CXX object platform-bin/CMakeFiles/cmsis-os-validator-test.dir/src/smp.cpp.o
+[71/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[72/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/platforms/native/tests/mutex-ceiling-test/main.cpp.o
+[73/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[74/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[75/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[76/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[77/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[78/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[79/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[80/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[81/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[82/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[83/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[84/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[85/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[86/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[87/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/platforms/native/src/heap.cpp.o
+[88/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[89/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[90/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[91/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[92/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[93/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[94/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[95/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[96/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[97/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[98/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[99/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[100/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[101/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[102/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[103/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[104/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[105/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[106/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[107/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[108/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[109/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[110/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[111/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/platforms/native/tests/smp-mutex-stress/main.cpp.o
+[112/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[113/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/platforms/native/src/smp.cpp.o
+[114/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[115/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[116/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[117/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[118/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-ceiling-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[119/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[120/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/platforms/native/tests/smp-mutex-stress/test.cpp.o
+[121/921] Linking CXX executable platform-bin/port-tests/mutex-ceiling-test-host
+[122/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[123/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[124/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[125/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[126/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[127/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[128/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[129/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[130/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[131/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[132/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[133/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[134/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[135/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/platforms/native/src/heap.cpp.o
+[136/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[137/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[138/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[139/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[140/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/sources/rtos-apis/src/instrumentation-config.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[141/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[142/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/sources/rtos-apis/src/test-cmsis-os1.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[143/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[144/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[145/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[146/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[147/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[148/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[149/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[150/921] Building C object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/sources/rtos-apis/src/test-c-api.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[151/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[152/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[153/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[154/921] Building C object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[155/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[156/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[157/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[158/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[159/921] Building C object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[160/921] Building C object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[161/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[162/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[163/921] Building C object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[164/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[165/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/__/platforms/native/src/smp.cpp.o
+[166/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/platforms/native/tests/smp-rtos-apis/main.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[167/921] Building C object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[168/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[169/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/sources/rtos-apis/src/test-cpp-mem.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[170/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[171/921] Linking CXX executable platform-bin/port-tests/smp-mutex-stress-host
+[172/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[173/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[174/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[175/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[176/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/sources/rtos-apis/src/test-posix-io-api.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[177/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[178/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[179/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[180/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[181/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[182/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[183/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[184/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[185/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[186/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[187/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[188/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[189/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[190/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/platforms/native/src/heap.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[191/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[192/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[193/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[194/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[195/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[196/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[197/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/sources/rtos-apis/src/test-iso-api.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[198/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[199/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[200/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[201/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[202/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[203/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[204/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/getcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[205/921] Building C object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/makecontext.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[206/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/platforms/native/src/smp.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[207/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/setcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[208/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/swapcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[209/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[210/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[211/921] Building C object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/libucontext_posix.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[212/921] Building C object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/trampoline.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[213/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[214/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[215/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[216/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[217/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[218/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[219/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[220/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[221/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[222/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[223/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[224/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[225/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[226/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[227/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[228/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[229/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[230/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[231/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[232/921] Linking CXX executable platform-bin/cmsis-os-validator-test
+lto-wrapper: warning: using serial compilation of 3 LTRANS jobs
+lto-wrapper: note: see the ‘-flto’ option documentation for more information
+[233/921] Building C object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[234/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[235/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[236/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[237/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[238/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[239/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[240/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-rtos-apis-host.dir/__/sources/rtos-apis/src/test-cpp-api.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[241/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[242/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[243/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[244/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[245/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[246/921] Linking CXX executable platform-bin/port-tests/smp-rtos-apis-host
+[247/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[248/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[249/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[250/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[251/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[252/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[253/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[254/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[255/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[256/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[257/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/platforms/native/src/heap.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[258/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[259/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[260/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/getcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[261/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[262/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/setcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[263/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[264/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/swapcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[265/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[266/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[267/921] Building C object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/trampoline.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[268/921] Building C object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/makecontext.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[269/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[270/921] Building C object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/libucontext_posix.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[271/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[272/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[273/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[274/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[275/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[276/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[277/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[278/921] Building C object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[279/921] Building C object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[280/921] Building C object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[281/921] Building C object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[282/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[283/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[284/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[285/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[286/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[287/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/platforms/native/src/platform-support.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[288/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[289/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[290/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/platforms/native/src/smp.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[291/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/sources/mutex-stress/src/main.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[292/921] Building C object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[293/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/portable-test-end.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[294/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[295/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[296/921] Building CXX object platform-bin/port-tests/CMakeFiles/mutex-stress-host.dir/__/sources/mutex-stress/src/test.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[297/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[298/921] Linking CXX executable platform-bin/port-tests/mutex-stress-host
+[299/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[300/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[301/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[302/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[303/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[304/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[305/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[306/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[307/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[308/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[309/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[310/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[311/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[312/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/platforms/native/src/heap.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[313/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[314/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[315/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[316/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[317/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/test-cmsis-os1.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[318/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[319/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[320/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[321/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[322/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/instrumentation-config.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[323/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[324/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[325/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[326/921] Building C object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/xpacks/@xpacks/chan-fatfs/source/ffunicode.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[327/921] Building C object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/test-c-api.c.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[328/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[329/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/ffsystem.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[330/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[331/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/utils.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[332/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[333/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[334/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[335/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/platforms/native/src/smp.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[336/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[337/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/platforms/native/src/platform-support.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[338/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[339/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/main.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[340/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[341/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/portable-test-end.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[342/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[343/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/test-cpp-mem.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[344/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/getcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[345/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[346/921] Building C object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/makecontext.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[347/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[348/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/setcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[349/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[350/921] Building ASM object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/swapcontext.S.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[351/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/test-posix-io-api.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[352/921] Building C object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/arch/x86_64/trampoline.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[353/921] Building C object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/__/xpacks/@xpack-3rd-party/libucontext/libucontext_posix.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[354/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[355/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[356/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[357/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[358/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[359/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[360/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[361/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[362/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[363/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[364/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[365/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[366/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[367/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[368/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[369/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[370/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[371/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/test-chan-fatfs.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[372/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[373/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[374/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[375/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[376/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[377/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/sources/smp_test0/main.cpp.o
+[378/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[379/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[380/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[381/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/test-iso-api.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[382/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[383/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[384/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[385/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[386/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[387/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[388/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[389/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[390/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[391/921] Building C object 'platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/xpacks/@xpacks/chan-fatfs/source/ff.c.o'
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[392/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[393/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[394/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[395/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[396/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[397/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[398/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[399/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/platforms/native/src/heap.cpp.o
+[400/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[401/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[402/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[403/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[404/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[405/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[406/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[407/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[408/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[409/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[410/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[411/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[412/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[413/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[414/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[415/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[416/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[417/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[418/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[419/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[420/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[421/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/platforms/native/src/platform-support.cpp.o
+[422/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/portable-test-end.cpp.o
+[423/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[424/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/platforms/native/src/smp.cpp.o
+[425/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[426/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[427/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[428/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/sources/smp_test1/main.cpp.o
+[429/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[430/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[431/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test0-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[432/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[433/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[434/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[435/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[436/921] Linking CXX executable platform-bin/port-tests/smp_test0-host
+[437/921] Building CXX object platform-bin/port-tests/CMakeFiles/rtos-apis-host.dir/__/sources/rtos-apis/src/test-cpp-api.cpp.o
+<command-line>: warning: ‘_XOPEN_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+[438/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[439/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[440/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[441/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[442/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[443/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[444/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[445/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[446/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[447/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/platforms/native/src/heap.cpp.o
+[448/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[449/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[450/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[451/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[452/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[453/921] Linking CXX executable platform-bin/port-tests/rtos-apis-host
+[454/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[455/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[456/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[457/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[458/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[459/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[460/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[461/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[462/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[463/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[464/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[465/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[466/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[467/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/platforms/native/src/platform-support.cpp.o
+[468/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/platforms/native/src/smp.cpp.o
+[469/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[470/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[471/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[472/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/portable-test-end.cpp.o
+[473/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/sources/smp_test2/main.cpp.o
+[474/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[475/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[476/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[477/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[478/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[479/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[480/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[481/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[482/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[483/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test1-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[484/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[485/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[486/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[487/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[488/921] Linking CXX executable platform-bin/port-tests/smp_test1-host
+[489/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[490/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[491/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[492/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[493/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[494/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[495/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[496/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[497/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[498/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[499/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/platforms/native/src/heap.cpp.o
+[500/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[501/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[502/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[503/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[504/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[505/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[506/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[507/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[508/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[509/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[510/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[511/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[512/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[513/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[514/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[515/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[516/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[517/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[518/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[519/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[520/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[521/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/platforms/native/src/smp.cpp.o
+[522/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[523/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[524/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/portable-test-end.cpp.o
+[525/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[526/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/sources/smp_test3/main.cpp.o
+[527/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[528/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[529/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[530/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[531/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/__/platforms/native/src/platform-support.cpp.o
+[532/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[533/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test2-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[534/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[535/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[536/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[537/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[538/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[539/921] Linking CXX executable platform-bin/port-tests/smp_test2-host
+[540/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[541/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[542/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[543/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[544/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[545/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[546/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[547/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[548/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[549/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/platforms/native/src/heap.cpp.o
+[550/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[551/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[552/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[553/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[554/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[555/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[556/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[557/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[558/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[559/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[560/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[561/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[562/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[563/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[564/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[565/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[566/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[567/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[568/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[569/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[570/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[571/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[572/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/platforms/native/src/platform-support.cpp.o
+[573/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[574/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/platforms/native/src/smp.cpp.o
+[575/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[576/921] Building C object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[577/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[578/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/portable-test-end.cpp.o
+[579/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[580/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[581/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test3-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[582/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[583/921] Linking CXX executable platform-bin/port-tests/smp_test3-host
+[584/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[585/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[586/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[587/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/sources/smp_test4/main.cpp.o
+[588/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[589/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[590/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[591/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[592/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[593/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[594/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[595/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[596/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/platforms/native/src/heap.cpp.o
+[597/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[598/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[599/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[600/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[601/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[602/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[603/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[604/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[605/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[606/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[607/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[608/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[609/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[610/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[611/921] Building C object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[612/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[613/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[614/921] Building C object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[615/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[616/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[617/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[618/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[619/921] Building C object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[620/921] Building C object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[621/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[622/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/platforms/native/src/smp.cpp.o
+[623/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/platforms/native/src/platform-support.cpp.o
+[624/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/portable-test-end.cpp.o
+[625/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[626/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[627/921] Building C object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[628/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[629/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[630/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[631/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[632/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp_test4-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[633/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[634/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[635/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/sources/smp-num-test/main.cpp.o
+[636/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[637/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[638/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[639/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[640/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[641/921] Linking CXX executable platform-bin/port-tests/smp_test4-host
+[642/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[643/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[644/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[645/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[646/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[647/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[648/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/platforms/native/src/heap.cpp.o
+[649/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[650/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[651/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[652/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[653/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[654/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[655/921] Building C object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/xpacks/@xpacks/chan-fatfs/source/ffunicode.c.o'
+[656/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[657/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[658/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[659/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/ffsystem.cpp.o'
+[660/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/utils.cpp.o'
+[661/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[662/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[663/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[664/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[665/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/platforms/native/src/smp.cpp.o
+[666/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[667/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[668/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[669/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[670/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.o'
+[671/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[672/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/portable-test-end.cpp.o
+[673/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/platforms/native/src/platform-support.cpp.o
+[674/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.o'
+[675/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/soc/native/src/sd_hostfile.cpp.o'
+[676/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.o'
+[677/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[678/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.o
+[679/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.o'
+[680/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/portable-test-storage.cpp.o
+[681/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[682/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.o
+[683/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.o
+[684/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[685/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/portable-test-storage-sd.cpp.o
+[686/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.o
+[687/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[688/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.o
+[689/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[690/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[691/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[692/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[693/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.o
+[694/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[695/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.o
+[696/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.o
+[697/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.o
+[698/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.o
+[699/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.o
+[700/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[701/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-storage/posix-io/src/sd-block-device.cpp.o'
+[702/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.o
+[703/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.o
+[704/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[705/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[706/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[707/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[708/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[709/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[710/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/sources/smp-pipeline-test/main.cpp.o
+[711/921] Building C object 'platform-bin/port-tests/CMakeFiles/smp-num-test-host.dir/__/xpacks/@xpacks/chan-fatfs/source/ff.c.o'
+[712/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[713/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[714/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[715/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[716/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[717/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[718/921] Linking CXX executable platform-bin/port-tests/smp-num-test-host
+[719/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[720/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[721/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[722/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/platforms/native/src/heap.cpp.o
+[723/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[724/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[725/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[726/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[727/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[728/921] Building C object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/xpacks/@xpacks/chan-fatfs/source/ffunicode.c.o'
+[729/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[730/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[731/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[732/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[733/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/ffsystem.cpp.o'
+[734/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[735/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[736/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[737/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/utils.cpp.o'
+[738/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[739/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[740/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/platforms/native/src/smp.cpp.o
+[741/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[742/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[743/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/platforms/native/src/platform-support.cpp.o
+[744/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[745/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/portable-test-end.cpp.o
+[746/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-directory.cpp.o'
+[747/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[748/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[749/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/portable-test-storage.cpp.o
+[750/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/soc/native/src/sd_hostfile.cpp.o'
+[751/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.o'
+[752/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/char-device.cpp.o
+[753/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[754/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.o'
+[755/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[756/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.o'
+[757/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[758/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.o
+[759/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.o
+[760/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.o
+[761/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.o
+[762/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.o
+[763/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[764/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/portable-test-storage-sd.cpp.o
+[765/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[766/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[767/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.o
+[768/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.o
+[769/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[770/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[771/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.o
+[772/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[773/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.o
+[774/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.o
+[775/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-devices-storage/posix-io/src/sd-block-device.cpp.o'
+[776/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.o
+[777/921] Building C object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[778/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[779/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.o
+[780/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[781/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[782/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[783/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[784/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[785/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/sources/smp-pro-cons-test/main.cpp.o
+[786/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[787/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[788/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[789/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[790/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[791/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[792/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[793/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[794/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[795/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[796/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/platforms/native/src/heap.cpp.o
+[797/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[798/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[799/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[800/921] Building C object 'platform-bin/port-tests/CMakeFiles/smp-pipeline-test-host.dir/__/xpacks/@xpacks/chan-fatfs/source/ff.c.o'
+[801/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[802/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[803/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[804/921] Linking CXX executable platform-bin/port-tests/smp-pipeline-test-host
+[805/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[806/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[807/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[808/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[809/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[810/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[811/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[812/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[813/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[814/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[815/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[816/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[817/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[818/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[819/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[820/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[821/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/platforms/native/src/platform-support.cpp.o
+[822/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[823/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/platforms/native/src/smp.cpp.o
+[824/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/portable-test-end.cpp.o
+[825/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[826/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[827/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[828/921] Building C object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[829/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[830/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-pro-cons-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[831/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[832/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[833/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[834/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[835/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[836/921] Linking CXX executable platform-bin/port-tests/smp-pro-cons-test-host
+[837/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[838/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[839/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[840/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[841/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[842/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[843/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[844/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[845/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[846/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[847/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/platforms/native/src/heap.cpp.o
+[848/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[849/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[850/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[851/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[852/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[853/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/sources/smp-mat-test/main.cpp.o
+[854/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/diag/trace.cpp.o
+[855/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/cxx.cpp.o
+[856/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[857/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[858/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[859/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[860/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[861/921] Building C object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/_sbrk.c.o
+[862/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[863/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[864/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.o
+[865/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[866/921] Building C object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/exit.c.o
+[867/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.o
+[868/921] Building C object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/assert.c.o
+[869/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[870/921] Building C object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/init-fini.c.o
+[871/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[872/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/platforms/native/src/smp.cpp.o
+[873/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[874/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/platforms/native/src/platform-support.cpp.o
+[875/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[876/921] Building C object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/timegm.c.o
+[877/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/portable-test-end.cpp.o
+[878/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[879/921] Building CXX object platform-bin/port-tests/CMakeFiles/smp-mat-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[880/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/platforms/native/tests/src/test-smp-boot.cpp.o
+[881/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/sources/clock-test/main.cpp.o
+[882/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.o
+[883/921] Linking CXX executable platform-bin/port-tests/smp-mat-test-host
+[884/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.o
+[885/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.o
+[886/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.o
+[887/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.o
+[888/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.o
+[889/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.o
+[890/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.o
+[891/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.o
+[892/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.o
+[893/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.o
+[894/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.o
+[895/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/board-contract.cpp.o'
+[896/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.o
+[897/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/platforms/native/src/heap.cpp.o
+[898/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/diag/trace-posix.cpp.o'
+[899/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.o
+[900/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.o
+[901/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.o
+[902/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.o
+[903/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.o
+[904/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.o
+[905/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.o
+[906/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/utils/lists.cpp.o
+[907/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.o
+[908/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.o
+[909/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.o
+[910/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.o
+[911/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.o
+[912/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.o
+[913/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/exception_handler.cpp.o'
+[914/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/platforms/native/src/platform-support.cpp.o
+[915/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/platforms/native/src/smp.cpp.o
+[916/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/host_cpu.cpp.o'
+[917/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/free-store.cpp.o'
+[918/921] Building CXX object 'platform-bin/port-tests/CMakeFiles/clock-test-host.dir/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-posix-arch/src/rtos/os-core.cpp.o'
+[919/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/portable-test-end.cpp.o
+[920/921] Building CXX object platform-bin/port-tests/CMakeFiles/clock-test-host.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.o
+[921/921] Linking CXX executable platform-bin/port-tests/clock-test-host

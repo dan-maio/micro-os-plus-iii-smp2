@@ -1,0 +1,65 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+      Start  1: aarch32-rpi-zero-2w-usb_test-qemu
+ 1/26 Test  #1: aarch32-rpi-zero-2w-usb_test-qemu ........................***Skipped   0.48 sec
+      Start  5: aarch32-rpi-zero-2w-wifi-net-qemu
+ 2/26 Test  #5: aarch32-rpi-zero-2w-wifi-net-qemu ........................***Skipped   0.08 sec
+      Start  9: aarch32-rpi-zero-2w-wifi-tcp-server-qemu
+ 3/26 Test  #9: aarch32-rpi-zero-2w-wifi-tcp-server-qemu .................***Skipped   0.08 sec
+      Start 13: aarch32-rpi-zero-2w-mutex-stress-qemu
+ 4/26 Test #13: aarch32-rpi-zero-2w-mutex-stress-qemu ....................   Passed   35.25 sec
+      Start 17: aarch32-rpi-zero-2w-rtos-apis-qemu
+ 5/26 Test #17: aarch32-rpi-zero-2w-rtos-apis-qemu .......................   Passed    7.21 sec
+      Start 21: aarch32-rpi-zero-2w-cmsis-os-validator-qemu
+ 6/26 Test #21: aarch32-rpi-zero-2w-cmsis-os-validator-qemu ..............   Passed   11.56 sec
+      Start 25: aarch32-rpi-zero-2w-smp_test0-qemu
+ 7/26 Test #25: aarch32-rpi-zero-2w-smp_test0-qemu .......................   Passed   10.12 sec
+      Start 29: aarch32-rpi-zero-2w-smp_test1-qemu
+ 8/26 Test #29: aarch32-rpi-zero-2w-smp_test1-qemu .......................   Passed   10.15 sec
+      Start 33: aarch32-rpi-zero-2w-smp_test2-qemu
+ 9/26 Test #33: aarch32-rpi-zero-2w-smp_test2-qemu .......................   Passed    0.60 sec
+      Start 37: aarch32-rpi-zero-2w-smp_test3-qemu
+10/26 Test #37: aarch32-rpi-zero-2w-smp_test3-qemu .......................   Passed   10.15 sec
+      Start 41: aarch32-rpi-zero-2w-smp_test4-qemu
+11/26 Test #41: aarch32-rpi-zero-2w-smp_test4-qemu .......................   Passed   10.15 sec
+      Start 45: aarch32-rpi-zero-2w-smp-num-test-qemu-sd-make
+12/26 Test #45: aarch32-rpi-zero-2w-smp-num-test-qemu-sd-make ............   Passed    0.06 sec
+      Start 47: aarch32-rpi-zero-2w-smp-num-test-qemu
+13/26 Test #47: aarch32-rpi-zero-2w-smp-num-test-qemu ....................   Passed   15.52 sec
+      Start 46: aarch32-rpi-zero-2w-smp-num-test-qemu-sd-remove
+14/26 Test #46: aarch32-rpi-zero-2w-smp-num-test-qemu-sd-remove ..........   Passed    0.01 sec
+      Start 51: aarch32-rpi-zero-2w-smp-pipeline-test-qemu-sd-make
+15/26 Test #51: aarch32-rpi-zero-2w-smp-pipeline-test-qemu-sd-make .......   Passed    0.04 sec
+      Start 53: aarch32-rpi-zero-2w-smp-pipeline-test-qemu
+16/26 Test #53: aarch32-rpi-zero-2w-smp-pipeline-test-qemu ...............   Passed   30.50 sec
+      Start 52: aarch32-rpi-zero-2w-smp-pipeline-test-qemu-sd-remove
+17/26 Test #52: aarch32-rpi-zero-2w-smp-pipeline-test-qemu-sd-remove .....   Passed    0.01 sec
+      Start 57: aarch32-rpi-zero-2w-smp-pro-cons-test-qemu
+18/26 Test #57: aarch32-rpi-zero-2w-smp-pro-cons-test-qemu ...............   Passed    4.51 sec
+      Start 61: aarch32-rpi-zero-2w-smp-mat-test-qemu
+19/26 Test #61: aarch32-rpi-zero-2w-smp-mat-test-qemu ....................   Passed    0.24 sec
+      Start 65: aarch32-rpi-zero-2w-sd_test-qemu-sd-make
+20/26 Test #65: aarch32-rpi-zero-2w-sd_test-qemu-sd-make .................   Passed    0.08 sec
+      Start 67: aarch32-rpi-zero-2w-sd_test-qemu
+21/26 Test #67: aarch32-rpi-zero-2w-sd_test-qemu .........................   Passed    0.27 sec
+      Start 66: aarch32-rpi-zero-2w-sd_test-qemu-sd-remove
+22/26 Test #66: aarch32-rpi-zero-2w-sd_test-qemu-sd-remove ...............   Passed    0.01 sec
+      Start 71: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make
+23/26 Test #71: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.05 sec
+      Start 73: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu
+24/26 Test #73: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu .............   Passed    0.35 sec
+      Start 72: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove
+25/26 Test #72: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.01 sec
+      Start 77: aarch32-rpi-zero-2w-clock-test-qemu
+26/26 Test #77: aarch32-rpi-zero-2w-clock-test-qemu ......................   Passed    5.29 sec
+
+100% tests passed out of 26
+
+Label Time Summary:
+qemu    = 152.76 sec*proc (26 tests)
+
+Total Test time (real) = 152.78 sec
+
+The following tests did not run:
+	  1 - aarch32-rpi-zero-2w-usb_test-qemu (Skipped)
+	  5 - aarch32-rpi-zero-2w-wifi-net-qemu (Skipped)
+	  9 - aarch32-rpi-zero-2w-wifi-tcp-server-qemu (Skipped)

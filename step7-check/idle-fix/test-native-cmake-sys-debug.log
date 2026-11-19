@@ -1,0 +1,48 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/native-cmake-sys-debug
+      Start  1: native-mutex-ceiling-test-host
+ 1/20 Test  #1: native-mutex-ceiling-test-host ............   Passed    0.00 sec
+      Start  2: native-smp-mutex-stress-host
+ 2/20 Test  #2: native-smp-mutex-stress-host ..............   Passed   15.10 sec
+      Start  3: native-smp-rtos-apis-host
+ 3/20 Test  #3: native-smp-rtos-apis-host .................   Passed   28.08 sec
+      Start  4: native-mutex-stress-host
+ 4/20 Test  #4: native-mutex-stress-host ..................   Passed   35.17 sec
+      Start  5: native-rtos-apis-host
+ 5/20 Test  #5: native-rtos-apis-host .....................   Passed    7.09 sec
+      Start  6: native-smp_test0-host
+ 6/20 Test  #6: native-smp_test0-host .....................   Passed   10.00 sec
+      Start  7: native-smp_test1-host
+ 7/20 Test  #7: native-smp_test1-host .....................   Passed   10.06 sec
+      Start  8: native-smp_test2-host
+ 8/20 Test  #8: native-smp_test2-host .....................   Passed    0.51 sec
+      Start  9: native-smp_test3-host
+ 9/20 Test  #9: native-smp_test3-host .....................   Passed   10.06 sec
+      Start 10: native-smp_test4-host
+10/20 Test #10: native-smp_test4-host .....................   Passed   10.06 sec
+      Start 12: native-smp-num-test-host-sd-make
+11/20 Test #12: native-smp-num-test-host-sd-make ..........   Passed    0.05 sec
+      Start 11: native-smp-num-test-host
+12/20 Test #11: native-smp-num-test-host ..................   Passed   15.40 sec
+      Start 13: native-smp-num-test-host-sd-remove
+13/20 Test #13: native-smp-num-test-host-sd-remove ........   Passed    0.02 sec
+      Start 15: native-smp-pipeline-test-host-sd-make
+14/20 Test #15: native-smp-pipeline-test-host-sd-make .....   Passed    0.06 sec
+      Start 14: native-smp-pipeline-test-host
+15/20 Test #14: native-smp-pipeline-test-host .............   Passed   30.40 sec
+      Start 16: native-smp-pipeline-test-host-sd-remove
+16/20 Test #16: native-smp-pipeline-test-host-sd-remove ...   Passed    0.01 sec
+      Start 17: native-smp-pro-cons-test-host
+17/20 Test #17: native-smp-pro-cons-test-host .............   Passed    4.40 sec
+      Start 18: native-smp-mat-test-host
+18/20 Test #18: native-smp-mat-test-host ..................   Passed    0.22 sec
+      Start 19: native-clock-test-host
+19/20 Test #19: native-clock-test-host ....................   Passed    5.21 sec
+      Start 20: native-cmsis-os-validator-host
+20/20 Test #20: native-cmsis-os-validator-host ............   Passed   11.37 sec
+
+100% tests passed out of 20
+
+Label Time Summary:
+host    = 193.28 sec*proc (20 tests)
+
+Total Test time (real) = 193.30 sec

@@ -1,0 +1,76 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+    Start 8: aarch64-rpi4b-eth-tcp-server-hwd-reset
+1/2 Test #8: aarch64-rpi4b-eth-tcp-server-hwd-reset ...   Passed   10.24 sec
+    Start 7: aarch64-rpi4b-eth-tcp-server-hwd
+2/2 Test #7: aarch64-rpi4b-eth-tcp-server-hwd .........***Failed  Error regular expression found in output. Regex=[RESULT: FAIL] 69.32 sec
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Warn : Transport "jtag" was already selected
+Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E661410403809139
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (JTAG)
+Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : cmsis-dap JTAG TLR_RESET
+Info : cmsis-dap JTAG TLR_RESET
+Info : JTAG tap: bcm2711.cpu tap/device found: 0x4ba00477 (mfg: 0x23b (ARM Ltd), part: 0xba00, ver: 0x4)
+Info : [bcm2711.ap] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80410088
+Info : bcm2711.cpu0: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu0] external reset detected
+Info : [bcm2711.cpu0] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80510088
+Info : bcm2711.cpu1: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu1] external reset detected
+Info : [bcm2711.cpu1] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80610088
+Info : bcm2711.cpu2: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu2] external reset detected
+Info : [bcm2711.cpu2] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80710088
+Info : bcm2711.cpu3: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu3] external reset detected
+Info : [bcm2711.cpu3] Examination succeed
+Info : [bcm2711.ap] gdb port disabled
+Info : [bcm2711.cpu0] gdb port disabled
+Info : [bcm2711.cpu1] gdb port disabled
+Info : [bcm2711.cpu2] gdb port disabled
+Info : [bcm2711.cpu3] gdb port disabled
+uos_hwd_run
+--- stage: halt cores 0 ---
+Info : bcm2711.cpu0 socket 0 cluster 0 core 0 multi core
+bcm2711.cpu0 halted in AArch64 state due to debug-request, current mode: EL2H
+cpsr: 0x000003c9 pc: 0x200
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+--- stage: enable semihosting on cores 0 1 2 3 ---
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin/port-tests/test/eth-tcp-server-hwd.elf ---
+--- stage: resume cores 0 at 0x80000 ---
+  start PC core 0 = pc (/64): 0x0000000000080000
+Info : tcl server disabled
+Info : telnet server disabled
+
+RESULT: FAIL (no TCP client connected)
+
+
+50% tests passed, 1 tests failed out of 2
+
+Label Time Summary:
+hwd          =  69.32 sec*proc (1 test)
+hwd-reset    =  10.24 sec*proc (1 test)
+
+Total Test time (real) =  79.56 sec
+
+The following tests FAILED:
+	  7 - aarch64-rpi4b-eth-tcp-server-hwd (Failed)         hwd
+Errors while running CTest

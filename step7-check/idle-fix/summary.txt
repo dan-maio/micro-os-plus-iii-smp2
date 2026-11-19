@@ -1,0 +1,41 @@
+2xcortex-m33-cmake-gcc-debug: 100% tests passed out of 4
+2xcortex-m33-cmake-gcc-release: 100% tests passed out of 4
+aarch32-luckfox-lyra-cmake-gcc-debug: built, no non-hardware tests
+aarch32-luckfox-lyra-cmake-gcc-release: built, no non-hardware tests
+aarch32-rpi3b-cmake-gcc-debug: 96% tests passed, 1 tests failed out of 24
+aarch32-rpi3b-cmake-gcc-release: 100% tests passed out of 24
+aarch32-rpi-zero-2w-cmake-gcc-debug: 100% tests passed out of 26
+aarch32-rpi-zero-2w-cmake-gcc-release: 96% tests passed, 1 tests failed out of 26
+aarch64-rpi3b-cmake-gcc-debug: 100% tests passed out of 24
+aarch64-rpi3b-cmake-gcc-release: 100% tests passed out of 24
+aarch64-rpi4b-cmake-gcc-debug: 97% tests passed, 1 tests failed out of 32
+aarch64-rpi4b-cmake-gcc-release: 97% tests passed, 1 tests failed out of 32
+aarch64-rpi-zero-2w-cmake-gcc-debug: 100% tests passed out of 26
+aarch64-rpi-zero-2w-cmake-gcc-release: 96% tests passed, 1 tests failed out of 26
+cortexm-nucleof411-cmake-gcc-debug: built, no non-hardware tests
+cortexm-nucleof411-cmake-gcc-release: built, no non-hardware tests
+cortexm-pico2-cmake-gcc-debug: 100% tests passed out of 6
+cortexm-pico2-cmake-gcc-release: 100% tests passed out of 6
+cortexm-pico2-pizero-cmake-gcc-debug: built, no non-hardware tests
+cortexm-pico2-pizero-cmake-gcc-release: built, no non-hardware tests
+cortexm-pico2-rp2350b-psram-cmake-gcc-debug: 100% tests passed out of 3
+cortexm-pico2-rp2350b-psram-cmake-gcc-release: 100% tests passed out of 3
+cortexm-pico-cmake-gcc-debug: 100% tests passed out of 6
+cortexm-pico-cmake-gcc-release: 100% tests passed out of 6
+cortexm-weactf411-cmake-gcc-debug: built, no non-hardware tests
+cortexm-weactf411-cmake-gcc-release: built, no non-hardware tests
+cortexm-weactf412-cmake-gcc-debug: built, no non-hardware tests
+cortexm-weactf412-cmake-gcc-release: built, no non-hardware tests
+native-cmake-sys-debug: 100% tests passed out of 20
+native-cmake-sys-release: 100% tests passed out of 20
+pico2-1cpu-cmake-gcc-debug: 100% tests passed out of 4
+pico2-1cpu-cmake-gcc-release: 100% tests passed out of 4
+qemu-cortex-m0-cmake-gcc-debug: 100% tests passed out of 3
+qemu-cortex-m0-cmake-gcc-release: 100% tests passed out of 3
+qemu-cortex-m3-cmake-gcc-debug: 100% tests passed out of 3
+qemu-cortex-m3-cmake-gcc-release: 100% tests passed out of 3
+qemu-cortex-m4f-cmake-gcc-debug: 100% tests passed out of 3
+qemu-cortex-m4f-cmake-gcc-release: 100% tests passed out of 3
+qemu-cortex-m7f-cmake-gcc-debug: 100% tests passed out of 3
+qemu-cortex-m7f-cmake-gcc-release: 100% tests passed out of 3
+ALL DONE

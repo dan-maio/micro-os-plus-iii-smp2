@@ -1,0 +1,127 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added setup test aarch32-luckfox-lyra-smp_test_int2-hwd-reset required by fixture aarch32-luckfox-lyra-smp_test_int2-hwd-reset
+Added 1 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 15
+    Start 15: aarch32-luckfox-lyra-smp_test_int2-hwd-reset
+
+15: Test command: /usr/bin/cmake "-DOPENOCD=/home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/openocd" "-DARGS=-s|/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra|-s|/home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/../openocd/scripts|-f|/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/openocd.cfg|-c|catch { rk3506_reset_full }
+ shutdown" "-DEXPECT=Triggering RK3506 Full Global Software Reset" "-DWAIT=3" "-DLOG=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/aarch32-luckfox-lyra-smp_test_int2-hwd-reset.log" "-P" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake"
+15: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin
+15: Test timeout computed to be: 120
+15: -- reset done; waiting 3 s for the board
+1/2 Test #15: aarch32-luckfox-lyra-smp_test_int2-hwd-reset ...   Passed    3.77 sec
+test 14
+    Start 14: aarch32-luckfox-lyra-smp_test_int2-hwd
+
+14: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/openocd "-s" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra" "-s" "/home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/../openocd/scripts" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch32-luckfox-lyra/openocd.cfg" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd.tcl" "-c" "uos_hwd_run {/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test_int2-hwd.elf} 0x00200000 {rk3506.a7.%d} {0} {0} entry {4000} {if {[catch {
+  set _t [target current]
+  set _s [$_t arm mrc 15 0 1 0 0]
+  $_t arm mcr 15 0 1 0 0 [expr {$_s & ~0x1005}]
+  $_t arm mcr 15 0 7 5 0 0
+  $_t arm mcr 15 0 7 5 6 0
+  $_t arm mcr 15 0 8 7 0 0
+} _e]} { echo "SANITIZE-ERR: $_e" } else { echo [format "SANITIZE-OK: SCTLR 0x%08x -> MMU/caches off" $_s] }}"
+14: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin
+14: Test timeout computed to be: 1200
+14: xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+14: Licensed under GNU GPL v2
+14: For bug reports, read
+14: 	http://openocd.org/doc/doxygen/bugs.html
+14: Info : CMSIS-DAP: SWD supported
+14: Info : CMSIS-DAP: FW Version = 2.0.0
+14: Info : CMSIS-DAP: Interface Initialised (SWD)
+14: Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+14: Info : CMSIS-DAP: Interface ready
+14: Info : clock speed 4000 kHz
+14: Info : SWD DPIDR 0x2ba01477
+14: Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+14: Info : [rk3506.a7.0] Examination succeed
+14: Info : [rk3506.a7.0] gdb port disabled
+14: Info : [rk3506.a7.1] gdb port disabled
+14: Info : [rk3506.a7.2] gdb port disabled
+14: Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+14: [rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+14: cpsr: 0x200001d3 pc: 0x03f00398, semihosting
+14: [rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+14: RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+14: uos_hwd_run
+14: --- stage: JTAG clock -> 4000 kHz ---
+14: --- stage: halt cores 0 ---
+14: --- stage: enable semihosting on cores 0 ---
+14: --- stage: pre-load ---
+14: SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+14: --- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test_int2-hwd.elf ---
+14: --- stage: resume cores 0 at 0x00200000 ---
+14: Info : tcl server disabled
+14: Info : telnet server disabled
+14: 
+14: 
+14: +=============================================+
+14: |  Luckfox Lyra µOS++ SMP TEST INT2           |
+14: |  IRQ-driven TX (THRE + ring buffer)         |
+14: |  UART1 IRQ routed to CORE 1 (ITARGETSR)     |
+14: +=============================================+
+14: 
+14: os_startup_initialize_free_store(0x6400000,16777216)
+14: first_fit_top(0x6400000,16777216) @0x21f3b8 app-heap
+14: out_of_memory_handler(0x207050) @0x21f3b8 app-heap
+14: estd::pmr::set_default_resource(0x21f3b8) 
+14: rtos::memory::set_default_resource(0x21f3b8) 
+14: rtos::memory::init_once_default_resource() 
+14: malloc_memory_resource() @0x21f388 malloc
+14: 
+14: µOS++ IIIe version 7.0.1
+14: Scheduler: µOS++ Luckfox Lyra B (RK3506, Cortex-A7 SMP), 3 CPU(s), 1ms tick, LDREX lock
+14: scheduler::start() 
+14: IRQs enabled (timer only)
+14: 
+14: Setting up SRAM mailbox for core 1...
+14: Releasing core 1 from reset...
+14: Waiting for core 1 to join...
+14: Core 1 joined after 0ms
+14: 
+14: Routing UART1 IRQ (GIC ID 67) to CORE 1 via ITARGETSR...
+14: Switching TX to interrupt-driven ring buffer...
+14: beat 1/20
+14: beat 2/20
+14: beat 3/20
+14: beat 4/20
+14: beat 5/20
+14: beat 6/20
+14: beat 7/20
+14: beat 8/20
+14: beat 9/20
+14: beat 10/20
+14: beat 11/20
+14: beat 12/20
+14: beat 13/20
+14: beat 14/20
+14: beat 15/20
+14: beat 16/20
+14: beat 17/20
+14: beat 18/20
+14: beat 19/20
+14: beat 20/20
+14: 
+14: RESULT: PASS
+14: exit(0)Info : [rk3506.a7.1] MPIDR level2 0, cluster f, core 1, multi core, no SMT
+14: 
+2/2 Test #14: aarch32-luckfox-lyra-smp_test_int2-hwd .........   Passed  118.35 sec
+
+The following tests passed:
+	aarch32-luckfox-lyra-smp_test_int2-hwd-reset
+	aarch32-luckfox-lyra-smp_test_int2-hwd
+
+100% tests passed out of 2
+
+Label Time Summary:
+hwd          = 118.35 sec*proc (1 test)
+hwd-reset    =   3.77 sec*proc (1 test)
+
+Total Test time (real) = 122.13 sec

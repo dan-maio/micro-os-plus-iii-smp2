@@ -1,0 +1,147 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-release
+      Start  1: aarch32-rpi-zero-2w-usb_test-qemu
+ 1/26 Test  #1: aarch32-rpi-zero-2w-usb_test-qemu ........................***Skipped   0.47 sec
+      Start  5: aarch32-rpi-zero-2w-wifi-net-qemu
+ 2/26 Test  #5: aarch32-rpi-zero-2w-wifi-net-qemu ........................***Skipped   0.08 sec
+      Start  9: aarch32-rpi-zero-2w-wifi-tcp-server-qemu
+ 3/26 Test  #9: aarch32-rpi-zero-2w-wifi-tcp-server-qemu .................***Skipped   0.08 sec
+      Start 13: aarch32-rpi-zero-2w-mutex-stress-qemu
+ 4/26 Test #13: aarch32-rpi-zero-2w-mutex-stress-qemu ....................   Passed   35.26 sec
+      Start 17: aarch32-rpi-zero-2w-rtos-apis-qemu
+ 5/26 Test #17: aarch32-rpi-zero-2w-rtos-apis-qemu .......................   Passed    7.20 sec
+      Start 21: aarch32-rpi-zero-2w-cmsis-os-validator-qemu
+ 6/26 Test #21: aarch32-rpi-zero-2w-cmsis-os-validator-qemu ..............***Failed  Error regular expression found in output. Regex=[RESULT: FAIL] 11.54 sec
+os_startup_initialize_free_store(0x2cc000,67108864)
+first_fit_top(0x2cc000,67108864) @0x38188 app-heap
+out_of_memory_handler(0x1a4b0) @0x38188 app-heap
+estd::pmr::set_default_resource(0x38188) 
+rtos::memory::set_default_resource(0x38188) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x38158 malloc
+scheduler::start() 
+CMSIS-RTOS Test Suite   Nov 19 2026   14:01:11 
+
+TEST 01: TC_ThreadCreate                  PASSED
+TEST 02: TC_ThreadMultiInstance           PASSED
+TEST 03: TC_ThreadTerminate               PASSED
+TEST 04: TC_ThreadRestart                 PASSED
+TEST 05: TC_ThreadGetId                   PASSED
+TEST 06: TC_ThreadPriority                PASSED
+TEST 07: TC_ThreadPriorityExec            PASSED
+TEST 08: TC_ThreadChainedCreate           PASSED
+TEST 09: TC_ThreadYield                   PASSED
+TEST 10: TC_ThreadParam                   PASSED
+TEST 11: TC_ThreadInterrupts              PASSED
+TEST 12: TC_GenWaitBasic                  PASSED
+TEST 13: TC_GenWaitInterrupts             PASSED
+TEST 14: TC_TimerOneShot                  PASSED
+TEST 15: TC_TimerPeriodic                 PASSED
+TEST 16: TC_TimerParam                    PASSED
+TEST 17: TC_TimerInterrupts               PASSED
+TEST 18: TC_SignalMainThread              PASSED
+TEST 19: TC_SignalChildThread             PASSED
+TEST 20: TC_SignalChildToParent           PASSED
+TEST 21: TC_SignalChildToChild            PASSED
+TEST 22: TC_SignalWaitTimeout             PASSED
+TEST 23: TC_SignalParam                   PASSED
+TEST 24: TC_SignalInterrupts              PASSED
+TEST 25: TC_SemaphoreCreateAndDelete      PASSED
+TEST 26: TC_SemaphoreObtainCounting       PASSED
+TEST 27: TC_SemaphoreObtainBinary         PASSED
+TEST 28: TC_SemaphoreWaitForBinary        PASSED
+TEST 29: TC_SemaphoreWaitForCounting      PASSED
+TEST 30: TC_SemaphoreZeroCount            PASSED
+TEST 31: TC_SemaphoreWaitTimeout          PASSED
+TEST 32: TC_SemParam                      PASSED
+TEST 33: TC_SemInterrupts                 PASSED
+TEST 34: TC_MutexBasic                    PASSED
+TEST 35: TC_MutexTimeout                  PASSED
+TEST 36: TC_MutexNestedAcquire            PASSED
+TEST 37: TC_MutexPriorityInversion        PASSED
+TEST 38: TC_MutexOwnership                PASSED
+TEST 39: TC_MutexParam                    PASSED
+TEST 40: TC_MutexInterrupts               PASSED
+TEST 41: TC_MemPoolAllocAndFree           PASSED
+TEST 42: TC_MemPoolAllocAndFreeComb       PASSED
+TEST 43: TC_MemPoolZeroInit               PASSED
+TEST 44: TC_MemPoolParam                  PASSED
+TEST 45: TC_MemPoolInterrupts             PASSED
+TEST 46: TC_MsgQBasic                     PASSED
+TEST 47: TC_MsgQWait                      PASSED
+TEST 48: TC_MsgQParam                     PASSED
+TEST 49: TC_MsgQInterrupts                PASSED
+TEST 50: TC_MsgFromThreadToISR            
+  RV_MsgQueue.c (188) [FAILED]
+  RV_MsgQueue.c (188) [FAILED]
+TEST 51: TC_MsgFromISRToThread            PASSED
+TEST 52: TC_MailAlloc                     PASSED
+TEST 53: TC_MailCAlloc                    PASSED
+TEST 54: TC_MailToThread                  PASSED
+TEST 55: TC_MailFromThread                PASSED
+TEST 56: TC_MailTimeout                   PASSED
+TEST 57: TC_MailParam                     PASSED
+TEST 58: TC_MailInterrupts                PASSED
+TEST 59: TC_MailFromThreadToISR           PASSED
+TEST 60: TC_MailFromISRToThread           PASSED
+
+Test Summary: 60 Tests, 60 Executed, 59 Passed, 1 Failed, 0 Warnings.
+Test Result: FAILED
+
+RESULT: FAIL
+
+      Start 25: aarch32-rpi-zero-2w-smp_test0-qemu
+ 7/26 Test #25: aarch32-rpi-zero-2w-smp_test0-qemu .......................   Passed   10.10 sec
+      Start 29: aarch32-rpi-zero-2w-smp_test1-qemu
+ 8/26 Test #29: aarch32-rpi-zero-2w-smp_test1-qemu .......................   Passed   10.15 sec
+      Start 33: aarch32-rpi-zero-2w-smp_test2-qemu
+ 9/26 Test #33: aarch32-rpi-zero-2w-smp_test2-qemu .......................   Passed    0.60 sec
+      Start 37: aarch32-rpi-zero-2w-smp_test3-qemu
+10/26 Test #37: aarch32-rpi-zero-2w-smp_test3-qemu .......................   Passed   10.15 sec
+      Start 41: aarch32-rpi-zero-2w-smp_test4-qemu
+11/26 Test #41: aarch32-rpi-zero-2w-smp_test4-qemu .......................   Passed   10.16 sec
+      Start 45: aarch32-rpi-zero-2w-smp-num-test-qemu-sd-make
+12/26 Test #45: aarch32-rpi-zero-2w-smp-num-test-qemu-sd-make ............   Passed    0.08 sec
+      Start 47: aarch32-rpi-zero-2w-smp-num-test-qemu
+13/26 Test #47: aarch32-rpi-zero-2w-smp-num-test-qemu ....................   Passed   15.53 sec
+      Start 46: aarch32-rpi-zero-2w-smp-num-test-qemu-sd-remove
+14/26 Test #46: aarch32-rpi-zero-2w-smp-num-test-qemu-sd-remove ..........   Passed    0.01 sec
+      Start 51: aarch32-rpi-zero-2w-smp-pipeline-test-qemu-sd-make
+15/26 Test #51: aarch32-rpi-zero-2w-smp-pipeline-test-qemu-sd-make .......   Passed    0.05 sec
+      Start 53: aarch32-rpi-zero-2w-smp-pipeline-test-qemu
+16/26 Test #53: aarch32-rpi-zero-2w-smp-pipeline-test-qemu ...............   Passed   30.51 sec
+      Start 52: aarch32-rpi-zero-2w-smp-pipeline-test-qemu-sd-remove
+17/26 Test #52: aarch32-rpi-zero-2w-smp-pipeline-test-qemu-sd-remove .....   Passed    0.01 sec
+      Start 57: aarch32-rpi-zero-2w-smp-pro-cons-test-qemu
+18/26 Test #57: aarch32-rpi-zero-2w-smp-pro-cons-test-qemu ...............   Passed    4.51 sec
+      Start 61: aarch32-rpi-zero-2w-smp-mat-test-qemu
+19/26 Test #61: aarch32-rpi-zero-2w-smp-mat-test-qemu ....................   Passed    0.24 sec
+      Start 65: aarch32-rpi-zero-2w-sd_test-qemu-sd-make
+20/26 Test #65: aarch32-rpi-zero-2w-sd_test-qemu-sd-make .................   Passed    0.05 sec
+      Start 67: aarch32-rpi-zero-2w-sd_test-qemu
+21/26 Test #67: aarch32-rpi-zero-2w-sd_test-qemu .........................   Passed    0.27 sec
+      Start 66: aarch32-rpi-zero-2w-sd_test-qemu-sd-remove
+22/26 Test #66: aarch32-rpi-zero-2w-sd_test-qemu-sd-remove ...............   Passed    0.01 sec
+      Start 71: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make
+23/26 Test #71: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.05 sec
+      Start 73: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu
+24/26 Test #73: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu .............   Passed    0.36 sec
+      Start 72: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove
+25/26 Test #72: aarch32-rpi-zero-2w-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.01 sec
+      Start 77: aarch32-rpi-zero-2w-clock-test-qemu
+26/26 Test #77: aarch32-rpi-zero-2w-clock-test-qemu ......................   Passed    5.30 sec
+
+96% tests passed, 1 tests failed out of 26
+
+Label Time Summary:
+qemu    = 152.74 sec*proc (26 tests)
+
+Total Test time (real) = 152.76 sec
+
+The following tests did not run:
+	  1 - aarch32-rpi-zero-2w-usb_test-qemu (Skipped)
+	  5 - aarch32-rpi-zero-2w-wifi-net-qemu (Skipped)
+	  9 - aarch32-rpi-zero-2w-wifi-tcp-server-qemu (Skipped)
+
+The following tests FAILED:
+	 21 - aarch32-rpi-zero-2w-cmsis-os-validator-qemu (Failed) qemu
+Errors while running CTest

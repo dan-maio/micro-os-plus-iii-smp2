@@ -1,0 +1,59 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi3b-cmake-gcc-release
+      Start  1: aarch32-rpi3b-usb_test-qemu
+ 1/24 Test  #1: aarch32-rpi3b-usb_test-qemu ........................***Skipped   0.48 sec
+      Start  2: aarch32-rpi3b-mutex-stress-qemu
+ 2/24 Test  #2: aarch32-rpi3b-mutex-stress-qemu ....................   Passed   35.20 sec
+      Start  6: aarch32-rpi3b-rtos-apis-qemu
+ 3/24 Test  #6: aarch32-rpi3b-rtos-apis-qemu .......................   Passed    7.20 sec
+      Start 10: aarch32-rpi3b-cmsis-os-validator-qemu
+ 4/24 Test #10: aarch32-rpi3b-cmsis-os-validator-qemu ..............   Passed   11.56 sec
+      Start 14: aarch32-rpi3b-smp_test0-qemu
+ 5/24 Test #14: aarch32-rpi3b-smp_test0-qemu .......................   Passed   10.11 sec
+      Start 18: aarch32-rpi3b-smp_test1-qemu
+ 6/24 Test #18: aarch32-rpi3b-smp_test1-qemu .......................   Passed   10.16 sec
+      Start 22: aarch32-rpi3b-smp_test2-qemu
+ 7/24 Test #22: aarch32-rpi3b-smp_test2-qemu .......................   Passed    0.61 sec
+      Start 26: aarch32-rpi3b-smp_test3-qemu
+ 8/24 Test #26: aarch32-rpi3b-smp_test3-qemu .......................   Passed   10.15 sec
+      Start 30: aarch32-rpi3b-smp_test4-qemu
+ 9/24 Test #30: aarch32-rpi3b-smp_test4-qemu .......................   Passed   10.16 sec
+      Start 34: aarch32-rpi3b-smp-num-test-qemu-sd-make
+10/24 Test #34: aarch32-rpi3b-smp-num-test-qemu-sd-make ............   Passed    0.06 sec
+      Start 36: aarch32-rpi3b-smp-num-test-qemu
+11/24 Test #36: aarch32-rpi3b-smp-num-test-qemu ....................   Passed   15.53 sec
+      Start 35: aarch32-rpi3b-smp-num-test-qemu-sd-remove
+12/24 Test #35: aarch32-rpi3b-smp-num-test-qemu-sd-remove ..........   Passed    0.01 sec
+      Start 40: aarch32-rpi3b-smp-pipeline-test-qemu-sd-make
+13/24 Test #40: aarch32-rpi3b-smp-pipeline-test-qemu-sd-make .......   Passed    0.11 sec
+      Start 42: aarch32-rpi3b-smp-pipeline-test-qemu
+14/24 Test #42: aarch32-rpi3b-smp-pipeline-test-qemu ...............   Passed   30.49 sec
+      Start 41: aarch32-rpi3b-smp-pipeline-test-qemu-sd-remove
+15/24 Test #41: aarch32-rpi3b-smp-pipeline-test-qemu-sd-remove .....   Passed    0.01 sec
+      Start 46: aarch32-rpi3b-smp-pro-cons-test-qemu
+16/24 Test #46: aarch32-rpi3b-smp-pro-cons-test-qemu ...............   Passed    4.49 sec
+      Start 50: aarch32-rpi3b-smp-mat-test-qemu
+17/24 Test #50: aarch32-rpi3b-smp-mat-test-qemu ....................   Passed    0.26 sec
+      Start 54: aarch32-rpi3b-sd_test-qemu-sd-make
+18/24 Test #54: aarch32-rpi3b-sd_test-qemu-sd-make .................   Passed    0.05 sec
+      Start 56: aarch32-rpi3b-sd_test-qemu
+19/24 Test #56: aarch32-rpi3b-sd_test-qemu .........................   Passed    0.27 sec
+      Start 55: aarch32-rpi3b-sd_test-qemu-sd-remove
+20/24 Test #55: aarch32-rpi3b-sd_test-qemu-sd-remove ...............   Passed    0.01 sec
+      Start 60: aarch32-rpi3b-smp-mat-sdcard-test-qemu-sd-make
+21/24 Test #60: aarch32-rpi3b-smp-mat-sdcard-test-qemu-sd-make .....   Passed    0.04 sec
+      Start 62: aarch32-rpi3b-smp-mat-sdcard-test-qemu
+22/24 Test #62: aarch32-rpi3b-smp-mat-sdcard-test-qemu .............   Passed    0.34 sec
+      Start 61: aarch32-rpi3b-smp-mat-sdcard-test-qemu-sd-remove
+23/24 Test #61: aarch32-rpi3b-smp-mat-sdcard-test-qemu-sd-remove ...   Passed    0.01 sec
+      Start 66: aarch32-rpi3b-clock-test-qemu
+24/24 Test #66: aarch32-rpi3b-clock-test-qemu ......................   Passed    5.30 sec
+
+100% tests passed out of 24
+
+Label Time Summary:
+qemu    = 152.60 sec*proc (24 tests)
+
+Total Test time (real) = 152.62 sec
+
+The following tests did not run:
+	  1 - aarch32-rpi3b-usb_test-qemu (Skipped)

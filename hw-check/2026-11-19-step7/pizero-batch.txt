@@ -1,0 +1,32 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-pizero-cmake-gcc-debug
+      Start  2: cortexm-pico2-pizero-exc-test-hwd
+ 1/12 Test  #2: cortexm-pico2-pizero-exc-test-hwd .............   Passed    5.61 sec
+      Start  4: cortexm-pico2-pizero-psram-exec-hwd
+ 2/12 Test  #4: cortexm-pico2-pizero-psram-exec-hwd ...........   Passed  120.71 sec
+      Start  6: cortexm-pico2-pizero-psram-mat-test-250-hwd
+ 3/12 Test  #6: cortexm-pico2-pizero-psram-mat-test-250-hwd ...   Passed    8.32 sec
+      Start  8: cortexm-pico2-pizero-sc-test-ko-hwd
+ 4/12 Test  #8: cortexm-pico2-pizero-sc-test-ko-hwd ...........   Passed    5.25 sec
+      Start 10: cortexm-pico2-pizero-smp-mat-test-hwd
+ 5/12 Test #10: cortexm-pico2-pizero-smp-mat-test-hwd .........   Passed    5.35 sec
+      Start 12: cortexm-pico2-pizero-smp-test-ko-hwd
+ 6/12 Test #12: cortexm-pico2-pizero-smp-test-ko-hwd ..........   Passed    5.53 sec
+      Start 16: cortexm-pico2-pizero-smp-test0-hwd
+ 7/12 Test #16: cortexm-pico2-pizero-smp-test0-hwd ............   Passed   23.33 sec
+      Start 18: cortexm-pico2-pizero-smp-test1-hwd
+ 8/12 Test #18: cortexm-pico2-pizero-smp-test1-hwd ............   Passed    8.86 sec
+      Start 20: cortexm-pico2-pizero-smp-test2-hwd
+ 9/12 Test #20: cortexm-pico2-pizero-smp-test2-hwd ............   Passed   14.20 sec
+      Start 22: cortexm-pico2-pizero-smp-test3-hwd
+10/12 Test #22: cortexm-pico2-pizero-smp-test3-hwd ............   Passed    4.20 sec
+      Start 24: cortexm-pico2-pizero-smp-test4-hwd
+11/12 Test #24: cortexm-pico2-pizero-smp-test4-hwd ............   Passed    6.42 sec
+      Start 26: cortexm-pico2-pizero-smp-test5-hwd
+12/12 Test #26: cortexm-pico2-pizero-smp-test5-hwd ............   Passed    8.26 sec
+
+100% tests passed out of 12
+
+Label Time Summary:
+hwd    = 216.05 sec*proc (12 tests)
+
+Total Test time (real) = 216.07 sec

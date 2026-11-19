@@ -1,0 +1,26 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug
+    Start 12: aarch64-rpi-zero-2w-wifi-tcp-server-hwd-reset
+1/2 Test #12: aarch64-rpi-zero-2w-wifi-tcp-server-hwd-reset ...***Failed    0.06 sec
+CMake Error at /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake:38 (message):
+  The reset session did not reach the board (see
+  /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug/platform-bin/aarch64-rpi-zero-2w-wifi-tcp-server-hwd-reset.log):
+  power-cycle the board, check its probe and wiring.
+
+
+
+    Start 11: aarch64-rpi-zero-2w-wifi-tcp-server-hwd
+Failed test dependencies: aarch64-rpi-zero-2w-wifi-tcp-server-hwd-reset
+2/2 Test #11: aarch64-rpi-zero-2w-wifi-tcp-server-hwd .........***Not Run   0.00 sec
+
+0% tests passed, 2 tests failed out of 2
+
+Label Time Summary:
+hwd          =   0.00 sec*proc (1 test)
+hwd-reset    =   0.06 sec*proc (1 test)
+
+Total Test time (real) =   0.06 sec
+
+The following tests FAILED:
+	 11 - aarch64-rpi-zero-2w-wifi-tcp-server-hwd (Not Run) hwd
+	 12 - aarch64-rpi-zero-2w-wifi-tcp-server-hwd-reset (Failed) hwd-reset
+Errors while running CTest

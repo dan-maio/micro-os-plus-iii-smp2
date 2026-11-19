@@ -1,0 +1,73 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-rpi-zero-2w-cmake-gcc-debug
+      Start  7: aarch32-rpi-zero-2w-wifi-net-hwd-reset
+ 1/32 Test  #7: aarch32-rpi-zero-2w-wifi-net-hwd-reset ..............   Passed   12.28 sec
+      Start  6: aarch32-rpi-zero-2w-wifi-net-hwd
+ 2/32 Test  #6: aarch32-rpi-zero-2w-wifi-net-hwd ....................   Passed   82.30 sec
+      Start 14: aarch32-rpi-zero-2w-mutex-stress-hwd-reset
+ 3/32 Test #14: aarch32-rpi-zero-2w-mutex-stress-hwd-reset ..........   Passed   12.29 sec
+      Start 13: aarch32-rpi-zero-2w-mutex-stress-hwd
+ 4/32 Test #13: aarch32-rpi-zero-2w-mutex-stress-hwd ................   Passed   44.25 sec
+      Start 18: aarch32-rpi-zero-2w-rtos-apis-hwd-reset
+ 5/32 Test #18: aarch32-rpi-zero-2w-rtos-apis-hwd-reset .............   Passed   12.28 sec
+      Start 17: aarch32-rpi-zero-2w-rtos-apis-hwd
+ 6/32 Test #17: aarch32-rpi-zero-2w-rtos-apis-hwd ...................   Passed   63.75 sec
+      Start 22: aarch32-rpi-zero-2w-cmsis-os-validator-hwd-reset
+ 7/32 Test #22: aarch32-rpi-zero-2w-cmsis-os-validator-hwd-reset ....   Passed   12.28 sec
+      Start 21: aarch32-rpi-zero-2w-cmsis-os-validator-hwd
+ 8/32 Test #21: aarch32-rpi-zero-2w-cmsis-os-validator-hwd ..........   Passed   21.37 sec
+      Start 26: aarch32-rpi-zero-2w-smp_test0-hwd-reset
+ 9/32 Test #26: aarch32-rpi-zero-2w-smp_test0-hwd-reset .............   Passed   12.28 sec
+      Start 25: aarch32-rpi-zero-2w-smp_test0-hwd
+10/32 Test #25: aarch32-rpi-zero-2w-smp_test0-hwd ...................   Passed   15.98 sec
+      Start 30: aarch32-rpi-zero-2w-smp_test1-hwd-reset
+11/32 Test #30: aarch32-rpi-zero-2w-smp_test1-hwd-reset .............   Passed   12.29 sec
+      Start 29: aarch32-rpi-zero-2w-smp_test1-hwd
+12/32 Test #29: aarch32-rpi-zero-2w-smp_test1-hwd ...................   Passed   16.31 sec
+      Start 34: aarch32-rpi-zero-2w-smp_test2-hwd-reset
+13/32 Test #34: aarch32-rpi-zero-2w-smp_test2-hwd-reset .............   Passed   12.29 sec
+      Start 33: aarch32-rpi-zero-2w-smp_test2-hwd
+14/32 Test #33: aarch32-rpi-zero-2w-smp_test2-hwd ...................   Passed    6.68 sec
+      Start 38: aarch32-rpi-zero-2w-smp_test3-hwd-reset
+15/32 Test #38: aarch32-rpi-zero-2w-smp_test3-hwd-reset .............   Passed   12.28 sec
+      Start 37: aarch32-rpi-zero-2w-smp_test3-hwd
+16/32 Test #37: aarch32-rpi-zero-2w-smp_test3-hwd ...................   Passed   16.46 sec
+      Start 42: aarch32-rpi-zero-2w-smp_test4-hwd-reset
+17/32 Test #42: aarch32-rpi-zero-2w-smp_test4-hwd-reset .............   Passed   12.30 sec
+      Start 41: aarch32-rpi-zero-2w-smp_test4-hwd
+18/32 Test #41: aarch32-rpi-zero-2w-smp_test4-hwd ...................   Passed   16.20 sec
+      Start 48: aarch32-rpi-zero-2w-smp-num-test-hwd-reset
+19/32 Test #48: aarch32-rpi-zero-2w-smp-num-test-hwd-reset ..........   Passed   12.29 sec
+      Start 47: aarch32-rpi-zero-2w-smp-num-test-hwd
+20/32 Test #47: aarch32-rpi-zero-2w-smp-num-test-hwd ................   Passed   26.17 sec
+      Start 54: aarch32-rpi-zero-2w-smp-pipeline-test-hwd-reset
+21/32 Test #54: aarch32-rpi-zero-2w-smp-pipeline-test-hwd-reset .....   Passed   12.34 sec
+      Start 53: aarch32-rpi-zero-2w-smp-pipeline-test-hwd
+22/32 Test #53: aarch32-rpi-zero-2w-smp-pipeline-test-hwd ...........   Passed   42.20 sec
+      Start 58: aarch32-rpi-zero-2w-smp-pro-cons-test-hwd-reset
+23/32 Test #58: aarch32-rpi-zero-2w-smp-pro-cons-test-hwd-reset .....   Passed   12.32 sec
+      Start 57: aarch32-rpi-zero-2w-smp-pro-cons-test-hwd
+24/32 Test #57: aarch32-rpi-zero-2w-smp-pro-cons-test-hwd ...........   Passed   11.25 sec
+      Start 62: aarch32-rpi-zero-2w-smp-mat-test-hwd-reset
+25/32 Test #62: aarch32-rpi-zero-2w-smp-mat-test-hwd-reset ..........   Passed   12.29 sec
+      Start 61: aarch32-rpi-zero-2w-smp-mat-test-hwd
+26/32 Test #61: aarch32-rpi-zero-2w-smp-mat-test-hwd ................   Passed    7.18 sec
+      Start 68: aarch32-rpi-zero-2w-sd_test-hwd-reset
+27/32 Test #68: aarch32-rpi-zero-2w-sd_test-hwd-reset ...............   Passed   12.29 sec
+      Start 67: aarch32-rpi-zero-2w-sd_test-hwd
+28/32 Test #67: aarch32-rpi-zero-2w-sd_test-hwd .....................   Passed    9.36 sec
+      Start 74: aarch32-rpi-zero-2w-smp-mat-sdcard-test-hwd-reset
+29/32 Test #74: aarch32-rpi-zero-2w-smp-mat-sdcard-test-hwd-reset ...   Passed   12.30 sec
+      Start 73: aarch32-rpi-zero-2w-smp-mat-sdcard-test-hwd
+30/32 Test #73: aarch32-rpi-zero-2w-smp-mat-sdcard-test-hwd .........   Passed    9.93 sec
+      Start 78: aarch32-rpi-zero-2w-clock-test-hwd-reset
+31/32 Test #78: aarch32-rpi-zero-2w-clock-test-hwd-reset ............   Passed   12.27 sec
+      Start 77: aarch32-rpi-zero-2w-clock-test-hwd
+32/32 Test #77: aarch32-rpi-zero-2w-clock-test-hwd ..................   Passed   11.07 sec
+
+100% tests passed out of 32
+
+Label Time Summary:
+hwd          = 400.46 sec*proc (16 tests)
+hwd-reset    = 196.64 sec*proc (16 tests)
+
+Total Test time (real) = 597.14 sec

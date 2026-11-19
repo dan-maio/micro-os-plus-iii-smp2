@@ -1,0 +1,13 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+    Start 9: aarch32-luckfox-lyra-smp_test7-hwd-reset
+1/2 Test #9: aarch32-luckfox-lyra-smp_test7-hwd-reset ...   Passed    3.65 sec
+    Start 8: aarch32-luckfox-lyra-smp_test7-hwd
+2/2 Test #8: aarch32-luckfox-lyra-smp_test7-hwd .........   Passed   53.96 sec
+
+100% tests passed out of 2
+
+Label Time Summary:
+hwd          =  53.96 sec*proc (1 test)
+hwd-reset    =   3.65 sec*proc (1 test)
+
+Total Test time (real) =  57.61 sec

@@ -1,0 +1,148 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+      Start 10: aarch64-rpi4b-smp-list-storage-test-hwd-reset
+ 1/38 Test #10: aarch64-rpi4b-smp-list-storage-test-hwd-reset ...   Passed   10.25 sec
+      Start  9: aarch64-rpi4b-smp-list-storage-test-hwd
+ 2/38 Test  #9: aarch64-rpi4b-smp-list-storage-test-hwd .........***Failed  Required regular expression not found. Regex=[RESULT: PASS
+]  4.42 sec
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Warn : Transport "jtag" was already selected
+Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E661410403809139
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (JTAG)
+Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : cmsis-dap JTAG TLR_RESET
+Info : cmsis-dap JTAG TLR_RESET
+Info : JTAG tap: bcm2711.cpu tap/device found: 0x4ba00477 (mfg: 0x23b (ARM Ltd), part: 0xba00, ver: 0x4)
+Info : [bcm2711.ap] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80410088
+Info : bcm2711.cpu0: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu0] external reset detected
+Info : [bcm2711.cpu0] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80510088
+Info : bcm2711.cpu1: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu1] external reset detected
+Info : [bcm2711.cpu1] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80610088
+Info : bcm2711.cpu2: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu2] external reset detected
+Info : [bcm2711.cpu2] Examination succeed
+Error: JTAG-DP STICKY ERROR
+Error: Failed to read memory at 0x80710088
+Info : bcm2711.cpu3: hardware has 6 breakpoints, 4 watchpoints
+Info : [bcm2711.cpu3] external reset detected
+Info : [bcm2711.cpu3] Examination succeed
+Info : [bcm2711.ap] gdb port disabled
+Info : [bcm2711.cpu0] gdb port disabled
+Info : [bcm2711.cpu1] gdb port disabled
+Info : [bcm2711.cpu2] gdb port disabled
+Info : [bcm2711.cpu3] gdb port disabled
+uos_hwd_run
+--- stage: halt cores 0 ---
+Info : bcm2711.cpu0 socket 0 cluster 0 core 0 multi core
+bcm2711.cpu0 halted in AArch64 state due to debug-request, current mode: EL2H
+cpsr: 0x000003c9 pc: 0x200
+MMU: disabled, D-Cache: disabled, I-Cache: disabled
+--- stage: enable semihosting on cores 0 1 2 3 ---
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin/port-tests/test/smp-list-storage-test-hwd.elf ---
+--- stage: resume cores 0 at 0x80000 ---
+  start PC core 0 = pc (/64): 0x0000000000080000
+Info : tcl server disabled
+Info : telnet server disabled
+Info : bcm2711.cpu1 socket 0 cluster 0 core 1 multi core
+
+      Start 16: aarch64-rpi4b-smp-shapes-test-hwd-reset
+ 3/38 Test #16: aarch64-rpi4b-smp-shapes-test-hwd-reset .........   Passed   10.32 sec
+      Start 15: aarch64-rpi4b-smp-shapes-test-hwd
+ 4/38 Test #15: aarch64-rpi4b-smp-shapes-test-hwd ...............   Passed   35.49 sec
+      Start 20: aarch64-rpi4b-smp_mem_inter_test-hwd-reset
+ 5/38 Test #20: aarch64-rpi4b-smp_mem_inter_test-hwd-reset ......   Passed   10.26 sec
+      Start 19: aarch64-rpi4b-smp_mem_inter_test-hwd
+ 6/38 Test #19: aarch64-rpi4b-smp_mem_inter_test-hwd ............   Passed  168.71 sec
+      Start 24: aarch64-rpi4b-smp_mem_test-hwd-reset
+ 7/38 Test #24: aarch64-rpi4b-smp_mem_test-hwd-reset ............   Passed   10.28 sec
+      Start 23: aarch64-rpi4b-smp_mem_test-hwd
+ 8/38 Test #23: aarch64-rpi4b-smp_mem_test-hwd ..................   Passed   34.30 sec
+      Start 31: aarch64-rpi4b-mutex-stress-hwd-reset
+ 9/38 Test #31: aarch64-rpi4b-mutex-stress-hwd-reset ............   Passed   10.27 sec
+      Start 30: aarch64-rpi4b-mutex-stress-hwd
+10/38 Test #30: aarch64-rpi4b-mutex-stress-hwd ..................   Passed   37.81 sec
+      Start 35: aarch64-rpi4b-rtos-apis-hwd-reset
+11/38 Test #35: aarch64-rpi4b-rtos-apis-hwd-reset ...............   Passed   10.33 sec
+      Start 34: aarch64-rpi4b-rtos-apis-hwd
+12/38 Test #34: aarch64-rpi4b-rtos-apis-hwd .....................   Passed   12.97 sec
+      Start 39: aarch64-rpi4b-cmsis-os-validator-hwd-reset
+13/38 Test #39: aarch64-rpi4b-cmsis-os-validator-hwd-reset ......   Passed   10.34 sec
+      Start 38: aarch64-rpi4b-cmsis-os-validator-hwd
+14/38 Test #38: aarch64-rpi4b-cmsis-os-validator-hwd ............   Passed   15.18 sec
+      Start 43: aarch64-rpi4b-smp_test0-hwd-reset
+15/38 Test #43: aarch64-rpi4b-smp_test0-hwd-reset ...............   Passed   10.27 sec
+      Start 42: aarch64-rpi4b-smp_test0-hwd
+16/38 Test #42: aarch64-rpi4b-smp_test0-hwd .....................   Passed   12.33 sec
+      Start 47: aarch64-rpi4b-smp_test1-hwd-reset
+17/38 Test #47: aarch64-rpi4b-smp_test1-hwd-reset ...............   Passed   10.26 sec
+      Start 46: aarch64-rpi4b-smp_test1-hwd
+18/38 Test #46: aarch64-rpi4b-smp_test1-hwd .....................   Passed   12.56 sec
+      Start 51: aarch64-rpi4b-smp_test2-hwd-reset
+19/38 Test #51: aarch64-rpi4b-smp_test2-hwd-reset ...............   Passed   10.28 sec
+      Start 50: aarch64-rpi4b-smp_test2-hwd
+20/38 Test #50: aarch64-rpi4b-smp_test2-hwd .....................   Passed    2.87 sec
+      Start 55: aarch64-rpi4b-smp_test3-hwd-reset
+21/38 Test #55: aarch64-rpi4b-smp_test3-hwd-reset ...............   Passed   10.23 sec
+      Start 54: aarch64-rpi4b-smp_test3-hwd
+22/38 Test #54: aarch64-rpi4b-smp_test3-hwd .....................   Passed   12.60 sec
+      Start 59: aarch64-rpi4b-smp_test4-hwd-reset
+23/38 Test #59: aarch64-rpi4b-smp_test4-hwd-reset ...............   Passed   10.24 sec
+      Start 58: aarch64-rpi4b-smp_test4-hwd
+24/38 Test #58: aarch64-rpi4b-smp_test4-hwd .....................   Passed   12.54 sec
+      Start 65: aarch64-rpi4b-smp-num-test-hwd-reset
+25/38 Test #65: aarch64-rpi4b-smp-num-test-hwd-reset ............   Passed   10.26 sec
+      Start 64: aarch64-rpi4b-smp-num-test-hwd
+26/38 Test #64: aarch64-rpi4b-smp-num-test-hwd ..................   Passed   20.43 sec
+      Start 71: aarch64-rpi4b-smp-pipeline-test-hwd-reset
+27/38 Test #71: aarch64-rpi4b-smp-pipeline-test-hwd-reset .......   Passed   10.28 sec
+      Start 70: aarch64-rpi4b-smp-pipeline-test-hwd
+28/38 Test #70: aarch64-rpi4b-smp-pipeline-test-hwd .............   Passed   35.42 sec
+      Start 75: aarch64-rpi4b-smp-pro-cons-test-hwd-reset
+29/38 Test #75: aarch64-rpi4b-smp-pro-cons-test-hwd-reset .......   Passed   10.35 sec
+      Start 74: aarch64-rpi4b-smp-pro-cons-test-hwd
+30/38 Test #74: aarch64-rpi4b-smp-pro-cons-test-hwd .............   Passed    7.14 sec
+      Start 79: aarch64-rpi4b-smp-mat-test-hwd-reset
+31/38 Test #79: aarch64-rpi4b-smp-mat-test-hwd-reset ............   Passed   10.26 sec
+      Start 78: aarch64-rpi4b-smp-mat-test-hwd
+32/38 Test #78: aarch64-rpi4b-smp-mat-test-hwd ..................   Passed    3.28 sec
+      Start 85: aarch64-rpi4b-sd_test-hwd-reset
+33/38 Test #85: aarch64-rpi4b-sd_test-hwd-reset .................   Passed   10.28 sec
+      Start 84: aarch64-rpi4b-sd_test-hwd
+34/38 Test #84: aarch64-rpi4b-sd_test-hwd .......................   Passed    4.82 sec
+      Start 91: aarch64-rpi4b-smp-mat-sdcard-test-hwd-reset
+35/38 Test #91: aarch64-rpi4b-smp-mat-sdcard-test-hwd-reset .....   Passed   10.27 sec
+      Start 90: aarch64-rpi4b-smp-mat-sdcard-test-hwd
+36/38 Test #90: aarch64-rpi4b-smp-mat-sdcard-test-hwd ...........   Passed    4.99 sec
+      Start 95: aarch64-rpi4b-clock-test-hwd-reset
+37/38 Test #95: aarch64-rpi4b-clock-test-hwd-reset ..............   Passed   10.28 sec
+      Start 94: aarch64-rpi4b-clock-test-hwd
+38/38 Test #94: aarch64-rpi4b-clock-test-hwd ....................   Passed    7.67 sec
+
+97% tests passed, 1 tests failed out of 38
+
+Label Time Summary:
+hwd          = 445.54 sec*proc (19 tests)
+hwd-reset    = 195.31 sec*proc (19 tests)
+
+Total Test time (real) = 640.89 sec
+
+The following tests FAILED:
+	  9 - aarch64-rpi4b-smp-list-storage-test-hwd (Failed)  hwd
+Errors while running CTest

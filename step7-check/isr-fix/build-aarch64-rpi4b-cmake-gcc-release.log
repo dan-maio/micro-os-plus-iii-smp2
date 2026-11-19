@@ -1,0 +1,348 @@
+[0/2] Re-checking globbed directories...
+[1/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[2/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[3/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[4/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[5/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[6/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[7/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[8/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[9/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[10/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/platforms/aarch64-rpi4b/tests/eth-net/main.cpp.obj
+[11/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/platforms/aarch64-rpi4b/tests/src/test-smp-boot.cpp.obj
+[12/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[13/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[14/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[15/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[16/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[17/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[18/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[19/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[20/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[21/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[22/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[23/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[24/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[25/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[26/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/platforms/aarch64-rpi4b/src/rtos/port_isr.cpp.obj
+[27/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[28/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[29/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[30/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[31/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[32/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/portable-test-storage.cpp.obj
+[33/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[34/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[35/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[36/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[37/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[38/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[39/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[40/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[41/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[42/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[43/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[44/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:1026:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/posix-io/c-syscalls-aliases-standard.h:261:3: warning: 'int write(int, const void*, size_t)' alias between functions of incompatible types 'int(int, const void*, size_t)' {aka 'int(int, const void*, long unsigned int)'} and 'ssize_t(int, const void*, size_t)' {aka 'long int(int, const void*, long unsigned int)'} [-Wattribute-alias=]
+  261 |   write (int fildes, const void* buf, size_t nbyte);
+      |   ^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:136:1: note: aliased declaration here
+  136 | __posix_write (int fildes, const void* buf, size_t nbyte)
+      | ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/posix-io/c-syscalls-aliases-standard.h:144:3: warning: 'int read(int, void*, size_t)' alias between functions of incompatible types 'int(int, void*, size_t)' {aka 'int(int, void*, long unsigned int)'} and 'ssize_t(int, void*, size_t)' {aka 'long int(int, void*, long unsigned int)'} [-Wattribute-alias=]
+  144 |   read (int fildes, void* buf, size_t nbyte);
+      |   ^~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:119:1: note: aliased declaration here
+  119 | __posix_read (int fildes, void* buf, size_t nbyte)
+      | ^~~~~~~~~~~~
+[45/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[46/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[47/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/platforms/aarch64-rpi4b/net/src/platform.cpp.obj
+[48/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/platforms/aarch64-rpi4b/tests/src/test-smp-boot.cpp.obj
+[49/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[50/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/__/platforms/aarch64-rpi4b/net/src/eth_app.cpp.obj
+[51/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/platforms/aarch64-rpi4b/tests/eth-net/main.cpp.obj
+[52/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[53/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[54/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[55/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[56/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[57/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[58/1862] Linking CXX executable platform-bin/port-tests/test/eth-net-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/eth-net-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  70232	   1480	70272880	70344592	4315f90	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-release/platform-bin/port-tests/test/eth-net-qemu.elf
+[59/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[60/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[61/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[62/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[63/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[64/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[65/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[66/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[67/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[68/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[69/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[70/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[71/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[72/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[73/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[74/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[75/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[76/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[77/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[78/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[79/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[80/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/platforms/aarch64-rpi4b/src/rtos/port_isr.cpp.obj
+[81/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[82/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[83/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[84/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[85/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[86/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[87/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[88/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[89/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[90/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[91/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[92/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/portable-test-storage.cpp.obj
+[93/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:1026:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/posix-io/c-syscalls-aliases-standard.h:261:3: warning: 'int write(int, const void*, size_t)' alias between functions of incompatible types 'int(int, const void*, size_t)' {aka 'int(int, const void*, long unsigned int)'} and 'ssize_t(int, const void*, size_t)' {aka 'long int(int, const void*, long unsigned int)'} [-Wattribute-alias=]
+  261 |   write (int fildes, const void* buf, size_t nbyte);
+      |   ^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:136:1: note: aliased declaration here
+  136 | __posix_write (int fildes, const void* buf, size_t nbyte)
+      | ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/posix-io/c-syscalls-aliases-standard.h:144:3: warning: 'int read(int, void*, size_t)' alias between functions of incompatible types 'int(int, void*, size_t)' {aka 'int(int, void*, long unsigned int)'} and 'ssize_t(int, void*, size_t)' {aka 'long int(int, void*, long unsigned int)'} [-Wattribute-alias=]
+  144 |   read (int fildes, void* buf, size_t nbyte);
+      |   ^~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:119:1: note: aliased declaration here
+  119 | __posix_read (int fildes, void* buf, size_t nbyte)
+      | ^~~~~~~~~~~~
+[94/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[95/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[96/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[97/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[98/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[99/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[100/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/platforms/aarch64-rpi4b/net/src/platform.cpp.obj
+[101/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/platforms/aarch64-rpi4b/tests/src/test-smp-boot.cpp.obj
+[102/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/platforms/aarch64-rpi4b/tests/eth-tcp-server/main.cpp.obj
+[103/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/__/platforms/aarch64-rpi4b/net/src/eth_app.cpp.obj
+[104/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[105/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[106/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-net-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[107/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[108/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[109/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[110/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[111/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[112/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[113/1862] Linking CXX executable platform-bin/port-tests/test/eth-net-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/eth-net-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 210296	   1528	71932304	72144128	44cd500	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-release/platform-bin/port-tests/test/eth-net-hwd.elf
+[114/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[115/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[116/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[117/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[118/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[119/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[120/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[121/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[122/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[123/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[124/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[125/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[126/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[127/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[128/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/platforms/aarch64-rpi4b/src/rtos/port_isr.cpp.obj
+[129/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[130/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[131/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[132/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[133/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[134/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[135/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[136/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[137/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[138/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[139/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[140/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[141/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/portable-test-storage.cpp.obj
+[142/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[143/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[144/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[145/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[146/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[147/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[148/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[149/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:1026:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/posix-io/c-syscalls-aliases-standard.h:261:3: warning: 'int write(int, const void*, size_t)' alias between functions of incompatible types 'int(int, const void*, size_t)' {aka 'int(int, const void*, long unsigned int)'} and 'ssize_t(int, const void*, size_t)' {aka 'long int(int, const void*, long unsigned int)'} [-Wattribute-alias=]
+  261 |   write (int fildes, const void* buf, size_t nbyte);
+      |   ^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:136:1: note: aliased declaration here
+  136 | __posix_write (int fildes, const void* buf, size_t nbyte)
+      | ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/posix-io/c-syscalls-aliases-standard.h:144:3: warning: 'int read(int, void*, size_t)' alias between functions of incompatible types 'int(int, void*, size_t)' {aka 'int(int, void*, long unsigned int)'} and 'ssize_t(int, void*, size_t)' {aka 'long int(int, void*, long unsigned int)'} [-Wattribute-alias=]
+  144 |   read (int fildes, void* buf, size_t nbyte);
+      |   ^~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:119:1: note: aliased declaration here
+  119 | __posix_read (int fildes, void* buf, size_t nbyte)
+      | ^~~~~~~~~~~~
+[150/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[151/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[152/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[153/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[154/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/platforms/aarch64-rpi4b/net/src/eth_app.cpp.obj
+[155/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/platforms/aarch64-rpi4b/tests/src/test-smp-boot.cpp.obj
+[156/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[157/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-qemu.dir/__/platforms/aarch64-rpi4b/net/src/platform.cpp.obj
+[158/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/platforms/aarch64-rpi4b/tests/eth-tcp-server/main.cpp.obj
+[159/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[160/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[161/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[162/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[163/1862] Linking CXX executable platform-bin/port-tests/test/eth-tcp-server-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/eth-tcp-server-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  70232	   1480	70272880	70344592	4315f90	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-release/platform-bin/port-tests/test/eth-tcp-server-qemu.elf
+[164/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[165/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[166/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[167/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[168/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[169/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[170/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[171/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[172/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[173/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[174/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[175/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[176/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[177/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[178/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[179/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[180/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[181/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[182/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[183/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[184/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[185/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/platforms/aarch64-rpi4b/src/rtos/port_isr.cpp.obj
+[186/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[187/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device-partition.cpp.obj
+[188/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[189/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[190/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[191/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/diskio.cpp.obj'
+[192/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file.cpp.obj'
+[193/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/block-device.cpp.obj
+[194/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/directory.cpp.obj
+[195/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/portable-test-storage.cpp.obj
+[196/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/xpacks/@xpacks/chan-fatfs/src/posix-io/chan-fatfs-file-sytem.cpp.obj'
+[197/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file.cpp.obj
+[198/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/net-stack.cpp.obj
+[199/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/device.cpp.obj
+[200/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-descriptors-manager.cpp.obj
+[201/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp.obj
+In file included from /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:1026:
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/posix-io/c-syscalls-aliases-standard.h:261:3: warning: 'int write(int, const void*, size_t)' alias between functions of incompatible types 'int(int, const void*, size_t)' {aka 'int(int, const void*, long unsigned int)'} and 'ssize_t(int, const void*, size_t)' {aka 'long int(int, const void*, long unsigned int)'} [-Wattribute-alias=]
+  261 |   write (int fildes, const void* buf, size_t nbyte);
+      |   ^~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:136:1: note: aliased declaration here
+  136 | __posix_write (int fildes, const void* buf, size_t nbyte)
+      | ^~~~~~~~~~~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/include/cmsis-plus/posix-io/c-syscalls-aliases-standard.h:144:3: warning: 'int read(int, void*, size_t)' alias between functions of incompatible types 'int(int, void*, size_t)' {aka 'int(int, void*, long unsigned int)'} and 'ssize_t(int, void*, size_t)' {aka 'long int(int, void*, long unsigned int)'} [-Wattribute-alias=]
+  144 |   read (int fildes, void* buf, size_t nbyte);
+      |   ^~~~
+/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/c-syscalls-posix.cpp:119:1: note: aliased declaration here
+  119 | __posix_read (int fildes, void* buf, size_t nbyte)
+      | ^~~~~~~~~~~~
+[202/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/socket.cpp.obj
+[203/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/io.cpp.obj
+[204/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/tty.cpp.obj
+[205/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/__/platforms/aarch64-rpi4b/tests/src/test-smp-boot.cpp.obj
+[206/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/posix-io/file-system.cpp.obj
+[207/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/platforms/aarch64-rpi4b/net/src/platform.cpp.obj
+[208/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[209/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[210/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/eth-tcp-server-hwd.dir/__/platforms/aarch64-rpi4b/net/src/eth_app.cpp.obj
+[211/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[212/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[213/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[214/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[215/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[216/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[217/1862] Linking CXX executable platform-bin/port-tests/test/eth-tcp-server-hwd.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/eth-tcp-server-hwd.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+ 206616	   1544	80320864	80529024	4ccc680	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-release/platform-bin/port-tests/test/eth-tcp-server-hwd.elf
+[218/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/__/platforms/aarch64-rpi4b/tests/smp-list-storage-test/main.cpp.obj
+[219/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[220/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[221/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[222/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[223/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[224/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[225/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[226/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[227/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[228/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[229/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[230/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[231/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[232/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[233/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[234/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[235/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[236/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[237/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/__/platforms/aarch64-rpi4b/src/rtos/port_isr.cpp.obj
+[238/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[239/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[240/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[241/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[242/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[243/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-thread.cpp.obj
+[244/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[245/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/__/platforms/aarch64-rpi4b/tests/src/test-smp-boot.cpp.obj
+[246/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/atexit.cpp.obj
+[247/1862] Linking CXX executable platform-bin/port-tests/test/smp-list-storage-test-qemu.elf
+/home/dan/.local/xPacks/@xpack-dev-tools/aarch64-none-elf-gcc/15.2.1-1.1.1/.content/bin/../lib/gcc/aarch64-none-elf/15.2.1/../../../../aarch64-none-elf/bin/ld: warning: platform-bin/port-tests/test/smp-list-storage-test-qemu.elf has a LOAD segment with RWX permissions
+   text	   data	    bss	    dec	    hex	filename
+  72936	   4208	70387200	70464344	4333358	/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-release/platform-bin/port-tests/test/smp-list-storage-test-qemu.elf
+[248/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/lifo.cpp.obj
+[249/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj
+[250/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-flags.cpp.obj
+[251/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[252/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/internal/os-lists.cpp.obj
+[253/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/first-fit-top.cpp.obj
+[254/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-condvar.cpp.obj
+[255/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/__/platforms/aarch64-rpi4b/tests/smp-list-storage-test/main.cpp.obj
+[256/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/mutex.cpp.obj
+[257/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-clocks.cpp.obj
+[258/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-evflags.cpp.obj
+[259/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-idle.cpp.obj
+[260/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-core.cpp.obj
+[261/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-main.cpp.obj
+[262/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/condition-variable.cpp.obj
+[263/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/thread.cpp.obj
+[264/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-memory.cpp.obj
+[265/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mempool.cpp.obj
+[266/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-semaphore.cpp.obj
+[267/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-shapes-test-qemu.dir/__/platforms/aarch64-rpi4b/tests/src/test-smp-boot.cpp.obj
+[268/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mutex.cpp.obj
+[269/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/__/platforms/aarch64-rpi4b/src/rtos/port_isr.cpp.obj
+[270/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-mqueue.cpp.obj
+[271/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/chrono.cpp.obj
+[272/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-shapes-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/memory-resource.cpp.obj
+[273/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-shapes-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/system-error.cpp.obj
+[274/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-c-wrapper.cpp.obj
+[275/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/rtos/os-timer.cpp.obj
+[276/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-shapes-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libcpp/new.cpp.obj
+[277/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/startup/initialise-free-store.cpp.obj
+[278/1862] Building CXX object 'platform-bin/port-tests/test/CMakeFiles/smp-list-storage-test-hwd.dir/__/__/__/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64/src/rtos/os-core.cpp.obj'
+[279/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-shapes-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/libc/stdlib/malloc.cpp.obj
+[280/1862] Building CXX object platform-bin/port-tests/test/CMakeFiles/smp-shapes-test-qemu.dir/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/src/memory/block-pool.cpp.obj

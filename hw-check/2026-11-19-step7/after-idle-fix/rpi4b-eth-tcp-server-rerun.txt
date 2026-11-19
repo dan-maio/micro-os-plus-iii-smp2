@@ -1,0 +1,13 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+    Start 8: aarch64-rpi4b-eth-tcp-server-hwd-reset
+1/2 Test #8: aarch64-rpi4b-eth-tcp-server-hwd-reset ...   Passed   10.28 sec
+    Start 7: aarch64-rpi4b-eth-tcp-server-hwd
+2/2 Test #7: aarch64-rpi4b-eth-tcp-server-hwd .........   Passed   10.17 sec
+
+100% tests passed out of 2
+
+Label Time Summary:
+hwd          =  10.17 sec*proc (1 test)
+hwd-reset    =  10.28 sec*proc (1 test)
+
+Total Test time (real) =  20.46 sec

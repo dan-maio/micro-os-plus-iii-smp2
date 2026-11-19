@@ -1,0 +1,95 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug
+      Start  2: cortexm-pico2-rp2350b-psram-exc-test-hwd
+ 1/12 Test  #2: cortexm-pico2-rp2350b-psram-exc-test-hwd ..........   Passed    8.29 sec
+      Start  5: cortexm-pico2-rp2350b-psram-sc-test-ko-hwd
+ 2/12 Test  #5: cortexm-pico2-rp2350b-psram-sc-test-ko-hwd ........   Passed    8.63 sec
+      Start  7: cortexm-pico2-rp2350b-psram-smp-mat-test-hwd
+ 3/12 Test  #7: cortexm-pico2-rp2350b-psram-smp-mat-test-hwd ......   Passed   18.35 sec
+      Start  9: cortexm-pico2-rp2350b-psram-smp-test-ko-hwd
+ 4/12 Test  #9: cortexm-pico2-rp2350b-psram-smp-test-ko-hwd .......   Passed    9.11 sec
+      Start 11: cortexm-pico2-rp2350b-psram-smp-test-nested-hwd
+ 5/12 Test #11: cortexm-pico2-rp2350b-psram-smp-test-nested-hwd ...   Passed   27.39 sec
+      Start 16: cortexm-pico2-rp2350b-psram-smp-test0-hwd
+ 6/12 Test #16: cortexm-pico2-rp2350b-psram-smp-test0-hwd .........   Passed   26.20 sec
+      Start 19: cortexm-pico2-rp2350b-psram-smp-test1-hwd
+ 7/12 Test #19: cortexm-pico2-rp2350b-psram-smp-test1-hwd .........   Passed   12.03 sec
+      Start 21: cortexm-pico2-rp2350b-psram-smp-test2-hwd
+ 8/12 Test #21: cortexm-pico2-rp2350b-psram-smp-test2-hwd .........   Passed   17.47 sec
+      Start 23: cortexm-pico2-rp2350b-psram-smp-test3-hwd
+ 9/12 Test #23: cortexm-pico2-rp2350b-psram-smp-test3-hwd .........   Passed    7.47 sec
+      Start 25: cortexm-pico2-rp2350b-psram-smp-test4-hwd
+10/12 Test #25: cortexm-pico2-rp2350b-psram-smp-test4-hwd .........   Passed    9.89 sec
+      Start 27: cortexm-pico2-rp2350b-psram-smp-test5-hwd
+11/12 Test #27: cortexm-pico2-rp2350b-psram-smp-test5-hwd .........Subprocess terminated***Exception: 101.61 sec
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+_rv_reset_init
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: JTAG supported
+Info : CMSIS-DAP: SWO-UART supported
+Info : CMSIS-DAP: Atomic commands supported
+Info : CMSIS-DAP: Test domain timer supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 1000 kHz
+Info : SWD DPIDR 0x4c013477
+Info : [rp2350.cm0] Cortex-M33 r1p0 processor detected
+Info : [rp2350.cm0] target has 8 breakpoints, 4 watchpoints
+Info : [rp2350.cm0] Examination succeed
+Info : [rp2350.cm1] Cortex-M33 r1p0 processor detected
+Info : [rp2350.cm1] target has 8 breakpoints, 4 watchpoints
+Info : [rp2350.cm1] Examination succeed
+Info : [rp2350.cm0] gdb port disabled
+Info : [rp2350.cm1] gdb port disabled
+[rp2350.cm0] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+[rp2350.cm1] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+Info : RP2350 rev 3, QSPI Flash size override = 16384 KiB in 4096 sectors
+Info : RP2xxx ROM API function FC @ 3801
+[rp2350.cm0] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+[rp2350.cm1] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+Info : RP2xxx ROM API function FC @ 3801
+** Programming Started **
+Info : Padding image section 2 at 0x10007fe0 with 32 bytes (bank write end alignment)
+** Programming Finished **
+** Verify Started **
+** Verified OK **
+[rp2350.cm0] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+[rp2350.cm1] halted due to debug-request, current mode: Thread 
+xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+Info : RP2xxx ROM API function FC @ 3801
+semihosting is enabled
+semihosting is enabled
+Info : tcl server disabled
+Info : telnet server disabled
+Error: [rp2350.cm0] clearing lockup after double fault
+[rp2350.cm0] halted due to debug-request, current mode: Handler HardFault
+xPSR: 0x21000003 pc: 0xeffffffe msp: 0x2002c650, semihosting
+Error: [rp2350.cm0] Polling failed, trying to reexamine
+Info : [rp2350.cm0] Cortex-M33 r1p0 processor detected
+Info : [rp2350.cm0] target has 8 breakpoints, 4 watchpoints
+Info : [rp2350.cm0] Examination succeed
+Info : [rp2350.cm1] external reset detected
+shutdown command invoked
+
+      Start 30: cortexm-pico2-rp2350b-psram-fp-switch-hwd
+12/12 Test #30: cortexm-pico2-rp2350b-psram-fp-switch-hwd .........   Passed   11.75 sec
+
+92% tests passed, 1 tests failed out of 12
+
+Label Time Summary:
+hwd    = 258.19 sec*proc (12 tests)
+
+Total Test time (real) = 258.20 sec
+
+The following tests FAILED:
+	 27 - cortexm-pico2-rp2350b-psram-smp-test5-hwd (Subprocess terminated) hwd
+Errors while running CTest

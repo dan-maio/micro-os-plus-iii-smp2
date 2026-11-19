@@ -1,0 +1,98 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added setup test aarch64-rpi4b-smp-list-storage-test-hwd-reset required by fixture aarch64-rpi4b-smp-list-storage-test-hwd-reset
+Added 1 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 12
+    Start 12: aarch64-rpi4b-smp-list-storage-test-hwd-reset
+
+12: Test command: /usr/bin/cmake "-DOPENOCD=/home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/openocd" "-DARGS=-s|/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi4b|-s|/home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/../openocd/scripts|-f|/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi4b/openocd-cmsis-dap-rpi4b.cfg|-c|init|-c|init
+ targets bcm2711.cpu0
+ halt
+ catch {mww 0xfe100024 0x5a000001}
+ catch {mww 0xfe10001c 0x5a000020}
+ shutdown" "-DEXPECT=tap/device found" "-DWAIT=10" "-DLOG=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin/aarch64-rpi4b-smp-list-storage-test-hwd-reset.log" "-P" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd-reset.cmake"
+12: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin
+12: Test timeout computed to be: 120
+12: -- reset done; waiting 10 s for the board
+1/2 Test #12: aarch64-rpi4b-smp-list-storage-test-hwd-reset ...   Passed   10.28 sec
+test 11
+    Start 11: aarch64-rpi4b-smp-list-storage-test-hwd
+
+11: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/openocd "-s" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi4b" "-s" "/home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/../openocd/scripts" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi4b/openocd-cmsis-dap-rpi4b.cfg" "-c" "init" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/cmake/uos-hwd.tcl" "-c" "uos_hwd_run {/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin/port-tests/test/smp-list-storage-test-hwd.elf} 0x80000 {bcm2711.cpu%d} {0} {0 1 2 3} pc-first {} {}"
+11: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin
+11: Test timeout computed to be: 2400
+11: xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+11: Licensed under GNU GPL v2
+11: For bug reports, read
+11: 	http://openocd.org/doc/doxygen/bugs.html
+11: Warn : Transport "jtag" was already selected
+11: Info : Using CMSIS-DAPv2 interface with VID:PID=0x2e8a:0x000c, serial=E661410403809139
+11: Info : CMSIS-DAP: SWD supported
+11: Info : CMSIS-DAP: JTAG supported
+11: Info : CMSIS-DAP: Atomic commands supported
+11: Info : CMSIS-DAP: Test domain timer supported
+11: Info : CMSIS-DAP: FW Version = 2.0.0
+11: Info : CMSIS-DAP: Interface Initialised (JTAG)
+11: Info : SWCLK/TCK = 0 SWDIO/TMS = 1 TDI = 1 TDO = 1 nTRST = 0 nRESET = 1
+11: Info : CMSIS-DAP: Interface ready
+11: Info : clock speed 4000 kHz
+11: Info : cmsis-dap JTAG TLR_RESET
+11: Info : cmsis-dap JTAG TLR_RESET
+11: Info : JTAG tap: bcm2711.cpu tap/device found: 0x4ba00477 (mfg: 0x23b (ARM Ltd), part: 0xba00, ver: 0x4)
+11: Info : [bcm2711.ap] Examination succeed
+11: Error: JTAG-DP STICKY ERROR
+11: Error: Failed to read memory at 0x80410088
+11: Info : bcm2711.cpu0: hardware has 6 breakpoints, 4 watchpoints
+11: Info : [bcm2711.cpu0] external reset detected
+11: Info : [bcm2711.cpu0] Examination succeed
+11: Error: JTAG-DP STICKY ERROR
+11: Error: Failed to read memory at 0x80510088
+11: Info : bcm2711.cpu1: hardware has 6 breakpoints, 4 watchpoints
+11: Info : [bcm2711.cpu1] external reset detected
+11: Info : [bcm2711.cpu1] Examination succeed
+11: Error: JTAG-DP STICKY ERROR
+11: Error: Failed to read memory at 0x80610088
+11: Info : bcm2711.cpu2: hardware has 6 breakpoints, 4 watchpoints
+11: Info : [bcm2711.cpu2] external reset detected
+11: Info : [bcm2711.cpu2] Examination succeed
+11: Error: JTAG-DP STICKY ERROR
+11: Error: Failed to read memory at 0x80710088
+11: Info : bcm2711.cpu3: hardware has 6 breakpoints, 4 watchpoints
+11: Info : [bcm2711.cpu3] external reset detected
+11: Info : [bcm2711.cpu3] Examination succeed
+11: Info : [bcm2711.ap] gdb port disabled
+11: Info : [bcm2711.cpu0] gdb port disabled
+11: Info : [bcm2711.cpu1] gdb port disabled
+11: Info : [bcm2711.cpu2] gdb port disabled
+11: Info : [bcm2711.cpu3] gdb port disabled
+11: uos_hwd_run
+11: --- stage: halt cores 0 ---
+11: Info : bcm2711.cpu0 socket 0 cluster 0 core 0 multi core
+11: bcm2711.cpu0 halted in AArch64 state due to debug-request, current mode: EL2H
+11: cpsr: 0x000003c9 pc: 0x200
+11: MMU: disabled, D-Cache: disabled, I-Cache: disabled
+11: --- stage: enable semihosting on cores 0 1 2 3 ---
+11: --- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi4b-cmake-gcc-debug/platform-bin/port-tests/test/smp-list-storage-test-hwd.elf ---
+11: --- stage: resume cores 0 at 0x80000 ---
+11:   start PC core 0 = pc (/64): 0x0000000000080000
+11: Info : tcl server disabled
+11: Info : telnet server disabled
+11: RESULT: PASS (96 nodes in 3 regions checked, 10 churn rounds, heap restored)
+2/2 Test #11: aarch64-rpi4b-smp-list-storage-test-hwd .........   Passed   13.28 sec
+
+The following tests passed:
+	aarch64-rpi4b-smp-list-storage-test-hwd-reset
+	aarch64-rpi4b-smp-list-storage-test-hwd
+
+100% tests passed out of 2
+
+Label Time Summary:
+hwd          =  13.28 sec*proc (1 test)
+hwd-reset    =  10.28 sec*proc (1 test)
+
+Total Test time (real) =  23.57 sec

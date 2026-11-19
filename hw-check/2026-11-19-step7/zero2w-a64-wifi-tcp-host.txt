@@ -1,0 +1,74 @@
+connecting to 192.168.1.65:7, sending 262144 bytes ...
+Traceback (most recent call last):
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 155, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 106, in main
+    with socket.create_connection((address, args.port), timeout=10) as sock:
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.14/socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+TimeoutError: timed out
+connecting to 192.168.1.65:7, sending 262144 bytes ...
+Traceback (most recent call last):
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 155, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 106, in main
+    with socket.create_connection((address, args.port), timeout=10) as sock:
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.14/socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+OSError: [Errno 113] No route to host
+connecting to 192.168.1.65:7, sending 262144 bytes ...
+Traceback (most recent call last):
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 155, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 106, in main
+    with socket.create_connection((address, args.port), timeout=10) as sock:
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.14/socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+OSError: [Errno 113] No route to host
+connecting to 192.168.1.65:7, sending 262144 bytes ...
+Traceback (most recent call last):
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 155, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 106, in main
+    with socket.create_connection((address, args.port), timeout=10) as sock:
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.14/socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+OSError: [Errno 113] No route to host
+connecting to 192.168.1.65:7, sending 262144 bytes ...
+Traceback (most recent call last):
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 155, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/aarch64-rpi-zero-2w/tests/wifi-tcp-server/wifi-tcp-host.py", line 106, in main
+    with socket.create_connection((address, args.port), timeout=10) as sock:
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/socket.py", line 874, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.14/socket.py", line 859, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+OSError: [Errno 113] No route to host
+connecting to 192.168.1.65:7, sending 262144 bytes ...
+sent 262144 bytes, CRC-32 ff1d2b6f; echo identical; 1.56 s, 1.3 Mbit/s each way
+PASS: echo identical (compare the CRC-32 with the board's console)
+client ok against 192.168.1.65 on attempt 6

@@ -1,0 +1,13 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch64-rpi-zero-2w-cmake-gcc-debug
+    Start 12: aarch64-rpi-zero-2w-wifi-tcp-server-hwd-reset
+1/2 Test #12: aarch64-rpi-zero-2w-wifi-tcp-server-hwd-reset ...   Passed   12.28 sec
+    Start 11: aarch64-rpi-zero-2w-wifi-tcp-server-hwd
+2/2 Test #11: aarch64-rpi-zero-2w-wifi-tcp-server-hwd .........   Passed   55.49 sec
+
+100% tests passed out of 2
+
+Label Time Summary:
+hwd          =  55.49 sec*proc (1 test)
+hwd-reset    =  12.28 sec*proc (1 test)
+
+Total Test time (real) =  67.77 sec

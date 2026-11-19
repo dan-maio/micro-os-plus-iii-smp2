@@ -1,0 +1,16 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/2xcortex-m33-cmake-gcc-release
+    Start 1: 2xcortex-m33-rtos-apis-test
+1/4 Test #1: 2xcortex-m33-rtos-apis-test ............   Passed    5.76 sec
+    Start 2: 2xcortex-m33-mutex-stress-test
+2/4 Test #2: 2xcortex-m33-mutex-stress-test .........   Passed   28.19 sec
+    Start 3: 2xcortex-m33-fp-switch-test
+3/4 Test #3: 2xcortex-m33-fp-switch-test ............   Passed    2.47 sec
+    Start 4: 2xcortex-m33-cmsis-os-validator-test
+4/4 Test #4: 2xcortex-m33-cmsis-os-validator-test ...   Passed    9.29 sec
+
+100% tests passed out of 4
+
+Label Time Summary:
+qemu    =  45.70 sec*proc (4 tests)
+
+Total Test time (real) =  45.70 sec

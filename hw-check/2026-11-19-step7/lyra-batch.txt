@@ -1,0 +1,170 @@
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug
+      Start  3: aarch32-luckfox-lyra-smp_test5-hwd-reset
+ 1/36 Test  #3: aarch32-luckfox-lyra-smp_test5-hwd-reset .............   Passed    3.77 sec
+      Start  2: aarch32-luckfox-lyra-smp_test5-hwd
+ 2/36 Test  #2: aarch32-luckfox-lyra-smp_test5-hwd ...................   Passed  161.93 sec
+      Start  6: aarch32-luckfox-lyra-smp_test6-hwd-reset
+ 3/36 Test  #6: aarch32-luckfox-lyra-smp_test6-hwd-reset .............   Passed    3.79 sec
+      Start  5: aarch32-luckfox-lyra-smp_test6-hwd
+ 4/36 Test  #5: aarch32-luckfox-lyra-smp_test6-hwd ...................   Passed   75.22 sec
+      Start 11: aarch32-luckfox-lyra-smp_test_int-hwd-reset
+ 5/36 Test #11: aarch32-luckfox-lyra-smp_test_int-hwd-reset ..........   Passed    3.78 sec
+      Start 10: aarch32-luckfox-lyra-smp_test_int-hwd
+ 6/36 Test #10: aarch32-luckfox-lyra-smp_test_int-hwd ................   Passed  221.21 sec
+      Start 14: aarch32-luckfox-lyra-smp_test_int2-hwd-reset
+ 7/36 Test #14: aarch32-luckfox-lyra-smp_test_int2-hwd-reset .........   Passed    3.79 sec
+      Start 13: aarch32-luckfox-lyra-smp_test_int2-hwd
+ 8/36 Test #13: aarch32-luckfox-lyra-smp_test_int2-hwd ...............Subprocess terminated***Exception: 444.33 sec
+xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+Licensed under GNU GPL v2
+For bug reports, read
+	http://openocd.org/doc/doxygen/bugs.html
+Info : CMSIS-DAP: SWD supported
+Info : CMSIS-DAP: FW Version = 2.0.0
+Info : CMSIS-DAP: Interface Initialised (SWD)
+Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+Info : CMSIS-DAP: Interface ready
+Info : clock speed 4000 kHz
+Info : SWD DPIDR 0x2ba01477
+Info : [rk3506.a7.0] hardware has 6 breakpoints, 4 watchpoints
+Info : [rk3506.a7.0] Examination succeed
+Info : [rk3506.a7.0] gdb port disabled
+Info : [rk3506.a7.1] gdb port disabled
+Info : [rk3506.a7.2] gdb port disabled
+Info : [rk3506.a7.0] MPIDR level2 0, cluster f, core 0, multi core, no SMT
+[rk3506.a7.0] target halted in ARM state due to debug-request, current mode: Supervisor
+cpsr: 0x200001d3 pc: 0x03f003a0, semihosting
+[rk3506.a7.0] MMU: disabled, D-Cache: disabled, I-Cache: disabled
+RK3506: 3x Cortex-A7 declared. Core0 attached over SWD.
+uos_hwd_run
+--- stage: JTAG clock -> 4000 kHz ---
+--- stage: halt cores 0 ---
+--- stage: enable semihosting on cores 0 ---
+--- stage: pre-load ---
+SANITIZE-OK: SCTLR 0x00c52878 -> MMU/caches off
+--- stage: load_image /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/aarch32-luckfox-lyra-cmake-gcc-debug/platform-bin/port-tests/test/smp_test_int2-hwd.elf ---
+--- stage: resume cores 0 at 0x00200000 ---
+Info : tcl server disabled
+Info : telnet server disabled
+
+
++=============================================+
+|  Luckfox Lyra µOS++ SMP TEST INT2           |
+|  IRQ-driven TX (THRE + ring buffer)         |
+|  UART1 IRQ routed to CORE 1 (ITARGETSR)     |
++=============================================+
+
+os_startup_initialize_free_store(0x6400000,16777216)
+first_fit_top(0x6400000,16777216) @0x21f480 app-heap
+out_of_memory_handler(0x2070d8) @0x21f480 app-heap
+estd::pmr::set_default_resource(0x21f480) 
+rtos::memory::set_default_resource(0x21f480) 
+rtos::memory::init_once_default_resource() 
+malloc_memory_resource() @0x21f450 malloc
+
+µOS++ IIIe version 7.0.1
+Scheduler: µOS++ Luckfox Lyra B (RK3506, Cortex-A7 SMP), 3 CPU(s), 1ms tick, LDREX lock
+scheduler::start() 
+IRQs enabled (timer only)
+
+Setting up SRAM mailbox for core 1...
+Releasing core 1 from reset...
+Waiting for core 1 to join...
+Core 1 joined after 0ms
+
+Routing UART1 IRQ (GIC ID 67) to CORE 1 via ITARGETSR...
+Switching TX to interrupt-driven ring buffer...
+beat 1/20
+beat 2/20
+beat 3/20
+beat 4/20
+beat 5/20
+beat 6/20
+beat 7/20
+beat 8/20
+beat 9/20
+beat 10/20
+beat 11/20
+beat 12/20
+beat 13/20
+beat 14/20
+beat 15/20
+beat 16/20
+beat 17/20
+beat 18/20
+beat 19/20
+beat 20/20
+
+RESULT: PASS
+exit(0)Info : [rk3506.a7.1] MPIDR level2 0, cluster f, core 1, multi core, no SMT
+
+shutdown command invoked
+
+      Start 21: aarch32-luckfox-lyra-smp_test_int5-hwd-reset
+ 9/36 Test #21: aarch32-luckfox-lyra-smp_test_int5-hwd-reset .........   Passed    3.82 sec
+      Start 20: aarch32-luckfox-lyra-smp_test_int5-hwd
+10/36 Test #20: aarch32-luckfox-lyra-smp_test_int5-hwd ...............   Passed   12.35 sec
+      Start 24: aarch32-luckfox-lyra-smp_test0-hwd-reset
+11/36 Test #24: aarch32-luckfox-lyra-smp_test0-hwd-reset .............   Passed    3.80 sec
+      Start 23: aarch32-luckfox-lyra-smp_test0-hwd
+12/36 Test #23: aarch32-luckfox-lyra-smp_test0-hwd ...................   Passed   21.02 sec
+      Start 27: aarch32-luckfox-lyra-smp_test1-hwd-reset
+13/36 Test #27: aarch32-luckfox-lyra-smp_test1-hwd-reset .............   Passed    3.79 sec
+      Start 26: aarch32-luckfox-lyra-smp_test1-hwd
+14/36 Test #26: aarch32-luckfox-lyra-smp_test1-hwd ...................   Passed   21.75 sec
+      Start 30: aarch32-luckfox-lyra-smp_test2-hwd-reset
+15/36 Test #30: aarch32-luckfox-lyra-smp_test2-hwd-reset .............   Passed    3.79 sec
+      Start 29: aarch32-luckfox-lyra-smp_test2-hwd
+16/36 Test #29: aarch32-luckfox-lyra-smp_test2-hwd ...................   Passed   11.94 sec
+      Start 33: aarch32-luckfox-lyra-smp_test3-hwd-reset
+17/36 Test #33: aarch32-luckfox-lyra-smp_test3-hwd-reset .............   Passed    3.79 sec
+      Start 32: aarch32-luckfox-lyra-smp_test3-hwd
+18/36 Test #32: aarch32-luckfox-lyra-smp_test3-hwd ...................   Passed   22.02 sec
+      Start 36: aarch32-luckfox-lyra-smp_test4-hwd-reset
+19/36 Test #36: aarch32-luckfox-lyra-smp_test4-hwd-reset .............   Passed    3.81 sec
+      Start 35: aarch32-luckfox-lyra-smp_test4-hwd
+20/36 Test #35: aarch32-luckfox-lyra-smp_test4-hwd ...................   Passed   21.54 sec
+      Start 39: aarch32-luckfox-lyra-smp-num-test-hwd-reset
+21/36 Test #39: aarch32-luckfox-lyra-smp-num-test-hwd-reset ..........   Passed    3.81 sec
+      Start 38: aarch32-luckfox-lyra-smp-num-test-hwd
+22/36 Test #38: aarch32-luckfox-lyra-smp-num-test-hwd ................   Passed   34.20 sec
+      Start 42: aarch32-luckfox-lyra-smp-pipeline-test-hwd-reset
+23/36 Test #42: aarch32-luckfox-lyra-smp-pipeline-test-hwd-reset .....   Passed    3.81 sec
+      Start 41: aarch32-luckfox-lyra-smp-pipeline-test-hwd
+24/36 Test #41: aarch32-luckfox-lyra-smp-pipeline-test-hwd ...........   Passed   51.96 sec
+      Start 45: aarch32-luckfox-lyra-smp-pro-cons-test-hwd-reset
+25/36 Test #45: aarch32-luckfox-lyra-smp-pro-cons-test-hwd-reset .....   Passed    3.80 sec
+      Start 44: aarch32-luckfox-lyra-smp-pro-cons-test-hwd
+26/36 Test #44: aarch32-luckfox-lyra-smp-pro-cons-test-hwd ...........   Passed   17.06 sec
+      Start 48: aarch32-luckfox-lyra-smp-mat-test-hwd-reset
+27/36 Test #48: aarch32-luckfox-lyra-smp-mat-test-hwd-reset ..........   Passed    3.80 sec
+      Start 47: aarch32-luckfox-lyra-smp-mat-test-hwd
+28/36 Test #47: aarch32-luckfox-lyra-smp-mat-test-hwd ................   Passed   12.45 sec
+      Start 51: aarch32-luckfox-lyra-sd_test-hwd-reset
+29/36 Test #51: aarch32-luckfox-lyra-sd_test-hwd-reset ...............   Passed    3.79 sec
+      Start 50: aarch32-luckfox-lyra-sd_test-hwd
+30/36 Test #50: aarch32-luckfox-lyra-sd_test-hwd .....................   Passed   17.31 sec
+      Start 54: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd-reset
+31/36 Test #54: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd-reset ...   Passed    3.79 sec
+      Start 53: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd
+32/36 Test #53: aarch32-luckfox-lyra-smp-mat-sdcard-test-hwd .........   Passed   18.69 sec
+      Start 57: aarch32-luckfox-lyra-clock-test-hwd-reset
+33/36 Test #57: aarch32-luckfox-lyra-clock-test-hwd-reset ............   Passed    3.80 sec
+      Start 56: aarch32-luckfox-lyra-clock-test-hwd
+34/36 Test #56: aarch32-luckfox-lyra-clock-test-hwd ..................   Passed   16.58 sec
+      Start 60: aarch32-luckfox-lyra-mutex-stress-test-hwd-reset
+35/36 Test #60: aarch32-luckfox-lyra-mutex-stress-test-hwd-reset .....   Passed    3.80 sec
+      Start 59: aarch32-luckfox-lyra-mutex-stress-test-hwd
+36/36 Test #59: aarch32-luckfox-lyra-mutex-stress-test-hwd ...........   Passed  136.82 sec
+
+97% tests passed, 1 tests failed out of 36
+
+Label Time Summary:
+hwd          = 1318.39 sec*proc (18 tests)
+hwd-reset    =  68.34 sec*proc (18 tests)
+
+Total Test time (real) = 1386.77 sec
+
+The following tests FAILED:
+	 13 - aarch32-luckfox-lyra-smp_test_int2-hwd (Subprocess terminated) hwd
+Errors while running CTest

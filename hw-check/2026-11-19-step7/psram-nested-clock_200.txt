@@ -1,0 +1,57 @@
+UpdateCTestConfiguration  from :/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug/DartConfiguration.tcl
+Test project /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 15
+    Start 15: cortexm-pico2-rp2350b-psram-smp-test-nested-clock_200-hwd
+
+15: Test command: /home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/openocd "-s" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/cortexm-pico2-rp2350b-psram" "-s" "/home/dan/.local/xPacks/@xpack-dev-tools/openocd/0.12.0-7.1/.content/bin/../openocd/scripts" "-f" "/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/platforms/cortexm-pico2-rp2350b-psram/openocd.cfg" "-c" "init" "-c" "reset init" "-c" "program {/home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug/platform-bin/port-tests/test/smp-test-nested-clock_200-hwd.elf} verify" "-c" "reset init" "-c" "targets rp2350.cm1" "-c" "arm semihosting enable" "-c" "resume" "-c" "targets rp2350.cm0" "-c" "arm semihosting enable" "-c" "resume"
+15: Working Directory: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug/platform-bin
+15: Test timeout computed to be: 1200
+15: xPack Open On-Chip Debugger 0.12.0+dev-02228-ge5888bda3-dirty (2025-10-04-22:42)
+15: Licensed under GNU GPL v2
+15: For bug reports, read
+15: 	http://openocd.org/doc/doxygen/bugs.html
+15: _rv_reset_init
+15: Info : CMSIS-DAP: SWD supported
+15: Info : CMSIS-DAP: JTAG supported
+15: Info : CMSIS-DAP: SWO-UART supported
+15: Info : CMSIS-DAP: Atomic commands supported
+15: Info : CMSIS-DAP: Test domain timer supported
+15: Info : CMSIS-DAP: FW Version = 2.0.0
+15: Info : CMSIS-DAP: Interface Initialised (SWD)
+15: Info : SWCLK/TCK = 1 SWDIO/TMS = 1 TDI = 0 TDO = 0 nTRST = 0 nRESET = 1
+15: Info : CMSIS-DAP: Interface ready
+15: Info : clock speed 1000 kHz
+15: Info : SWD DPIDR 0x4c013477
+15: Info : [rp2350.cm0] Cortex-M33 r1p0 processor detected
+15: Info : [rp2350.cm0] target has 8 breakpoints, 4 watchpoints
+15: Info : [rp2350.cm0] Examination succeed
+15: Info : [rp2350.cm1] Cortex-M33 r1p0 processor detected
+15: Info : [rp2350.cm1] target has 8 breakpoints, 4 watchpoints
+15: Info : [rp2350.cm1] Examination succeed
+15: Info : [rp2350.cm0] gdb port disabled
+15: Info : [rp2350.cm1] gdb port disabled
+15: [rp2350.cm0] halted due to debug-request, current mode: Thread 
+15: xPSR: 0xf9000000 pc: 0x000000a0 msp: 0xf0000000
+15: Error: timed out while waiting for target halted
+15: TARGET: rp2350.cm1 - Not halted
+1/1 Test #15: cortexm-pico2-rp2350b-psram-smp-test-nested-clock_200-hwd ...***Failed  Required regular expression not found. Regex=[RESULT: PASS
+]  1.59 sec
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+hwd    =   1.59 sec*proc (1 test)
+
+Total Test time (real) =   1.59 sec
+
+The following tests FAILED:
+	 15 - cortexm-pico2-rp2350b-psram-smp-test-nested-clock_200-hwd (Failed) hwd
+Errors while running CTest
+Output from these tests are in: /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii/tests/build/cortexm-pico2-rp2350b-psram-cmake-gcc-debug/Testing/Temporary/LastTest.log
+Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.
