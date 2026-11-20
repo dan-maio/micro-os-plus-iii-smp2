@@ -7,3 +7,7 @@ aarch32-rpi-zero-2w-cmake-gcc-release: 100% tests passed out of 26
 aarch64-rpi3b-cmake-gcc-debug: 100% tests passed out of 24
 aarch64-rpi3b-cmake-gcc-release: 100% tests passed out of 24
 aarch64-rpi4b-cmake-gcc-debug: 100% tests passed out of 32
+aarch64-rpi4b-cmake-gcc-release: 97% tests passed, 1 tests failed out of 32
+aarch64-rpi-zero-2w-cmake-gcc-debug: 100% tests passed out of 26
+aarch64-rpi-zero-2w-cmake-gcc-release: 100% tests passed out of 26
+ALL DONE

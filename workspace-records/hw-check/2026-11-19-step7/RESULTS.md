@@ -189,3 +189,15 @@ is read from the user's UART and the session ended by hand.
 
 ST-LINK/V2.1 0483:374b, alone (`nucleo-batch.txt`): mos-test1 (10.7 s),
 rtos-apis (43.2 s), mutex-stress (44.2 s), cmsis-os-validator (31.7 s).
+
+## WeAct F411CE: 5/5 pass
+
+WCH-Link 1a86:8011 (the board's openocd.cfg accepts it beside the DAPLink),
+alone (`weactf411-batch.txt`): mos-test1 (8.9 s), spi-pipeline (50.3 s),
+rtos-apis (42.4 s), mutex-stress (43.7 s), cmsis-os-validator (23.4 s).
+
+## WeAct F412RE: 5/5 pass
+
+ST-LINK/V2.1 0483:374b, alone (`weactf412-batch.txt`): mos-test1 (11.0 s),
+uart-test1 (11.0 s), rtos-apis (43.2 s), mutex-stress (44.0 s),
+cmsis-os-validator (31.7 s).
