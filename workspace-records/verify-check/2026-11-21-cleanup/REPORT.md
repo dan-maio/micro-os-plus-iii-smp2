@@ -124,6 +124,7 @@ The probes were connected later the same day; three boards were run:
 | Luckfox Lyra | **21/21**: 17 automatic, plus `smp_test6` (`usb_test_host --write`), `smp_test7` (`usb_test_host --big` and `y` on the UART), and `smp_test_int3`/`_int4` (the key records `kbd_forward` sends) |
 | AArch32 Zero 2 W | **18/18**: 15 automatic, plus `usb_test` (`send_file.py --terminate`, 64 KiB), `wifi-tcp-server` (`wifi-tcp-host.py`, 256 KiB) and `wifi-net`; 15 MHz CMSIS-DAP JTAG |
 | AArch64 Zero 2 W | **18/18**: the same set and clock; `wifi-tcp-server` 256 KiB, CRC-32 `ff1d2b6f`, 10.2 Mbit/s |
+| Pi-Zero RP2350B | **14/14**: 12 automatic, plus CDC-ACM (`Cafe:4013`) and HID (`Cafe:4012`) driven from the PC host |
 
 `eth-tcp-server` was run with `ETH_TEST_STATIC_IP=192.168.1.74/24` so the
 host knew the address without reading the board's console; the cache was
