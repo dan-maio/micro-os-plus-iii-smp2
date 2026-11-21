@@ -503,7 +503,7 @@ Checked with `git ls-remote local` against every working repository:
 
 | Repository | HEAD | `local` | State |
 |---|---|---|---|
-| `micro-os-plus-iii` | `98055b88` | `bc6be627` | **behind — push needed** |
+| `micro-os-plus-iii` | `98055b88` | `98055b88` | in sync |
 | aarch32 port | `2eb3719d` | `2eb3719d` | in sync |
 | aarch64 port | `7141456e` | `7141456e` | in sync |
 | cortexm port | `fcf2f1f2` | `fcf2f1f2` | in sync |
@@ -511,15 +511,16 @@ Checked with `git ls-remote local` against every working repository:
 | devices-stm32f4 | `ea867dfc` | `ea867dfc` | in sync |
 | devices-rk3506 | `d84cd463` | `d84cd463` | in sync |
 | posix-arch port | `e59ae5e0` | `e59ae5e0` | in sync |
-| `workspace-records` | `a6af0f81` | `a6af0f81` | in sync |
+| `workspace-records` | this commit | this commit | in sync (pushed with it) |
 
-The kernel backup is one day behind: it was last written on 2026-11-19,
-before the documentation and test-action commits. One push brings it up
-to date:
+All nine were in sync on 2026-11-21. The kernel backup had been one day
+behind (`bc6be627`, last written on 2026-11-19, before the documentation
+and test-action commits) and was brought forward to `98055b88` with the
+command in §4.1.
 
-```bash
-git -C micro-os-plus-iii push local HEAD:refs/heads/align/smp-upstream
-```
+Re-check at any time with the loop in §6.1. A repository that reports
+`DIFFERS` needs the push from §4.4; nothing else has to be done to the
+others, which answer `Everything up-to-date`.
 
 ---
 
