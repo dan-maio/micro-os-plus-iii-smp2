@@ -93,6 +93,11 @@ uos_add_cortexm_core (cortexm "src/rtos/os-core.cpp" include)
 uos_add_cortexm_core (cortexm-rp2350 "src/rtos/os-core-rp2350.cpp" include-rp2350 include)
 uos_add_cortexm_core (cortexm-rp2040 "src/rtos/os-core-rp2040.cpp" include-rp2040 include)
 
+# Upstream's name for the base core. The four upstream board platforms
+# (tests/platforms/nucleo-*, raspberrypi-pico) still link it by that name;
+# the board variants above are local additions and do not replace it.
+add_library (micro-os-plus::iii-cortexm ALIAS micro-os-plus-iii-cortexm-interface)
+
 # The GENERIC ports, for the `qemu` image of a board QEMU does not model.
 #
 # A board like the pico2 overrides the port core (os-core-rp2350.cpp) and the
