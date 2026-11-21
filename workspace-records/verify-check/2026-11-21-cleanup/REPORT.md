@@ -113,12 +113,22 @@ at `/usr/bin/clang++`, which cannot compile the tree against libc++ 20. After
 
 The two failures are the documented flaky cases; both passed on rerun.
 
-### 3.3 Not run
+### 3.3 Hardware (run later on 2026-11-21)
 
-Hardware. No debug probe is currently connected (`lsusb` shows none), so the
-Lyra `mutex-stress` hardware run in particular could not be executed; its
-build and CTest registration were verified instead (OpenOCD reset fixture
-failed with “unable to find a matching CMSIS-DAP device”).
+The probes were connected later the same day; two boards were run:
+
+| Board | Result |
+|---|---|
+| Pi 4 B | **22/22**: 19 automatic, plus `eth-net`, `eth-tcp-server` (`eth-tcp-host.py`, 1 MiB, 203 Mbit/s) and `usb_big_test` (`usb_test_host --big`, 1 MiB) |
+| Pico 2 | **21/21**: 19 automatic, plus CDC-ACM (host opened `Cafe:4013` and sent an Escape line) and HID (host sent the OUT report to `Cafe:4012`) |
+
+`eth-tcp-server` was run with `ETH_TEST_STATIC_IP=192.168.1.74/24` so the
+host knew the address without reading the board's console; the cache was
+restored to DHCP afterwards.
+
+The Lyra `mutex-stress` hardware case was not run (no WCH-Link attached);
+its build and CTest registration were verified (the OpenOCD reset fixture
+reported “unable to find a matching CMSIS-DAP device”).
 
 ## 4. What remains
 
