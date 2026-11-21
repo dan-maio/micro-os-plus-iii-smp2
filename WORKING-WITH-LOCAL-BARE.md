@@ -87,6 +87,8 @@ The mapping is by repository name; the table below is the complete set.
 | `cortexm/micro-os-plus-iii-cortexm/` | `micro-os-plus-iii-cortexm.git` |
 | `cortexm/micro-os-plus-iii-devices-rp2xxx/` | `micro-os-plus-iii-devices-rp2xxx.git` |
 | `cortexm/micro-os-plus-iii-devices-stm32f4/` | `micro-os-plus-iii-devices-stm32f4.git` |
+| `common/micro-os-plus-iii-devices-bcm283x/` | `micro-os-plus-iii-devices-bcm283x.git` |
+| `common/micro-os-plus-iii-devices-storage/` | `micro-os-plus-iii-devices-storage.git` |
 | `aarch32/micro-os-plus-iii-devices-rk3506/` | `micro-os-plus-iii-devices-rk3506.git` |
 | `posix-arch/micro-os-plus-iii-posix-arch/` | `micro-os-plus-iii-posix-arch.git` |
 | `workspace-records/` | `workspace.git` |
@@ -178,6 +180,8 @@ micro-os-plus-iii-smp-pr-github/
 ├── cortexm/micro-os-plus-iii-cortexm/
 ├── cortexm/micro-os-plus-iii-devices-rp2xxx/
 ├── cortexm/micro-os-plus-iii-devices-stm32f4/
+├── common/micro-os-plus-iii-devices-bcm283x/
+├── common/micro-os-plus-iii-devices-storage/
 ├── posix-arch/micro-os-plus-iii-posix-arch/
 └── workspace-records/
 ```
@@ -256,6 +260,8 @@ for d in micro-os-plus-iii \
          cortexm/micro-os-plus-iii-cortexm \
          cortexm/micro-os-plus-iii-devices-rp2xxx \
          cortexm/micro-os-plus-iii-devices-stm32f4 \
+         common/micro-os-plus-iii-devices-bcm283x \
+         common/micro-os-plus-iii-devices-storage \
          aarch32/micro-os-plus-iii-devices-rk3506 \
          posix-arch/micro-os-plus-iii-posix-arch \
          workspace-records; do
@@ -405,6 +411,8 @@ for d in micro-os-plus-iii \
          cortexm/micro-os-plus-iii-cortexm \
          cortexm/micro-os-plus-iii-devices-rp2xxx \
          cortexm/micro-os-plus-iii-devices-stm32f4 \
+         common/micro-os-plus-iii-devices-bcm283x \
+         common/micro-os-plus-iii-devices-storage \
          aarch32/micro-os-plus-iii-devices-rk3506 \
          posix-arch/micro-os-plus-iii-posix-arch \
          workspace-records; do
@@ -432,6 +440,8 @@ git clone "$B/micro-os-plus-iii-aarch64.git"         aarch64/micro-os-plus-iii-a
 git clone "$B/micro-os-plus-iii-cortexm.git"         cortexm/micro-os-plus-iii-cortexm
 git clone "$B/micro-os-plus-iii-devices-rp2xxx.git"  cortexm/micro-os-plus-iii-devices-rp2xxx
 git clone "$B/micro-os-plus-iii-devices-stm32f4.git" cortexm/micro-os-plus-iii-devices-stm32f4
+git clone "$B/micro-os-plus-iii-devices-bcm283x.git" common/micro-os-plus-iii-devices-bcm283x
+git clone "$B/micro-os-plus-iii-devices-storage.git" common/micro-os-plus-iii-devices-storage
 git clone "$B/micro-os-plus-iii-posix-arch.git"      posix-arch/micro-os-plus-iii-posix-arch
 git clone "$B/workspace.git"                         workspace-records
 ```
@@ -503,20 +513,21 @@ Checked with `git ls-remote local` against every working repository:
 
 | Repository | HEAD | `local` | State |
 |---|---|---|---|
-| `micro-os-plus-iii` | `98055b88` | `98055b88` | in sync |
+| `micro-os-plus-iii` | `e3ebd02a` | `e3ebd02a` | in sync |
 | aarch32 port | `2eb3719d` | `2eb3719d` | in sync |
 | aarch64 port | `7141456e` | `7141456e` | in sync |
-| cortexm port | `fcf2f1f2` | `fcf2f1f2` | in sync |
+| cortexm port | `a59271c` | `a59271c` | in sync |
 | devices-rp2xxx | `9e51139a` | `9e51139a` | in sync |
 | devices-stm32f4 | `ea867dfc` | `ea867dfc` | in sync |
+| devices-bcm283x | `eb8795f1` | `eb8795f1` | in sync |
+| devices-storage | `7c6cd981` | `7c6cd981` | in sync |
 | devices-rk3506 | `d84cd463` | `d84cd463` | in sync |
-| posix-arch port | `e59ae5e0` | `e59ae5e0` | in sync |
+| posix-arch port | `673a30e` | `673a30e` | in sync |
 | `workspace-records` | this commit | this commit | in sync (pushed with it) |
 
-All nine were in sync on 2026-11-21. The kernel backup had been one day
-behind (`bc6be627`, last written on 2026-11-19, before the documentation
-and test-action commits) and was brought forward to `98055b88` with the
-command in §4.1.
+All eleven were in sync on 2026-11-21. Only the kernel has an `origin`
+branch (`align/smp-upstream`); the ports and device packages are pushed
+to `local` only.
 
 Re-check at any time with the loop in §6.1. A repository that reports
 `DIFFERS` needs the push from §4.4; nothing else has to be done to the
