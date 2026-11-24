@@ -10,6 +10,12 @@ The backup folder is at
 **not** a superproject with submodules: every project is an independent
 git repository, with its own remote pointing at its own bare repo.
 
+Since 2026-11-24 the same work is also on GitHub as one repository,
+`dan-maio/micro-os-plus-iii-smp2` (this repository): every project merged
+in its folder with its full history. GitHub, and how this repository and
+the per-project repositories stay in step, are described in
+`WORKING-WITH-REMOTE.md`. This guide covers the local bare backups.
+
 ---
 
 ## 1. What the backup folder is
@@ -61,7 +67,7 @@ kernel also carries the `v7.2.0-pre.1` tag. There is no `main` there.
 
 ## 2. The remotes in each working repository
 
-Every checkout in this workspace has three remotes:
+The kernel's checkout has four remotes:
 
 ```bash
 git -C micro-os-plus-iii remote -v
@@ -69,13 +75,19 @@ git -C micro-os-plus-iii remote -v
 origin   https://github.com/dan-maio/micro-os-plus-iii.git          (fetch/push)
 local    /home/dan/Downloads/GIT/micro-os-plu-iii-smp-pr-local/micro-os-plus-iii.git
 golden   /home/dan/Work2/micro-os-plus/micro-os-plus-iii            (read-only reference)
+upstream https://github.com/micro-os-plus/micro-os-plus-iii.git     (read-only)
 ```
 
-| Remote | What it is | Use |
+| Remote | What it is | Which repositories have it |
 |---|---|---|
-| `origin` | the GitHub fork (`dan-maio`) | collaboration, pull requests, the public record |
-| `local` | the bare backup in `~/Downloads/GIT/...` | fast local backup, clone source, offline restore |
-| `golden` | a read-only reference copy under `~/Work2` | compare against the original tree; never push to it |
+| `origin` | the per-project GitHub repository (`dan-maio`), holding the earlier version on branch `smp` | the kernel and the four ports |
+| `local` | the bare backup in `~/Downloads/GIT/...`: local backup, clone source, offline restore | all eleven |
+| `golden` | a read-only reference copy under `~/Work2`: compare against the original tree; never push to it | the kernel and the four ports |
+| `upstream` | the kernel's upstream, read-only | the kernel |
+
+The five device packages and the workspace records have `local` only. No
+branch tracks an upstream: name the remote and the branch in every `push`
+and `pull`, as the commands below do.
 
 The mapping is by repository name; the table below is the complete set.
 
@@ -223,13 +235,20 @@ git push -u local align/smp-upstream
 ```
 
 After that, plain `git push local` and `git pull local` know the branch.
-Do this only in a throw-away clone if you do not want the tracking
-relationship in your main checkout; the main checkouts here track
-`origin`.
+The main checkouts here track nothing (section 2), so the commands in this
+guide always name the remote and the branch.
 
 ### 4.3 Push to GitHub and to the backup
 
-They are separate destinations; one `git push` reaches one remote:
+The current version goes to GitHub through this repository,
+`micro-os-plus-iii-smp2` (`WORKING-WITH-REMOTE.md`, section 6.2): back the
+projects up to `local`, then bring them into `smp2` and push it. The
+per-project GitHub repositories keep the earlier version on `smp`; only the
+kernel has an `align/smp-upstream` there, and it is behind.
+
+To push a project to its own GitHub repository as well (kernel and ports
+only), remember they are separate destinations; one `git push` reaches one
+remote:
 
 ```bash
 git push origin align/smp-upstream        # the public fork
@@ -350,7 +369,9 @@ git fetch origin
 git pull --ff-only origin align/smp-upstream
 ```
 
-The main checkouts track `origin`, so plain `git pull` does this.
+Only the kernel has `align/smp-upstream` on its GitHub repository; the
+current version of everything is in `micro-os-plus-iii-smp2`
+(`WORKING-WITH-REMOTE.md`).
 
 ### 5.3 If the two sides have diverged
 
@@ -428,6 +449,10 @@ creates no remote-tracking branch.
 ---
 
 ## 7. Restore a workspace from the backups
+
+The simplest restore is one clone of `micro-os-plus-iii-smp2` from GitHub:
+it has every project in this layout (`WORKING-WITH-REMOTE.md`, section 3).
+From the local backups, project by project:
 
 ```bash
 mkdir -p ~/Desktop/restore && cd ~/Desktop/restore
@@ -507,27 +532,33 @@ single-branch style above.
 
 ---
 
-## 10. State on 2026-11-21
+## 10. State on 2026-11-24
 
 Checked with `git ls-remote local` against every working repository:
 
 | Repository | HEAD | `local` | State |
 |---|---|---|---|
-| `micro-os-plus-iii` | `e3ebd02a` | `e3ebd02a` | in sync |
+| `micro-os-plus-iii` | `06d365fe` | `06d365fe` | in sync |
 | aarch32 port | `2eb3719d` | `2eb3719d` | in sync |
 | aarch64 port | `7141456e` | `7141456e` | in sync |
-| cortexm port | `a59271c` | `a59271c` | in sync |
+| cortexm port | `a59271c3` | `a59271c3` | in sync |
 | devices-rp2xxx | `9e51139a` | `9e51139a` | in sync |
 | devices-stm32f4 | `ea867dfc` | `ea867dfc` | in sync |
-| devices-bcm283x | `eb8795f1` | `eb8795f1` | in sync |
+| devices-bcm283x | `027acb31` | `027acb31` | in sync |
 | devices-storage | `7c6cd981` | `7c6cd981` | in sync |
 | devices-rk3506 | `d84cd463` | `d84cd463` | in sync |
-| posix-arch port | `673a30e` | `673a30e` | in sync |
-| `workspace-records` | this commit | this commit | in sync (pushed with it) |
+| posix-arch port | `673a30e3` | `673a30e3` | in sync |
+| workspace records | `3ad11be5` | `3ad11be5` | in sync |
 
-All eleven were in sync on 2026-11-21. Only the kernel has an `origin`
-branch (`align/smp-upstream`); the ports and device packages are pushed
-to `local` only.
+All eleven were in sync on 2026-11-24, and the same commits are in
+`micro-os-plus-iii-smp2` on GitHub. On the per-project GitHub
+repositories, only the kernel has `align/smp-upstream` (`b9887856`,
+behind); their `smp` branches hold the earlier version.
+
+The kernel, Cortex-M and POSIX working repositories are **shallow**
+clones (`git rev-parse --is-shallow-repository` prints `true`); their bare
+backups hold the full history. Clone or `git subtree pull` from the bare
+backups when the full history is needed.
 
 Re-check at any time with the loop in §6.1. A repository that reports
 `DIFFERS` needs the push from §4.4; nothing else has to be done to the
@@ -547,4 +578,5 @@ others, which answer `Everything up-to-date`.
 | clone of the bare repo is empty | wrong path, or the bare repo was never pushed to | `git --git-dir=<bare> for-each-ref` |
 | `Everything up-to-date` when you expected a push | HEAD already matches the bare branch | `git log --oneline -1`, `git ls-remote local` |
 | the build cannot find a port after a restore | the sibling layout or the xpm links are missing | section 3.5 |
+| `shallow roots are not allowed to be updated` | fetching from a shallow working repository (kernel, Cortex-M, POSIX) into a full one | fetch from its bare backup instead |
 | `Cannot lock ref` / `failed to update ref` | two pushes at once, or a stale lock file | retry; if it persists, inspect `<bare>/refs/…` and `<bare>/*.lock` |

@@ -19,7 +19,9 @@ cortexm/micro-os-plus-iii-devices-stm32f4/  STM32F4 devices
 posix-arch/micro-os-plus-iii-posix-arch/    the POSIX (host) port
 workspace-records/                          the alignment records: baseline and
                                             step*-check/, hw-check/, docs-check/
-WORKING-WITH-LOCAL-BARE.md, .pdf            how the parts were kept in local bare repositories
+WORKING-WITH-LOCAL-BARE.md, .pdf            how the parts are kept in local bare repositories
+WORKING-WITH-REMOTE.md, .pdf                GitHub: signing in, cloning, pulling, pushing, and
+                                            keeping this repository and the parts in step
 ```
 
 One `git clone` gets everything. `git log -- <folder>` shows the history of one
