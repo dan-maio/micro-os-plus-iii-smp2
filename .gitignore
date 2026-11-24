@@ -2,6 +2,15 @@
 # The five code repositories next to it have their own git repositories.
 /*
 !/.gitignore
+# micro-os-plus-iii-smp2: the code repositories, merged in with their history
+# (git subtree), each in the folder it had in the workspace.
+!/micro-os-plus-iii/
+!/aarch32/
+!/aarch64/
+!/common/
+!/cortexm/
+!/posix-arch/
+!/README.md
 !/WORKING-WITH-LOCAL-BARE.md
 !/WORKING-WITH-LOCAL-BARE.pdf
 !/WHY-SMP-BUILD-TEST-DIFFERS.*
