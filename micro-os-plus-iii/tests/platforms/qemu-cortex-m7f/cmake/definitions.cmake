@@ -1,0 +1,14 @@
+# -----------------------------------------------------------------------------
+# Platform: µOS++ III Cortex-M7F on QEMU's generic Cortex-M machine (single core).
+#
+# `qemu-cortex-m7f` runs the portable harness suites on the SMP kernel's
+# single-core branch (OS_NCPU=1, no OS_USE_SMP_SCHEDULER), compiled for the
+# Cortex-M7F ISA (hard float) and executed on QEMU's mps2-an500 machine.
+# -----------------------------------------------------------------------------
+
+set (xpack_platform_compile_definition "MICRO_OS_PLUS_PLATFORM_QEMU_CORTEX_M7F")
+
+# The generic QEMU Cortex-M7 device (device-qemu-cortexm) and its AN500 map.
+set (xpack_device_compile_definition "MICRO_OS_PLUS_DEVICE_QEMU_CORTEX_M7")
+set (xpack_device_linker_script_file_name "mem-mps2-an500.ld")
+
