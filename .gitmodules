@@ -2,3 +2,7 @@
 	path = aarch32/micro-os-plus-iii-aarch32.git
 	url = https://github.com/dan-maio/micro-os-plus-iii-aarch32
 	branch = smp
+[submodule "aarch64/micro-os-plus-iii-aarch64.git"]
+	path = aarch64/micro-os-plus-iii-aarch64.git
+	url = https://github.com/dan-maio/micro-os-plus-iii-aarch64.git
+	branch = smp
