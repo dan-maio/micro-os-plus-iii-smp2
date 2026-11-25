@@ -11,8 +11,10 @@ The backup folder is at
 git repository, with its own remote pointing at its own bare repo.
 
 Since 2026-11-24 the same work is also on GitHub as one repository,
-`dan-maio/micro-os-plus-iii-smp2` (this repository): every project merged
-in its folder with its full history. GitHub, and how this repository and
+`dan-maio/micro-os-plus-iii-smp2` (this repository): the kernel and the
+device packages merged in their folders with their full history, and since
+2026-11-25 the four ports as submodules that follow the branch `smp` of
+their own GitHub repositories. GitHub, and how this repository and
 the per-project repositories stay in step, are described in
 `WORKING-WITH-REMOTE.md`. This guide covers the local bare backups.
 
@@ -80,7 +82,7 @@ upstream https://github.com/micro-os-plus/micro-os-plus-iii.git     (read-only)
 
 | Remote | What it is | Which repositories have it |
 |---|---|---|
-| `origin` | the per-project GitHub repository (`dan-maio`), holding the earlier version on branch `smp` | the kernel and the four ports |
+| `origin` | the per-project GitHub repository (`dan-maio`); branch `smp` holds the kernel's earlier version, and for the ports the current one (since 2026-11-25) | the kernel and the four ports |
 | `local` | the bare backup in `~/Downloads/GIT/...`: local backup, clone source, offline restore | all eleven |
 | `golden` | a read-only reference copy under `~/Work2`: compare against the original tree; never push to it | the kernel and the four ports |
 | `upstream` | the kernel's upstream, read-only | the kernel |
@@ -242,9 +244,11 @@ guide always name the remote and the branch.
 
 The current version goes to GitHub through this repository,
 `micro-os-plus-iii-smp2` (`WORKING-WITH-REMOTE.md`, section 6.2): back the
-projects up to `local`, then bring them into `smp2` and push it. The
-per-project GitHub repositories keep the earlier version on `smp`; only the
-kernel has an `align/smp-upstream` there, and it is behind.
+projects up to `local`, then bring them into `smp2` and push it. A port
+goes to `smp` of its own GitHub repository first (`git push <url>
+align/smp-upstream:smp`), because `smp2` holds the ports as submodules of
+those repositories. The kernel's GitHub repository keeps the earlier
+version on `smp`; its `align/smp-upstream` there is behind.
 
 To push a project to its own GitHub repository as well (kernel and ports
 only), remember they are separate destinations; one `git push` reaches one
@@ -450,8 +454,9 @@ creates no remote-tracking branch.
 
 ## 7. Restore a workspace from the backups
 
-The simplest restore is one clone of `micro-os-plus-iii-smp2` from GitHub:
-it has every project in this layout (`WORKING-WITH-REMOTE.md`, section 3).
+The simplest restore is one clone of `micro-os-plus-iii-smp2` from GitHub
+with `git clone --recurse-submodules`: it has every project in this layout
+(`WORKING-WITH-REMOTE.md`, section 3).
 From the local backups, project by project:
 
 ```bash

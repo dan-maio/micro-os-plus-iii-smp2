@@ -16,16 +16,25 @@ Everything is under the account `dan-maio`:
 
 | Repository | Branch | What it holds |
 |---|---|---|
-| `micro-os-plus-iii-smp2` | `main` | **this repository**: the current version, all parts in one, each with its full history |
+| `micro-os-plus-iii-smp2` | `main` | **this repository**: the current version, all parts in one; the kernel and the device packages with their full history, the four ports as submodules |
 | `micro-os-plus-iii` | `smp` | the earlier version of the kernel (also `align/smp-upstream`, behind the current one) |
-| `micro-os-plus-iii-aarch32` | `smp` | the earlier AArch32 port |
-| `micro-os-plus-iii-aarch64` | `smp` | the earlier AArch64 port |
-| `micro-os-plus-iii-cortexm` | `smp` | the earlier Cortex-M port |
-| `micro-os-plus-iii-posix-arch` | `smp` | the earlier POSIX port |
+| `micro-os-plus-iii-aarch32` | `smp` | the current AArch32 port, submodule `aarch32/micro-os-plus-iii-aarch32` here |
+| `micro-os-plus-iii-aarch64` | `smp` | the current AArch64 port, submodule `aarch64/micro-os-plus-iii-aarch64` here |
+| `micro-os-plus-iii-cortexm` | `smp` | the current Cortex-M port, submodule `cortexm/micro-os-plus-iii-cortexm` here |
+| `micro-os-plus-iii-posix-arch` | `smp` | the current POSIX port, submodule `posix-arch/micro-os-plus-iii-posix-arch` here |
 
 The per-part repositories also carry older branches (`master`, `xpack`,
-`xpack-development`, `smp-back`, ...). The earlier version is the branch
-`smp`, and this repository leaves it as it is.
+`xpack-development`, `smp-back`, ...). For the kernel, `smp` is the earlier
+version and this repository leaves it as it is. For the four ports, `smp`
+was fast-forwarded on 2026-11-25 to the port's `align/smp-upstream` (same
+commits, same hashes), so it holds the current version; the earlier one is
+an ancestor on it (`b79d35d` AArch32, `cb16868` AArch64, `e0a7ceb`
+Cortex-M, `dcd8099` POSIX).
+
+The `smp` branch of each port has a protection rule: no force push, no
+deletion, admins included. "Lock branch" is off, so ordinary
+(fast-forward) pushes work; with it on, every push is refused with
+`protected branch hook declined`.
 
 The five device packages (`rk3506`, `bcm283x`, `storage`, `rp2xxx`,
 `stm32f4`) and the alignment records have no repository of their own on
@@ -61,15 +70,36 @@ account, then use `git@github.com:dan-maio/<repository>.git` as the URL
 ## 3. Clone this repository
 
 ```bash
-git clone https://github.com/dan-maio/micro-os-plus-iii-smp2.git
+git clone --recurse-submodules https://github.com/dan-maio/micro-os-plus-iii-smp2.git
 cd micro-os-plus-iii-smp2
-git log --oneline -5                          # the whole project
-git log --oneline -- cortexm/micro-os-plus-iii-cortexm   # one part
+git log --oneline -5                                        # the whole project
+git log --oneline -- cortexm/micro-os-plus-iii-devices-stm32f4   # the kernel or a device package
+git -C cortexm/micro-os-plus-iii-cortexm log --oneline -5   # a port (submodule)
+git submodule status                                        # the four ports and their commits
 ```
 
-One clone gets everything: the kernel and its tests, the ports, the device
-packages and the records, in the layout the build expects (section 3.5 of
-`WORKING-WITH-LOCAL-BARE.md`).
+One clone with `--recurse-submodules` gets everything: the kernel and its
+tests, the ports, the device packages and the records, in the layout the
+build expects (section 3.5 of `WORKING-WITH-LOCAL-BARE.md`). Without it the
+four port folders are empty; fill them with:
+
+```bash
+git submodule update --init
+```
+
+Each port is checked out at the commit this repository records, on a
+detached HEAD. To work in a port, put it on its branch first (section 6.1):
+
+```bash
+git -C cortexm/micro-os-plus-iii-cortexm switch smp
+```
+
+To make `git pull` also update the submodules to the commits it brings,
+once per clone:
+
+```bash
+git config submodule.recurse true
+```
 
 ### 3.1 Build and test a fresh clone
 
@@ -111,6 +141,10 @@ micro-os-plus-iii-cortexm is not linked into this build folder.
 Run: xpm run link-deps --config <configuration>
 ```
 
+If the submodules were not checked out, `link-deps` itself stops with
+`link-local: micro-os-plus-iii-cortexm not found under …/`: run
+`git submodule update --init` at the repository root.
+
 The QEMU test actions and their configurations (each action runs the
 `-debug` and the `-release` configuration, so link both):
 
@@ -144,6 +178,14 @@ In this repository's local clone (`/home/dan/Work/micro-os-plus-iii-smp2`):
 ```bash
 git remote -v
 origin  https://github.com/dan-maio/micro-os-plus-iii-smp2.git (fetch/push)
+```
+
+Each port submodule is a clone of its own GitHub repository, with `origin`
+pointing there:
+
+```bash
+git -C aarch64/micro-os-plus-iii-aarch64 remote -v
+origin  https://github.com/dan-maio/micro-os-plus-iii-aarch64.git (fetch/push)
 ```
 
 In the per-part working repositories of the workspace
@@ -182,7 +224,8 @@ either rebase (`git rebase origin/main`) or merge (`git merge origin/main`).
 
 ### 6.1 Work in this repository
 
-Edit, commit and push here:
+The kernel, the device packages and the records: edit, commit and push
+here:
 
 ```bash
 git switch main
@@ -196,14 +239,34 @@ backups are then behind. To carry one part's new commits back to its own
 repository, split them out with `git subtree push`:
 
 ```bash
-git subtree push --prefix=cortexm/micro-os-plus-iii-cortexm \
-  /home/dan/Downloads/GIT/micro-os-plu-iii-smp-pr-local/micro-os-plus-iii-cortexm.git \
+git subtree push --prefix=cortexm/micro-os-plus-iii-devices-stm32f4 \
+  /home/dan/Downloads/GIT/micro-os-plu-iii-smp-pr-local/micro-os-plus-iii-devices-stm32f4.git \
   align/smp-upstream
 ```
 
 `git subtree push` rewrites the part's commits without the folder prefix
 and pushes them as new commits on that branch. Use it only when the part
 also has to be published on its own.
+
+A port is a repository of its own inside this one. Commit in the port and
+push it to its GitHub repository **first**, then record the new commit
+here:
+
+```bash
+P=aarch64/micro-os-plus-iii-aarch64
+git -C $P switch smp                      # leave the detached HEAD (section 3)
+# ... edit, build, test ...
+git -C $P add -A && git -C $P commit -m "..."
+git -C $P push origin smp                 # the port, on GitHub
+
+git add $P                                # this repository records the new commit
+git commit -m "smp2: update $P"
+git push origin main
+```
+
+In that order a clone of this repository never points at a port commit
+GitHub does not have. `git push --recurse-submodules=check origin main`
+refuses the push if it would (section 7).
 
 ### 6.2 Work in the per-part repositories, then update this one
 
@@ -225,28 +288,48 @@ Pull from the **bare backups**, not from the working repositories: the
 kernel, Cortex-M and POSIX working repositories are shallow clones, and git
 refuses to fetch from a shallow repository into a full one.
 
-All parts in one go (a part with nothing new merges nothing):
+All subtree parts in one go (a part with nothing new merges nothing):
 
 ```bash
 L=/home/dan/Downloads/GIT/micro-os-plu-iii-smp-pr-local
 cd /home/dan/Work/micro-os-plus-iii-smp2
 
 for p in micro-os-plus-iii:micro-os-plus-iii \
-         aarch32/micro-os-plus-iii-aarch32:micro-os-plus-iii-aarch32 \
          aarch32/micro-os-plus-iii-devices-rk3506:micro-os-plus-iii-devices-rk3506 \
-         aarch64/micro-os-plus-iii-aarch64:micro-os-plus-iii-aarch64 \
          common/micro-os-plus-iii-devices-bcm283x:micro-os-plus-iii-devices-bcm283x \
          common/micro-os-plus-iii-devices-storage:micro-os-plus-iii-devices-storage \
-         cortexm/micro-os-plus-iii-cortexm:micro-os-plus-iii-cortexm \
          cortexm/micro-os-plus-iii-devices-rp2xxx:micro-os-plus-iii-devices-rp2xxx \
-         cortexm/micro-os-plus-iii-devices-stm32f4:micro-os-plus-iii-devices-stm32f4 \
-         posix-arch/micro-os-plus-iii-posix-arch:micro-os-plus-iii-posix-arch; do
+         cortexm/micro-os-plus-iii-devices-stm32f4:micro-os-plus-iii-devices-stm32f4; do
   dir=${p%%:*}; repo=${p#*:}
   echo "== $dir"
   git subtree pull --prefix="$dir" "$L/$repo.git" align/smp-upstream -m "smp2: update $dir"
 done
 git push origin main
 ```
+
+The ports are not subtrees any more. Push the port's `align/smp-upstream`
+from its working repository to `smp` on GitHub (a fast-forward, the two
+hold the same history), then move the submodule here to it:
+
+```bash
+S=/home/dan/Desktop/micro-os-plu-iii-smp-pr-github
+cd /home/dan/Work/micro-os-plus-iii-smp2
+
+for p in aarch32/micro-os-plus-iii-aarch32 aarch64/micro-os-plus-iii-aarch64 \
+         cortexm/micro-os-plus-iii-cortexm posix-arch/micro-os-plus-iii-posix-arch; do
+  echo "== $p"
+  git -C "$S/$p" push "https://github.com/dan-maio/${p#*/}.git" align/smp-upstream:smp
+done
+git submodule update --remote          # each port to the tip of its smp
+git add aarch32/micro-os-plus-iii-aarch32 aarch64/micro-os-plus-iii-aarch64 \
+        cortexm/micro-os-plus-iii-cortexm posix-arch/micro-os-plus-iii-posix-arch
+git commit -m "smp2: update the ports"
+git push origin main
+```
+
+A port whose `smp` already has every commit reports `Everything up-to-date`.
+If GitHub refuses with `non-fast-forward`, the port was also changed here
+(section 6.1): merge the two in the port before pushing.
 
 The alignment records (the files at this repository's root and
 `workspace-records/`) are this repository's own base history. Bring new
@@ -266,8 +349,13 @@ hand.
 
 ```bash
 git push --dry-run origin main     # what would be sent; writes nothing
-git push origin main
+git push --recurse-submodules=check origin main
 ```
+
+`--recurse-submodules=check` refuses the push if this repository records a
+port commit that is not on the port's GitHub repository yet (push the port
+first, section 6.1). `git config push.recurseSubmodules check` makes it the
+default.
 
 A rejected push (`non-fast-forward`, `fetch first`) means GitHub has
 commits you do not: `git fetch origin`, integrate (section 5), push again.
@@ -314,9 +402,10 @@ values: no commit and no file contains them.
 
 ---
 
-## 9. The earlier version (branch `smp`)
+## 9. The earlier version
 
-Read it without touching your work:
+For the kernel, the earlier version is the branch `smp` of
+`dan-maio/micro-os-plus-iii`. Read it without touching your work:
 
 ```bash
 cd /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii
@@ -328,12 +417,22 @@ git worktree remove /tmp/kernel-smp
 ```
 
 The workspace repositories have no `origin` (section 4), so the URL is
-given in full; for a port use `micro-os-plus-iii-<arch>.git`. To keep a
-remote for it instead: `git remote add github https://github.com/dan-maio/micro-os-plus-iii.git`,
+given in full. To keep a remote for it instead:
+`git remote add github https://github.com/dan-maio/micro-os-plus-iii.git`,
 then `git fetch github smp`.
 
-Do not push `align/smp-upstream` onto `smp`. The per-part repositories
-keep the earlier version, and this repository holds the current one.
+Do not push the kernel's `align/smp-upstream` onto its `smp`: that
+repository keeps the earlier version, and this one holds the current one.
+
+For the four ports, `smp` is the current version (section 1). Their earlier
+version is an older commit on that same branch; check it out in the
+submodule, then go back:
+
+```bash
+P=aarch64/micro-os-plus-iii-aarch64
+git -C $P switch --detach cb16868    # AArch32 b79d35d, Cortex-M e0a7ceb, POSIX dcd8099
+git submodule update $P              # back to the commit this repository records
+```
 
 ---
 
@@ -355,17 +454,22 @@ gh pr create --repo dan-maio/micro-os-plus-iii-smp2 --base main --head my-change
 |---|---|
 | Sign in / check | `gh auth login`, `gh auth status` |
 | Let git use `gh` for GitHub | `gh auth setup-git` |
-| Clone this repository | `git clone https://github.com/dan-maio/micro-os-plus-iii-smp2.git` |
+| Clone this repository | `git clone --recurse-submodules https://github.com/dan-maio/micro-os-plus-iii-smp2.git` |
+| Fill the port folders of a plain clone | `git submodule update --init` |
+| List the ports and their commits | `git submodule status` |
 | Prepare a configuration | in `micro-os-plus-iii/tests`: `xpm install`, `xpm install --config <c>`, `xpm run link-deps --config <c>` |
 | Build and test on QEMU | `xpm run test-<platform>-cmake` (Debug and Release) |
-| Read the earlier version | `git fetch https://github.com/dan-maio/<repository>.git smp:refs/remotes/github/smp` |
-| History of one part | `git log --oneline -- <folder>` |
-| Pull | `git pull --ff-only origin main` |
-| Push | `git push origin main` |
+| Read the kernel's earlier version | `git fetch https://github.com/dan-maio/micro-os-plus-iii.git smp:refs/remotes/github/smp` |
+| History of the kernel or a device package | `git log --oneline -- <folder>` |
+| History of a port | `git -C <port folder> log --oneline` |
+| Pull | `git pull --ff-only origin main`, then `git submodule update` |
+| Push | `git push --recurse-submodules=check origin main` |
 | Preview a push | `git push --dry-run origin main` |
-| Bring one part's new commits in | `git subtree pull --prefix=<folder> <bare>.git align/smp-upstream` |
+| Commit in a port | `git -C <port> switch smp`, commit, `git -C <port> push origin smp`, then `git add <port>` and commit here (section 6.1) |
+| Move the ports to the tips of their `smp` | `git submodule update --remote`, then `git add` the four ports and commit |
+| Bring a subtree part's new commits in | `git subtree pull --prefix=<folder> <bare>.git align/smp-upstream` |
 | Bring the records in | `git pull --no-rebase <workspace.git> align/smp-upstream` |
-| Send one part's commits out | `git subtree push --prefix=<folder> <bare>.git align/smp-upstream` |
+| Send a subtree part's commits out | `git subtree push --prefix=<folder> <bare>.git align/smp-upstream` |
 | Compare with GitHub, no fetch | `git ls-remote origin refs/heads/main` |
 
 ---
@@ -378,6 +482,11 @@ gh pr create --repo dan-maio/micro-os-plus-iii-smp2 --base main --head my-change
 | git asks for a password | the `gh` credential helper is not set | `gh auth setup-git` |
 | `! [rejected] … (non-fast-forward)` | GitHub has commits you do not | `git fetch origin`, rebase or merge, push again |
 | `… is not linked into this build folder` at configure | `link-deps` not run for that configuration | `xpm install --config <c>`, `xpm run link-deps --config <c>` (section 3.1) |
+| a port folder is empty; `link-local: … not found` | cloned without `--recurse-submodules` | `git submodule update --init` (section 3) |
+| `fatal: … not our ref` or `upload-pack: not our ref` during `git submodule update` | this repository records a port commit that was never pushed to GitHub | push that commit from the port where it was made, then update again |
+| `The following submodule paths contain changes that can not be found on any remote` | `git push --recurse-submodules=check` found an unpushed port commit | `git -C <port> push origin smp`, then push here (section 6.1) |
+| `! [remote rejected] smp -> smp (protected branch hook declined)` in a port | "Lock branch" is on for that port's `smp` | turn it off: the repository's Settings → Branches → the `smp` rule, untick "Lock branch", Save changes |
+| a commit in a port is "lost" after `git submodule update` | the port was on a detached HEAD when you committed | `git -C <port> reflog` finds it; `git -C <port> switch smp` and `git merge <commit>` |
 | `'origin' does not appear to be a git repository` in a workspace repository | the workspace repositories have no `origin` | fetch by URL (section 9) |
 | `shallow roots are not allowed to be updated` | `git subtree pull` from a shallow working repository | pull from the part's bare backup instead (section 6.2) |
 | `Working tree has modifications` from `git subtree` | uncommitted changes | commit or stash them first |
@@ -395,3 +504,12 @@ gh pr create --repo dan-maio/micro-os-plus-iii-smp2 --base main --head my-change
 | kernel on GitHub, `align/smp-upstream` | `b9887856`, behind |
 | the four ports and five device packages in this repository | the same commits as their bare backups |
 | the per-part GitHub repositories, branch `smp` | unchanged (the earlier version) |
+
+## 14. State on 2026-11-25
+
+| | Commit |
+|---|---|
+| the ports' GitHub repositories, branch `smp` | fast-forwarded to `align/smp-upstream`: AArch32 `2eb3719`, AArch64 `7141456`, Cortex-M `a59271c`, POSIX `673a30e` (the same commits as their bare backups) |
+| the four ports in this repository | submodules at those commits; the subtree folders removed |
+| kernel and five device packages in this repository | unchanged, still subtrees |
+| kernel on GitHub, branch `smp` | unchanged (the earlier version) |
