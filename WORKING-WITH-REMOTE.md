@@ -31,8 +31,8 @@ The five device packages (`rk3506`, `bcm283x`, `storage`, `rp2xxx`,
 `stm32f4`) and the alignment records have no repository of their own on
 GitHub: they are only in this one.
 
-The kernel's upstream is `micro-os-plus/micro-os-plus-iii` (remote
-`upstream` in the kernel's working repository); it is read-only here.
+The kernel's upstream is `micro-os-plus/micro-os-plus-iii`; it is
+read-only here (no remote points to it, fetch it by URL when needed).
 
 ---
 
@@ -71,19 +71,69 @@ One clone gets everything: the kernel and its tests, the ports, the device
 packages and the records, in the layout the build expects (section 3.5 of
 `WORKING-WITH-LOCAL-BARE.md`).
 
-Build the tests from it the usual way (`micro-os-plus-iii/tests`, xpm), or
-make a self-contained test workspace with `micro-os-scaffold`:
+### 3.1 Build and test a fresh clone
+
+A clone has no `xpacks/` and no `build/` folders (both git-ignored), so
+before the first build every configuration needs `xpm install` and
+`xpm run link-deps`. Everything runs in `micro-os-plus-iii/tests`:
+
+```bash
+cd micro-os-plus-iii/tests
+xpm install                        # once: build-helper, chan-fatfs, validator
+
+C=aarch64-rpi3b-cmake-gcc          # <platform>-cmake-gcc
+for v in debug release; do
+  xpm install --config $C-$v       # this configuration's tools
+  xpm run link-deps --config $C-$v # link the ports from this repository
+done
+xpm run test-aarch64-rpi3b-cmake   # prepare, build, test: Debug and Release
+```
+
+`link-deps` runs `scripts/link-local.sh`, which links
+`build/<config>/xpacks/@micro-os-plus/<package>` to the package's folder in
+this repository with a **relative** path, for example:
+
+```text
+build/aarch64-rpi3b-cmake-gcc-debug/xpacks/@micro-os-plus/micro-os-plus-iii-aarch64
+  -> ../../../../../../aarch64/micro-os-plus-iii-aarch64
+```
+
+The clone can therefore be anywhere and be moved. Only the toolchains
+(GCC, QEMU, CMake, OpenOCD) and the external packages (Segger RTT and
+SystemView, Pico SDK, chan-fatfs) come from the xPack store in
+`~/.local/xPacks`. Do not use `xpm link @micro-os-plus/<package>`: it
+links to whatever working copy was last registered on the machine.
+
+Without `link-deps` the configure step stops with:
+
+```text
+micro-os-plus-iii-cortexm is not linked into this build folder.
+Run: xpm run link-deps --config <configuration>
+```
+
+The QEMU test actions and their configurations (each action runs the
+`-debug` and the `-release` configuration, so link both):
+
+| Action | Configurations |
+|---|---|
+| `test-qemu-cortex-m0-cmake` (also `m3`, `m4f`, `m7f`) | `qemu-cortex-m0-cmake-gcc-{debug,release}` |
+| `test-aarch32-rpi-zero-2w-cmake`, `test-aarch32-rpi3b-cmake` | `aarch32-<board>-cmake-gcc-{debug,release}` |
+| `test-aarch64-rpi-zero-2w-cmake`, `test-aarch64-rpi3b-cmake`, `test-aarch64-rpi4b-cmake` | `aarch64-<board>-cmake-gcc-{debug,release}` |
+
+A fresh clone in `/tmp` was checked this way on 2026-11-25: all 18 QEMU
+configurations (9 platforms, Debug and Release) configure, build and pass
+their tests, with no source compiled from outside the clone.
+
+### 3.2 A self-contained test workspace
+
+Or make a self-contained test workspace with `micro-os-scaffold`, which
+copies the packages from the xPack store:
 
 ```bash
 node bin/scaffold.js /path/to/workspace \
   --source /path/to/micro-os-plus-iii-smp2 \
   --select aarch64-rpi4b.smp_test0 --yes
 ```
-
-`micro-os-plus-iii/tests/xpacks/` is git-ignored, so a clone has none of
-the packages `xpm install` puts there (build-helper, chan-fatfs, the
-CMSIS RTOS validator). Run `xpm install` in `micro-os-plus-iii/tests`, or
-let `micro-os-scaffold` copy them from the xPack store.
 
 ---
 
@@ -99,12 +149,15 @@ origin  https://github.com/dan-maio/micro-os-plus-iii-smp2.git (fetch/push)
 In the per-part working repositories of the workspace
 (`/home/dan/Desktop/micro-os-plu-iii-smp-pr-github`):
 
-| Repository | `origin` (GitHub) | `local` (bare backup) | other |
-|---|---|---|---|
-| kernel | `dan-maio/micro-os-plus-iii` | yes | `upstream`, `golden` |
-| aarch32, aarch64, cortexm, posix-arch ports | `dan-maio/micro-os-plus-iii-<arch>` | yes | `golden` |
-| the five device packages | none | yes | none |
-| the workspace records | none | yes (`workspace.git`) | none |
+| Repository | `local` (bare backup) | `golden` |
+|---|---|---|
+| kernel, aarch32, aarch64, cortexm, posix-arch ports | `/home/dan/Downloads/GIT/micro-os-plu-iii-smp-pr-local/<name>.git` | `/home/dan/Work2/micro-os-plus/<name>` |
+| the five device packages | `/home/dan/Downloads/GIT/micro-os-plu-iii-smp-pr-local/<name>.git` | none |
+| the workspace records | `/home/dan/Downloads/GIT/micro-os-plu-iii-smp-pr-local/workspace.git` | none |
+
+None of them has an `origin` remote: the workspace repositories do not
+point to GitHub. GitHub is reached from this repository (`origin` above),
+or by URL (section 9).
 
 No branch tracks an upstream, so name the remote and the branch on every
 `push` and `pull`, as the commands below do.
@@ -267,12 +320,17 @@ Read it without touching your work:
 
 ```bash
 cd /home/dan/Desktop/micro-os-plu-iii-smp-pr-github/micro-os-plus-iii
-git fetch origin smp
-git log --oneline -5 origin/smp
-git diff --stat origin/smp align/smp-upstream
-git worktree add /tmp/kernel-smp origin/smp     # a separate checkout of it
+git fetch https://github.com/dan-maio/micro-os-plus-iii.git smp:refs/remotes/github/smp
+git log --oneline -5 github/smp
+git diff --stat github/smp align/smp-upstream
+git worktree add /tmp/kernel-smp github/smp     # a separate checkout of it
 git worktree remove /tmp/kernel-smp
 ```
+
+The workspace repositories have no `origin` (section 4), so the URL is
+given in full; for a port use `micro-os-plus-iii-<arch>.git`. To keep a
+remote for it instead: `git remote add github https://github.com/dan-maio/micro-os-plus-iii.git`,
+then `git fetch github smp`.
 
 Do not push `align/smp-upstream` onto `smp`. The per-part repositories
 keep the earlier version, and this repository holds the current one.
@@ -298,6 +356,9 @@ gh pr create --repo dan-maio/micro-os-plus-iii-smp2 --base main --head my-change
 | Sign in / check | `gh auth login`, `gh auth status` |
 | Let git use `gh` for GitHub | `gh auth setup-git` |
 | Clone this repository | `git clone https://github.com/dan-maio/micro-os-plus-iii-smp2.git` |
+| Prepare a configuration | in `micro-os-plus-iii/tests`: `xpm install`, `xpm install --config <c>`, `xpm run link-deps --config <c>` |
+| Build and test on QEMU | `xpm run test-<platform>-cmake` (Debug and Release) |
+| Read the earlier version | `git fetch https://github.com/dan-maio/<repository>.git smp:refs/remotes/github/smp` |
 | History of one part | `git log --oneline -- <folder>` |
 | Pull | `git pull --ff-only origin main` |
 | Push | `git push origin main` |
@@ -305,7 +366,6 @@ gh pr create --repo dan-maio/micro-os-plus-iii-smp2 --base main --head my-change
 | Bring one part's new commits in | `git subtree pull --prefix=<folder> <bare>.git align/smp-upstream` |
 | Bring the records in | `git pull --no-rebase <workspace.git> align/smp-upstream` |
 | Send one part's commits out | `git subtree push --prefix=<folder> <bare>.git align/smp-upstream` |
-| Read the earlier version | `git fetch origin smp`, `git log origin/smp` (in a per-part repository) |
 | Compare with GitHub, no fetch | `git ls-remote origin refs/heads/main` |
 
 ---
@@ -317,6 +377,8 @@ gh pr create --repo dan-maio/micro-os-plus-iii-smp2 --base main --head my-change
 | `Authentication failed`, `403` | not signed in, or the token lacks `repo` | `gh auth status`, `gh auth login`, `gh auth setup-git` |
 | git asks for a password | the `gh` credential helper is not set | `gh auth setup-git` |
 | `! [rejected] … (non-fast-forward)` | GitHub has commits you do not | `git fetch origin`, rebase or merge, push again |
+| `… is not linked into this build folder` at configure | `link-deps` not run for that configuration | `xpm install --config <c>`, `xpm run link-deps --config <c>` (section 3.1) |
+| `'origin' does not appear to be a git repository` in a workspace repository | the workspace repositories have no `origin` | fetch by URL (section 9) |
 | `shallow roots are not allowed to be updated` | `git subtree pull` from a shallow working repository | pull from the part's bare backup instead (section 6.2) |
 | `Working tree has modifications` from `git subtree` | uncommitted changes | commit or stash them first |
 | conflicts after `git subtree pull` | the part was edited both here and in its own repository | resolve, commit, and keep to one way of working (section 6) |
