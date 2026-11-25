@@ -10,3 +10,7 @@
 	path = cortexm/micro-os-plus-iii-cortexm.git
 	url = https://github.com/dan-maio/micro-os-plus-iii-cortexm.git
 	branch = smp
+[submodule "posix-arch/micro-os-plus-iii-posix-arch.git"]
+	path = posix-arch/micro-os-plus-iii-posix-arch.git
+	url = https://github.com/dan-maio/micro-os-plus-iii-posix-arch.git
+	branch = smp
