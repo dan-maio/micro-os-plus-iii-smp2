@@ -16,17 +16,18 @@ Everything is under the account `dan-maio`:
 
 | Repository | Branch | What it holds |
 |---|---|---|
-| `micro-os-plus-iii-smp2` | `main` | **this repository**: the current version, all parts in one; the kernel and the device packages with their full history, the four ports as submodules |
+| `micro-os-plus-iii-smp2` | `main` | **this repository**: the current version, all parts in one; the kernel and the device packages with their full history, the five ports as submodules |
 | `micro-os-plus-iii` | `smp` | the earlier version of the kernel (also `align/smp-upstream`, behind the current one) |
 | `micro-os-plus-iii-aarch32` | `smp` | the current AArch32 port, submodule `aarch32/micro-os-plus-iii-aarch32` here |
 | `micro-os-plus-iii-aarch64` | `smp` | the current AArch64 port, submodule `aarch64/micro-os-plus-iii-aarch64` here |
 | `micro-os-plus-iii-cortexm` | `smp` | the current Cortex-M port, submodule `cortexm/micro-os-plus-iii-cortexm` here |
 | `micro-os-plus-iii-posix-arch` | `smp` | the current POSIX port, submodule `posix-arch/micro-os-plus-iii-posix-arch` here |
+| `micro-os-plus-iii-riscv` | `smp`, `riscv-integration` | the RISC-V port, submodule `riscv/micro-os-plus-iii-riscv` here; `smp` is its state before the alignment (tag `smp-pre-align`), `riscv-integration` the alignment in progress, which this repository's branch `riscv-integration` records |
 
 The per-part repositories also carry older branches (`master`, `xpack`,
 `xpack-development`, `smp-back`, ...). For the kernel, `smp` is the earlier
-version and this repository leaves it as it is. For the four ports, `smp`
-was fast-forwarded on 2026-11-25 to the port's `align/smp-upstream` (same
+version and this repository leaves it as it is. For the four Arm and POSIX
+ports, `smp` was fast-forwarded on 2026-11-25 to the port's `align/smp-upstream` (same
 commits, same hashes), so it holds the current version; the earlier one is
 an ancestor on it (`b79d35d` AArch32, `cb16868` AArch64, `e0a7ceb`
 Cortex-M, `dcd8099` POSIX).
@@ -75,13 +76,13 @@ cd micro-os-plus-iii-smp2
 git log --oneline -5                                        # the whole project
 git log --oneline -- cortexm/micro-os-plus-iii-devices-stm32f4   # the kernel or a device package
 git -C cortexm/micro-os-plus-iii-cortexm log --oneline -5   # a port (submodule)
-git submodule status                                        # the four ports and their commits
+git submodule status                                        # the five ports and their commits
 ```
 
 One clone with `--recurse-submodules` gets everything: the kernel and its
 tests, the ports, the device packages and the records, in the layout the
 build expects (section 3.5 of `WORKING-WITH-LOCAL-BARE.md`). Without it the
-four port folders are empty; fill them with:
+five port folders are empty; fill them with:
 
 ```bash
 git submodule update --init
@@ -424,7 +425,7 @@ then `git fetch github smp`.
 Do not push the kernel's `align/smp-upstream` onto its `smp`: that
 repository keeps the earlier version, and this one holds the current one.
 
-For the four ports, `smp` is the current version (section 1). Their earlier
+For the four Arm and POSIX ports, `smp` is the current version (section 1). Their earlier
 version is an older commit on that same branch; check it out in the
 submodule, then go back:
 
@@ -466,7 +467,7 @@ gh pr create --repo dan-maio/micro-os-plus-iii-smp2 --base main --head my-change
 | Push | `git push --recurse-submodules=check origin main` |
 | Preview a push | `git push --dry-run origin main` |
 | Commit in a port | `git -C <port> switch smp`, commit, `git -C <port> push origin smp`, then `git add <port>` and commit here (section 6.1) |
-| Move the ports to the tips of their `smp` | `git submodule update --remote`, then `git add` the four ports and commit |
+| Move the ports to the tips of their `smp` | `git submodule update --remote`, then `git add` the ports and commit; not the RISC-V port while its work is on `riscv-integration` (that would move it back to `smp`): `git submodule update --remote aarch32/micro-os-plus-iii-aarch32 aarch64/micro-os-plus-iii-aarch64 cortexm/micro-os-plus-iii-cortexm posix-arch/micro-os-plus-iii-posix-arch` |
 | Bring a subtree part's new commits in | `git subtree pull --prefix=<folder> <bare>.git align/smp-upstream` |
 | Bring the records in | `git pull --no-rebase <workspace.git> align/smp-upstream` |
 | Send a subtree part's commits out | `git subtree push --prefix=<folder> <bare>.git align/smp-upstream` |

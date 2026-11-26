@@ -27,6 +27,10 @@ There are 24 platforms under `platforms/`, grouped by the port they exercise:
   in QEMU (single core and dual-core SMP)
 - `qemu-cortex-m0`, `qemu-cortex-m3`, `qemu-cortex-m4f`, `qemu-cortex-m7f` —
   the Cortex-M port's generic M0/M3/M4F/M7 cores in QEMU, run single-core
+- `qemu-riscv64`, `qemu-riscv32` — the RISC-V port on QEMU's `virt`
+  machine (RV64GC; RV32IMAC without an FPU), run single-hart
+- `riscv-milkv-duo` — the RISC-V port on the Milk-V Duo (CV1800B, C906);
+  hardware images only
 - `native` — the POSIX-arch port, as a host process (gcc or clang)
 - `nucleo-f411re`, `nucleo-f767zi`, `nucleo-h743zi`, `raspberrypi-pico` —
   the upstream plain-kernel platforms
@@ -45,7 +49,8 @@ For native tests, the toolchains used are:
 - GCC 11, 12, 13, 14 and the latest (`native-cmake-gcc`)
 - clang 13, 14, 15, 16, 17, 18, 19
 
-For Cortex-M tests, the toolchain is arm-none-eabi-gcc 15.2.
+For Cortex-M tests, the toolchain is arm-none-eabi-gcc 15.2; for RISC-V,
+riscv-none-elf-gcc 15.2 (with qemu-riscv 9.2).
 
 ## Tests details
 
@@ -54,6 +59,12 @@ Cortex-M sets, debug and release:
 
 ```sh
 xpm run test-cortex-cmake
+```
+
+The emulated RISC-V sets (RV64 and RV32), debug and release:
+
+```sh
+xpm run test-qemu-riscv-cmake
 ```
 
 To build and run one platform, debug and release:

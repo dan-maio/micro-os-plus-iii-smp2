@@ -24,7 +24,7 @@ the kernel's `tests/`:
 
 | Suffix | Runs on | Started by CTest as |
 |---|---|---|
-| `-qemu` | QEMU | `qemu-system-arm` / `qemu-system-aarch64` with semihosting |
+| `-qemu` | QEMU | `qemu-system-arm` / `qemu-system-aarch64` / `qemu-system-riscv32` / `qemu-system-riscv64` with semihosting |
 | `-host` | the Linux host (POSIX port) | the native program |
 | `-hwd` | the real board | OpenOCD with the board's configuration (label `hwd`) |
 | `-hwd` manual | the real board, driven by hand | label `hwd-manual`; excluded from `-L hwd` |
@@ -64,6 +64,9 @@ with OpenOCD only (no GDB). Before each AArch hardware test CTest adds
 | `cortexm-nucleof411` | cortexm | ST Nucleo-F411RE | 1× Cortex-M4F | 1 | 4 hwd | on-board ST-Link v2.1 |
 | `cortexm-weactf411` | cortexm | WeAct Studio F411CE | 1× Cortex-M4F | 1 | 5 hwd | DAPLink CMSIS-DAP (or WCH-Link) |
 | `cortexm-weactf412` | cortexm | WeAct Studio F412RE | 1× Cortex-M4F | 1 | 5 hwd | ST-Link |
+| `riscv-milkv-duo` | riscv | Milk-V Duo 64 MB (Sophgo CV1800B) | 1× T-Head C906, RV64GC | 1 | 20 hwd images (no CTest cases yet, §7a) | Sipeed CMSIS-DAP `d6e7:3507` |
+| `qemu-riscv64` | riscv | QEMU `virt` | RV64GC | 1 | 17 QEMU | — |
+| `qemu-riscv32` | riscv | QEMU `virt` | RV32IMAC, no FPU (the Hazard3 code) | 1 | 17 QEMU (`mmu-test` SKIP) | — |
 | `native` | posix-arch | the Linux host | host threads as CPUs | 4 (`-DNCPU`) | 20 host | — |
 | `2xcortex-m33` | cortexm | QEMU `mps2-an521` | 2× Cortex-M33 | 2 | 4 QEMU | — |
 | `pico2-1cpu` | cortexm | QEMU `mps2-an505` | 1× Cortex-M33 | 1 | 4 QEMU | — |
@@ -90,6 +93,13 @@ single-core (`OS_NCPU=1`, no `OS_USE_SMP_SCHEDULER`). Each registers three
 suites: `<platform>-rtos-apis-test`, `-mutex-stress-test` and
 `-cmsis-os-validator-test`. (`2xcortex-m33` and `pico2-1cpu` likewise link the
 local generic M33 core, `micro-os-plus::cortexm-qemu-m33`.)
+
+The two `qemu-riscv*` platforms are the RISC-V port on QEMU's `virt` machine
+(`-M virt -smp 1 -m 128M -bios none`, the console on `-serial stdio`): the
+port's virt board (`micro-os-plus::riscv-qemu-virt-board`, `-virt32-board`)
+and its linker script. They build the RISC-V board tests from
+`platforms/riscv-milkv-duo/tests/` (the ones that need the Duo's silicon are
+`HWD_ONLY` there and get no image) and the six suites (§7a).
 
 ## 3. Probes
 
@@ -365,6 +375,34 @@ destructors while RTOS threads are still alive, which fails
 `assert(empty())` in `double_list::~double_list()`. `_Exit()` is the
 semihosting exit at once.
 
+## 7a. RISC-V
+
+`tests/platforms/riscv-milkv-duo/` (the board), `qemu-riscv64/` and
+`qemu-riscv32/` (QEMU `virt`, §2). One hart everywhere: the kernel's scalar
+scheduler. The board tests live in `platforms/riscv-milkv-duo/tests/`; the
+three platforms build them, the QEMU ones without the `HWD_ONLY` tests.
+
+| Test | What it does | Duo | `qemu-riscv64` | `qemu-riscv32` |
+|---|---|---|---|---|
+| `clock-catchup` | The RTOS clock follows real time across missed ticks (interrupts masked for 100 ms, ten times). | hwd | QEMU | QEMU |
+| `clock-test` | The system tick and `hrclock` against the platform timer. | hwd | QEMU | QEMU |
+| `exc-test` | Exception entry works and the port survives it. | hwd | QEMU | QEMU |
+| `mmu-test` | The Sv39 page tables translate, proven from machine mode. | hwd | QEMU | SKIP (Sv39 needs RV64) |
+| `mos-test1` | The Nucleo-F411RE's single-hart acceptance test (producer/consumer). | hwd | QEMU | QEMU |
+| `mutex-ceiling-test` | A protect-protocol lock refused with `EINVAL` leaves nothing behind. | hwd | QEMU | QEMU |
+| `sc-test-ko` | The Pico 2's single-core kernel-object test. | hwd | QEMU | QEMU |
+| `semihosting-test` | The RISC-V semihosting channel, end to end. | hwd | QEMU | QEMU |
+| `smp-mat-test` | The Pico 2's matrix test, on one hart. | hwd | QEMU | QEMU |
+| `smp_test0` | The bring-up: console, 1 ms tick, a scheduled thread. | hwd | QEMU | QEMU |
+| `smp-test1` | The Pico 2's `smp-test1`, on one hart. | hwd | QEMU | QEMU |
+| `smp-test-nested` | Nested interrupts on the CV1800B's PLIC, timers and UART4. | hwd | — | — |
+| `smp-test-usb-cdc-acm`, `smp-test-usb-hid` | USB device on the CV1800B's DWC2 (TinyUSB); the PC's side runs `usb-host.py`. | hwd | — | — |
+| `blinky`, `fp-switch`, `mutex-stress`, `instrumentation`, `rtos-apis`, `cmsis-os-validator` | The upstream suites (§4). `fp-switch` checks f0–f31 and `fcsr.fflags` where there is an FPU; on `qemu-riscv32` (no FPU) it has nothing to check. The validator's IRQ 0 is the port's software-interrupt line 0 (`src/cmsis-os-validator-support.cpp`). | hwd | QEMU | QEMU |
+
+The Duo's `hwd` images are built but not registered with CTest yet; a board
+run is by hand with the port's runner,
+`BUILD=<build>/platform-bin/port-tests <port>/test/boards/milkv-duo/hw.sh <test>`.
+
 ## 8. POSIX — native host
 
 `tests/platforms/native/`. Host threads stand in for
@@ -411,6 +449,9 @@ AArch32 and AArch64 Pi Zero 2 W / Pi 3 B / Pi 4 B, the QEMU Cortex-M boards,
 `2xcortex-m33`, `pico2-1cpu`, the Pico 2 boards and the POSIX host. The two
 initial failures (`aarch32-rpi3b-smp-pipeline-test-qemu`, the PSRAM board's
 `cmsis-os-validator` on RPi 4 B) passed on rerun.
+
+**RISC-V QEMU** (2026-11-26): `qemu-riscv64` 17/17 and `qemu-riscv32` 16/17
+with `mmu-test` SKIP, Debug and Release (the validator 60/60 on both).
 
 **Hardware** (2026-11-20, through CTest and OpenOCD; logs in the workspace's
 `hw-check/2026-11-20-*`):

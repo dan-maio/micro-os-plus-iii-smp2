@@ -98,6 +98,7 @@ From `micro-os-plus-iii/tests`:
 | `xpm run test-native-cmake-sys` | POSIX host, system compiler, debug + release |
 | `xpm run test-native-cmake` | POSIX host, xPack GCC 11–14 and clang 16–19 |
 | `xpm run test-cortex-cmake` | QEMU Cortex-M0/M3/M4F/M7F |
+| `xpm run test-qemu-riscv-cmake` | QEMU RISC-V `virt`, RV64 and RV32 |
 | `xpm run test-smp-cmake` | the CI SMP set: Pi Zero 2 W and Pi 3 B both ports, 2×M33, `pico2-1cpu`, Pico 2, PSRAM board (not Pi 4 B) |
 | `xpm run test-<platform>-cmake` | one board/platform, debug + release |
 
@@ -125,6 +126,8 @@ configuration's own `test`) for that board.
 | Cortex-M QEMU | `qemu-cortex-m0`, `-m3`, `-m4f`, `-m7f` | QEMU MPS2 |
 | Cortex-M SMP QEMU | `2xcortex-m33`, `pico2-1cpu` | QEMU SSE-200 (2 cores / 1 core) |
 | Cortex-M boards | `cortexm-pico2`, `cortexm-pico`, `cortexm-pico2-pizero`, `cortexm-pico2-rp2350b-psram`, `cortexm-nucleof411`, `cortexm-weactf411`, `cortexm-weactf412` | QEMU where applicable, and the board through OpenOCD |
+| RISC-V QEMU | `qemu-riscv64`, `qemu-riscv32` | QEMU `virt` (RV64GC / RV32IMAC without an FPU) |
+| RISC-V boards | `riscv-milkv-duo` | the board (`hwd` images built; no CTest cases yet) |
 | POSIX host | `native-cmake-sys`, `native-cmake-gcc*`, `native-cmake-clang*` | the PC process |
 
 Each family has a debug and a release configuration. AArch and Cortex-M
@@ -143,6 +146,8 @@ releases use `MinSizeRel`; native releases use `Release`.
 | WeAct RP2350B + PSRAM | QEMU | OpenOCD | the three clock tests (pot + `y`); `_200`/`_250` are `hwd-manual` |
 | Nucleo F411 / WeAct F411 / F412 | — | OpenOCD | — |
 | QEMU Cortex-M / `2xcortex-m33` / `pico2-1cpu` | QEMU | — | — |
+| QEMU RISC-V (`qemu-riscv64`, `qemu-riscv32`) | QEMU | — | — |
+| Milk-V Duo (`riscv-milkv-duo`) | — | built; by hand with the port's `hw.sh` | CDC-ACM, HID |
 | POSIX host | host process | — | — |
 
 ## 6. Select one test, a label, or a board

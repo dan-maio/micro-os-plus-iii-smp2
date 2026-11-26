@@ -1,10 +1,10 @@
 # µOS++ III SMP, all repositories in one (`micro-os-plus-iii-smp2`)
 
 The µOS++ III SMP work in one repository: the portable kernel with its whole
-test harness, the four architecture ports, the five device packages, and the
+test harness, the five architecture ports, the five device packages, and the
 records of the alignment with upstream. Each part was a separate git
 repository. Each is here in the folder it had in the working tree: the kernel
-and the device packages merged with their full history, the four ports as git
+and the device packages merged with their full history, the five ports as git
 submodules of their own GitHub repositories:
 
 ```text
@@ -18,6 +18,7 @@ cortexm/micro-os-plus-iii-cortexm/          the Cortex-M port (submodule)
 cortexm/micro-os-plus-iii-devices-rp2xxx/   Raspberry Pi RP2040/RP2350 devices
 cortexm/micro-os-plus-iii-devices-stm32f4/  STM32F4 devices
 posix-arch/micro-os-plus-iii-posix-arch/    the POSIX (host) port (submodule)
+riscv/micro-os-plus-iii-riscv/              the RISC-V port (submodule)
 workspace-records/                          the alignment records: baseline and
                                             step*-check/, hw-check/, docs-check/
 WORKING-WITH-LOCAL-BARE.md, .pdf            how the parts are kept in local bare repositories
@@ -25,7 +26,7 @@ WORKING-WITH-REMOTE.md, .pdf                GitHub: signing in, cloning, pulling
                                             keeping this repository and the parts in step
 ```
 
-Clone with the submodules, or the four port folders stay empty:
+Clone with the submodules, or the five port folders stay empty:
 
 ```bash
 git clone --recurse-submodules https://github.com/dan-maio/micro-os-plus-iii-smp2.git
@@ -51,8 +52,8 @@ rewritten):
 | `cortexm/micro-os-plus-iii-devices-rp2xxx` | `9e51139` |
 | `cortexm/micro-os-plus-iii-devices-stm32f4` | `ea867df` |
 
-The four ports are submodules that follow the branch `smp` of their GitHub
-repository (`.gitmodules`). They were imported as subtrees too; on
+The Arm and POSIX ports are submodules that follow the branch `smp` of their
+GitHub repository (`.gitmodules`). They were imported as subtrees too; on
 2026-11-25 each port's `smp` was fast-forwarded to its `align/smp-upstream`
 (same commits, same hashes) and the subtree folder was replaced by the
 submodule:
@@ -63,6 +64,16 @@ submodule:
 | `aarch64/micro-os-plus-iii-aarch64` | `micro-os-plus-iii-aarch64` | `7141456` |
 | `cortexm/micro-os-plus-iii-cortexm` | `micro-os-plus-iii-cortexm` | `a59271c` |
 | `posix-arch/micro-os-plus-iii-posix-arch` | `micro-os-plus-iii-posix-arch` | `673a30e` |
+
+The RISC-V port, `riscv/micro-os-plus-iii-riscv`, was added on 2026-11-26 as
+a submodule of `dan-maio/micro-os-plus-iii-riscv` (`.gitmodules`: branch
+`smp`). It is being aligned to this repository's test model one board at a
+time (`micro-os-plus-iii/docs/diff-smp2-vs-smp-riscv.md`, chapter 6); until
+that work is merged, the submodule's commit is on the port's branch
+`riscv-integration` (the state of `smp` before it is tagged
+`smp-pre-align`). The Milk-V Duo is the first board moved: its platform is
+`micro-os-plus-iii/tests/platforms/riscv-milkv-duo`, and the RISC-V tests run
+emulated as `qemu-riscv64` and `qemu-riscv32`.
 
 The earlier version of the kernel is in `dan-maio/micro-os-plus-iii`, branch
 `smp`; this repository does not change it. The earlier version of each port

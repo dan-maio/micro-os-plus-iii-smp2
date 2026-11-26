@@ -120,6 +120,8 @@ then the `-release` configuration of each member.
 | `xpm run test-native-cmake-sys` | the POSIX host with the system compiler |
 | `xpm run test-native-cmake` | the POSIX host with xPack GCC 11–14 and clang 16–19 (`test-native-cmake-gcc14`, `-clang19`, … one by one) |
 | `xpm run test-cortex-cmake` | QEMU Cortex-M0, M3, M4F, M7F (`test-qemu-cortex-m7f-cmake`, …) |
+| `xpm run test-qemu-riscv-cmake` | QEMU RISC-V `virt`: `qemu-riscv64` and `qemu-riscv32` |
+| `xpm run build-riscv-milkv-duo-cmake` | builds the Milk-V Duo's hardware images (no tests run) |
 | `xpm run test-smp-cmake` | the SMP QEMU configurations: AArch32 and AArch64 Pi Zero 2 W and Pi 3 B, the dual Cortex-M33, the single-CPU Pico 2, the Pico 2 and its PSRAM board (not the Pi 4 B) |
 | `xpm run test-aarch64-rpi4b-cmake`, `test-cortexm-pico-cmake` | one board's QEMU tests |
 | `xpm run test-all` | the native, Cortex-M and SMP groups above; not every platform |
@@ -128,6 +130,12 @@ The Luckfox Lyra (`aarch32-luckfox-lyra-*`), the Pico 2 Pi Zero, the Nucleo
 F411 and the WeAct F411 and F412 have hardware tests only. Their `test`
 action runs the unattended board set; on the Lyra and Pi-Zero it skips the
 PC-driven cases, and `test-hwd` runs every hardware case (section 5).
+
+The Milk-V Duo (`riscv-milkv-duo-*`) builds its hardware images, but they
+are not CTest cases yet: run one by hand with the RISC-V port's runner,
+`BUILD=build/riscv-milkv-duo-cmake-gcc-debug/platform-bin/port-tests
+../../riscv/micro-os-plus-iii-riscv/test/boards/milkv-duo/hw.sh <test>`. Its
+tests run emulated as `qemu-riscv64` and `qemu-riscv32`.
 
 ## 5. On the board (`hwd`)
 

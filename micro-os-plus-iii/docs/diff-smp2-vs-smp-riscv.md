@@ -1359,6 +1359,57 @@ test name means different things on different boards.
 4. **The OpenOCD forks:** a documented local install, or a request to
    package them as xPacks.
 
+---
+
+### 6.8 Status (2026-11-26): the Milk-V Duo pilot, QEMU only
+
+Decided: the pilot is one board, `milkv-duo`, checked on QEMU only; the
+submodule folder is `riscv/micro-os-plus-iii-riscv`; the work is on the
+branch `riscv-integration` of this repository and of the port (the port's
+starting point is tagged `smp-pre-align`).
+
+**Done.**
+
+| Plan step | What was done |
+|---|---|
+| Phase 0 | Tag `smp-pre-align` and branches `riscv-integration`. No hardware baseline (QEMU only). |
+| Phase 1.1 | The four test-source fixes (fp-switch, instrumentation, mutex-stress, rtos-apis). `trace.cpp` is upstream's again: see "Changed from the plan". |
+| Phase 1.2–1.5 | The submodule; `link-local.sh` finds `riscv/` as it is; `tests/package.json`: `riscv-actions` (`link-deps`), `riscv-dependencies` (riscv-none-elf-gcc 15.2.0-1.1, qemu-riscv 9.2.4-1.1, openocd); `tests/board-tests`: `UOS_TESTS_PORT riscv`. |
+| The port | Under the kernel's `tests/` it is a leaf library, like the Arm ports here: `micro-os-plus::riscv` (no kernel, no board), `micro-os-plus::riscv-bare`, and the QEMU `virt` board, `micro-os-plus::riscv-qemu-virt[32]-board`. Built as the top-level project it keeps its standalone layout, for the five boards not moved yet. |
+| Phase 2 (`milkv-duo`) | `tests/platforms/riscv-milkv-duo`: the board facts (`cmake/board.cmake`, `tests/cmake/uos-riscv-board.cmake`), code, linker script, USB bring-up and OpenOCD configurations; its 14 board tests. The six suites are `UOS_TESTS_SUITES` (from `tests/sources/`), not placeholder folders; the validator's RISC-V glue is `src/cmsis-os-validator-support.cpp`. |
+| Phase 3 (QEMU) | CTest starts QEMU itself, no `qemu.sh`. The emulated tests are two platforms named for what they run on: `qemu-riscv64` and `qemu-riscv32` (the port's `virt` board; they build the board tests from `riscv-milkv-duo/tests/`). `riscv-milkv-duo` is the board only. |
+
+**Changed from the plan.**
+
+- **No `__ARM_EABI__` on RISC-V or AArch64.** The RISC-V port defined it,
+  and the AArch64 builds did, so that the kernel compiled its bare-metal
+  code. The compilers define no such macro (riscv-none-elf-gcc predefines
+  `__riscv`, aarch64-none-elf-gcc `__aarch64__`, and neither an OS macro).
+  `include/cmsis-plus/os-bare-metal.h` now derives `OS_BARE_METAL` from the
+  compiler's macros, and the kernel's bare-metal guards and the suites test
+  it. So B's `trace.cpp` change is not needed. The validator xPack still
+  defines `ARM_CMSIS_VALIDATOR_IRQHandler` only under `__ARM_EABI__`; the
+  AArch64 platforms define it in their `cmsis-os-validator-support.cpp`.
+- **The QEMU tests are not the Duo's.** They are `qemu-riscv64` and
+  `qemu-riscv32`, so an RV32 build (the Hazard3 code) runs on every change.
+
+**Results** (QEMU, Debug and Release): `qemu-riscv64` 17/17;
+`qemu-riscv32` 16/17 with `mmu-test` SKIP (Sv39 needs RV64);
+`aarch64-rpi4b` 32/32 and `cortexm-pico2` 6/6 after the `OS_BARE_METAL`
+change.
+
+**Left.**
+
+1. The Duo's hardware runs as CTest cases (`uos_tests_add_hwd()`, the WDT
+   reset of `reset.cfg` as the reset fixture). Until then, by hand:
+   `BUILD=<build>/platform-bin/port-tests <port>/test/boards/milkv-duo/hw.sh <test>`.
+2. The other five boards, then deleting the boards, tests and runners from
+   the port. The Duo's copy stays in the port until then: its `qemu.sh` is
+   also the QEMU runner of the port's `pico2` and `mangopi-mq-pro`.
+3. Phase 4 (the duplicated test names).
+4. Merge `riscv-integration` (port, then this repository) and move the
+   submodule's branch back to `smp`.
+
 
 ## How this was made
 
