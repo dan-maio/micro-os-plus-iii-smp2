@@ -87,10 +87,14 @@ if (UOS_TESTS_PORT STREQUAL "posix")
 else ()
   set (_linker_hwd  "${UOS_BOARD_LINKER_HW}")
   set (_linker_qemu "${UOS_BOARD_LINKER_QEMU}")
+  # `qemu` when the board has a QEMU linker script, `hwd` when it has a
+  # hardware one: a QEMU machine as the board (qemu-riscv64) has no `hwd`.
+  set (_variants "")
   if (_linker_qemu)
-    set (_variants qemu hwd)
-  else ()
-    set (_variants hwd)
+    list (APPEND _variants qemu)
+  endif ()
+  if (_linker_hwd)
+    list (APPEND _variants hwd)
   endif ()
 endif ()
 
@@ -337,10 +341,14 @@ foreach (_dir IN LISTS _test_dirs)
     list (APPEND _libs ${_app_libs})
   endif ()
 
-  # A test listed HWD_ONLY gets the hardware image only.
+  # A test listed HWD_ONLY gets the hardware image only (none, on a board
+  # without one).
   set (_app_variants ${_variants})
   if ("${_app}" IN_LIST BOARD_TEST_HWD_ONLY)
-    set (_app_variants hwd)
+    set (_app_variants "")
+    if ("hwd" IN_LIST _variants)
+      set (_app_variants hwd)
+    endif ()
   endif ()
 
   foreach (_variant IN LISTS _app_variants)

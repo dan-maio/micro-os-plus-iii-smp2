@@ -237,7 +237,11 @@
         "xpm run link-deps --config cortexm-weactf412-cmake-gcc-debug",
         "xpm run link-deps --config cortexm-weactf412-cmake-gcc-release",
         "xpm run link-deps --config riscv-milkv-duo-cmake-gcc-debug",
-        "xpm run link-deps --config riscv-milkv-duo-cmake-gcc-release"
+        "xpm run link-deps --config riscv-milkv-duo-cmake-gcc-release",
+        "xpm run link-deps --config qemu-riscv64-cmake-gcc-debug",
+        "xpm run link-deps --config qemu-riscv64-cmake-gcc-release",
+        "xpm run link-deps --config qemu-riscv32-cmake-gcc-debug",
+        "xpm run link-deps --config qemu-riscv32-cmake-gcc-release"
       ],
       "test-all": [
         "xpm run test-native-cmake",
@@ -527,13 +531,25 @@
         "xpm run build --config cortexm-pico2-rp2350b-psram-cmake-gcc-release",
         "xpm run test --config cortexm-pico2-rp2350b-psram-cmake-gcc-release"
       ],
-      "test-riscv-milkv-duo-cmake": [
+      "test-qemu-riscv-cmake": [
+        "xpm run prepare --config qemu-riscv64-cmake-gcc-debug",
+        "xpm run build --config qemu-riscv64-cmake-gcc-debug",
+        "xpm run test --config qemu-riscv64-cmake-gcc-debug",
+        "xpm run prepare --config qemu-riscv64-cmake-gcc-release",
+        "xpm run build --config qemu-riscv64-cmake-gcc-release",
+        "xpm run test --config qemu-riscv64-cmake-gcc-release",
+        "xpm run prepare --config qemu-riscv32-cmake-gcc-debug",
+        "xpm run build --config qemu-riscv32-cmake-gcc-debug",
+        "xpm run test --config qemu-riscv32-cmake-gcc-debug",
+        "xpm run prepare --config qemu-riscv32-cmake-gcc-release",
+        "xpm run build --config qemu-riscv32-cmake-gcc-release",
+        "xpm run test --config qemu-riscv32-cmake-gcc-release"
+      ],
+      "build-riscv-milkv-duo-cmake": [
         "xpm run prepare --config riscv-milkv-duo-cmake-gcc-debug",
         "xpm run build --config riscv-milkv-duo-cmake-gcc-debug",
-        "xpm run test --config riscv-milkv-duo-cmake-gcc-debug",
         "xpm run prepare --config riscv-milkv-duo-cmake-gcc-release",
-        "xpm run build --config riscv-milkv-duo-cmake-gcc-release",
-        "xpm run test --config riscv-milkv-duo-cmake-gcc-release"
+        "xpm run build --config riscv-milkv-duo-cmake-gcc-release"
       ],
       "build-aarch32-luckfox-lyra-cmake": [
         "xpm run prepare --config aarch32-luckfox-lyra-cmake-gcc-debug",
@@ -1977,6 +1993,58 @@
         "properties": {
           "buildType": "MinSizeRel",
           "shortConfigurationName": "rmdr"
+        }
+      },
+      "qemu-riscv64-cmake-gcc-debug": {
+        "inherit": [
+          "riscv-actions",
+          "cmake-actions",
+          "riscv-dependencies",
+          "short-win-paths-properties"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-riscv64",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "qrv64d"
+        },
+        "actions": {
+          "test": "cd {{ properties.buildFolderRelativePath }} && ctest -V -LE \"hwd\""
+        }
+      },
+      "qemu-riscv64-cmake-gcc-release": {
+        "inherit": [
+          "qemu-riscv64-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "qrv64r"
+        }
+      },
+      "qemu-riscv32-cmake-gcc-debug": {
+        "inherit": [
+          "riscv-actions",
+          "cmake-actions",
+          "riscv-dependencies",
+          "short-win-paths-properties"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-riscv32",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "qrv32d"
+        },
+        "actions": {
+          "test": "cd {{ properties.buildFolderRelativePath }} && ctest -V -LE \"hwd\""
+        }
+      },
+      "qemu-riscv32-cmake-gcc-release": {
+        "inherit": [
+          "qemu-riscv32-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "qrv32r"
         }
       }
     }

@@ -25,11 +25,10 @@ set (UOS_BOARD_CAPS  led uart semihosting mmu fpu)
 set (UOS_BOARD_LINKER_HW
      "${CMAKE_SOURCE_DIR}/platforms/riscv-milkv-duo/device/linker-scripts/linker.ld")
 
-# QEMU does not model the CV1800B. The `qemu` image of every test runs on
-# QEMU's virt machine instead: tests/tests.cmake replaces the port and the
-# board with micro-os-plus::riscv-qemu-virt, which carries its own linker
-# script. A value is still needed here to request the `qemu` variant at all.
-set (UOS_BOARD_LINKER_QEMU "${UOS_RISCV_DIR}/qemu/virt/linker.ld")
+# No `qemu` image: QEMU does not model the CV1800B. This board's tests run
+# emulated on QEMU's virt machine as the platforms qemu-riscv64 and
+# qemu-riscv32, which build them from this folder's tests/.
+set (UOS_BOARD_LINKER_QEMU "")
 
 set (UOS_BOARD_LIBS "")
 

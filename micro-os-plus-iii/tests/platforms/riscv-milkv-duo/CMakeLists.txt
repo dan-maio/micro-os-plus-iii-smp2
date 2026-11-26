@@ -4,15 +4,11 @@
 #
 # The board's tests are this platform's tests/<app>/, plus upstream's suites
 # (tests/sources/<suite>/); the tests' builder (board-tests/) compiles each as
-# `-hwd` for the probe and `-qemu` for the emulator, and this platform
-# registers what it produced, named `<platform>-<app>-<variant>`.
+# `-hwd`, for the board over JTAG.
 #
-# QEMU does not model the CV1800B: the `qemu` image of each test runs on QEMU's
-# virt machine (RV64GC, 128 MiB, no firmware -- the image is the reset
-# vector), linked against the port's stand-in micro-os-plus::riscv-qemu-virt
-# (tests/tests.cmake). The console is the virt UART on stdio; each test ends
-# itself through the semihosting SYS_EXIT, so CTest reads a real exit code,
-# and the RESULT line it prints says FAIL or SKIP where that applies.
+# There are no `qemu` images here: QEMU does not model the CV1800B. The same
+# tests run emulated on QEMU's virt machine as the platforms qemu-riscv64 and
+# qemu-riscv32.
 #
 # The `hwd` images are built; their CTest cases (OpenOCD from CTest, as the
 # other boards) are not registered yet. Until then a hardware run is by hand,
@@ -38,41 +34,5 @@ set (UOS_TESTS_SUITES
 set (UOS_TESTS_BOARD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests")
 add_subdirectory ("${CMAKE_SOURCE_DIR}/board-tests" "port-tests/test")
 
-set (_port_bin "${CMAKE_CURRENT_BINARY_DIR}/port-tests")
-
-# The QEMU binary, from the configuration's xpm .bin (the per-config pin).
-unset (_qemu CACHE)
-find_program (
-  _qemu qemu-system-riscv64
-  HINTS "${CMAKE_BINARY_DIR}/xpacks/.bin"
-)
-if (NOT _qemu)
-  set (_qemu "qemu-system-riscv64")
-endif ()
-
-include ("${CMAKE_SOURCE_DIR}/cmake/uos-tests-run.cmake")
-
 # -----------------------------------------------------------------------------
-# One CTest case per test the builder built with a `qemu` image.
-foreach (_app IN LISTS UOS_TESTS_APPS)
-  if (TARGET "${_app}-qemu")
-    add_test (
-      NAME "${PLATFORM_NAME}-${_app}-qemu"
-      COMMAND
-        "${_qemu}" -M virt -cpu rv64 -smp 1 -m 128M -nographic -bios none
-        -kernel "${_port_bin}/test/${_app}-qemu.elf"
-        -semihosting-config enable=on,target=native
-        -monitor none -serial stdio
-    )
-    uos_tests_timeout ("${_app}" _timeout)
-    set_tests_properties (
-      "${PLATFORM_NAME}-${_app}-qemu"
-      PROPERTIES LABELS "qemu" TIMEOUT ${_timeout}
-                 FAIL_REGULAR_EXPRESSION "RESULT: FAIL"
-                 SKIP_REGULAR_EXPRESSION "RESULT: SKIP"
-    )
-  endif ()
-endforeach ()
-
-# -----------------------------------------------------------------------------
-message (STATUS "RISC-V milkv-duo: tests registered (${PLATFORM_NAME})")
+message (STATUS "RISC-V milkv-duo: hwd images built, no CTest cases yet (${PLATFORM_NAME})")

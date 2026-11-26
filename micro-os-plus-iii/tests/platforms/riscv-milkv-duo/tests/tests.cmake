@@ -1,17 +1,17 @@
 # -----------------------------------------------------------------------------
-# What the Milk-V Duo's tests need beyond the defaults.
+# What the RISC-V board tests need beyond the defaults.
 #
 # Every test here is a board test: it has its own os_main(), links
 # micro-os-plus::riscv and the board, and ends with a RESULT line and a
-# semihosting exit. Upstream's suites (UOS_TESTS_SUITES, in ../CMakeLists.txt)
-# are not here: the tests' builder takes them from tests/sources/<suite>/.
+# semihosting exit. Upstream's suites (UOS_TESTS_SUITES, in the platforms'
+# CMakeLists.txt) are not here: the tests' builder takes them from
+# tests/sources/<suite>/.
 #
-# The `qemu` image. QEMU does not model the CV1800B, so the emulated image of
-# each test links the port against QEMU's virt machine instead of this board
-# (micro-os-plus::riscv-qemu-virt: the same port core, a virt CLINT, an
-# NS16550 console, a virtual LED, its own linker script). The test's sources
-# are unchanged; only what runs under them differs -- exactly how the
-# Cortex-M port's pico2 runs its tests on QEMU.
+# Three platforms build this folder: riscv-milkv-duo (the board, `hwd`
+# images), and qemu-riscv64 and qemu-riscv32 (QEMU's virt machine as the
+# board, `qemu` images). The tests use the board interface both have
+# (riscv-board.hpp, uart.hpp, led.hpp); the tests below need the Duo's own
+# silicon and get no `qemu` image.
 # -----------------------------------------------------------------------------
 
 # Hardware only: smp-test-nested drives the CV1800B's PLIC, timers and UART4,
@@ -45,8 +45,4 @@ function (board_test_includes _app _out)
   else ()
     set (${_out} "" PARENT_SCOPE)
   endif ()
-endfunction ()
-
-function (board_test_qemu_libs _app _out)
-  set (${_out} micro-os-plus::riscv-qemu-virt PARENT_SCOPE)
 endfunction ()

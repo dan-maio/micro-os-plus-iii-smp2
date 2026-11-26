@@ -185,6 +185,9 @@ for example `native-cmake-clang17-release` or
   `raspberrypi-pico` - physical boards (manual)
 - `pico2-1cpu`, `2xcortex-m33` - the generic Cortex-M33 core on QEMU
   (one and two CPUs)
+- `qemu-riscv64`, `qemu-riscv32` - the RISC-V port on QEMU's virt machine
+  (RV64GC; RV32IMAC without an FPU), running the RISC-V board tests and the
+  suites
 - the SMP fork's board platforms: `aarch32-rpi-zero-2w`, `aarch32-rpi3b`,
   `aarch32-luckfox-lyra`, `aarch64-rpi-zero-2w`, `aarch64-rpi3b`,
   `aarch64-rpi4b`, `cortexm-pico`, `cortexm-pico2`, `cortexm-pico2-pizero`,
