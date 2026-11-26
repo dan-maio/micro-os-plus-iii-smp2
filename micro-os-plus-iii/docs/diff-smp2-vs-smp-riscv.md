@@ -1093,20 +1093,6 @@ Main items:
 
 </details>
 
-## How this was made
-
-```sh
-cd ~/Work
-diff -ruN -x .git -x node_modules -x build -x docs -x '*.md' -x '*.pdf' \
-  -x package-lock.json -x xpacks -x .vscode \
-  micro-os-plus-iii-smp2/micro-os-plus-iii \
-  micro-os-plus-iii-smp-riscv/micro-os-plus-iii
-```
-
-The full output, including every new file, is about 188k lines. Most of it is the directories that exist in only one tree.
-
----
-
 ## 6. Integrating `micro-os-plus-iii-smp-riscv` into `micro-os-plus-iii-smp2` (analysis and plan)
 
 Date: 2026-11-26
@@ -1373,3 +1359,15 @@ test name means different things on different boards.
 4. **The OpenOCD forks:** a documented local install, or a request to
    package them as xPacks.
 
+
+## How this was made
+
+```sh
+cd ~/Work
+diff -ruN -x .git -x node_modules -x build -x docs -x '*.md' -x '*.pdf' \
+  -x package-lock.json -x xpacks -x .vscode \
+  micro-os-plus-iii-smp2/micro-os-plus-iii \
+  micro-os-plus-iii-smp-riscv/micro-os-plus-iii
+```
+
+The full output, including every new file, is about 188k lines. Most of it is the directories that exist in only one tree.
