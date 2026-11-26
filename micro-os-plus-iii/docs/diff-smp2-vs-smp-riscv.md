@@ -1410,8 +1410,10 @@ change.
    the VF2) and the boards' own CMake steps (the RP2350B's architecture
    switch, the CH32V307's programming and read-back, the MangoPi's `xfel`
    loader). Run on the board: the Pico 2, 19/19 (not its two USB tests);
-   the MangoPi MQ-Pro, 16/16 (not its two Wi-Fi tests). The Duo, the
-   RP2350B, the VF2 and the CH32V307 still have to be run.
+   the MangoPi MQ-Pro, 16/16 (not its two Wi-Fi tests); the Milk-V Duo,
+   17/18 (not its two USB tests; `smp-test-nested` hangs in its
+   nested-interrupt part, open). The RP2350B, the VF2 and the CH32V307 still
+   have to be run.
 2. Done: the port holds only the port (`src/`, `include/`, `qemu/virt/`, its
    docs). Its `test/` (boards, tests, the shell runners, `third_party/`), its
    standalone build and its xpm build actions are gone; the VisionFive 2's
