@@ -75,8 +75,11 @@ The tests are driven from `micro-os-plus-iii/tests/` (xpm configurations in
 its `package.json`; see `micro-os-plus-iii/README.md` and
 `micro-os-plus-iii/docs/tests/`). Each platform's
 `cmake/dependencies-folders.cmake` takes the ports and device packages from
-`build/<configuration>/xpacks/@micro-os-plus/<name>`, which `xpm link`
-connects to the folders above.
+`build/<configuration>/xpacks/@micro-os-plus/<name>`, which
+`xpm run link-deps --config <configuration>` connects to the folders above
+(`scripts/link-local.sh`, relative links into this repository; not
+`xpm link`, which follows the machine's `~/.local/xPacks` registrations).
+`WORKING-WITH-REMOTE.md` has the full sequence.
 
 `micro-os-scaffold` (a separate tool) makes a self-contained test workspace
 from a clone of this repository, one platform or one test at a time:
