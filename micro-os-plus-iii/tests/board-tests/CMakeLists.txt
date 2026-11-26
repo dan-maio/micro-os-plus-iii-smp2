@@ -66,7 +66,9 @@ if (UOS_TESTS_PORT STREQUAL "aarch32")
   set (_common_defines TRACE __ARM_EABI__ __ARM_ARCH_7A__ SEMIHOST)
 elseif (UOS_TESTS_PORT STREQUAL "aarch64")
   set (_port_lib micro-os-plus::aarch64)
-  set (_common_defines TRACE __ARM_EABI__ __ARM_ARCH_8A__ SEMIHOST)
+  # No __ARM_EABI__: aarch64-none-elf-gcc does not define it, and the kernel
+  # recognises bare-metal AArch64 itself (cmsis-plus/os-bare-metal.h).
+  set (_common_defines TRACE __ARM_ARCH_8A__ SEMIHOST)
 elseif (UOS_TESTS_PORT STREQUAL "cortexm")
   set (_port_lib ${UOS_PORT_LIB})
   set (_common_defines TRACE SEMIHOST)

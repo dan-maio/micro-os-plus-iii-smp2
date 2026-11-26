@@ -15,7 +15,9 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))
+#include <cmsis-plus/os-bare-metal.h>
+
+#if defined(OS_BARE_METAL)
 
 // ----------------------------------------------------------------------------
 
@@ -152,4 +154,4 @@ __call_exitprocs (int code __attribute__ ((unused)),
 
 // ----------------------------------------------------------------------------
 
-#endif /* bare metal: Arm EABI, RISC-V without an OS */
+#endif /* defined(OS_BARE_METAL) */

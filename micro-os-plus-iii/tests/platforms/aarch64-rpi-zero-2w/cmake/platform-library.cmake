@@ -47,7 +47,6 @@ target_compile_definitions (
     OS_USE_SMP_SCHEDULER=1
     TRACE
     SEMIHOST
-    __ARM_EABI__
     __ARM_ARCH_8A__
     _GNU_SOURCE
 )

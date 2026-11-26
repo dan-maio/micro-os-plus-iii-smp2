@@ -9,8 +9,9 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
-#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__)) \
-    || defined(__DOXYGEN__)
+#include <cmsis-plus/os-bare-metal.h>
+
+#if defined(OS_BARE_METAL) || defined(__DOXYGEN__)
 
 // ----------------------------------------------------------------------------
 
@@ -501,4 +502,4 @@ _valloc_r (/* struct */ _reent* impure __attribute__ ((unused)),
 
 // ----------------------------------------------------------------------------
 
-#endif /* bare metal: Arm EABI, RISC-V without an OS */
+#endif /* defined(OS_BARE_METAL) */

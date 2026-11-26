@@ -7,8 +7,8 @@
 # this builds the board target from them: the board's include/ and src/ (the
 # platform's own), its defines and flags, and its libraries. This is what the
 # RISC-V port's "-board-interface" carried when the port still read the
-# board. The port's own settings (its include/, __ARM_EABI__, the forced
-# riscv-eabi-compat.h) come with micro-os-plus::riscv, not from here.
+# board. The port's own settings (its include/, its link options) come with
+# micro-os-plus::riscv, not from here.
 #
 # Facts read: UOS_BOARD_SRC_DIR, UOS_BOARD_FLAGS, UOS_BOARD_NCPU,
 # UOS_BOARD_CAPS, UOS_BOARD_LINKER_HW, UOS_BOARD_DEFINES, and optionally

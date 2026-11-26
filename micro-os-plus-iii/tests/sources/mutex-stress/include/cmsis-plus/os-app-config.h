@@ -18,7 +18,9 @@
 
 #define OS_INTEGER_SYSTICK_FREQUENCY_HZ (1000)
 
-#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))
+#include <cmsis-plus/os-bare-metal.h>
+
+#if defined(OS_BARE_METAL)
 
 // With 4 bits NVIC, there are 16 levels, 0 = highest, 15 = lowest
 
@@ -88,8 +90,7 @@
 // #define OS_TRACE_LIBCPP_OPERATOR_NEW
 // #define OS_TRACE_LIBCPP_MEMORY_RESOURCE
 
-#if !(defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))) \
-    || defined(OS_USE_TRACE_SEGGER_RTT)
+#if !defined(OS_BARE_METAL) || defined(OS_USE_TRACE_SEGGER_RTT)
 // #define OS_TRACE_RTOS_LISTS
 // #define OS_TRACE_RTOS_LISTS_CLOCKS
 // #define OS_TRACE_RTOS_THREAD_CONTEXT

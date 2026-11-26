@@ -83,3 +83,31 @@ uos_test_prologue (void)
   os::rtos::this_thread::thread ().cpu_affinity (1u << 0);
   os::rtos::this_thread::yield ();
 }
+
+// The validator's handler for its "NVIC IRQ 0", which this board raises and
+// dispatches (see the comments above). The xPack defines it only under
+// __ARM_EABI__ (arm-cmsis-rtos-validator, cmsis-plus/src/main.c), and
+// aarch64-none-elf-gcc does not define that macro, so the board does, with
+// the xPack's body; an A64 trap in place of its `bkpt 0`.
+#if !defined(__ARM_EABI__)
+
+extern "C" void (*TST_IRQHandler) (void);
+
+extern "C" void
+ARM_CMSIS_VALIDATOR_IRQHandler (void);
+
+extern "C" void
+ARM_CMSIS_VALIDATOR_IRQHandler (void)
+{
+  if (TST_IRQHandler != nullptr)
+    {
+      TST_IRQHandler ();
+      return;
+    }
+  __asm__ volatile ("brk #0");
+  for (;;)
+    {
+    }
+}
+
+#endif // !defined(__ARM_EABI__)

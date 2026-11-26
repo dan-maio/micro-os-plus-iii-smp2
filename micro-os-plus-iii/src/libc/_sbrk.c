@@ -15,7 +15,9 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))
+#include <cmsis-plus/os-bare-metal.h>
+
+#if defined(OS_BARE_METAL)
 
 // ----------------------------------------------------------------------------
 
@@ -86,6 +88,6 @@ _sbrk_r (struct _reent* impure __attribute__ ((unused)), ptrdiff_t incr)
 
 // ----------------------------------------------------------------------------
 
-#endif /* bare metal: Arm EABI, RISC-V without an OS */
+#endif /* defined(OS_BARE_METAL) */
 
 // ----------------------------------------------------------------------------

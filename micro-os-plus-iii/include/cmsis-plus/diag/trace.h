@@ -27,6 +27,8 @@
 
 #include <sys/types.h>
 
+#include <cmsis-plus/os-bare-metal.h>
+
 #if defined(__cplusplus)
 
 // To be effective, <stdio.h> must be included *before* this patch.
@@ -51,8 +53,10 @@ trace_dbg_bkpt (void)
 {
 #if defined(__ARM_EABI__)
   __asm__ volatile ("bkpt 0");
-#elif defined(__riscv) && !defined(__linux__)
+#elif defined(OS_BARE_METAL) && defined(__riscv)
   __asm__ volatile ("ebreak");
+#elif defined(OS_BARE_METAL) && defined(__aarch64__)
+  __asm__ volatile ("brk #0");
 #endif
 }
 
