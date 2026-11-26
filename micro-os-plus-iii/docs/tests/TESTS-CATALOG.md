@@ -479,9 +479,9 @@ six RISC-V boards build all their `hwd` images, Debug and Release (116).
 **RISC-V hardware** (2026-11-26, through CTest and the Raspberry Pi OpenOCD):
 the Pico 2 19/19 (all but the two USB tests, which need the PC's side);
 through `xfel`, the MangoPi MQ-Pro 16/16 (all but the two Wi-Fi tests, which
-need an access point); the Milk-V Duo 17 of its 18 tests that need no PC
-side: `smp-test-nested` stops after its timer measurement, inside its
-nested-interrupt part (open). The RP2350B, the VF2 and the CH32V307 not run
+need an access point); the Milk-V Duo 19/20, its two USB tests with
+`platforms/riscv-pico2/usb-host.py cdc|hid` run beside them: `smp-test-nested`
+stops after its timer measurement, inside its nested-interrupt part (open). The RP2350B, the VF2 and the CH32V307 not run
 from this repository yet.
 
 **Hardware** (2026-11-20, through CTest and OpenOCD; logs in the workspace's

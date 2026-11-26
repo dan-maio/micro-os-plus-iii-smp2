@@ -1411,7 +1411,7 @@ change.
    switch, the CH32V307's programming and read-back, the MangoPi's `xfel`
    loader). Run on the board: the Pico 2, 19/19 (not its two USB tests);
    the MangoPi MQ-Pro, 16/16 (not its two Wi-Fi tests); the Milk-V Duo,
-   17/18 (not its two USB tests; `smp-test-nested` hangs in its
+   19/20, its USB tests with `usb-host.py` (`smp-test-nested` hangs in its
    nested-interrupt part, open). The RP2350B, the VF2 and the CH32V307 still
    have to be run.
 2. Done: the port holds only the port (`src/`, `include/`, `qemu/virt/`, its
