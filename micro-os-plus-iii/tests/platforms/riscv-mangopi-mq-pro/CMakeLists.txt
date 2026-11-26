@@ -5,10 +5,12 @@
 # (tests/sources/<suite>/); the tests' builder (board-tests/) compiles each as
 # `-hwd`, for the board.
 #
-# The `hwd` images are built; their CTest cases are not registered yet. Until
-# then a hardware run is by hand, with the port's runner:
-# BUILD=<this build>/platform-bin/port-tests
-# <port>/test/boards/mangopi-mq-pro/hw.sh <app>.
+# hwd tests need the board in FEL mode: label `hwd` (the configuration's
+# `test` skips them), one at a time. There is no debugger: CTest runs the
+# board's loader (cmake/xfel-run.cmake: xfel writes the image into DDR and
+# starts it; the test resets into FEL with its verdict in the RTC), which
+# prints the RESULT line. The UART is not opened. The Wi-Fi tests need an
+# access point (WIFI_TEST_SSID, WIFI_TEST_PASS).
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -27,4 +29,35 @@ set (UOS_TESTS_BOARD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests")
 add_subdirectory ("${CMAKE_SOURCE_DIR}/board-tests" "port-tests/test")
 
 # -----------------------------------------------------------------------------
-message (STATUS "RISC-V mangopi-mq-pro: hwd images built, no CTest cases yet (${PLATFORM_NAME})")
+# The hardware run.
+include ("${CMAKE_SOURCE_DIR}/cmake/uos-tests-run.cmake")
+
+find_program (UOS_XFEL xfel)
+if (NOT UOS_XFEL)
+  set (UOS_XFEL "xfel")
+  message (WARNING "${PLATFORM_NAME}: xfel is not installed; the hwd tests cannot run.")
+endif ()
+
+# How long a test gets to reset into FEL (the former hw.sh's SECS).
+set (_secs 180)
+foreach (_app IN LISTS UOS_TESTS_APPS)
+  # semihosting-test is QEMU-only (BOARD_TEST_QEMU_ONLY): no hardware image.
+  if (NOT TARGET "${_app}-hwd")
+    continue ()
+  endif ()
+  set (_name "${PLATFORM_NAME}-${_app}-hwd")
+  add_test (NAME "${_name}"
+    COMMAND "${CMAKE_COMMAND}"
+            "-DXFEL=${UOS_XFEL}" "-DOBJCOPY=${CMAKE_OBJCOPY}"
+            "-DREADELF=${CMAKE_READELF}" "-DELF=$<TARGET_FILE:${_app}-hwd>"
+            "-DWORK=${CMAKE_CURRENT_BINARY_DIR}/${_name}" "-DSECS=${_secs}"
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/xfel-run.cmake")
+  # The resets around the run take up to a minute each.
+  math (EXPR _timeout "${_secs} + 180")
+  set_tests_properties ("${_name}" PROPERTIES
+    LABELS "hwd" TIMEOUT ${_timeout} RUN_SERIAL TRUE
+    ${UOS_TESTS_RESULT_PROPERTIES})
+endforeach ()
+
+# -----------------------------------------------------------------------------
+message (STATUS "RISC-V mangopi-mq-pro: hwd tests registered (${PLATFORM_NAME})")

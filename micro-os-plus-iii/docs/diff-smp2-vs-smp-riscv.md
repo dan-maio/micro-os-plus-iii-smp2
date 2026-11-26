@@ -1361,7 +1361,7 @@ test name means different things on different boards.
 
 ---
 
-### 6.8 Status (2026-11-26): all six boards build here; QEMU tests pass
+### 6.8 Status (2026-11-26): all six boards here; QEMU and the Pico 2 pass
 
 Decided: the pilot is one board, `milkv-duo`, checked on QEMU only; the
 submodule folder is `riscv/micro-os-plus-iii-riscv`; the work is on the
@@ -1402,14 +1402,19 @@ change.
 
 **Left.**
 
-1. The boards' hardware runs as CTest cases (phase 3 for `hwd`:
-   `uos_tests_add_hwd()` / `uos_tests_add_openocd()`, a loader runner for
-   the MangoPi's `xfel`). Until then, by hand, with the port's runner:
-   `BUILD=<build>/platform-bin/port-tests <port>/test/boards/<board>/hw.sh <test>`.
-   No board has been run from this repository yet.
-2. Then deleting the boards, tests and runners from the port: they are
-   still there, and its standalone build is unchanged, because its runners
-   (`hw.sh`, `qemu.sh`, `usb-host.py`) are what runs the boards today.
+1. Done (phase 3 for `hwd`): every board's hardware tests are CTest cases,
+   as on the Arm boards: `uos_tests_add_hwd()` (the Duo) or
+   `uos_tests_add_openocd()` (the others), with an optional attach retry
+   (`cmake/uos-hwd-retry.cmake`), a board's own OpenOCD (the Raspberry Pi
+   and WCH forks), per-image facts from the ELF (`cmake/uos-elf-facts.cmake`,
+   the VF2) and the boards' own CMake steps (the RP2350B's architecture
+   switch, the CH32V307's programming and read-back, the MangoPi's `xfel`
+   loader). Run on the board: the Pico 2, 19/19 (not its two USB tests). The
+   Duo, the RP2350B, the VF2, the MangoPi and the CH32V307 still have to be
+   run.
+2. Then deleting the boards, tests and runners from the port (still there,
+   and its standalone build unchanged), and the PC-side helpers
+   (`usb-host.py`) moving next to their tests.
 3. Phase 4 (the duplicated test names).
 4. Merge `riscv-integration` (port, then this repository) and move the
    submodule's branch back to `smp`.

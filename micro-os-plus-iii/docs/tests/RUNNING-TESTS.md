@@ -127,7 +127,7 @@ configuration's own `test`) for that board.
 | Cortex-M SMP QEMU | `2xcortex-m33`, `pico2-1cpu` | QEMU SSE-200 (2 cores / 1 core) |
 | Cortex-M boards | `cortexm-pico2`, `cortexm-pico`, `cortexm-pico2-pizero`, `cortexm-pico2-rp2350b-psram`, `cortexm-nucleof411`, `cortexm-weactf411`, `cortexm-weactf412` | QEMU where applicable, and the board through OpenOCD |
 | RISC-V QEMU | `qemu-riscv64`, `qemu-riscv32` | QEMU `virt` (RV64GC / RV32IMAC without an FPU) |
-| RISC-V boards | `riscv-milkv-duo`, `riscv-pico2`, `riscv-pico2-rp2350b-psram`, `riscv-visionfive2-lite`, `riscv-mangopi-mq-pro`, `riscv-ch32v307-evt` | the board (`hwd` images built; no CTest cases yet) |
+| RISC-V boards | `riscv-milkv-duo`, `riscv-pico2`, `riscv-pico2-rp2350b-psram`, `riscv-visionfive2-lite`, `riscv-mangopi-mq-pro`, `riscv-ch32v307-evt` | the board: OpenOCD (the Pico 2 boards and the CH32V307 with their vendors' forks) or `xfel` (MangoPi) |
 | POSIX host | `native-cmake-sys`, `native-cmake-gcc*`, `native-cmake-clang*` | the PC process |
 
 Each family has a debug and a release configuration. AArch and Cortex-M
@@ -147,7 +147,7 @@ releases use `MinSizeRel`; native releases use `Release`.
 | Nucleo F411 / WeAct F411 / F412 | — | OpenOCD | — |
 | QEMU Cortex-M / `2xcortex-m33` / `pico2-1cpu` | QEMU | — | — |
 | QEMU RISC-V (`qemu-riscv64`, `qemu-riscv32`) | QEMU | — | — |
-| RISC-V boards (`riscv-*`) | — | built; by hand with the port's `hw.sh` | USB, network and Wi-Fi tests (see the catalogue, §7a) |
+| RISC-V boards (`riscv-*`) | — | OpenOCD or `xfel` (see `COMMANDS.md`) | USB, network and Wi-Fi tests (see the catalogue, §7a) |
 | POSIX host | host process | — | — |
 
 ## 6. Select one test, a label, or a board

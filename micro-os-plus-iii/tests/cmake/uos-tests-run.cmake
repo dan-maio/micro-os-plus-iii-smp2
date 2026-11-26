@@ -143,6 +143,33 @@ if (NOT UOS_TESTS_OPENOCD)
   set (UOS_TESTS_OPENOCD "openocd")
 endif ()
 
+# _uos_tests_add_openocd_test (<name> <openocd> <tries> <retry-if> <retry-unless>
+#                              <OpenOCD arguments...>)
+#
+# The CTest case of one OpenOCD session: OpenOCD itself, or, when <tries> is
+# set, OpenOCD through uos-hwd-retry.cmake, which starts it again while its
+# output says the attach failed (see uos_tests_add_hwd's RETRY_*).
+function (_uos_tests_add_openocd_test _name _openocd _tries _retry_if _retry_unless)
+  set (_run_args ${ARGN})
+  if (_tries)
+    # One -D value: CTest would keep its ';' escaped, so the arguments travel
+    # joined with '|' and uos-hwd-retry.cmake splits them again.
+    string (FIND "${_run_args}" "|" _bar)
+    if (NOT _bar EQUAL -1)
+      message (FATAL_ERROR "${_name}: an OpenOCD argument contains '|'.")
+    endif ()
+    list (JOIN _run_args "|" _joined)
+    add_test (NAME "${_name}"
+      COMMAND "${CMAKE_COMMAND}"
+              "-DOPENOCD=${_openocd}" "-DARGS=${_joined}"
+              "-DTRIES=${_tries}" "-DRETRY_IF=${_retry_if}"
+              "-DRETRY_UNLESS=${_retry_unless}"
+              -P "${CMAKE_SOURCE_DIR}/cmake/uos-hwd-retry.cmake")
+  else ()
+    add_test (NAME "${_name}" COMMAND "${_openocd}" ${_run_args})
+  endif ()
+endfunction ()
+
 # uos_tests_add_hwd (
 #   NAME <ctest name> APP <app> ELF <image>
 #   CFG <board's OpenOCD configuration> [INIT] [PRE_CFG <Tcl commands...>]
@@ -150,6 +177,7 @@ endif ()
 #   RESUME entry|cpsr|pc-first|cpsr-first|pc
 #   [ADAPTER_KHZ <kHz>] [PRELOAD <Tcl>]
 #   [RESET_COMMAND <Tcl> RESET_EXPECT <regex> RESET_WAIT <seconds>]
+#   [RETRY_TRIES <n> RETRY_IF <regex> [RETRY_UNLESS <regex>]]
 #   [TIMEOUT <seconds>])
 #
 # A board OpenOCD halts and loads (the AArch boards, image in RAM):
@@ -159,11 +187,14 @@ endif ()
 # default). RESET_*: a reset that drops the debug link, run in its own OpenOCD
 # session as a CTest fixture of the test, then RESET_WAIT seconds for the
 # board to come back; the test is not run if the session's output does not
-# match RESET_EXPECT. Tcl's ';' in PRELOAD and RESET_COMMAND becomes a
-# newline (CMake splits a function's arguments at ';').
+# match RESET_EXPECT. RETRY_*: a probe whose attach sometimes fails (a
+# garbage scan chain): OpenOCD runs through uos-hwd-retry.cmake, which starts
+# it again, up to RETRY_TRIES times, while its output matches RETRY_IF and not
+# RETRY_UNLESS. Tcl's ';' in PRELOAD and RESET_COMMAND becomes a newline
+# (CMake splits a function's arguments at ';').
 function (uos_tests_add_hwd)
   cmake_parse_arguments (_a "INIT"
-    "NAME;APP;ELF;CFG;ENTRY;TARGET_FMT;RESUME;ADAPTER_KHZ;RESET_EXPECT;RESET_WAIT;TIMEOUT"
+    "NAME;APP;ELF;CFG;ENTRY;TARGET_FMT;RESUME;ADAPTER_KHZ;RESET_EXPECT;RESET_WAIT;TIMEOUT;RETRY_TRIES;RETRY_IF;RETRY_UNLESS"
     "CORES;SEMIHOST_CORES;PRE_CFG;PRELOAD;RESET_COMMAND" ${ARGN})
   get_filename_component (_cfg_dir "${_a_CFG}" DIRECTORY)
   set (_ocd_args -s "${_cfg_dir}")
@@ -181,10 +212,11 @@ function (uos_tests_add_hwd)
   # function's arguments there): join the pieces with newlines, which Tcl
   # reads the same way.
   list (JOIN _a_PRELOAD "\n" _preload)
-  add_test (NAME "${_a_NAME}"
-    COMMAND "${UOS_TESTS_OPENOCD}" ${_ocd_args}
-            -f "${CMAKE_SOURCE_DIR}/cmake/uos-hwd.tcl"
-            -c "uos_hwd_run {${_a_ELF}} ${_a_ENTRY} {${_a_TARGET_FMT}} {${_cores}} {${_semi}} ${_a_RESUME} {${_a_ADAPTER_KHZ}} {${_preload}}")
+  set (_run_args ${_ocd_args}
+       -f "${CMAKE_SOURCE_DIR}/cmake/uos-hwd.tcl"
+       -c "uos_hwd_run {${_a_ELF}} ${_a_ENTRY} {${_a_TARGET_FMT}} {${_cores}} {${_semi}} ${_a_RESUME} {${_a_ADAPTER_KHZ}} {${_preload}}")
+  _uos_tests_add_openocd_test ("${_a_NAME}" "${UOS_TESTS_OPENOCD}"
+    "${_a_RETRY_TRIES}" "${_a_RETRY_IF}" "${_a_RETRY_UNLESS}" ${_run_args})
   if (_a_TIMEOUT)
     set (_timeout ${_a_TIMEOUT})
   else ()
@@ -221,17 +253,30 @@ endfunction ()
 
 # uos_tests_add_openocd (
 #   NAME <ctest name> APP <app> ELF <image> CFG <board's OpenOCD configuration>
-#   [PRE_CFG <Tcl commands...>] COMMANDS <Tcl commands...> [TIMEOUT <seconds>])
+#   [PRE_CFG <Tcl commands...>] COMMANDS <Tcl commands...> [TIMEOUT <seconds>]
+#   [OPENOCD <executable> [SCRIPTS <its scripts folder>]]
+#   [RETRY_TRIES <n> RETRY_IF <regex> [RETRY_UNLESS <regex>]])
 #
 # A board OpenOCD programs and resets (the Cortex-M boards), as upstream's
 # hardware tests run: the configuration, then each command as a -c, @ELF@
 # standing for the image. The test's semihosting SYS_EXIT ends OpenOCD; the
-# RESULT line is the verdict.
+# RESULT line is the verdict. OPENOCD: a board that needs an OpenOCD other
+# than the configuration's xPack (a vendor fork: the RP2350's RISC-V cores,
+# the WCH-Link), with SCRIPTS its interface/ and target/ folder. RETRY_*: as
+# for uos_tests_add_hwd.
 function (uos_tests_add_openocd)
-  cmake_parse_arguments (_a "" "NAME;APP;ELF;CFG;TIMEOUT" "PRE_CFG;COMMANDS"
-                         ${ARGN})
+  cmake_parse_arguments (_a ""
+    "NAME;APP;ELF;CFG;TIMEOUT;OPENOCD;SCRIPTS;RETRY_TRIES;RETRY_IF;RETRY_UNLESS"
+    "PRE_CFG;COMMANDS" ${ARGN})
+  set (_openocd "${UOS_TESTS_OPENOCD}")
+  if (_a_OPENOCD)
+    set (_openocd "${_a_OPENOCD}")
+  endif ()
   get_filename_component (_cfg_dir "${_a_CFG}" DIRECTORY)
   set (_ocd_args -s "${_cfg_dir}")
+  if (_a_SCRIPTS)
+    list (APPEND _ocd_args -s "${_a_SCRIPTS}")
+  endif ()
   foreach (_c IN LISTS _a_PRE_CFG)
     list (APPEND _ocd_args -c "${_c}")
   endforeach ()
@@ -240,7 +285,8 @@ function (uos_tests_add_openocd)
     string (REPLACE "@ELF@" "${_a_ELF}" _c "${_c}")
     list (APPEND _ocd_args -c "${_c}")
   endforeach ()
-  add_test (NAME "${_a_NAME}" COMMAND "${UOS_TESTS_OPENOCD}" ${_ocd_args})
+  _uos_tests_add_openocd_test ("${_a_NAME}" "${_openocd}"
+    "${_a_RETRY_TRIES}" "${_a_RETRY_IF}" "${_a_RETRY_UNLESS}" ${_ocd_args})
   if (_a_TIMEOUT)
     set (_timeout ${_a_TIMEOUT})
   else ()

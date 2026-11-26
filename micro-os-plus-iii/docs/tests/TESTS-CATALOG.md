@@ -64,12 +64,12 @@ with OpenOCD only (no GDB). Before each AArch hardware test CTest adds
 | `cortexm-nucleof411` | cortexm | ST Nucleo-F411RE | 1× Cortex-M4F | 1 | 4 hwd | on-board ST-Link v2.1 |
 | `cortexm-weactf411` | cortexm | WeAct Studio F411CE | 1× Cortex-M4F | 1 | 5 hwd | DAPLink CMSIS-DAP (or WCH-Link) |
 | `cortexm-weactf412` | cortexm | WeAct Studio F412RE | 1× Cortex-M4F | 1 | 5 hwd | ST-Link |
-| `riscv-milkv-duo` | riscv | Milk-V Duo 64 MB (Sophgo CV1800B) | 1× T-Head C906, RV64GC | 1 | 20 hwd images (no CTest cases yet, §7a) | Sipeed CMSIS-DAP `d6e7:3507` |
-| `riscv-pico2` | riscv | Raspberry Pi Pico 2 (RP2350) | 2× Hazard3, RV32IMAC | 2 | 21 hwd images | Raspberry Pi Debug Probe, the Raspberry Pi OpenOCD |
-| `riscv-pico2-rp2350b-psram` | riscv | WeAct RP2350B, 16 MB flash + 8 MB PSRAM | 2× Hazard3, RV32IMAC | 2 | 21 hwd images | CMSIS-DAP `c251:f001`, the Raspberry Pi OpenOCD |
-| `riscv-visionfive2-lite` | riscv | StarFive VisionFive 2 Lite (JH-7110S) | 4× SiFive U74, RV64GC | 4 | 26 hwd images | DAPLink or Pico probe |
-| `riscv-mangopi-mq-pro` | riscv | MangoPi MQ-Pro (Allwinner D1) | 1× T-Head C906, RV64GC | 1 | 18 hwd images | none: `xfel` (USB FEL) |
-| `riscv-ch32v307-evt` | riscv | WCH CH32V307V-EVT | 1× QingKe V4F, RV32IMAFC | 1 | 10 hwd images | WCH-Link, the WCH OpenOCD |
+| `riscv-milkv-duo` | riscv | Milk-V Duo 64 MB (Sophgo CV1800B) | 1× T-Head C906, RV64GC | 1 | 20 hwd | Sipeed CMSIS-DAP `d6e7:3507` |
+| `riscv-pico2` | riscv | Raspberry Pi Pico 2 (RP2350) | 2× Hazard3, RV32IMAC | 2 | 21 hwd | Raspberry Pi Debug Probe, the Raspberry Pi OpenOCD |
+| `riscv-pico2-rp2350b-psram` | riscv | WeAct RP2350B, 16 MB flash + 8 MB PSRAM | 2× Hazard3, RV32IMAC | 2 | 19 hwd, 2 hwd-manual | CMSIS-DAP `c251:f001`, the Raspberry Pi OpenOCD |
+| `riscv-visionfive2-lite` | riscv | StarFive VisionFive 2 Lite (JH-7110S) | 4× SiFive U74, RV64GC | 4 | 26 hwd | DAPLink or Pico probe |
+| `riscv-mangopi-mq-pro` | riscv | MangoPi MQ-Pro (Allwinner D1) | 1× T-Head C906, RV64GC | 1 | 18 hwd | none: `xfel` (USB FEL) |
+| `riscv-ch32v307-evt` | riscv | WCH CH32V307V-EVT | 1× QingKe V4F, RV32IMAFC | 1 | 10 hwd | WCH-LinkE, the WCH OpenOCD |
 | `qemu-riscv64` | riscv | QEMU `virt` | RV64GC | 1 | 17 QEMU | — |
 | `qemu-riscv32` | riscv | QEMU `virt` | RV32IMAC, no FPU (the Hazard3 code) | 1 | 17 QEMU (`mmu-test` SKIP) | — |
 | `native` | posix-arch | the Linux host | host threads as CPUs | 4 (`-DNCPU`) | 20 host | — |
@@ -419,9 +419,11 @@ The other RISC-V boards, `hwd` images only (the tests are each platform's
 The Wi-Fi tests need firmware that is not in the repository (`*.bin`, the
 READMEs beside where it goes); without it they are left out at configure time.
 
-The boards' `hwd` images are built but not registered with CTest yet; a board
-run is by hand with the port's runner,
-`BUILD=<build>/platform-bin/port-tests <port>/test/boards/<board>/hw.sh <test>`.
+The boards' `hwd` cases: OpenOCD from CTest, as on the Arm boards (the Pico
+2 boards and the CH32V307 with their vendors' OpenOCD forks; the attach of
+the Duo and the VF2 retried; the VF2's per-image facts from the ELF,
+`cmake/uos-elf-facts.cmake`), or `xfel` for the MangoPi; `COMMANDS.md` says
+how each board must be ready.
 
 ## 8. POSIX — native host
 
@@ -472,8 +474,11 @@ initial failures (`aarch32-rpi3b-smp-pipeline-test-qemu`, the PSRAM board's
 
 **RISC-V QEMU** (2026-11-26): `qemu-riscv64` 17/17 and `qemu-riscv32` 16/17
 with `mmu-test` SKIP, Debug and Release (the validator 60/60 on both). The
-six RISC-V boards build all their `hwd` images, Debug and Release (116); not
-run on the boards from this repository yet.
+six RISC-V boards build all their `hwd` images, Debug and Release (116).
+
+**RISC-V hardware** (2026-11-26, through CTest and the Raspberry Pi OpenOCD):
+the Pico 2 19/19 (all but the two USB tests, which need the PC's side). The
+other RISC-V boards not run from this repository yet.
 
 **Hardware** (2026-11-20, through CTest and OpenOCD; logs in the workspace's
 `hw-check/2026-11-20-*`):

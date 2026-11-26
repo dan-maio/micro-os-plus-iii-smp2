@@ -5,10 +5,11 @@
 # (tests/sources/<suite>/); the tests' builder (board-tests/) compiles each as
 # `-hwd`, for the board.
 #
-# The `hwd` images are built; their CTest cases are not registered yet. Until
-# then a hardware run is by hand, with the port's runner:
-# BUILD=<this build>/platform-bin/port-tests
-# <port>/test/boards/ch32v307-evt/hw.sh <app>.
+# hwd tests need the board: label `hwd` (the configuration's `test` skips
+# them), one at a time. A fixture programs the flash and compares it with the
+# image (cmake/program.cmake); the test session then runs it from reset with
+# semihosting, and the test's SYS_EXIT ends it. The UART is not opened. The
+# USB test needs the PC's side, run by hand.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -26,4 +27,44 @@ set (UOS_TESTS_BOARD_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests")
 add_subdirectory ("${CMAKE_SOURCE_DIR}/board-tests" "port-tests/test")
 
 # -----------------------------------------------------------------------------
-message (STATUS "RISC-V ch32v307-evt: hwd images built, no CTest cases yet (${PLATFORM_NAME})")
+# The hardware run (the port's former test/boards/ch32v307-evt/hw.sh).
+include ("${CMAKE_SOURCE_DIR}/cmake/uos-tests-run.cmake")
+
+# The WCH OpenOCD (openocd-wch/build-openocd-wch.sh installs it here).
+set (UOS_RISCV_WCH_OPENOCD "$ENV{HOME}/.local/openocd-wch/bin/openocd" CACHE FILEPATH
+     "The WCH OpenOCD (the MounRiver fork); the WCH-LinkE needs it")
+get_filename_component (_wch_dir "${UOS_RISCV_WCH_OPENOCD}" DIRECTORY)
+get_filename_component (_wch_dir "${_wch_dir}" DIRECTORY)
+set (UOS_RISCV_WCH_OPENOCD_SCRIPTS "${_wch_dir}/share/openocd/scripts" CACHE PATH
+     "The WCH OpenOCD's scripts (interface/wlink.cfg, target/wch-riscv.cfg)")
+if (NOT EXISTS "${UOS_RISCV_WCH_OPENOCD}")
+  message (WARNING "${PLATFORM_NAME}: no WCH OpenOCD at ${UOS_RISCV_WCH_OPENOCD}; "
+           "the hwd tests cannot run. Build it (openocd-wch/build-openocd-wch.sh) "
+           "or set UOS_RISCV_WCH_OPENOCD, and configure again.")
+endif ()
+
+foreach (_app IN LISTS UOS_TESTS_APPS)
+  set (_name "${PLATFORM_NAME}-${_app}-hwd")
+  uos_tests_add_openocd (
+    NAME "${_name}" APP "${_app}"
+    ELF "$<TARGET_FILE:${_app}-hwd>" CFG "${CMAKE_CURRENT_SOURCE_DIR}/openocd.cfg"
+    OPENOCD "${UOS_RISCV_WCH_OPENOCD}" SCRIPTS "${UOS_RISCV_WCH_OPENOCD_SCRIPTS}"
+    COMMANDS "init" "reset halt" "arm semihosting enable" "resume"
+    TIMEOUT 300
+  )
+  add_test (NAME "${_name}-program"
+    COMMAND "${CMAKE_COMMAND}"
+            "-DOPENOCD=${UOS_RISCV_WCH_OPENOCD}"
+            "-DSCRIPTS=${UOS_RISCV_WCH_OPENOCD_SCRIPTS}"
+            "-DREADELF=${CMAKE_READELF}" "-DELF=$<TARGET_FILE:${_app}-hwd>"
+            "-DWORK=${CMAKE_CURRENT_BINARY_DIR}/${_name}-program"
+            -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/program.cmake")
+  set_tests_properties ("${_name}-program" PROPERTIES
+    LABELS "hwd-reset" TIMEOUT 240 RUN_SERIAL TRUE
+    FIXTURES_SETUP "${_name}-program")
+  set_tests_properties ("${_name}" PROPERTIES
+    FIXTURES_REQUIRED "${_name}-program")
+endforeach ()
+
+# -----------------------------------------------------------------------------
+message (STATUS "RISC-V ch32v307-evt: hwd tests registered (${PLATFORM_NAME})")

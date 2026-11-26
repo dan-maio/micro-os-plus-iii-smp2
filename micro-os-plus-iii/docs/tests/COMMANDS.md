@@ -131,14 +131,22 @@ F411 and the WeAct F411 and F412 have hardware tests only. Their `test`
 action runs the unattended board set; on the Lyra and Pi-Zero it skips the
 PC-driven cases, and `test-hwd` runs every hardware case (section 5).
 
-The RISC-V boards (`riscv-*`) build their hardware images, but they are not
-CTest cases yet: run one by hand with the RISC-V port's runner for that
-board, e.g.
-`BUILD=build/riscv-milkv-duo-cmake-gcc-debug/platform-bin/port-tests
-../../riscv/micro-os-plus-iii-riscv/test/boards/milkv-duo/hw.sh <test>`
-(`boards/<board>/hw.sh`; the MangoPi's loads with xfel, the CH32V307's needs
-the WCH OpenOCD of `platforms/riscv-ch32v307-evt/openocd-wch/`). The RISC-V
-tests run emulated as `qemu-riscv64` and `qemu-riscv32`.
+The RISC-V boards (`riscv-*`) run their hardware tests from CTest too, as
+the Arm boards do (`test-hwd`, or `ctest -L hwd`); the UART is never opened.
+Each needs its board ready and its loader:
+
+| Board | Ready | Loader |
+|---|---|---|
+| Milk-V Duo | booted from its SD card with the minimal `fip.bin` | the xPack OpenOCD; the attach is retried (the Sipeed probe) |
+| Pico 2, WeAct RP2350B | powered | the Raspberry Pi OpenOCD fork, `UOS_RISCV_PICO_OPENOCD` (found under `~/.pico-sdk/openocd/` or a mounted home); the RP2350B is switched to its RISC-V cores first when needed |
+| VisionFive 2 Lite | at the U-Boot prompt | the xPack OpenOCD, probe `UOS_VF2_PROBE` (`daplink` or `picoprobe`) |
+| MangoPi MQ-Pro | in FEL mode (microSD card out) | `xfel` (`cmake/xfel-run.cmake`; the verdict comes from the RTC) |
+| CH32V307V-EVT | powered, WCH-LinkE in RISC-V mode | the WCH OpenOCD fork, `UOS_RISCV_WCH_OPENOCD` (`openocd-wch/build-openocd-wch.sh`); the flash is programmed and read back first |
+
+Two probes with the same VID:PID (the Pico 2's Debug Probe and the VF2's
+JTAG probe on Pico): `UOS_HW_ADAPTER_SERIAL` picks one. The USB, network and
+Wi-Fi tests need the PC's side, run by hand. The RISC-V tests run emulated
+as `qemu-riscv64` and `qemu-riscv32`.
 
 ## 5. On the board (`hwd`)
 
