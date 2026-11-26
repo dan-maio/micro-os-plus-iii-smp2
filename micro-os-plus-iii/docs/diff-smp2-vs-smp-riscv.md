@@ -20,6 +20,7 @@ In every diff below, `-` lines are A and `+` lines are B.
 | Test sources | Four files, all RISC-V or 64-bit fixes in B. |
 | Test plumbing | A finds the ports through xpm links in the build folder. B finds them as sibling folders and adds a RISC-V case. Every platform's CMake files differ to match. |
 | Files in one tree only | B adds `test_smpl/` and five `riscv-*` platforms. A has `board-tests/`, `smp-support/`, `scripts/`, `third_party/`, more tests and per-board sources. |
+| Integration (chapter 6) | How to bring the RISC-V port, its six boards and 117 tests into A: the analysis, a four-phase plan, the risks and the decisions still open. |
 
 The two `src/` fixes are in separate files, so either one can be merged into the other tree easily.
 
@@ -1103,3 +1104,272 @@ diff -ruN -x .git -x node_modules -x build -x docs -x '*.md' -x '*.pdf' \
 ```
 
 The full output, including every new file, is about 188k lines. Most of it is the directories that exist in only one tree.
+
+---
+
+## 6. Integrating `micro-os-plus-iii-smp-riscv` into `micro-os-plus-iii-smp2` (analysis and plan)
+
+Date: 2026-11-26
+
+- **Source (B):** `/home/dan/Work/micro-os-plus-iii-smp-riscv` at `9b7aeeda`:
+  the kernel `micro-os-plus-iii/` plus the RISC-V port submodule
+  `micro-os-plus-iii-riscv` (`dan-maio/micro-os-plus-iii-riscv`, branch `smp`,
+  at `52c84a7`).
+- **Target (A):** `/home/dan/Work/micro-os-plus-iii-smp2` at `6284b489`: the
+  kernel, four port submodules (aarch32, aarch64, cortexm, posix-arch) and the
+  device packages.
+
+Chapters 1–5 list the code differences. This chapter covers what they don't:
+where the RISC-V port, its boards and its tests go, and in which order.
+
+---
+
+### 6.1 Summary
+
+| Question | Answer |
+|---|---|
+| Is the kernel the same? | **Yes, almost.** `src/` differs in two files only, and the fixes are independent. A needs B's `trace.cpp` fix; B's tree lacks A's `os-idle.cpp` fix, which A keeps. |
+| Is the port ready to be a submodule of A? | **Yes.** It is already a separate GitHub repository with the right package name (`@micro-os-plus/micro-os-plus-iii-riscv`), on branch `smp`. |
+| Is the board contract the same? | **Yes.** B's `test/CMakeLists.txt` and A's `tests/board-tests/CMakeLists.txt` are the same lineage: the same `board_test_*()` functions and the same `UOS_BOARD_*` variables (FLAGS, NCPU, CAPS, LINKER_HW/QEMU, LIBS, DEFINES, USB_*). |
+| What is the real work? | **The ownership model.** In B, the port owns the boards, the tests and the shell runners (`test/boards/<board>/{board.cmake,qemu.sh,hw.sh}`, `test/<board>/<app>/`). In A, after the step 1–7 alignment, the kernel's `tests/platforms/<board>/` owns them, and CMake (`uos-tests-run.cmake`, `uos-hwd.tcl`) runs them, with no shell scripts. The RISC-V side needs the same alignment the Arm ports went through. |
+| How many tests? | **117 board test applications on 6 boards**, plus the 6 harness suites. |
+| Recommended route | Import first with B's runners kept as they are (every test runs on day 1), then convert board by board to A's CMake runners. |
+
+---
+
+### 6.2 What exists today
+
+#### 6.2.1 The kernel (`micro-os-plus-iii/`)
+
+From chapters 1–4 above:
+
+| File | Difference | Action in A |
+|---|---|---|
+| `src/rtos/os-idle.cpp` | A has the SMP idle-thread fix (no destructor; `exit()` on core ≠ 0 hung on the Lyra) | keep A's |
+| `src/diag/trace.cpp` | B makes the `St9__va_list` aliases Arm-only; RISC-V defines `__ARM_EABI__` only to pick embedded paths | **take B's** |
+| `CMakeLists.txt` | B falls back to `test_smpl/` for `hw_result.hpp` / `board-contract.cpp` | keep A's (`tests/smp-support/`); `test_smpl/` is not imported |
+| `cmake/uos-app.cmake` | A accepts `LIBRARIES`-only apps | keep A's |
+| `tests/sources/fp-switch` | B adds the RISC-V FPU path (f0–f31, `fcsr.fflags`, calibrated hold, SMP migration check) | **take B's** (also fixes a false PASS on RISC-V) |
+| `tests/sources/instrumentation` | B: queue slot = `max(sizeof(int), sizeof(void*))` (RV64) | **take B's** |
+| `tests/sources/mutex-stress` config | B: 8000-byte main stack on RV64 | **take B's** |
+| `tests/sources/rtos-apis/test-posix-io-api.cpp` | B: `/dev/mb-p2` instead of `/dev/mb2` | **take B's** (a bug fix for every port) |
+| `tests/cmake/tests-main.cmake` | B finds ports as sibling folders and has a `^riscv` case; A uses the xpm links | keep A's mechanism; add `riscv` to it (§6.4, phase 1, step 5) |
+| `package.json` | A `7.2.0-pre.1`, B `7.1.0`; B has the `riscv-*` configurations | keep A's version; add the `riscv-*` configurations in A's style |
+
+So the kernel needs **one source fix** (`trace.cpp`) and **four test-source
+fixes** from B. All are guarded or 64-bit-neutral, but they still have to be
+re-run on every Arm platform (§6.6).
+
+#### 6.2.2 The RISC-V port (`micro-os-plus-iii-riscv`)
+
+| Part | Content | Destination |
+|---|---|---|
+| `src/`, `include/`, `cmake/`, `CMakeLists.txt` | the port: `micro-os-plus::riscv`, `riscv-bare`, `riscv-qemu-virt`, `riscv-qemu-virt32` (startup, trap, AMO spinlock, SMP, CLINT, MMU, semihosting) | stays in the port (the submodule) |
+| `qemu/virt/` | the QEMU `virt` linker script and stand-in | stays in the port (it is the port's generic target, like `qemu-cortex-*` in Cortex-M) |
+| `test/CMakeLists.txt` | B's copy of the board-test builder | **replaced** by A's `tests/board-tests/` (§6.4, phase 2, step 4) |
+| `test/boards/<board>/` | board facts (`board.cmake`, linker, `src/`, `include/`, `usb/`, `net/`, `wifi/`, OpenOCD cfgs, `qemu.sh`, `hw.sh`) | **moves** to A: `tests/platforms/riscv-<board>/` |
+| `test/<board>/<app>/` | the board's tests | **moves** to A: `tests/platforms/riscv-<board>/tests/<app>/` |
+| `test/qemu.sh`, `hw.sh`, `hw-all.sh` | generic runners | removed after the conversion (phase 3) |
+| `test/third_party/` | TinyUSB, lwIP and similar | **check against A's** `tests/third_party/` (lwIP 2.2.1 is already there for the Pi 4 B): share it, don't duplicate it |
+| JH7110 `*.cfg`, `vf2-*.sh`, `*.gdb`, `*.md/.pdf` at the root | VisionFive 2 debug files and notes | the cfg/sh files go with the board; the notes go to `docs/` |
+
+This mirrors what happened to the Cortex-M port: its `test/pico2/` became
+A's `tests/platforms/cortexm-pico2/`.
+
+#### 6.2.3 The six boards and their tests
+
+| Board (B) | A platform name | Core / ISA | NCPU | Tests | QEMU | Hardware runner (today) |
+|---|---|---|---|---|---|---|
+| `milkv-duo` | `riscv-milkv-duo` | T-Head C906, RV64GC | 1 | 20 | ✅ `virt` (rv64 + rv32) | xPack OpenOCD, Sipeed CMSIS-DAP `d6e7:3507`; first attach fails, 2nd works; WDT reset `reset.cfg` |
+| `pico2` | `riscv-pico2` | 2× Hazard3, RV32IMAC | 2 | 21 | ✅ `virt` rv32 stand-in | **Raspberry Pi OpenOCD fork** (`~/.pico-sdk/openocd/0.12.0+dev`); xPack 0.12.0-7.1 **fails** (`-dap`); probe pinned `2e8a:000c` |
+| `pico2-rp2350b-psram` | `riscv-pico2-rp2350b-psram` | 2× Hazard3 + PSRAM | 2 | 21 | ✅ | RPi OpenOCD fork, probe `c251:f001` |
+| `visionfive2-lite` | `riscv-visionfive2-lite` | 4× U74, RV64GC | 4 | 26 | — | xPack OpenOCD, DAPLink or Pico probe, picked by serial; **park sequence** (load → park → 100 ms → halt → `mie=0` → `_start`) |
+| `mangopi-mq-pro` | `riscv-mangopi-mq-pro` | Allwinner D1 (C906) | 1 | 19 | ✅ `virt` | **`xfel` (USB FEL), not OpenOCD** |
+| `ch32v307-evt` | `riscv-ch32v307-evt` | WCH V4F, RV32IMAFC | 1 | 10 | — | **WCH OpenOCD fork** (`openocd-wch`), WCH-Link |
+| **Total** | | | | **117** | | |
+
+The kernel in B registers only five `riscv-*` platforms;
+`pico2-rp2350b-psram` runs only through the port's own scripts today. It
+becomes a sixth platform in A.
+
+#### 6.2.4 Same test names, different code
+
+The RISC-V boards carry their own copies of tests A has as portable
+(`tests/sources/`) or as Cortex-M board tests. They have drifted:
+
+| A | B | Differing lines |
+|---|---|---|
+| `sources/smp_test0` (51 lines) | `milkv-duo/smp_test0` (71) | 82 |
+| `sources/clock-test` (150) | `milkv-duo/clock-test` (139) | 225 (a different test: B checks against `rdtime`/DW timer) |
+| `sources/smp-mat-test` (945) | `milkv-duo/smp-mat-test` (964) | 245 |
+| `cortexm-pico2/tests/smp-test1` (152) | `pico2/smp-test1` (157) | 9 |
+| `cortexm-pico2/tests/smp-test2` (244) | `pico2/smp-test2` (233) | 51 |
+
+In A, a board test of the same name lives in the platform's own `tests/`
+folder, so there's no build collision. Import the RISC-V versions **as board
+tests** first, and fold them into the portable ones afterwards (§6.4, phase 4).
+
+---
+
+### 6.3 Gaps between B's model and A's
+
+| Area | B (smp-riscv) | A (smp2) | Gap |
+|---|---|---|---|
+| Finding the port | sibling folders, `../../micro-os-plus-iii-riscv[.git]` | `build/<cfg>/xpacks/@micro-os-plus/<name>` via `xpm run link-deps` (`scripts/link-local.sh`) | add `riscv` to `link-local.sh` and to each platform's `dependencies-folders.cmake` |
+| Board facts | `${UOS_RISCV_DIR}/test/boards/<board>/board.cmake` | `tests/platforms/<board>/cmake/board.cmake` | move; replace `CMAKE_CURRENT_LIST_DIR` / `UOS_RISCV_ROOT` paths with `CMAKE_SOURCE_DIR/platforms/<board>` and `UOS_RISCV_DIR` |
+| Test builder | port `test/CMakeLists.txt` (`UOS_RISCV_STANDALONE`, `UOS_PORT_BARE_LIB`, `UOS_BOARD_DEVICES`) | `tests/board-tests/CMakeLists.txt` (`UOS_TESTS_*`, `UOS_HARNESS_SUITE`, `UOS_BOARD_SD_POSIX`, `UOS_CONSOLE_UART_ONLY`) | teach A's builder the three B-only variables (the bare runtime for `smp_test0`, the devices list) |
+| QEMU runs | `qemu.sh <app>` (`BUILD=`, `SECS=`) | `uos_tests_add_qemu()`: CTest starts QEMU itself and reads `RESULT:` | convert; QEMU arguments for `virt` rv32/rv64 come straight from `qemu.sh` |
+| Hardware runs | `hw.sh <app>` per board (180–337 lines each) | `uos_tests_add_hwd()` / `uos_tests_add_openocd()` + `uos-hwd.tcl`, reset as a CTest fixture | convert the OpenOCD boards; **mangopi (`xfel`) needs a generic "external loader" variant** |
+| OpenOCD binary | per board: xPack, the RPi fork or the WCH fork | the configuration's `xpacks/.bin/openocd` | let a platform name its OpenOCD (`UOS_TESTS_OPENOCD`, already a cache variable); the RPi and WCH forks are not xPacks, so they become a documented prerequisite or a cache path |
+| Toolchain | `riscv-none-elf-gcc 15.2.0-1.1`, `qemu-riscv 9.2.4-1.1` | not in A | add `riscv-none-elf-gcc-dependencies` and `qemu-riscv-dependencies` (already defined in B's `package.json`) |
+| xpm actions | `test-<app>-qemu/hwd` per app (~40 per board), `test-hwd-all` calling `hw-all.sh` | `test`, `test-hwd`, `test-<platform>-cmake` | drop the per-app actions (`ctest -R` does it); keep `test` / `test-hwd` |
+| Host helpers | `usb-host.py` (pico2), `usb-file-host.py` (VF2), Wi-Fi/net hosts | in the test folder (`eth-tcp-host.py`, `wifi-tcp-host.py`, `kbd_forward`) | move them next to their tests; same convention |
+
+---
+
+### 6.4 Integration plan
+
+#### Phase 0 — prepare (no behaviour change)
+
+1. In the port repository, branch `smp`: tag the current state
+   (`smp-pre-align`) so the old layout can always be rebuilt.
+2. In A: create a branch `riscv-integration`.
+3. Record a **baseline in B** (as `workspace-records/baseline-2026-11-17`
+   did for Arm): for each of the six boards, Debug and Release, run QEMU and
+   hardware and keep the logs. This is the reference that every later step
+   must match.
+
+#### Phase 1 — kernel and plumbing (A builds RISC-V, nothing moves yet)
+
+1. Apply the kernel fixes from §6.2.1: `trace.cpp` and the four test sources.
+   Re-run the A QEMU set (the 14 platforms) and `native` to show nothing
+   regressed on Arm/POSIX.
+2. Add the submodule:
+   ```sh
+   git submodule add -b smp https://github.com/dan-maio/micro-os-plus-iii-riscv.git \
+       riscv/micro-os-plus-iii-riscv
+   ```
+3. `tests/scripts/link-local.sh`: accept `micro-os-plus-iii-riscv` (folder
+   `riscv/micro-os-plus-iii-riscv`).
+4. `tests/package.json`: add `riscv-actions` (with `link-deps`),
+   `riscv-none-elf-gcc-dependencies`, `qemu-riscv-dependencies`, and the six
+   `riscv-<board>-cmake-gcc-{debug,release}` configurations in A's style
+   (`test` = `ctest -V -LE hwd`, `test-hwd` = `ctest -V -L hwd`), plus
+   `test-riscv-<board>-cmake` group actions.
+5. `tests/cmake/tests-main.cmake`: nothing to add for finding the port. The
+   generic loop already turns `@micro-os-plus/micro-os-plus-iii-riscv` into
+   `UOS_RISCV_DIR`. Only check `global-definitions.cmake` for a `riscv`
+   branch, which B's `^riscv` case did.
+6. The toolchain file `riscv-none-elf-gcc.cmake`: check that
+   `xpacks/@micro-os-plus/build-helper` has it. If not, take B's.
+
+#### Phase 2 — move the boards and tests, keep B's runners
+
+For each board, in this order: `milkv-duo` (the reference, has QEMU),
+`pico2`, `pico2-rp2350b-psram`, `visionfive2-lite`, `mangopi-mq-pro`,
+`ch32v307-evt`:
+
+1. `git mv` within the port is not possible across repositories, so **copy**
+   `test/boards/<board>/` → A `tests/platforms/riscv-<board>/` (`cmake/board.cmake`,
+   `src/`, `include/`, `device/linker-scripts/`, `usb/`, `net/`, OpenOCD
+   cfgs) and `test/<board>/<app>/` → `tests/platforms/riscv-<board>/tests/<app>/`.
+   Keep `qemu.sh` / `hw.sh` in the platform folder for now.
+2. Rewrite the paths in `board.cmake` (`CMAKE_CURRENT_LIST_DIR` →
+   `${CMAKE_SOURCE_DIR}/platforms/riscv-<board>`; the shared pico2 USB stack
+   referenced by the Duo, `_pico2_usb`, → `platforms/riscv-pico2/usb`).
+3. The platform `CMakeLists.txt` follows A's `cortexm-pico2` pattern:
+   `UOS_TESTS_PORT riscv`, `UOS_TESTS_SUITES`, `UOS_TESTS_BOARD_DIR`,
+   `add_subdirectory(board-tests)`, then register each app. **In this phase
+   the `add_test` commands still call `bash qemu.sh` / `bash hw.sh`** (that's
+   what B's platform `CMakeLists.txt` already does). A QEMU environment
+   variable and `BUILD=` point at the A build folder.
+4. A's `board-tests/CMakeLists.txt`: add what B's copy has and A's lacks
+   (`UOS_RISCV_STANDALONE` / `UOS_PORT_BARE_LIB` for the bare-runtime
+   `smp_test0`, `UOS_BOARD_DEVICES`, `board_test_qemu_ncpu`). Both builders
+   come from the same file, so this is a merge, not a rewrite.
+5. Build Debug and Release and compare the test list (`ctest -N`) with B's.
+   Then run the board and compare with the phase-0 baseline.
+
+At the end of phase 2, **all 117 tests run from A**. Their runners are
+still B's scripts, but they now live in A.
+
+#### Phase 3 — convert the runners to A's CMake model
+
+| Board | Conversion |
+|---|---|
+| `milkv-duo` | `uos_tests_add_qemu()` with `qemu-system-riscv64 -M virt …` (from `qemu.sh`); hardware with `uos_tests_add_hwd()`, `RESET_COMMAND` = the WDT sequence of `reset.cfg`, `RESET_EXPECT`, a short `RESET_WAIT`; the "first attach fails" retry needs a small addition to `uos-hwd.tcl` (retry `init` once) |
+| `pico2`, `pico2-rp2350b-psram` | `uos_tests_add_openocd()` (as `cortexm-pico2`), OpenOCD = the RPi fork through `UOS_TESTS_OPENOCD`; the probe `vid_pid` in `PRE_CFG` |
+| `visionfive2-lite` | `uos_tests_add_hwd()` with `PRELOAD` = the park sequence (`mie=0`, `mstatus.MIE=0` on all harts, park, halt); probe choice by serial → `UOS_HW_ADAPTER_SERIAL` (already in A) |
+| `ch32v307-evt` | `uos_tests_add_openocd()` with the WCH OpenOCD path through `UOS_TESTS_OPENOCD` |
+| `mangopi-mq-pro` | `xfel` is not OpenOCD: add `uos_tests_add_loader(NAME APP ELF COMMAND …)` to `uos-tests-run.cmake` (run a loader, read `RESULT:` from its output). Until then, keep `hw.sh` |
+
+Then delete `qemu.sh`, `hw.sh`, `hw-all.sh` and B's `test/` from the port
+(on a new commit of branch `smp`), and update the submodule pointer in A.
+
+#### Phase 4 — fold the duplicates into the portable tests
+
+For each test that exists both in A's `tests/sources/` and as a RISC-V board
+test (`smp_test0`, `clock-test`, `smp-mat-test`, `smp-mat-sdcard-test`,
+`cmsis-os-validator`, `rtos-apis`, `mutex-stress`, `fp-switch`,
+`instrumentation`, `blinky`) and the Cortex-M-shared ones (`smp-test1…5`,
+`sc-test-ko`, `exc-test`, `smp-test-ko`):
+
+1. Diff the two versions and keep the behaviour both sides need (§6.2.4: from
+   9 lines for `smp-test1` to a different test for `clock-test`).
+2. If they can be one source, make the board use the portable one through
+   `UOS_TESTS_PORTABLE` and delete the board copy. If they can't (for
+   example, B's `clock-test` checks against `rdtime` and the DW timer), rename
+   the board version (`clock-test-riscv`) so the names don't mislead.
+
+This phase is optional for "all tests integrated", but without it the same
+test name means different things on different boards.
+
+---
+
+### 6.5 Risks and how to handle them
+
+| Risk | Handling |
+|---|---|
+| Kernel fix `trace.cpp` changes Arm behaviour | It narrows an Arm-only block to `__arm__`; check that `native` and all 14 QEMU platforms still pass |
+| RPi and WCH OpenOCD forks are not xPacks | Document them as prerequisites with their paths; the platform reads `UOS_TESTS_OPENOCD` and fails at configure time with a clear message if missing |
+| Same probe VID:PID (`2e8a:000c`) for the Cortex-M Pico 2, the RISC-V Pico 2 and the Pico-probe of the VF2 | Use `UOS_HW_ADAPTER_SERIAL`; never run two hardware configurations on the same probe at once |
+| The Duo/VF2 board gets stuck after a hang (JTAG all ones) | Same as the Lyra today: the reset fixture fails, the rest show "Not Run"; a power cycle by hand. Note it in the platform README |
+| Board tests rely on B's `test_smpl/` headers | A's `smp-support/` has the same role (`hw_result.hpp`, `board-contract.cpp`); diff them and merge the RISC-V additions into `smp-support/` |
+| `third_party/` duplicated (TinyUSB, lwIP) | Share A's copy; pin one version; the Duo already reuses the pico2 TinyUSB, so a shared folder is the natural place |
+| Concurrent `xpm install` corrupts the xPack store (seen 2026-11-26) | Install `riscv-none-elf-gcc` and `qemu-riscv` once, alone, before any parallel run |
+
+---
+
+### 6.6 Done means
+
+1. `git clone --recurse-submodules` of A, then `xpm install`, `xpm install`
+   and `xpm run link-deps` for each `riscv-*` configuration, builds all six
+   boards in Debug and Release.
+2. `xpm run test --config riscv-<board>-cmake-gcc-<v>`: the QEMU set passes
+   for duo, mangopi, pico2 and pico2-psram (the same count as the phase-0
+   baseline).
+3. `xpm run test-hwd --config …`: each board's hardware set matches the
+   baseline (117 tests, minus the PC-driven ones, which are run by hand as
+   for the Arm boards).
+4. The 14 existing A QEMU platforms, `native`, and the Arm hardware sets
+   (Pi 4 B, Zero 2 W, Pico 2, Lyra) still pass, which shows the kernel and
+   test-source changes broke nothing.
+5. The port repository holds only the port (`src/`, `include/`, `cmake/`,
+   `qemu/`, docs); this document regenerated shows no code
+   differences left in `src/`.
+
+---
+
+### 6.7 Decisions needed from you
+
+1. **Phase 3 now or later?** Phase 2 already gives "all tests integrated"
+   with B's runners. Phase 3 (CMake runners, no shell) is what A did for Arm,
+   and it's the larger part of the work (6 hardware runners, 180–337 lines
+   each).
+2. **Folder name for the submodule:** `riscv/micro-os-plus-iii-riscv`
+   (matches `aarch32/`, `aarch64/`, `cortexm/`, `posix-arch/`).
+3. **Duplicated test names (phase 4):** merge into the portable tests, or
+   keep and rename the RISC-V versions.
+4. **The OpenOCD forks:** a documented local install, or a request to
+   package them as xPacks.
+
