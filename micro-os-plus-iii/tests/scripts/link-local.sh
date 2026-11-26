@@ -4,7 +4,7 @@
 # Replaces `xpm link @micro-os-plus/<package> --config <configuration>` in
 # this repository (micro-os-plus-iii-smp2): links
 # build/<configuration>/xpacks/@micro-os-plus/<package> to the package's own
-# folder in this repository (aarch32/, aarch64/, common/, cortexm/,
+# folder in this repository (aarch32/, aarch64/, common/, cortexm/, riscv/,
 # posix-arch/), with a relative path. `xpm link` would instead go through
 # ~/.local/xPacks/@micro-os-plus/<package>/.link, i.e. whatever working copy
 # was last registered with `xpm link` on this machine.

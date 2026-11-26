@@ -10,6 +10,7 @@
 !/common/
 !/cortexm/
 !/posix-arch/
+!/riscv/
 !/README.md
 !/WORKING-WITH-LOCAL-BARE.md
 !/WORKING-WITH-LOCAL-BARE.pdf

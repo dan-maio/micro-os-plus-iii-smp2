@@ -19,6 +19,9 @@
 //
 // The registers are loaded and checked in inline assembly, so the result does
 // not depend on how the compiler happens to allocate them.
+//
+// RISC-V with an FPU (__riscv_flen): the same test on f0-f31 (FLEN bits each:
+// fld/fsd with the D extension) and the fflags exception flags of fcsr.
 
 #include <cmsis-plus/rtos/os.h>
 
@@ -28,7 +31,7 @@
 using namespace os;
 using namespace os::rtos;
 
-#if defined(__ARM_FP)
+#if defined(__ARM_FP) || defined(__riscv_flen)
 
 #if defined(OS_USE_SMP_SCHEDULER)
 extern "C" unsigned port_cpu_id (void);
@@ -39,8 +42,32 @@ namespace
   constexpr unsigned threads_count = 6;
   constexpr unsigned run_ticks = 3000;
   constexpr unsigned spin_loops = 40000;
+#if defined(__riscv_flen)
+  // RISC-V: the spin is calibrated at start-up (os_main) so that one hold
+  // lasts about hold_ticks ticks whatever the core's speed. The fixed 40000
+  // loops are a tick on the MCUs this test was written for, but a 1.5 GHz
+  // U74 ran them in about 0.03 ms: a hold was then almost never preempted,
+  // and no thread ever resumed a hold on another core (0 migrated).
+  constexpr unsigned hold_ticks = 3;
+  unsigned long spin_n = spin_loops;
+#endif
+#if defined(__ARM_FP)
+  // One FPU register (s0-s31).
+  using fp_reg_t = uint32_t;
   // FPSCR N, Z, C, V: flags only, the rounding and exception bits are left.
-  constexpr uint32_t fpscr_flags_mask = 0xF0000000u;
+  constexpr uint32_t fp_flags_mask = 0xF0000000u;
+  constexpr unsigned fp_flags_shift = 28;
+#else
+  // One FPU register (f0-f31), FLEN bits.
+#if __riscv_flen == 64
+  using fp_reg_t = uint64_t;
+#else
+  using fp_reg_t = uint32_t;
+#endif
+  // fcsr.fflags NV, DZ, OF, UF, NX: flags only, the rounding mode is left.
+  constexpr uint32_t fp_flags_mask = 0x1Fu;
+  constexpr unsigned fp_flags_shift = 0;
+#endif
 
   volatile bool stop;
 
@@ -57,8 +84,9 @@ namespace
   // Load in[] into s0-s31 and flags into the FPSCR, spin, store the
   // registers to out[] and return the FPSCR flags read back. The caller's
   // FPSCR is restored.
+#if defined(__ARM_FP)
   uint32_t
-  hold_fp_registers (const uint32_t* in, uint32_t* out, uint32_t flags)
+  hold_fp_registers (const fp_reg_t* in, fp_reg_t* out, uint32_t flags)
   {
     uint32_t saved;
     uint32_t read;
@@ -79,29 +107,94 @@ namespace
         " vmsr fpscr, %[saved]                \n"
         : [saved] "=&r"(saved), [read] "=&r"(read), [n] "+r"(n),
           [in] "+r"(in), [out] "+r"(out)
-        : [flags] "r"(flags), [mask] "r"(fpscr_flags_mask)
+        : [flags] "r"(flags), [mask] "r"(fp_flags_mask)
         : "memory", "cc", "s0", "s1", "s2", "s3", "s4", "s5", "s6", "s7",
           "s8", "s9", "s10", "s11", "s12", "s13", "s14", "s15", "s16", "s17",
           "s18", "s19", "s20", "s21", "s22", "s23", "s24", "s25", "s26",
           "s27", "s28", "s29", "s30", "s31");
-    return read & fpscr_flags_mask;
+    return read & fp_flags_mask;
   }
+#else
+#if __riscv_flen == 64
+#define FP_SWITCH_L "fld"
+#define FP_SWITCH_S "fsd"
+#else
+#define FP_SWITCH_L "flw"
+#define FP_SWITCH_S "fsw"
+#endif
+#define FP_SWITCH_ONE(op, r, i, p) " " op " " #r ", " #i "*%c[sz](%[" p "]) \n"
+#define FP_SWITCH_ALL(op, p)                                                  \
+  FP_SWITCH_ONE (op, f0, 0, p) FP_SWITCH_ONE (op, f1, 1, p)                   \
+  FP_SWITCH_ONE (op, f2, 2, p) FP_SWITCH_ONE (op, f3, 3, p)                   \
+  FP_SWITCH_ONE (op, f4, 4, p) FP_SWITCH_ONE (op, f5, 5, p)                   \
+  FP_SWITCH_ONE (op, f6, 6, p) FP_SWITCH_ONE (op, f7, 7, p)                   \
+  FP_SWITCH_ONE (op, f8, 8, p) FP_SWITCH_ONE (op, f9, 9, p)                   \
+  FP_SWITCH_ONE (op, f10, 10, p) FP_SWITCH_ONE (op, f11, 11, p)               \
+  FP_SWITCH_ONE (op, f12, 12, p) FP_SWITCH_ONE (op, f13, 13, p)               \
+  FP_SWITCH_ONE (op, f14, 14, p) FP_SWITCH_ONE (op, f15, 15, p)               \
+  FP_SWITCH_ONE (op, f16, 16, p) FP_SWITCH_ONE (op, f17, 17, p)               \
+  FP_SWITCH_ONE (op, f18, 18, p) FP_SWITCH_ONE (op, f19, 19, p)               \
+  FP_SWITCH_ONE (op, f20, 20, p) FP_SWITCH_ONE (op, f21, 21, p)               \
+  FP_SWITCH_ONE (op, f22, 22, p) FP_SWITCH_ONE (op, f23, 23, p)               \
+  FP_SWITCH_ONE (op, f24, 24, p) FP_SWITCH_ONE (op, f25, 25, p)               \
+  FP_SWITCH_ONE (op, f26, 26, p) FP_SWITCH_ONE (op, f27, 27, p)               \
+  FP_SWITCH_ONE (op, f28, 28, p) FP_SWITCH_ONE (op, f29, 29, p)               \
+  FP_SWITCH_ONE (op, f30, 30, p) FP_SWITCH_ONE (op, f31, 31, p)
+
+  // Load in[] into f0-f31 and flags into fcsr.fflags, spin, store the
+  // registers to out[] and return the fflags read back. The caller's fcsr
+  // is restored. One asm statement, so the compiler cannot touch an FP
+  // register in between.
+  uint32_t
+  hold_fp_registers (const fp_reg_t* in, fp_reg_t* out, uint32_t flags)
+  {
+    unsigned long saved;
+    unsigned long read;
+    unsigned long n = spin_n;
+    __asm__ volatile (
+        " frcsr %[saved]                      \n"
+        FP_SWITCH_ALL (FP_SWITCH_L, "in")
+        " fsflags %[flags]                    \n"
+        "1:                                   \n"
+        " addi %[n], %[n], -1                 \n"
+        " bnez %[n], 1b                       \n"
+        " frflags %[read]                     \n"
+        FP_SWITCH_ALL (FP_SWITCH_S, "out")
+        " fscsr %[saved]                      \n"
+        : [saved] "=&r"(saved), [read] "=&r"(read), [n] "+r"(n)
+        : [in] "r"(in), [out] "r"(out),
+          [flags] "r"(static_cast<unsigned long> (flags)),
+          [sz] "i"(sizeof (fp_reg_t))
+        : "memory", "f0", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8",
+          "f9", "f10", "f11", "f12", "f13", "f14", "f15", "f16", "f17", "f18",
+          "f19", "f20", "f21", "f22", "f23", "f24", "f25", "f26", "f27",
+          "f28", "f29", "f30", "f31");
+    return static_cast<uint32_t> (read) & fp_flags_mask;
+  }
+#endif
 
   void*
   worker (void* arg)
   {
     context* ctx = static_cast<context*> (arg);
-    uint32_t in[32];
-    uint32_t out[32];
+    fp_reg_t in[32];
+    fp_reg_t out[32];
 
     while (!stop)
       {
         for (unsigned k = 0; k < 32; ++k)
           {
-            in[k] = 0x40000000u | (ctx->id << 16) | ((ctx->rounds & 0xFFu) << 8)
-                    | k;
+            const uint32_t v = 0x40000000u | (ctx->id << 16)
+                               | ((ctx->rounds & 0xFFu) << 8) | k;
+            in[k] = static_cast<fp_reg_t> (v);
+            if constexpr (sizeof (fp_reg_t) == 8)
+              {
+                // Both halves: a 64-bit register must come back whole.
+                in[k] = (static_cast<fp_reg_t> (v) << 32) | (v ^ 0xA5A5A5A5u);
+              }
           }
-        uint32_t flags = ((ctx->id + ctx->rounds) & 0xFu) << 28;
+        uint32_t flags = ((ctx->id + ctx->rounds) << fp_flags_shift)
+                         & fp_flags_mask;
 
 #if defined(OS_USE_SMP_SCHEDULER)
         unsigned cpu_before = port_cpu_id ();
@@ -149,6 +242,38 @@ os_main (int argc __attribute__ ((unused)),
   // `stop` and the test never ended. Keep the controller above the workers.
   this_thread::thread ().priority (thread::priority::high);
 
+#if defined(__riscv_flen)
+  {
+    // Calibrate: time holds of a growing spin until one takes at least
+    // 8 ticks, then scale to hold_ticks.
+    fp_reg_t in[32] = {};
+    fp_reg_t out[32];
+    unsigned long n = spin_loops;
+    for (;;)
+      {
+        spin_n = n;
+        sysclock.sleep_for (1); // start on a tick boundary
+        const auto t0 = sysclock.now ();
+        hold_fp_registers (in, out, 0);
+        const auto dt = sysclock.now () - t0;
+        // The cap keeps n * 4 (and n * hold_ticks) inside unsigned long:
+        // 1ul << 40 was undefined on RV32, where unsigned long is 32 bits.
+        if (dt >= 8 || n > (~0ul / 16u))
+          {
+            spin_n = (n * hold_ticks) / (dt != 0 ? dt : 1);
+            if (spin_n == 0)
+              {
+                spin_n = 1;
+              }
+            break;
+          }
+        n *= 4;
+      }
+    std::printf ("\nhold: %lu spin loops, about %u ticks\n", spin_n,
+                 hold_ticks);
+  }
+#endif
+
   std::printf ("\nFPU context switch test, %u threads, %u ticks\n",
                threads_count, run_ticks);
 
@@ -183,6 +308,15 @@ os_main (int argc __attribute__ ((unused)),
 
   std::printf ("total: %u rounds, %u bad, %u migrated\n", rounds, bad,
                migrated);
+#if defined(__riscv_flen) && defined(OS_USE_SMP_SCHEDULER)
+  // With several cores, a hold must also have survived a move to another
+  // core: without one, the cross-core FPU save/restore was not tested.
+  if (migrated == 0)
+    {
+      std::printf ("no round migrated to another core\n");
+      return 1;
+    }
+#endif
   return (bad == 0 && rounds > 0) ? 0 : 1;
 }
 
@@ -196,4 +330,4 @@ os_main (int argc __attribute__ ((unused)),
   return 0;
 }
 
-#endif // defined(__ARM_FP)
+#endif // defined(__ARM_FP) || defined(__riscv_flen)

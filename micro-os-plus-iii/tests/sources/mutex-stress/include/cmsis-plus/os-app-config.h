@@ -27,7 +27,15 @@
 #define OS_INTEGER_RTOS_CRITICAL_SECTION_INTERRUPT_PRIORITY (4)
 #endif // defined(__ARM_ARCH_7M__) || defined(__ARM_ARCH_7EM__)
 
+#if defined(__riscv) && (__riscv_xlen == 64)
+// RV64: every register is 8 bytes and a trap saves a 528-byte frame on the
+// interrupted stack (integer + FP files). The RISC-V port defines
+// __ARM_EABI__ only to select the kernel's embedded code paths, so it lands
+// in this branch; twice the 32-bit size.
+#define OS_INTEGER_RTOS_MAIN_STACK_SIZE_BYTES (8000)
+#else
 #define OS_INTEGER_RTOS_MAIN_STACK_SIZE_BYTES (4000)
+#endif
 
 // ----------------------------------------------------------------------------
 

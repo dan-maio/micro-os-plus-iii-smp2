@@ -189,7 +189,8 @@ for example `native-cmake-clang17-release` or
   `aarch32-luckfox-lyra`, `aarch64-rpi-zero-2w`, `aarch64-rpi3b`,
   `aarch64-rpi4b`, `cortexm-pico`, `cortexm-pico2`, `cortexm-pico2-pizero`,
   `cortexm-pico2-rp2350b-psram`, `cortexm-nucleof411`, `cortexm-weactf411`,
-  `cortexm-weactf412` (and `native`): each holds the board facts
+  `cortexm-weactf412`, `riscv-milkv-duo` (and `native`): each holds the
+  board facts
   (`cmake/board.cmake`), the board code (`include/`, `src/`) and its own tests
   (`tests/`); `tests/board-tests/CMakeLists.txt` builds them (`-qemu`,
   `-hwd`, `-host` images), and `tests/cmake/uos-tests-run.cmake` registers

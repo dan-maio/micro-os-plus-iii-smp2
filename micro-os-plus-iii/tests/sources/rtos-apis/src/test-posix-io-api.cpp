@@ -322,7 +322,7 @@ using my_partition2 = posix::block_device_partition_lockable<
 
 static rtos::mutex mx2{ "mx2" };
 
-// /dev/mb2
+// /dev/mb-p2
 // The mutex is not really needed, but it is used to test the template.
 static my_partition2 p2{ "mb-p2", mb, mx2 };
 
@@ -456,7 +456,11 @@ test_posix_io_api (bool extra __attribute__ ((unused)))
 
   printf ("\n%s - Block device - C API\n", test_name);
   {
-    int fd = open ("/dev/mb2", 0);
+    // The partition registered above as "mb-p2". This block compiles only
+    // on a cross build WITHOUT semihosting syscalls -- the RISC-V platform
+    // was the first, every Arm platform defines OS_USE_SEMIHOSTING_SYSCALLS
+    // -- and its "/dev/mb2" named no device (open() failed with EBADF).
+    int fd = open ("/dev/mb-p2", 0);
 
     buff[0] = 0xFF;
     res = read (fd, buff, bsz);

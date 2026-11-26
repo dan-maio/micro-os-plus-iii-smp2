@@ -181,12 +181,17 @@ trace_flush (void)
 
 // ----------------------------------------------------------------------------
 
-#if defined(__ARM_EABI__)
+#if defined(__ARM_EABI__) && (defined(__arm__) || defined(__aarch64__))
 
 // For embedded platforms, optimise with aliases.
 //
 // Aliases can only refer symbols defined in the same translation unit
 // and C++ de-mangling must be done manually.
+//
+// The mangled names are the Arm ones: `va_list` is std::__va_list
+// (St9__va_list) in both the AAPCS and AAPCS64. A RISC-V build, which defines
+// __ARM_EABI__ only to select the kernel's embedded code paths, mangles
+// va_list differently and takes the portable #else branch below.
 
 int __attribute__ ((weak, alias ("_ZN2os5trace6printfEPKcz")))
 trace_printf (const char* format, ...);

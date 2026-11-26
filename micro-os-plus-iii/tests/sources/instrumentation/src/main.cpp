@@ -70,7 +70,13 @@ os_main (int argc, char* argv[])
   sysclock.sleep_for (1);
 
   {
-    message_queue* mqueue = new message_queue ("my-mqueue", 7, sizeof (int));
+    // A message slot must hold a pointer: the queue keeps its free list in
+    // the free slots (os-mqueue.cpp asserts msg_size_bytes >= sizeof
+    // (void*)). sizeof (int) satisfied that only on 32-bit targets; the
+    // RISC-V RV64 port was the first 64-bit run of this suite. The messages
+    // sent are still ints.
+    message_queue* mqueue = new message_queue (
+        "my-mqueue", 7, sizeof (int) > sizeof (void*) ? sizeof (int) : sizeof (void*));
 
     int value = 1234;
     mqueue->send (&value, sizeof (value));

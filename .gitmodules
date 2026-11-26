@@ -14,3 +14,7 @@
 	path = posix-arch/micro-os-plus-iii-posix-arch
 	url = https://github.com/dan-maio/micro-os-plus-iii-posix-arch.git
 	branch = smp
+[submodule "riscv/micro-os-plus-iii-riscv.git"]
+	path = riscv/micro-os-plus-iii-riscv
+	url = https://github.com/dan-maio/micro-os-plus-iii-riscv.git
+	branch = smp

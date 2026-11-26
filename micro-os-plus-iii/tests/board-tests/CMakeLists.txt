@@ -6,7 +6,7 @@
 # A platform adds it, after its board facts (cmake/board.cmake) and
 # micro-os-plus::board exist, with:
 #
-#   set (UOS_TESTS_PORT     aarch32 | aarch64 | cortexm | posix)
+#   set (UOS_TESTS_PORT     aarch32 | aarch64 | cortexm | riscv | posix)
 #   set (UOS_TESTS_BOARD_DIR <the board's test folder: tests.cmake, src/,
 #                             include/ and one folder per board-only test>)
 #   set (UOS_TESTS_SOURCES  <the portable tests this board runs, from
@@ -69,6 +69,9 @@ elseif (UOS_TESTS_PORT STREQUAL "aarch64")
   set (_common_defines TRACE __ARM_EABI__ __ARM_ARCH_8A__ SEMIHOST)
 elseif (UOS_TESTS_PORT STREQUAL "cortexm")
   set (_port_lib ${UOS_PORT_LIB})
+  set (_common_defines TRACE SEMIHOST)
+elseif (UOS_TESTS_PORT STREQUAL "riscv")
+  set (_port_lib micro-os-plus::riscv)
   set (_common_defines TRACE SEMIHOST)
 elseif (UOS_TESTS_PORT STREQUAL "posix")
   set (_port_lib micro-os-plus::posix-arch)
