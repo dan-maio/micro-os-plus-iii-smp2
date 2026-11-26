@@ -65,6 +65,11 @@ with OpenOCD only (no GDB). Before each AArch hardware test CTest adds
 | `cortexm-weactf411` | cortexm | WeAct Studio F411CE | 1× Cortex-M4F | 1 | 5 hwd | DAPLink CMSIS-DAP (or WCH-Link) |
 | `cortexm-weactf412` | cortexm | WeAct Studio F412RE | 1× Cortex-M4F | 1 | 5 hwd | ST-Link |
 | `riscv-milkv-duo` | riscv | Milk-V Duo 64 MB (Sophgo CV1800B) | 1× T-Head C906, RV64GC | 1 | 20 hwd images (no CTest cases yet, §7a) | Sipeed CMSIS-DAP `d6e7:3507` |
+| `riscv-pico2` | riscv | Raspberry Pi Pico 2 (RP2350) | 2× Hazard3, RV32IMAC | 2 | 21 hwd images | Raspberry Pi Debug Probe, the Raspberry Pi OpenOCD |
+| `riscv-pico2-rp2350b-psram` | riscv | WeAct RP2350B, 16 MB flash + 8 MB PSRAM | 2× Hazard3, RV32IMAC | 2 | 21 hwd images | CMSIS-DAP `c251:f001`, the Raspberry Pi OpenOCD |
+| `riscv-visionfive2-lite` | riscv | StarFive VisionFive 2 Lite (JH-7110S) | 4× SiFive U74, RV64GC | 4 | 26 hwd images | DAPLink or Pico probe |
+| `riscv-mangopi-mq-pro` | riscv | MangoPi MQ-Pro (Allwinner D1) | 1× T-Head C906, RV64GC | 1 | 18 hwd images | none: `xfel` (USB FEL) |
+| `riscv-ch32v307-evt` | riscv | WCH CH32V307V-EVT | 1× QingKe V4F, RV32IMAFC | 1 | 10 hwd images | WCH-Link, the WCH OpenOCD |
 | `qemu-riscv64` | riscv | QEMU `virt` | RV64GC | 1 | 17 QEMU | — |
 | `qemu-riscv32` | riscv | QEMU `virt` | RV32IMAC, no FPU (the Hazard3 code) | 1 | 17 QEMU (`mmu-test` SKIP) | — |
 | `native` | posix-arch | the Linux host | host threads as CPUs | 4 (`-DNCPU`) | 20 host | — |
@@ -377,10 +382,11 @@ semihosting exit at once.
 
 ## 7a. RISC-V
 
-`tests/platforms/riscv-milkv-duo/` (the board), `qemu-riscv64/` and
-`qemu-riscv32/` (QEMU `virt`, §2). One hart everywhere: the kernel's scalar
-scheduler. The board tests live in `platforms/riscv-milkv-duo/tests/`; the
-three platforms build them, the QEMU ones without the `HWD_ONLY` tests.
+`tests/platforms/riscv-<board>/` (the six boards), `qemu-riscv64/` and
+`qemu-riscv32/` (QEMU `virt`, §2). The Milk-V Duo's tests and the QEMU
+platforms (one hart: the kernel's scalar scheduler) share
+`platforms/riscv-milkv-duo/tests/`; the QEMU platforms build them without the
+`HWD_ONLY` tests:
 
 | Test | What it does | Duo | `qemu-riscv64` | `qemu-riscv32` |
 |---|---|---|---|---|
@@ -399,9 +405,23 @@ three platforms build them, the QEMU ones without the `HWD_ONLY` tests.
 | `smp-test-usb-cdc-acm`, `smp-test-usb-hid` | USB device on the CV1800B's DWC2 (TinyUSB); the PC's side runs `usb-host.py`. | hwd | — | — |
 | `blinky`, `fp-switch`, `mutex-stress`, `instrumentation`, `rtos-apis`, `cmsis-os-validator` | The upstream suites (§4). `fp-switch` checks f0–f31 and `fcsr.fflags` where there is an FPU; on `qemu-riscv32` (no FPU) it has nothing to check. The validator's IRQ 0 is the port's software-interrupt line 0 (`src/cmsis-os-validator-support.cpp`). | hwd | QEMU | QEMU |
 
-The Duo's `hwd` images are built but not registered with CTest yet; a board
+The other RISC-V boards, `hwd` images only (the tests are each platform's
+`tests/`, the suites `UOS_TESTS_SUITES`):
+
+| Platform | Tests | Notes |
+|---|---|---|
+| `riscv-pico2` | `exc-test`, `sc-test-ko`, `smp-mat-test`, `smp-mat-test-ram`, `smp-test0` … `smp-test5`, `smp-test-ko`, `smp-test-nested`, `smp-test-usb-cdc-acm`, `smp-test-usb-hid`; suites `fp-switch`, `mutex-stress`, `rtos-apis`, `cmsis-os-validator` and their `-ram` variants | the Cortex-M Pico 2's tests on the Hazard3 harts; `smp-test0` has no kernel; `-ram`: run from SRAM; the suites on one hart |
+| `riscv-pico2-rp2350b-psram` | `exc-test`, `psram-exec`, `sc-test-ko`, `smp-mat-test` (and `_200`, `_250`), `smp-test0` … `smp-test5`, `smp-test-ko`, `smp-test-nested`, `smp-test-nested-clock` (and `_200`, `_250`), `smp-test-xip`, `smp-test-xip-core1park`, `smp-test-xip-fs`; suite `fp-switch` | the Pico 2's code; data in the PSRAM, the clock table, the flat file system |
+| `riscv-visionfive2-lite` | the Duo's portable set, `emmc-probe`, `emmc-fs-test`, `smp-test2`, the USB tests (`smp-test-usb-cdc-acm`, `-cdc-file`, `-cdc-file-fs`, `-cdc-net`), `smp-net-ram-disk`, `smp-wifi`, `vf2-wifi-ram-disk`; the six suites | every image on the four U74 (the suites: the platform's start-up starts CPUs 1..3) |
+| `riscv-mangopi-mq-pro` | the Duo's portable set (not `semihosting-test`: no debugger), `wifi-net`, `wifi-ram-disk`; the six suites | ended through the board's `hw_result` (RESULT on UART0, reset into FEL) |
+| `riscv-ch32v307-evt` | `board-basics` (no kernel), `pfic-test`, `smp-test1`, `usb-cdc-stream`; the six suites | the port's PFIC path |
+
+The Wi-Fi tests need firmware that is not in the repository (`*.bin`, the
+READMEs beside where it goes); without it they are left out at configure time.
+
+The boards' `hwd` images are built but not registered with CTest yet; a board
 run is by hand with the port's runner,
-`BUILD=<build>/platform-bin/port-tests <port>/test/boards/milkv-duo/hw.sh <test>`.
+`BUILD=<build>/platform-bin/port-tests <port>/test/boards/<board>/hw.sh <test>`.
 
 ## 8. POSIX — native host
 
@@ -451,7 +471,9 @@ initial failures (`aarch32-rpi3b-smp-pipeline-test-qemu`, the PSRAM board's
 `cmsis-os-validator` on RPi 4 B) passed on rerun.
 
 **RISC-V QEMU** (2026-11-26): `qemu-riscv64` 17/17 and `qemu-riscv32` 16/17
-with `mmu-test` SKIP, Debug and Release (the validator 60/60 on both).
+with `mmu-test` SKIP, Debug and Release (the validator 60/60 on both). The
+six RISC-V boards build all their `hwd` images, Debug and Release (116); not
+run on the boards from this repository yet.
 
 **Hardware** (2026-11-20, through CTest and OpenOCD; logs in the workspace's
 `hw-check/2026-11-20-*`):

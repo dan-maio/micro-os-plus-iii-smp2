@@ -29,8 +29,9 @@ There are 24 platforms under `platforms/`, grouped by the port they exercise:
   the Cortex-M port's generic M0/M3/M4F/M7 cores in QEMU, run single-core
 - `qemu-riscv64`, `qemu-riscv32` — the RISC-V port on QEMU's `virt`
   machine (RV64GC; RV32IMAC without an FPU), run single-hart
-- `riscv-milkv-duo` — the RISC-V port on the Milk-V Duo (CV1800B, C906);
-  hardware images only
+- `riscv-milkv-duo`, `riscv-pico2`, `riscv-pico2-rp2350b-psram`,
+  `riscv-visionfive2-lite`, `riscv-mangopi-mq-pro`, `riscv-ch32v307-evt` —
+  the RISC-V port on its boards; hardware images only
 - `native` — the POSIX-arch port, as a host process (gcc or clang)
 - `nucleo-f411re`, `nucleo-f767zi`, `nucleo-h743zi`, `raspberrypi-pico` —
   the upstream plain-kernel platforms

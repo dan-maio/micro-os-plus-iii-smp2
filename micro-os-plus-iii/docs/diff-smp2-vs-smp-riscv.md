@@ -1361,7 +1361,7 @@ test name means different things on different boards.
 
 ---
 
-### 6.8 Status (2026-11-26): the Milk-V Duo pilot, QEMU only
+### 6.8 Status (2026-11-26): all six boards build here; QEMU tests pass
 
 Decided: the pilot is one board, `milkv-duo`, checked on QEMU only; the
 submodule folder is `riscv/micro-os-plus-iii-riscv`; the work is on the
@@ -1378,6 +1378,8 @@ starting point is tagged `smp-pre-align`).
 | The port | Under the kernel's `tests/` it is a leaf library, like the Arm ports here: `micro-os-plus::riscv` (no kernel, no board), `micro-os-plus::riscv-bare`, and the QEMU `virt` board, `micro-os-plus::riscv-qemu-virt[32]-board`. Built as the top-level project it keeps its standalone layout, for the five boards not moved yet. |
 | Phase 2 (`milkv-duo`) | `tests/platforms/riscv-milkv-duo`: the board facts (`cmake/board.cmake`, `tests/cmake/uos-riscv-board.cmake`), code, linker script, USB bring-up and OpenOCD configurations; its 14 board tests. The six suites are `UOS_TESTS_SUITES` (from `tests/sources/`), not placeholder folders; the validator's RISC-V glue is `src/cmsis-os-validator-support.cpp`. |
 | Phase 3 (QEMU) | CTest starts QEMU itself, no `qemu.sh`. The emulated tests are two platforms named for what they run on: `qemu-riscv64` and `qemu-riscv32` (the port's `virt` board; they build the board tests from `riscv-milkv-duo/tests/`). `riscv-milkv-duo` is the board only. |
+| Phase 2 (the other five) | `tests/platforms/riscv-pico2`, `riscv-pico2-rp2350b-psram` (the Pico 2's code, its own memory maps), `riscv-visionfive2-lite`, `riscv-mangopi-mq-pro`, `riscv-ch32v307-evt`: board facts, code and tests, the suites as `UOS_TESTS_SUITES` (the Pico 2's `-ram` variants as name-only folders, as on `cortexm-pico2`), each validator's IRQ glue in `src/cmsis-os-validator-support.cpp`. The shared pieces are in one place: the Pico 2's TinyUSB tree (`riscv-pico2/usb`, used by the Duo, the VF2 and the CH32V307) and lwIP (`tests/third_party/lwip`, the same 2.2.1 the Pi 4 B uses). Hardware images only, all built, Debug and Release (116). |
+| Shared changes | `board-tests`: kernel-less RISC-V tests (`micro-os-plus::riscv-bare`), `BOARD_TEST_QEMU_ONLY`, `BOARD_TEST_EXCLUDE`; `portable-test-end.cpp`: `uos_platform_prologue()` (the VF2 starts its other three harts before a suite) and `UOS_TEST_END_HW_RESULT` (the MangoPi, without a debugger, ends through its own `hw_result`). The Wi-Fi tests are left out when their firmware (not in the repository) is missing. |
 
 **Changed from the plan.**
 
@@ -1400,12 +1402,14 @@ change.
 
 **Left.**
 
-1. The Duo's hardware runs as CTest cases (`uos_tests_add_hwd()`, the WDT
-   reset of `reset.cfg` as the reset fixture). Until then, by hand:
-   `BUILD=<build>/platform-bin/port-tests <port>/test/boards/milkv-duo/hw.sh <test>`.
-2. The other five boards, then deleting the boards, tests and runners from
-   the port. The Duo's copy stays in the port until then: its `qemu.sh` is
-   also the QEMU runner of the port's `pico2` and `mangopi-mq-pro`.
+1. The boards' hardware runs as CTest cases (phase 3 for `hwd`:
+   `uos_tests_add_hwd()` / `uos_tests_add_openocd()`, a loader runner for
+   the MangoPi's `xfel`). Until then, by hand, with the port's runner:
+   `BUILD=<build>/platform-bin/port-tests <port>/test/boards/<board>/hw.sh <test>`.
+   No board has been run from this repository yet.
+2. Then deleting the boards, tests and runners from the port: they are
+   still there, and its standalone build is unchanged, because its runners
+   (`hw.sh`, `qemu.sh`, `usb-host.py`) are what runs the boards today.
 3. Phase 4 (the duplicated test names).
 4. Merge `riscv-integration` (port, then this repository) and move the
    submodule's branch back to `smp`.

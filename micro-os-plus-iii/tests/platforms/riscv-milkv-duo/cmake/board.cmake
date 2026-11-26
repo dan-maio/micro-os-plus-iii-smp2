@@ -46,9 +46,8 @@ set (UOS_BOARD_DEFINES
 # and the portable CDC/HID glue and descriptors of the Pico 2. Linked only
 # into the USB tests (tests/tests.cmake).
 #
-# UNTIL THE RISC-V PICO 2 MOVES HERE: its USB tree is still the port's
-# (test/boards/pico2/usb); it becomes platforms/riscv-pico2/usb.
-set (_pico2_usb "${UOS_RISCV_DIR}/test/boards/pico2/usb")
+# The RISC-V Pico 2's USB tree (platforms/riscv-pico2/usb).
+set (_pico2_usb "${CMAKE_SOURCE_DIR}/platforms/riscv-pico2/usb")
 set (_duo "${CMAKE_SOURCE_DIR}/platforms/riscv-milkv-duo")
 set (UOS_BOARD_USB_INCLUDE
      "${_duo}/usb"

@@ -1,0 +1,10 @@
+--- a/src/jtag/drivers/wlink.c	2026-11-07 17:42:54.596968371 +0200
++++ b/src/jtag/drivers/wlink.c	2026-11-07 17:42:54.598512888 +0200
+@@ -1464,6 +1464,7 @@
+ 			wlink549=true;
+ 			break;
+ 		case 2:
++		case 0x12:	/* WCH-LinkE fw 2.10+, as in mrs-wch-riscv-230824 wlinke.c */
+ 			wlink_name="WCH-LinkE-CH32V307  mod:RV";
+ 			break;
+ 		case 3:

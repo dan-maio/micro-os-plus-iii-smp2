@@ -49,6 +49,13 @@ __wrap_os_main (int argc, char* argv[]);
 extern "C" void
 uos_test_storage_start (void) __attribute__ ((weak));
 
+// What every test needs from the platform before it runs, beyond the board's
+// start-up: the platform's start-up (src/platform-support.cpp) defines it
+// where there is something (the VisionFive 2 starts its other three harts);
+// elsewhere this stays undefined.
+extern "C" void
+uos_platform_prologue (void) __attribute__ ((weak));
+
 // What a test needs from the platform right before it runs: the platform's
 // support file for that test defines it (cmsis-os-validator pins the main
 // thread to core 0); for the others this stays undefined.
@@ -58,6 +65,10 @@ uos_test_prologue (void) __attribute__ ((weak));
 extern "C" int
 __wrap_os_main (int argc, char* argv[])
 {
+  if (uos_platform_prologue != nullptr)
+    {
+      uos_platform_prologue ();
+    }
   if (uos_test_storage_start != nullptr)
     {
       uos_test_storage_start ();
@@ -73,6 +84,16 @@ __wrap_os_main (int argc, char* argv[])
   // must reach the console before the run ends.
   std::fflush (nullptr);
 
+#if defined(UOS_TEST_END_HW_RESULT)
+  // The platform's hw_result reports the verdict and ends the run itself (the
+  // MangoPi MQ-Pro has no debugger: it prints the RESULT line, leaves the
+  // verdict for its loader and resets into FEL).
+  if (code == 0)
+    {
+      hw_result::ok ();
+    }
+  hw_result::fail ();
+#else
   uart::uart1.puts_uart (code == 0 ? "\nRESULT: PASS\n" : "\nRESULT: FAIL\n");
 #if defined(SEMIHOST)
   // One semihosted write of the whole line, then SYS_EXIT.
@@ -87,6 +108,7 @@ __wrap_os_main (int argc, char* argv[])
       hw_result::fail ();
     }
 #endif
+#endif // defined(UOS_TEST_END_HW_RESULT)
 
   // Reached only on a plain image (no SEMIHOST): idle.
   for (;;)

@@ -241,7 +241,17 @@
         "xpm run link-deps --config qemu-riscv64-cmake-gcc-debug",
         "xpm run link-deps --config qemu-riscv64-cmake-gcc-release",
         "xpm run link-deps --config qemu-riscv32-cmake-gcc-debug",
-        "xpm run link-deps --config qemu-riscv32-cmake-gcc-release"
+        "xpm run link-deps --config qemu-riscv32-cmake-gcc-release",
+        "xpm run link-deps --config riscv-pico2-cmake-gcc-debug",
+        "xpm run link-deps --config riscv-pico2-cmake-gcc-release",
+        "xpm run link-deps --config riscv-pico2-rp2350b-psram-cmake-gcc-debug",
+        "xpm run link-deps --config riscv-pico2-rp2350b-psram-cmake-gcc-release",
+        "xpm run link-deps --config riscv-visionfive2-lite-cmake-gcc-debug",
+        "xpm run link-deps --config riscv-visionfive2-lite-cmake-gcc-release",
+        "xpm run link-deps --config riscv-mangopi-mq-pro-cmake-gcc-debug",
+        "xpm run link-deps --config riscv-mangopi-mq-pro-cmake-gcc-release",
+        "xpm run link-deps --config riscv-ch32v307-evt-cmake-gcc-debug",
+        "xpm run link-deps --config riscv-ch32v307-evt-cmake-gcc-release"
       ],
       "test-all": [
         "xpm run test-native-cmake",
@@ -550,6 +560,36 @@
         "xpm run build --config riscv-milkv-duo-cmake-gcc-debug",
         "xpm run prepare --config riscv-milkv-duo-cmake-gcc-release",
         "xpm run build --config riscv-milkv-duo-cmake-gcc-release"
+      ],
+      "build-riscv-pico2-cmake": [
+        "xpm run prepare --config riscv-pico2-cmake-gcc-debug",
+        "xpm run build --config riscv-pico2-cmake-gcc-debug",
+        "xpm run prepare --config riscv-pico2-cmake-gcc-release",
+        "xpm run build --config riscv-pico2-cmake-gcc-release"
+      ],
+      "build-riscv-pico2-rp2350b-psram-cmake": [
+        "xpm run prepare --config riscv-pico2-rp2350b-psram-cmake-gcc-debug",
+        "xpm run build --config riscv-pico2-rp2350b-psram-cmake-gcc-debug",
+        "xpm run prepare --config riscv-pico2-rp2350b-psram-cmake-gcc-release",
+        "xpm run build --config riscv-pico2-rp2350b-psram-cmake-gcc-release"
+      ],
+      "build-riscv-visionfive2-lite-cmake": [
+        "xpm run prepare --config riscv-visionfive2-lite-cmake-gcc-debug",
+        "xpm run build --config riscv-visionfive2-lite-cmake-gcc-debug",
+        "xpm run prepare --config riscv-visionfive2-lite-cmake-gcc-release",
+        "xpm run build --config riscv-visionfive2-lite-cmake-gcc-release"
+      ],
+      "build-riscv-mangopi-mq-pro-cmake": [
+        "xpm run prepare --config riscv-mangopi-mq-pro-cmake-gcc-debug",
+        "xpm run build --config riscv-mangopi-mq-pro-cmake-gcc-debug",
+        "xpm run prepare --config riscv-mangopi-mq-pro-cmake-gcc-release",
+        "xpm run build --config riscv-mangopi-mq-pro-cmake-gcc-release"
+      ],
+      "build-riscv-ch32v307-evt-cmake": [
+        "xpm run prepare --config riscv-ch32v307-evt-cmake-gcc-debug",
+        "xpm run build --config riscv-ch32v307-evt-cmake-gcc-debug",
+        "xpm run prepare --config riscv-ch32v307-evt-cmake-gcc-release",
+        "xpm run build --config riscv-ch32v307-evt-cmake-gcc-release"
       ],
       "build-aarch32-luckfox-lyra-cmake": [
         "xpm run prepare --config aarch32-luckfox-lyra-cmake-gcc-debug",
@@ -2045,6 +2085,141 @@
         "properties": {
           "buildType": "MinSizeRel",
           "shortConfigurationName": "qrv32r"
+        }
+      },
+      "riscv-pico2-cmake-gcc-debug": {
+        "inherit": [
+          "riscv-actions",
+          "cmake-actions",
+          "riscv-dependencies",
+          "short-win-paths-properties"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "riscv-pico2",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "rp2d"
+        },
+        "actions": {
+          "test": "cd {{ properties.buildFolderRelativePath }} && ctest -V -LE \"hwd\"",
+          "test-hwd": "cd {{ properties.buildFolderRelativePath }} && ctest -V -L hwd"
+        }
+      },
+      "riscv-pico2-cmake-gcc-release": {
+        "inherit": [
+          "riscv-pico2-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "rp2r"
+        }
+      },
+      "riscv-pico2-rp2350b-psram-cmake-gcc-debug": {
+        "inherit": [
+          "riscv-actions",
+          "cmake-actions",
+          "riscv-dependencies",
+          "short-win-paths-properties"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "riscv-pico2-rp2350b-psram",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "rp2pd"
+        },
+        "actions": {
+          "test": "cd {{ properties.buildFolderRelativePath }} && ctest -V -LE \"hwd\"",
+          "test-hwd": "cd {{ properties.buildFolderRelativePath }} && ctest -V -L hwd"
+        }
+      },
+      "riscv-pico2-rp2350b-psram-cmake-gcc-release": {
+        "inherit": [
+          "riscv-pico2-rp2350b-psram-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "rp2pr"
+        }
+      },
+      "riscv-visionfive2-lite-cmake-gcc-debug": {
+        "inherit": [
+          "riscv-actions",
+          "cmake-actions",
+          "riscv-dependencies",
+          "short-win-paths-properties"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "riscv-visionfive2-lite",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "rvf2d"
+        },
+        "actions": {
+          "test": "cd {{ properties.buildFolderRelativePath }} && ctest -V -LE \"hwd\"",
+          "test-hwd": "cd {{ properties.buildFolderRelativePath }} && ctest -V -L hwd"
+        }
+      },
+      "riscv-visionfive2-lite-cmake-gcc-release": {
+        "inherit": [
+          "riscv-visionfive2-lite-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "rvf2r"
+        }
+      },
+      "riscv-mangopi-mq-pro-cmake-gcc-debug": {
+        "inherit": [
+          "riscv-actions",
+          "cmake-actions",
+          "riscv-dependencies",
+          "short-win-paths-properties"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "riscv-mangopi-mq-pro",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "rmqd"
+        },
+        "actions": {
+          "test": "cd {{ properties.buildFolderRelativePath }} && ctest -V -LE \"hwd\"",
+          "test-hwd": "cd {{ properties.buildFolderRelativePath }} && ctest -V -L hwd"
+        }
+      },
+      "riscv-mangopi-mq-pro-cmake-gcc-release": {
+        "inherit": [
+          "riscv-mangopi-mq-pro-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "rmqr"
+        }
+      },
+      "riscv-ch32v307-evt-cmake-gcc-debug": {
+        "inherit": [
+          "riscv-actions",
+          "cmake-actions",
+          "riscv-dependencies",
+          "short-win-paths-properties"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "riscv-ch32v307-evt",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "rchd"
+        },
+        "actions": {
+          "test": "cd {{ properties.buildFolderRelativePath }} && ctest -V -LE \"hwd\"",
+          "test-hwd": "cd {{ properties.buildFolderRelativePath }} && ctest -V -L hwd"
+        }
+      },
+      "riscv-ch32v307-evt-cmake-gcc-release": {
+        "inherit": [
+          "riscv-ch32v307-evt-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "rchr"
         }
       }
     }

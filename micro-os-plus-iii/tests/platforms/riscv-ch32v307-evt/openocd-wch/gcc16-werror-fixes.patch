@@ -1,0 +1,979 @@
+diff --git a/src/flash/nand/davinci.c b/src/flash/nand/davinci.c
+index 84f8e3480..7d70fcd35 100644
+--- a/src/flash/nand/davinci.c
++++ b/src/flash/nand/davinci.c
+@@ -605,7 +605,6 @@ static int davinci_write_page_ecc4infix(struct nand_device *nand, uint32_t page,
+ 		/* write this "out-of-band" data -- infix */
+ 		davinci_write_block_data(nand, oob, 16);
+ 		oob += 16;
+-		oob_size -= 16;
+ 
+ 	} while (data_size);
+ 
+diff --git a/src/flash/nor/ambiqmicro.c b/src/flash/nor/ambiqmicro.c
+index 6eda9286c..89391e6c8 100644
+--- a/src/flash/nor/ambiqmicro.c
++++ b/src/flash/nor/ambiqmicro.c
+@@ -149,7 +149,7 @@ FLASH_BANK_COMMAND_HANDLER(ambiqmicro_flash_bank_command)
+ 	if (CMD_ARGC < 6)
+ 		return ERROR_COMMAND_SYNTAX_ERROR;
+ 
+-	ambiqmicro_info = calloc(sizeof(struct ambiqmicro_flash_bank), 1);
++	ambiqmicro_info = calloc(1, sizeof(struct ambiqmicro_flash_bank));
+ 
+ 	bank->driver_priv = ambiqmicro_info;
+ 
+diff --git a/src/flash/nor/core.c b/src/flash/nor/core.c
+index 488aa15a8..1a894ec17 100644
+--- a/src/flash/nor/core.c
++++ b/src/flash/nor/core.c
+@@ -738,8 +738,8 @@ int flash_write_unlock_verify(struct target *target, struct image *image,
+ 	uint32_t *written, bool erase, bool unlock, bool write, bool verify)
+ {
+ 	int retval = ERROR_OK;
+-	uint32_t startaddr;
+-	unsigned long binlen;
++	uint32_t startaddr = 0;
++	unsigned long binlen = 0;
+ 	unsigned int section;
+ 	uint32_t section_offset;
+ 	struct flash_bank *c;
+diff --git a/src/flash/nor/dsp5680xx_flash.c b/src/flash/nor/dsp5680xx_flash.c
+index 5e8eec30f..858b66981 100644
+--- a/src/flash/nor/dsp5680xx_flash.c
++++ b/src/flash/nor/dsp5680xx_flash.c
+@@ -45,14 +45,11 @@
+ 
+ static int dsp5680xx_build_sector_list(struct flash_bank *bank)
+ {
+-	uint32_t offset = HFM_FLASH_BASE_ADDR;
+-
+ 	bank->sectors = malloc(sizeof(struct flash_sector) * bank->num_sectors);
+ 
+ 	for (unsigned int i = 0; i < bank->num_sectors; ++i) {
+ 		bank->sectors[i].offset = i * HFM_SECTOR_SIZE;
+ 		bank->sectors[i].size = HFM_SECTOR_SIZE;
+-		offset += bank->sectors[i].size;
+ 		bank->sectors[i].is_erased = -1;
+ 		bank->sectors[i].is_protected = -1;
+ 	}
+diff --git a/src/flash/nor/kinetis.c b/src/flash/nor/kinetis.c
+index edb4eb58f..de1d19248 100644
+--- a/src/flash/nor/kinetis.c
++++ b/src/flash/nor/kinetis.c
+@@ -884,7 +884,7 @@ FLASH_BANK_COMMAND_HANDLER(kinetis_flash_bank_command)
+ 	k_chip = kinetis_get_chip(target);
+ 
+ 	if (!k_chip) {
+-		k_chip = calloc(sizeof(struct kinetis_chip), 1);
++		k_chip = calloc(1, sizeof(struct kinetis_chip));
+ 		if (!k_chip) {
+ 			LOG_ERROR("No memory");
+ 			return ERROR_FAIL;
+@@ -985,7 +985,7 @@ static int kinetis_create_missing_banks(struct kinetis_chip *k_chip)
+ 					 bank_idx - k_chip->num_pflash_blocks);
+ 		}
+ 
+-		bank = calloc(sizeof(struct flash_bank), 1);
++		bank = calloc(1, sizeof(struct flash_bank));
+ 		if (!bank)
+ 			return ERROR_FAIL;
+ 
+diff --git a/src/flash/nor/max32xxx.c b/src/flash/nor/max32xxx.c
+index e7a690d3a..a88355098 100644
+--- a/src/flash/nor/max32xxx.c
++++ b/src/flash/nor/max32xxx.c
+@@ -98,7 +98,7 @@ FLASH_BANK_COMMAND_HANDLER(max32xxx_flash_bank_command)
+ 		return ERROR_FLASH_BANK_INVALID;
+ 	}
+ 
+-	info = calloc(sizeof(struct max32xxx_flash_bank), 1);
++	info = calloc(1, sizeof(struct max32xxx_flash_bank));
+ 	COMMAND_PARSE_NUMBER(uint, CMD_ARGV[2], info->flash_size);
+ 	COMMAND_PARSE_NUMBER(uint, CMD_ARGV[6], info->flc_base);
+ 	COMMAND_PARSE_NUMBER(uint, CMD_ARGV[7], info->sector_size);
+diff --git a/src/flash/nor/msp432.c b/src/flash/nor/msp432.c
+index 61741c8d6..99d4472bb 100644
+--- a/src/flash/nor/msp432.c
++++ b/src/flash/nor/msp432.c
+@@ -933,7 +933,7 @@ static int msp432_probe(struct flash_bank *bank)
+ 
+ 	if (is_main && MSP432P4 == msp432_bank->family_type) {
+ 		/* Create the info flash bank needed by MSP432P4 variants */
+-		struct flash_bank *info = calloc(sizeof(struct flash_bank), 1);
++		struct flash_bank *info = calloc(1, sizeof(struct flash_bank));
+ 		if (!info)
+ 			return ERROR_FAIL;
+ 
+diff --git a/src/flash/nor/stellaris.c b/src/flash/nor/stellaris.c
+index 6135c9574..f56dc85e3 100644
+--- a/src/flash/nor/stellaris.c
++++ b/src/flash/nor/stellaris.c
+@@ -464,7 +464,7 @@ FLASH_BANK_COMMAND_HANDLER(stellaris_flash_bank_command)
+ 	if (CMD_ARGC < 6)
+ 		return ERROR_COMMAND_SYNTAX_ERROR;
+ 
+-	stellaris_info = calloc(sizeof(struct stellaris_flash_bank), 1);
++	stellaris_info = calloc(1, sizeof(struct stellaris_flash_bank));
+ 	bank->base = 0x0;
+ 	bank->driver_priv = stellaris_info;
+ 
+diff --git a/src/flash/nor/stm32f2x.c b/src/flash/nor/stm32f2x.c
+index d3e7d709c..04865708e 100644
+--- a/src/flash/nor/stm32f2x.c
++++ b/src/flash/nor/stm32f2x.c
+@@ -1027,7 +1027,7 @@ static int stm32x_probe(struct flash_bank *bank)
+ 		assert(num_sectors > 0);
+ 
+ 		bank->num_sectors = num_sectors;
+-		bank->sectors = calloc(sizeof(struct flash_sector), num_sectors);
++		bank->sectors = calloc(num_sectors, sizeof(struct flash_sector));
+ 
+ 		if (stm32x_otp_is_f7(bank))
+ 			bank->size = STM32F7_OTP_SIZE;
+diff --git a/src/flash/nor/tcl.c b/src/flash/nor/tcl.c
+index d3a294658..d1d31f6d7 100644
+--- a/src/flash/nor/tcl.c
++++ b/src/flash/nor/tcl.c
+@@ -416,7 +416,7 @@ COMMAND_HANDLER(handle_flash_protect_check_command){
+ 		return ERROR_OK;
+ 	}
+ 
+-
++	return ERROR_OK;
+ }
+ COMMAND_HANDLER(handle_flash_write_image_command)
+ {
+@@ -1351,8 +1351,7 @@ COMMAND_HANDLER(handle_flash_banks_command)
+ 	if (CMD_ARGC != 0)
+ 		return ERROR_COMMAND_SYNTAX_ERROR;
+ 
+-	unsigned n = 0;
+-	for (struct flash_bank *p = flash_bank_list(); p; p = p->next, n++) {
++	for (struct flash_bank *p = flash_bank_list(); p; p = p->next) {
+ 		command_print(CMD, "#%d : %s (%s) at " TARGET_ADDR_FMT ", size 0x%8.8" PRIx32 ", "
+ 			"buswidth %u, chipwidth %u", p->bank_number,
+ 			p->name, p->driver->name, p->base, p->size,
+diff --git a/src/flash/nor/wcharm.c b/src/flash/nor/wcharm.c
+index 124e95c9a..3b963460f 100644
+--- a/src/flash/nor/wcharm.c
++++ b/src/flash/nor/wcharm.c
+@@ -396,13 +396,13 @@ static int ch32x_protect_check(struct flash_bank *bank)
+ 	if (retval != ERROR_OK)
+ 		return retval;
+ 
+-	for (int i = 0; i < bank->num_prot_blocks; i++)
++	for (unsigned int i = 0; i < bank->num_prot_blocks; i++)
+ 		bank->prot_blocks[i].is_protected = (protection & (1 << i)) ? 0 : 1;
+ 
+ 	return ERROR_OK;
+ }
+ 
+-static int ch32x_erase(struct flash_bank *bank, int first, int last)
++static int ch32x_erase(struct flash_bank *bank, unsigned int first, unsigned int last)
+ {	
+  if(armchip)
+  {
+@@ -414,9 +414,10 @@ static int ch32x_erase(struct flash_bank *bank, int first, int last)
+ 		return ret;
+ 			
+  }	
++	return ERROR_OK;
+ }
+ 
+-static int ch32x_protect(struct flash_bank *bank, int set, int first, int last)
++static int ch32x_protect(struct flash_bank *bank, int set, unsigned int first, unsigned int last)
+ {
+ 	printf("%d %d %d\n",set,first,last);
+ 	return ERROR_OK;
+@@ -438,7 +439,7 @@ static int ch32x_protect(struct flash_bank *bank, int set, int first, int last)
+ 		return retval;
+ 	}
+ 
+-	for (int i = first; i <= last; i++) {
++	for (unsigned int i = first; i <= last; i++) {
+ 		if (set)
+ 			ch32x_info->option_bytes.protection &= ~(1 << i);
+ 		else
+@@ -465,6 +466,7 @@ static int ch32x_write(struct flash_bank *bank, const uint8_t *buffer,
+ 		return ret;				
+  }
+ 
++	return ERROR_OK;
+ }
+ 
+ static int ch32x_get_device_id(struct flash_bank *bank, uint32_t *device_id)
+@@ -473,9 +475,8 @@ static int ch32x_get_device_id(struct flash_bank *bank, uint32_t *device_id)
+ 	 * the M0 from the M3 devices. */
+  
+ 	struct target *target = bank->target;
+-	uint32_t cpuid, device_id_register = 0;
+-    uint32_t testid=0;
+-    uint32_t tmp,tmp1,tmp2=0;
++	uint32_t testid=0;
++    uint32_t tmp2=0;
+ 	uint8_t user_cfg,config;
+ 	target_read_u8(target, 0x1ffff802, &user_cfg);
+ 	config=user_cfg>>6;
+@@ -519,13 +520,13 @@ static int ch32x_get_device_id(struct flash_bank *bank, uint32_t *device_id)
+ static int ch32x_get_flash_size(struct flash_bank *bank, uint16_t *flash_size_in_kb)
+ {	
+ 	struct target *target = bank->target;
+-	uint32_t cpuid, flash_size_reg;
+-    uint32_t temp;
+-	int retval = target_read_u32(target, 0x1ffff7e0, flash_size_in_kb);	
++	uint32_t flash_size;
++	int retval = target_read_u32(target, 0x1ffff7e0, &flash_size);	
+ 	if (retval != ERROR_OK)
+ 		return retval;
+ 
+-	return retval;
++	*flash_size_in_kb = flash_size;
++	return ERROR_OK;
+ }
+ 
+ static int ch32x_probe(struct flash_bank *bank)
+@@ -536,7 +537,6 @@ static int ch32x_probe(struct flash_bank *bank)
+ 	uint32_t device_id;
+ 	int page_size;
+ 	uint32_t base_address = 0x08000000;
+-    uint32_t rid=0;
+ 	ch32x_info->probed = 0;
+ 	ch32x_info->register_base = FLASH_REG_BASE_B0;
+ 	ch32x_info->user_data_offset = 10;
+@@ -550,7 +550,6 @@ static int ch32x_probe(struct flash_bank *bank)
+ 		return retval;
+ 	
+ 	// LOG_INFO("device id = 0x%08" PRIx32 "", device_id);
+-	rid=device_id & 0xfff ;
+ 	/* set page size, protection granularity and max flash size depending on family */
+ 	switch (device_id & 0xfff) {
+ 	case 0x410: /* medium density */
+@@ -655,7 +654,7 @@ COMMAND_HANDLER(ch32x_handle_part_id_command)
+ }
+ #endif
+ 
+-static int get_ch32x_info(struct flash_bank *bank, char *buf, int buf_size)
++static int get_ch32x_info(struct flash_bank *bank, struct command_invocation *cmd)
+ {
+ 
+ 
+@@ -992,8 +991,6 @@ static int ch32x_mass_erase(struct flash_bank *bank)
+ 
+ COMMAND_HANDLER(ch32x_handle_mass_erase_command)
+ {
+-	int i;
+-
+ 	if (CMD_ARGC < 1)
+ 		return ERROR_COMMAND_SYNTAX_ERROR;
+ 
+@@ -1005,7 +1002,7 @@ COMMAND_HANDLER(ch32x_handle_mass_erase_command)
+ 	retval = ch32x_mass_erase(bank);
+ 	if (retval == ERROR_OK) {
+ 		/* set all sectors as erased */
+-		for (i = 0; i < bank->num_sectors; i++)
++		for (unsigned int i = 0; i < bank->num_sectors; i++)
+ 			bank->sectors[i].is_erased = 1;
+ 
+ 		command_print(CMD, "ch32x mass erase complete");
+diff --git a/src/flash/nor/wchriscv.c b/src/flash/nor/wchriscv.c
+index 175d2b7a8..9c507af20 100644
+--- a/src/flash/nor/wchriscv.c
++++ b/src/flash/nor/wchriscv.c
+@@ -30,7 +30,7 @@ extern int noloadflag;
+ extern int  wlink_flash_protect(bool stat);
+ extern int wlnik_protect_check(void);
+ extern int wlink_quitreset(void);
+-extern int wlink_address;
++extern uint32_t wlink_address;
+ struct ch32vx_options
+ {
+ 	uint8_t rdp;
+@@ -71,7 +71,7 @@ FLASH_BANK_COMMAND_HANDLER(ch32vx_flash_bank_command)
+ 
+ 	return ERROR_OK;
+ }
+-static int ch32x_protect(struct flash_bank *bank, int set, int first, int last)
++static int ch32x_protect(struct flash_bank *bank, int set, unsigned int first, unsigned int last)
+ {	if(riscvchip==1)
+ 		wlink_quitreset();
+ 	if((riscvchip==1)||(riscvchip==5)||(riscvchip==6)||(riscvchip==9)){
+@@ -94,7 +94,7 @@ static int ch32x_protect(struct flash_bank *bank, int set, int first, int last)
+ 	}
+ }
+ 
+-static int ch32vx_erase(struct flash_bank *bank, int first, int last)
++static int ch32vx_erase(struct flash_bank *bank, unsigned int first, unsigned int last)
+ {	
+ 	if((riscvchip==5)||(riscvchip==6)||(riscvchip==9)){
+ 			int retval=wlnik_protect_check();
+@@ -166,7 +166,6 @@ static int ch32vx_probe(struct flash_bank *bank)
+ 	uint32_t ram=0;
+ 	int page_size;
+ 	uint32_t base_address = wlink_address;
+-	uint32_t rid = 0;
+ 	ch32vx_info->probed = 0;
+ 	/* read ch32 device id register */
+ 	int retval = ch32vx_get_device_id(bank, &device_id);
+diff --git a/src/helper/log.c b/src/helper/log.c
+index caa0a66bf..63864abf3 100644
+--- a/src/helper/log.c
++++ b/src/helper/log.c
+@@ -91,7 +91,7 @@ static void log_puts(enum log_levels level,
+ 	const char *function,
+ 	const char *string)
+ {
+-	char *f;
++	const char *f;
+ 
+ 	if (!log_output) {
+ 		/* log_init() not called yet; print on stderr */
+diff --git a/src/helper/options.c b/src/helper/options.c
+index 04f9ae17c..9b74ca3e6 100644
+--- a/src/helper/options.c
++++ b/src/helper/options.c
+@@ -162,7 +162,7 @@ static char *find_relative_path(const char *from, const char *to)
+ 	while (from[0] != '\0') {
+ 		if (from[0] != '/')
+ 			i++;
+-		char *next = strchr(from, '/');
++		const char *next = strchr(from, '/');
+ 		if (!next)
+ 			break;
+ 		from = next + 1;
+diff --git a/src/jtag/drivers/cmsis_dap_usb_bulk.c b/src/jtag/drivers/cmsis_dap_usb_bulk.c
+index e08be92ca..26c4fdc60 100644
+--- a/src/jtag/drivers/cmsis_dap_usb_bulk.c
++++ b/src/jtag/drivers/cmsis_dap_usb_bulk.c
+@@ -688,6 +688,7 @@ int wlink_armcheckprotect(void)
+ 		}
+ 		return ERROR_OK;
+ 	}
++	return ERROR_FAIL;
+ }
+ int wlink_armerase(void)
+ {
+@@ -695,7 +696,7 @@ int wlink_armerase(void)
+ 	int transferred=0;
+ 	uint8_t buffer_rcode[4];
+ 	uint32_t *comprogram = NULL;
+-	uint32_t *comflash = NULL;
++	const uint32_t *comflash = NULL;
+ 	if (armchip == 1)
+ 	{
+ 		comprogram = program_code1;
+@@ -707,8 +708,6 @@ int wlink_armerase(void)
+ 		comprogram = program_code2;
+ 		comflash = flash_code2;
+ 	}
+-	uint8_t i = 0;
+-	uint8_t *flashcode = (uint8_t *)comflash;
+ 
+ 	int h = *(comprogram + 10);
+ 
+@@ -750,7 +749,7 @@ int wlink_armerase(void)
+ int wlink_armwrite(const uint8_t *buffer, uint32_t offset, uint32_t count)
+ {
+ 	int transferred = 0;
+-	uint8_t *addr = &offset;
++	uint8_t *addr = (uint8_t *)&offset;
+ 	uint8_t flash_write[] = {0x81, 0x02, 0x01, 0x02};
+ 	uint8_t buffer_rcode[4];
+ 	uint8_t i = 0;
+@@ -814,7 +813,7 @@ void wlink_armquitreset(struct cmsis_dap *dap)
+ 	// hid_write(wlink_dev_handle, resetbuffer, 65);
+ 	// hid_read(wlink_dev_handle, buffer_rcode, 65);
+     libusb_bulk_transfer(dap->bdata->dev_handle, 0x02,resetbuffer,sizeof(resetbuffer),&transferred,timeout);
+-	int ret=libusb_bulk_transfer(dap->bdata->dev_handle, 0x83,buffer_rcode,sizeof(buffer_rcode),&transferred,timeout);
++	libusb_bulk_transfer(dap->bdata->dev_handle, 0x83,buffer_rcode,sizeof(buffer_rcode),&transferred,timeout);
+ 
+ 
+ }
+diff --git a/src/jtag/drivers/ulink.c b/src/jtag/drivers/ulink.c
+index 3ae5cac62..3329f7dd1 100644
+--- a/src/jtag/drivers/ulink.c
++++ b/src/jtag/drivers/ulink.c
+@@ -1489,7 +1489,7 @@ static int ulink_queue_scan(struct ulink *device, struct jtag_command *cmd)
+ 
+ 	/* Allocate TDO buffer if required */
+ 	if ((type == SCAN_IN) || (type == SCAN_IO)) {
+-		tdo_buffer_start = calloc(sizeof(uint8_t), scan_size_bytes);
++		tdo_buffer_start = calloc(scan_size_bytes, sizeof(uint8_t));
+ 
+ 		if (!tdo_buffer_start)
+ 			return ERROR_FAIL;
+diff --git a/src/jtag/drivers/wlink.c b/src/jtag/drivers/wlink.c
+index 536efc43a..806422357 100644
+--- a/src/jtag/drivers/wlink.c
++++ b/src/jtag/drivers/wlink.c
+@@ -67,15 +67,14 @@ pCH375WriteEndP pWriteData;
+ #include <string.h>
+ #include <sys/ioctl.h>
+ #include <stdint.h>
+-int gIndex = 0;
++uint32_t gIndex = 0;
+ static const uint16_t wlink_vids[] = {0x1a86, 0};
+ static const uint16_t wlink_pids[] = {0x8010, 0};
+-struct jtag_libusb_device_handle *wfd = NULL;
++struct libusb_device_handle *wfd = NULL;
+ int pWriteData(int dev, int endpoint, unsigned char *buf, unsigned long *length)
+ {
+ 	int ret,pr;
+-	length = (int *)length;
+-	ret =jtag_libusb_bulk_write(wfd, endpoint, buf, *length, 3000,&pr);
++	ret =jtag_libusb_bulk_write(wfd, endpoint, (char *)buf, (int)*length, 3000,&pr);
+ 	if(ret==ERROR_OK)
+ 		 return 1;
+ 	else
+@@ -84,14 +83,13 @@ int pWriteData(int dev, int endpoint, unsigned char *buf, unsigned long *length)
+ int pReadData(int dev, int endpoint, unsigned char *buf, unsigned long *length)
+ {
+ 	int ret,pr;
+-	length = (int *)length;
+ 	if (endpoint == 1)
+ 	{
+-		ret=jtag_libusb_bulk_read(wfd, 0x81, buf, *length, 3000,&pr);
++		ret=jtag_libusb_bulk_read(wfd, 0x81, (char *)buf, (int)*length, 3000,&pr);
+ 	}
+ 	else
+ 	{
+-		ret=jtag_libusb_bulk_read(wfd, 0x82, buf, *length, 3000,&pr);
++		ret=jtag_libusb_bulk_read(wfd, 0x82, (char *)buf, (int)*length, 3000,&pr);
+ 	}
+ 	if(ret==ERROR_OK)
+ 		 return 1;
+@@ -99,7 +97,7 @@ int pReadData(int dev, int endpoint, unsigned char *buf, unsigned long *length)
+ 		 return ret;
+ }
+ #endif
+-int wlink_address=0;
++uint32_t wlink_address=0;
+ bool wlink549 =false;
+ bool pageerase=false;
+ unsigned char riscvchip;
+@@ -585,7 +583,6 @@ unsigned char DMI_OP(
+ 	unsigned char Rxbuf[9];
+ 	unsigned long len;
+ 	unsigned char *pData;
+-	unsigned char retrytime;
+ 	Txbuf[0] = 0x81;
+ 	Txbuf[1] = 0x08;
+ 	Txbuf[2] = 0x06;
+@@ -595,8 +592,6 @@ unsigned char DMI_OP(
+ 	Txbuf[6] = (unsigned char)(iData >> 8);
+ 	Txbuf[7] = (unsigned char)(iData);
+ 	Txbuf[8] = iOP;
+-	retrytime = 0;
+-RETRY:
+ 	len = 9;
+ 	if (pWriteData(gIndex, 1, Txbuf, &len))
+ 	{
+@@ -616,8 +611,6 @@ RETRY:
+ 				*(pData + 3) = Rxbuf[4];
+ 			}
+ 			*oOP = Rxbuf[8];
+-		
+-			retrytime++;
+ 
+ 			if (Rxbuf[8] == 2 && Rxbuf[6] == 3)
+ 			{
+@@ -848,8 +841,6 @@ unsigned char WriteNonFullPage(unsigned long iaddr,
+ 	unsigned char Txbuf[pagesize];
+ 	unsigned char Rxbuf[pagesize];
+ 	unsigned long len;
+-	unsigned char *pData;
+-	unsigned char retrytime;
+ 	unsigned char i = 0;
+ 	Txbuf[0] = 0x81;
+ 	Txbuf[1] = 0x0A;
+@@ -860,7 +851,6 @@ unsigned char WriteNonFullPage(unsigned long iaddr,
+ 	Txbuf[5] = (unsigned char)(iaddr >> 8);
+ 	Txbuf[6] = (unsigned char)(iaddr);
+ 	Txbuf[7] = (unsigned char)ilen;
+-	retrytime = 0;
+ 	len = 8;
+ 	if ((riscvchip == 0x03) || (riscvchip == 0x02))
+ 	{
+@@ -940,6 +930,7 @@ unsigned char WriteNonFullPage(unsigned long iaddr,
+ 		}
+ 		return 0;
+ 	}
++	return 0;
+ }
+ int wlink_verify(unsigned long length, unsigned char *buffer)
+ {
+@@ -1300,7 +1291,7 @@ int wlink_verify(unsigned long length, unsigned char *buffer)
+ 	
+ 	if (binlength <= packsize)
+ 	{
+-		for (int i = 0; i < length; i++)
++		for (unsigned long i = 0; i < length; i++)
+ 		{
+ 			buf_bin[i] = *(buffer + i);
+ 		}
+@@ -1402,9 +1393,6 @@ int wlink_init(void)
+ 	unsigned char txbuf[4];
+ 	unsigned char rxbuf[20];
+ 	char * wlink_name=NULL;
+-	uint64_t old_dpc_value, new_dpc_value, t6_new, t6_old;
+-	
+-	uint32_t dmcontrol;
+ 	txbuf[0] = 0x81;
+ 	txbuf[1] = 0x0d;
+ 	txbuf[2] = 0x01;
+@@ -1449,7 +1437,7 @@ int wlink_init(void)
+ 			pSetTimeout(gIndex, 5000, 5000);
+ 		}
+ 	}
+-#else if
++#else
+ 
+ 	if (jtag_libusb_open(wlink_vids, wlink_pids, &wfd, NULL) != ERROR_OK)
+ 	{
+@@ -1536,13 +1524,11 @@ int wlink_init(void)
+ 			pWriteData(0, 1, txbuf, &len);
+ 			len = 4;
+ 			if(pReadData(0, 1, rxbuf, &len)){
+-					uint64_t old_dpc_value, new_dpc_value, t6_new, t6_old;
+-					uint32_t dmcontrol;
+ 					uint32_t addr = 4;
+ 					unsigned char oAddr;
+ 					unsigned long oData;
+ 					unsigned char oOP;
+-					unsigned char iAddr;
++					unsigned char iAddr = 0;
+ 					unsigned char Txbuf[52] = {0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00,
+ 											   0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00,
+ 											   0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00, 0x13, 0x00, 0x00, 0x00,
+@@ -1554,7 +1540,7 @@ int wlink_init(void)
+ 					DMI_OP(0, 0x17, 0x00221005, 2, &oAddr, &oData, &oOP);
+ 					DMI_OP(0, 0x04, iAddr, 1, &oAddr, &oData, &oOP);
+ 					WriteNonFullPage(addr, Txbuf, sizeof(Txbuf));					
+-					int ret = DMI_OP(0, 0x04, 0x00000020, 2, &oAddr, &oData, &oOP);
++					DMI_OP(0, 0x04, 0x00000020, 2, &oAddr, &oData, &oOP);
+ 					usleep(1000);
+ 					DMI_OP(0, 0x17, 0x0023101F, 2, &oAddr, &oData, &oOP);
+ 					usleep(1000);
+@@ -1765,7 +1751,7 @@ int wlink_quit(void)
+ 		FreeLibrary(hModule);
+ 		hModule = 0;
+ 	}
+-#else if
++#else
+ 	wlink_endprocess();
+ 	jtag_libusb_close(wfd);
+ #endif
+@@ -1808,7 +1794,7 @@ int wlink_write(const uint8_t *buffer, uint32_t offset, uint32_t count)
+ 	
+ 	if (binlength <= packsize)
+ 	{
+-		for (int i = 0; i < count; i++)
++		for (uint32_t i = 0; i < count; i++)
+ 		{
+ 			buf_bin[i] = *(buffer + i);
+ 		}
+diff --git a/src/server/gdb_server.c b/src/server/gdb_server.c
+index cc31ab42c..7bbe2b4cb 100644
+--- a/src/server/gdb_server.c
++++ b/src/server/gdb_server.c
+@@ -65,9 +65,9 @@ extern uint32_t chip_type;
+ extern int wlink_quitreset(void);
+ extern unsigned char riscvchip;
+ extern uint8_t armchip;
++struct cmsis_dap;
+ extern void wlink_armquitreset(struct cmsis_dap *dap);
+-extern int wlink_address;
+-int gdb_actual_connections;
++extern uint32_t wlink_address;
+ struct target_desc_format {
+ 	char *tdesc;
+ 	uint32_t tdesc_length;
+@@ -2887,7 +2887,6 @@ static bool gdb_handle_vcont_packet(struct connection *connection, const char *p
+ 
+ 	if (parse[0] == ';') {
+ 		++parse;
+-		--packet_size;
+ 	}
+ 
+ 	/* simple case, a continue packet */
+@@ -2929,11 +2928,9 @@ static bool gdb_handle_vcont_packet(struct connection *connection, const char *p
+ 			char *endp;
+ 
+ 			parse += 2;
+-			packet_size -= 2;
+ 
+ 			thread_id = strtoll(parse, &endp, 16);
+ 			if (endp) {
+-				packet_size -= endp - parse;
+ 				parse = endp;
+ 			}
+ 
+@@ -2968,7 +2965,6 @@ static bool gdb_handle_vcont_packet(struct connection *connection, const char *p
+ 
+ 			if (parse[0] == ';') {
+ 				++parse;
+-				--packet_size;
+ 
+ 				if (parse[0] == 'c') {
+ 					parse += 1;
+diff --git a/src/server/telnet_server.c b/src/server/telnet_server.c
+index 2ebcff163..1cbaba620 100644
+--- a/src/server/telnet_server.c
++++ b/src/server/telnet_server.c
+@@ -79,7 +79,7 @@ static int telnet_outputline(struct connection *connection, const char *line)
+ 
+ 	/* process lines in buffer */
+ 	while (*line) {
+-		char *line_end = strchr(line, '\n');
++		const char *line_end = strchr(line, '\n');
+ 
+ 		if (line_end)
+ 			len = line_end-line;
+diff --git a/src/target/arc_jtag.c b/src/target/arc_jtag.c
+index ca1a09649..fc91557ea 100644
+--- a/src/target/arc_jtag.c
++++ b/src/target/arc_jtag.c
+@@ -298,7 +298,7 @@ static int arc_jtag_read_registers(struct arc_jtag *jtag_info, uint32_t type,
+ 			ARC_JTAG_READ_FROM_CORE_REG : ARC_JTAG_READ_FROM_AUX_REG);
+ 	arc_jtag_enque_set_transaction(jtag_info, transaction, TAP_DRPAUSE);
+ 
+-	uint8_t *data_buf = calloc(sizeof(uint8_t), count * 4);
++	uint8_t *data_buf = calloc(count * 4, sizeof(uint8_t));
+ 
+ 	arc_jtag_enque_register_rw(jtag_info, addr, data_buf, NULL, count);
+ 
+@@ -498,7 +498,7 @@ int arc_jtag_read_memory(struct arc_jtag *jtag_info, uint32_t addr,
+ 	if (!count)
+ 		return ERROR_OK;
+ 
+-	data_buf = calloc(sizeof(uint8_t), count * 4);
++	data_buf = calloc(count * 4, sizeof(uint8_t));
+ 	arc_jtag_enque_reset_transaction(jtag_info);
+ 
+ 	/* We are reading from memory. */
+diff --git a/src/target/arm7_9_common.c b/src/target/arm7_9_common.c
+index cf77a81a7..7e1e7ddf3 100644
+--- a/src/target/arm7_9_common.c
++++ b/src/target/arm7_9_common.c
+@@ -1563,7 +1563,6 @@ static int arm7_9_restore_context(struct target *target)
+ 
+ 		if (dirty) {
+ 			uint32_t mask = 0x0;
+-			int num_regs = 0;
+ 			uint32_t regs[16];
+ 
+ 			if (mode_change) {
+@@ -1586,7 +1585,6 @@ static int arm7_9_restore_context(struct target *target)
+ 				if (reg->dirty) {
+ 					regs[j] = buf_get_u32(reg->value, 0, 32);
+ 					mask |= 1 << j;
+-					num_regs++;
+ 					reg->dirty = false;
+ 					reg->valid = true;
+ 					LOG_DEBUG("writing register %i mode %s "
+diff --git a/src/target/nds32.c b/src/target/nds32.c
+index 12340ac2c..8cc2c6787 100644
+--- a/src/target/nds32.c
++++ b/src/target/nds32.c
+@@ -392,7 +392,7 @@ static const struct reg_arch_type nds32_reg_access_type_64 = {
+ static struct reg_cache *nds32_build_reg_cache(struct target *target,
+ 		struct nds32 *nds32)
+ {
+-	struct reg_cache *cache = calloc(sizeof(struct reg_cache), 1);
++	struct reg_cache *cache = calloc(1, sizeof(struct reg_cache));
+ 	struct reg *reg_list = calloc(TOTAL_REG_NUM, sizeof(struct reg));
+ 	struct nds32_reg *reg_arch_info = calloc(TOTAL_REG_NUM, sizeof(struct nds32_reg));
+ 	int i;
+@@ -420,7 +420,7 @@ static struct reg_cache *nds32_build_reg_cache(struct target *target,
+ 		reg_list[i].size = nds32_reg_size(i);
+ 		reg_list[i].arch_info = &reg_arch_info[i];
+ 
+-		reg_list[i].reg_data_type = calloc(sizeof(struct reg_data_type), 1);
++		reg_list[i].reg_data_type = calloc(1, sizeof(struct reg_data_type));
+ 
+ 		if (reg_arch_info[i].num >= FD0 && reg_arch_info[i].num <= FD31) {
+ 			reg_list[i].value = reg_arch_info[i].value;
+diff --git a/src/target/riscv/riscv-013.c b/src/target/riscv/riscv-013.c
+index 35bc7b9cb..691bcf523 100644
+--- a/src/target/riscv/riscv-013.c
++++ b/src/target/riscv/riscv-013.c
+@@ -45,7 +45,6 @@ extern unsigned char WriteNonFullPage(unsigned long iaddr,
+ 
+ static int execute_fence(struct target *target);
+ extern unsigned char riscvchip;
+-extern int server_quit(void);
+ extern unsigned long ramaddr;
+ uint32_t flashaddr=0;
+ extern bool wchwlink;
+@@ -257,38 +256,12 @@ static riscv013_info_t *get_info(const struct target *target)
+ }
+ static int flush_flash_data(struct target *target)
+ {
+-	uint64_t regs[31];
+-	uint64_t s0; 
+-	uint64_t ra;
+-	uint64_t sp;
+-	uint64_t gp;
+-	uint64_t tp;
+ 	uint64_t a0;
++	uint64_t s1;
++	uint64_t a1;
++	uint64_t a2;
++	uint64_t a3;
+ 	uint64_t a4;
+-	uint64_t a5;
+-	uint64_t a6;
+-	uint64_t a7;
+-	uint64_t s2;
+-	uint64_t s3;
+-	uint64_t s4;
+-	uint64_t s5;
+-	uint64_t s6;
+-	uint64_t s7;
+-	uint64_t s8;
+-	uint64_t s9;
+-	uint64_t s10;
+-	uint64_t s11;
+-	uint64_t t4;
+-	uint64_t t5;
+-	uint64_t t6;	
+-	uint64_t t0;
+-	uint64_t t1;
+-	uint64_t t2;
+-	uint64_t t3;	
+-	uint64_t s1; 
+-	uint64_t a1; 
+-	uint64_t a2; 
+-	uint64_t a3; 
+ 	RISCV013_INFO(info);
+ 	//write 
+ 	if(info->flash_len)
+@@ -328,13 +301,14 @@ static int flush_flash_data(struct target *target)
+ 	info->flash_offset = 0;
+ 	memset(info->flash_data,0,sizeof(info->flash_data));
+ 	}
++	return ERROR_OK;
+ }
+ int write_flash_data(struct target *target, target_addr_t address,
+-		uint32_t size, uint32_t count, uint8_t *buffer)
++		uint32_t size, uint32_t count, const uint8_t *buffer)
+ {
+ 	uint32_t total_len;
+-	uint32_t start_address,temp,temp1;
+-	uint8_t * start_buffer;
++	uint32_t start_address;
++	const uint8_t *start_buffer;
+ 	RISCV013_INFO(info);	
+ 	start_address = address;
+ 	start_buffer = buffer;
+@@ -569,7 +543,7 @@ static uint32_t dtmcontrol_scan(struct target *target, uint32_t out)
+ 
+ 	uint32_t in = buf_get_u32(field.in_value, 0, 32);
+ 	if(wchwlink){
+-		buf_set_u32(&in, 0, 32, 0x00000071);
++		buf_set_u32((uint8_t *)&in, 0, 32, 0x00000071);
+ 	}
+ 	LOG_DEBUG("DTMCS: 0x%x -> 0x%x", out, in);
+ 
+@@ -622,7 +596,7 @@ static int wlink_dmi_op_timeout(struct target *target, uint32_t *data_in,
+ 	while (1) {
+ 		if(dmi_op == DMI_OP_READ)
+ 		{
+-			result=DMI_OP(0, (unsigned char	)address, 0, (unsigned char	)dmi_op, &address_in, data_in,&recvOP);
++			result=DMI_OP(0, (unsigned char	)address, 0, (unsigned char	)dmi_op, (unsigned char *)&address_in, (unsigned long *)data_in,&recvOP);
+ 			if(!result){
+ 					LOG_ERROR("failed %s at 0x%x, status=%d", op_name, address, status);
+ 					LOG_ERROR("Maybe the device has been removed");
+@@ -630,14 +604,14 @@ static int wlink_dmi_op_timeout(struct target *target, uint32_t *data_in,
+ 					return ERROR_FAIL;
+ 				}		
+ 		}else{
+-			DMI_OP(0, (unsigned char	)address, data_out, (unsigned char	)dmi_op, &address_in, &recvData,&recvOP);
++			DMI_OP(0, (unsigned char	)address, data_out, (unsigned char	)dmi_op, (unsigned char *)&address_in, (unsigned long *)&recvData,&recvOP);
+ 		}
+ 		status = recvOP;
+ 		if (status == DMI_STATUS_BUSY) {
+ 			increase_dmi_busy_delay(target);
+ 			if (dmi_busy_encountered)
+ 				*dmi_busy_encountered = true;
+-			DMI_OP(0, (unsigned char	)DM_ABSTRACTCS, DM_ABSTRACTCS_CMDERR, (unsigned char	)DMI_OP_WRITE, &address_in, &recvData,&recvOP);
++			DMI_OP(0, (unsigned char	)DM_ABSTRACTCS, DM_ABSTRACTCS_CMDERR, (unsigned char	)DMI_OP_WRITE, (unsigned char *)&address_in, (unsigned long *)&recvData,&recvOP);
+ 		} else if (status == DMI_STATUS_SUCCESS) {
+ 			break;
+ 		} else {
+@@ -2654,7 +2628,7 @@ static int assert_reset(struct target *target)
+ 		LOG_DEBUG("[wch] dcsr read fail!");
+ 	}
+ 	else{
+-		LOG_DEBUG("[wch] read dcsr value is 0x%x", tmpDcsr);
++		LOG_DEBUG("[wch] read dcsr value is 0x%" PRIx64, tmpDcsr);
+ 		//enable ebreak in m&u mode
+ 		tmpDcsr = set_field(tmpDcsr, CSR_DCSR_EBREAKM, 1);
+ 		tmpDcsr = set_field(tmpDcsr, CSR_DCSR_EBREAKU, 1);		
+@@ -4189,13 +4163,11 @@ static int write_memory(struct target *target, target_addr_t address,
+ 		if(riscvchip==0x03){		
+ 		  uint64_t actual_value;
+ 		  uint8_t txbuffer[4];
+-		  uint32_t  length;		
+ 		  if((address >= ramaddr)){
+ 					LOG_ERROR("THIS  ADDRESS IS NOT ACCESSIBLE");
+ 					server_quit();
+ 					return ERROR_FAIL;																												
+ 			}										
+-			target_addr_t flashaddress=address;
+ 			if(address < ramaddr)
+ 			{					
+ 				if((size*count)==4){						
+@@ -4209,14 +4181,14 @@ static int write_memory(struct target *target, target_addr_t address,
+ 			  			   txbuffer[1]= (((uint32_t)actual_value)&0x0000ff00)>>8;
+ 			  			   txbuffer[2]= *buffer;
+ 			  			   txbuffer[3]= *(buffer+1);	  			
+-			  		  	   write_memory_progbuf(target, address, 4, 1, &txbuffer);			  		  	 
++			  		  	   write_memory_progbuf(target, address, 4, 1, txbuffer);			  		  	 
+ 			  		  	   address=address+2;
+ 			  		  	   read_memory_progbuf_one(target, address, 4, (uint8_t*)&actual_value );			  		 
+ 			  		  	   txbuffer[0]= *(buffer+2);
+ 			  		   	   txbuffer[1]= *(buffer+3);
+ 			  			   txbuffer[2]= (((uint32_t)actual_value)&0x00ffffff)>>16;
+ 			  			   txbuffer[3]=((uint32_t)actual_value)>>24;		  		
+-			  		  	   write_memory_progbuf(target, address, 4, 1, &txbuffer);
++			  		  	   write_memory_progbuf(target, address, 4, 1, txbuffer);
+ 			  		  	}	  
+ 				}else{		
+ 					if((size*count)!=2){
+@@ -4229,7 +4201,7 @@ static int write_memory(struct target *target, target_addr_t address,
+ 			  			txbuffer[1]= *(buffer+1);
+ 			  			txbuffer[2]= (((uint32_t)actual_value)&0x00ffffff)>>16;
+ 			  			txbuffer[3]=((uint32_t)actual_value)>>24;		  		
+-			  			write_memory_progbuf(target, address, 4, 1, &txbuffer);
++			  			write_memory_progbuf(target, address, 4, 1, txbuffer);
+ 			  			}else{
+ 			  					address=address-2;
+ 			  					read_memory_progbuf_one(target, address, 4, (uint8_t*)&actual_value );			  				
+@@ -4237,7 +4209,7 @@ static int write_memory(struct target *target, target_addr_t address,
+ 			  			    txbuffer[1]= (((uint32_t)actual_value)&0x0000ff00)>>8;
+ 			  			    txbuffer[2]= *buffer;
+ 			  			    txbuffer[3]= *(buffer+1);			  		
+-			  				write_memory_progbuf(target, address, 4, 1, &txbuffer);		
++			  				write_memory_progbuf(target, address, 4, 1, txbuffer);		
+ 			  			 }	  	
+ 						}				
+ 				}
+@@ -5041,9 +5013,7 @@ static int maybe_execute_fence_i(struct target *target)
+ }
+ int wlink_cleancache(struct target *target)
+ {
+-	uint64_t old_dpc_value,new_dpc_value,t6_new,t6_old;
+-	uint32_t dmcontrol;
+-	RISCV013_INFO(info);
++	uint64_t t6_old;
+ 
+ 	{
+ 		struct riscv_program program;
+@@ -5051,7 +5021,7 @@ int wlink_cleancache(struct target *target)
+ 		register_write_direct(target, GDB_REGNO_T6, 4);  
+ 		riscv_program_init(&program, target);
+ 		riscv_program_insert(&program, 0x000f8067);      
+-		int result = riscv_program_exec(&program, target);
++		riscv_program_exec(&program, target);
+ 		usleep(1000);		
+ 		register_write_direct(target, GDB_REGNO_T6, t6_old);	
+ 	}
+diff --git a/src/target/riscv/riscv.c b/src/target/riscv/riscv.c
+index 4bf30e073..de81e688b 100644
+--- a/src/target/riscv/riscv.c
++++ b/src/target/riscv/riscv.c
+@@ -402,7 +402,7 @@ static uint32_t dtmcontrol_scan(struct target *target, uint32_t out)
+ 
+ 	uint32_t in = buf_get_u32(field.in_value, 0, 32);
+ 	if(wchwlink){
+-		buf_set_u32(&in, 0, 32, 0x00000071);
++		buf_set_u32((uint8_t *)&in, 0, 32, 0x00000071);
+ 	}
+ 	LOG_DEBUG("DTMCONTROL: 0x%x -> 0x%x", out, in);
+ 
+@@ -2256,12 +2256,10 @@ int riscv_openocd_poll(struct target *target)
+ 	int halted_hart = -1;
+ 
+ 	if (target->smp) {
+-		unsigned halts_discovered = 0;
+ 		unsigned should_remain_halted = 0;
+ 		unsigned should_resume = 0;
+-		unsigned i = 0;
+ 		for (struct target_list *list = target->head; list;
+-				list = list->next, i++) {
++				list = list->next) {
+ 			struct target *t = list->target;
+ 			if (!target_was_examined(t))
+ 				continue;
+@@ -2275,7 +2273,6 @@ int riscv_openocd_poll(struct target *target)
+ 				t->debug_reason = DBG_REASON_NOTHALTED;
+ 				break;
+ 			case RPH_DISCOVERED_HALTED:
+-				halts_discovered++;
+ 				t->state = TARGET_HALTED;
+ 				enum riscv_halt_reason halt_reason =
+ 					riscv_halt_reason(t, r->current_hartid);
+@@ -2324,7 +2321,7 @@ int riscv_openocd_poll(struct target *target)
+ 
+ 		/* Sample memory if any target is running. */
+ 		for (struct target_list *list = target->head; list;
+-				list = list->next, i++) {
++				list = list->next) {
+ 			struct target *t = list->target;
+ 			if (t->state == TARGET_RUNNING) {
+ 				sample_memory(target);
+diff --git a/src/target/target.c b/src/target/target.c
+index 88ae555ad..1bc0bb65c 100644
+--- a/src/target/target.c
++++ b/src/target/target.c
+@@ -3353,6 +3353,7 @@ COMMAND_HANDLER(handle_wlink_reset_resume_command)
+ {
+ 	
+ 	wlink_quitreset();
++	return ERROR_OK;
+ }
+ 
+ COMMAND_HANDLER(handle_resume_command)
+@@ -3818,7 +3819,6 @@ static COMMAND_HELPER(handle_verify_image_command_internal, enum verify_mode ver
+ 	int retval;
+ 	uint32_t checksum = 0;
+ 	uint32_t mem_checksum = 0;
+-	int i;
+ 	struct image image;
+ 
+ 	struct target *target = get_current_target(CMD_CTX);
+@@ -3857,9 +3857,8 @@ static COMMAND_HELPER(handle_verify_image_command_internal, enum verify_mode ver
+ 	int diffs = 0;
+ 	retval = ERROR_OK;
+ 	if(riscvchip){
+-		uint32_t  addr=0;
+ 		unsigned long length;
+-        uint8_t *buffer1;
++        uint8_t *buffer1 = NULL;
+ 		uint8_t *buffer2;
+ 
+ 		length=image.sections[image.num_sections-1].size + image.sections[image.num_sections-1].base_address;
+@@ -3867,19 +3866,19 @@ static COMMAND_HELPER(handle_verify_image_command_internal, enum verify_mode ver
+ 		
+ 		buffer2=malloc(length+256);
+ 		memset(buffer2,0xff,length);
+-		for (i = 0; i < image.num_sections; i++) {
++		for (unsigned int i = 0; i < image.num_sections; i++) {
+ 
+ 			buffer1 = malloc(image.sections[i].size);
+ 			retval = image_read_section(&image, i, 0x0, image.sections[i].size, buffer1, &buf_cnt);
+ 
+-			for(int j=0;j<buf_cnt;j++){
++			for(size_t j=0;j<buf_cnt;j++){
+ 			buffer2[j+image.sections[i].base_address]=buffer1[j];
+ 
+ 			}
+ 	    }
+ 		if(length%64){
+ 			
+-			for(int j=0;j<64-length%64;j++)
++			for(size_t j=0;j<64-length%64;j++)
+ 			{
+ 				buffer2[length+j]=0xff;
+ 			}

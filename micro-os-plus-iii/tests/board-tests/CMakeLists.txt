@@ -102,6 +102,12 @@ endif ()
 set (BOARD_TEST_SELF_CONTAINED "")
 set (BOARD_TEST_NO_KERNEL "")
 set (BOARD_TEST_HWD_ONLY "")
+# Tests that run only emulated: no `hwd` image (none at all on a board
+# without a QEMU linker script).
+set (BOARD_TEST_QEMU_ONLY "")
+# Tests not built at all, e.g. when an input that is not in the repository
+# (a firmware blob) is missing; the board's tests.cmake says why.
+set (BOARD_TEST_EXCLUDE "")
 function (board_test_defines _app _out)
   set (${_out} "" PARENT_SCOPE)
 endfunction ()
@@ -250,6 +256,9 @@ foreach (_dir IN LISTS _test_dirs)
   if (_app STREQUAL "include" OR _app STREQUAL "src")
     continue ()
   endif ()
+  if ("${_app}" IN_LIST BOARD_TEST_EXCLUDE)
+    continue ()
+  endif ()
   file (GLOB _srcs CONFIGURE_DEPENDS "${_dir}/*.cpp")
   if ("${_app}" IN_LIST UOS_TESTS_SUITES)
     # A suite's sources are its library's (test::<suite>, below).
@@ -287,6 +296,10 @@ foreach (_dir IN LISTS _test_dirs)
     if (UOS_TESTS_PORT STREQUAL "cortexm")
       # No kernel, no port scheduler: the board alone.
       set (_libs micro-os-plus::board)
+    elseif (UOS_TESTS_PORT STREQUAL "riscv")
+      # The board, with the port's start-up, trap entry and kernel-free
+      # runtime (micro-os-plus::riscv-bare).
+      set (_libs micro-os-plus::riscv-bare micro-os-plus::board)
     elseif (UOS_TESTS_PORT STREQUAL "posix")
       message (FATAL_ERROR "${_app} is listed in BOARD_TEST_NO_KERNEL, but the POSIX port has no bare target.")
     endif ()
@@ -348,6 +361,12 @@ foreach (_dir IN LISTS _test_dirs)
     set (_app_variants "")
     if ("hwd" IN_LIST _variants)
       set (_app_variants hwd)
+    endif ()
+  endif ()
+  if ("${_app}" IN_LIST BOARD_TEST_QEMU_ONLY)
+    set (_app_variants "")
+    if ("qemu" IN_LIST _variants)
+      set (_app_variants qemu)
     endif ()
   endif ()
 
