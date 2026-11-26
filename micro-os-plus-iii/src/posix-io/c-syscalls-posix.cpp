@@ -1005,7 +1005,8 @@ initialise_monitor_handles (void)
 
 // ----------------------------------------------------------------------------
 
-#if defined(__ARM_EABI__) && (__STDC_HOSTED__ != 0)
+#if (defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))) \
+    && (__STDC_HOSTED__ != 0)
 
 // The aliases must be in the same compilation unit as the names
 // they alias.
@@ -1027,7 +1028,7 @@ initialise_monitor_handles (void)
 
 #endif
 
-#endif /* defined(__ARM_EABI__) && (__STDC_HOSTED__ != 0) */
+#endif /* bare metal && (__STDC_HOSTED__ != 0) */
 
 #endif /* !defined(OS_USE_SEMIHOSTING_SYSCALLS) */
 

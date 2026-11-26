@@ -18,7 +18,7 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(__ARM_EABI__)
+#if !defined(__ARM_EABI__) && !(defined(__riscv) && !defined(__linux__))
 #include <system_error>
 #endif
 

@@ -9,7 +9,8 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
-#if defined(__ARM_EABI__) || defined(__DOXYGEN__)
+#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__)) \
+    || defined(__DOXYGEN__)
 
 // ----------------------------------------------------------------------------
 
@@ -500,4 +501,4 @@ _valloc_r (/* struct */ _reent* impure __attribute__ ((unused)),
 
 // ----------------------------------------------------------------------------
 
-#endif /* defined(__ARM_EABI__) */
+#endif /* bare metal: Arm EABI, RISC-V without an OS */

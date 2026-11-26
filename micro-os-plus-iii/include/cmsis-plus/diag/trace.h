@@ -51,6 +51,8 @@ trace_dbg_bkpt (void)
 {
 #if defined(__ARM_EABI__)
   __asm__ volatile ("bkpt 0");
+#elif defined(__riscv) && !defined(__linux__)
+  __asm__ volatile ("ebreak");
 #endif
 }
 

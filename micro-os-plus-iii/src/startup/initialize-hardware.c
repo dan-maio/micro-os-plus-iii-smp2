@@ -15,7 +15,7 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(__ARM_EABI__)
+#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))
 
 // ----------------------------------------------------------------------------
 
@@ -132,4 +132,4 @@ os_startup_initialize_hardware (void)
 
 // ----------------------------------------------------------------------------
 
-#endif /* defined(__ARM_EABI__) */
+#endif /* bare metal: Arm EABI, RISC-V without an OS */

@@ -27,7 +27,7 @@
 #include <cmsis-plus/rtos/internal/os-flags.h>
 #include <cmsis-plus/diag/instrumentation.h>
 
-#if !defined(__ARM_EABI__)
+#if !defined(__ARM_EABI__) && !(defined(__riscv) && !defined(__linux__))
 #include <memory>
 #endif
 

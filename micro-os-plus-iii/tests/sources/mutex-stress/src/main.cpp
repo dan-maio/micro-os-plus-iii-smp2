@@ -26,7 +26,7 @@
 using namespace os;
 using namespace os::rtos;
 
-#if defined(__ARM_EABI__)
+#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))
 
 void
 busy_wait (unsigned int micros)

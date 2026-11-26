@@ -15,7 +15,7 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(__ARM_EABI__)
+#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))
 
 // ----------------------------------------------------------------------------
 
@@ -152,4 +152,4 @@ __call_exitprocs (int code __attribute__ ((unused)),
 
 // ----------------------------------------------------------------------------
 
-#endif /* defined(__ARM_EABI__) */
+#endif /* bare metal: Arm EABI, RISC-V without an OS */

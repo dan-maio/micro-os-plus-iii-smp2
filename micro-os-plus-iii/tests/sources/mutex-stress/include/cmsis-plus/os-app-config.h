@@ -18,7 +18,7 @@
 
 #define OS_INTEGER_SYSTICK_FREQUENCY_HZ (1000)
 
-#if defined(__ARM_EABI__)
+#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))
 
 // With 4 bits NVIC, there are 16 levels, 0 = highest, 15 = lowest
 
@@ -29,9 +29,8 @@
 
 #if defined(__riscv) && (__riscv_xlen == 64)
 // RV64: every register is 8 bytes and a trap saves a 528-byte frame on the
-// interrupted stack (integer + FP files). The RISC-V port defines
-// __ARM_EABI__ only to select the kernel's embedded code paths, so it lands
-// in this branch; twice the 32-bit size.
+// interrupted stack (integer + FP files). Bare-metal RISC-V takes this
+// embedded branch; twice the 32-bit size.
 #define OS_INTEGER_RTOS_MAIN_STACK_SIZE_BYTES (8000)
 #else
 #define OS_INTEGER_RTOS_MAIN_STACK_SIZE_BYTES (4000)
@@ -89,7 +88,8 @@
 // #define OS_TRACE_LIBCPP_OPERATOR_NEW
 // #define OS_TRACE_LIBCPP_MEMORY_RESOURCE
 
-#if !defined(__ARM_EABI__) || defined(OS_USE_TRACE_SEGGER_RTT)
+#if !(defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))) \
+    || defined(OS_USE_TRACE_SEGGER_RTT)
 // #define OS_TRACE_RTOS_LISTS
 // #define OS_TRACE_RTOS_LISTS_CLOCKS
 // #define OS_TRACE_RTOS_THREAD_CONTEXT

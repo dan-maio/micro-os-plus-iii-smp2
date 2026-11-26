@@ -13,7 +13,7 @@
 #pragma clang diagnostic ignored "-Wempty-translation-unit"
 #endif
 
-#if defined(__ARM_EABI__)
+#if defined(__ARM_EABI__) || (defined(__riscv) && !defined(__linux__))
 
 // ----------------------------------------------------------------------------
 
@@ -182,4 +182,4 @@ os_terminate (int code __attribute__ ((unused)))
 
 // ----------------------------------------------------------------------------
 
-#endif /* defined(__ARM_EABI__) */
+#endif /* bare metal: Arm EABI, RISC-V without an OS */
