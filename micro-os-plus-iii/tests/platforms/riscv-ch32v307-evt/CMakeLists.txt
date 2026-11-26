@@ -30,6 +30,12 @@ add_subdirectory ("${CMAKE_SOURCE_DIR}/board-tests" "port-tests/test")
 # The hardware run (the port's former test/boards/ch32v307-evt/hw.sh).
 include ("${CMAKE_SOURCE_DIR}/cmake/uos-tests-run.cmake")
 
+# The toolchain's binutils, by full path: CTest runs the tests outside xpm,
+# without the configuration's xpacks/.bin on PATH.
+get_filename_component (_tool_bin "${CMAKE_C_COMPILER}" DIRECTORY)
+set (_readelf "${_tool_bin}/riscv-none-elf-readelf")
+set (_objcopy "${_tool_bin}/riscv-none-elf-objcopy")
+
 # The WCH OpenOCD (openocd-wch/build-openocd-wch.sh installs it here).
 set (UOS_RISCV_WCH_OPENOCD "$ENV{HOME}/.local/openocd-wch/bin/openocd" CACHE FILEPATH
      "The WCH OpenOCD (the MounRiver fork); the WCH-LinkE needs it")
@@ -56,7 +62,7 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
     COMMAND "${CMAKE_COMMAND}"
             "-DOPENOCD=${UOS_RISCV_WCH_OPENOCD}"
             "-DSCRIPTS=${UOS_RISCV_WCH_OPENOCD_SCRIPTS}"
-            "-DREADELF=${CMAKE_READELF}" "-DELF=$<TARGET_FILE:${_app}-hwd>"
+            "-DREADELF=${_readelf}" "-DELF=$<TARGET_FILE:${_app}-hwd>"
             "-DWORK=${CMAKE_CURRENT_BINARY_DIR}/${_name}-program"
             -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/program.cmake")
   set_tests_properties ("${_name}-program" PROPERTIES

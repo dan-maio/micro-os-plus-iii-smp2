@@ -16,6 +16,8 @@
 # such write as flash data, into a 256-byte buffer, unchecked.
 # -----------------------------------------------------------------------------
 
+cmake_minimum_required (VERSION 3.20)
+
 foreach (_v OPENOCD SCRIPTS READELF ELF WORK)
   if (NOT DEFINED ${_v})
     message (FATAL_ERROR "program.cmake: ${_v} is not set.")

@@ -19,10 +19,16 @@
 # log the test kept in RAM (the board's blackbox, read over xfel). UART0 is
 # left to the user: it is never opened.
 #
-# UOS_MQPRO_NORESET=1 in the environment: no xfel reset before the run (the
-# boot ROM would boot an inserted microSD card; a card-present test is started
-# with the board already in FEL from the card's own image).
+# No xfel reset around the run: the board is in FEL already, and every test
+# leaves it there (it resets with the boot ROM's FEL flag set). A plain xfel
+# reset reboots the SoC normally, and the board did not come back in FEL
+# (measured 2026-11-26: with no microSD card, no FEL after xfel reset; with
+# the tests' own reset, 16 runs back to back). UOS_MQPRO_RESET=1 in the
+# environment issues it before and after the run, as the port's former
+# hw.sh did, for a board whose boot ROM falls back to FEL.
 # -----------------------------------------------------------------------------
+
+cmake_minimum_required (VERSION 3.20)
 
 foreach (_v XFEL OBJCOPY READELF ELF WORK SECS)
   if (NOT DEFINED ${_v})
@@ -87,13 +93,13 @@ if (NOT _fel)
 endif ()
 
 # Every test starts from a clean, xfel-reset system.
-if (NOT "$ENV{UOS_MQPRO_NORESET}" STREQUAL "1")
+if ("$ENV{UOS_MQPRO_RESET}" STREQUAL "1")
   _xfel (reset)
   _wait_fel (60)
   if (NOT _fel)
     message (FATAL_ERROR
       "the board did not come back to FEL after xfel reset (is the microSD "
-      "card removed? UOS_MQPRO_NORESET=1 keeps it).")
+      "card removed? leave UOS_MQPRO_RESET unset: the tests return to FEL).")
   endif ()
 endif ()
 
@@ -163,8 +169,10 @@ if (_x_rc STREQUAL "0")
 endif ()
 
 # Leave a clean FEL for the next test.
-_xfel (reset)
-_wait_fel (60)
+if ("$ENV{UOS_MQPRO_RESET}" STREQUAL "1")
+  _xfel (reset)
+  _wait_fel (60)
+endif ()
 
 if (_log)
   message ("---- console log (from RAM, read over xfel) ----\n${_log}\n---- end of log ----")

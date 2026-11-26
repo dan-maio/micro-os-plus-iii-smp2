@@ -1409,12 +1409,14 @@ change.
    and WCH forks), per-image facts from the ELF (`cmake/uos-elf-facts.cmake`,
    the VF2) and the boards' own CMake steps (the RP2350B's architecture
    switch, the CH32V307's programming and read-back, the MangoPi's `xfel`
-   loader). Run on the board: the Pico 2, 19/19 (not its two USB tests). The
-   Duo, the RP2350B, the VF2, the MangoPi and the CH32V307 still have to be
-   run.
-2. Then deleting the boards, tests and runners from the port (still there,
-   and its standalone build unchanged), and the PC-side helpers
-   (`usb-host.py`) moving next to their tests.
+   loader). Run on the board: the Pico 2, 19/19 (not its two USB tests);
+   the MangoPi MQ-Pro, 16/16 (not its two Wi-Fi tests). The Duo, the
+   RP2350B, the VF2 and the CH32V307 still have to be run.
+2. Done: the port holds only the port (`src/`, `include/`, `qemu/virt/`, its
+   docs). Its `test/` (boards, tests, the shell runners, `third_party/`), its
+   standalone build and its xpm build actions are gone; the VisionFive 2's
+   debugging tools and notes, the boards' notes and `usb-host.py` moved to
+   the platforms.
 3. Phase 4 (the duplicated test names).
 4. Merge `riscv-integration` (port, then this repository) and move the
    submodule's branch back to `smp`.

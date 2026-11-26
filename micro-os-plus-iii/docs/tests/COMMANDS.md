@@ -140,7 +140,7 @@ Each needs its board ready and its loader:
 | Milk-V Duo | booted from its SD card with the minimal `fip.bin` | the xPack OpenOCD; the attach is retried (the Sipeed probe) |
 | Pico 2, WeAct RP2350B | powered | the Raspberry Pi OpenOCD fork, `UOS_RISCV_PICO_OPENOCD` (found under `~/.pico-sdk/openocd/` or a mounted home); the RP2350B is switched to its RISC-V cores first when needed |
 | VisionFive 2 Lite | at the U-Boot prompt | the xPack OpenOCD, probe `UOS_VF2_PROBE` (`daplink` or `picoprobe`) |
-| MangoPi MQ-Pro | in FEL mode (microSD card out) | `xfel` (`cmake/xfel-run.cmake`; the verdict comes from the RTC) |
+| MangoPi MQ-Pro | in FEL mode (microSD card out; OTG cable to the PC) | `xfel` (`cmake/xfel-run.cmake`; the verdict comes from the RTC). Each test resets back into FEL itself; no `xfel reset` (it leaves FEL on this board), unless `UOS_MQPRO_RESET=1` |
 | CH32V307V-EVT | powered, WCH-LinkE in RISC-V mode | the WCH OpenOCD fork, `UOS_RISCV_WCH_OPENOCD` (`openocd-wch/build-openocd-wch.sh`); the flash is programmed and read back first |
 
 Two probes with the same VID:PID (the Pico 2's Debug Probe and the VF2's

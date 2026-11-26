@@ -32,6 +32,12 @@ add_subdirectory ("${CMAKE_SOURCE_DIR}/board-tests" "port-tests/test")
 # The hardware run.
 include ("${CMAKE_SOURCE_DIR}/cmake/uos-tests-run.cmake")
 
+# The toolchain's binutils, by full path: CTest runs the tests outside xpm,
+# without the configuration's xpacks/.bin on PATH.
+get_filename_component (_tool_bin "${CMAKE_C_COMPILER}" DIRECTORY)
+set (_readelf "${_tool_bin}/riscv-none-elf-readelf")
+set (_objcopy "${_tool_bin}/riscv-none-elf-objcopy")
+
 find_program (UOS_XFEL xfel)
 if (NOT UOS_XFEL)
   set (UOS_XFEL "xfel")
@@ -48,8 +54,8 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
   set (_name "${PLATFORM_NAME}-${_app}-hwd")
   add_test (NAME "${_name}"
     COMMAND "${CMAKE_COMMAND}"
-            "-DXFEL=${UOS_XFEL}" "-DOBJCOPY=${CMAKE_OBJCOPY}"
-            "-DREADELF=${CMAKE_READELF}" "-DELF=$<TARGET_FILE:${_app}-hwd>"
+            "-DXFEL=${UOS_XFEL}" "-DOBJCOPY=${_objcopy}"
+            "-DREADELF=${_readelf}" "-DELF=$<TARGET_FILE:${_app}-hwd>"
             "-DWORK=${CMAKE_CURRENT_BINARY_DIR}/${_name}" "-DSECS=${_secs}"
             -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/xfel-run.cmake")
   # The resets around the run take up to a minute each.

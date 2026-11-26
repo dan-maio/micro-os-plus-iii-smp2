@@ -10,7 +10,7 @@
 # (RUN_SERIAL); OpenOCD programs (or, for a `-ram` test, loads) the image and
 # resets the board for each, and the test's semihosting SYS_EXIT ends it. The
 # UART is not opened. The USB device tests need the PC's side
-# (<port>/test/boards/pico2/usb-host.py cdc|hid), run by hand.
+# (platforms/riscv-pico2/usb-host.py cdc|hid), run by hand.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")

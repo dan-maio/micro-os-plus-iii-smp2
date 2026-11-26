@@ -9,6 +9,8 @@
 #         -DLOG=<log> -P arch-switch.cmake
 # -----------------------------------------------------------------------------
 
+cmake_minimum_required (VERSION 3.20)
+
 foreach (_v OPENOCD SCRIPTS CFG ELF LOG)
   if (NOT DEFINED ${_v})
     message (FATAL_ERROR "arch-switch.cmake: ${_v} is not set.")

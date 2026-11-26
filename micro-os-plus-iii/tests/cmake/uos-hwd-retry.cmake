@@ -9,6 +9,8 @@
 # obtained from https://opensource.org/licenses/mit.
 # -----------------------------------------------------------------------------
 
+cmake_minimum_required (VERSION 3.20)
+
 # A hardware test's OpenOCD session, run again when the attach failed
 # (uos_tests_add_hwd's RETRY_*; cmake/uos-tests-run.cmake):
 #

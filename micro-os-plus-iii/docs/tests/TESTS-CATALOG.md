@@ -477,8 +477,10 @@ with `mmu-test` SKIP, Debug and Release (the validator 60/60 on both). The
 six RISC-V boards build all their `hwd` images, Debug and Release (116).
 
 **RISC-V hardware** (2026-11-26, through CTest and the Raspberry Pi OpenOCD):
-the Pico 2 19/19 (all but the two USB tests, which need the PC's side). The
-other RISC-V boards not run from this repository yet.
+the Pico 2 19/19 (all but the two USB tests, which need the PC's side);
+through `xfel`, the MangoPi MQ-Pro 16/16 (all but the two Wi-Fi tests, which
+need an access point). The other RISC-V boards not run from this repository
+yet.
 
 **Hardware** (2026-11-20, through CTest and OpenOCD; logs in the workspace's
 `hw-check/2026-11-20-*`):

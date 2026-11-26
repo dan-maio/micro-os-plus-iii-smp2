@@ -9,6 +9,8 @@
 # obtained from https://opensource.org/licenses/mit.
 # -----------------------------------------------------------------------------
 
+cmake_minimum_required (VERSION 3.20)
+
 # What a board's hardware session needs to know about one image, as Tcl the
 # session sources (a POST_BUILD step of the image; the platform's
 # CMakeLists.txt):

@@ -16,7 +16,7 @@
 # at a time. OpenOCD halts the hart, switches it to M-mode, loads the image
 # into DDR and starts it; the test's semihosting SYS_EXIT ends it. Nothing is
 # written to the SD card; the UART is not opened. The USB device tests need
-# the PC's side (<port>/test/boards/pico2/usb-host.py cdc|hid), run by hand.
+# the PC's side (platforms/riscv-pico2/usb-host.py cdc|hid), run by hand.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
