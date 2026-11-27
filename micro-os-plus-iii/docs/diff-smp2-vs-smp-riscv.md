@@ -1418,8 +1418,10 @@ change.
    The USB device tests start their PC side themselves (`HOST_*`,
    `cmake/uos-hwd-host.py`). The VF2, 22/22 (2026-11-27; not the network
    and Wi-Fi tests), after two eMMC driver fixes (the controller's SoC
-   reset; CMD23 before multi-block transfers). The RP2350B still has to be
-   run.
+   reset; CMD23 before multi-block transfers). The RP2350B, 18/18
+   (2026-11-27; its three clock tests are `hwd-manual`, bounded, and stop
+   at the chosen clock; the architecture switch falls back to a rescue
+   reset).
 2. Done: the port holds only the port (`src/`, `include/`, `qemu/virt/`, its
    docs). Its `test/` (boards, tests, the shell runners, `third_party/`), its
    standalone build and its xpm build actions are gone; the VisionFive 2's

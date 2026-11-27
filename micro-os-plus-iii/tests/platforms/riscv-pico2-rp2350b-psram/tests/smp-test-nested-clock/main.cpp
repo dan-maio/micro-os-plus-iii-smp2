@@ -5,7 +5,11 @@
  * part) plus the potentiometer clock selector (GPIO40 / ADC0 -> a row of
  * clocks::SYS_TABLE, 'y' on the UART reboots into it through the watchdog),
  * and a parallel block linear solver in the PSRAM. Interactive like the
- * original: a cold boot runs at 48 MHz and waits for 'y'. The NVIC is the
+ * original: a cold boot runs at 48 MHz and waits for 'y'. The clock is chosen
+ * once, at that gate; the run is then bounded (10 worker beats), prints its
+ * RESULT and stops at the chosen clock (after a reboot into it: parked in
+ * wfi; started under OpenOCD at the boot clock: the semihosting exit). ESC
+ * aborts back to the gate. The NVIC is the
  * board's Xh3irq (src/irq.cpp), whose dispatcher lets a higher-priority
  * external IRQ preempt a lower one (meicontext); NVIC_SetPriority (n, p)
  * maps Arm's p (lower is more urgent) to Hazard3's 15 - p. The tick stays
@@ -81,7 +85,7 @@ namespace
   thread::stack::element_t led_stack[1024];
   thread::stack::element_t trigger_stack[1024];
   thread::stack::element_t trace_stack[1024];
-  thread::stack::element_t pot_stack[1024];
+  thread::stack::element_t esc_stack[1024];
 
   struct ctx
   {
@@ -338,15 +342,11 @@ namespace
     return nullptr;
   }
 
-  // ---- Potentiometer -> clock selector (with y/Y confirmation) ------------
-  // Reads GPIO40/ADC0, maps the 0..4095 range to one of the 12 SYS_TABLE rows.
-  // When the pot settles on a DIFFERENT row than the one we booted at, it prints
-  // the wanted clock and WAITS: the reset-into-new-clock only happens once the
-  // user presses 'y'/'Y' on the console. 'n'/'N' (or turning the pot back to the
-  // current clock) cancels; turning it to yet another band re-prompts. A short
-  // debounce (stable for a few samples) gives band-edge hysteresis.
-  constexpr unsigned POT_N = clocks::SYS_TABLE_LEN; // 12 bands
-  constexpr int POT_DEBOUNCE = 4;                    // ~200 ms at 50 ms/sample
+  // ---- The clock is chosen once, at the start gate ------------------------
+  // The potentiometer (GPIO40 / ADC0 -> a row of clocks::SYS_TABLE) and 'y'
+  // choose the clock before the run (os_main's gate, which reboots into it).
+  // During the bounded run the clock does not change: the thread below only
+  // watches the console for ESC.
 
   // Drain all pending RX bytes and return the highest-priority action key seen:
   // ESC (27) beats 'y'/'Y' beats 'n'/'N'; -1 if none. Draining the whole FIFO
@@ -370,134 +370,22 @@ namespace
     return best;
   }
 
-  unsigned
-  pot_band (void)
-  {
-    std::uint16_t raw = adc::read (rp2350::ADC_POT_CHANNEL);
-    unsigned band = (static_cast<unsigned> (raw) * POT_N) / 4096u;
-    return band >= POT_N ? POT_N - 1 : band;
-  }
-
-  void
-  pot_prompt (unsigned band)
-  {
-    char b[128];
-    int n = std::snprintf (
-        b, sizeof (b),
-        "\n[pot] wanted clock = %lu MHz (band %u).\n"
-        "      press 'y' to apply (reset into it), 'n' to cancel.\n",
-        static_cast<unsigned long> (clocks::SYS_TABLE[band].khz / 1000u), band);
-    g_mutex.lock ();
-    uart::write (b, static_cast<std::size_t> (n));
-    g_mutex.unlock ();
-  }
-
+  // ESC during the run: abort, full reset back to the SAFE 48 MHz start gate
+  // (index 0). Resetting to a known-low clock (not the possibly-overclocked
+  // current one) keeps the chip stable and easy to re-flash.
   void*
-  pot_thread (void*)
+  esc_thread (void*)
   {
-    const unsigned booted = clocks::current_index ();
-    int candidate = -1, stable = 0;
-    int wanted = -1; // band awaiting y/Y confirmation, or -1 while monitoring
-
     for (;;)
       {
-        unsigned band = pot_band ();
-        int c = poll_key ();
-
-        // ESC at any time: full reset back to the SAFE 48 MHz banner (index 0).
-        // Resetting to a known-low clock (not the possibly-overclocked current
-        // one) keeps the chip stable and easy to re-flash.
-        if (c == 27)
+        if (poll_key () == 27)
           {
             g_mutex.lock ();
-            uart::write ("\n[esc] full reset to 48 MHz banner...\n");
+            uart::write ("\n[esc] full reset to the 48 MHz start gate...\n");
             g_mutex.unlock ();
             sysclock.sleep_for (20);
             rp2350::reg (0x400D8014u) = 0; // WATCHDOG SCRATCH2: no autostart -> gate
             clocks::reboot_to_index (0);
-          }
-
-        if (wanted < 0)
-          {
-            // Monitoring: wait for a stable band different from the running one.
-            if (band == booted)
-              {
-                candidate = -1;
-                stable = 0;
-              }
-            else if (static_cast<int> (band) == candidate)
-              {
-                if (++stable >= POT_DEBOUNCE)
-                  {
-                    wanted = static_cast<int> (band);
-                    candidate = -1;
-                    stable = 0;
-                    pot_prompt (static_cast<unsigned> (wanted));
-                  }
-              }
-            else
-              {
-                candidate = static_cast<int> (band);
-                stable = 1;
-              }
-          }
-        else
-          {
-            // Awaiting confirmation for 'wanted'.
-            if (c == 'y' || c == 'Y')
-              {
-                g_mutex.lock ();
-                uart::write ("[pot] confirmed: resetting...\n");
-                g_mutex.unlock ();
-                sysclock.sleep_for (20); // let the UART FIFO drain
-                // Choosing the clock IS the confirmation to run: set the
-                // autostart flag so the next boot skips the 'y' start gate.
-                rp2350::reg (0x400D8014u) = 0xA5A57A57u; // WATCHDOG SCRATCH2
-                clocks::reboot_to_index (static_cast<unsigned> (wanted));
-              }
-            else if (c == 'n' || c == 'N')
-              {
-                g_mutex.lock ();
-                uart::write ("[pot] cancelled.\n");
-                g_mutex.unlock ();
-                wanted = -1;
-                candidate = -1;
-                stable = 0;
-              }
-            else if (band != static_cast<unsigned> (wanted))
-              {
-                // Pot moved while waiting: re-arm on the new stable band.
-                if (static_cast<int> (band) == candidate)
-                  {
-                    if (++stable >= POT_DEBOUNCE)
-                      {
-                        candidate = -1;
-                        stable = 0;
-                        if (band == booted)
-                          {
-                            g_mutex.lock ();
-                            uart::write ("[pot] back to current clock; cancelled.\n");
-                            g_mutex.unlock ();
-                            wanted = -1;
-                          }
-                        else
-                          {
-                            wanted = static_cast<int> (band);
-                            pot_prompt (static_cast<unsigned> (wanted));
-                          }
-                      }
-                  }
-                else
-                  {
-                    candidate = static_cast<int> (band);
-                    stable = 1;
-                  }
-              }
-            else
-              {
-                candidate = -1;
-                stable = 0;
-              }
           }
         sysclock.sleep_for (50);
       }
@@ -1174,10 +1062,10 @@ os_main (int /*argc*/, char* /*argv*/[])
   attr.th_stack_size_bytes = sizeof (trace_stack);
   static thread trace_th{ "trace", trace_printer_thread, nullptr, attr };
 
-  // Potentiometer poller (any core) -> reboots into the selected clock.
-  attr.th_stack_address = pot_stack;
-  attr.th_stack_size_bytes = sizeof (pot_stack);
-  static thread pot_th{ "pot", pot_thread, nullptr, attr };
+  // ESC watcher (any core): aborts the run back to the start gate.
+  attr.th_stack_address = esc_stack;
+  attr.th_stack_size_bytes = sizeof (esc_stack);
+  static thread esc_th{ "esc", esc_thread, nullptr, attr };
 
   // ---- NVIC Configuration for Nesting Demo (Core 0) -----------------------
   
@@ -1338,8 +1226,21 @@ os_main (int /*argc*/, char* /*argv*/[])
     rp2350::reg (rp2350::PSM_BASE + 0x04) |= self ? (1u << 23) : (1u << 24);
   }
 
-  // Ends through the strong _Exit() -> semihosting SYS_EXIT; hw_result also
-  // reports RESULT on the semihosting console the runner reads.
+  // Started after a reboot into the chosen clock (autostart): the reboot
+  // dropped the debug session, so nobody services a semihosting call (the
+  // ebreak would trap). STOP here, at the chosen clock: the other core is held
+  // above, this core's interrupts are masked; it waits in wfi for good.
+  if (autostart)
+    {
+      for (;;)
+        {
+          __asm__ volatile ("wfi" ::: "memory");
+        }
+    }
+
+  // Started at the clock it booted at, under OpenOCD: it ends through the
+  // strong _Exit() -> semihosting SYS_EXIT; hw_result also reports RESULT on
+  // the semihosting console the runner reads.
   if (ok)
     {
       hw_result::ok ();

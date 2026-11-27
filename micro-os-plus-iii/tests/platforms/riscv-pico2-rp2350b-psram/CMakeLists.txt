@@ -9,8 +9,8 @@
 # them), one at a time; OpenOCD programs the image into flash and boots it,
 # and the test's semihosting SYS_EXIT ends it. Before each, a fixture makes
 # sure the chip runs its RISC-V cores (cmake/arch-switch.cmake). The UART is
-# not opened. The two overclocked clock tests wait for the potentiometer and
-# 'y' on the UART: label `hwd-manual`, run by name.
+# not opened. The three clock tests (smp-test-nested-clock, _200, _250) wait
+# for the potentiometer and 'y' on the UART: label `hwd-manual`, run by name.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -64,8 +64,9 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
     set_tests_properties ("${_name}" PROPERTIES
       FIXTURES_REQUIRED "${_name}-arch-switch")
   endif ()
-  if (_app STREQUAL "smp-test-nested-clock_200"
-      OR _app STREQUAL "smp-test-nested-clock_250")
+  # The clock tests wait for the potentiometer and 'y' on the UART after a
+  # cold boot (smp-test-nested-clock too: its gate shows the clock first).
+  if (_app MATCHES "^smp-test-nested-clock")
     set_tests_properties ("${_name}" PROPERTIES LABELS "hwd-manual")
   endif ()
 endforeach ()

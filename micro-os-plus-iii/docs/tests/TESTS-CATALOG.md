@@ -66,7 +66,7 @@ with OpenOCD only (no GDB). Before each AArch hardware test CTest adds
 | `cortexm-weactf412` | cortexm | WeAct Studio F412RE | 1× Cortex-M4F | 1 | 5 hwd | ST-Link |
 | `riscv-milkv-duo` | riscv | Milk-V Duo 64 MB (Sophgo CV1800B) | 1× T-Head C906, RV64GC | 1 | 20 hwd | Sipeed CMSIS-DAP `d6e7:3507` |
 | `riscv-pico2` | riscv | Raspberry Pi Pico 2 (RP2350) | 2× Hazard3, RV32IMAC | 2 | 21 hwd | Raspberry Pi Debug Probe, the Raspberry Pi OpenOCD |
-| `riscv-pico2-rp2350b-psram` | riscv | WeAct RP2350B, 16 MB flash + 8 MB PSRAM | 2× Hazard3, RV32IMAC | 2 | 19 hwd, 2 hwd-manual | CMSIS-DAP `c251:f001`, the Raspberry Pi OpenOCD |
+| `riscv-pico2-rp2350b-psram` | riscv | WeAct RP2350B, 16 MB flash + 8 MB PSRAM | 2× Hazard3, RV32IMAC | 2 | 18 hwd, 3 hwd-manual | CMSIS-DAP `c251:f001`, the Raspberry Pi OpenOCD |
 | `riscv-visionfive2-lite` | riscv | StarFive VisionFive 2 Lite (JH-7110S) | 4× SiFive U74, RV64GC | 4 | 26 hwd | DAPLink or Pico probe |
 | `riscv-mangopi-mq-pro` | riscv | MangoPi MQ-Pro (Allwinner D1) | 1× T-Head C906, RV64GC | 1 | 18 hwd | none: `xfel` (USB FEL) |
 | `riscv-ch32v307-evt` | riscv | WCH CH32V307V-EVT | 1× QingKe V4F, RV32IMAFC | 1 | 10 hwd | WCH-LinkE, the WCH OpenOCD |
@@ -490,7 +490,13 @@ Lite (2026-11-27, Pico JTAG probe, `UOS_VF2_PROBE=picoprobe`): 22/22 with
 side; the eMMC driver needed two fixes once U-Boot booted from the eMMC: a
 SoC reset of the controller (U-Boot left its internal DMA selected) and
 CMD23 before multi-block transfers (an open-ended read stopped in the card's
-last 4 KiB page). The RP2350B not run from this repository yet.
+last 4 KiB page). The WeAct RP2350B (2026-11-27): 18/18 with `hwd`; the
+three clock tests are `hwd-manual` (`smp-test-nested-clock` too: after a cold
+boot it waits for the potentiometer and `y`). They choose the clock once, at
+that gate, run 10 worker beats, print RESULT and stop at that clock (parked
+in `wfi` after the reboot into it, which drops OpenOCD). A parked image can
+keep the probe out; the architecture-switch fixture then does a rescue reset
+(`target/rp2350.cfg` `RESCUE`) and programs again.
 
 **Hardware** (2026-11-20, through CTest and OpenOCD; logs in the workspace's
 `hw-check/2026-11-20-*`):
