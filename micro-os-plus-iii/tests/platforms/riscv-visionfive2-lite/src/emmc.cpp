@@ -20,6 +20,14 @@ namespace
 {
   constexpr std::uintptr_t BASE = 0x16010000u;
 
+  // The controller's SoC reset (starfive,jh7110-crg.h; clk-starfive-jh7110-
+  // sys.c: 4 words of assert bits at 0x2F8, 4 of status at 0x308, a status
+  // bit set = released), as tests/smp-wifi/wifi/sdio1.cpp does for mmc1.
+  constexpr std::uintptr_t SYSCRG = 0x13020000u;
+  constexpr std::uintptr_t RST_ASSERT = SYSCRG + 0x2F8u;
+  constexpr std::uintptr_t RST_STATUS = SYSCRG + 0x308u;
+  constexpr unsigned SYSRST_SDIO0_AHB = 64;
+
   // Registers (dw_mmc.h).
   constexpr std::uintptr_t CTRL = 0x000;
   constexpr std::uintptr_t PWREN = 0x004;
@@ -104,6 +112,12 @@ namespace
   reg (std::uintptr_t off)
   {
     return *reinterpret_cast<volatile std::uint32_t*> (BASE + off);
+  }
+
+  volatile std::uint32_t&
+  reg_abs (std::uintptr_t addr)
+  {
+    return *reinterpret_cast<volatile std::uint32_t*> (addr);
   }
 
   // The FIFO is 32 bits wide: HCON's H_DATA_WIDTH reads 1 (dw_mci_probe():
@@ -325,11 +339,22 @@ namespace
       {
         flags |= CMD_DAT_WR;
       }
+    emmc::status s;
     if (count > 1)
       {
-        flags |= CMD_SEND_STOP; // the controller sends CMD12 (auto-stop)
+        // A pre-defined transfer: CMD23 SET_BLOCK_COUNT, then CMD18/25, which
+        // ends by itself after `count` blocks (no CMD12), as Linux's
+        // mmc_blk does. Open-ended (CMD18 + auto CMD12), the card reads
+        // ahead: measured 2026-11-27, a read crossing into the card's last
+        // 4 KiB page stopped there (the next page is out of range; card
+        // status OUT_OF_RANGE, DRTO), so the backup GPT could not be read.
+        s = command (23, count, R1);
+        if (s != emmc::status::ok)
+          {
+            return s;
+          }
       }
-    emmc::status s = command (idx, arg, flags);
+    s = command (idx, arg, flags);
     if (s != emmc::status::ok)
       {
         return s;
@@ -339,18 +364,6 @@ namespace
     if (s != emmc::status::ok)
       {
         return s;
-      }
-    if (count > 1)
-      {
-        const std::uint64_t end = clint::now () + ticks (1000);
-        while ((reg (RINTSTS) & INT_ACD) == 0)
-          {
-            if (clint::now () > end)
-              {
-                return fail (emmc::status::timeout, 12, reg (RINTSTS),
-                             "auto-stop not done");
-              }
-          }
       }
     // A write is complete when the card has programmed it (DAT0 high).
     if (!wait_not_busy (wbuf != nullptr ? 5000 : 1000))
@@ -376,6 +389,31 @@ namespace emmc
     std::memset (&out, 0, sizeof (out));
     ready = false;
     err[0] = '\0';
+
+    // The controller back to its hardware defaults, through its SoC reset.
+    // Whatever used it before (U-Boot, booting from the eMMC) leaves it set
+    // up for itself, and CTRL's reset bits clear only the state machines,
+    // the FIFO and the DMA: measured 2026-11-27, CTRL 0x02000000 (the
+    // internal DMAC selected: the first data command, CMD8, timed out with
+    // the data in the DMA path, RINTSTS 0x24) and UHS_REG_EXT 0x0f0f0000
+    // (a 33-block CMD18 ending on the card's last sector stalled after 32
+    // blocks). The card itself is reset by CMD0 below.
+    {
+      const std::uintptr_t word = 4u * (SYSRST_SDIO0_AHB / 32u);
+      const std::uint32_t bit = 1u << (SYSRST_SDIO0_AHB % 32u);
+      reg_abs (RST_ASSERT + word) = reg_abs (RST_ASSERT + word) | bit;
+      delay_ms (1);
+      reg_abs (RST_ASSERT + word) = reg_abs (RST_ASSERT + word) & ~bit;
+      const std::uint64_t end = clint::now () + ticks (100);
+      while ((reg_abs (RST_STATUS + word) & bit) == 0)
+        {
+          if (clint::now () > end)
+            {
+              return fail (status::error, 0, reg_abs (RST_STATUS + word),
+                           "SDIO0 reset not released");
+            }
+        }
+    }
 
     out.verid = reg (VERID);
     fifo = BASE

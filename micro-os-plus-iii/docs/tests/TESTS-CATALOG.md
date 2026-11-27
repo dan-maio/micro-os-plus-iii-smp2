@@ -484,8 +484,13 @@ need an access point); the Milk-V Duo 20/20, its two USB tests with
 10/10 (`board-basics` waits for key S2, `hwd-manual`; `usb-cdc-stream` with
 its `usb-stream-host.py`, started once the new image has enumerated). Since
 then the USB tests start their host side themselves (`cmake/uos-hwd-host.py`):
-the CH32V307's `usb-cdc-stream` passes from CTest alone. The
-RP2350B and the VF2 not run from this repository yet.
+the CH32V307's `usb-cdc-stream` passes from CTest alone. The VisionFive 2
+Lite (2026-11-27, Pico JTAG probe, `UOS_VF2_PROBE=picoprobe`): 22/22 with
+`hwd` (all but the network and Wi-Fi tests), the USB ones with their host
+side; the eMMC driver needed two fixes once U-Boot booted from the eMMC: a
+SoC reset of the controller (U-Boot left its internal DMA selected) and
+CMD23 before multi-block transfers (an open-ended read stopped in the card's
+last 4 KiB page). The RP2350B not run from this repository yet.
 
 **Hardware** (2026-11-20, through CTest and OpenOCD; logs in the workspace's
 `hw-check/2026-11-20-*`):
