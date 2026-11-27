@@ -37,8 +37,10 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-RUNNER = (HERE.parent.parent / "visionfive2-lite" / "vf2-wifi-ram-disk"
-          / "vf2-wifi-ram-disk-host.py")
+# The shared runner, in the VisionFive 2 platform's tests (tests/platforms/
+# riscv-visionfive2-lite/tests/vf2-wifi-ram-disk/), next to this platform.
+RUNNER = (HERE.parents[2] / "riscv-visionfive2-lite" / "tests"
+          / "vf2-wifi-ram-disk" / "vf2-wifi-ram-disk-host.py")
 
 spec = importlib.util.spec_from_file_location("ram_disk_runner", RUNNER)
 runner = importlib.util.module_from_spec(spec)

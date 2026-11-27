@@ -1410,7 +1410,7 @@ change.
    the VF2) and the boards' own CMake steps (the RP2350B's architecture
    switch, the CH32V307's programming and read-back, the MangoPi's `xfel`
    loader). Run on the board: the Pico 2, 21/21 (2026-11-27, its two USB tests with their host side started by the run);
-   the MangoPi MQ-Pro, 16/16 (not its two Wi-Fi tests); the Milk-V Duo,
+   the MangoPi MQ-Pro, 16/16 and its two Wi-Fi tests 2/2; the Milk-V Duo,
    20/20, its USB tests with `usb-host.py` (`smp-test-nested` needed a fix:
    the board's UART init latched the DW UART busy-detect interrupt, which
    only a USR read clears); the CH32V307, 10/10 (the verdict is OpenOCD's
