@@ -490,7 +490,11 @@ Lite (2026-11-27, Pico JTAG probe, `UOS_VF2_PROBE=picoprobe`): 22/22 with
 side; the eMMC driver needed two fixes once U-Boot booted from the eMMC: a
 SoC reset of the controller (U-Boot left its internal DMA selected) and
 CMD23 before multi-block transfers (an open-ended read stopped in the card's
-last 4 KiB page). The WeAct RP2350B (2026-11-27): 18/18 with `hwd`; the
+last 4 KiB page). Its network and Wi-Fi tests, 4/4: `smp-wifi` and
+`vf2-wifi-ram-disk` (the access point from `WIFI_TEST_SSID`/`WIFI_TEST_PASS`
+on the cmake line), `smp-test-usb-cdc-net` and `smp-net-ram-disk` (Ethernet,
+after the GMAC driver set the PHY's 1000 Mb/s TX clock inversion itself);
+the two RAM-disk tests with their host script run beside them (`--no-load`). The WeAct RP2350B (2026-11-27): 18/18 with `hwd`; the
 three clock tests are `hwd-manual` (`smp-test-nested-clock` too: after a cold
 boot it waits for the potentiometer and `y`). They choose the clock once, at
 that gate, run 5 worker beats (the PSRAM block solver is reported, not

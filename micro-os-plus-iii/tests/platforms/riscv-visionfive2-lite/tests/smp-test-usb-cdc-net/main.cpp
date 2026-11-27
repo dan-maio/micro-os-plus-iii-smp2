@@ -292,9 +292,11 @@ namespace
         return nullptr;
       }
 
-    if (!net_lwip::wait_for_address (15000))
+    // Up to 3 DHCP attempts of 15 s each: on a busy LAN, or while the link
+    // settles, a whole DISCOVER/OFFER round can be lost.
+    if (!net_lwip::wait_for_address (15000, 3))
       {
-        log ("[app] no DHCP lease within 15 s\n");
+        log ("[app] no DHCP lease in 3 attempts of 15 s\n");
         net_lwip::print_status ();
         finish (false);
         return nullptr;
@@ -503,6 +505,15 @@ os_main (int /*argc*/, char* /*argv*/[])
     {
       sysclock.sleep_for (1000);
     }
+#endif
+  // The verdict as a RESULT line, on the console and on the semihosting
+  // console OpenOCD prints (CTest reads it there; the [test] line above
+  // reaches only the UART and the USB/RAM log).
+  const char* result = pass ? "RESULT: PASS (smp-test-usb-cdc-net)\n"
+                            : "RESULT: FAIL (smp-test-usb-cdc-net)\n";
+  log ("%s", result);
+#if defined(SEMIHOST)
+  semihosting::write_str (result);
 #endif
   if (pass)
     {

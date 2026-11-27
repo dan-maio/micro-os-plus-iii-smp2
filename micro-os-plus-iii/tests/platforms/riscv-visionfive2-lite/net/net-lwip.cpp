@@ -594,6 +594,39 @@ namespace net_lwip
   }
 
   void
+  dhcp_restart (void)
+  {
+    if (!initialised || !netif_is_link_up (&et0))
+      {
+        return;
+      }
+    lwip_lock l;
+    dhcp_stop (&et0);
+    dhcp_start (&et0);
+    dhcp_started = true;
+  }
+
+  bool
+  wait_for_address (std::uint32_t timeout_ms, unsigned attempts)
+  {
+    for (unsigned a = 1; a <= attempts; ++a)
+      {
+        if (wait_for_address (timeout_ms))
+          {
+            return true;
+          }
+        if (a < attempts)
+          {
+            kprintf ("[net] no DHCP lease in %u ms (attempt %u of %u): "
+                 "restarting DHCP\n",
+                 static_cast<unsigned> (timeout_ms), a, attempts);
+            dhcp_restart ();
+          }
+      }
+    return false;
+  }
+
+  void
   print_status (void)
   {
     if (!initialised)

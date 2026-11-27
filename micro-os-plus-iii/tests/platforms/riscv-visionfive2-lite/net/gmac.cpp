@@ -305,11 +305,39 @@ namespace
     return answered && (v & BMSR_LSTATUS) != 0;
   }
 
-  // The PHY (a Motorcomm YT8531S, PHY ID 0x4f51:0xe91b) is deliberately left
-  // untouched: its strapped timing drives RGMII reliably here, while the
-  // 1500 ps internal delays and drive strength the Lite's device tree asks
-  // Linux to program gave noticeably more packet loss on this board
-  // (measured: 2/6 vs 4/6 echo replies).
+  // The PHY (a Motorcomm YT8531S, PHY ID 0x4f51:0xe91b): its delays and
+  // drive strength are left as they are (the 1500 ps internal delays and
+  // drive strength the Lite's device tree asks Linux to program gave more
+  // packet loss here, measured 2/6 vs 4/6 echo replies), but the 1000 Mb/s
+  // TX clock inversion is set here, not left to the boot chain (Linux:
+  // motorcomm,tx-clk-1000-inverted; RGMII config 1, ext 0xA003, bit 14
+  // TX_CLK_SEL). Measured 2026-11-27, with the PHY as a newer boot chain
+  // left it (0xA003 = 0x00f1): bit 14 clear, no frame of the board's
+  // reached the LAN at any TX delay (0..15); set, ping answered at every
+  // delay.
+  constexpr unsigned YT_EXT_ADDR = 0x1e;
+  constexpr unsigned YT_EXT_DATA = 0x1f;
+  constexpr std::uint16_t YT_RGMII_CONFIG1 = 0xa003;
+  constexpr std::uint16_t YT_TX_CLK_SEL_INVERTED = 1u << 14;
+
+  void
+  phy_tx_clock (unsigned speed_mbps)
+  {
+    std::uint16_t v = 0;
+    if (!mdio_write (PHY_ADDR, YT_EXT_ADDR, YT_RGMII_CONFIG1)
+        || !mdio_read (PHY_ADDR, YT_EXT_DATA, v))
+      {
+        return;
+      }
+    const std::uint16_t nv
+        = (speed_mbps == 1000) ? static_cast<std::uint16_t> (v | YT_TX_CLK_SEL_INVERTED)
+                               : static_cast<std::uint16_t> (v & ~YT_TX_CLK_SEL_INVERTED);
+    if (nv != v)
+      {
+        (void)mdio_write (PHY_ADDR, YT_EXT_ADDR, YT_RGMII_CONFIG1);
+        (void)mdio_write (PHY_ADDR, YT_EXT_DATA, nv);
+      }
+  }
   //
   // Read the negotiated speed from the PHY's 1000BASE-T status and the
   // clause-37 link partner register; fall back to BMSR only.
@@ -498,8 +526,13 @@ namespace
     (void)AONCLK_APB_FUNC;
     clock_enable (AONCRG, AONCLK_GMAC0_AXI);            // stmmaceth
     clock_enable (AONCRG, AONCLK_GMAC0_AHB);            // pclk
-    clock_enable (AONCRG, 6);                           // gmac0_tx_inv
-    clock_enable (AONCRG, 8);                           // gmac0_rx_inv
+    // gmac0_tx_inv / gmac0_rx_inv are inverters, not gates (clk-starfive-
+    // jh71x0.c: JH71X0__INV, bit 30 = invert; no enable bit). The TX one
+    // is set to NOT inverted: what the boot chain leaves there varies
+    // (measured 2026-11-27: 0x40000000 after U-Boot, inverted -- at 1 Gb/s
+    // half a 125 MHz period off: frames received, none transmitted reaching
+    // the LAN, no DHCP lease). The RX one is left as it is (receiving works).
+    reg (AONCRG + 4u * 6u) = 0;
     clock_enable (SYSCRG, SYSCLK_GMAC0_GTXCLK);
     clock_enable (SYSCRG, SYSCLK_GMAC0_PTP);
     clock_enable (SYSCRG, SYSCLK_GMAC0_GTXC);
@@ -726,10 +759,11 @@ namespace gmac
     st.phy_id1 = id1;
     st.phy_id2 = id2;
 
-    // The PHY is left completely alone: its strapped timing and the link the
-    // board came up with are what works here.  (Every write tried on it --
+    // The PHY is otherwise left alone: its timing and the link the board
+    // came up with are what works here.  (Every other write tried on it --
     // AN restart, RGMII delay, drive strength, forced speed -- made the data
-    // path worse; see visionfive2-lite-net.md.)
+    // path worse; see visionfive2-lite-net.md.)  Only the 1000 Mb/s TX
+    // clock inversion is set, below and in apply_speed().
 
     (void)mdio_read (PHY_ADDR, MII_BMSR, st.bmsr);
     st.link = wait_ms (6000, [] {
@@ -743,6 +777,7 @@ namespace gmac
     if (st.link)
       {
         read_speed ();
+        phy_tx_clock (st.speed_mbps);
       }
 
     // 7. MAC: address, filter, speed/duplex, then enable transmit/receive.
@@ -803,6 +838,7 @@ namespace gmac
       {
         return;
       }
+    phy_tx_clock (st.speed_mbps);
     u32 c = r (MAC_CONFIG) & ~(MAC_CONFIG_FES | MAC_CONFIG_DM);
     if (st.speed_mbps == 1000)
       {

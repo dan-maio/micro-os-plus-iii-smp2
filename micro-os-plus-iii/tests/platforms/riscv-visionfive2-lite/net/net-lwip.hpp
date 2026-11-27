@@ -48,6 +48,15 @@ namespace net_lwip
   bool
   wait_for_address (std::uint32_t timeout_ms);
 
+  /// Start DHCP again from DISCOVER (the link must be up).
+  void
+  dhcp_restart (void);
+
+  /// Wait for a DHCP lease up to `attempts` times, restarting DHCP after
+  /// each wait that ends without one; false when none of them got a lease.
+  bool
+  wait_for_address (std::uint32_t timeout_ms, unsigned attempts);
+
   /// ICMP echo to a dotted address or the literal "gw"; returns the number
   /// of replies.
   unsigned

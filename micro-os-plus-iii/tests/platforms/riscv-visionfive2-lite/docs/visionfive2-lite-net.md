@@ -186,6 +186,31 @@ restart, the 1500 ps RGMII delays and the drive-strength writes each made the da
 worse on this board); and the console's UART write is paced but bounded, so a closed
 terminal can never hang a test.
 
+### 6.6 The PHY's 1000 Mb/s TX clock inversion (2026-11-27)
+
+Both Ethernet tests stopped getting a DHCP lease, with the code unchanged and right
+after U-Boot: carrier at 1000 Mb/s, frames received, the DISCOVERs counted as sent,
+no OFFER. With `NET_RAMDISK_FALLBACK_IP` (a fixed 192.168.1.250 after the failed
+DHCP), the PC saw no beacon on UDP 5001 and no ARP answer: **nothing the board sent
+reached the LAN**. The PHY, read over JTAG through the GMAC's MDIO registers, had
+YT8531 RGMII config 1 (ext `0xA003`) = `0x00f1`: TX delay 15, **bit 14 (`TX_CLK_SEL`)
+clear**. Stepping it from the PC while the board ran on the fixed address:
+
+| `0xA003` bit 14 | TX delay 0..15 | ping 192.168.1.250 |
+|---|---|---|
+| clear | every value | no answer |
+| set | every value | answers |
+
+The driver used to leave the PHY entirely to the boot chain; the board's boot chain no
+longer sets that bit (it must have before: DHCP and 20/20 echoes in section 6). The
+driver now sets it itself (Linux: `motorcomm,tx-clk-1000-inverted`), at start and on
+every speed change (`phy_tx_clock()`), leaving the delays as they are, and writes the
+SoC's `gmac0_tx_inv` (AONCRG clock 6, an inverter: bit 30, no gate) to *not inverted*,
+the combination measured. DHCP is also tried 3 times, 15 s each, restarting from
+DISCOVER between them (`net_lwip::wait_for_address (ms, attempts)`).
+`smp-test-usb-cdc-net` now prints its verdict as a `RESULT:` line on semihosting too,
+so CTest reads it.
+
 ## 7. Known limitations
 
 - `hw.sh`'s own verdict path is unreliable on this board: the attach sometimes leaves

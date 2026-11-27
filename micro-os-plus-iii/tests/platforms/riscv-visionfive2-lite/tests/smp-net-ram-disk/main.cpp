@@ -252,9 +252,11 @@ namespace
       }
 
     failed_step = "DHCP";
-    if (!net_lwip::wait_for_address (15000))
+    // Up to 3 DHCP attempts of 15 s each: on a busy LAN, or while the link
+    // settles, a whole DISCOVER/OFFER round can be lost.
+    if (!net_lwip::wait_for_address (15000, 3))
       {
-        log ("[app] no DHCP lease within 15 s\n");
+        log ("[app] no DHCP lease in 3 attempts of 15 s\n");
         net_lwip::print_status ();
 #if defined(NET_RAMDISK_FALLBACK_IP)
         // Diagnostics: carry on with a fixed address, so the link itself can
