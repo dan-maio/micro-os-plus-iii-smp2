@@ -6,10 +6,11 @@
  * clocks::SYS_TABLE, 'y' on the UART reboots into it through the watchdog),
  * and a parallel block linear solver in the PSRAM. Interactive like the
  * original: a cold boot runs at 48 MHz and waits for 'y'. The clock is chosen
- * once, at that gate; the run is then bounded (10 worker beats), prints its
- * RESULT and stops at the chosen clock (after a reboot into it: parked in
- * wfi; started under OpenOCD at the boot clock: the semihosting exit). ESC
- * aborts back to the gate. The NVIC is the
+ * once, at that gate; the run is then bounded (5 worker beats; the block
+ * solver is reported, not waited for), prints its RESULT and stops at the chosen clock (after a
+ * reboot into it: parked, polling the console; started under OpenOCD at the
+ * boot clock: the semihosting exit). ESC (during the run, or once stopped)
+ * reboots to the gate at the same clock. The NVIC is the
  * board's Xh3irq (src/irq.cpp), whose dispatcher lets a higher-priority
  * external IRQ preempt a lower one (meicontext); NVIC_SetPriority (n, p)
  * maps Arm's p (lower is more urgent) to Hazard3's 15 - p. The tick stays
@@ -248,11 +249,15 @@ namespace
   }
 
   // ---- Threads ------------------------------------------------------------
+  // After 'y', at every clock, each worker does exactly kBeats beats (~1 s
+  // each), then exits; os_main then gives the verdict and stops the chip.
+  constexpr unsigned kBeats = 5;
+
   void*
   worker (void* arg)
   {
     auto* c = static_cast<ctx*> (arg);
-    for (;;)
+    for (unsigned k = 0; k < kBeats; ++k)
       {
         c->local++;
         g_mutex.lock ();
@@ -370,9 +375,18 @@ namespace
     return best;
   }
 
-  // ESC during the run: abort, full reset back to the SAFE 48 MHz start gate
-  // (index 0). Resetting to a known-low clock (not the possibly-overclocked
-  // current one) keeps the chip stable and easy to re-flash.
+  // ESC: abort, full reset back to the start gate AT THE CLOCK CHOSEN (the
+  // current one; the gate shows it, and 'y' with the pot on it runs again).
+  [[noreturn]] void
+  esc_reboot (void)
+  {
+    rp2350::reg (0x400D8014u) = 0; // WATCHDOG SCRATCH2: no autostart -> gate
+    clocks::reboot_to_index (clocks::current_index ());
+    for (;;)
+      {
+      }
+  }
+
   void*
   esc_thread (void*)
   {
@@ -381,11 +395,10 @@ namespace
         if (poll_key () == 27)
           {
             g_mutex.lock ();
-            uart::write ("\n[esc] full reset to the 48 MHz start gate...\n");
+            uart::write ("\n[esc] full reset to the start gate, same clock...\n");
             g_mutex.unlock ();
             sysclock.sleep_for (20);
-            rp2350::reg (0x400D8014u) = 0; // WATCHDOG SCRATCH2: no autostart -> gate
-            clocks::reboot_to_index (0);
+            esc_reboot ();
           }
         sysclock.sleep_for (50);
       }
@@ -1169,31 +1182,40 @@ os_main (int /*argc*/, char* /*argv*/[])
       solver_threads[c]->cpu_affinity (1u << c);
     }
 
-  while (!g_solver_done)
-    {
-      sysclock.sleep_for (100);
-    }
-  std::uint32_t block_us = g_block_end_us - g_block_start_us;
-  {
-    char m[96];
-    int n = std::snprintf (
-        m, sizeof (m),
-        "Block elimination finished in %lu us; solver threads destroyed.\n",
-        static_cast<unsigned long> (block_us));
-    uart::write (m, static_cast<std::size_t> (n));
-  }
-
-  // Bounded run: after 'y', each worker does kIters beats (~kIters * 1 s),
+  // Bounded run: after 'y', each worker does kBeats beats (~kBeats * 1 s),
   // then the verdict -- both workers ran them all, and all three nesting
   // interrupts (UART0, TIMER0 alarms 2 and 3) fired -- and the run ENDS
   // through the semihosting exit (hw_result below), never runs on.
-  constexpr unsigned kIters = 10;
-  for (unsigned i = 0; i < 600u
+  constexpr unsigned kIters = kBeats;
+  // Above the solver threads (normal priority, busy for minutes on both
+  // cores): each time its sleep ends, os_main gets its core back at once.
+  this_thread::thread ().priority (thread::priority::above_normal);
+  for (unsigned i = 0; i < 300u
                        && (worker_ctx[0].local < kIters
                            || worker_ctx[1].local < kIters);
        ++i)
     {
       sysclock.sleep_for (100);
+    }
+
+  // The run ends with the workers' kBeats, at every clock: the block solver
+  // (which can take minutes) is reported, but not waited for; the stop
+  // below ends it with the rest.
+  if (g_solver_done)
+    {
+      char m[96];
+      int mn = std::snprintf (
+          m, sizeof (m), "Block elimination finished in %lu us.\n",
+          static_cast<unsigned long> (g_block_end_us - g_block_start_us));
+      g_mutex.lock ();
+      uart::write (m, static_cast<std::size_t> (mn));
+      g_mutex.unlock ();
+    }
+  else
+    {
+      g_mutex.lock ();
+      uart::write ("Block elimination still running: stopped with the run.\n");
+      g_mutex.unlock ();
     }
 
   // RISC-V port: also require that a higher-priority IRQ really PREEMPTED
@@ -1229,12 +1251,18 @@ os_main (int /*argc*/, char* /*argv*/[])
   // Started after a reboot into the chosen clock (autostart): the reboot
   // dropped the debug session, so nobody services a semihosting call (the
   // ebreak would trap). STOP here, at the chosen clock: the other core is held
-  // above, this core's interrupts are masked; it waits in wfi for good.
+  // above, this core's interrupts are masked; it only polls the console:
+  // ESC reboots to the start gate at this same clock.
   if (autostart)
     {
+      uart::write ("[stopped at this clock; ESC: back to the start gate]\n");
       for (;;)
         {
-          __asm__ volatile ("wfi" ::: "memory");
+          if (poll_key () == 27)
+            {
+              uart::write ("\n[esc] full reset to the start gate, same clock...\n");
+              esc_reboot ();
+            }
         }
     }
 

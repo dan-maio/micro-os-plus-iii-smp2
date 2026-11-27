@@ -493,8 +493,12 @@ CMD23 before multi-block transfers (an open-ended read stopped in the card's
 last 4 KiB page). The WeAct RP2350B (2026-11-27): 18/18 with `hwd`; the
 three clock tests are `hwd-manual` (`smp-test-nested-clock` too: after a cold
 boot it waits for the potentiometer and `y`). They choose the clock once, at
-that gate, run 10 worker beats, print RESULT and stop at that clock (parked
-in `wfi` after the reboot into it, which drops OpenOCD). A parked image can
+that gate, run 5 worker beats (the PSRAM block solver is reported, not
+waited for), print RESULT and stop at that clock (parked
+after the reboot into it, which drops OpenOCD); ESC, during the run or once
+stopped, reboots to the gate at the same clock. PASS at 250 MHz on the
+board. The reboot used to leave the other core forced off (PSM `FRCE_OFF`
+survives the watchdog reset): `clocks::init()` now releases both cores. A parked image can
 keep the probe out; the architecture-switch fixture then does a rescue reset
 (`target/rp2350.cfg` `RESCUE`) and programs again.
 

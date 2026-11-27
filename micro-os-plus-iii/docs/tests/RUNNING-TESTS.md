@@ -143,7 +143,7 @@ releases use `MinSizeRel`; native releases use `Release`.
 | Pico 2 | QEMU | OpenOCD | CDC-ACM, HID |
 | Pico (RP2040) | QEMU | OpenOCD | — |
 | Pi-Zero RP2350B | — | OpenOCD | CDC-ACM, HID |
-| WeAct RP2350B + PSRAM | QEMU | OpenOCD | the three clock tests (pot + `y`), all `hwd-manual`: the clock is chosen once, 10 beats, RESULT, stop at that clock |
+| WeAct RP2350B + PSRAM | QEMU | OpenOCD | the three clock tests (pot + `y`), all `hwd-manual`: the clock is chosen once, 5 beats, RESULT, stop at that clock; ESC returns to the gate at the same clock |
 | Nucleo F411 / WeAct F411 / F412 | — | OpenOCD | — |
 | QEMU Cortex-M / `2xcortex-m33` / `pico2-1cpu` | QEMU | — | — |
 | QEMU RISC-V (`qemu-riscv64`, `qemu-riscv32`) | QEMU | — | — |

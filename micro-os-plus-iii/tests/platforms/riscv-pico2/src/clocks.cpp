@@ -244,6 +244,14 @@ namespace clocks
   void
   init (void)
   {
+    // reboot_to_index() (and a test's own stop) hold the other core off with
+    // PSM FRCE_OFF; the watchdog reset does not reset the PSM, so after the
+    // reboot the bit is still set: the core stays off (launch_core1 then
+    // waits for it for good) and the debugger cannot examine it. Measured
+    // 2026-11-27 on the RP2350B: after a reboot into 250 MHz, every thread
+    // on core 0, os_main spinning. Release both cores (0 on a cold boot).
+    reg (rp2350::PSM_FRCE_OFF) &= ~((1u << 23) | (1u << 24));
+
 #if defined(PICO2_CLOCK_FROM_SCRATCH)
     // The row reboot_to_index() left in the watchdog scratch; row 0 (48 MHz)
     // on a cold boot -- the potentiometer rests at 0 on power-up.
