@@ -480,7 +480,7 @@ six RISC-V boards build all their `hwd` images, Debug and Release (116).
 the Pico 2 21/21 (2026-11-27; the two USB tests with their host side started by the run);
 through `xfel`, the MangoPi MQ-Pro 16/16, and its two Wi-Fi tests 2/2
 (2026-11-27: the access point from `WIFI_TEST_SSID`/`WIFI_TEST_PASS` on the
-cmake line; `wifi-ram-disk` with its host script beside it, `--no-load`); the Milk-V Duo 20/20, its two USB tests with
+cmake line; `wifi-ram-disk` starts its host script itself); the Milk-V Duo 20/20, its two USB tests with
 `platforms/riscv-pico2/usb-host.py cdc|hid` run beside them; the CH32V307
 10/10 (`board-basics` waits for key S2, `hwd-manual`; `usb-cdc-stream` with
 its `usb-stream-host.py`, started once the new image has enumerated). Since
@@ -495,7 +495,7 @@ last 4 KiB page). Its network and Wi-Fi tests, 4/4: `smp-wifi` and
 `vf2-wifi-ram-disk` (the access point from `WIFI_TEST_SSID`/`WIFI_TEST_PASS`
 on the cmake line), `smp-test-usb-cdc-net` and `smp-net-ram-disk` (Ethernet,
 after the GMAC driver set the PHY's 1000 Mb/s TX clock inversion itself);
-the two RAM-disk tests with their host script run beside them (`--no-load`). The WeAct RP2350B (2026-11-27): 18/18 with `hwd`; the
+the two RAM-disk tests start their host script themselves. The WeAct RP2350B (2026-11-27): 18/18 with `hwd`; the
 three clock tests are `hwd-manual` (`smp-test-nested-clock` too: after a cold
 boot it waits for the potentiometer and `y`). They choose the clock once, at
 that gate, run 5 worker beats (the PSRAM block solver is reported, not

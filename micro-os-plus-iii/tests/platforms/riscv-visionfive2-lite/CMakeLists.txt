@@ -9,10 +9,11 @@
 # configuration's `test` skips them), one at a time. OpenOCD loads the image
 # into DDR and starts the harts it drives (vf2-hwd.tcl); the test's
 # semihosting SYS_EXIT ends it. The UART is not opened. The probe:
-# UOS_VF2_PROBE. The USB device tests (CDC-ACM, the file round trips) start
-# their PC side themselves (cmake/uos-hwd-host.py; the USB-C port must be
-# connected to this PC); the network and Wi-Fi tests need the PC's side, run
-# by hand.
+# UOS_VF2_PROBE. The tests that need the PC's side start it themselves
+# (cmake/uos-hwd-host.py): the USB device tests (CDC-ACM, the file round
+# trips; the USB-C port connected to this PC) and the two RAM-disk tests
+# (Ethernet / Wi-Fi: the PC on the same LAN). The Wi-Fi tests need an access
+# point (WIFI_TEST_SSID, WIFI_TEST_PASS on the cmake line).
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -64,6 +65,15 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
          HOST_COMMAND "${Python3_EXECUTABLE}" -I
                       "${CMAKE_CURRENT_SOURCE_DIR}/tests/${_app}/usb-file-host.py"
                       name.dat 300)
+  elseif (_app STREQUAL "smp-net-ram-disk" OR _app STREQUAL "vf2-wifi-ram-disk")
+    # The RAM-disk tests' PC side finds the board on the LAN by its beacon:
+    # started with the session (no USB device to wait for); a 2 MiB random
+    # file, written in the build folder.
+    file (MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/${_app}-host")
+    set (_host HOST_CWD "${CMAKE_CURRENT_BINARY_DIR}/${_app}-host"
+         HOST_COMMAND "${Python3_EXECUTABLE}" -I
+                      "${CMAKE_CURRENT_SOURCE_DIR}/tests/${_app}/${_app}-host.py"
+                      --no-load --random 2097152)
   endif ()
   # What the session needs to know about the image (vf2-hwd.tcl), written
   # again whenever the image changes (built with it).

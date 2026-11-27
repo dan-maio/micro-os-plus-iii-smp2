@@ -10,7 +10,8 @@
 # board's loader (cmake/xfel-run.cmake: xfel writes the image into DDR and
 # starts it; the test resets into FEL with its verdict in the RTC), which
 # prints the RESULT line. The UART is not opened. The Wi-Fi tests need an
-# access point (WIFI_TEST_SSID, WIFI_TEST_PASS).
+# access point (WIFI_TEST_SSID, WIFI_TEST_PASS); wifi-ram-disk starts its PC
+# side itself (cmake/uos-hwd-host.py; the PC on the same LAN).
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -46,18 +47,35 @@ endif ()
 
 # How long a test gets to reset into FEL (the former hw.sh's SECS).
 set (_secs 180)
+# wifi-ram-disk's PC side (its host script, which finds the board on the LAN
+# by its beacon) runs beside the xfel session, started with it by
+# cmake/uos-hwd-host.py; a failing host side fails the test.
+find_package (Python3 COMPONENTS Interpreter REQUIRED)
+
 foreach (_app IN LISTS UOS_TESTS_APPS)
   # semihosting-test is QEMU-only (BOARD_TEST_QEMU_ONLY): no hardware image.
   if (NOT TARGET "${_app}-hwd")
     continue ()
   endif ()
   set (_name "${PLATFORM_NAME}-${_app}-hwd")
-  add_test (NAME "${_name}"
-    COMMAND "${CMAKE_COMMAND}"
+  set (_run "${CMAKE_COMMAND}"
             "-DXFEL=${UOS_XFEL}" "-DOBJCOPY=${_objcopy}"
             "-DREADELF=${_readelf}" "-DELF=$<TARGET_FILE:${_app}-hwd>"
             "-DWORK=${CMAKE_CURRENT_BINARY_DIR}/${_name}" "-DSECS=${_secs}"
             -P "${CMAKE_CURRENT_SOURCE_DIR}/cmake/xfel-run.cmake")
+  if (_app STREQUAL "wifi-ram-disk")
+    set (_host_dir "${CMAKE_CURRENT_BINARY_DIR}/${_app}-host")
+    file (MAKE_DIRECTORY "${_host_dir}")
+    add_test (NAME "${_name}"
+      COMMAND "${Python3_EXECUTABLE}" -I "${CMAKE_SOURCE_DIR}/cmake/uos-hwd-host.py"
+              --cwd "${_host_dir}"
+              --host "${Python3_EXECUTABLE}" -I
+                     "${CMAKE_CURRENT_SOURCE_DIR}/tests/${_app}/${_app}-host.py"
+                     --no-load --random 2097152
+              --board ${_run})
+  else ()
+    add_test (NAME "${_name}" COMMAND ${_run})
+  endif ()
   # The resets around the run take up to a minute each.
   math (EXPR _timeout "${_secs} + 180")
   set_tests_properties ("${_name}" PROPERTIES

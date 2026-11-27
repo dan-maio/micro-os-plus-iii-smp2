@@ -147,7 +147,7 @@ releases use `MinSizeRel`; native releases use `Release`.
 | Nucleo F411 / WeAct F411 / F412 | — | OpenOCD | — |
 | QEMU Cortex-M / `2xcortex-m33` / `pico2-1cpu` | QEMU | — | — |
 | QEMU RISC-V (`qemu-riscv64`, `qemu-riscv32`) | QEMU | — | — |
-| RISC-V boards (`riscv-*`) | — | OpenOCD or `xfel` (see `COMMANDS.md`); the USB tests start their PC side themselves | network and Wi-Fi tests (see the catalogue, §7a) |
+| RISC-V boards (`riscv-*`) | — | OpenOCD or `xfel` (see `COMMANDS.md`); the USB and RAM-disk tests start their PC side themselves | the Wi-Fi tests need `WIFI_TEST_SSID`/`WIFI_TEST_PASS` (see the catalogue, §7a) |
 | POSIX host | host process | — | — |
 
 ## 6. Select one test, a label, or a board

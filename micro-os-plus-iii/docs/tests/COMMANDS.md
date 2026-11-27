@@ -151,9 +151,13 @@ port must be connected to this PC, and `cmake/uos-hwd-host.py` runs the
 test's host script (`platforms/riscv-pico2/usb-host.py cdc|hid`, the VF2's
 `usb-file-host.py`, the CH32V307's `usb-stream-host.py`) once the test's
 device has enumerated anew (never a device left by an earlier run); a host
-side that fails fails the test. The network and Wi-Fi tests need the PC's
-side, run by hand. The RISC-V tests run emulated as `qemu-riscv64` and
-`qemu-riscv32`.
+side that fails fails the test. The RAM-disk tests (the VF2's
+`smp-net-ram-disk` and `vf2-wifi-ram-disk`, the MangoPi's `wifi-ram-disk`)
+start their host script the same way, with the session: it finds the board on
+the LAN by its beacon (the PC on the same network). The Wi-Fi tests need an
+access point: `-DWIFI_TEST_SSID=... -DWIFI_TEST_PASS=...` on the cmake line
+(kept in the build folder's cache, never in the repository). The RISC-V tests
+run emulated as `qemu-riscv64` and `qemu-riscv32`.
 
 ## 5. On the board (`hwd`)
 

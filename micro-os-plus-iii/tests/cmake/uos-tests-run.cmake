@@ -146,16 +146,17 @@ endif ()
 # _uos_tests_add_openocd_test (
 #   NAME <ctest name> OPENOCD <openocd>
 #   [RETRY_TRIES <n> RETRY_IF <regex> [RETRY_UNLESS <regex>]]
-#   [HOST_VIDPID <vid:pid> HOST_COMMAND <command...> [HOST_CWD <folder>]]
+#   [HOST_COMMAND <command...> [HOST_VIDPID <vid:pid>] [HOST_CWD <folder>]]
 #   ARGS <OpenOCD arguments...>)
 #
 # The CTest case of one OpenOCD session: OpenOCD itself, or, when RETRY_TRIES
 # is set, OpenOCD through uos-hwd-retry.cmake, which starts it again while its
 # output says the attach failed (see uos_tests_add_hwd's RETRY_*). HOST_*: a
-# test whose board is a USB device and needs the PC's side: the session runs
-# through uos-hwd-host.py, which starts HOST_COMMAND (in HOST_CWD) once the
-# test's device, HOST_VIDPID, has enumerated anew, and fails the test when the
-# host side fails.
+# test that needs the PC's side: the session runs through uos-hwd-host.py,
+# which starts HOST_COMMAND (in HOST_CWD) -- once the test's USB device,
+# HOST_VIDPID, has enumerated anew, or, without HOST_VIDPID (a network test
+# whose host script finds the board itself), with the session -- and fails
+# the test when the host side fails.
 function (_uos_tests_add_openocd_test)
   cmake_parse_arguments (_t ""
     "NAME;OPENOCD;RETRY_TRIES;RETRY_IF;RETRY_UNLESS;HOST_VIDPID;HOST_CWD"
@@ -177,16 +178,18 @@ function (_uos_tests_add_openocd_test)
   else ()
     set (_board "${_t_OPENOCD}" ${_run_args})
   endif ()
-  if (_t_HOST_VIDPID)
+  if (_t_HOST_COMMAND)
     find_package (Python3 COMPONENTS Interpreter REQUIRED)
-    set (_cwd "")
+    set (_opts "")
+    if (_t_HOST_VIDPID)
+      list (APPEND _opts --vidpid "${_t_HOST_VIDPID}")
+    endif ()
     if (_t_HOST_CWD)
-      set (_cwd --cwd "${_t_HOST_CWD}")
+      list (APPEND _opts --cwd "${_t_HOST_CWD}")
     endif ()
     add_test (NAME "${_t_NAME}"
       COMMAND "${Python3_EXECUTABLE}" -I "${CMAKE_SOURCE_DIR}/cmake/uos-hwd-host.py"
-              --vidpid "${_t_HOST_VIDPID}" ${_cwd}
-              --host ${_t_HOST_COMMAND} --board ${_board})
+              ${_opts} --host ${_t_HOST_COMMAND} --board ${_board})
   else ()
     add_test (NAME "${_t_NAME}" COMMAND ${_board})
   endif ()
@@ -200,7 +203,7 @@ endfunction ()
 #   [ADAPTER_KHZ <kHz>] [PRELOAD <Tcl>]
 #   [RESET_COMMAND <Tcl> RESET_EXPECT <regex> RESET_WAIT <seconds>]
 #   [RETRY_TRIES <n> RETRY_IF <regex> [RETRY_UNLESS <regex>]]
-#   [HOST_VIDPID <vid:pid> HOST_COMMAND <command...> [HOST_CWD <folder>]]
+#   [HOST_COMMAND <command...> [HOST_VIDPID <vid:pid>] [HOST_CWD <folder>]]
 #   [TIMEOUT <seconds>])
 #
 # A board OpenOCD halts and loads (the AArch boards, image in RAM):
@@ -213,10 +216,11 @@ endfunction ()
 # match RESET_EXPECT. RETRY_*: a probe whose attach sometimes fails (a
 # garbage scan chain): OpenOCD runs through uos-hwd-retry.cmake, which starts
 # it again, up to RETRY_TRIES times, while its output matches RETRY_IF and not
-# RETRY_UNLESS. HOST_*: the board is a USB device and the test needs the PC's
-# side (a USB host script): HOST_COMMAND runs beside the session, started by
-# uos-hwd-host.py once the test's device HOST_VIDPID has enumerated anew (never
-# a device left by an earlier run); a failing host side fails the test. Tcl's
+# RETRY_UNLESS. HOST_*: the test needs the PC's side (a host script):
+# HOST_COMMAND runs beside the session, started by uos-hwd-host.py once the
+# test's USB device HOST_VIDPID has enumerated anew (never a device left by an
+# earlier run), or, without HOST_VIDPID, with the session (a network test: the
+# script finds the board on the LAN); a failing host side fails the test. Tcl's
 # ';' in PRELOAD and RESET_COMMAND becomes a newline (CMake splits a
 # function's arguments at ';').
 function (uos_tests_add_hwd)
@@ -286,7 +290,7 @@ endfunction ()
 #   [PRE_CFG <Tcl commands...>] COMMANDS <Tcl commands...> [TIMEOUT <seconds>]
 #   [OPENOCD <executable> [SCRIPTS <its scripts folder>]]
 #   [RETRY_TRIES <n> RETRY_IF <regex> [RETRY_UNLESS <regex>]]
-#   [HOST_VIDPID <vid:pid> HOST_COMMAND <command...> [HOST_CWD <folder>]]
+#   [HOST_COMMAND <command...> [HOST_VIDPID <vid:pid>] [HOST_CWD <folder>]]
 #   [VERDICT_EXIT_CODE])
 #
 # A board OpenOCD programs and resets (the Cortex-M boards), as upstream's

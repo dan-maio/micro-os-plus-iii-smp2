@@ -13,15 +13,17 @@
 # A hardware test whose board is a USB device and needs the PC's side
 # (uos_tests_add_hwd / uos_tests_add_openocd's HOST_*; uos-tests-run.cmake):
 #
-#   uos-hwd-host.py --vidpid VVVV:PPPP [--settle S] [--cwd DIR]
+#   uos-hwd-host.py [--vidpid VVVV:PPPP [--settle S]] [--cwd DIR]
 #                   --host <host command...> --board <board command...>
 #
-# runs the board command (the test's OpenOCD session, as without a host
-# side) and, beside it, the host command, started when the test's USB device
-# has enumerated: a device with this VID:PID that was not there when the
-# board command started (a new bus/device number), so never the device of a
-# previous run or of an image left running from flash; then S seconds
-# (default 3) for it to settle.
+# runs the board command (the test's session, as without a host side) and,
+# beside it, the host command. With --vidpid (a USB device test) the host
+# command starts when the test's USB device has enumerated: a device with
+# this VID:PID that was not there when the board command started (a new
+# bus/device number), so never the device of a previous run or of an image
+# left running from flash; then S seconds (default 3) for it to settle.
+# Without it (a network test: the host script finds the board on the LAN
+# itself, by its beacon) the host command starts with the board command.
 #
 # The board's output is passed through as it comes (CTest reads the test's
 # RESULT line from it); the host's, line by line, prefixed "[host] ". When
@@ -84,27 +86,30 @@ def main():
         elif opts[i] == "--cwd":
             cwd = opts[i + 1]
         i += 2
-    if not vidpid or not host_cmd or not board_cmd:
-        sys.exit("uos-hwd-host.py: --vidpid, a host and a board command are required")
-    vid, pid = vidpid.split(":")
+    if not host_cmd or not board_cmd:
+        sys.exit("uos-hwd-host.py: a host and a board command are required")
+    vid, pid = vidpid.split(":") if vidpid else (None, None)
 
-    before = devices(vid, pid)
+    before = devices(vid, pid) if vidpid else set()
     board = subprocess.Popen(board_cmd, stdout=subprocess.PIPE,
                              stderr=subprocess.STDOUT, bufsize=0)
     state = {"host": None, "rc": None, "stopped": False}
 
     def host_side():
-        while board.poll() is None:
-            new = devices(vid, pid) - before
-            if new:
-                break
-            time.sleep(0.2)
+        if vidpid:
+            while board.poll() is None:
+                new = devices(vid, pid) - before
+                if new:
+                    break
+                time.sleep(0.2)
+            else:
+                return
+            emit(f"[host] the test's device {vidpid} enumerated; starting the host side\n")
+            time.sleep(settle)
+            if board.poll() is not None:
+                return
         else:
-            return
-        emit(f"[host] the test's device {vidpid} enumerated; starting the host side\n")
-        time.sleep(settle)
-        if board.poll() is not None:
-            return
+            emit("[host] starting the host side\n")
         proc = subprocess.Popen(host_cmd, stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT, cwd=cwd, text=True,
                                 errors="replace")
