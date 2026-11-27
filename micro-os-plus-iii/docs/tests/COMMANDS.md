@@ -144,9 +144,16 @@ Each needs its board ready and its loader:
 | CH32V307V-EVT | powered, WCH-LinkE in RISC-V mode | the WCH OpenOCD fork, `UOS_RISCV_WCH_OPENOCD` (`openocd-wch/build-openocd-wch.sh`); the flash is programmed and read back first |
 
 Two probes with the same VID:PID (the Pico 2's Debug Probe and the VF2's
-JTAG probe on Pico): `UOS_HW_ADAPTER_SERIAL` picks one. The USB, network and
-Wi-Fi tests need the PC's side, run by hand. The RISC-V tests run emulated
-as `qemu-riscv64` and `qemu-riscv32`.
+JTAG probe on Pico): `UOS_HW_ADAPTER_SERIAL` picks one.
+
+The USB device tests start their PC side themselves: the board's own USB
+port must be connected to this PC, and `cmake/uos-hwd-host.py` runs the
+test's host script (`platforms/riscv-pico2/usb-host.py cdc|hid`, the VF2's
+`usb-file-host.py`, the CH32V307's `usb-stream-host.py`) once the test's
+device has enumerated anew (never a device left by an earlier run); a host
+side that fails fails the test. The network and Wi-Fi tests need the PC's
+side, run by hand. The RISC-V tests run emulated as `qemu-riscv64` and
+`qemu-riscv32`.
 
 ## 5. On the board (`hwd`)
 

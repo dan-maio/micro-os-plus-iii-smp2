@@ -9,8 +9,9 @@
 # configuration's `test` action skips (`ctest -LE hwd`), and run one at a time
 # (RUN_SERIAL); OpenOCD programs (or, for a `-ram` test, loads) the image and
 # resets the board for each, and the test's semihosting SYS_EXIT ends it. The
-# UART is not opened. The USB device tests need the PC's side
-# (platforms/riscv-pico2/usb-host.py cdc|hid), run by hand.
+# UART is not opened. The USB device tests start their PC side themselves
+# (usb-host.py cdc|hid, through cmake/uos-hwd-host.py): the Pico 2's own
+# micro-USB must be connected to this PC.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -30,6 +31,11 @@ add_subdirectory ("${CMAKE_SOURCE_DIR}/board-tests" "port-tests/test")
 # -----------------------------------------------------------------------------
 # The hardware run.
 include ("${CMAKE_SOURCE_DIR}/cmake/uos-tests-run.cmake")
+
+# The USB device tests' PC side, started by the run itself
+# (cmake/uos-hwd-host.py) once the test's device has enumerated.
+find_package (Python3 COMPONENTS Interpreter REQUIRED)
+set (_usb_host "${CMAKE_SOURCE_DIR}/platforms/riscv-pico2/usb-host.py")
 
 # The Raspberry Pi OpenOCD (UOS_RISCV_PICO_OPENOCD, _rpi_ocd_args).
 include ("${CMAKE_CURRENT_SOURCE_DIR}/cmake/rpi-openocd.cmake")
@@ -58,11 +64,19 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
   else ()
     set (_hwd_commands ${_hwd_flash})
   endif ()
+  set (_host "")
+  if (_app STREQUAL "smp-test-usb-cdc-acm")
+    set (_host HOST_VIDPID cafe:4013
+         HOST_COMMAND "${Python3_EXECUTABLE}" -I "${_usb_host}" cdc 300)
+  elseif (_app STREQUAL "smp-test-usb-hid")
+    set (_host HOST_VIDPID cafe:4012
+         HOST_COMMAND "${Python3_EXECUTABLE}" -I "${_usb_host}" hid 300)
+  endif ()
   uos_tests_add_openocd (
     NAME "${PLATFORM_NAME}-${_app}-hwd" APP "${_app}"
     ELF "$<TARGET_FILE:${_app}-hwd>" CFG "${CMAKE_CURRENT_SOURCE_DIR}/openocd.cfg"
     ${_rpi_ocd_args}
-    COMMANDS ${_hwd_commands} TIMEOUT 300
+    COMMANDS ${_hwd_commands} ${_host} TIMEOUT 300
   )
 endforeach ()
 

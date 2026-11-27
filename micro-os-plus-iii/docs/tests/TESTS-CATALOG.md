@@ -482,7 +482,9 @@ through `xfel`, the MangoPi MQ-Pro 16/16 (all but the two Wi-Fi tests, which
 need an access point); the Milk-V Duo 20/20, its two USB tests with
 `platforms/riscv-pico2/usb-host.py cdc|hid` run beside them; the CH32V307
 10/10 (`board-basics` waits for key S2, `hwd-manual`; `usb-cdc-stream` with
-its `usb-stream-host.py`, started once the new image has enumerated). The
+its `usb-stream-host.py`, started once the new image has enumerated). Since
+then the USB tests start their host side themselves (`cmake/uos-hwd-host.py`):
+the CH32V307's `usb-cdc-stream` passes from CTest alone. The
 RP2350B and the VF2 not run from this repository yet.
 
 **Hardware** (2026-11-20, through CTest and OpenOCD; logs in the workspace's

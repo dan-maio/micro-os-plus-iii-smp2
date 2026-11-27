@@ -9,8 +9,10 @@
 # configuration's `test` skips them), one at a time. OpenOCD loads the image
 # into DDR and starts the harts it drives (vf2-hwd.tcl); the test's
 # semihosting SYS_EXIT ends it. The UART is not opened. The probe:
-# UOS_VF2_PROBE. The USB, network and Wi-Fi tests need the PC's side, run by
-# hand.
+# UOS_VF2_PROBE. The USB device tests (CDC-ACM, the file round trips) start
+# their PC side themselves (cmake/uos-hwd-host.py; the USB-C port must be
+# connected to this PC); the network and Wi-Fi tests need the PC's side, run
+# by hand.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -40,7 +42,29 @@ if (NOT UOS_VF2_PROBE MATCHES "^(daplink|picoprobe)$")
   message (FATAL_ERROR "UOS_VF2_PROBE must be daplink or picoprobe, not '${UOS_VF2_PROBE}'.")
 endif ()
 
+# The USB device tests' PC side, started by the run itself
+# (cmake/uos-hwd-host.py) once the test's device has enumerated. The file
+# round trips send a copy of their name.dat kept in the build folder, where
+# the host writes name.dat.back.
+find_package (Python3 COMPONENTS Interpreter REQUIRED)
+set (_usb_host "${CMAKE_SOURCE_DIR}/platforms/riscv-pico2/usb-host.py")
+foreach (_t smp-test-usb-cdc-file smp-test-usb-cdc-file-fs)
+  file (COPY "${CMAKE_CURRENT_SOURCE_DIR}/tests/${_t}/name.dat"
+        DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/${_t}-host")
+endforeach ()
+
 foreach (_app IN LISTS UOS_TESTS_APPS)
+  set (_host "")
+  if (_app STREQUAL "smp-test-usb-cdc-acm")
+    set (_host HOST_VIDPID cafe:4013
+         HOST_COMMAND "${Python3_EXECUTABLE}" -I "${_usb_host}" cdc 300)
+  elseif (_app STREQUAL "smp-test-usb-cdc-file"
+          OR _app STREQUAL "smp-test-usb-cdc-file-fs")
+    set (_host HOST_VIDPID cafe:4013 HOST_CWD "${CMAKE_CURRENT_BINARY_DIR}/${_app}-host"
+         HOST_COMMAND "${Python3_EXECUTABLE}" -I
+                      "${CMAKE_CURRENT_SOURCE_DIR}/tests/${_app}/usb-file-host.py"
+                      name.dat 300)
+  endif ()
   # What the session needs to know about the image (vf2-hwd.tcl), written
   # again whenever the image changes (built with it).
   set (_facts "${CMAKE_CURRENT_BINARY_DIR}/facts/${_app}-hwd.facts.tcl")
@@ -65,6 +89,7 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
     RETRY_TRIES 3
     RETRY_IF "Examination failed|dtmcontrol is 0|Target not examined|load_image.*failed|Failed to write memory"
     RETRY_UNLESS "Examined RISC-V core"
+    ${_host}
     TIMEOUT 600
   )
 endforeach ()

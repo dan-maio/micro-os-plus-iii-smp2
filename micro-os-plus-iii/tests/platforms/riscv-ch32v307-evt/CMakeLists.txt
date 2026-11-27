@@ -11,7 +11,8 @@
 # semihosting, and the test's SYS_EXIT ends it: OpenOCD's exit status, the
 # test's exit code, is the verdict (the RESULT line goes to the UART only).
 # board-basics waits for key S2: label `hwd-manual`. The UART is not opened.
-# The USB test needs the PC's side, run by hand.
+# The USB test starts its PC side itself (usb-stream-host.py, through
+# cmake/uos-hwd-host.py): port P6 must be connected to this PC.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -51,8 +52,22 @@ if (NOT EXISTS "${UOS_RISCV_WCH_OPENOCD}")
            "or set UOS_RISCV_WCH_OPENOCD, and configure again.")
 endif ()
 
+# usb-cdc-stream's PC side (usb-stream-host.py, beside the test), started by
+# the run itself once the board's CDC device has enumerated; it sends a copy
+# of name.dat kept in the build folder, where it writes name.dat.back.
+find_package (Python3 COMPONENTS Interpreter REQUIRED)
+set (_stream_dir "${CMAKE_CURRENT_SOURCE_DIR}/tests/usb-cdc-stream")
+set (_stream_work "${CMAKE_CURRENT_BINARY_DIR}/usb-cdc-stream-host")
+file (COPY "${_stream_dir}/name.dat" DESTINATION "${_stream_work}")
+
 foreach (_app IN LISTS UOS_TESTS_APPS)
   set (_name "${PLATFORM_NAME}-${_app}-hwd")
+  set (_host "")
+  if (_app STREQUAL "usb-cdc-stream")
+    set (_host HOST_VIDPID cafe:4014 HOST_CWD "${_stream_work}"
+         HOST_COMMAND "${Python3_EXECUTABLE}" -I
+                      "${_stream_dir}/usb-stream-host.py" name.dat 180)
+  endif ()
   uos_tests_add_openocd (
     NAME "${_name}" APP "${_app}"
     ELF "$<TARGET_FILE:${_app}-hwd>" CFG "${CMAKE_CURRENT_SOURCE_DIR}/openocd.cfg"
@@ -61,6 +76,7 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
     # The board's console is its UART only: the verdict is the semihosting
     # exit code (OpenOCD's exit status), as the port's former hw.sh read it.
     VERDICT_EXIT_CODE
+    ${_host}
     TIMEOUT 300
   )
   add_test (NAME "${_name}-program"

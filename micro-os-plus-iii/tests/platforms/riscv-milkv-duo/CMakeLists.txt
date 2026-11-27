@@ -15,8 +15,9 @@
 # parks the hart): label `hwd` (the configuration's `test` skips them), one
 # at a time. OpenOCD halts the hart, switches it to M-mode, loads the image
 # into DDR and starts it; the test's semihosting SYS_EXIT ends it. Nothing is
-# written to the SD card; the UART is not opened. The USB device tests need
-# the PC's side (platforms/riscv-pico2/usb-host.py cdc|hid), run by hand.
+# written to the SD card; the UART is not opened. The USB device tests start
+# their PC side themselves (platforms/riscv-pico2/usb-host.py cdc|hid, through
+# cmake/uos-hwd-host.py): the Duo's own USB-C must be connected to this PC.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -48,7 +49,20 @@ add_subdirectory ("${CMAKE_SOURCE_DIR}/board-tests" "port-tests/test")
 # retried.
 include ("${CMAKE_SOURCE_DIR}/cmake/uos-tests-run.cmake")
 
+# The USB device tests' PC side, started by the run itself
+# (cmake/uos-hwd-host.py) once the test's device has enumerated.
+find_package (Python3 COMPONENTS Interpreter REQUIRED)
+set (_usb_host "${CMAKE_SOURCE_DIR}/platforms/riscv-pico2/usb-host.py")
+
 foreach (_app IN LISTS UOS_TESTS_APPS)
+  set (_host "")
+  if (_app STREQUAL "smp-test-usb-cdc-acm")
+    set (_host HOST_VIDPID cafe:4013
+         HOST_COMMAND "${Python3_EXECUTABLE}" -I "${_usb_host}" cdc 300)
+  elseif (_app STREQUAL "smp-test-usb-hid")
+    set (_host HOST_VIDPID cafe:4012
+         HOST_COMMAND "${Python3_EXECUTABLE}" -I "${_usb_host}" hid 300)
+  endif ()
   uos_tests_add_hwd (
     NAME "${PLATFORM_NAME}-${_app}-hwd" APP "${_app}" ELF "$<TARGET_FILE:${_app}-hwd>"
     CFG "${CMAKE_CURRENT_SOURCE_DIR}/openocd.cfg" INIT
@@ -57,6 +71,7 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
     RETRY_TRIES 3
     RETRY_IF "Examination failed|dtmcontrol is 0|Target not examined|load_image.*failed|Failed to write memory"
     RETRY_UNLESS "Examined RISC-V core"
+    ${_host}
     TIMEOUT 600
   )
 endforeach ()
