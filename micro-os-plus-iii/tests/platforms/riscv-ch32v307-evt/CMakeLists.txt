@@ -8,8 +8,10 @@
 # hwd tests need the board: label `hwd` (the configuration's `test` skips
 # them), one at a time. A fixture programs the flash and compares it with the
 # image (cmake/program.cmake); the test session then runs it from reset with
-# semihosting, and the test's SYS_EXIT ends it. The UART is not opened. The
-# USB test needs the PC's side, run by hand.
+# semihosting, and the test's SYS_EXIT ends it: OpenOCD's exit status, the
+# test's exit code, is the verdict (the RESULT line goes to the UART only).
+# board-basics waits for key S2: label `hwd-manual`. The UART is not opened.
+# The USB test needs the PC's side, run by hand.
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/${PLATFORM_NAME}'...")
@@ -56,6 +58,9 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
     ELF "$<TARGET_FILE:${_app}-hwd>" CFG "${CMAKE_CURRENT_SOURCE_DIR}/openocd.cfg"
     OPENOCD "${UOS_RISCV_WCH_OPENOCD}" SCRIPTS "${UOS_RISCV_WCH_OPENOCD_SCRIPTS}"
     COMMANDS "init" "reset halt" "arm semihosting enable" "resume"
+    # The board's console is its UART only: the verdict is the semihosting
+    # exit code (OpenOCD's exit status), as the port's former hw.sh read it.
+    VERDICT_EXIT_CODE
     TIMEOUT 300
   )
   add_test (NAME "${_name}-program"
@@ -70,6 +75,11 @@ foreach (_app IN LISTS UOS_TESTS_APPS)
     FIXTURES_SETUP "${_name}-program")
   set_tests_properties ("${_name}" PROPERTIES
     FIXTURES_REQUIRED "${_name}-program")
+  # board-basics waits 10 s for key S2: run it by name, with a hand on the
+  # board (as the Arm boards' tests that need a person).
+  if (_app STREQUAL "board-basics")
+    set_tests_properties ("${_name}" PROPERTIES LABELS "hwd-manual")
+  endif ()
 endforeach ()
 
 # -----------------------------------------------------------------------------

@@ -1411,9 +1411,11 @@ change.
    switch, the CH32V307's programming and read-back, the MangoPi's `xfel`
    loader). Run on the board: the Pico 2, 19/19 (not its two USB tests);
    the MangoPi MQ-Pro, 16/16 (not its two Wi-Fi tests); the Milk-V Duo,
-   19/20, its USB tests with `usb-host.py` (`smp-test-nested` hangs in its
-   nested-interrupt part, open). The RP2350B, the VF2 and the CH32V307 still
-   have to be run.
+   20/20, its USB tests with `usb-host.py` (`smp-test-nested` needed a fix:
+   the board's UART init latched the DW UART busy-detect interrupt, which
+   only a USR read clears); the CH32V307, 10/10 (the verdict is OpenOCD's
+   exit status, VERDICT_EXIT_CODE: its tests print RESULT on the UART only).
+   The RP2350B and the VF2 still have to be run.
 2. Done: the port holds only the port (`src/`, `include/`, `qemu/virt/`, its
    docs). Its `test/` (boards, tests, the shell runners, `third_party/`), its
    standalone build and its xpm build actions are gone; the VisionFive 2's

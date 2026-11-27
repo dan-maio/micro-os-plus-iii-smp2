@@ -255,7 +255,8 @@ endfunction ()
 #   NAME <ctest name> APP <app> ELF <image> CFG <board's OpenOCD configuration>
 #   [PRE_CFG <Tcl commands...>] COMMANDS <Tcl commands...> [TIMEOUT <seconds>]
 #   [OPENOCD <executable> [SCRIPTS <its scripts folder>]]
-#   [RETRY_TRIES <n> RETRY_IF <regex> [RETRY_UNLESS <regex>]])
+#   [RETRY_TRIES <n> RETRY_IF <regex> [RETRY_UNLESS <regex>]]
+#   [VERDICT_EXIT_CODE])
 #
 # A board OpenOCD programs and resets (the Cortex-M boards), as upstream's
 # hardware tests run: the configuration, then each command as a -c, @ELF@
@@ -263,9 +264,12 @@ endfunction ()
 # RESULT line is the verdict. OPENOCD: a board that needs an OpenOCD other
 # than the configuration's xPack (a vendor fork: the RP2350's RISC-V cores,
 # the WCH-Link), with SCRIPTS its interface/ and target/ folder. RETRY_*: as
-# for uos_tests_add_hwd.
+# for uos_tests_add_hwd. VERDICT_EXIT_CODE: a board whose tests print their
+# RESULT line on the UART only (the CH32V307): the verdict is OpenOCD's exit
+# status, the test's semihosting exit code (OpenOCD with no GDB ends with it);
+# a RESULT: FAIL or SKIP line, when the test does print one, still counts.
 function (uos_tests_add_openocd)
-  cmake_parse_arguments (_a ""
+  cmake_parse_arguments (_a "VERDICT_EXIT_CODE"
     "NAME;APP;ELF;CFG;TIMEOUT;OPENOCD;SCRIPTS;RETRY_TRIES;RETRY_IF;RETRY_UNLESS"
     "PRE_CFG;COMMANDS" ${ARGN})
   set (_openocd "${UOS_TESTS_OPENOCD}")
@@ -292,7 +296,11 @@ function (uos_tests_add_openocd)
   else ()
     uos_tests_timeout ("${_a_APP}" _timeout)
   endif ()
+  set (_verdict ${UOS_TESTS_RESULT_PROPERTIES})
+  if (_a_VERDICT_EXIT_CODE)
+    set (_verdict FAIL_REGULAR_EXPRESSION "RESULT: FAIL"
+                  SKIP_REGULAR_EXPRESSION "RESULT: SKIP")
+  endif ()
   set_tests_properties ("${_a_NAME}" PROPERTIES
-    LABELS "hwd" TIMEOUT ${_timeout} RUN_SERIAL TRUE
-    ${UOS_TESTS_RESULT_PROPERTIES})
+    LABELS "hwd" TIMEOUT ${_timeout} RUN_SERIAL TRUE ${_verdict})
 endfunction ()

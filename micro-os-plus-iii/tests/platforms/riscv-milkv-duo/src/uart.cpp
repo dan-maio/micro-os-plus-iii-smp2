@@ -30,6 +30,8 @@ namespace
   constexpr unsigned FCR = 0x08; // FIFO control
   constexpr unsigned LCR = 0x0C; // line control
   constexpr unsigned LSR = 0x14; // line status
+  constexpr unsigned USR = 0x7C; // UART status (DW): reading it clears the
+                                 // busy-detect interrupt
 
   constexpr std::uint32_t LSR_THRE = 1u << 5;
 
@@ -99,6 +101,14 @@ namespace uart
     (void) baud; // the BL2 divisor is kept, see above
     reg (LCR) = 0x03; // 8N1, DLAB=0
     reg (FCR) = 0x07; // FIFOs on, both cleared
+    // An LCR write while the UART is still sending (the boot output) latches
+    // the DesignWare busy-detect interrupt (IIR 0x7), which no IER bit masks
+    // and only a USR read clears. Left set, it fires as soon as UART4 is
+    // enabled at the PLIC, and again after every handler that does not read
+    // USR (measured 2026-11-26: smp-test-nested, about 10,000 UART4 entries
+    // in 21 s, every thread starved).
+    const std::uint32_t usr = reg (USR);
+    __asm__ volatile("" ::"r"(usr));
   }
 
   void

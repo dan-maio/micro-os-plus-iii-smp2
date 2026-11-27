@@ -144,7 +144,7 @@ namespace
 
   // ---- UART4 (DW 8250, reg-shift 2) ----------------------------------------
   constexpr std::uintptr_t UART4 = 0x041C0000u;
-  constexpr std::uintptr_t U_IER = 0x04, U_IIR = 0x08;
+  constexpr std::uintptr_t U_IER = 0x04, U_IIR = 0x08, U_USR = 0x7C;
   constexpr std::uint32_t IER_ETBEI = 1u << 1;
 
   // ---- Shared state ----------------------------------------------------------
@@ -173,6 +173,11 @@ namespace
     // Stop the TX-empty interrupt that the trigger thread started.
     reg (UART4 + U_IER) = reg (UART4 + U_IER) & ~IER_ETBEI;
     touch (UART4 + U_IIR);
+    // A busy-detect interrupt (IIR 0x7: an LCR write while the UART was
+    // sending) is not masked by IER and is cleared only by reading USR;
+    // without this it fires again at once, for good (measured: an interrupt
+    // storm that starved every thread).
+    touch (UART4 + U_USR);
     g_irq_uart = g_irq_uart + 1;
 
     // Keep this low-priority handler busy for 2 ms with Timer0 due after
